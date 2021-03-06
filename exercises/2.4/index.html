@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#input-validation" class="md-skip">
+        <a href="#unicode" class="md-skip">
           Skip to content
         </a>
       
@@ -541,19 +541,12 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#part-1-regular-expressions" class="md-nav__link">
-    Part 1: Regular Expressions
+  <a href="#part-1-international-domain-names" class="md-nav__link">
+    Part 1: International Domain Names
   </a>
   
-    <nav class="md-nav" aria-label="Part 1: Regular Expressions">
+    <nav class="md-nav" aria-label="Part 1: International Domain Names">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#no-hints" class="md-nav__link">
-    No Hints
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#step-by-step" class="md-nav__link">
@@ -576,7 +569,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#no-hints_1" class="md-nav__link">
+  <a href="#no-hints" class="md-nav__link">
     No Hints
   </a>
   
@@ -935,19 +928,12 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#part-1-regular-expressions" class="md-nav__link">
-    Part 1: Regular Expressions
+  <a href="#part-1-international-domain-names" class="md-nav__link">
+    Part 1: International Domain Names
   </a>
   
-    <nav class="md-nav" aria-label="Part 1: Regular Expressions">
+    <nav class="md-nav" aria-label="Part 1: International Domain Names">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#no-hints" class="md-nav__link">
-    No Hints
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#step-by-step" class="md-nav__link">
@@ -970,7 +956,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#no-hints_1" class="md-nav__link">
+  <a href="#no-hints" class="md-nav__link">
     No Hints
   </a>
   
@@ -1027,54 +1013,46 @@
 }}
 </style>
 
-<h1 id="input-validation">Input Validation</h1>
+<h1 id="unicode">Unicode</h1>
 <hr />
 <h4 id="objectives">Objectives</h4>
-<div class="codehilite"><pre><span></span><code>Estimated Time: 30 minutes
+<div class="codehilite"><pre><span></span><code>Estimated Time: 10 minutes
 </code></pre></div>
 
 <h5 id="part-1">Part 1:</h5>
 <blockquote>
-<p>In this exercise, you will experiment with a GUI regular expression tool, "regexxer" and try to find appropriate regular expressions for different data types.</p>
+<p>In this exercise, you will experience some of the visual problems associated with international domain names.</p>
 </blockquote>
 <h5 id="part-2">Part 2:</h5>
 <blockquote>
-<p>In this exercise, we will explore the potential problems with unsecure file upload handling and see for ourselves the effect of improperly handling upload.</p>
+<p>In this exercise, we will explore the XSS that can be induced with injecting unexpected character sets input</p>
 </blockquote>
 <h4 id="requirements">Requirements</h4>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Lab VM</li>
 </ul>
 <hr />
-<h2 id="part-1-regular-expressions">Part 1: Regular Expressions</h2>
-<h3 id="no-hints">No Hints</h3>
-<p>Review the list of sample strings and try to come up with reasonable regular expressions for some data types like dates, social security numbers, email addresses, and URLs.</p>
+<h2 id="part-1-international-domain-names">Part 1: International Domain Names</h2>
 <h3 id="step-by-step">Step by Step</h3>
 <ol>
 <li>
-<p>Click the <strong>"regexxer"</strong> icon on the left-hand site "Favorites" bar. Regexxer is a utility that allows you to experiment with regular expressions.</p>
-<p><img alt="" src="media/image1.png" /></p>
-<p><strong>Regexxer Icon in Favorites bar on the Left</strong></p>
+<p>Browse to <a href="http://lab-2.4.sans.labs/unicode.html">http://lab-2.4.sans.labs/unicode.html</a>.</p>
 </li>
 <li>
-<p>Check the "/g" (Global) checkbox in the upper right-hand corner of regexxer, and uncheck the "recursive" checkbox (top left of the window).</p>
+<p>The task is to determine which of the domain names listed on this page do not contain any international characters. Can you visually determine that?</p>
 </li>
 <li>
-<p>Select the regex folder by first selecting "Other..." in the "Folder" dropdown menu and then selecting the "regex" directory inside the "Documents" directory. Enter "sample.txt" as "Pattern". Finally, click "Find files" and click on "sample.txt" in the "File" list to see its content.</p>
-<p><img alt="" src="media/image2.png" /></p>
-<p><strong>Regexxer Tool with sample.txt Selected</strong></p>
+<p>To test your answer, open the <a href="http://lab-2.4.sans.labs/unicode-convert/convert.htm">Unicode Converter</a> in a new browser tab.</p>
+<p><img alt="" class="zoom" src="media/img-1615014117-20210306.png" /></p>
 </li>
 <li>
-<p>At the top of regexxer (the "Search" field), enter <strong>[0-9</strong>]+ and click "Find". The first match will be highlighted in orange. The remaining matches will be highlighted in blue. The following strings, among others, will match:</p>
-<p><span style="background: yellow;">11111</span><br>
-<span style="background: yellow;">12345</span><br>
-ht<span>tp</span>://isc.sans.org/index.html?x=<span style="background: yellow;">1</span><br></p>
-<p><span style="background: yellow;">abc123</span><br>
-jullrich@sec<span style="background: yellow;">522</span>.org</p>
-<p>The regular expression matches all strings that contain at least one number. In order to only filter out numbers, the following regular expression has to be used:</p>
+<p>Copy/paste each of the domain names into the converter (CTRL-C: copy, CTRL-V: paste).</p>
 </li>
 <li>
-<p>Enter <strong>^[0-9]+$</strong> as a search pattern, and click "Find" again. The ^ and $ are anchors making sure the expression applies from the start and end of the string.</p>
+<p>Paste the domain name into the green "Mixed Input" field. The output of the "Unicode U+hex" field usually gives away any non-ASCII characters.</p>
+<p>The "IDN Converter", linked from the question page, can also help identify Unicode domain names.</p>
+<details class="question"><summary>Solutions</summary><p>You can find the solutions at this location <a href="http://lab-2.4.sans.labs/unicode-solutions.htm">http://lab-2.4.sans.labs/unicode-solutions.htm</a></p>
+</details>
 <p>Only two strings will match now: <span style="background: yellow;">11111</span> and <span style="background: yellow;">12345</span>.</p>
 <p><img alt="" src="media/image3.png" /></p>
 </li>
@@ -1117,7 +1095,7 @@ jullrich@sec<span style="background: yellow;">522</span>.org</p>
 </ol>
 <hr />
 <h2 id="part-2-file-upload">Part 2: File Upload</h2>
-<h3 id="no-hints_1">No Hints</h3>
+<h3 id="no-hints">No Hints</h3>
 <p>The upload function of the TWiki system is our test subject in this exercise. Browse to <strong><a href="http://www.sec522.org/twiki/bin/view/">http://www.sec522.org/twiki/bin/view/</a></strong> and experiment with the upload function, then browse through the "Documents" directory on the desktop and see how you can leverage the upload feature to compromise the TWiki system.</p>
 <h3 id="step-by-step_1">Step by Step</h3>
 <ol>
