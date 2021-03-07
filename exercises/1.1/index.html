@@ -455,13 +455,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#no-hints" class="md-nav__link">
-    No Hints
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#step-by-step_1" class="md-nav__link">
     Step by Step
   </a>
@@ -976,13 +969,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#no-hints" class="md-nav__link">
-    No Hints
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#step-by-step_1" class="md-nav__link">
     Step by Step
   </a>
@@ -1093,44 +1079,25 @@
 <li>
 <p>Accept License</p>
 <p>Click on "I  Accept" on the Terms and Conditions prompt.</p>
-</li>
-</ol>
 <p><img alt="" class="zoom" src="media/img-1614924347-20210305.png" /></p>
-<div class="codehilite"><pre><span></span><code>!!! danger &quot;*DO NOT INSTALL ANY UPDATES!*&quot;
-    The Burp Community Edition only allows for temporary projects. Click &quot;Next&quot; on the Welcome screen.
-
-![](media/img-1615005372-20210305.png){: class=&quot;zoom&quot; }
-</code></pre></div>
-
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote></blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-<ol>
-<li>
-<p>Next, select and load the prepared configuration file "sec522.json".</p>
+<div class="admonition danger">
+<p class="admonition-title"><em>DO NOT INSTALL ANY UPDATES!</em></p>
+<p>Please do not install any updates if prompted.</p>
+</div>
+<p>The Burp Community Edition only allows for temporary projects. Click "Next" on the Welcome screen.</p>
 <p><img alt="" src="media/image6.png" /></p>
+</li>
+<li>
+<p>Next, select "Load from configuration file" and then select "Choose File" on the right hand side. </p>
+<p><img alt="" class="zoom" src="media/img-1615093867-20210307.png" /></p>
+<p>The file is located in the "Documents" directory and then "Burp" directory. The prepared configuration file is "sec522burp.json". Select to open the file and then "Start Burp" (the orange button on the lower right hand corner)</p>
+<p><img alt="" class="zoom" src="media/img-1615089483-20210306.png" /></p>
 <p>Eventually, you will see the main Burp window.</p>
 <p><img alt="" class="zoom" src="media/img-1615005632-20210305.png" /></p>
 <p><strong>Main Burp Window</strong></p>
 </li>
 <li>
-<p>For now, we disable interception via Burp. Instead, we would like to have Burp record requests and responses without holding them. Select the "Proxy" tab and make sure the "Intercept" button states "Intercept is off". Click the button to toggle it from "on" to "off".</p>
+<p>For now, we want to disable interception via Burp. Instead, we would like to have Burp record requests and responses without holding them. Select the "Proxy" tab and make sure the "Intercept" button states "Intercept is off". Click the button to toggle it from "on" to "off".</p>
 <p><img alt="" class="zoom" src="media/img-1615005851-20210305.png" /></p>
 </li>
 <li>
@@ -1144,29 +1111,32 @@
 <li>
 <p>Proxy Switcher Configuration</p>
 <p>If you wish to turn off interception later, just select "Direct" from the Proxy Switcher dialog.</p>
+<div class="admonition information">
+<p class="admonition-title">Proxy Switcher</p>
+<p>Proxy switcher gives you an easy means to toggle between traffic directly going from browser to website or routing through the Burp proxy. 
+When the Proxy Switcher icon is red, you know the traffic is going through the Burp proxy.
+If you toggle the Proxy Switcher to route traffic to Burp and Burp is not running, that could lead to the browser traffic to time out. </p>
+</div>
 </li>
 <li>
-<p>In Chrome, browse to <a href="http://lab-1.1.sans.labs/">http://lab-1.1.sans.labs/</a></p>
+<p>In Chrome, browse to <a href="http://lab-1.1.sans.labs/">http://lab-1.1.sans.labs/</a> (expect a small delay on this first page load)</p>
 </li>
 <li>
-<p>This page is able to verify your configuration. Click on "Check if Burp is Running".</p>
+<p>You are now presented with an Animal Shelter web application. </p>
 </li>
 <li>
-<p>If Burp is running, a second button will appear. Click "check My Proxy Configuration".</p>
-</li>
-<li>
-<p>If you pass these tests, switch back to Burp by clicking on the Burp icon <strong>in</strong> the "Favorites" list on the left. At this point, Burp is recording requests and responses, but not allowing you to alter them. You can inspect the requests and responses by selecting the "Target" tab.</p>
-<p><img alt="" src="media/image11.png" /></p>
+<p>If you pass these tests, switch back to Burp by clicking on the Burp icon <strong>in</strong> the "Favorites" list on the left (the bottom one). At this point, Burp is recording requests and responses, but not allowing you to alter them. You can inspect the requests and responses by selecting the "Target" tab.</p>
+<p><img alt="" class="zoom" src="media/img-1615097436-20210307.png" /></p>
 </li>
 <li>
 <p>Burp Target Tab</p>
-<p>Highlight the request for "/ex1/0/index.php".</p>
+<p>Highlight the request for "/" (likely at the top).</p>
 <p>Use the information from the target tab to answer the following questions:</p>
 <details class="question"><summary>What method was used to request the page?</summary><p>GET</p>
 </details>
 <details class="question"><summary>What HTTP version did the browser use?</summary><p>1.1</p>
 </details>
-<details class="question"><summary>What browser (and version) was used?</summary><p>Chrome 79.0.3945.130</p>
+<details class="question"><summary>What browser (and version) was used?</summary><p>Chrome 89.0.4389.82</p>
 </details>
 <details class="question"><summary>What language does the browser prefer?</summary><p>en-US</p>
 </details>
@@ -1175,19 +1145,17 @@
 </li>
 </ol>
 <h2 id="part-1-manipulating-http-requests">Part 1: Manipulating HTTP Requests</h2>
-<h3 id="no-hints">No Hints</h3>
-<p>Proceed to <a href="http://www.sec522.org/ex1/1/index.php">http://www.sec522.org/ex1/1/index.php</a>. The page will suggest some tests. But feel free to experiment.</p>
 <h3 id="step-by-step_1">Step by Step</h3>
 <ol>
 <li>
-<p>Load <a href="http://www.sec522.org/ex1/1/index.php">http://www.sec522.org/ex1/1/index.php</a> in Chrome.</p>
+<p>Load <a href="http://lab-1.1.sans.labs/inspect.php">http://lab-1.1.sans.labs/inspect.php</a> in Chrome. This page is also accessible by clicking on the link (Inspect Headers) at upper right hand corner of the Animal Shelter main page. </p>
 </li>
 <li>
 <p>Make sure Burp is running</p>
 </li>
 <li>
 <p>In Burp, select the "Proxy" tab, and make sure "Intercept" is "on". If not, click on the button to enable it.</p>
-<p><img alt="" src="media/image12.png" /></p>
+<p><img alt="" class="zoom" src="media/img-1615099916-20210307.png" /></p>
 <p><strong>Enabling Interception in Burp</strong></p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -1196,7 +1164,7 @@
 </li>
 <li>
 <p>Enable Burp as a proxy in Chrome via Proxy Switcher.</p>
-<p><img alt="" src="media/image13.png" /></p>
+<p><img alt="" class="zoom" src="media/img-1615100039-20210307.png" /></p>
 </li>
 <li>
 <p>Enabling Burp as a Proxy in Chrome via Proxy Switcher</p>
@@ -1230,7 +1198,7 @@
 <p>In Burp, select the "HTTP history" from the "Proxy" tab and select the last line to answer the next few questions. The last line should represent the request you just edited. You will find the answers by selecting the "Response" tab in the middle of the Burp window.</p>
 <details class="question"><summary>What status code did the server use to respond?</summary><p>400</p>
 </details>
-<details class="question"><summary>What server version was used?</summary><p>Apache/2.4.29</p>
+<details class="question"><summary>What server version was used?</summary><p>Apache/2.4.38 (Debian)</p>
 </details>
 </li>
 <li>
@@ -1241,13 +1209,11 @@
 </li>
 <li>
 <p>In Burp, add a second "Referer" header with arbitrary content. (If there is no Referer header, then add two "Referer" headers to the request). For example:</p>
-<div class="highlight"><pre><span></span><code>Referer: &lt;http://www.test.com&gt;
+<div class="highlight"><pre><span></span><code>Referer: http://www.test.com
 Referer: Some random nonsense
 </code></pre></div>
-<p><img alt="" src="media/image15.png" /></p>
-</li>
-<li>
-<p>Request in Burp with two "Referer" headers prior to clicking "Forward".</p>
+<p><img alt="" class="zoom" src="media/img-1615101268-20210307.png" /></p>
+<p><strong><em>Request in Burp with two "Referer" headers prior to clicking "Forward".</em></strong></p>
 </li>
 <li>
 <p>Once the response is returned, the page will display the Referer header as the web application received it. What do you see? The content of the first, second, or both headers?</p>
@@ -1261,7 +1227,7 @@ Referer: Some random nonsense
 <p>Load an HTTPS page via Burp. Inspect the certificate and explain why a warning is displayed.</p>
 <ol>
 <li>
-<p>Keeping Burp enabled from the prior exercise, but disable "Interception" (in the "Proxy" menu check the "Intercept" tab and toggle the "Intercept on/off" button) and visit any HTTPS page. For example, <a href="https://www.sec522.org/ex1/2/index.php">https://www.sec522.org/ex1/2/index.php</a>.</p>
+<p>Keeping Burp enabled from the prior exercise, but disable "Interception" (in the "Proxy" menu check the "Intercept" tab and toggle the "Intercept on/off" button) and visit any HTTPS page. For example, <a href="http://lab-1.1.sans.labs/">http://lab-1.1.sans.labs/</a>.</p>
 <div class="admonition question">
 <p class="admonition-title">You will receive a warning. Why?</p>
 </div>
@@ -1271,21 +1237,26 @@ Referer: Some random nonsense
 </li>
 <li>
 <p>Inspect the certificate by clicking on "Not secure" to the left of the URL.</p>
-<p><img alt="" src="media/image16.png" /></p>
+<p><img alt="" class="zoom" src="media/img-1615101609-20210307.png" /></p>
 <p><strong>TLS Security Warning.</strong></p>
 </li>
 <li>
 <p>Click on "Certificate (invalid)". This will display the certificate information:</p>
-<p><img alt="" src="media/image17.png" /></p>
+<p><img alt="" class="zoom" src="media/img-1615101671-20210307.png" /></p>
 <p><strong>Burp Certificate</strong></p>
 <details class="question"><summary>Who issued the certificate?</summary><p>PortSwigger CA</p>
 </details>
-<details class="question"><summary>Which hostname is covered by the certificate?</summary><p><a href="http://www.sec522.org">www.sec522.org</a></p>
+<details class="question"><summary>Which hostname is covered by the certificate?</summary><p>lab-1.1.sans.labs</p>
 </details>
 </li>
 </ol>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
+<ul>
+<li>Burp is a man-in-the middle proxy, allow you to intercept and manipulate requests prior to sending the request to server and before the response is received by the browser.</li>
+<li>Browser handles the request and response header, generally without the user being aware of their existance.</li>
+<li>The request headers have an impact on how the server process the request. The reponse headers also have an impact on the browser's behavior as well.</li>
+</ul>
 <hr />
 <h2 id="explore-further">Explore Further</h2>
 <ul>

@@ -561,11 +561,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#part-2-file-upload" class="md-nav__link">
-    Part 2: File Upload
+  <a href="#part-2-xss-via-inappropriate-character-set-conversion" class="md-nav__link">
+    Part 2: XSS via Inappropriate Character Set Conversion
   </a>
   
-    <nav class="md-nav" aria-label="Part 2: File Upload">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-file-upload" class="md-nav__link">
+    Part 3: File Upload
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 3: File Upload">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -948,11 +955,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#part-2-file-upload" class="md-nav__link">
-    Part 2: File Upload
+  <a href="#part-2-xss-via-inappropriate-character-set-conversion" class="md-nav__link">
+    Part 2: XSS via Inappropriate Character Set Conversion
   </a>
   
-    <nav class="md-nav" aria-label="Part 2: File Upload">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-file-upload" class="md-nav__link">
+    Part 3: File Upload
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 3: File Upload">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1025,7 +1039,11 @@
 </blockquote>
 <h5 id="part-2">Part 2:</h5>
 <blockquote>
-<p>In this exercise, we will explore the XSS that can be induced with injecting unexpected character sets input</p>
+<p>In this exercise, we will explore the XSS that can be induced with injecting unexpected character sets input.</p>
+</blockquote>
+<h5 id="part-3">Part 3:</h5>
+<blockquote>
+<p>In this exercise, we will evaluate the threats of handling file upload from users.</p>
 </blockquote>
 <h4 id="requirements">Requirements</h4>
 <ul class="task-list">
@@ -1053,54 +1071,36 @@
 <p>The "IDN Converter", linked from the question page, can also help identify Unicode domain names.</p>
 <details class="question"><summary>Solutions</summary><p>You can find the solutions at this location <a href="http://lab-2.4.sans.labs/unicode-solutions.htm">http://lab-2.4.sans.labs/unicode-solutions.htm</a></p>
 </details>
-<p>Only two strings will match now: <span style="background: yellow;">11111</span> and <span style="background: yellow;">12345</span>.</p>
-<p><img alt="" src="media/image3.png" /></p>
-</li>
-<li>
-<p>Use the regular expression primitives from the table above to craft a regular expression that matches the date format YYYY-MM-DD.</p>
-<p><strong>After you craft your own statement, perform the following:</strong></p>
-<p>These expressions are in <strong>~/Documents/regex/regex.txt</strong>, copy and paste into regexxer and test each of them. Pay attention to see which date matches.</p>
-<p>Answers are below. </p>
-<details class="question"><summary>Simple</summary><p><strong>([0-9]{4})-([0-9]{2})-([0-9]{2})</strong></p>
-<div class="admonition failure">
-<p class="admonition-title">Failure</p>
-<p>Matches 0000-00-00 (not a valid date)</p>
-</div>
-</details>
-<details class="question"><summary>More complex</summary><p><strong>([1-9]d{3})-(0[1-9]|1[012])-(0[1-9]|1d|2d|3[0-1])</strong></p>
-<div class="admonition failure">
-<p class="admonition-title">Failure</p>
-<p>Matches 2000-11-31 (a date that does not exist)</p>
-</div>
-</details>
-<details class="question"><summary>Complex</summary><p><strong>((((19|20)(([02468][048])|([13579][26]))-02-29))|((20[0-9][0-9])|(19[0-9][0-9]))-((((0[1-9])|(1[0-2]))-((0[1-9])|(1d)|(2[0-8])))|((((0[13578])|(1[02]))-31)|(((0[1,3-9])|(1[0-2]))-(29|30)))))</strong></p>
-<div class="admonition success">
-<p class="admonition-title">Success</p>
-<p>Matches any dates in 19xx--20xx properly</p>
-</div>
-</details>
-</li>
-<li>
-<p>Open the file <strong>~/Documents/regex/regex.txt</strong>.</p>
-</li>
-<li>
-<p>Highlight and copy the first regular expression.</p>
-</li>
-<li>
-<p>Paste it into regexxer's regex field.</p>
-<div class="admonition tip">
-<p class="admonition-title">Try to improve the provided regular expressions. The sample.txt file includes some non-English characters at the end. Do they match 'w'?</p>
-</div>
 </li>
 </ol>
 <hr />
-<h2 id="part-2-file-upload">Part 2: File Upload</h2>
+<h2 id="part-2-xss-via-inappropriate-character-set-conversion">Part 2: XSS via Inappropriate Character Set Conversion</h2>
+<ol>
+<li>
+<p>Go to <a href="http://lab-2.4.sans.labs/unicode.txt">http://lab-2.4.sans.labs/unicode.txt</a>. This file is UTF-16 encoded and displays some "Chinese" characters. The characters themselves don't make any sense at this point.</p>
+</li>
+<li>
+<p>Go to <a href="http://lab-2.4.sans.labs/unicodexss.php">http://lab-2.4.sans.labs/unicodexss.php</a>. This page will load the file we looked at above and display it using a UTF-8 character set. In this context, you will see an "XSS" popup.</p>
+</li>
+<li>
+<p>Let's check the source code for unicodexss.php by going to <a href="http://lab-2.4.sans.labs/unicodexss.phps">http://lab-2.4.sans.labs/unicodexss.phps</a>. You will see that the file calls file_get_contents, a simple function that will read a file and send its contents to the browser.</p>
+</li>
+<li>
+<p>Open a terminal and run:</p>
+<div class="highlight"><pre><span></span><code>cd /var/www/dev522.org/html/unicode
+cat unicode.txt
+</code></pre></div>
+</li>
+</ol>
+<p>This will display the "script", not the Chinese characters we saw earlier.</p>
+<hr />
+<h2 id="part-3-file-upload">Part 3: File Upload</h2>
 <h3 id="no-hints">No Hints</h3>
-<p>The upload function of the TWiki system is our test subject in this exercise. Browse to <strong><a href="http://www.sec522.org/twiki/bin/view/">http://www.sec522.org/twiki/bin/view/</a></strong> and experiment with the upload function, then browse through the "Documents" directory on the desktop and see how you can leverage the upload feature to compromise the TWiki system.</p>
+<p>The upload function of the TWiki system is our test subject in this exercise. Browse to <strong><a href="http://lab-2.4.sans.labs/twiki/bin/view/">http://lab-2.4.sans.labs/twiki/bin/view/</a></strong> and experiment with the upload function, then browse through the "Documents" directory on the desktop and see how you can leverage the upload feature to compromise the TWiki system.</p>
 <h3 id="step-by-step_1">Step by Step</h3>
 <ol>
 <li>
-<p>With Chrome, browse to <a href="http://www.sec522.org/twiki/bin/view/">http://www.sec522.org/twiki/bin/view/</a></p>
+<p>With Chrome, browse to <a href="http://lab-2.4.sans.labs/twiki/bin/view/">http://lab-2.4.sans.labs/twiki/bin/view/</a></p>
 <p>This is a default install of the TWiki content management system. Users can contribute and edit content, as well as upload an image or document.</p>
 <p>Feel free to explore the application and understand its function.</p>
 </li>
