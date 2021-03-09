@@ -475,7 +475,7 @@
   
     <li class="md-nav__item">
       <a href="../2.1/" class="md-nav__link">
-        2.1: Basic SQL Injection
+        2.1: SQL Injection
       </a>
     </li>
   
@@ -550,13 +550,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#explore-further" class="md-nav__link">
-    Explore Further
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -583,7 +576,7 @@
   
     <li class="md-nav__item">
       <a href="../2.4/" class="md-nav__link">
-        2.4: Input Validation
+        2.4: Unicode and File Upload
       </a>
     </li>
   
@@ -941,13 +934,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#explore-further" class="md-nav__link">
-    Explore Further
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -989,20 +975,20 @@
 <hr />
 <h2 id="identifying-exploiting-csrf">Identifying &amp; Exploiting CSRF</h2>
 <h3 id="no-hints">No Hints</h3>
-<p>The guestbook requires users to log in to post. But due to a CSRF vulnerability, it is possible to trick users into posting without their knowledge as long as they are logged in. Explore the guestbook at <a href="http://www.sec522.org/guestbook/guestbook.php">http://www.sec522.org/guestbook/guestbook.php</a>. Try to exploit the vulnerability and suggest a fix.</p>
+<p>The guestbook requires users to log in to post. But due to a CSRF vulnerability, it is possible to trick users into posting without their knowledge as long as they are logged in. Explore the guestbook at <a href="http://lab-2.2.sans.labs/login.php">http://lab-2.2.sans.labs/login.php</a> (user/pass - sec522/training). Try to exploit the vulnerability and suggest a fix.</p>
 <h3 id="step-by-step">Step by Step</h3>
 <ol>
 <li>
-<p>Using Chrome, browse to <a href="http://www.sec522.org/guestbook/guestbook.php">http://www.sec522.org/guestbook/guestbook.php</a>.</p>
+<p>Using Chrome, browse to <a href="http://lab-2.2.sans.labs/login.php">http://lab-2.2.sans.labs/login.php</a>.</p>
 </li>
 <li>
 <p>Log in. Username: <strong>"sec522"</strong>, Password: <strong>"training"</strong>.</p>
-<ol>
+<ul>
 <li>Feel free to explore the guestbook and attempt to add some entries into the guestbook. Remember, at this point, you are logged in to the guestbook.</li>
-</ol>
+</ul>
 </li>
 <li>
-<p>Open a second browser window (Ctrl-N), and visit <a href="http://www.sec522.org/attack.php">http://www.sec522.org/attack.php</a>. Alternatively, a new browser tab works too.</p>
+<p>Open a second browser window (Ctrl-N), and visit <a href="http://lab-2.2.sans.labs/attack.php">http://lab-2.2.sans.labs/attack.php</a>. Alternatively, a new browser tab works too.</p>
 </li>
 <li>
 <p>Switch back to the other browser window (loaded with the guestbook page) and refresh the page.</p>
@@ -1014,7 +1000,7 @@
 <li>
 <p>Read the page source carefully; pay close attention to the IFrame.</p>
 <p>This self-signing guestbook phenomenon is caused by CSRF (Cross-Site Request Forgery). The following line of HTML code is in the attack.php that was visited earlier.</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;visibility:hidden&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;http://www.sec522.org/guestbook/guestbook.php?f=add&amp;name=Evil+Cat&amp;email=kitten@evilexample.com&amp;url=http://evilexample.com&amp;comments=I+need+more+wetfood+or+I+will_hack_you!+The+Cat&quot;</span> <span class="p">/&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;visibility:hidden&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;http://lab-2.2.sans.labs/guestbook.php?f=add&amp;name=Evil+Cat&amp;email=kitten@evilexample.com&amp;url=http://evilexample.com&amp;comments=I+need+more+wetfood+or+I+will_hack_you!+The+Cat&quot;</span> <span class="p">/&gt;</span>
 </code></pre></div>
 <p>It contains a link to the guestbook, asking the guestbook to add an entry. Since this IFrame is set to be invisible, the user does not know of its presence.</p>
 </li>
@@ -1022,21 +1008,21 @@
 <p>Change back to the guestbook window and <strong>click on the logout link</strong> to log out of the guestbook.</p>
 </li>
 <li>
-<p>Switch back to the attack window. Refresh the page on <strong><a href="http://www.sec522.org/attack.php">http://www.sec522.org/attack.php</a></strong>. This is to attempt the CSRF attack once more.</p>
+<p>Switch back to the attack window. Refresh the page on <strong><a href="http://lab-2.2.sans.labs/attack.php">http://lab-2.2.sans.labs/attack.php</a></strong>. This is to attempt the CSRF attack once more.</p>
 </li>
 <li>
-<p>Switch back once again to the other window with <strong><a href="http://www.sec522.org/guestbook/guestbook.php">http://www.sec522.org/guestbook/guestbook.php</a></strong> and log in with "sec522" and "training" as username/password.</p>
+<p>Switch back once again to the other window with <strong><a href="http://lab-2.2.sans.labs/guestbook.php">http://lab-2.2.sans.labs/guestbook.php</a></strong> and log in with "sec522" and "training" as username/password.</p>
 </li>
 </ol>
 <details class="question"><summary>How come no extra entry is added this time?</summary><p>If the session is not active (the user logged out), the attack simply doesn't work.</p>
 </details>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
-<hr />
-<h2 id="explore-further">Explore Further</h2>
 <ul>
-<li></li>
+<li>CSRF only works while the user is logged into the application with active session.</li>
+<li>Attacker steer the browser to submit request on behalf of the user. The request has the credential of the user attached.  </li>
 </ul>
+<hr />
                 
               
               
@@ -1063,7 +1049,7 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              2.1: Basic SQL Injection
+              2.1: SQL Injection
             </div>
           </div>
         </a>

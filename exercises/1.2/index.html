@@ -574,7 +574,7 @@
   
     <li class="md-nav__item">
       <a href="../2.1/" class="md-nav__link">
-        2.1: Basic SQL Injection
+        2.1: SQL Injection
       </a>
     </li>
   
@@ -610,7 +610,7 @@
   
     <li class="md-nav__item">
       <a href="../2.4/" class="md-nav__link">
-        2.4: Input Validation
+        2.4: Unicode and File Upload
       </a>
     </li>
   
@@ -1048,7 +1048,7 @@
 <hr />
 <h2 id="part-1-inspecting-http2-traffic">Part 1: Inspecting HTTP/2 Traffic</h2>
 <h3 id="no-hints">No Hints</h3>
-<p>You will be using Wireshark to inspect an HTTP/2 packet capture. The packet capture can be found in /home/sec522/Documents/pcaps/http2.pcap. Find out which headers you can identify in the HTTP/2 request and response.</p>
+<p>You will be using Wireshark to inspect an HTTP/2 packet capture. The packet capture can be found in /home/student/Documents/pcaps/http2.pcap. Find out which headers you can identify in the HTTP/2 request and response.</p>
 <h3 id="step-by-step">Step by Step</h3>
 <ol>
 <li>
@@ -1057,7 +1057,7 @@
 <p><strong>Wireshark icon</strong></p>
 </li>
 <li>
-<p>Open the packet capture using either Ctrl+O or "File" &gt; "Open" from the Wireshark menu. Navigate to /home/sec522/Documents/pcaps and open the file "http2.pcap" (you may find the file still listed as a "Recent" file, which may make things easier).</p>
+<p>Open the packet capture using either Ctrl+O or "File" &gt; "Open" from the Wireshark menu. Navigate to /home/student/Documents/pcaps and open the file "http2.pcap" (you may find the file still listed as a "Recent" file, which may make things easier).</p>
 </li>
 <li>
 <p>Select packet #15 and investigate the middle pane of Wireshark. Expand the "Hypertext Transfer Protocol 2" section by clicking on the triangles to the left until you see the headers:</p>
@@ -1085,16 +1085,15 @@
 <hr />
 <h2 id="part-2-spoofing-an-http-request">Part 2: Spoofing an HTTP Request</h2>
 <h3 id="no-hints_1">No Hints</h3>
-<p>The first part requires that you send a "PUT" request to <a href="http://www.sec522.org/authservice/index.php">http://www.sec522.org/authservice/index.php</a> .</p>
-<p>The second part starts at <a href="http://www.dev522.org/spoofchallenge/index.html">http://www.sec522.org/spoofchallenge/index.html</a> . The page includes brief instructions showing you how to proceed.</p>
+<p>The exercise starts at <a href="http://lab-1.2.sans.edu/spoofchallenge/index.html">http://lab-1.2.sans.edu/spoofchallenge/index.html</a> . The page includes brief instructions showing you how to proceed.</p>
 <h3 id="step-by-step_1">Step by Step</h3>
 <ol>
 <li>
 <p>Open a terminal (click the "Terminal" icon on the left)</p>
 </li>
 <li>
-<p>Use "curl" to send a PUT request to <a href="http://www.sec522.org/authservice/index.php">http://www.sec522.org/authservice/index.php</a></p>
-<div class="highlight"><pre><span></span><code>curl -iX PUT http://www.sec522.org/authservice/index.php
+<p>Use "curl" to send a PUT request to <a href="http://lab-1.2.sans.edu/spoofchallenge/fingerprint.php">http://lab-1.2.sans.edu/spoofchallenge/fingerprint.php</a></p>
+<div class="highlight"><pre><span></span><code>curl -iX PUT http://lab-1.2.sans.edu/spoofchallenge/fingerprint.php
 </code></pre></div>
 <p>The return will include an "Auth-Token" header:</p>
 <div class="highlight"><pre><span></span><code>HTTP/1.1 200 OK
