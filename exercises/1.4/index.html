@@ -157,7 +157,9 @@
 
 
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="SEC522 Workbook" class="md-nav__button md-logo" aria-label="SEC522 Workbook">
       
@@ -877,58 +879,6 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#no-hints" class="md-nav__link">
-    No Hints
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-by-step" class="md-nav__link">
-    Step by Step
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
-    Conclusion
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#explore-further" class="md-nav__link">
-    Explore Further
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
@@ -962,24 +912,24 @@
 </ul>
 <hr />
 <h3 id="no-hints">No Hints</h3>
-<p>Start at <a href="http://labs-1.4.sans.labs/ssrf.php">http://labs-1.4.sans.labs/ssrf.php</a>. The page will provide additional hints.</p>
+<p>Start at <a href="http://lab-1.4.sans.labs/ssrf.php">http://lab-1.4.sans.labs/ssrf.php</a>. The page will provide additional hints.</p>
 <h3 id="step-by-step">Step by Step</h3>
 <ol>
 <li>
-<p>Open <a href="http://labs-1.4.sans.labs/ssrf.php">http://labs-1.4.sans.labs/ssrf.php</a> in a browser. The page will allow you to add RSS feed URLs. The server will retrieve the feed without validating the source.</p>
+<p>Open <a href="http://lab-1.4.sans.labs/ssrf.php">http://lab-1.4.sans.labs/ssrf.php</a> in a browser. The page will allow you to add RSS feed URLs. The server will retrieve the feed without validating the source.</p>
 </li>
 <li>
-<p>To test it, enter <a href="http://labs-1.4.sans.labs/">http://labs-1.4.sans.labs/</a> as a URL in the Feed URL. You will see the HTML content of the page being retrieved and displayed.</p>
+<p>To test it, enter <a href="http://lab-1.4.sans.labs/">http://lab-1.4.sans.labs/</a> as a URL in the Feed URL. You will see the HTML content of the page being retrieved and displayed.</p>
 </li>
 <li>
-<p>There is a meta-data server at 127.254.169.254. Retrieve its index by using <a href="http://127.254.169.254">http://127.254.169.254</a> as "Feed URL".</p>
+<p>There is a meta-data server at 169.254.169.254. Retrieve its index by using <a href="http://169.254.169.254">http://169.254.169.254</a> as "Feed URL".</p>
 </li>
 <li>
-<p>Explore the content of the service by retrieving the content of directories (e.g. <a href="http://127.254.169.254/latest">http://127.254.169.254/latest</a> ).</p>
+<p>Explore the content of the service by retrieving the content of directories (e.g. <a href="http://169.254.169.254/latest">http://169.254.169.254/latest</a> ).</p>
 </li>
 <li>
 <p>The server uses a special local URL for meta data like authentication tokens. Try this URL (important: do not forget the slash in the end).</p>
-<p><a href="http://127.254.169.254/latest/meta-data/iam/security-credentials/cg-ec2-role-cgidmxg5qsmw9b/">http://127.254.169.254/latest/meta-data/iam/security-credentials/cg-ec2-role-cgidmxg5qsmw9b/</a></p>
+<p><a href="http://169.254.169.254/latest/meta-data/iam/security-credentials/cg-ec2-role-cgidmxg5qsmw9b/">http://169.254.169.254/latest/meta-data/iam/security-credentials/cg-ec2-role-cgidmxg5qsmw9b/</a></p>
 </li>
 <li>
 <p>Copy the entire response (including the enclosing { } ) to a file called "/home/sec522/.sawssecret". You can do this either with the terminal or with Visual Studio Code.</p>
@@ -990,6 +940,10 @@
 </ol>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
+<ul>
+<li>SSRF can lead to the web server becoming a relay point for sending a HTTP request on behalf of the client. Since the request is sent by the Web server, it could access resources that are only accessible to the Web server such as DMZ or internal network resources.</li>
+<li>In public Cloud environment, specifically the Infrastructure as a Service Computing, the orign of the HTTP request matters a great deal. Through SSRF attacks, it is possible to acquire credentials for the Virtual Machine that the web application is running on and then pivot over to attack/access other Cloud based components.</li>
+</ul>
 <hr />
 <h2 id="explore-further">Explore Further</h2>
 <ul>
@@ -1087,7 +1041,7 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.fb4a9340.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["toc.integrate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.fb4a9340.min.js", "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.ca5457b8.min.js"></script>
