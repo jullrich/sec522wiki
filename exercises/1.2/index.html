@@ -468,11 +468,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#part-2-spoofing-an-http-request" class="md-nav__link">
-    Part 2: Spoofing an HTTP Request
+  <a href="#part-2-acquire-and-play-back-token" class="md-nav__link">
+    Part 2: Acquire and play back token
   </a>
   
-    <nav class="md-nav" aria-label="Part 2: Spoofing an HTTP Request">
+    <nav class="md-nav" aria-label="Part 2: Acquire and play back token">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -485,6 +485,26 @@
           <li class="md-nav__item">
   <a href="#step-by-step_1" class="md-nav__link">
     Step by Step
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-spoofing-an-http-request" class="md-nav__link">
+    Part 3: Spoofing an HTTP Request
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 3: Spoofing an HTTP Request">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-hints_2" class="md-nav__link">
+    No Hints
   </a>
   
 </li>
@@ -951,6 +971,7 @@
 <blockquote>
 <p>First, you will try to use an authentication token retrieved in one request to send a second request. The section half of this exercise will teach you how to impersonate a valid browser using simple tools like "curl". You will first collect a request from a regular browser to create a "fingerprint" of the browser. Next, you will use "curl" to create a request that matches the fingerprint.</p>
 </blockquote>
+<h5 id="part-3">Part 3:</h5>
 <h4 id="requirements">Requirements</h4>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Lab VM</li>
@@ -993,37 +1014,42 @@
 </li>
 </ol>
 <hr />
-<h2 id="part-2-spoofing-an-http-request">Part 2: Spoofing an HTTP Request</h2>
+<h2 id="part-2-acquire-and-play-back-token">Part 2: Acquire and play back token</h2>
 <h3 id="no-hints_1">No Hints</h3>
-<p>The exercise starts at <a href="http://lab-1.2.sans.edu/spoofchallenge/index.html">http://lab-1.2.sans.edu/spoofchallenge/index.html</a> . The page includes brief instructions showing you how to proceed.</p>
+<p>The CSRF/ proof service at <a href="http://lab-1.2.sans.labs/authservice/index.php">http://lab-1.2.sans.labs/authservice/index.php</a> gives you a special token </p>
 <h3 id="step-by-step_1">Step by Step</h3>
 <ol>
 <li>
 <p>Open a terminal (click the "Terminal" icon on the left)</p>
 </li>
 <li>
-<p>Use "curl" to send a PUT request to <a href="http://lab-1.2.sans.edu/spoofchallenge/fingerprint.php">http://lab-1.2.sans.edu/spoofchallenge/fingerprint.php</a></p>
-<div class="highlight"><pre><span></span><code>curl -iX PUT http://lab-1.2.sans.edu/spoofchallenge/fingerprint.php
+<p>Use "curl" to send a PUT request to <a href="http://lab-1.2.sans.labs/authservice/index.php">http://lab-1.2.sans.labs/authservice/index.php</a></p>
+<div class="highlight"><pre><span></span><code>curl -iX PUT http://lab-1.2.sans.labs/authservice/index.php
 </code></pre></div>
 <p>The return will include an "Auth-Token" header:</p>
 <div class="highlight"><pre><span></span><code>HTTP/1.1 200 OK
-Date: Thu, 23 Jan 2020 03:28:01 GMT
-Server: Apache/2.4.29 (Ubuntu)
+Date: Thu, 11 Mar 2021 02:56:38 GMT
+Server: Apache/2.4.38 (Debian)
+X-Powered-By: PHP/7.4.15
 <span class="hll">Auth-Token: [use this value for the next step]
 </span>Vary: Accept-Encoding
-X-XSS-Protection: 0
 Content-Length: 89
 Content-Type: text/html; charset=UTF-8
 </code></pre></div>
 </li>
 <li>
-<p>Now create a request to <a href="http://www.sec522.org/authservices/test.php">http://www.sec522.org/authservices/test.php</a> using this Auth-Token header (replace "TOKEN" with the value you received in step 2.</p>
-<div class="highlight"><pre><span></span><code>curl -i -H <span class="s1">&#39;Auth-Token: TOKEN&#39;</span> http://www.sec522.org/authservice/test.php
+<p>Now create a request to <a href="http://lab-1.2.sans.labs/authservice/test.php">http://lab-1.2.sans.labs/authservice/test.php</a> using this Auth-Token header (replace "TOKEN" with the value you received in step 2.</p>
+<div class="highlight"><pre><span></span><code>curl -i -H <span class="s1">&#39;Auth-Token: &lt;Token you got earlier&gt;&#39;</span> http://lab-1.2.sans.labs/authservice/test.php
 </code></pre></div>
 <p>The return will let you know if you got it right</p>
 </li>
+</ol>
+<h2 id="part-3-spoofing-an-http-request">Part 3: Spoofing an HTTP Request</h2>
+<h3 id="no-hints_2">No Hints</h3>
+<p>The exercise starts at <a href="http://lab-1.2.sans.labs/spoofchallenge/index.html">http://lab-1.2.sans.labs/spoofchallenge/index.html</a> . The page includes brief instructions showing you how to proceed.</p>
+<ol>
 <li>
-<p>Open <a href="http://www.sec522.org/spoofchallenge/index.html">http://www.sec522.org/spoofchallenge/index.html</a> in Chrome.</p>
+<p>Open <a href="http://lab-1.2.sans.labs/spoofchallenge/index.html">http://lab-1.2.sans.labs/spoofchallenge/index.html</a> in Chrome.</p>
 </li>
 <li>
 <p>Click on the "Step 1" link. This will open the page fingerprint.php and display your browser fingerprint.</p>
@@ -1036,7 +1062,7 @@ Content-Type: text/html; charset=UTF-8
 </li>
 <li>
 <p>Enter:</p>
-<div class="highlight"><pre><span></span><code>curl http://www.sec522.org/spoofchallenge/fingerprinttest.php
+<div class="highlight"><pre><span></span><code>curl http://lab-1.2.sans.labs/spoofchallenge/fingerprinttest.php
 </code></pre></div>
 <p>You will see a number of errors due to missing or incomplete headers.</p>
 </li>
@@ -1054,7 +1080,7 @@ Content-Type: text/html; charset=UTF-8
 </code></pre></div>
 </li>
 <li>
-<p>For a solution, see <a href="http://www.sec522.org/spoofchallenge/solution.php">http://www.sec522.org/spoofchallenge/solution.php</a></p>
+<p>For a solution, see <a href="http://lab-1.2.sans.labs/spoofchallenge/solution.php">http://lab-1.2.sans.labs/spoofchallenge/solution.php</a></p>
 </li>
 </ol>
 <hr />

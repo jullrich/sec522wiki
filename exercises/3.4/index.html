@@ -951,7 +951,7 @@
 <p><strong>Wireshark Icon</strong></p>
 </li>
 <li>
-<p>After Wireshark starts up, click on the top menu <strong>"File"</strong> and then <strong>"Open"</strong>. Select the following file: <strong>/home/sec522/Documents/SSL/ssl.pcap</strong></p>
+<p>After Wireshark starts up, click on the top menu <strong>"File"</strong> and then <strong>"Open"</strong>. Select the following file: <strong>/home/student/Documents/SSL/ssl.pcap</strong></p>
 </li>
 </ul>
 <p>Wireshark will now display its familiar default "3-pane" layout. At the top,</p>
@@ -1019,7 +1019,7 @@
 <p>Click on the <strong>"Edit"</strong> button to the right of "RSA keys list:" and click the "+" button in the lower left-hand corner to add a new key.</p>
 </li>
 <li>
-<p>You will now be able to enter the key parameters: IP Address: 192.168.1.174, Port: 443, Protocol: http. For the key file, please select <strong>"Documents"</strong> directory and then <strong>"SSL"</strong> where you can select the <strong>"/home/sec522/Documents/SSL/server.key"</strong>.</p>
+<p>You will now be able to enter the key parameters: IP Address: 192.168.1.174, Port: 443, Protocol: http. For the key file, please select <strong>"Documents"</strong> directory and then <strong>"SSL"</strong> where you can select the <strong>"/home/student/Documents/SSL/server.key"</strong>.</p>
 <p><img alt="" src="media/image7.png" /></p>
 <p><strong>SSL Key Configuration</strong></p>
 <p>Leave the "Password" field empty and click "OK" and close the "Preferences" Dialog by clicking OK. As soon as you close the dialogs, you should see decrypted traffic.</p>
@@ -1054,10 +1054,15 @@
 <p><strong>Starting Packet Capture in Wireshark</strong></p>
 </li>
 <li>
-<p>Open Chrome FROM THE COMMAND LINE (not by clicking on the icon). To do this, open a terminal and then enter "google-chrome". This will apply the necessary bash environment variables to Chrome to log the master keys.</p>
+<p>Close Chrome first if it is running.</p>
 </li>
 <li>
-<p>Visit <a href="https://www.sec522.com">https://www.sec522.com</a> (.org will not work, as its TLS configuration is not compatible with Chrome).</p>
+<p>Open Chrome FROM THE COMMAND LINE (not by clicking on the icon). To do this, open a terminal and then enter "google-chrome". This will apply the necessary bash environment variables to Chrome to log the master keys.</p>
+<div class="highlight"><pre><span></span><code>google-chrome
+</code></pre></div>
+</li>
+<li>
+<p>Visit <a href="https://wiki.sans.labs/">https://wiki.sans.labs/</a> </p>
 </li>
 <li>
 <p>Close Google Chrome.</p>
@@ -1072,7 +1077,7 @@
 <p>Just like before, we enter the RSA key configuration dialog. Select Edit-&gt;Preferences from the Wireshark menu and proceed to the SSL protocol configuration. But instead of editing the RSA keys list, we just select a (Pre)-Master-Secret log filename at the bottom of the dialog.</p>
 </li>
 <li>
-<p>Use /home/sec522/Documents/sslkeylogfile.log</p>
+<p>Use /home/student/Documents/sslkeylogfile.log</p>
 </li>
 <li>
 <p>Just like before, the HTTPS traffic will now be decrypted. But this time, we used symmetric keys captured by the client.</p>

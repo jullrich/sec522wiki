@@ -652,13 +652,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#answers_1" class="md-nav__link">
-    Answers
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -970,9 +963,18 @@
 <hr />
 <h2 id="part-1-session-fixation">Part 1: Session Fixation</h2>
 <h3 id="no-hints">No Hints</h3>
-<p>Load <a href="http://www.sec522.org/ex2/2/index.php">http://www.sec522.org/ex2/2/index.php</a> in Chrome. The first two forms are susceptible to session fixation. Why? (In particular, the second one is not that obvious.) The third form is not susceptible.</p>
+<h5 id="edit">Edit</h5>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>Load <a href="http://lab-3.2.sans.labs/login.php">http://lab-3.2.sans.labs/login.php</a> in Chrome. The first two forms are susceptible to session fixation. Why? (In particular, the second one is not that obvious.) The third form is not susceptible.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
 <h3 id="step-by-step">Step by Step</h3>
-<p>This exercise will ask you to run Firefox in addition to Chrome. To start Firefox when asked to, click on "Activities" in the upper left-hand corner, and enter "Firefox" in the search field. Once you see the Firefox icon, click on it.</p>
+<p>This exercise will ask you to run Firefox in addition to Chrome. To start Firefox when asked to, click on the Firefox icon at the left side of the screen. </p>
 <p>IMPORTANT: Do not "Refresh Firefox" or update Firefox. Click "Cancel" if a dialog box appears offering to refresh Firefox.</p>
 <ol>
 <li>
@@ -1038,110 +1040,29 @@
 <hr />
 <h2 id="part-2-breaking-sessions">Part 2: Breaking Sessions</h2>
 <h3 id="no-hints_1">No Hints</h3>
-<p>Go to <a href="http://www.sec522.org/ibank-sess">http://www.sec522.org/ibank-sess</a>. Log in using the username "sec522" and the password "training". Try to switch to a different user's account after logging in.</p>
+<p>Go to <a href="http://lab-3.2.sans.labs/session/login.php">http://lab-3.2.sans.labs/session/login.php</a>. Log in using the username "sec522" and the password "training". Try to switch to a different user's account after logging in.</p>
 <h3 id="step-by-step_1">Step by Step</h3>
 <ol>
 <li>
-<p>In Google Chrome, proceed to <strong><a href="http://www.sec522.org/ibank-sess/">http://www.sec522.org/ibank-sess/</a></strong> and log in using the username <strong>sec522</strong> and the password <strong>training</strong>.</p>
-<p><img alt="" src="media/image1.png" /></p>
+<p>In Google Chrome, proceed to <strong><a href="http://lab-3.2.sans.labs/session/login.php">http://lab-3.2.sans.labs/session/login.php</a></strong> and log in using the username <strong>sec522</strong> and the password <strong>training</strong>.</p>
+<p><img alt="" class="zoom" src="media/img-1615442622-20210311.png" /></p>
 <p><strong>Account Balance Screen</strong></p>
 </li>
 <li>
 <p>Press SHIFT-CTRL-I to open the developer tools.</p>
 </li>
 <li>
-<p>Select the "Application" tab and select <a href="http://www.dev522.org">http://www.sec522.org</a> under Cookies.</p>
+<p>Select the "Application" tab and select <a href="http://lab-3.2.sans.labs">http://lab-3.2.sans.labs</a> under Cookies.</p>
 </li>
 <li>
-<p>Double-click on the cookie value (105) and change it to 104. Reload the page.</p>
-<p><img alt="" src="media/image2.png" /></p>
+<p>Double-click on the cookie value (value is 1) and change it to 2 . Reload the page.</p>
+<p><img alt="" class="zoom" src="media/img-1615443698-20210311.png" /></p>
 <p><strong>Chrome Developer Tools Cookies</strong></p>
-<p>You will now see a different account. Experiment with different values and try to find the account with the most US dollars.</p>
-<div class="admonition question">
-<p class="admonition-title">Which account has the most US Dollars?</p>
-</div>
+<p>You will now see a different account. Experiment with different values and try to find the account with the most donations.</p>
+<details class="question"><summary>Which account has the most donations?</summary><p><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#116;&#100;&#101;&#101;&#114;&#110;&#101;&#115;&#115;&#49;&#56;&#64;&#119;&#111;&#114;&#100;&#112;&#114;&#101;&#115;&#115;&#46;&#99;&#111;&#109;">&#116;&#100;&#101;&#101;&#114;&#110;&#101;&#115;&#115;&#49;&#56;&#64;&#119;&#111;&#114;&#100;&#112;&#114;&#101;&#115;&#115;&#46;&#99;&#111;&#109;</a> of value 45 has the most donation at $997.74</p>
+</details>
 </li>
 </ol>
-<h3 id="answers_1">Answers</h3>
-<p>Here is a list of user IDs, their names, and how much money there is in each account:</p>
-<table>
-<thead>
-<tr>
-<th>User ID</th>
-<th>Name</th>
-<th>US $ (Savings)</th>
-<th>GB Pound (Saving/Checking)</th>
-<th>CA $ (Savings)</th>
-<th>US $ (Checking)</th>
-<th>CA $ (Checking)</th>
-<th>CN RMB (Checking)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>101</td>
-<td>Joe</td>
-<td>1,2042.55</td>
-<td></td>
-<td></td>
-<td>90.10</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>102</td>
-<td>Susan</td>
-<td>4,981.30</td>
-<td>450.20</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>103</td>
-<td>Jason</td>
-<td>609,837.30</td>
-<td></td>
-<td></td>
-<td></td>
-<td>1,500.47</td>
-<td></td>
-</tr>
-<tr>
-<td>104</td>
-<td>John</td>
-<td>550.98</td>
-<td>1,471.00</td>
-<td></td>
-<td>34.12</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>105</td>
-<td>Dev522</td>
-<td>3,400.42</td>
-<td></td>
-<td>605.12</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>106</td>
-<td>sansuser</td>
-<td>31,337.00</td>
-<td>331,123.00</td>
-<td></td>
-<td></td>
-<td></td>
-<td>2,348,123.00</td>
-</tr>
-</tbody>
-</table>
-<details class="question"><summary>Which account has the most US Dollars?</summary><p>Jason, user ID 103, appears to own the most US dollars.</p>
-</details>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
 <hr />
