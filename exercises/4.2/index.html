@@ -935,34 +935,54 @@
 <p>Make sure Chrome is running.</p>
 </li>
 <li>
-<p>In the URL bar, type "<a href="http://www.sec522.org/sop/sop.html">http://www.sec522.org/sop/sop.html</a>".</p>
+<p>In the URL bar, type "<a href="http://lab-4.2.sans.labs/sop.php">http://lab-4.2.sans.labs/sop.php</a>".</p>
 </li>
 <li>
 <p>You should be greeted with a pop-up message. Click OK.</p>
-<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="nx">script</span> <span class="o">&gt;</span>
-<span class="nx">url</span> <span class="o">=</span> <span class="s2">&quot;http://www.sec522.org/sop/content.txt&quot;</span><span class="p">;</span>
-
-<span class="nx">req</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
-<span class="nx">req</span><span class="p">.</span><span class="nx">onreadystatechange</span> <span class="o">=</span> <span class="nx">processReqChange</span><span class="p">;</span>
-<span class="nx">req</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="nx">url</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
-<span class="nx">req</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
-
-<span class="kd">function</span> <span class="nx">processReqChange</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">==</span> <span class="mf">4</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">// only if &quot;OK&quot;</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">status</span> <span class="o">==</span> <span class="mf">200</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kd">var</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">responseText</span><span class="p">;</span>
-
-        <span class="nx">alert</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
-         <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-            <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;There was a problem retrieving the XML data:n&quot;</span> <span class="o">+</span> <span class="nx">req</span><span class="p">.</span><span class="nx">statusText</span><span class="p">);</span>
-         <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="o">&lt;</span><span class="err">/script&gt;</span>
-</code></pre></div>
 </li>
+</ol>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>```javascript
+    <script >
+    url = "<a href="http://www.sec522.org/sop/content.txt">http://www.sec522.org/sop/content.txt</a>";</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<div class="codehilite"><pre><span></span><code>req = new XMLHttpRequest();
+req.onreadystatechange = processReqChange;
+req.open(&quot;GET&quot;, url, true);
+req.send(null);
+
+function processReqChange() {
+    if (req.readyState == 4) {
+        // only if &quot;OK&quot;
+        if (req.status == 200) {
+        var response = req.responseText;
+
+        alert(response);
+         } else {
+            alert(&quot;There was a problem retrieving the XML data:n&quot; + req.statusText);
+         }
+    }
+}
+
+&lt;/script&gt;
+```
+</code></pre></div>
+
+<ol>
 <li>
 <p>Read the instructions on the page and then click the link on the page to review the source code of the HTML page. Instead of clicking the link, you can also use the view source function in Chrome. Script portion listed below:</p>
 <p>By reading the page source, answer these questions:</p>

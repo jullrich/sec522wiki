@@ -977,21 +977,25 @@
 <h3 id="step-by-step-instructions">Step-by-Step Instructions</h3>
 <ol>
 <li>
+<p>In Chrome, load the URL - <a href="http://lab-1.3.sans.labs/ftp/">http://lab-1.3.sans.labs/ftp/</a>. This will activate the exercise components.</p>
+</li>
+<li>
 <p>Click on the <strong>"FileZilla"</strong> icon on the left side of the screen (Favorites bar) to start the FTP client.</p>
 <p><img alt="" src="media/image1.png" /></p>
 <p><strong>FileZilla Icon</strong></p>
 </li>
 <li>
-<p>Once FileZilla is launched, enter "localhost" as the host and leave the username and password fields blank. Click "Quickconnect" to connect.</p>
+<p>Once FileZilla is launched, enter <strong>lab-1.3.sans.labs</strong> as the host, the username as <strong>anonymous</strong> and password as <strong>testing</strong>. Click "Quickconnect" to connect.</p>
+<p><img alt="" class="zoom" src="media/img-1615525893-20210312.png" /></p>
 </li>
 <li>
-<p>After FileZilla is connected, select the "uploads" directory in the lower right-hand pane and set the "Local Site" to "/home/sec522/Documents/FTPFiles/".</p>
-<p><img alt="" src="media/image2.png" /></p>
+<p>After FileZilla is connected, select the "uploads" directory in the lower right-hand pane and set the "Local Site" to "/home/student/Documents/FTPFiles/".</p>
+<p><img alt="" class="zoom" src="media/img-1615526076-20210312.png" /></p>
 <p><strong>FileZilla Main Screen</strong></p>
 </li>
 <li>
 <p>Highlight the three files (config.php, phpinfo.php, phpshell.php) on the left and drag them to the "Remote Site" pane (lower right, where you clicked on "uploads"). The files are now uploaded.</p>
-<p><img alt="" src="media/image3.png" /></p>
+<p><img alt="" class="zoom" src="media/img-1615527209-20210312.png" /></p>
 </li>
 <li>
 <p>FileZilla uploading files</p>
@@ -1000,28 +1004,32 @@
 <p>Open Chrome and make sure no proxy is selected.</p>
 </li>
 <li>
-<p>Proceed to <a href="http://www.dev522.org/ftp/"><strong>http://www.sec522.org/ftp/</strong></a> in Chrome. You will see a directory listing showing the three files we just uploaded.</p>
-<p><img alt="" src="media/image4.png" /></p>
+<p>Proceed to <a href="http://lab-1.3.sans.labs/ftp/"><strong>http://lab-1.3.sans.labs/ftp</strong></a> in Chrome. You will see a directory listing showing the three files we just uploaded.</p>
+<p><img alt="" class="zoom" src="media/img-1615527387-20210312.png" /></p>
 <p><strong>FTP Directory in Chrome</strong></p>
 </li>
 <li>
 <p>Click on <strong>"phpinfo.php"</strong>. This will execute the phpinfo script we just uploaded. It uses the phpinfo() command to list various php configuration parameters.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The files that we uploaded earlier contained code. These code are executed by the webserver. </p>
+</div>
 </li>
 <li>
 <p>The PHP configuration is displayed on-screen. Let's inspect what we uploaded via FTP earlier.</p>
 </li>
 <li>
-<p>Open "Files" in the upper left-hand corner of the screen and navigate to Documents-&gt;FTPFiles. Double-click on "phpinfo.php". This will open the file in a text editor.</p>
+<p>Open "Files" in the upper left-hand corner of the screen (in the Favorites bar) and navigate to Documents-&gt;FTPFiles. Double-click on "phpinfo.php". This will open the file in a text editor.</p>
+<p><img alt="" class="zoom" src="media/img-1615527606-20210312.png" /></p>
+<p><strong>File</strong></p>
 <p><img alt="" src="media/image5.png" /></p>
-</li>
-<li>
-<p>phpinfo.php content</p>
+<p><strong>phpinfo.php content</strong></p>
 </li>
 </ol>
 <p>The file contains a single PHP command, "phpinfo()". This command, if executed, creates the output we saw earlier. This proves that the server executed our code.</p>
 <ol>
 <li>
-<p>Go back to <a href="http://www.dev522.org/ftp/"><strong>http://www.sec522.org/ftp/</strong></a> in Chrome and click on <strong>"phpshell.php"</strong>.</p>
+<p>Go back to <a href="http://lab-1.3.sans.labs/ftp"><strong>http://lab-1.3.sans.labs/ftp</strong></a> in Chrome and click on <strong>"phpshell.php"</strong>.</p>
 </li>
 <li>
 <p>Log in with the username <strong>"**sec522</strong>"** and the password <strong>"**training</strong>".**</p>
@@ -1042,7 +1050,7 @@
 </code></pre></div>
 </li>
 <li>
-<p>Open Google Chrome and visit <a href="http://www.dev522.org:9000">http://www.sec522.org:9000</a></p>
+<p>Open Google Chrome and visit <a href="http://lab-1.3.sans.labs:9000/">http://lab-1.3.sans.labs:9000/</a></p>
 </li>
 <li>
 <p>Log in using the username "sec522" and the password "training".</p>
@@ -1084,7 +1092,7 @@
 <p>We will experiment with the mod_security web application firewall in the following exercise.</p>
 <ol>
 <li>
-<p>In Chrome, go to <a href="http://www.dev522.org/modsec"><strong>http://www.sec522.org/modsec</strong></a> and click on the two files "<strong>cc.html"</strong> and <strong>"trans.txt"</strong>.</p>
+<p>In Chrome, go to <a href="http://normalsecurity.sans.labs"><strong>http://normalsecurity.sans.labs</strong></a> and click on the two files "<strong>cc.html"</strong> and <strong>"trans.txt"</strong>.</p>
 <details class="question"><summary>What do these two files show?</summary><p><strong>cc.html</strong> shows transaction data including credit card numbers.</p>
 <p><strong>trans.txt</strong> leaks source code.</p>
 </details>
@@ -1093,33 +1101,29 @@
 </details>
 </li>
 <li>
-<p>Try <a href="http://www.sec522.org/modsec/form.php">http://www.sec522.org/modsec/form.php</a>. You will be able to submit the string "cats are evil" or other strings for that matter.</p>
+<p>Try <a href="http://normalsecurity.sans.labs/form.php">http://normalsecurity.sans.labs/form.php</a>. You will be able to submit the string "cats are evil" or other strings for that matter.</p>
+<div class="admonition switch">
+<p class="admonition-title">Switch</p>
+<p>We are now switching to the mod_security protected version of the same website</p>
+</div>
 </li>
 <li>
-<p>Open a terminal by clicking on the "<strong>Terminal</strong>" icon at the left side of the screen. We will enable the web application firewall using the command "mod_security".</p>
-<div class="highlight"><pre><span></span><code>mod_security
-</code></pre></div>
-<p><pre>
-mod_security enabled
-</pre></p>
+<p>Revisit the two URLs above (under <a href="http://modsecurity.sans.labs"><strong>http://modsecurity.sans.labs</strong></a>). What do you see now? (You may need to reload the page if you still see the original text.)</p>
 </li>
 <li>
-<p>Revisit the two URLs above (under <a href="http://www.dev522.org/modsec"><strong>http://www.sec522.org/modsec</strong></a>). What do you see now? (You may need to reload the page if you still see the original text.)</p>
+<p>Revisit <strong><a href="http://modsecurity.sans.labs/form.php">http://modsecurity.sans.labs/form.php</a></strong> and see if you can still enter "Cats are evil". Try "Cats are cute" instead.</p>
 </li>
 <li>
-<p>Revisit <strong><a href="http://www.sec522.org/modsec/form.php">http://www.sec522.org/modsec/form.php</a></strong> and see if you can still enter "Cats are evil". Try "Cats are cute" instead.</p>
+<p>Go to <strong><a href="http://modsecurity.sans.labs">http://modsecurity.sans.labs</a></strong>. This URL is blocked as well now. Keep that in mind when inspecting the rules later.</p>
 </li>
 <li>
-<p>Go to <strong><a href="http://www.sec522.org/modsec/">http://www.sec522.org/modsec/</a></strong>. This URL is blocked as well now. Keep that in mind when inspecting the rules later.</p>
-</li>
-<li>
-<p>Review the web application firewall's log file at <strong><a href="http://www.sec522.org/modsec/logfile">http://www.sec522.org/modsec/logfile</a>.</strong></p>
+<p>Review the web application firewall's log file at <strong><a href="http://modsecurity.sans.labs/modsecurity.log">http://modsecurity.sans.labs/modsecurity.log</a>.</strong></p>
 <div class="admonition question">
 <p class="admonition-title">Try to identify the log entries that indicate which URL was blocked and why?</p>
 </div>
 </li>
 <li>
-<p>Next, we are going to examine the ruleset to see what rules are triggered to block access to the file. Open the configuration file at <strong><a href="http://www.dev522.org/modsec/configfile">http://www.sec522.org/modsec/configfile</a>.</strong></p>
+<p>Next, we are going to examine the ruleset to see what rules are triggered to block access to the file. Open the configuration file at <strong><a href="http://modsecurity.sans.labs/modsecurity.rules">http://modsecurity.sans.labs/modsecurity.rules</a>.</strong></p>
 <div class="admonition question">
 <p class="admonition-title">Try to understand what the rule is matching for.</p>
 </div>
@@ -1127,12 +1131,6 @@ mod_security enabled
 </ol>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
-<div class="admonition danger">
-<p class="admonition-title">Critical: After you completed this exercise, switch to a terminal window to run <strong>normal_security</strong>.</p>
-<p>This will disable the web application firewall.</p>
-<div class="highlight"><pre><span></span><code>normal_security
-</code></pre></div>
-</div>
 <hr />
 <h2 id="explore-further">Explore Further</h2>
 <ul>
