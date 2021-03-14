@@ -919,7 +919,7 @@
 </ul>
 <hr />
 <h3 id="no-hints">No Hints</h3>
-<p>The application under attack is the animal shelters "Citrus Gateway". The "Citrus Gateway" allow access to internal application, but the shelter never really used it, so it sits in its default configuration exposed to the internet. There are two attacks happening. The log does not have necessarily all the information. For the second attack, the "CGW-User" header was logged. To play with the application, see <a href="http://www.sec522.org/citrusgw/index.php">http://www.sec522.org/citrusgw/index.php</a> . The files for the application can be found in /var/www/sec522.org/html/citrusgw/</p>
+<p>The application under attack is the animal shelters "Citrus Gateway". The "Citrus Gateway" allow access to internal application, but the shelter never really used it, so it sits in its default configuration exposed to the internet. There are two attacks happening. The log does not have necessarily all the information. For the second attack, the "CGW-User" header was logged. To play with the application, see <a href="http://lab-5.5.sans.labs/citrusgw/index.php">http://lab-5.5.sans.labs/citrusgw/index.php</a> . The files for the application can be found in /etc/docker/compose/5.5/web/html/citrusgw</p>
 <h3 id="step-by-step">Step by Step</h3>
 <p>The logs use the following format (the last field is only present for the last few lines of the log):</p>
 <pre style="white-space: pre-wrap;">
@@ -980,7 +980,7 @@ www.sec522.org:80 127.0.0.1 - - [26/Jan/2020:00:25:58 -0500] "POST /citrusgw/api
 </table>
 <ol>
 <li>
-<p>Explore the attacked application to become familiar with it. Start by loading <a href="http://www.sec522.org/citrusgw/index.php">http://www.sec522.org/citrusgw/index.php</a> in Google Chrome</p>
+<p>Explore the attacked application to become familiar with it. Start by loading <a href="http://lab-5.5.sans.labs/citrusgw/index.php">http://lab-5.5.sans.labs/citrusgw/index.php</a> in Google Chrome</p>
 </li>
 <li>
 <p>Log in using the credentials "sec522" and "training".</p>
@@ -1019,7 +1019,7 @@ www.sec522.org:80 127.0.0.1 - - [26/Jan/2020:00:25:58 -0500] "POST /citrusgw/api
 <p>The second part of the exercise uses the log file you have already open, but the requests are now hitting newbm.php. Refer to the field list in the introduction above to identify which field changes for some of the requests.</p>
 </li>
 <li>
-<p>You may want to open /var/www/dev522.org/citrusgw/api/newbm.php first in a text editor (Visual Studio Code) to understand a bit more what is happening.</p>
+<p>You may want to open /etc/docker/compose/5.5/web/html/citrusgw/api/newbm.php first in a text editor (Visual Studio Code) to understand a bit more what is happening.</p>
 <p>Try to answer these questions:</p>
 <div class="admonition note">
 <p class="admonition-title">5. What type of attack was the attacker launching?</p>

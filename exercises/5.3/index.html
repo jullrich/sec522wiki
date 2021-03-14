@@ -952,11 +952,11 @@
 <hr />
 <h2 id="part-1-session-vs-local-storage">Part 1: Session vs. Local Storage</h2>
 <h3 id="no-hints">No Hints</h3>
-<p>Start at <a href="http://www.sec522.org/html5">http://www.sec522.org/html5</a>. You will find links to the three exercises and basic instruction about what to do. Attempt to fix the security issue for the stock trading application in #2.</p>
+<p>Start at <a href="http://lab-5.3.sans.labs/html5.html">http://lab-5.3.sans.labs/html5.html</a>. You will find links to the three exercises and basic instruction about what to do. Attempt to fix the security issue for the stock trading application in #2.</p>
 <h3 id="step-by-step">Step by Step</h3>
 <ol>
 <li>
-<p>Browse to <strong><a href="http://www.sec522.org/html5">http://www.sec522.org/html5</a></strong>.</p>
+<p>Browse to <strong><a href="http://lab-5.3.sans.labs/html5.html">http://lab-5.3.sans.labs/html5.html</a></strong>.</p>
 </li>
 <li>
 <p>Click on "1 -- Local Storage and Session Storage".</p>
@@ -968,7 +968,7 @@
 <p>Click on both "Save" buttons.</p>
 </li>
 <li>
-<p>Open the same page, <a href="http://www.sec522.org/html5/storage.html">http://www.sec522.org/html5/storage.html</a>, in a new tab (press CTRL+T, or use the "File" menu in the browser).</p>
+<p>Open the same page, <a href="http://lab-5.3.sans.labs/storage.html">http://lab-5.3.sans.labs/storage.html</a>, in a new tab (press CTRL+T, or use the "File" menu in the browser).</p>
 </li>
 <li>
 <p>In this new tab, to the right of the text areas, you will see "Saved Data". Only one of these fields is prefilled; the other field is empty. For one of the text areas, LocalStorage was used. For the other one, we used SessionStorage. Which one is which?</p>
@@ -978,7 +978,7 @@
 </li>
 <li>
 <p>In Chrome, open the developer tools (press SHIFT-CTRL-I) and select the "Application" tab. You will see options to inspect local and session storage on the left.</p>
-<p><img alt="" src="media/image1.png" /></p>
+<p><img alt="" class="zoom" src="media/img-1615706413-20210314.png" /></p>
 <p><strong>Adjusting Local Storage</strong></p>
 </li>
 <li>
@@ -992,7 +992,7 @@
 <h2 id="part-2-cross-window-messaging">Part 2: Cross-Window Messaging</h2>
 <ol>
 <li>
-<p>Open the "Cross-Domain Messaging" exercise at <a href="http://www.sec522.org/html5">http://www.sec522.org/html5</a></p>
+<p>Open the "Cross-Domain Messaging" exercise at <a href="http://lab-5.3.sans.labs/trader.html">http://lab-5.3.sans.labs/trader.html</a></p>
 </li>
 <li>
 <p>You will see a simple "Stock Trading" application. Place a trade in the green "Trade" window by selecting a stock symbol and entering a quantity.</p>
@@ -1011,7 +1011,7 @@
 </li>
 <li>
 <p>On the left, you will find "ad.html" after expanding "adframe (ad.html)". The "postMessage" function will be found on line 29.</p>
-<p><img alt="" src="media/image2.png" /></p>
+<p><img alt="" class="zoom" src="media/img-1615706645-20210314.png" /></p>
 </li>
 <li>
 <p>Select "platform.html" on the left. This will bring up the trading platform's source code that receives the message.</p>
@@ -1024,7 +1024,7 @@
 <div class="admonition question">
 <p class="admonition-title">Can you fix the error?</p>
 </div>
-<p>You can find the source code for the files in /srv/www/sec522.org/html/html5/platform.html.</p>
+<p>You can find the source code for the files in /etc/docker/compose/5.3/web/html/platform.html.</p>
 </li>
 </ol>
 <hr />
@@ -1032,7 +1032,7 @@
 <p>In this exercise, you will see four different input fields. Each field is supposed to validate the input to limit data submitted to the description to the left of the input field. For example, the user is not supposed to enter a number that exceeds 100 in the first input field. The actual validation is either too strict or too loose. Find out what needs to be improved to correct the regular expressions used to validate the data.</p>
 <ol>
 <li>
-<p>Open <a href="http://www.sec522.org/html5/valid.html">http://www.sec522.org/html5/valid.html</a> in Chrome.</p>
+<p>Open <a href="http://lab-5.3.sans.labs/valid.html">http://lab-5.3.sans.labs/valid.html</a> in Chrome.</p>
 </li>
 <li>
 <p>In the first input field, enter "1000" and click the "Submit" button. You will not receive an error message (but you should).</p>
@@ -1058,7 +1058,7 @@
 <h4 id="part-2_1">Part 2:</h4>
 <p>platform.html never checks the origin of the message. This will allow any window to send messages if that window can obtain a handle to the "platform" IFrame. To</p>
 <p>check for the origin, you could add this code.</p>
-<div class="highlight"><pre><span></span><code><span class="x">If ( event.origin != &#39;http://www.sec522.org&#39;) {</span>
+<div class="highlight"><pre><span></span><code><span class="x">If ( event.origin != &#39;http://lab-5.3.sans.labs&#39;) {</span>
 <span class="x">    return 0</span>
 <span class="x">}</span>
 </code></pre></div>

@@ -993,63 +993,92 @@
 <p>Go to <a href="http://lab-2.4.sans.labs/unicodexss.php">http://lab-2.4.sans.labs/unicodexss.php</a>. This page will load the file we looked at above and display it using a UTF-8 character set. In this context, you will see an "XSS" popup.</p>
 </li>
 <li>
-<p>Let's check the source code for unicodexss.php by going to <a href="http://lab-2.4.sans.labs/unicodexss.phps">http://lab-2.4.sans.labs/unicodexss.phps</a>. You will see that the file calls file_get_contents, a simple function that will read a file and send its contents to the browser.</p>
+<p>Let's check the source code for unicodexss.php by going to <a href="http://lab-2.4.sans.labs/unicodexss.phps">http://lab-2.4.sans.labs/unicodexss.phps</a>. You will see that the file calls file_get_contents (line 9), a simple function that will read a file and send its contents to the browser.</p>
 </li>
 <li>
 <p>Open a terminal and run:</p>
-<div class="highlight"><pre><span></span><code>cd /var/www/dev522.org/html/unicode
-cat unicode.txt
+<div class="highlight"><pre><span></span><code>cat /etc/docker/compose/2.4/web/html/unicode.txt
 </code></pre></div>
 </li>
 </ol>
-<p>This will display the "script", not the Chinese characters we saw earlier.</p>
+<p>This will display the "script" in the OS context, it's not showing the Chinese characters we saw earlier.</p>
 <hr />
 <h2 id="part-3-file-upload">Part 3: File Upload</h2>
 <h3 id="no-hints">No Hints</h3>
-<p>The upload function of the TWiki system is our test subject in this exercise. Browse to <strong><a href="http://lab-2.4.sans.labs/twiki/bin/view/">http://lab-2.4.sans.labs/twiki/bin/view/</a></strong> and experiment with the upload function, then browse through the "Documents" directory on the desktop and see how you can leverage the upload feature to compromise the TWiki system.</p>
+<p>The upload function of the TWiki system is our test subject in this exercise. Browse to <strong><a href="http://lab-2.4.sans.labs/fileupload.php">http://lab-2.4.sans.labs/fileupload.php</a></strong> and experiment with the upload function, then browse through the "Documents" directory on the desktop and see how you can leverage the upload feature to compromise the upload system.</p>
 <h3 id="step-by-step_1">Step by Step</h3>
 <ol>
 <li>
-<p>With Chrome, browse to <a href="http://lab-2.4.sans.labs/twiki/bin/view/">http://lab-2.4.sans.labs/twiki/bin/view/</a></p>
-<p>This is a default install of the TWiki content management system. Users can contribute and edit content, as well as upload an image or document.</p>
-<p>Feel free to explore the application and understand its function.</p>
+<p>With Chrome, browse to <a href="http://lab-2.4.sans.labs/fileupload.php">http://lab-2.4.sans.labs/fileupload.php</a></p>
+<p>In this system, users can upload an image or document.</p>
 </li>
 <li>
-<p>Click on <strong>"Attach image or document"</strong> at the bottom of the page.</p>
+<p>Click the button labeled "Choose File", then navigate to <strong>Documents</strong> (left tab) then select the <strong>hackercat.php.1</strong> file. Click on <strong>open</strong>.</p>
+<p><img alt="" class="zoom" src="media/img-1615666680-20210313.png" /></p>
 </li>
 <li>
-<p>Click the button labeled "Choose File", then navigate to ~DocumentsTwiki</p>
+<p>You should now see the local file selected. Click on <strong>"Upload File"</strong> at the to the right side of the file selection.</p>
+<p>The file is then uploaded to the server and is subsequently displayed on the main page as part of the attachment to the page (new files at the top).</p>
 </li>
 <li>
-<p>Select the file "<strong>hackercat.php.1</strong>" and click on <strong>open</strong>.</p>
-</li>
-<li>
-<p>You should now see the local file selected. Click on <strong>"Upload File"</strong> at the bottom of the page.</p>
-<p>The file is then uploaded to the server and is subsequently displayed on the main page as part of the attachment to the page.</p>
-</li>
-<li>
-<p>Scroll down to the bottom of the page and click the link for "hackercat.php.1".</p>
-<details class="question"><summary>What is being displayed on-screen?</summary><p>To understand the content displayed on the screen and what is going on behind the scene, we need to review the file we uploaded to the server.</p>
+<p>Click the link for "hackercat.php.1".</p>
+<details class="question"><summary>What is being displayed on-screen?</summary><p>At the top of the page, there are some corrupted characters and then followed by the PHP environment details. To understand the content displayed on the screen and what is going on behind the scene, we need to review the file we uploaded to the server.</p>
 </details>
 </li>
 <li>
-<p>Use Text Editor (see icon on the left) to open the <strong>hackercat.php.1</strong> file. It is located within the <strong>"Documents" -&gt; "TWiki"</strong> directory.</p>
+<p>Use Text Editor or Visual Studio Code (see icon on the left favorite bar) to open the <strong>hackercat.php.1</strong> file. It is located within the <strong>Documents</strong> directory.</p>
 </li>
 </ol>
 <p><br></p>
 <p>The editor may complain that there are invalid characters in the file. You can click on <strong>"Edit Anyway"</strong> to ignore the warning. Within the first three lines of the file, you should find "&lt;?php phpinfo() ?&gt;"; it is a single PHP programming command. phpinfo(); is a call to a function that displays the status of the current PHP environment to the user. What we have seen in the browser when we click on the uploaded file is actually the result of this command executing. Although the rest of the content in the file are binary characters forming a gif graphic file, the PHP interpreter picks out the content it understands and attempts to execute the command.</p>
 <p>We have successfully uploaded the file and executed the commands within the file. Execution of scripting command is a serious compromise of server security.</p>
 <p>In most modern Linux distributions, PHP is often bundled and enabled by default. Any file with a ".php" extension is executed by PHP interpreter.</p>
-<p>In the /etc/apache2/mods-enabled/php7.2.conf configuration file, which controls the PHP instance in Apache, there is the following configuration line:</p>
+<p>In the /etc/docker/compose/2.4/vhost.conf configuration file, which controls both the Apache and the PHP instance, there is the following configuration line:</p>
 <div class="highlight"><pre><span></span><code>&lt;FilesMatch &quot;.+.ph(ar|p|tml)&quot;&gt;
     SetHandler application/x-httpd-php
 &lt;/FilesMatch&gt;
 </code></pre></div>
-<p>This tells the Apache server to pass any file that <strong>contains</strong> .php to the PHP interpreter for execution. This means not just .php but also .php.1 or .php.bak as well.</p>
-<p>The upload code in TWiki had anticipated someone might upload PHP code, so the following filter is implemented.</p>
-<div class="highlight"><pre><span></span><code>$uploadFilter = &quot;^(.htaccess|.*.(?:php[0-9s]?|phtm[l]?|pl|py|cgi))$&quot;;
+<p>This tells the Apache server to pass any file that <strong>contains</strong> .php to the PHP interpreter for execution. This means not just .php but also .php.1 or .php.bak as well. This Apache configuration is the default in mutiple Linux distributions.</p>
+<p>The upload code in TWiki had anticipated someone might upload PHP code, so numberous filters are implemented. You can inspect them directly at <strong><a href="http://lab-2.4.sans.labs/fileupload.phps">http://lab-2.4.sans.labs/fileupload.phps</a></strong> and the code are below as well</p>
+<div class="highlight"><pre><span></span><code><span class="x">   # retrieve file parameters</span>
+
+<span class="x">   $sTmpFile=$_FILES[&#39;file&#39;][&#39;tmp_name&#39;];</span>
+<span class="x">   $sFileName=$_FILES[&#39;file&#39;][&#39;name&#39;];</span>
+<span class="x">   $nFileSize=$_FILES[&#39;file&#39;][&#39;size&#39;];</span>
+<span class="x">   $aCheck=getimagesize($sTmpFile);</span>
+
+<span class="x">   # check if it is an image</span>
+
+<span class="x">   if ( $aCheck !== false ) {</span>
+<span class="x">       $sMessage .= &#39;File is an image.&lt;br/&gt;&#39;;</span>
+<span class="x">   } else {</span>
+<span class="x">       $sError .= &#39;File is not an image.&lt;br/&gt;&#39;;</span>
+<span class="x">   }</span>
+
+<span class="x">   # check file size</span>
+
+<span class="x">   if ( file_exists(&quot;images/&quot;.$sFileName) ) {</span>
+<span class="x">       $sError .= &#39;File already exists.&lt;br/&gt;&#39;;</span>
+<span class="x">   }</span>
+
+<span class="x">   # check if the extension is .php</span>
+
+<span class="hll"><span class="x">   if ( preg_match(&#39;/\.php$/&#39;,$sFileName) ) {</span>
+</span><span class="x">      $sError .= &#39;Filename has the wrong extension.&lt;br/&gt;&#39;;</span>
+<span class="x">   }</span>
+
+<span class="x">   # check mime type</span>
+
+<span class="x">   if ( mime_content_type($sTmpFile)===&#39;image/gif&#39; ||</span>
+<span class="x">        mime_content_type($sTmpFile)===&#39;image/png&#39; ||</span>
+<span class="x">        mime_content_type($sTmpFile)===&#39;image/jpg&#39; ||</span>
+<span class="x">        mime_content_type($sTmpFile)===&#39;image/jpeg&#39; ) {</span>
+<span class="x">      $sMessage.=&#39;File type: &#39;.mime_content_type($sTmpFile);</span>
+<span class="x">   } else {</span>
+<span class="x">      $sError.=&#39;Wrong File type: &#39;.mime_content_type($sTmpFile);</span>
+<span class="x">   }</span>
 </code></pre></div>
-<p>This only blocks extensions like ".php" or ".php1" but not .php.1. Double extensions like ".php.1" can be used to bypass this filter.</p>
+<p>This only blocks extensions like ".php" but not .php.1. Double extensions like ".php.1" can be used to bypass this filter.</p>
 <p>How can this type of vulnerability be avoided? There are multiple mitigation avenues.</p>
 <p>As soon as the server receives the file, it can change the file extension to make sure it cannot be executed. For example, changing everything with a ".txt" extension will make any script interpreted as text format.</p>
 <p>If the file does not need to be downloaded by the user in normal operation, do not store the file in web directories. Hide the file on the server in a directory outside of the web-accessible files. If the files must be downloaded by other users, ensure there are no execution rights on the directory or the file itself. Various platforms have different ways to do this. Essentially, the file or the whole directory storing uploaded content should be denied any execution of code.</p>
