@@ -14,7 +14,7 @@
     
     
       
-        <title>2.1: SQL Injection - SEC522 Workbook</title>
+        <title>3.2: Session Fixation and Session Breaking - SEC522 Workbook</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#sql-injection" class="md-skip">
+        <a href="#session-fixation-and-session-breaking" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              2.1: SQL Injection
+              3.2: Session Fixation and Session Breaking
             
           </span>
         </div>
@@ -451,14 +451,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
       <label class="md-nav__link" for="__nav_3">
         Day 2
@@ -474,110 +472,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          2.1: SQL Injection
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../2.1/" class="md-nav__link">
         2.1: SQL Injection
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#part-1-basic-sql-injection" class="md-nav__link">
-    Part 1: Basic SQL Injection
-  </a>
-  
-    <nav class="md-nav" aria-label="Part 1: Basic SQL Injection">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#no-hints" class="md-nav__link">
-    No Hints
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-by-step" class="md-nav__link">
-    Step by Step
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#part-2-phpbb-sql-injection" class="md-nav__link">
-    Part 2: phpBB SQL Injection
-  </a>
-  
-    <nav class="md-nav" aria-label="Part 2: phpBB SQL Injection">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#no-hints_1" class="md-nav__link">
-    No Hints
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-by-step_1" class="md-nav__link">
-    Step by Step
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
-    Conclusion
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#explore-further" class="md-nav__link">
-    Explore Further
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -630,12 +529,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
       
       <label class="md-nav__link" for="__nav_4">
         Day 3
@@ -663,11 +564,117 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../3.2/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          3.2: Session Fixation and Session Breaking
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         3.2: Session Fixation and Session Breaking
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-session-fixation" class="md-nav__link">
+    Part 1: Session Fixation
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 1: Session Fixation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-hints" class="md-nav__link">
+    No Hints
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step" class="md-nav__link">
+    Step by Step
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#answers" class="md-nav__link">
+    Answers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-breaking-sessions" class="md-nav__link">
+    Part 2: Breaking Sessions
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 2: Breaking Sessions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-hints_1" class="md-nav__link">
+    No Hints
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step_1" class="md-nav__link">
+    Step by Step
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explore-further" class="md-nav__link">
+    Explore Further
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -930,136 +937,130 @@
     content: 'SANS SEC522 Workbook';
 }}
 @page :left { @bottom-left {
-  content: '2.1-' counter(page);
+  content: '3.2-' counter(page);
 }}
 @page :right { @bottom-right {
-  content: '2.1-' counter(page);
+  content: '3.2-' counter(page);
 }}
 </style>
 
-<h1 id="sql-injection">SQL Injection</h1>
+<h1 id="session-fixation-and-session-breaking">Session Fixation and Session Breaking</h1>
 <hr />
 <h4 id="objectives">Objectives</h4>
-<div class="codehilite"><pre><span></span><code>Estimated Time: 15 minutes
-</code></pre></div>
-
+<p>Estimated Time: 12 minutes</p>
 <h5 id="part-1">Part 1:</h5>
 <blockquote>
-<p>You will familiarize yourself with the basic principles of SQL injection.</p>
+<p>In the first part, you will learn how to identify and fix session fixation vulnerabilities.</p>
 </blockquote>
 <h5 id="part-2">Part 2:</h5>
 <blockquote>
-<p>You will experiment with an actual application. This will provide us with a realistic example of how SQL injection works and how an attacker may exploit it.</p>
+<p>In second part, you will experience weak session IDs and learn how an attacker may exploit them.</p>
 </blockquote>
 <h4 id="requirements">Requirements</h4>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Lab VM</li>
 </ul>
 <hr />
-<h2 id="part-1-basic-sql-injection">Part 1: Basic SQL Injection</h2>
+<h2 id="part-1-session-fixation">Part 1: Session Fixation</h2>
 <h3 id="no-hints">No Hints</h3>
-<p>We are again using our "Animal Shelter" application. This time, we use a modified page that includes a search feature. The search feature allows for SQL injection. You can check the "Debug" checkbox to see the SQL query. The page can be found at <a href="http://lab-2.1.sans.labs/">http://lab-2.1.sans.labs/</a>.</p>
+<h5 id="edit">Edit</h5>
+<p>Load <a href="http://lab-3.2.sans.labs/">http://lab-3.2.sans.labs/</a> in Chrome. Two out of three login forms (links are at upper right hand corners) are susceptible to session fixation. Which one are vulnerable and why? (login/pass - sec522/training) </p>
 <h3 id="step-by-step">Step by Step</h3>
+<p>This exercise will ask you to run Firefox in addition to Chrome. To start Firefox when asked to, click on the Firefox icon at the left side of the screen. </p>
+<p>IMPORTANT: Do not "Refresh Firefox" or update Firefox. Click "Cancel" if a dialog box appears offering to refresh Firefox.</p>
 <ol>
 <li>
-<p>Open <a href="http://lab-2.1.sans.labs/">http://lab-2.1.sans.labs/</a> in Google Chrome.</p>
+<p>Load <a href="http://lab-3.2.sans.labs/login1.php">http://lab-3.2.sans.labs/login1.php</a> in the Chrome browser, this is the first login form. You will be redirected to a URL that includes a session ID as a get parameter. The session ID is random. It should look like: sec522=gn5blighc8a)o5ks45k3pu81l</p>
 </li>
 <li>
-<p>Enter one of the animal names (for example, "Stash") in the search box and click "Submit". Only this animal should now be visible.</p>
+<p>Copy the session ID and paste it into an empty file (you can use the text editor on the left favorite bar).</p>
 </li>
 <li>
-<p>Enter a single quote ( ' ) in the search box and click "Submit". This should trigger an SQL error. The SQL error message will include the query. Try to identify the vulnerability.</p>
-</li>
-</ol>
-<h4 id="digging-deeper">Digging Deeper</h4>
-<div class="admonition danger">
-<p class="admonition-title">Critical: The next few commands require you to include a space after the final '--'.</p>
-</div>
-<ol>
-<li>
-<p>Enter the string below in the search field and click submit. You will not see an error now, but all animals are visible.</p>
-<div class="highlight"><pre><span></span><code>&#39; OR 1=1 -- 
-</code></pre></div>
-</li>
-<li>
-<p>Enter the below string and click "Submit".</p>
-<div class="highlight"><pre><span></span><code>&#39; UNION SELECT 1,2,3 -- 
-</code></pre></div>
-<p>The last step will again result in an error message. The error message will state that both SELECT statements in a UNION query need to return the same number of columns. Count the columns returned by the first statement and rewrite the second statement using the right number of columns.</p>
-</li>
-<li>
-<p>Enter the below string and hit submit. You will now get a broken image and the numbers 2 and 4 will be visible below the broken image.</p>
-<div class="highlight"><pre><span></span><code>&#39; UNION SELECT 1,2,3,4,5,6,7 -- 
-</code></pre></div>
-<p><img alt="" class="zoom" src="media/image1.png" /></p>
-<p><strong>Result of Entering the Correct UNION Query</strong></p>
-</li>
-<li>
-<p>Replace the SELECT query with one selecting the username and password column from the animalshelter.users table</p>
-<div class="highlight"><pre><span></span><code>&#39; UNION SELECT 1,username,3,password,5,6,7 FROM animalshelter.users -- 
-</code></pre></div>
+<p>Log in using the first form, "Step 1", using the username "sec522" and the password "training". Did the session ID change? The form is vulnerable if it did not change.</p>
 <div class="admonition tip">
-<p class="admonition-title">Do not forget the space after the -- in the end</p>
+<p class="admonition-title">Tip</p>
+<p>For a secure application. The session ID should change at the login time, otherwise, session fixation can occur.</p>
 </div>
-<p>You will now see two broken images (one for each user in the database). The usernames and passwords are displayed where you saw the numbers 2 and 4 in Step 6.</p>
 </li>
 <li>
-<p>View the page source (CTRL-U) to see the password hashes more clearly.</p>
-<p>You may try other queries now.</p>
+<p>To simulate the attacker, open a second browser. (Firefox is installed in the virtual machine. Search for it by clicking on "Activities".) Copy and paste the URL and check if you are indeed logged in. </p>
+<div class="admonition done">
+<p class="admonition-title">What have we accomplished?</p>
+<p>The firefox browser is to simulate the attacker's control. In real life attacks, the attacker would be providing that link containing a session ID to the user to login with. Once the user login with the provided session ID, the attacker can assume the identity of the user.</p>
+</div>
+</li>
+<li>
+<p>Close Firefox and close the logged in tab in Chrome.</p>
+</li>
+<li>
+<p>Using a new Chrome browser tab, load the second login page <a href="http://lab-3.2.sans.labs/login2.php">http://lab-3.2.sans.labs/login2.php</a></p>
+</li>
+<li>
+<p>Again, copy paste the session ID from the browser URL.</p>
+<p>Log in using the Login #2 form.</p>
+<div class="admonition question">
+<p class="admonition-title">Did the session ID change?</p>
+</div>
+</li>
+<li>
+<p>Open Firefox again and copy the old session ID to the URL bar.</p>
+<div class="admonition question">
+<p class="admonition-title">Does it still work?</p>
+</div>
+</li>
+<li>
+<p>Now try the third and final login form #3 (<a href="http://lab-3.2.sans.labs/login3.php">http://lab-3.2.sans.labs/login3.php</a>). Log in again and compare the session IDs.</p>
+</li>
+<li>
+<p>Again, copy the original session ID to the URL bar in Firefox.</p>
+<div class="admonition question">
+<p class="admonition-title">Does the page work?</p>
+</div>
+</li>
+<li>
+<p>Compare the source code of login #2 and loging #3:</p>
+<p><a href="http://lab-3.2.sans.labs/login2.phps">http://lab-3.2.sans.labs/login2.phps</a>  <br>
+<a href="http://lab-3.2.sans.labs/login3.phps">http://lab-3.2.sans.labs/login3.phps</a></p>
+<p>There are subtle differences in the location of session_regenerate_id. See lines 23 and 24 of the code. </p>
+<div class="admonition questions">
+<p class="admonition-title">What are the differences?</p>
+</div>
 </li>
 </ol>
-<details class="question"><summary>Can you create a query without the '--' in the end?</summary><p>Answer: <strong>' OR 1='1</strong></p>
+<h3 id="answers">Answers</h3>
+<details class="question"><summary>Did the session ID change?</summary><p>3 &amp; 5: The session ID did not change and can be used in a different browser.</p>
+<p>7: The session ID did change.</p>
+</details>
+<details class="question"><summary>Does it still work?</summary><p>8: The old session ID still works, and it is now associated with the user.</p>
+</details>
+<details class="question"><summary>Does the page work?</summary><p>10: The old session ID no longer works and you end up with a redirect loop---not elegant, but "secure".</p>
+</details>
+<details class="question"><summary>Does the page work?</summary><p>11: "fix2" regenerates the session ID after the login was verified. "fix3" regenerates the session ID first, so the user ID is never associated with the old session. Also, the old session is destroyed (the "true" parameter).</p>
 </details>
 <hr />
-<h2 id="part-2-phpbb-sql-injection">Part 2: phpBB SQL Injection</h2>
+<h2 id="part-2-breaking-sessions">Part 2: Breaking Sessions</h2>
 <h3 id="no-hints_1">No Hints</h3>
-<p>The old version of phpBB we have installed here suffers from multiple SQL injection flaws. In this exercise, we explore an SQL injection flaw in the messaging interface. To trigger the flaw, log in at <a href="http://phpbb.sans.labs">http://phpbb.sans.labs</a> (username: sec522, password: training) and then use one of the hints to get you started (<a href="http://phpbb.sans.labs">http://phpbb.sans.labs</a>). The injection will only work if you are logged in. You may also want to explore the login form for additional opportunities to experiment with SQL injection.</p>
+<p>Go to <a href="http://lab-3.2.sans.labs/session/login.php">http://lab-3.2.sans.labs/session/login.php</a>. Log in using the username "sec522" and the password "training". Try to switch to a different user's account after logging in.</p>
 <h3 id="step-by-step_1">Step by Step</h3>
-<p>We have a URL at hand that we know is vulnerable to SQL injection. The first step to test for SQL injection is to insert a quote into each field.</p>
-<p>The following steps will inspect a parameter used in the phpBB private messaging system.</p>
 <ol>
 <li>
-<p>Use Chrome to visit <strong><a href="http://phpbb.sans.labs">http://phpbb.sans.labs</a></strong>.</p>
+<p>In Google Chrome, proceed to <strong><a href="http://lab-3.2.sans.labs/session/login.php">http://lab-3.2.sans.labs/session/login.php</a></strong> and log in using the username <strong>sec522</strong> and the password <strong>training</strong>.</p>
+<p><img alt="" class="zoom" src="media/img-1615442622-20210311.png" /></p>
+<p><strong>Account Balance Screen</strong></p>
 </li>
 <li>
-<p>Log in using the username "sec522" and the password "training".</p>
+<p>Press SHIFT-CTRL-I to open the developer tools.</p>
 </li>
 <li>
-<p>Click on the "You have no new messages" link at the top of the page.</p>
+<p>Select the "Application" tab and select <a href="http://lab-3.2.sans.labs">http://lab-3.2.sans.labs</a> under Cookies.</p>
 </li>
 <li>
-<p>Click on the "Savebox" link.</p>
-</li>
-<li>
-<p>We are going to exploit this page. Open the following URL: <strong><a href="http://phpbb.sans.labs/hints.html">http://phpbb.sans.labs/hints.html</a></strong></p>
-<p>We will use the links on this page to explore and exploit the SQL injection vulnerability. Note how exploit URLs on this page will include a URL encoded single quote (%27) as part of the pm_sql_user parameter.</p>
-</li>
-<li>
-<p>We would want to know where in the statement the user input is located. Click on the second link (Exploit 1). Exploit 1 injects HTML into the SQL statement. This will make the injectable location visible in red.</p>
-</li>
-<li>
-<p>Return back to the hints page (<strong><a href="http://phpbb.sans.labs/hints.html">http://phpbb.sans.labs/hints.html</a></strong>)</p>
-</li>
-<li>
-<p>Read Exploit 2 to see how a union statement is used to join two distinct queries together. Click on the "Exploit 2" link. There is no error in the statement. We created a valid statement. The main purpose of this statement is to ensure the statement runs error free. If the number of fields is different between the two distinct statements, they cannot be "unioned" together.</p>
-</li>
-<li>
-<p>Return back to the hints page (<strong><a href="http://phpbb.sans.labs/hints.html">http://phpbb.sans.labs/hints.html</a></strong>).</p>
-<p>Exploit 3 simply makes the statement return \'aaa\', \'bbb\', and so on just to see which field can be returned on the screen, as some of the fields are not being returned on screen.</p>
-<p>Following Exploit 3, you will find a group of statements that use SQL injection to enumerate the table structure (infomation_schema holds all this information). One query at a time, information about the structure of the database is being returned; information such as table names and column names is gathered.</p>
-</li>
-<li>
-<p>The "Administrator Exploit" at the end of the page returns the administrator\'s username and password. Please click on this statement. This is dependent on the results of enumerating the table and column names in Step 11.</p>
-<p>We will dive into the source code of privmsg.php and investigate the reasons for the SQL injection. For the non-PHP-coders, do not worry; the code is really simple.</p>
-</li>
-<li>
-<p>Browse to <strong><a href="http://phpbb.sans.labs/privmsg.phps">http://phpbb.sans.labs/privmsg.phps</a></strong> (note the "s" at the end of the URL) to review the source code.</p>
-</li>
-<li>
-<p>Scroll to line 240 of the source code and review the variable $sql. Pay special attention to lines 226 and 229.</p>
-<p>$pm_sql_user on line 240 consists of data from line 226. Line 226 concatenates data from user input in $pm_sql_user with other data on lines 226 to 229. The .= operator means -- leave whatever is already in $pm_sql_user; in addition, also put the following data into $pm_sql_user. The $pm_sql_user variable isn\'t filtered or sanitized; it came straight from the user.</p>
-<p>Line 244 is where the user input gets concatenated with other static SQL strings to make the dynamic SQL statement. The resulting statement is passed to the database for execution on line 253.</p>
-<p>When raw user input gets to become part of a dynamic SQL query without validation, we know what the story looks like---SQL injection.</p>
+<p>Double-click on the cookie value (value is 1) and change it to 2 . Reload the page.</p>
+<p><img alt="" class="zoom" src="media/img-1615443698-20210311.png" /></p>
+<p><strong>Chrome Developer Tools Cookies</strong></p>
+<p>You will now see a different account. Experiment with different values and try to find the account with the most donations.</p>
+<details class="question"><summary>Which account has the most donations?</summary><p><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#116;&#100;&#101;&#101;&#114;&#110;&#101;&#115;&#115;&#49;&#56;&#64;&#119;&#111;&#114;&#100;&#112;&#114;&#101;&#115;&#115;&#46;&#99;&#111;&#109;">&#116;&#100;&#101;&#101;&#114;&#110;&#101;&#115;&#115;&#49;&#56;&#64;&#119;&#111;&#114;&#100;&#112;&#114;&#101;&#115;&#115;&#46;&#99;&#111;&#109;</a> of value 45 has the most donation at $997.74</p>
+</details>
 </li>
 </ol>
 <hr />
@@ -1086,7 +1087,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../1.4/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../3.1/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1095,19 +1096,19 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              1.4: SSRF and Credential Stealing
+              3.1: Authentication
             </div>
           </div>
         </a>
       
       
-        <a href="../2.2/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../3.3/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              2.2: Guestbook CSRF
+              3.3: OAuth and Access Control
             </div>
           </div>
           <div class="md-footer__button md-icon">

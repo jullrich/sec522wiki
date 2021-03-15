@@ -14,7 +14,7 @@
     
     
       
-        <title>2.1: SQL Injection - SEC522 Workbook</title>
+        <title>4.3: Javascript Security Testing - SEC522 Workbook</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#sql-injection" class="md-skip">
+        <a href="#javascript-security-testing" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              2.1: SQL Injection
+              4.3: Javascript Security Testing
             
           </span>
         </div>
@@ -451,14 +451,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
       <label class="md-nav__link" for="__nav_3">
         Day 2
@@ -474,110 +472,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          2.1: SQL Injection
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../2.1/" class="md-nav__link">
         2.1: SQL Injection
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#part-1-basic-sql-injection" class="md-nav__link">
-    Part 1: Basic SQL Injection
-  </a>
-  
-    <nav class="md-nav" aria-label="Part 1: Basic SQL Injection">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#no-hints" class="md-nav__link">
-    No Hints
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-by-step" class="md-nav__link">
-    Step by Step
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#part-2-phpbb-sql-injection" class="md-nav__link">
-    Part 2: phpBB SQL Injection
-  </a>
-  
-    <nav class="md-nav" aria-label="Part 2: phpBB SQL Injection">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#no-hints_1" class="md-nav__link">
-    No Hints
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-by-step_1" class="md-nav__link">
-    Step by Step
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
-    Conclusion
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#explore-further" class="md-nav__link">
-    Explore Further
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -708,12 +607,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
       
       <label class="md-nav__link" for="__nav_5">
         Day 4
@@ -753,11 +654,90 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../4.3/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          4.3: Javascript Security Testing
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         4.3: Javascript Security Testing
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-accessing-arbitrary-shopping-carts" class="md-nav__link">
+    Part 1: Accessing Arbitrary Shopping Carts
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 1: Accessing Arbitrary Shopping Carts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-hints" class="md-nav__link">
+    No Hints
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step" class="md-nav__link">
+    Step by Step
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-analyzing-minimized-javascript-advanced" class="md-nav__link">
+    Part 2: Analyzing Minimized JavaScript (Advanced)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explore-further" class="md-nav__link">
+    Explore Further
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -930,14 +910,14 @@
     content: 'SANS SEC522 Workbook';
 }}
 @page :left { @bottom-left {
-  content: '2.1-' counter(page);
+  content: '4.3-' counter(page);
 }}
 @page :right { @bottom-right {
-  content: '2.1-' counter(page);
+  content: '4.3-' counter(page);
 }}
 </style>
 
-<h1 id="sql-injection">SQL Injection</h1>
+<h1 id="javascript-security-testing">JavaScript Security Testing</h1>
 <hr />
 <h4 id="objectives">Objectives</h4>
 <div class="codehilite"><pre><span></span><code>Estimated Time: 15 minutes
@@ -945,121 +925,73 @@
 
 <h5 id="part-1">Part 1:</h5>
 <blockquote>
-<p>You will familiarize yourself with the basic principles of SQL injection.</p>
+<p>In this exercise, we will experiment with the built-in JavaScript debugger in Chrome and learn the basics of using this debugger for understanding the JavaScript running on a webpage.</p>
 </blockquote>
 <h5 id="part-2">Part 2:</h5>
-<blockquote>
-<p>You will experiment with an actual application. This will provide us with a realistic example of how SQL injection works and how an attacker may exploit it.</p>
-</blockquote>
+<blockquote></blockquote>
 <h4 id="requirements">Requirements</h4>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Lab VM</li>
 </ul>
 <hr />
-<h2 id="part-1-basic-sql-injection">Part 1: Basic SQL Injection</h2>
+<h2 id="part-1-accessing-arbitrary-shopping-carts">Part 1: Accessing Arbitrary Shopping Carts</h2>
 <h3 id="no-hints">No Hints</h3>
-<p>We are again using our "Animal Shelter" application. This time, we use a modified page that includes a search feature. The search feature allows for SQL injection. You can check the "Debug" checkbox to see the SQL query. The page can be found at <a href="http://lab-2.1.sans.labs/">http://lab-2.1.sans.labs/</a>.</p>
 <h3 id="step-by-step">Step by Step</h3>
-<ol>
-<li>
-<p>Open <a href="http://lab-2.1.sans.labs/">http://lab-2.1.sans.labs/</a> in Google Chrome.</p>
-</li>
-<li>
-<p>Enter one of the animal names (for example, "Stash") in the search box and click "Submit". Only this animal should now be visible.</p>
-</li>
-<li>
-<p>Enter a single quote ( ' ) in the search box and click "Submit". This should trigger an SQL error. The SQL error message will include the query. Try to identify the vulnerability.</p>
-</li>
-</ol>
-<h4 id="digging-deeper">Digging Deeper</h4>
-<div class="admonition danger">
-<p class="admonition-title">Critical: The next few commands require you to include a space after the final '--'.</p>
+<p>Chrome and many other browsers include capable JavaScript debuggers. They are commonly used by security professionals to understand the inner workings of a piece of JavaScript code.</p>
+<div class="admonition note">
+<p class="admonition-title">This exercise uses Juice Shop.</p>
 </div>
 <ol>
 <li>
-<p>Enter the string below in the search field and click submit. You will not see an error now, but all animals are visible.</p>
-<div class="highlight"><pre><span></span><code>&#39; OR 1=1 -- 
+<p>Start Juice Shop. Open a terminal and type</p>
+<div class="highlight"><pre><span></span><code>juiceshop start
 </code></pre></div>
+<p>You may see an error if Juice Shop is already running.</p>
 </li>
 <li>
-<p>Enter the below string and click "Submit".</p>
-<div class="highlight"><pre><span></span><code>&#39; UNION SELECT 1,2,3 -- 
-</code></pre></div>
-<p>The last step will again result in an error message. The error message will state that both SELECT statements in a UNION query need to return the same number of columns. Count the columns returned by the first statement and rewrite the second statement using the right number of columns.</p>
+<p>Go to Juice Shop in Chrome by visiting the URL <a href="http://juiceshop:3000">http://juiceshop:3000</a>.</p>
 </li>
 <li>
-<p>Enter the below string and hit submit. You will now get a broken image and the numbers 2 and 4 will be visible below the broken image.</p>
-<div class="highlight"><pre><span></span><code>&#39; UNION SELECT 1,2,3,4,5,6,7 -- 
-</code></pre></div>
-<p><img alt="" class="zoom" src="media/image1.png" /></p>
-<p><strong>Result of Entering the Correct UNION Query</strong></p>
+<p>Log in to Juice Shop using <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#101;&#99;&#53;&#50;&#50;&#64;&#115;&#101;&#99;&#53;&#50;&#50;&#46;&#111;&#114;&#103;">&#115;&#101;&#99;&#53;&#50;&#50;&#64;&#115;&#101;&#99;&#53;&#50;&#50;&#46;&#111;&#114;&#103;</a> and the password "training". Register a new account if the login fails (Juice Shop will reset its database whenever it is shut down).</p>
 </li>
 <li>
-<p>Replace the SELECT query with one selecting the username and password column from the animalshelter.users table</p>
-<div class="highlight"><pre><span></span><code>&#39; UNION SELECT 1,username,3,password,5,6,7 FROM animalshelter.users -- 
-</code></pre></div>
-<div class="admonition tip">
-<p class="admonition-title">Do not forget the space after the -- in the end</p>
-</div>
-<p>You will now see two broken images (one for each user in the database). The usernames and passwords are displayed where you saw the numbers 2 and 4 in Step 6.</p>
+<p>Press CTRL-SHIFT-I to open the debugger in Chrome.</p>
 </li>
 <li>
-<p>View the page source (CTRL-U) to see the password hashes more clearly.</p>
-<p>You may try other queries now.</p>
+<p>Select "Application" -&gt; "Session Storage" and review the session storage for "juiceshop".</p>
+</li>
+<li>
+<p>You will see a parameter called "bid". Change it to a different number (e.g., "3").</p>
+</li>
+<li>
+<p>Review the shopping cart in Juice Shop ("Your Basket"). You will see someone else's items.</p>
 </li>
 </ol>
-<details class="question"><summary>Can you create a query without the '--' in the end?</summary><p>Answer: <strong>' OR 1='1</strong></p>
+<h2 id="part-2-analyzing-minimized-javascript-advanced">Part 2: Analyzing Minimized JavaScript <em>(Advanced)</em></h2>
+<ol>
+<li>
+<p>In the Chrome Debugger, select "Sources" and open the "main.js" file.</p>
+</li>
+<li>
+<p>Click the "{}" at the lower left-hand corner of the source code window. This will make the minimized code more readable.</p>
+<p><img alt="" src="media/image1.png" /></p>
+<p><strong>JavaScript Debugger "main.js"</strong></p>
+</li>
+<li>
+<p>Line 9389-9405 contains obfuscated JavaScript code meant to hide a particular endpoint. Copy the code, starting with function(), all the way to "toLowerCase()" in line 9405.</p>
+<p><img alt="" src="media/image2.png" /></p>
+<p><strong>Obfuscated JavaScript Code</strong></p>
+</li>
+<li>
+<p>Type ""+ (empty quotes followed by "+") into the console and paste the code you copied right after the "+". Hit enter. You will see the deobfuscated result. (see answers at the end for the solution).</p>
+<p><img alt="" src="media/image3.png" /></p>
+<p><strong>Pasted Code in Console</strong></p>
+<details class="question"><summary>Solution</summary><p>The token is: "tokensale-ico-ea".</p>
+<p>The hidden URL includes a white paper for a "Juicecoin" ICO.</p>
 </details>
-<hr />
-<h2 id="part-2-phpbb-sql-injection">Part 2: phpBB SQL Injection</h2>
-<h3 id="no-hints_1">No Hints</h3>
-<p>The old version of phpBB we have installed here suffers from multiple SQL injection flaws. In this exercise, we explore an SQL injection flaw in the messaging interface. To trigger the flaw, log in at <a href="http://phpbb.sans.labs">http://phpbb.sans.labs</a> (username: sec522, password: training) and then use one of the hints to get you started (<a href="http://phpbb.sans.labs">http://phpbb.sans.labs</a>). The injection will only work if you are logged in. You may also want to explore the login form for additional opportunities to experiment with SQL injection.</p>
-<h3 id="step-by-step_1">Step by Step</h3>
-<p>We have a URL at hand that we know is vulnerable to SQL injection. The first step to test for SQL injection is to insert a quote into each field.</p>
-<p>The following steps will inspect a parameter used in the phpBB private messaging system.</p>
-<ol>
-<li>
-<p>Use Chrome to visit <strong><a href="http://phpbb.sans.labs">http://phpbb.sans.labs</a></strong>.</p>
 </li>
 <li>
-<p>Log in using the username "sec522" and the password "training".</p>
-</li>
-<li>
-<p>Click on the "You have no new messages" link at the top of the page.</p>
-</li>
-<li>
-<p>Click on the "Savebox" link.</p>
-</li>
-<li>
-<p>We are going to exploit this page. Open the following URL: <strong><a href="http://phpbb.sans.labs/hints.html">http://phpbb.sans.labs/hints.html</a></strong></p>
-<p>We will use the links on this page to explore and exploit the SQL injection vulnerability. Note how exploit URLs on this page will include a URL encoded single quote (%27) as part of the pm_sql_user parameter.</p>
-</li>
-<li>
-<p>We would want to know where in the statement the user input is located. Click on the second link (Exploit 1). Exploit 1 injects HTML into the SQL statement. This will make the injectable location visible in red.</p>
-</li>
-<li>
-<p>Return back to the hints page (<strong><a href="http://phpbb.sans.labs/hints.html">http://phpbb.sans.labs/hints.html</a></strong>)</p>
-</li>
-<li>
-<p>Read Exploit 2 to see how a union statement is used to join two distinct queries together. Click on the "Exploit 2" link. There is no error in the statement. We created a valid statement. The main purpose of this statement is to ensure the statement runs error free. If the number of fields is different between the two distinct statements, they cannot be "unioned" together.</p>
-</li>
-<li>
-<p>Return back to the hints page (<strong><a href="http://phpbb.sans.labs/hints.html">http://phpbb.sans.labs/hints.html</a></strong>).</p>
-<p>Exploit 3 simply makes the statement return \'aaa\', \'bbb\', and so on just to see which field can be returned on the screen, as some of the fields are not being returned on screen.</p>
-<p>Following Exploit 3, you will find a group of statements that use SQL injection to enumerate the table structure (infomation_schema holds all this information). One query at a time, information about the structure of the database is being returned; information such as table names and column names is gathered.</p>
-</li>
-<li>
-<p>The "Administrator Exploit" at the end of the page returns the administrator\'s username and password. Please click on this statement. This is dependent on the results of enumerating the table and column names in Step 11.</p>
-<p>We will dive into the source code of privmsg.php and investigate the reasons for the SQL injection. For the non-PHP-coders, do not worry; the code is really simple.</p>
-</li>
-<li>
-<p>Browse to <strong><a href="http://phpbb.sans.labs/privmsg.phps">http://phpbb.sans.labs/privmsg.phps</a></strong> (note the "s" at the end of the URL) to review the source code.</p>
-</li>
-<li>
-<p>Scroll to line 240 of the source code and review the variable $sql. Pay special attention to lines 226 and 229.</p>
-<p>$pm_sql_user on line 240 consists of data from line 226. Line 226 concatenates data from user input in $pm_sql_user with other data on lines 226 to 229. The .= operator means -- leave whatever is already in $pm_sql_user; in addition, also put the following data into $pm_sql_user. The $pm_sql_user variable isn\'t filtered or sanitized; it came straight from the user.</p>
-<p>Line 244 is where the user input gets concatenated with other static SQL strings to make the dynamic SQL statement. The resulting statement is passed to the database for execution on line 253.</p>
-<p>When raw user input gets to become part of a dynamic SQL query without validation, we know what the story looks like---SQL injection.</p>
+<p>Go to the hidden endpoint (<a href="http://juiceshop:3000/#/[solution">http://juiceshop:3000/#/[solution</a> from step 4]).</p>
 </li>
 </ol>
 <hr />
@@ -1086,7 +1018,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../1.4/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../4.2/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1095,19 +1027,19 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              1.4: SSRF and Credential Stealing
+              4.2: XMLHttpRequest
             </div>
           </div>
         </a>
       
       
-        <a href="../2.2/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../4.4/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              2.2: Guestbook CSRF
+              4.4: Content Security Policy
             </div>
           </div>
           <div class="md-footer__button md-icon">

@@ -14,7 +14,7 @@
     
     
       
-        <title>2.1: SQL Injection - SEC522 Workbook</title>
+        <title>5.2: Clickjacking - SEC522 Workbook</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#sql-injection" class="md-skip">
+        <a href="#clickjacking" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              2.1: SQL Injection
+              5.2: Clickjacking
             
           </span>
         </div>
@@ -451,14 +451,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
       <label class="md-nav__link" for="__nav_3">
         Day 2
@@ -474,110 +472,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          2.1: SQL Injection
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../2.1/" class="md-nav__link">
         2.1: SQL Injection
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#part-1-basic-sql-injection" class="md-nav__link">
-    Part 1: Basic SQL Injection
-  </a>
-  
-    <nav class="md-nav" aria-label="Part 1: Basic SQL Injection">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#no-hints" class="md-nav__link">
-    No Hints
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-by-step" class="md-nav__link">
-    Step by Step
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#part-2-phpbb-sql-injection" class="md-nav__link">
-    Part 2: phpBB SQL Injection
-  </a>
-  
-    <nav class="md-nav" aria-label="Part 2: phpBB SQL Injection">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#no-hints_1" class="md-nav__link">
-    No Hints
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-by-step_1" class="md-nav__link">
-    Step by Step
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
-    Conclusion
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#explore-further" class="md-nav__link">
-    Explore Further
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -786,12 +685,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
       
       <label class="md-nav__link" for="__nav_6">
         Day 5
@@ -819,11 +720,97 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../5.2/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          5.2: Clickjacking
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         5.2: Clickjacking
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-simple-clickjacking" class="md-nav__link">
+    Part 1: Simple Clickjacking
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 1: Simple Clickjacking">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-hints" class="md-nav__link">
+    No Hints
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step" class="md-nav__link">
+    Step by Step
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-x-frame-options" class="md-nav__link">
+    Part 2: X-Frame-Options
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-framebusting" class="md-nav__link">
+    Part 3: Framebusting
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explore-further" class="md-nav__link">
+    Explore Further
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -930,136 +917,106 @@
     content: 'SANS SEC522 Workbook';
 }}
 @page :left { @bottom-left {
-  content: '2.1-' counter(page);
+  content: '5.2-' counter(page);
 }}
 @page :right { @bottom-right {
-  content: '2.1-' counter(page);
+  content: '5.2-' counter(page);
 }}
 </style>
 
-<h1 id="sql-injection">SQL Injection</h1>
+<h1 id="clickjacking">Clickjacking</h1>
 <hr />
 <h4 id="objectives">Objectives</h4>
-<div class="codehilite"><pre><span></span><code>Estimated Time: 15 minutes
+<div class="codehilite"><pre><span></span><code>Estimated Time: 10 minutes
 </code></pre></div>
 
 <h5 id="part-1">Part 1:</h5>
 <blockquote>
-<p>You will familiarize yourself with the basic principles of SQL injection.</p>
+<p>In this exercise, you will experiment with a clickjacking exploit and explore methods to protect your application from clickjacking.</p>
 </blockquote>
 <h5 id="part-2">Part 2:</h5>
-<blockquote>
-<p>You will experiment with an actual application. This will provide us with a realistic example of how SQL injection works and how an attacker may exploit it.</p>
-</blockquote>
+<blockquote></blockquote>
+<h5 id="part-3">Part 3:</h5>
+<blockquote></blockquote>
 <h4 id="requirements">Requirements</h4>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Lab VM</li>
 </ul>
 <hr />
-<h2 id="part-1-basic-sql-injection">Part 1: Basic SQL Injection</h2>
+<h2 id="part-1-simple-clickjacking">Part 1: Simple Clickjacking</h2>
 <h3 id="no-hints">No Hints</h3>
-<p>We are again using our "Animal Shelter" application. This time, we use a modified page that includes a search feature. The search feature allows for SQL injection. You can check the "Debug" checkbox to see the SQL query. The page can be found at <a href="http://lab-2.1.sans.labs/">http://lab-2.1.sans.labs/</a>.</p>
+<p>The page <a href="http://www.evilexample.com/clickjacking/index.htm">http://www.evilexample.com/clickjacking/index.htm</a> implements a clickjacking exploit. Explore how it works. </p>
+<div class="admonition question">
+<p class="admonition-title">Which page is being 'clickjacked'?</p>
+</div>
 <h3 id="step-by-step">Step by Step</h3>
 <ol>
 <li>
-<p>Open <a href="http://lab-2.1.sans.labs/">http://lab-2.1.sans.labs/</a> in Google Chrome.</p>
+<p>Close the Chrome browser and relaunch it from the desktop.</p>
+<p>Browse to <strong><a href="http://www.defendapp.com/pay/pay.php">http://www.defendapp.com/pay/pay.php</a></strong>.</p>
 </li>
 <li>
-<p>Enter one of the animal names (for example, "Stash") in the search box and click "Submit". Only this animal should now be visible.</p>
+<p>This is a very simple page. The idea is when the user clicks on "I agree to pay you", the payment is transferred, and some transaction is triggered. The counter tracks how many times the button has been clicked, signifying how many times the user had committed to paying.</p>
 </li>
 <li>
-<p>Enter a single quote ( ' ) in the search box and click "Submit". This should trigger an SQL error. The SQL error message will include the query. Try to identify the vulnerability.</p>
+<p>Click the <strong>"I agree to pay you"</strong> button a few times.</p>
+</li>
+<li>
+<p>Click on <strong>"Reset Counter"</strong>. The counter is now set to zero.</p>
+</li>
+<li>
+<p>Browse to <strong><a href="http://www.evilexample.com/clickjacking/index.htm">http://www.evilexample.com/clickjacking/index.htm</a></strong>. This is an evil page that exploits clickjacking vulnerability.</p>
+</li>
+<li>
+<p>Try to click on the kitten as it emerges from the pot. Although not much seems to be happening to the user, actions have already been taken in the background.</p>
+</li>
+<li>
+<p>Click on the <strong>"Show hidden Iframe"</strong> button on the page.</p>
+</li>
+<li>
+<p>A translucent page is shown on the page, partially overlapping the existing page. The translucent page contains content from <strong><a href="http://www.defendapp.com/pay/pay.php">http://www.defendapp.com/pay/pay.php</a></strong>. This is exactly how clickjacking happens. The translucent portion of the page was \"on top\" of the visible page; when the user clicks on the page, the mouse clicks are sent to the page on top. The user effectively clicks on something that he/she cannot see, and the mouse click is redirected to the other page.</p>
 </li>
 </ol>
-<h4 id="digging-deeper">Digging Deeper</h4>
-<div class="admonition danger">
-<p class="admonition-title">Critical: The next few commands require you to include a space after the final '--'.</p>
-</div>
+<p><br></p>
+<p>Let's inspect the effect of the clickjacking attack.</p>
 <ol>
 <li>
-<p>Enter the string below in the search field and click submit. You will not see an error now, but all animals are visible.</p>
-<div class="highlight"><pre><span></span><code>&#39; OR 1=1 -- 
-</code></pre></div>
+<p>Browse to <a href="http://www.defendapp.com/pay/pay.php">http://www.defendapp.com/pay/pay.php</a>. Check the counter. Why is the count so high?</p>
 </li>
 <li>
-<p>Enter the below string and click "Submit".</p>
-<div class="highlight"><pre><span></span><code>&#39; UNION SELECT 1,2,3 -- 
-</code></pre></div>
-<p>The last step will again result in an error message. The error message will state that both SELECT statements in a UNION query need to return the same number of columns. Count the columns returned by the first statement and rewrite the second statement using the right number of columns.</p>
-</li>
-<li>
-<p>Enter the below string and hit submit. You will now get a broken image and the numbers 2 and 4 will be visible below the broken image.</p>
-<div class="highlight"><pre><span></span><code>&#39; UNION SELECT 1,2,3,4,5,6,7 -- 
-</code></pre></div>
-<p><img alt="" class="zoom" src="media/image1.png" /></p>
-<p><strong>Result of Entering the Correct UNION Query</strong></p>
-</li>
-<li>
-<p>Replace the SELECT query with one selecting the username and password column from the animalshelter.users table</p>
-<div class="highlight"><pre><span></span><code>&#39; UNION SELECT 1,username,3,password,5,6,7 FROM animalshelter.users -- 
-</code></pre></div>
-<div class="admonition tip">
-<p class="admonition-title">Do not forget the space after the -- in the end</p>
-</div>
-<p>You will now see two broken images (one for each user in the database). The usernames and passwords are displayed where you saw the numbers 2 and 4 in Step 6.</p>
-</li>
-<li>
-<p>View the page source (CTRL-U) to see the password hashes more clearly.</p>
-<p>You may try other queries now.</p>
+<p>The clicks in the previous page were redirected to the payment page. In clickjacking, the attacker sets up pages that look harmless and entices the victim to click on some parts of the page. Hidden from the view of the victim, there is an invisible layer of another webpage.</p>
 </li>
 </ol>
-<details class="question"><summary>Can you create a query without the '--' in the end?</summary><p>Answer: <strong>' OR 1='1</strong></p>
-</details>
 <hr />
-<h2 id="part-2-phpbb-sql-injection">Part 2: phpBB SQL Injection</h2>
-<h3 id="no-hints_1">No Hints</h3>
-<p>The old version of phpBB we have installed here suffers from multiple SQL injection flaws. In this exercise, we explore an SQL injection flaw in the messaging interface. To trigger the flaw, log in at <a href="http://phpbb.sans.labs">http://phpbb.sans.labs</a> (username: sec522, password: training) and then use one of the hints to get you started (<a href="http://phpbb.sans.labs">http://phpbb.sans.labs</a>). The injection will only work if you are logged in. You may also want to explore the login form for additional opportunities to experiment with SQL injection.</p>
-<h3 id="step-by-step_1">Step by Step</h3>
-<p>We have a URL at hand that we know is vulnerable to SQL injection. The first step to test for SQL injection is to insert a quote into each field.</p>
-<p>The following steps will inspect a parameter used in the phpBB private messaging system.</p>
+<h2 id="part-2-x-frame-options">Part 2: X-Frame-Options</h2>
+<p>Another mechanism that NoScript provides is to disallow certain content to be loaded in a frame when the X-Frame-Options header is set.</p>
+<p><a href="http://www.evilexample.com/xframe/index.htm">http://www.evilexample.com/xframe/index.htm</a> contains a similar page to the previous Clickjacking example, the only difference is the hidden page is in /pay-xframe directory instead of /pay (on <a href="http://www.defendapp.com">www.defendapp.com</a>). The version of the page under /pay-xframe comes with X-FRAME-OPTIONS: SAMEORIGIN in the HTTP response header (feel free to check out the page with Burp Proxy to validate the existence of the header). When this header is set to SAMEORIGIN, the content in the page cannot be displayed within a frame (must be loaded as a full page instead).</p>
 <ol>
 <li>
-<p>Use Chrome to visit <strong><a href="http://phpbb.sans.labs">http://phpbb.sans.labs</a></strong>.</p>
+<p>Browse to <strong><a href="http://www.evilexample.com/xframe/index.htm">http://www.evilexample.com/xframe/index.htm</a></strong>.</p>
 </li>
 <li>
-<p>Log in using the username "sec522" and the password "training".</p>
+<p>Click on \"<strong>Show hidden Iframe</strong>\" button.</p>
+</li>
+</ol>
+<p>The IFrame was not loaded properly because of the X-Frame-Options header. The content owner deemed the content inappropriate for loading within an IFrame.</p>
+<p>Check Chrome's debugger (CTRL-Shift-I). You will see an error message ("Refused to display '<a href="http://www.defendapp.com/pay-xframe/pay.php">http://www.defendapp.com/pay-xframe/pay.php</a>' in an index.htm:1 frame because it set the 'X-Frame-Options' to 'sameorigin'").</p>
+<h2 id="part-3-framebusting">Part 3: Framebusting</h2>
+<ol>
+<li>
+<p>Browse to <a href="http://www.evilexample.com/framebust/index.htm">http://www.evilexample.com/framebust/index.htm</a></p>
+<p>A JavaScript warning pops up on the screen. However, in newer versions of Google Chrome like the one we are using here, the redirect is blocked.</p>
+<p>This mechanism requires JavaScript and will not work if JavaScript is disabled.</p>
 </li>
 <li>
-<p>Click on the "You have no new messages" link at the top of the page.</p>
+<p>Turn off JavaScript using the Web Developer toolbar.</p>
+<p><img alt="" src="media/image1.png" /></p>
 </li>
 <li>
-<p>Click on the "Savebox" link.</p>
+<p>Browse to <a href="http://www.evilexample.com/framebust/index.htm">http://www.evilexample.com/framebust/index.htm</a>. The frame busting code no longer works. Feel free to view source and check out the frame busting JavaScript code.</p>
 </li>
 <li>
-<p>We are going to exploit this page. Open the following URL: <strong><a href="http://phpbb.sans.labs/hints.html">http://phpbb.sans.labs/hints.html</a></strong></p>
-<p>We will use the links on this page to explore and exploit the SQL injection vulnerability. Note how exploit URLs on this page will include a URL encoded single quote (%27) as part of the pm_sql_user parameter.</p>
-</li>
-<li>
-<p>We would want to know where in the statement the user input is located. Click on the second link (Exploit 1). Exploit 1 injects HTML into the SQL statement. This will make the injectable location visible in red.</p>
-</li>
-<li>
-<p>Return back to the hints page (<strong><a href="http://phpbb.sans.labs/hints.html">http://phpbb.sans.labs/hints.html</a></strong>)</p>
-</li>
-<li>
-<p>Read Exploit 2 to see how a union statement is used to join two distinct queries together. Click on the "Exploit 2" link. There is no error in the statement. We created a valid statement. The main purpose of this statement is to ensure the statement runs error free. If the number of fields is different between the two distinct statements, they cannot be "unioned" together.</p>
-</li>
-<li>
-<p>Return back to the hints page (<strong><a href="http://phpbb.sans.labs/hints.html">http://phpbb.sans.labs/hints.html</a></strong>).</p>
-<p>Exploit 3 simply makes the statement return \'aaa\', \'bbb\', and so on just to see which field can be returned on the screen, as some of the fields are not being returned on screen.</p>
-<p>Following Exploit 3, you will find a group of statements that use SQL injection to enumerate the table structure (infomation_schema holds all this information). One query at a time, information about the structure of the database is being returned; information such as table names and column names is gathered.</p>
-</li>
-<li>
-<p>The "Administrator Exploit" at the end of the page returns the administrator\'s username and password. Please click on this statement. This is dependent on the results of enumerating the table and column names in Step 11.</p>
-<p>We will dive into the source code of privmsg.php and investigate the reasons for the SQL injection. For the non-PHP-coders, do not worry; the code is really simple.</p>
-</li>
-<li>
-<p>Browse to <strong><a href="http://phpbb.sans.labs/privmsg.phps">http://phpbb.sans.labs/privmsg.phps</a></strong> (note the "s" at the end of the URL) to review the source code.</p>
-</li>
-<li>
-<p>Scroll to line 240 of the source code and review the variable $sql. Pay special attention to lines 226 and 229.</p>
-<p>$pm_sql_user on line 240 consists of data from line 226. Line 226 concatenates data from user input in $pm_sql_user with other data on lines 226 to 229. The .= operator means -- leave whatever is already in $pm_sql_user; in addition, also put the following data into $pm_sql_user. The $pm_sql_user variable isn\'t filtered or sanitized; it came straight from the user.</p>
-<p>Line 244 is where the user input gets concatenated with other static SQL strings to make the dynamic SQL statement. The resulting statement is passed to the database for execution on line 253.</p>
-<p>When raw user input gets to become part of a dynamic SQL query without validation, we know what the story looks like---SQL injection.</p>
+<p>Don't forget to enable JavaScript again.</p>
 </li>
 </ol>
 <hr />
@@ -1086,7 +1043,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../1.4/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../5.1/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1095,19 +1052,19 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              1.4: SSRF and Credential Stealing
+              5.1: DNS Rebinding
             </div>
           </div>
         </a>
       
       
-        <a href="../2.2/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../5.3/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              2.2: Guestbook CSRF
+              5.3: HTML5
             </div>
           </div>
           <div class="md-footer__button md-icon">
