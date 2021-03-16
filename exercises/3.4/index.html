@@ -963,54 +963,33 @@
 <p>The first three packets (Nos. 1--3) hold the TCP three-way handshake. They establish the TCP connection and do not indicate that we are going to use SSL.</p>
 <p>Packet 4, sent by the client (192.168.1.121) to the server (192.168.1.174), represents an "SSL Client Hello". With this packet, the client indicates that it would like to talk SSL to the server. It does provide some basic parameters that are used to negotiate the SSL connection.</p>
 <p>By inspecting the middle pane, try to identify the following parameters:</p>
-<div class="admonition question">
-<p class="admonition-title">What SSL version is the client using?</p>
-<p>&nbsp;
-&nbsp;</p>
-</div>
-<div class="admonition question">
-<p class="admonition-title">How many cipher suites does the client support?</p>
-<p>&nbsp;
-&nbsp;</p>
-</div>
+<details class="question"><summary>What SSL version is the client using?</summary><p>SSL 3.0</p>
+</details>
+<details class="question"><summary>How many cipher suites does the client support?</summary><p>12 </p>
+</details>
 <p><img alt="" src="media/image3.png" /></p>
 <p><strong>Client Hello Details</strong></p>
 <p>In packet #5, the server acknowledges receipt of the client hello.</p>
 <p>Packet 6 contains the server's response, a "Server Hello". This packet also includes the server's certificate. Just as for packet 4, identify the following parameters:</p>
-<div class="admonition question">
-<p class="admonition-title">Which SSL version is the server accepting?</p>
-<p>&nbsp;
-&nbsp;</p>
-</div>
-<div class="admonition question">
-<p class="admonition-title">Which cipher suite did the server select?</p>
-<p>&nbsp;
-&nbsp;</p>
-</div>
-<div class="admonition question">
-<p class="admonition-title">Who issued the certificate?</p>
-<p>&nbsp;
-&nbsp;</p>
-</div>
-<div class="admonition question">
-<p class="admonition-title">What is the hostname (common name) of the server according to the certificate?</p>
-<p>&nbsp;
-&nbsp;</p>
-</div>
+<details class="question"><summary>Which SSL version is the server accepting?</summary><p>SSL 3.0</p>
+</details>
+<details class="question"><summary>Which cipher suite did the server select?</summary><p>TLS_RSA_WITH_RC4_128_MD5</p>
+</details>
+<details class="question"><summary>Who issued the certificate?</summary><p>SANS CA</p>
+</details>
+<details class="question"><summary>What is the hostname (common name) of the server according to the certificate?</summary><p>sanshost</p>
+</details>
 <p><img alt="Server Hello Details" src="media/image4.png" /></p>
 <p><strong>Server Hello Details</strong></p>
 <p>Packet 12 is the first encrypted data packet. </p>
-<div class="admonition question">
-<p class="admonition-title">How many bytes of encrypted data does it contain?</p>
-<p>&nbsp;
-&nbsp;</p>
-</div>
+<details class="question"><summary>How many bytes of encrypted data does it contain?</summary><p>434</p>
+</details>
 <p><img alt="" src="media/image5.png" /></p>
 <p><strong>Encrypted Packets</strong></p>
 <p>Next, we will try to decrypt the packets.</p>
 <p>To do so, we need to provide Wireshark with the secret key.</p>
 <ol>
-<li>Go to <strong>Edit-&gt;Preferences</strong>, then click on <strong>"Protocols"</strong> at the left-hand side of the Preferences window. Expand the list of protocols and find <strong>"SSL"</strong> (just type "SSL").</li>
+<li>Go to <strong>Edit-&gt;Preferences</strong>, then click on <strong>"Protocols"</strong> at the left-hand side of the Preferences window. Expand the list of protocols and find <strong>"TLS"</strong> (just type "TLS").</li>
 </ol>
 <p><img alt="" src="media/image6.png" /></p>
 <p><strong>SSL Configuration Dialog</strong></p>
@@ -1033,11 +1012,8 @@
 <p>Right-click on packet #12, then select "Follow -&gt; SSL Stream" to reconstruct the payload of the HTTP request and response.</p>
 </li>
 </ol>
-<div class="admonition question">
-<p class="admonition-title">What is the content of the payload of the response?</p>
-<p>&nbsp;
-&nbsp;</p>
-</div>
+<details class="question"><summary>What is the content of the payload of the response?</summary><p>HTTP Request - The page has HTML content of a message "The Secret key is: Perfect 10"</p>
+</details>
 <p><img alt="" src="media/image9.png" /></p>
 <p><strong>Decrypted SSL Stream</strong></p>
 <hr />
@@ -1062,7 +1038,7 @@
 </code></pre></div>
 </li>
 <li>
-<p>Visit <a href="https://wiki.sans.labs/">https://wiki.sans.labs/</a> </p>
+<p>Visit <a href="https://wiki.sans.labs/">https://wiki.sans.labs/</a> (it is a TLS protected site)</p>
 </li>
 <li>
 <p>Close Google Chrome.</p>
@@ -1071,7 +1047,7 @@
 <p>Stop the acquisition in Wireshark by clicking on the red square.</p>
 </li>
 <li>
-<p>To display only the SSL traffic, enter "ssl" as a filter and click "Apply". You will recognize the now-familiar packets like "Client Hello" and "Server Hello".</p>
+<p>To display only the SSL traffic, enter "tls" as a filter and click "Apply". You will recognize the now-familiar packets like "Client Hello" and "Server Hello".</p>
 </li>
 <li>
 <p>Just like before, we enter the RSA key configuration dialog. Select Edit-&gt;Preferences from the Wireshark menu and proceed to the SSL protocol configuration. But instead of editing the RSA keys list, we just select a (Pre)-Master-Secret log filename at the bottom of the dialog.</p>
@@ -1081,6 +1057,10 @@
 </li>
 <li>
 <p>Just like before, the HTTPS traffic will now be decrypted. But this time, we used symmetric keys captured by the client.</p>
+<div class="admonition information">
+<p class="admonition-title">Information</p>
+<p>This method illustrated in part 2 of the exercise is exactly how anyone can debug their traffic with a TLS website. If you ever need to get to decipher the TLS protected traffic with a website, let's say, Google or Facebook. This method allows you to decrypt the traffic from the workstation.</p>
+</div>
 </li>
 </ol>
 <hr />

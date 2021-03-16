@@ -1,0 +1,1275 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="shortcut icon" href="../../media/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.3">
+    
+    
+      
+        <title>3.1: Authentication - SEC522 Workbook</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1655a90d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.7fa14f5b.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#ff6e42">
+        
+      
+    
+    
+    
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../styles/jquery.fancybox.min.css">
+    
+      <link rel="stylesheet" href="../../styles/custom.css">
+    
+      <link rel="stylesheet" href="../../styles/pdf.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="deep-orange" data-md-color-accent="blue">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#authentication-exercise" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="SEC522 Workbook" class="md-header__button md-logo" aria-label="SEC522 Workbook">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SEC522 Workbook
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              3.1: Authentication
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="md-header__options">
+      
+    </div>
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SEC522 Workbook" class="md-nav__button md-logo" aria-label="SEC522 Workbook">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    SEC522 Workbook
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      <label class="md-nav__link" for="__nav_1">
+        Introduction
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Introduction" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Introduction
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Welcome!
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/troubleshooting/" class="md-nav__link">
+        Troubleshooting
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_3" type="checkbox" id="__nav_1_3" >
+      
+      <label class="md-nav__link" for="__nav_1_3">
+        Tutorials
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Tutorials" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_3">
+          <span class="md-nav__icon md-icon"></span>
+          Tutorials
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/tutorial_git/" class="md-nav__link">
+        Git Tutorial
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4" type="checkbox" id="__nav_1_4" >
+      
+      <label class="md-nav__link" for="__nav_1_4">
+        Course
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Course" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_4">
+          <span class="md-nav__icon md-icon"></span>
+          Course
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/preparation/" class="md-nav__link">
+        Preparation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/references/" class="md-nav__link">
+        References
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/appendix/" class="md-nav__link">
+        Appendix
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_5" type="checkbox" id="__nav_1_5" >
+      
+      <label class="md-nav__link" for="__nav_1_5">
+        Errata & Patches
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Errata & Patches" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_5">
+          <span class="md-nav__icon md-icon"></span>
+          Errata & Patches
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../errata/F01_01/" class="md-nav__link">
+        F01_01
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Day 1
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Day 1" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Day 1
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.1/" class="md-nav__link">
+        1.1: HTTP Basics
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.2/" class="md-nav__link">
+        1.2: Inspecting HTTP/2 Traffic
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.3/" class="md-nav__link">
+        1.3: Isolation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.4/" class="md-nav__link">
+        1.4: SSRF and Credential Stealing
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Day 2
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Day 2" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Day 2
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.1/" class="md-nav__link">
+        2.1: SQL Injection
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.2/" class="md-nav__link">
+        2.2: Guestbook CSRF
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.3/" class="md-nav__link">
+        2.3: Cross-Site Scripting
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.4/" class="md-nav__link">
+        2.4: Unicode and File Upload
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      <label class="md-nav__link" for="__nav_4">
+        Day 3
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Day 3" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Day 3
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          3.1: Authentication
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        3.1: Authentication
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-optional-simple-user-agent-based-authentication" class="md-nav__link">
+    Part 1: (Optional) Simple User-Agent-Based Authentication
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 1: (Optional) Simple User-Agent-Based Authentication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-hints" class="md-nav__link">
+    No Hints
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step-instructions" class="md-nav__link">
+    Step-by-Step Instructions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-more-complex-but-still-weak-authentication" class="md-nav__link">
+    Part 2: More Complex, But Still Weak, Authentication
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-brute-forcing" class="md-nav__link">
+    Part 3: Brute Forcing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-4-u2f-and-bypassing-2nd-factor" class="md-nav__link">
+    Part 4: U2F And Bypassing 2nd Factor
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 4: U2F And Bypassing 2nd Factor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-hints_1" class="md-nav__link">
+    No Hints
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step" class="md-nav__link">
+    Step by Step
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explore-further" class="md-nav__link">
+    Explore Further
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.2/" class="md-nav__link">
+        3.2: Session Fixation and Session Breaking
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.3/" class="md-nav__link">
+        3.3: OAuth and Access Control
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.4/" class="md-nav__link">
+        3.4: Inspecting SSL Traffic
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        Day 4
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Day 4" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Day 4
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.1/" class="md-nav__link">
+        4.1: WSDL Enumeration and Parameter Tampering
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.2/" class="md-nav__link">
+        4.2: XMLHttpRequest
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.3/" class="md-nav__link">
+        4.3: Javascript Security Testing
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.4/" class="md-nav__link">
+        4.4: Content Security Policy
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        Day 5
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Day 5" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Day 5
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.1/" class="md-nav__link">
+        5.1: DNS Rebinding
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.2/" class="md-nav__link">
+        5.2: Clickjacking
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.3/" class="md-nav__link">
+        5.3: HTML5
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.4/" class="md-nav__link">
+        5.4: Sub Resource Integrity
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.5/" class="md-nav__link">
+        5.5: Logging and Incident Response
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      <label class="md-nav__link" for="__nav_7">
+        SANS AppSec
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="SANS AppSec" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          SANS AppSec
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://software-security.sans.org" class="md-nav__link">
+        Website
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <style>
+@page { @top-center {
+    content: 'SANS SEC522 Workbook';
+}}
+@page :left { @bottom-left {
+  content: '3.1-' counter(page);
+}}
+@page :right { @bottom-right {
+  content: '3.1-' counter(page);
+}}
+</style>
+
+<h1 id="authentication-exercise">Authentication Exercise</h1>
+<hr />
+<h4 id="objectives">Objectives</h4>
+<div class="codehilite"><pre><span></span><code>Estimated Time: 12 minutes
+</code></pre></div>
+
+<h5 id="part">Part</h5>
+<blockquote>
+<p>In this exercise, we will experiment with different examples of weak authentication and demonstrate how to break them.</p>
+</blockquote>
+<h5 id="part-2">Part 2:</h5>
+<blockquote></blockquote>
+<h5 id="part-3">Part 3:</h5>
+<blockquote></blockquote>
+<h5 id="part-4">Part 4:</h5>
+<blockquote>
+<p>In this exercise, you will walk through the use of U2F (Universal Two-Factor) tokens for two factor authentication. We use a software simulation of a token (softu2f). After registering and testing the token, we will experiment with a method to bypass the use of the token.</p>
+</blockquote>
+<h4 id="requirements">Requirements</h4>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Lab VM</li>
+</ul>
+<hr />
+<h2 id="part-1-optional-simple-user-agent-based-authentication">Part 1: <em>(Optional)</em> Simple User-Agent-Based Authentication</h2>
+<h3 id="no-hints">No Hints</h3>
+<h3 id="step-by-step-instructions">Step-by-Step Instructions</h3>
+<ol>
+<li>
+<p>Use Chrome to proceed to <a href="http://www.dev522.org/auth/"><strong>http://www.sec522.org/auth/</strong></a>. The page will indicate that you are using the wrong browser.</p>
+</li>
+<li>
+<p>Start Burp and configure Chrome to use Burp via the Proxy Switcher plugin.</p>
+</li>
+<li>
+<p>Check to make sure interception is on in Burp ("Proxy" -&gt;"Intercept" -&gt; "Intercept is on").</p>
+</li>
+<li>
+<p>Reload the page in the browser.</p>
+</li>
+<li>
+<p>The request will now be held by Burp. Use Burp to modify the request and change the User-Agent to "SANSBrowser".</p>
+</li>
+<li>
+<p>Click "Forward" in Burp. The modified request will now be sent, and Chrome should display the page with a thank you statement for using the SANS browser.</p>
+</li>
+</ol>
+<hr />
+<h2 id="part-2-more-complex-but-still-weak-authentication">Part 2: More Complex, But Still Weak, Authentication</h2>
+<ol>
+<li>
+<p>Disable the proxy by toggling the Proxy Switcher plugin.</p>
+</li>
+<li>
+<p>Open <a href="http://www.dev522.org/auth/index2.php">http://www.sec522.org/auth/index2.php</a> in Chrome. This page looks just like the page we examined in the exercise above.</p>
+</li>
+<li>
+<p>Open the developer view in Chrome by pressing Ctrl-Shift-I.</p>
+</li>
+<li>
+<p>Select the "Tamper" tab and check the "Request Headers" checkbox if it is not already checked. If you prefer, you can continue to use Burp.</p>
+</li>
+<li>
+<p>Reload the page.</p>
+</li>
+<li>
+<p>Examine the request using the "Tamper Chrome" view. Anything odd?</p>
+</li>
+<li>
+<p>You should have seen a "Browser=wrong" cookie in Step 6. Delete it using the Tamper Chrome tool and replace the User-Agent with "SANSBrowser" and click "Ok".</p>
+</li>
+<li>
+<p>Just keep clicking "Ok" for all the following requests.</p>
+</li>
+<li>
+<p>Once you are done, close the "Tamper Chrome" window and the developer tools at the bottom of the Chrome window.</p>
+</li>
+</ol>
+<div class="admonition question">
+<p class="admonition-title">What trick did the developer play to harden the page? Was it sufficient?</p>
+</div>
+<hr />
+<h2 id="part-3-brute-forcing">Part 3: Brute Forcing</h2>
+<p>This is an additional challenge exercise on authentication building on the knowledge you acquired so far. This exercise is to simulate a device registration system where there is personal information being stored.</p>
+<ol>
+<li>
+<p>Browse to <a href="http://www.sec522.org/auth/index3.php">http://www.sec522.org/auth/index3.php</a></p>
+<p>The page describes a registration system where the user has to use a special mobile device with the proper serial number to access or change information. The objective is to acquire as much information from this system as possible.</p>
+<p>Use the following hints to help you:</p>
+<details class="hint"><summary>Hint #1</summary><p>What's the likely user-agent for "SANSpad"? How about the name of the device?</p>
+</details>
+<details class="hint"><summary>Hint #2</summary><p>The serial number format is already provided.</p>
+</details>
+<details class="hint"><summary>Hint #3</summary><p>Can you brute force the serial number? Scripting may help.</p>
+</details>
+<details class="hint"><summary>Hint #4</summary><p>You can use the "Intruder" feature in Burp to assist with brute forcing the solution.</p>
+</details>
+</li>
+<li>
+<p>Go to <a href="http://www.dev522.org/auth/index3.php">http://www.sec522.org/auth/index3.php</a> in Chrome.</p>
+</li>
+<li>
+<p>The page asks for a serial number. Guess one (SN1425-1234) and click "Send".</p>
+</li>
+<li>
+<p>The server responds that we need to use the "SANSpad" browser. Use Burp to change the User-Agent to "SANSpad".</p>
+</li>
+<li>
+<p>You still need to guess a serial number. There are different ways to do this. We will use Burp in this example.</p>
+</li>
+<li>
+<p>Select the Proxy-&gt;HTTP history tab in Burp and right-click on the last request for index3.php</p>
+<p><img alt="" src="media/image1.png" /></p>
+</li>
+<li>
+<p>Send Request to Intruder</p>
+</li>
+<li>
+<p>Select "Send to Intruder".</p>
+</li>
+<li>
+<p>Click on the "Intruder" tab (it should now be highlighted in orange).</p>
+</li>
+<li>
+<p>Select the "Positions" tab.</p>
+</li>
+<li>
+<p>Click the "Clear §" button. This will clear the auto-selected payload positions.</p>
+</li>
+<li>
+<p>Highlight the last four digits of the serial number, and click the "Add §" button. This will mark the last four digits for brute forcing. Also, verify the User-Agent ("SANSpad") and make sure the "Browser=wrong" cookie is removed.</p>
+<p><img alt="" src="media/image2.png" /></p>
+</li>
+<li>
+<p>Marking Position for Intruder</p>
+</li>
+<li>
+<p>Select the "Payloads" tab.</p>
+</li>
+<li>
+<p>Select "Numbers" from the Payload type dropdown (you may have to scroll down).</p>
+</li>
+<li>
+<p>Select "1" as "From", 100 as "To" , "1" as "Step", "4" as minimum integer digits and 0 as maximum fraction digits (do not select a larger range, as the Burp Community Edition does rate-limit these requests).</p>
+</li>
+<li>
+<p>Click "Start attack" and acknowledge the restrictions of the community edition.</p>
+</li>
+<li>
+<p>You do not have to wait for the attack to finish. Look for requests with unusual values in the "Length" column and click on them. Select the "Response" and "Render" tab at the bottom to review the response. For successful requests, you should see personal information displayed as part of the response. Request 2 and 5 (and others) will show positive results. You may need to scroll up in the result window to see the early responses.</p>
+<p><img alt="" src="media/image3.png" /></p>
+</li>
+<li>
+<p>Intruder Result</p>
+</li>
+</ol>
+<hr />
+<h2 id="part-4-u2f-and-bypassing-2nd-factor">Part 4: U2F And Bypassing 2<sup>nd</sup> Factor</h2>
+<h3 id="no-hints_1">No Hints</h3>
+<p>Start at <a href="https://sec522.org/shelter/login.php">https://sec522.org/shelter/login.php</a> . Click "Reset U2F Data". Next log in and follow the instructions to setup the token. Once you setup and verified that the token is working: Try to reach the "myaccount.php" without using the token (just use the username and password).</p>
+<h3 id="step-by-step">Step by Step</h3>
+<ol>
+<li>
+<p>Open <a href="https://sec522.org/shelter/login.php">https://sec522.org/shelter/login.php</a> in Google Chrome.</p>
+</li>
+<li>
+<p>Click on "Reset U2F Data" (lower left corner of the page).</p>
+</li>
+<li>
+<p>Login using the username "sec522" and the password "training". You will see a popup at the top of the browser asking you to "Approve" the use of the virtual U2F token.</p>
+<p><img alt="" src="media/image4.png" /></p>
+</li>
+<li>
+<p>U2F Dialog</p>
+</li>
+<li>
+<p>Click "approve". You will now be redirected to the "My Account" page at <a href="https://sec522.org/shelter/myaccount.php">https://sec522.org/shelter/myaccount.php</a></p>
+</li>
+<li>
+<p>Click on "Log Out". You will be redirected to the login page.</p>
+</li>
+<li>
+<p>Login again using username "sec522" and password "training".</p>
+</li>
+<li>
+<p>Again, you will be asked to approve the use of the U2F token</p>
+</li>
+<li>
+<p>You are now reaching the "My Account" page.</p>
+</li>
+</ol>
+<p>So far, you learned how to use a U2F token. For a physical token, you would have to pres a button instead of clicking "Approve". Next, we will learn how to bypass the token request.</p>
+<ol>
+<li>
+<p>Click "Log Out" again.</p>
+</li>
+<li>
+<p>Verify that you are actually logged out: Try to open <a href="https://sec522.org/shelter/myaccount.php">https://sec522.org/shelter/myaccount.php</a> in the browser. You will be redirected to the login page.</p>
+</li>
+<li>
+<p>Login using the username "sec522" and the password "training". You will be prompted for the U2F token again.</p>
+</li>
+<li>
+<p>Decline the U2F token request</p>
+</li>
+<li>
+<p>Open <a href="https://sec522.org/shelter/myaccount.php">https://sec522.org/shelter/myaccount.php</a> in Chrome. You will be able to access the page. You just accessed the "My Account" page without using the U2F token, bypassing the two-factor authentication requirement.</p>
+<p>The application logged you in after you entered the username and password. This often happens if the U2F authentication is added later. A better solution would not associate the users user id with the session until the U2F process is complete, or set a flag with the session that the U2F authentication has not yet completed.</p>
+</li>
+</ol>
+<hr />
+<h2 id="conclusion">Conclusion</h2>
+<hr />
+<h2 id="explore-further">Explore Further</h2>
+<ul>
+<li></li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../2.4/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              2.4: Unicode and File Upload
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../3.2/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              3.2: Session Fixation and Session Breaking
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2020 Jason Lam & Dr. Johannes Ullrich
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://gitlab.com/sansappsec" target="_blank" rel="noopener" title="gitlab.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.94 13.11l-1.05-3.22c0-.03-.01-.06-.02-.09l-2.11-6.48a.859.859 0 0 0-.8-.57c-.36 0-.68.25-.79.58l-2 6.17H8.84L6.83 3.33a.851.851 0 0 0-.79-.58c-.37 0-.69.25-.8.58L3.13 9.82v.01l-1.07 3.28c-.16.5.01 1.04.44 1.34l9.22 6.71c.17.12.39.12.56-.01l9.22-6.7c.43-.3.6-.84.44-1.34M8.15 10.45l2.57 7.91-6.17-7.91m8.73 7.92l2.47-7.59.1-.33h3.61l-5.59 7.16m4.1-13.67l1.81 5.56h-3.62m-1.3.95l-1.79 5.51L12 19.24l-2.86-8.79M6.03 3.94L7.84 9.5H4.23m-1.18 4.19c-.09-.07-.13-.19-.09-.29l.79-2.43 5.82 7.45m11.38-4.73l-6.51 4.73.02-.03 5.79-7.42.79 2.43c.04.1 0 .22-.09.29"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/SANSDevSecOps" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["toc.integrate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.fb4a9340.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.ca5457b8.min.js"></script>
+      
+        <script src="../../scripts/jquery-3.4.1.min.js"></script>
+      
+        <script src="../../scripts/jquery.fancybox.min.js"></script>
+      
+        <script src="../../scripts/custom.js"></script>
+      
+    
+  </body>
+</html>

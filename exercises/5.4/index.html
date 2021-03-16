@@ -941,7 +941,7 @@
 </li>
 <li>
 <p>Open a terminal and enter
-    <div class="highlight"><pre><span></span><code>cd /etc/
+    <div class="highlight"><pre><span></span><code>cd /etc/docker/compose/5.4/web/html/js 
 </code></pre></div>
     to change to the directory with the respective files.</p>
 </li>
@@ -953,12 +953,12 @@
 </li>
 <li>
 <p>Calculate the hash of the “good” file:
-<div class="highlight"><pre><span></span><code> Openssl dgst -sha384 -binary &lt; donations_for_stupid_dogs.js | openssl base64 -A
+<div class="highlight"><pre><span></span><code> openssl dgst -sha384 -binary &lt; donations_for_stupid_dogs.js | openssl base64 -A
 </code></pre></div>
 You should get the following hash: wZGpBo0UBEBZ2r+uvUPUVH8gvHqHHPJr5Yt9aK+W5D9cSxNhgvF6lAHxsf0gAXbw</p>
 </li>
 <li>
-<p>Open /var/www/sec522.org/html/shelter/donations.php in an editor and add the “integrity” attribute to the script tag for “donations.js” in line 16. Keep the file open.</p>
+<p>Open /etc/docker/compose/5.4/web/html/donations.php in an editor (Visual Studio Code) and add the “integrity” attribute to the script tag for “donations.js” in line 16. Keep the file open.</p>
 </li>
 <li>
 <p>Reload the donations page. You will now see an error on the console in the debugger.</p>
@@ -971,6 +971,10 @@ You should get the following hash: wZGpBo0UBEBZ2r+uvUPUVH8gvHqHHPJr5Yt9aK+W5D9cS
 </li>
 </ol>
 <p>The “integrity” parameter will indicate to the browser that the file has changed. The browser is now able to block scripts if they changed.</p>
+<details class="solution"><summary>Solution</summary><p>Here is the JavaScript reference with integrity attributes embeded (line 16 of donations.php). 
+<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">&quot;/js/jquery.js&quot;</span> <span class="nx">integrity</span><span class="o">=</span><span class="s2">&quot;sha384-wZGpBo0UBEBZ2r+uvUPUVH8gvHqHHPJr5Yt9aK+W5D9cSxNhgvF6lAHxsf0gAXbw&quot;</span><span class="o">&gt;&lt;</span><span class="err">/script&gt;</span>
+</code></pre></div></p>
+</details>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
 <hr />

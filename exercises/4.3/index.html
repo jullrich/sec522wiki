@@ -695,13 +695,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#no-hints" class="md-nav__link">
-    No Hints
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#step-by-step" class="md-nav__link">
     Step by Step
   </a>
@@ -927,15 +920,12 @@
 <blockquote>
 <p>In this exercise, we will experiment with the built-in JavaScript debugger in Chrome and learn the basics of using this debugger for understanding the JavaScript running on a webpage.</p>
 </blockquote>
-<h5 id="part-2">Part 2:</h5>
-<blockquote></blockquote>
 <h4 id="requirements">Requirements</h4>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Lab VM</li>
 </ul>
 <hr />
 <h2 id="part-1-accessing-arbitrary-shopping-carts">Part 1: Accessing Arbitrary Shopping Carts</h2>
-<h3 id="no-hints">No Hints</h3>
 <h3 id="step-by-step">Step by Step</h3>
 <p>Chrome and many other browsers include capable JavaScript debuggers. They are commonly used by security professionals to understand the inner workings of a piece of JavaScript code.</p>
 <div class="admonition note">
@@ -964,27 +954,27 @@
 <p>You will see a parameter called "bid". Change it to a different number (e.g., "3").</p>
 </li>
 <li>
-<p>Review the shopping cart in Juice Shop ("Your Basket"). You will see someone else's items.</p>
+<p>Review the shopping cart in Juice Shop ("Your Basket") by clicking on the shopping cart at the top of the page. You will see someone else's items.</p>
 </li>
 </ol>
 <h2 id="part-2-analyzing-minimized-javascript-advanced">Part 2: Analyzing Minimized JavaScript <em>(Advanced)</em></h2>
 <ol>
 <li>
-<p>In the Chrome Debugger, select "Sources" and open the "main.js" file.</p>
+<p>In the Chrome Debugger, select "Sources" and open the "main-es2018.js" file.</p>
 </li>
 <li>
 <p>Click the "{}" at the lower left-hand corner of the source code window. This will make the minimized code more readable.</p>
-<p><img alt="" src="media/image1.png" /></p>
-<p><strong>JavaScript Debugger "main.js"</strong></p>
+<p><img alt="" class="zoom" src="media/img-%21%5B%5D%28./media/image1.png%29.png" /></p>
+<p><strong>JavaScript Debugger "main-es2018.js"</strong></p>
 </li>
 <li>
-<p>Line 9389-9405 contains obfuscated JavaScript code meant to hide a particular endpoint. Copy the code, starting with function(), all the way to "toLowerCase()" in line 9405.</p>
-<p><img alt="" src="media/image2.png" /></p>
+<p>Line 12206-12218 contains obfuscated JavaScript code meant to hide a particular endpoint. Copy the code, starting with function(), all the way to "toLowerCase()" in line 12218.</p>
+<p><img alt="" class="zoom" src="media/img-1615871276-20210316.png" /></p>
 <p><strong>Obfuscated JavaScript Code</strong></p>
 </li>
 <li>
-<p>Type ""+ (empty quotes followed by "+") into the console and paste the code you copied right after the "+". Hit enter. You will see the deobfuscated result. (see answers at the end for the solution).</p>
-<p><img alt="" src="media/image3.png" /></p>
+<p>Change to the <strong>Console</strong> tab (at the top). Type ""+ (empty quotes followed by "+") into the console and paste the code you copied right after the "+". Hit enter. You will see the deobfuscated result. (see answers at the end for the solution).</p>
+<p><img alt="" class="zoom" src="media/img-1615871434-20210316.png" /></p>
 <p><strong>Pasted Code in Console</strong></p>
 <details class="question"><summary>Solution</summary><p>The token is: "tokensale-ico-ea".</p>
 <p>The hidden URL includes a white paper for a "Juicecoin" ICO.</p>
@@ -992,6 +982,10 @@
 </li>
 <li>
 <p>Go to the hidden endpoint (<a href="http://juiceshop:3000/#/[solution">http://juiceshop:3000/#/[solution</a> from step 4]).</p>
+<div class="admonition information">
+<p class="admonition-title">Information</p>
+<p>Despite the effort from the developer to obfuscate the "key" in the JavaScript code, the code is reversible with some level of coding skills. Lessons learned - do not hide keys in obfuscation.</p>
+</div>
 </li>
 </ol>
 <hr />

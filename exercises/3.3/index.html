@@ -1024,14 +1024,14 @@
 <p>Open an editor (for example, Visual Studio Code) and paste the request into an empty file.</p>
 </li>
 <li>
-<p>Save the file (recommended name: "test.sh" in the sec522 home directory, /home/sec522).</p>
+<p>Save the file (recommended name: "test.sh" in the sec522 home directory, /home/student).</p>
 </li>
 <li>
 <p>Open a terminal.</p>
 </li>
 <li>
 <p>Execute the file:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">source</span> /home/sec522/test.sh
+<div class="highlight"><pre><span></span><code><span class="nb">source</span> /home/student/test.sh
 </code></pre></div>
 <p>Your output will look like.</p>
 <p><img alt="" src="media/image4.png" /></p>
@@ -1098,11 +1098,11 @@
 <p>Please suggest ways to fix the issues in the applications. You can review the source code of the script at <a href="http://www.sec522.org/accesscontrol/api/flip.phps">http://www.sec522.org/accesscontrol/api/flip.phps</a> .</p>
 <h2 id="part-2-oauth">Part 2: OAuth</h2>
 <h3 id="no-hints_1">No Hints</h3>
-<p>The exercise starts at <a href="http://defendapp.com/shelter/index.php">http://defendapp.com/shelter/index.php</a>. The basic steps are explained as part of the website.</p>
+<p>The exercise starts at <a href="http://lab-3.3.sans.labs/calendar/index.php">http://lab-3.3.sans.labs/calendar/index.php</a>. The basic steps are explained as part of the website.</p>
 <h3 id="step-by-step_1">Step by Step</h3>
 <ol>
 <li>
-<p>The exercise starts at <a href="http://www.defendapp.com/shelter/index.php">http://www.defendapp.com/shelter/index.php</a>. The page implements a simple calendar display. But to use it, you need to allow the calendar page to retrieve your calendar from the animal shelter site. Click on the link on the page to be sent to the animal shelter.</p>
+<p>The exercise starts at <a href="http://lab-3.3.sans.labs/calendar/index.php">http://lab-3.3.sans.labs/calendar/index.php</a>. The page implements a simple calendar display. But to use it, you need to allow the calendar page to retrieve your calendar from the animal shelter site. Click on the link on the page to be sent to the animal shelter.</p>
 </li>
 <li>
 <p>At the animal shelter, you will need to log in (if you are not already logged in). The username is "sec522", the password is "training".</p>
@@ -1132,7 +1132,7 @@
 </div>
 <div class="highlight"><pre><span></span><code><span class="err">&#39;</span> <span class="k">UNION</span> <span class="k">SELECT</span> <span class="mi">1</span><span class="p">,</span><span class="n">access_token</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span> <span class="k">FROM</span> <span class="n">oauth</span><span class="p">.</span><span class="n">oauth_access_tokens</span> <span class="k">LIMIT</span> <span class="mi">1</span> <span class="c1">-- </span>
 </code></pre></div>
-<p>The token will be displayed below a broken picture on the result page.</p>
+<p>The token for OAuth authentication (Refresh token) will be displayed below a broken picture on the result page.</p>
 </li>
 </ol>
 <hr />
