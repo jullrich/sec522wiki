@@ -14,7 +14,7 @@
     
     
       
-        <title>2.3: Cross-Site Scripting - SEC522 Workbook</title>
+        <title>1.1: HTTP Basics - SEC522 Workbook</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#cross-site-scripting" class="md-skip">
+        <a href="#http-basics" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              2.3: Cross-Site Scripting
+              1.1: HTTP Basics
             
           </span>
         </div>
@@ -373,12 +373,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       <label class="md-nav__link" for="__nav_2">
         Day 1
@@ -394,11 +396,116 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../1.1/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          1.1: HTTP Basics
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         1.1: HTTP Basics
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#part-0-introduction-to-burp-if-you-are-not-already-familiar-with-burp" class="md-nav__link">
+    Part 0: Introduction to Burp (If You Are Not Already Familiar with Burp)
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 0: Introduction to Burp (If You Are Not Already Familiar with Burp)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step" class="md-nav__link">
+    Step by Step
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-manipulating-http-requests" class="md-nav__link">
+    Part 1: Manipulating HTTP Requests
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 1: Manipulating HTTP Requests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step_1" class="md-nav__link">
+    Step by Step
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-intercepting-https-requests" class="md-nav__link">
+    Part 2: Intercepting HTTPS Requests
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 2: Intercepting HTTPS Requests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step_2" class="md-nav__link">
+    Step by Step
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explore-further" class="md-nav__link">
+    Explore Further
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -451,14 +558,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
       <label class="md-nav__link" for="__nav_3">
         Day 2
@@ -498,90 +603,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          2.3: Cross-Site Scripting
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../2.3/" class="md-nav__link">
         2.3: Cross-Site Scripting
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#part-1-guestbook-xss-with-csrf" class="md-nav__link">
-    Part 1: Guestbook XSS with CSRF
-  </a>
-  
-    <nav class="md-nav" aria-label="Part 1: Guestbook XSS with CSRF">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#no-hints" class="md-nav__link">
-    No Hints
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-by-step" class="md-nav__link">
-    Step by Step
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#part-2-dom-based-xss-in-juice-shop" class="md-nav__link">
-    Part 2: DOM-Based XSS in Juice Shop
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
-    Conclusion
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#explore-further" class="md-nav__link">
-    Explore Further
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -910,185 +936,231 @@
     content: 'SANS SEC522 Workbook';
 }}
 @page :left { @bottom-left {
-  content: '2.3-' counter(page);
+  content: '1.1-' counter(page);
 }}
 @page :right { @bottom-right {
-  content: '2.3-' counter(page);
+  content: '1.1-' counter(page);
 }}
 </style>
 
-<h1 id="cross-site-scripting">Cross-Site Scripting</h1>
+<h1 id="http-basics">HTTP Basics</h1>
 <hr />
 <h4 id="objectives">Objectives</h4>
-<div class="codehilite"><pre><span></span><code>Estimated Time: 10 minutes
+<div class="codehilite"><pre><span></span><code>Estimated Time: 20 minutes
 </code></pre></div>
 
+<h5 id="part-0-if-you-are-not-already-familiar-with-burp">Part 0: <em>(if you are not already familiar with Burp)</em></h5>
+<blockquote>
+<p>In this exercise, we will use the Burp proxy to intercept HTTP requests and responses. The goal of the exercise is to become familiar with Burp.</p>
+</blockquote>
 <h5 id="part-1">Part 1:</h5>
 <blockquote>
-<p>You will learn how to identify XSS and how important it is to check all input fields for XSS. We will also learn how XSS can be abused against a guestbook web application and how XSS may result in CSRF.</p>
+<p>Learn how to manipulate requests and responses with Burp and how invalid requests and responses are affecting the browser and the server.</p>
 </blockquote>
 <h5 id="part-2">Part 2:</h5>
 <blockquote>
-<p>Uses "Juice Shop", a pre-built web application with known vulnerabilities. Juice Shop is a modern Node.js based application. The search feature is vulnerable to a DOM-based XSS attack.</p>
+<p>Understand how HTTPS requests can be intercepted with Burp and what limitations may exist.</p>
 </blockquote>
 <h4 id="requirements">Requirements</h4>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Lab VM</li>
 </ul>
-<h2 id="part-1-guestbook-xss-with-csrf">Part 1: Guestbook XSS with CSRF</h2>
-<h3 id="no-hints">No Hints</h3>
-<p>Also, for the guestbook at <a href="http://lab-2.3.sans.labs/login.php">http://lab-2.3.sans.labs/login.php</a>, we experimented with this guestbook before. This time find the XSS vulnerability and exploit it to automatically approve posts that an administrator views. (Logins available - sec522/training and admin/admin)</p>
+<hr />
+<h2 id="part-0-introduction-to-burp-if-you-are-not-already-familiar-with-burp">Part 0: Introduction to Burp <em>(If You Are Not Already Familiar with Burp)</em></h2>
 <h3 id="step-by-step">Step by Step</h3>
-<p>For this part, we will revisit the guestbook system. The administrator of the site noticed the CSRF attack and decided to manually approve every single guestbook entry.</p>
+<p>Burp Community Edition is a free interception proxy created by PortSwigger. It can be used to inspect and manipulate HTTP requests, as well as HTTP responses. Any requests being sent by the browser can be intercepted by Burp. You will be able to edit requests before they are passed to the server. The reverse is also true: Any response from the server can be edited before the browser receives it.</p>
+<p><img alt="" src="media/image1.png" />
+<img alt="" src="media/image0.png" />
+<img alt="" src="media/image2.png" />
+<img alt="" src="media/image0.png" />
+<img alt="" src="media/image3.png" /></p>
+<p>Burp Overview</p>
 <ol>
 <li>
-<p>Using Chrome, browse to <strong><a href="http://lab-2.3.sans.labs/login.php">http://lab-2.3.sans.labs/login.php</a></strong>. </p>
+<p>Start <strong>Burp</strong> by clicking on the icon on the left.</p>
+<p><img alt="" class="zoom" src="media/img-1614924823-20210305.png" /></p>
 </li>
 <li>
-<p>Log in to the guestbook by using <strong>"sec522"</strong> and <strong>"training"</strong> as username and password.</p>
-<ol>
-<li>
-<p>Attempt to input two guest entries into the guestbook. The new guestbook requires the administrator to approve the entries before they are posted on the page.</p>
-</li>
-<li>
-<p>Log out of the guestbook by clicking on the <strong>"Logout"</strong> link.</p>
-</li>
-</ol>
-</li>
-<li>
-<p>Log in with username <strong>"admin"</strong> and password <strong>"admin"</strong>. This allows you to log in as an administrator.</p>
-<p>Administrative functions are now available. This includes the ability to delete comments and to approve messages.</p>
-<ol>
-<li>
-<p>There should be two comments awaiting approval. Please click delete on one of the comments. That comment should then be deleted.</p>
-</li>
-<li>
-<p>There should be one comment left; click the <strong>"Approve All Posts"</strong> button to approve the comment to be displayed to the public.</p>
-</li>
-<li>
-<p>Click <strong>"Logout"</strong>.</p>
-</li>
-</ol>
-</li>
-</ol>
-<p>The CSRF attack is obviously no longer possible, as it would likely not get past the administrator, who will review the comments before allowing the public to see them.</p>
-<p><br></p>
-<p>Now that we understand how this guestbook system works, let's explore if it is vulnerable to attacks.</p>
-<ol>
-<li>
-<p>Log in to the guestbook by using <strong>"sec522"</strong> and <strong>"training"</strong> as username and password.</p>
-<ol>
-<li>
-<p>Attempt to add one new comment. Put anything as name, email, and URL. For comments, enter the following string:</p>
-<div class="highlight"><pre><span></span><code>XSS<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;xss&#39;</span><span class="p">);&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-</code></pre></div>
-</li>
-<li>
-<p>Press the <strong>"Add"</strong> button.</p>
-<p>A pop-up box should appear with <strong>"xss"</strong> in it. The input from the user became part of the page; the script input becomes rendered in the browser as script. This is a classic case of stored XSS vulnerability.</p>
-</li>
-<li>
-<p><em>(Optional)</em> Feel free to view the source of the page to look for the XSS alert box and see why it became part of the scripting content in the page.</p>
-</li>
-<li>
-<p>Delete the XSS comment in the <strong>"waiting for approval"</strong> section, as this can be annoying since the pop-up box shows up in every page load. Click the <strong>"Delete Message"</strong> link in the XSS comment.</p>
-</li>
-<li>
-<p>Log out of the guestbook by clicking on the <strong>"Logout"</strong> link.</p>
-</li>
-</ol>
-<p>We have now proved the comment field to be vulnerable to XSS attack. Let's see how we can leverage this vulnerability.</p>
-<p>We know there is an XSS vulnerability in the comment field. Anyone looking at that comment will have their browser hijacked to run scripts. Hence, these browsers can be controlled. That is very useful: what if we can control the administrator's browser so that the comments could automatically be approved as soon as an administrator looks at them? Let's try this concept.</p>
-</li>
-<li>
-<p>Log in to the guestbook by using <strong>"sec522"</strong> and <strong>"training"</strong> as username and password.</p>
-<ol>
-<li>
-<p>Attempt to add one new comment. Put anything as name, email, and URL. For comments, put the following string:</p>
-<div class="highlight"><pre><span></span><code>You will approve this<span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;guestbook.php?f=approve&quot;</span><span class="p">&gt;</span>.
-</code></pre></div>
-<p><strong>f=approve</strong> is to trigger the <strong>"Approve all Posts"</strong> button we saw in the admin function.</p>
-</li>
-<li>
-<p>Click on <strong>"Add"</strong>.</p>
-<p>No action is triggered at this point. The CSRF string is waiting on the server to be retrieved by the administrator (as the admin logs in); the delivery mechanism from the attacker (sec522) to the administrator is XSS.</p>
-</li>
-<li>
-<p>Log out of the guestbook by clicking on the <strong>"Logout"</strong> link.</p>
-</li>
-</ol>
-</li>
-<li>
-<p>Log in with <strong>admin / admin</strong> as the credential. This allows you to log in as an administrator.</p>
-<p>We see that the comment is waiting for approval. It even contains a broken image icon in the comment.</p>
-<ol>
-<li>Without doing any delete or approval, click <strong>"Logout"</strong>. At this point, the administrator already unwillingly clicked on the <strong>Approve All Posts</strong> link to approve the comment. The browser did the approval on behalf of the administrator; the instruction came from the user's comment.</li>
-</ol>
-</li>
-<li>
-<p>Log in to the guestbook by using <strong>"sec522"</strong> and <strong>"training"</strong> as username and password.</p>
-<p>The comment is already shown on the screen. The administrator never intentionally approved the comments. XSS and CSRF approved the comment.</p>
-</li>
-</ol>
-<p><br></p>
-<div class="admonition info">
-<p class="admonition-title">Let's go over the whole attack scenario one more time. There are a couple of vulnerabilities at play in this exercise.</p>
+<p>Accept License</p>
+<p>Click on "I  Accept" on the Terms and Conditions prompt.</p>
+<p><img alt="" class="zoom" src="media/img-1614924347-20210305.png" /></p>
+<div class="admonition danger">
+<p class="admonition-title"><em>DO NOT INSTALL ANY UPDATES!</em></p>
+<p>Please do not install any updates if prompted.</p>
 </div>
-<p>User sec522 logs in to post a comment on the guest book. With the text of the comment, the user sec522 also puts in an extra &lt;IMG&gt; tag, which links to the approval function and looks like an image that the browser should automatically load. Once this comment has been submitted, sec522 simply sits and waits till the administrator logs in.</p>
-<p>The administrator logs in and, upon logging in, the comments for approval automatically show up on the screen. The &lt;IMG&gt; tag appears to be an image to the administrator's browser, the &lt; and the &gt; tell the browser that these are HTML codes, and the browser happily obeys these instructions. The browser visits the link in the &lt;IMG&gt;, which leads to approving all of the comments.</p>
-<p>Then when sec522 user logs in again, the comment that sec522 user posted originally is showing up as approved.</p>
-<p>To demonstrate a fix for the XSS vulnerability, we have prepared a \"fixed\" version of the guestbook: "guestbook-xss.php". This file is essentially the same as the guestbook.php we have seen, except the XSS in the comment field is fixed.</p>
-<p>The htmlentities function in PHP is to used to encode characters such as &lt; &gt;, /, &amp;, \', or \" to HTML entities. For example, "\&lt; becomes "&lt;" and "\&gt;" becomes "&gt;" . When "\&lt; gets sent to the browser, the browser will interpret it as HTML. But when "&lt;" gets sent to the browser, the browser will display the "\&lt; symbol.</p>
-<p>One line of example code is below:</p>
-<div class="highlight"><pre><span></span><code><span class="x">print htmlentities($r[3]);</span>
-</code></pre></div>
-<p>Before $r[3] is displayed on-screen, it is encoded.</p>
-<p>Feel free to explore the fixed code at <strong><a href="http://lab-2.3.sans.labs/guestbook-xss.phps">http://lab-2.3.sans.labs/guestbook-xss.phps</a></strong> (line 117).</p>
-<ol>
-<li>
-<p>Browse to <a href="http://lab-2.3.sans.labs/guestbook-xss.php">http://lab-2.3.sans.labs/guestbook-xss.php</a>.</p>
+<p>The Burp Community Edition only allows for temporary projects. Click "Next" on the Welcome screen.</p>
+<p><img alt="" src="media/image6.png" /></p>
 </li>
 <li>
-<p>Look at the comments and explore why there is no longer a broken image sign but the entire XSS and CSRF string are simply displayed on the screen. Viewing the source of this page gives insight as to why this is no longer treated as an &lt;IMG&gt; tag but simply text on-screen.</p>
+<p>Next, select "Load from configuration file" and then select "Choose File" on the right hand side. </p>
+<p><img alt="" class="zoom" src="media/img-1615093867-20210307.png" /></p>
+<p>The file is located in the "Documents" directory and then "Burp" directory. The prepared configuration file is "sec522burp.json". Select to open the file and then "Start Burp" (the orange button on the lower right hand corner)</p>
+<p><img alt="" class="zoom" src="media/img-1615089483-20210306.png" /></p>
+<p>Eventually, you will see the main Burp window.</p>
+<p><img alt="" class="zoom" src="media/img-1615005632-20210305.png" /></p>
+<p><strong>Main Burp Window</strong></p>
+</li>
+<li>
+<p>For now, we want to disable interception via Burp. Instead, we would like to have Burp record requests and responses without holding them. Select the "Proxy" tab and make sure the "Intercept" button states "Intercept is off". Click the button to toggle it from "on" to "off".</p>
+<p><img alt="" class="zoom" src="media/img-1615005851-20210305.png" /></p>
+</li>
+<li>
+<p>Start the <strong>Chrome</strong> web browser by clicking the Chrome icon on the left.</p>
+<p><img alt="" src="media/image9.png" /></p>
+</li>
+<li>
+<p>After Chrome starts, use the Proxy Switcher plugin to select Burp as a proxy. The Proxy Switcher plugin can be found in the top right corner of Chrome. The icon is gray to indicate that no proxy is selected, and Chrome connects directly. Once you select a proxy, the icon will be red. Click on the icon to open the settings. Select "Manual Proxy" to activate the proxy. "Burp" should be the active selection in the "Profile" dropdown.</p>
+<p><img alt="" class="zoom" src="media/img-1615006477-20210305.png" /></p>
+</li>
+<li>
+<p>Proxy Switcher Configuration</p>
+<p>If you wish to turn off interception later, just select "Direct" from the Proxy Switcher dialog.</p>
+<div class="admonition information">
+<p class="admonition-title">Proxy Switcher</p>
+<p>Proxy switcher gives you an easy means to toggle between traffic directly going from browser to website or routing through the Burp proxy. 
+When the Proxy Switcher icon is red, you know the traffic is going through the Burp proxy.
+If you toggle the Proxy Switcher to route traffic to Burp and Burp is not running, that could lead to the browser traffic to time out. </p>
+</div>
+</li>
+<li>
+<p>In Chrome, browse to <a href="http://lab-1.1.sans.labs/">http://lab-1.1.sans.labs/</a> (expect a small delay on this first page load)</p>
+</li>
+<li>
+<p>You are now presented with an Animal Shelter web application. </p>
+</li>
+<li>
+<p>If you pass these tests, switch back to Burp by clicking on the Burp icon <strong>in</strong> the "Favorites" list on the left (the bottom one). At this point, Burp is recording requests and responses, but not allowing you to alter them. You can inspect the requests and responses by selecting the "Target" tab.</p>
+<p><img alt="" class="zoom" src="media/img-1615097436-20210307.png" /></p>
+</li>
+<li>
+<p>Burp Target Tab</p>
+<p>Highlight the request for "/" (likely at the top).</p>
+<p>Use the information from the target tab to answer the following questions:</p>
+<details class="question"><summary>What method was used to request the page?</summary><p>GET</p>
+</details>
+<details class="question"><summary>What HTTP version did the browser use?</summary><p>1.1</p>
+</details>
+<details class="question"><summary>What browser (and version) was used?</summary><p>Chrome 89.0.4389.82</p>
+</details>
+<details class="question"><summary>What language does the browser prefer?</summary><p>en-US</p>
+</details>
+<details class="question"><summary>Which header is used specifically to tell the server that this browser prefers HTTPS? <br><em>(extra credit)</em></summary><p>Upgrade-Insecure-Requests: 1</p>
+</details>
+</li>
+</ol>
+<h2 id="part-1-manipulating-http-requests">Part 1: Manipulating HTTP Requests</h2>
+<h3 id="step-by-step_1">Step by Step</h3>
+<ol>
+<li>
+<p>Load <a href="http://lab-1.1.sans.labs/inspect.php">http://lab-1.1.sans.labs/inspect.php</a> in Chrome. This page is also accessible by clicking on the link (Inspect Headers) at upper right hand corner of the Animal Shelter main page. </p>
+</li>
+<li>
+<p>Make sure Burp is running</p>
+</li>
+<li>
+<p>In Burp, select the "Proxy" tab, and make sure "Intercept" is "on". If not, click on the button to enable it.</p>
+<p><img alt="" class="zoom" src="media/img-1615099916-20210307.png" /></p>
+<p><strong>Enabling Interception in Burp</strong></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>After interception is enabled in Burp, and Burp is enabled as a proxy using Proxy Switcher in Chrome, all requests will be held by Burp. If you refresh your browser, the connection will appear to "hang" until you forward the request in Burp.</p>
+</div>
+</li>
+<li>
+<p>Enable Burp as a proxy in Chrome via Proxy Switcher.</p>
+<p><img alt="" class="zoom" src="media/img-1615100039-20210307.png" /></p>
+</li>
+<li>
+<p>Enabling Burp as a Proxy in Chrome via Proxy Switcher</p>
+</li>
+<li>
+<p>Reload the page in Chrome by clicking the </p>
+<p><img alt="" src="media/image14.png" /></p>
+</li>
+<li>
+<p>Switch to Burp (click the Burp icon at the bottom of the left "Favorites" bar)</p>
+<p>You will now see the request held by Burp. For now, we just want to make sure everything is working right.</p>
+</li>
+<li>
+<p>Click "Forward".</p>
+</li>
+<li>
+<p>Switch back to Chrome.</p>
+</li>
+<li>
+<p>Reload the page again.</p>
+</li>
+<li>
+<p>Switch to Burp. This time remove the "Host" header from the request. Make sure you remove the entire line. There should be no empty line left in the header.</p>
+</li>
+<li>
+<p>Click "Forward".</p>
+<details class="question"><summary>What error message does Chrome display?</summary><p>400 Bad Request</p>
+</details>
+</li>
+<li>
+<p>In Burp, select the "HTTP history" from the "Proxy" tab and select the last line to answer the next few questions. The last line should represent the request you just edited. You will find the answers by selecting the "Response" tab in the middle of the Burp window.</p>
+<details class="question"><summary>What status code did the server use to respond?</summary><p>400</p>
+</details>
+<details class="question"><summary>What server version was used?</summary><p>Apache/2.4.38 (Debian)</p>
+</details>
+</li>
+<li>
+<p>Reload the page once more.</p>
+</li>
+<li>
+<p>Switch back to the "Intercept" tab in Burp.</p>
+</li>
+<li>
+<p>In Burp, add a second "Referer" header with arbitrary content. (If there is no Referer header, then add two "Referer" headers to the request). For example:</p>
+<div class="highlight"><pre><span></span><code>Referer: http://www.test.com
+Referer: Some random nonsense
+</code></pre></div>
+<p><img alt="" class="zoom" src="media/img-1615101268-20210307.png" /></p>
+<p><strong><em>Request in Burp with two "Referer" headers prior to clicking "Forward".</em></strong></p>
+</li>
+<li>
+<p>Once the response is returned, the page will display the Referer header as the web application received it. What do you see? The content of the first, second, or both headers?</p>
+<details class="question"><summary>Which data does the application receive for the 'Referer' header?</summary><p>The second</p>
+</details>
 </li>
 </ol>
 <hr />
-<h2 id="part-2-dom-based-xss-in-juice-shop">Part 2: DOM-Based XSS in Juice Shop</h2>
+<h2 id="part-2-intercepting-https-requests">Part 2: Intercepting HTTPS Requests</h2>
+<h3 id="step-by-step_2">Step by Step</h3>
+<p>Load an HTTPS page via Burp. Inspect the certificate and explain why a warning is displayed.</p>
 <ol>
 <li>
-<p>Juice Shop is implemented in Docker. To start it, type at the command line.</p>
-<div class="highlight"><pre><span></span><code>juiceshop start
-</code></pre></div>
+<p>Keeping Burp enabled from the prior exercise, but disable "Interception" (in the "Proxy" menu check the "Intercept" tab and toggle the "Intercept on/off" button) and visit any HTTPS page. For example, <a href="http://lab-1.1.sans.labs/">http://lab-1.1.sans.labs/</a>.</p>
+<div class="admonition question">
+<p class="admonition-title">You will receive a warning. Why?</p>
+</div>
 </li>
 <li>
-<p>Open the browser and visit <a href="http://juiceshop:3000">http://juiceshop:3000</a>. Juice Shop can take a bit of time to load.</p>
+<p>Click on "Advanced".</p>
 </li>
 <li>
-<p>Explore the search field and attempt to identify the cross-site scripting vulnerability. Try test strings like:</p>
-<div class="highlight"><pre><span></span><code>ABC<span class="err">&lt;</span>&gt; &quot; &#39;
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;text&#39;</span><span class="p">)&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-</code></pre></div>
-<p>What works or doesn't work?</p>
+<p>Inspect the certificate by clicking on "Not secure" to the left of the URL.</p>
+<p><img alt="" class="zoom" src="media/img-1615101609-20210307.png" /></p>
+<p><strong>TLS Security Warning.</strong></p>
 </li>
 <li>
-<p>Try this exploit:</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;javascript:alert(&#39;test&#39;)&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
-</code></pre></div>
-</li>
-<li>
-<p>Open the Chrome debugger. (Click on the three vertical dots in the top right. Then select "Developer Tools" from "More tools".)</p>
-</li>
-<li>
-<p>Select the "Network" tab. </p>
-<details class="question"><summary>Do you see any requests when you submit the search? Why not?</summary><p>The exploit in Step 4 works. This is DOM-based XSS that does not require data to be transferred to the server (Step 6: you will not see a network connection).</p>
+<p>Click on "Certificate (invalid)". This will display the certificate information:</p>
+<p><img alt="" class="zoom" src="media/img-1615101671-20210307.png" /></p>
+<p><strong>Burp Certificate</strong></p>
+<details class="question"><summary>Who issued the certificate?</summary><p>PortSwigger CA</p>
+</details>
+<details class="question"><summary>Which hostname is covered by the certificate?</summary><p>lab-1.1.sans.labs</p>
 </details>
 </li>
 </ol>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
+<ul>
+<li>Burp is a man-in-the middle proxy, allow you to intercept and manipulate requests prior to sending the request to server and before the response is received by the browser.</li>
+<li>Browser handles the request and response header, generally without the user being aware of their existance.</li>
+<li>The request headers have an impact on how the server process the request. The reponse headers also have an impact on the browser's behavior as well.</li>
+</ul>
 <hr />
 <h2 id="explore-further">Explore Further</h2>
 <ul>
@@ -1111,7 +1183,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../2.2/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../../errata/F01_01/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1120,19 +1192,19 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              2.2: Guestbook CSRF
+              F01_01
             </div>
           </div>
         </a>
       
       
-        <a href="../2.4/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../1.2/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              2.4: Unicode and File Upload
+              1.2: Inspecting HTTP/2 Traffic
             </div>
           </div>
           <div class="md-footer__button md-icon">

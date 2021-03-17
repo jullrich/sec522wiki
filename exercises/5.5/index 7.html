@@ -14,7 +14,7 @@
     
     
       
-        <title>2.3: Cross-Site Scripting - SEC522 Workbook</title>
+        <title>5.5: Logging and Incident Response - SEC522 Workbook</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#cross-site-scripting" class="md-skip">
+        <a href="#logging-and-incident-response" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              2.3: Cross-Site Scripting
+              5.5: Logging and Incident Response
             
           </span>
         </div>
@@ -451,14 +451,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
       <label class="md-nav__link" for="__nav_3">
         Day 2
@@ -498,90 +496,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          2.3: Cross-Site Scripting
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../2.3/" class="md-nav__link">
         2.3: Cross-Site Scripting
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#part-1-guestbook-xss-with-csrf" class="md-nav__link">
-    Part 1: Guestbook XSS with CSRF
-  </a>
-  
-    <nav class="md-nav" aria-label="Part 1: Guestbook XSS with CSRF">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#no-hints" class="md-nav__link">
-    No Hints
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-by-step" class="md-nav__link">
-    Step by Step
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#part-2-dom-based-xss-in-juice-shop" class="md-nav__link">
-    Part 2: DOM-Based XSS in Juice Shop
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
-    Conclusion
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#explore-further" class="md-nav__link">
-    Explore Further
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -766,12 +685,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
       
       <label class="md-nav__link" for="__nav_6">
         Day 5
@@ -835,11 +756,77 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../5.5/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          5.5: Logging and Incident Response
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         5.5: Logging and Incident Response
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#no-hints" class="md-nav__link">
+    No Hints
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-by-step" class="md-nav__link">
+    Step by Step
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#answers" class="md-nav__link">
+    Answers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explore-further" class="md-nav__link">
+    Explore Further
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -910,183 +897,156 @@
     content: 'SANS SEC522 Workbook';
 }}
 @page :left { @bottom-left {
-  content: '2.3-' counter(page);
+  content: '5.5-' counter(page);
 }}
 @page :right { @bottom-right {
-  content: '2.3-' counter(page);
+  content: '5.5-' counter(page);
 }}
 </style>
 
-<h1 id="cross-site-scripting">Cross-Site Scripting</h1>
+<h1 id="logging-and-incident-response">Logging and Incident Response</h1>
 <hr />
 <h4 id="objectives">Objectives</h4>
 <div class="codehilite"><pre><span></span><code>Estimated Time: 10 minutes
 </code></pre></div>
 
-<h5 id="part-1">Part 1:</h5>
 <blockquote>
-<p>You will learn how to identify XSS and how important it is to check all input fields for XSS. We will also learn how XSS can be abused against a guestbook web application and how XSS may result in CSRF.</p>
-</blockquote>
-<h5 id="part-2">Part 2:</h5>
-<blockquote>
-<p>Uses "Juice Shop", a pre-built web application with known vulnerabilities. Juice Shop is a modern Node.js based application. The search feature is vulnerable to a DOM-based XSS attack.</p>
+<p>Use a standard web server log of an incident to figure out what happened.</p>
 </blockquote>
 <h4 id="requirements">Requirements</h4>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Lab VM</li>
 </ul>
-<h2 id="part-1-guestbook-xss-with-csrf">Part 1: Guestbook XSS with CSRF</h2>
-<h3 id="no-hints">No Hints</h3>
-<p>Also, for the guestbook at <a href="http://lab-2.3.sans.labs/login.php">http://lab-2.3.sans.labs/login.php</a>, we experimented with this guestbook before. This time find the XSS vulnerability and exploit it to automatically approve posts that an administrator views. (Logins available - sec522/training and admin/admin)</p>
-<h3 id="step-by-step">Step by Step</h3>
-<p>For this part, we will revisit the guestbook system. The administrator of the site noticed the CSRF attack and decided to manually approve every single guestbook entry.</p>
-<ol>
-<li>
-<p>Using Chrome, browse to <strong><a href="http://lab-2.3.sans.labs/login.php">http://lab-2.3.sans.labs/login.php</a></strong>. </p>
-</li>
-<li>
-<p>Log in to the guestbook by using <strong>"sec522"</strong> and <strong>"training"</strong> as username and password.</p>
-<ol>
-<li>
-<p>Attempt to input two guest entries into the guestbook. The new guestbook requires the administrator to approve the entries before they are posted on the page.</p>
-</li>
-<li>
-<p>Log out of the guestbook by clicking on the <strong>"Logout"</strong> link.</p>
-</li>
-</ol>
-</li>
-<li>
-<p>Log in with username <strong>"admin"</strong> and password <strong>"admin"</strong>. This allows you to log in as an administrator.</p>
-<p>Administrative functions are now available. This includes the ability to delete comments and to approve messages.</p>
-<ol>
-<li>
-<p>There should be two comments awaiting approval. Please click delete on one of the comments. That comment should then be deleted.</p>
-</li>
-<li>
-<p>There should be one comment left; click the <strong>"Approve All Posts"</strong> button to approve the comment to be displayed to the public.</p>
-</li>
-<li>
-<p>Click <strong>"Logout"</strong>.</p>
-</li>
-</ol>
-</li>
-</ol>
-<p>The CSRF attack is obviously no longer possible, as it would likely not get past the administrator, who will review the comments before allowing the public to see them.</p>
-<p><br></p>
-<p>Now that we understand how this guestbook system works, let's explore if it is vulnerable to attacks.</p>
-<ol>
-<li>
-<p>Log in to the guestbook by using <strong>"sec522"</strong> and <strong>"training"</strong> as username and password.</p>
-<ol>
-<li>
-<p>Attempt to add one new comment. Put anything as name, email, and URL. For comments, enter the following string:</p>
-<div class="highlight"><pre><span></span><code>XSS<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;xss&#39;</span><span class="p">);&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-</code></pre></div>
-</li>
-<li>
-<p>Press the <strong>"Add"</strong> button.</p>
-<p>A pop-up box should appear with <strong>"xss"</strong> in it. The input from the user became part of the page; the script input becomes rendered in the browser as script. This is a classic case of stored XSS vulnerability.</p>
-</li>
-<li>
-<p><em>(Optional)</em> Feel free to view the source of the page to look for the XSS alert box and see why it became part of the scripting content in the page.</p>
-</li>
-<li>
-<p>Delete the XSS comment in the <strong>"waiting for approval"</strong> section, as this can be annoying since the pop-up box shows up in every page load. Click the <strong>"Delete Message"</strong> link in the XSS comment.</p>
-</li>
-<li>
-<p>Log out of the guestbook by clicking on the <strong>"Logout"</strong> link.</p>
-</li>
-</ol>
-<p>We have now proved the comment field to be vulnerable to XSS attack. Let's see how we can leverage this vulnerability.</p>
-<p>We know there is an XSS vulnerability in the comment field. Anyone looking at that comment will have their browser hijacked to run scripts. Hence, these browsers can be controlled. That is very useful: what if we can control the administrator's browser so that the comments could automatically be approved as soon as an administrator looks at them? Let's try this concept.</p>
-</li>
-<li>
-<p>Log in to the guestbook by using <strong>"sec522"</strong> and <strong>"training"</strong> as username and password.</p>
-<ol>
-<li>
-<p>Attempt to add one new comment. Put anything as name, email, and URL. For comments, put the following string:</p>
-<div class="highlight"><pre><span></span><code>You will approve this<span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;guestbook.php?f=approve&quot;</span><span class="p">&gt;</span>.
-</code></pre></div>
-<p><strong>f=approve</strong> is to trigger the <strong>"Approve all Posts"</strong> button we saw in the admin function.</p>
-</li>
-<li>
-<p>Click on <strong>"Add"</strong>.</p>
-<p>No action is triggered at this point. The CSRF string is waiting on the server to be retrieved by the administrator (as the admin logs in); the delivery mechanism from the attacker (sec522) to the administrator is XSS.</p>
-</li>
-<li>
-<p>Log out of the guestbook by clicking on the <strong>"Logout"</strong> link.</p>
-</li>
-</ol>
-</li>
-<li>
-<p>Log in with <strong>admin / admin</strong> as the credential. This allows you to log in as an administrator.</p>
-<p>We see that the comment is waiting for approval. It even contains a broken image icon in the comment.</p>
-<ol>
-<li>Without doing any delete or approval, click <strong>"Logout"</strong>. At this point, the administrator already unwillingly clicked on the <strong>Approve All Posts</strong> link to approve the comment. The browser did the approval on behalf of the administrator; the instruction came from the user's comment.</li>
-</ol>
-</li>
-<li>
-<p>Log in to the guestbook by using <strong>"sec522"</strong> and <strong>"training"</strong> as username and password.</p>
-<p>The comment is already shown on the screen. The administrator never intentionally approved the comments. XSS and CSRF approved the comment.</p>
-</li>
-</ol>
-<p><br></p>
-<div class="admonition info">
-<p class="admonition-title">Let's go over the whole attack scenario one more time. There are a couple of vulnerabilities at play in this exercise.</p>
-</div>
-<p>User sec522 logs in to post a comment on the guest book. With the text of the comment, the user sec522 also puts in an extra &lt;IMG&gt; tag, which links to the approval function and looks like an image that the browser should automatically load. Once this comment has been submitted, sec522 simply sits and waits till the administrator logs in.</p>
-<p>The administrator logs in and, upon logging in, the comments for approval automatically show up on the screen. The &lt;IMG&gt; tag appears to be an image to the administrator's browser, the &lt; and the &gt; tell the browser that these are HTML codes, and the browser happily obeys these instructions. The browser visits the link in the &lt;IMG&gt;, which leads to approving all of the comments.</p>
-<p>Then when sec522 user logs in again, the comment that sec522 user posted originally is showing up as approved.</p>
-<p>To demonstrate a fix for the XSS vulnerability, we have prepared a \"fixed\" version of the guestbook: "guestbook-xss.php". This file is essentially the same as the guestbook.php we have seen, except the XSS in the comment field is fixed.</p>
-<p>The htmlentities function in PHP is to used to encode characters such as &lt; &gt;, /, &amp;, \', or \" to HTML entities. For example, "\&lt; becomes "&lt;" and "\&gt;" becomes "&gt;" . When "\&lt; gets sent to the browser, the browser will interpret it as HTML. But when "&lt;" gets sent to the browser, the browser will display the "\&lt; symbol.</p>
-<p>One line of example code is below:</p>
-<div class="highlight"><pre><span></span><code><span class="x">print htmlentities($r[3]);</span>
-</code></pre></div>
-<p>Before $r[3] is displayed on-screen, it is encoded.</p>
-<p>Feel free to explore the fixed code at <strong><a href="http://lab-2.3.sans.labs/guestbook-xss.phps">http://lab-2.3.sans.labs/guestbook-xss.phps</a></strong> (line 117).</p>
-<ol>
-<li>
-<p>Browse to <a href="http://lab-2.3.sans.labs/guestbook-xss.php">http://lab-2.3.sans.labs/guestbook-xss.php</a>.</p>
-</li>
-<li>
-<p>Look at the comments and explore why there is no longer a broken image sign but the entire XSS and CSRF string are simply displayed on the screen. Viewing the source of this page gives insight as to why this is no longer treated as an &lt;IMG&gt; tag but simply text on-screen.</p>
-</li>
-</ol>
 <hr />
-<h2 id="part-2-dom-based-xss-in-juice-shop">Part 2: DOM-Based XSS in Juice Shop</h2>
+<h3 id="no-hints">No Hints</h3>
+<p>The application under attack is the animal shelters "Citrus Gateway". The "Citrus Gateway" allow access to internal application, but the shelter never really used it, so it sits in its default configuration exposed to the internet. There are two attacks happening. The log does not have necessarily all the information. For the second attack, the "CGW-User" header was logged. To play with the application, see <a href="http://lab-5.5.sans.labs/citrusgw/index.php">http://lab-5.5.sans.labs/citrusgw/index.php</a> . The files for the application can be found in /etc/docker/compose/5.5/web/html/citrusgw</p>
+<h3 id="step-by-step">Step by Step</h3>
+<p>The logs use the following format (the last field is only present for the last few lines of the log):</p>
+<pre style="white-space: pre-wrap;">
+[hostname] [attacker IP] - - [data/time] "METHOD URL HTTP/1.1" [Status Code] [Response Size] "-" "[User-Agent]" "CGW-User Header"
+</pre>
+
+<p>As an example, this line:</p>
+<pre style="white-space: pre-wrap;">
+www.sec522.org:80 127.0.0.1 - - [26/Jan/2020:00:25:58 -0500] "POST /citrusgw/api/newbm.php HTTP/1.1" 200 207 "-" "l33t@tt@ck" "test"
+</pre>
+
+<p>Indicates:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hostname</td>
+<td>www.s<span>ec</span>522.org</td>
+</tr>
+<tr>
+<td>Client IP (ignore for this exercise)</td>
+<td>127.0.0.1</td>
+</tr>
+<tr>
+<td>Date/Time</td>
+<td>26/Jan/2020:00:25:58 -0500</td>
+</tr>
+<tr>
+<td>HTTP Method</td>
+<td>POST</td>
+</tr>
+<tr>
+<td>URL Requested</td>
+<td>/citrusgw/api/newbm.php</td>
+</tr>
+<tr>
+<td>Status Code</td>
+<td>200 (OK)</td>
+</tr>
+<tr>
+<td>Response Size</td>
+<td>207 Bytes</td>
+</tr>
+<tr>
+<td>User-Agent</td>
+<td>l33t\@tt\@ck</td>
+</tr>
+<tr>
+<td>CGW-User Header</td>
+<td>test</td>
+</tr>
+</tbody>
+</table>
 <ol>
 <li>
-<p>Juice Shop is implemented in Docker. To start it, type at the command line.</p>
-<div class="highlight"><pre><span></span><code>juiceshop start
-</code></pre></div>
+<p>Explore the attacked application to become familiar with it. Start by loading <a href="http://lab-5.5.sans.labs/citrusgw/index.php">http://lab-5.5.sans.labs/citrusgw/index.php</a> in Google Chrome</p>
 </li>
 <li>
-<p>Open the browser and visit <a href="http://juiceshop:3000">http://juiceshop:3000</a>. Juice Shop can take a bit of time to load.</p>
+<p>Log in using the credentials "sec522" and "training".</p>
 </li>
 <li>
-<p>Explore the search field and attempt to identify the cross-site scripting vulnerability. Try test strings like:</p>
-<div class="highlight"><pre><span></span><code>ABC<span class="err">&lt;</span>&gt; &quot; &#39;
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;text&#39;</span><span class="p">)&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-</code></pre></div>
-<p>What works or doesn't work?</p>
+<p>Enter a bookmark (any text will do).</p>
 </li>
 <li>
-<p>Try this exploit:</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;javascript:alert(&#39;test&#39;)&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
-</code></pre></div>
+<p>Click on the "Home" icon on your desktop.</p>
 </li>
 <li>
-<p>Open the Chrome debugger. (Click on the three vertical dots in the top right. Then select "Developer Tools" from "More tools".)</p>
+<p>Open the "Documents" folder</p>
 </li>
 <li>
-<p>Select the "Network" tab. </p>
-<details class="question"><summary>Do you see any requests when you submit the search? Why not?</summary><p>The exploit in Step 4 works. This is DOM-based XSS that does not require data to be transferred to the server (Step 6: you will not see a network connection).</p>
-</details>
+<p>Open the "Logs" folder</p>
+</li>
+<li>
+<p>Double click on "attack.logs"</p>
+</li>
+<li>
+<p>The file starts out with one type of attack. Review the first approximately 100 lines that are all accessing "index.php" and answer the following questions:</p>
+<div class="admonition note">
+<p class="admonition-title">1. What type of attack do you think the attacker conducted?</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">2. Any indication if the attack succeeded?</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">3. Any simple signature you could use to block this attacker?</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">4. Any defensive technique you would recommend?</p>
+</div>
+</li>
+<li>
+<p>The second part of the exercise uses the log file you have already open, but the requests are now hitting newbm.php. Refer to the field list in the introduction above to identify which field changes for some of the requests.</p>
+</li>
+<li>
+<p>You may want to open /etc/docker/compose/5.5/web/html/citrusgw/api/newbm.php first in a text editor (Visual Studio Code) to understand a bit more what is happening.</p>
+<p>Try to answer these questions:</p>
+<div class="admonition note">
+<p class="admonition-title">5. What type of attack was the attacker launching?</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">6. Was it successful?</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">7. What other artifacts would you look for on this system to figure out if the attack was successful?</p>
+</div>
 </li>
 </ol>
+<h2 id="answers">Answers</h2>
+<details class="question"><summary>1. What type of attack do you think the attacker conducted?</summary><p>The attacker likely launched a brute force attack. The login page (index.php) was hit very quickly with what looks like similar requests.</p>
+</details>
+<details class="question"><summary>2. Any indication if the attack succeeded?</summary><p>The last request returned a 302 status code (redirect) while the others returned a 200 code. This likely indicates that the last attempt succeeded.</p>
+</details>
+<details class="question"><summary>3. Any simple signature you could use to block this attacker?</summary><p>The attacker uses a very unique user agent. This user agent could easily be blocked with a firewall.</p>
+</details>
+<details class="question"><summary>4. Any defensive technique you would recommend?</summary><p>It may be a good idea to implement some kind of rate limiting and lock out for the login form.</p>
+</details>
+<details class="question"><summary>5. What type of attack was the attacker launching?</summary><p>The attacker attempted a directory traversal attack</p>
+</details>
+<details class="question"><summary>6. Was it successful?</summary><p>It may be successful as the response size changed for some of the request.</p>
+</details>
+<details class="question"><summary>7. What other artifacts would you look for on this system to figure out if the attack was successful?</summary><p>The attack attempts to write a file "test.txt" to a "tmp" directory, which may be found on the system.</p>
+</details>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
 <hr />
@@ -1111,7 +1071,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../2.2/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../5.4/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1120,25 +1080,11 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              2.2: Guestbook CSRF
+              5.4: Sub Resource Integrity
             </div>
           </div>
         </a>
       
-      
-        <a href="../2.4/" class="md-footer__link md-footer__link--next" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              2.4: Unicode and File Upload
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
-        </a>
       
     </nav>
   

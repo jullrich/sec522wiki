@@ -14,7 +14,7 @@
     
     
       
-        <title>2.3: Cross-Site Scripting - SEC522 Workbook</title>
+        <title>2.1: SQL Injection - SEC522 Workbook</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#cross-site-scripting" class="md-skip">
+        <a href="#sql-injection" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              2.3: Cross-Site Scripting
+              2.1: SQL Injection
             
           </span>
         </div>
@@ -474,30 +474,6 @@
             
   
   
-  
-    <li class="md-nav__item">
-      <a href="../2.1/" class="md-nav__link">
-        2.1: SQL Injection
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2.2/" class="md-nav__link">
-        2.2: Guestbook CSRF
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
     
   
   
@@ -509,12 +485,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          2.3: Cross-Site Scripting
+          2.1: SQL Injection
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        2.3: Cross-Site Scripting
+        2.1: SQL Injection
       </a>
       
         
@@ -531,11 +507,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#part-1-guestbook-xss-with-csrf" class="md-nav__link">
-    Part 1: Guestbook XSS with CSRF
+  <a href="#part-1-basic-sql-injection" class="md-nav__link">
+    Part 1: Basic SQL Injection
   </a>
   
-    <nav class="md-nav" aria-label="Part 1: Guestbook XSS with CSRF">
+    <nav class="md-nav" aria-label="Part 1: Basic SQL Injection">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -558,9 +534,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#part-2-dom-based-xss-in-juice-shop" class="md-nav__link">
-    Part 2: DOM-Based XSS in Juice Shop
+  <a href="#part-2-phpbb-sql-injection" class="md-nav__link">
+    Part 2: phpBB SQL Injection
   </a>
+  
+    <nav class="md-nav" aria-label="Part 2: phpBB SQL Injection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-hints_1" class="md-nav__link">
+    No Hints
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step_1" class="md-nav__link">
+    Step by Step
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -582,6 +578,30 @@
   
 </nav>
       
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.2/" class="md-nav__link">
+        2.2: Guestbook CSRF
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.3/" class="md-nav__link">
+        2.3: Cross-Site Scripting
+      </a>
     </li>
   
 
@@ -910,181 +930,136 @@
     content: 'SANS SEC522 Workbook';
 }}
 @page :left { @bottom-left {
-  content: '2.3-' counter(page);
+  content: '2.1-' counter(page);
 }}
 @page :right { @bottom-right {
-  content: '2.3-' counter(page);
+  content: '2.1-' counter(page);
 }}
 </style>
 
-<h1 id="cross-site-scripting">Cross-Site Scripting</h1>
+<h1 id="sql-injection">SQL Injection</h1>
 <hr />
 <h4 id="objectives">Objectives</h4>
-<div class="codehilite"><pre><span></span><code>Estimated Time: 10 minutes
+<div class="codehilite"><pre><span></span><code>Estimated Time: 15 minutes
 </code></pre></div>
 
 <h5 id="part-1">Part 1:</h5>
 <blockquote>
-<p>You will learn how to identify XSS and how important it is to check all input fields for XSS. We will also learn how XSS can be abused against a guestbook web application and how XSS may result in CSRF.</p>
+<p>You will familiarize yourself with the basic principles of SQL injection.</p>
 </blockquote>
 <h5 id="part-2">Part 2:</h5>
 <blockquote>
-<p>Uses "Juice Shop", a pre-built web application with known vulnerabilities. Juice Shop is a modern Node.js based application. The search feature is vulnerable to a DOM-based XSS attack.</p>
+<p>You will experiment with an actual application. This will provide us with a realistic example of how SQL injection works and how an attacker may exploit it.</p>
 </blockquote>
 <h4 id="requirements">Requirements</h4>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Lab VM</li>
 </ul>
-<h2 id="part-1-guestbook-xss-with-csrf">Part 1: Guestbook XSS with CSRF</h2>
-<h3 id="no-hints">No Hints</h3>
-<p>Also, for the guestbook at <a href="http://lab-2.3.sans.labs/login.php">http://lab-2.3.sans.labs/login.php</a>, we experimented with this guestbook before. This time find the XSS vulnerability and exploit it to automatically approve posts that an administrator views. (Logins available - sec522/training and admin/admin)</p>
-<h3 id="step-by-step">Step by Step</h3>
-<p>For this part, we will revisit the guestbook system. The administrator of the site noticed the CSRF attack and decided to manually approve every single guestbook entry.</p>
-<ol>
-<li>
-<p>Using Chrome, browse to <strong><a href="http://lab-2.3.sans.labs/login.php">http://lab-2.3.sans.labs/login.php</a></strong>. </p>
-</li>
-<li>
-<p>Log in to the guestbook by using <strong>"sec522"</strong> and <strong>"training"</strong> as username and password.</p>
-<ol>
-<li>
-<p>Attempt to input two guest entries into the guestbook. The new guestbook requires the administrator to approve the entries before they are posted on the page.</p>
-</li>
-<li>
-<p>Log out of the guestbook by clicking on the <strong>"Logout"</strong> link.</p>
-</li>
-</ol>
-</li>
-<li>
-<p>Log in with username <strong>"admin"</strong> and password <strong>"admin"</strong>. This allows you to log in as an administrator.</p>
-<p>Administrative functions are now available. This includes the ability to delete comments and to approve messages.</p>
-<ol>
-<li>
-<p>There should be two comments awaiting approval. Please click delete on one of the comments. That comment should then be deleted.</p>
-</li>
-<li>
-<p>There should be one comment left; click the <strong>"Approve All Posts"</strong> button to approve the comment to be displayed to the public.</p>
-</li>
-<li>
-<p>Click <strong>"Logout"</strong>.</p>
-</li>
-</ol>
-</li>
-</ol>
-<p>The CSRF attack is obviously no longer possible, as it would likely not get past the administrator, who will review the comments before allowing the public to see them.</p>
-<p><br></p>
-<p>Now that we understand how this guestbook system works, let's explore if it is vulnerable to attacks.</p>
-<ol>
-<li>
-<p>Log in to the guestbook by using <strong>"sec522"</strong> and <strong>"training"</strong> as username and password.</p>
-<ol>
-<li>
-<p>Attempt to add one new comment. Put anything as name, email, and URL. For comments, enter the following string:</p>
-<div class="highlight"><pre><span></span><code>XSS<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;xss&#39;</span><span class="p">);&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-</code></pre></div>
-</li>
-<li>
-<p>Press the <strong>"Add"</strong> button.</p>
-<p>A pop-up box should appear with <strong>"xss"</strong> in it. The input from the user became part of the page; the script input becomes rendered in the browser as script. This is a classic case of stored XSS vulnerability.</p>
-</li>
-<li>
-<p><em>(Optional)</em> Feel free to view the source of the page to look for the XSS alert box and see why it became part of the scripting content in the page.</p>
-</li>
-<li>
-<p>Delete the XSS comment in the <strong>"waiting for approval"</strong> section, as this can be annoying since the pop-up box shows up in every page load. Click the <strong>"Delete Message"</strong> link in the XSS comment.</p>
-</li>
-<li>
-<p>Log out of the guestbook by clicking on the <strong>"Logout"</strong> link.</p>
-</li>
-</ol>
-<p>We have now proved the comment field to be vulnerable to XSS attack. Let's see how we can leverage this vulnerability.</p>
-<p>We know there is an XSS vulnerability in the comment field. Anyone looking at that comment will have their browser hijacked to run scripts. Hence, these browsers can be controlled. That is very useful: what if we can control the administrator's browser so that the comments could automatically be approved as soon as an administrator looks at them? Let's try this concept.</p>
-</li>
-<li>
-<p>Log in to the guestbook by using <strong>"sec522"</strong> and <strong>"training"</strong> as username and password.</p>
-<ol>
-<li>
-<p>Attempt to add one new comment. Put anything as name, email, and URL. For comments, put the following string:</p>
-<div class="highlight"><pre><span></span><code>You will approve this<span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;guestbook.php?f=approve&quot;</span><span class="p">&gt;</span>.
-</code></pre></div>
-<p><strong>f=approve</strong> is to trigger the <strong>"Approve all Posts"</strong> button we saw in the admin function.</p>
-</li>
-<li>
-<p>Click on <strong>"Add"</strong>.</p>
-<p>No action is triggered at this point. The CSRF string is waiting on the server to be retrieved by the administrator (as the admin logs in); the delivery mechanism from the attacker (sec522) to the administrator is XSS.</p>
-</li>
-<li>
-<p>Log out of the guestbook by clicking on the <strong>"Logout"</strong> link.</p>
-</li>
-</ol>
-</li>
-<li>
-<p>Log in with <strong>admin / admin</strong> as the credential. This allows you to log in as an administrator.</p>
-<p>We see that the comment is waiting for approval. It even contains a broken image icon in the comment.</p>
-<ol>
-<li>Without doing any delete or approval, click <strong>"Logout"</strong>. At this point, the administrator already unwillingly clicked on the <strong>Approve All Posts</strong> link to approve the comment. The browser did the approval on behalf of the administrator; the instruction came from the user's comment.</li>
-</ol>
-</li>
-<li>
-<p>Log in to the guestbook by using <strong>"sec522"</strong> and <strong>"training"</strong> as username and password.</p>
-<p>The comment is already shown on the screen. The administrator never intentionally approved the comments. XSS and CSRF approved the comment.</p>
-</li>
-</ol>
-<p><br></p>
-<div class="admonition info">
-<p class="admonition-title">Let's go over the whole attack scenario one more time. There are a couple of vulnerabilities at play in this exercise.</p>
-</div>
-<p>User sec522 logs in to post a comment on the guest book. With the text of the comment, the user sec522 also puts in an extra &lt;IMG&gt; tag, which links to the approval function and looks like an image that the browser should automatically load. Once this comment has been submitted, sec522 simply sits and waits till the administrator logs in.</p>
-<p>The administrator logs in and, upon logging in, the comments for approval automatically show up on the screen. The &lt;IMG&gt; tag appears to be an image to the administrator's browser, the &lt; and the &gt; tell the browser that these are HTML codes, and the browser happily obeys these instructions. The browser visits the link in the &lt;IMG&gt;, which leads to approving all of the comments.</p>
-<p>Then when sec522 user logs in again, the comment that sec522 user posted originally is showing up as approved.</p>
-<p>To demonstrate a fix for the XSS vulnerability, we have prepared a \"fixed\" version of the guestbook: "guestbook-xss.php". This file is essentially the same as the guestbook.php we have seen, except the XSS in the comment field is fixed.</p>
-<p>The htmlentities function in PHP is to used to encode characters such as &lt; &gt;, /, &amp;, \', or \" to HTML entities. For example, "\&lt; becomes "&lt;" and "\&gt;" becomes "&gt;" . When "\&lt; gets sent to the browser, the browser will interpret it as HTML. But when "&lt;" gets sent to the browser, the browser will display the "\&lt; symbol.</p>
-<p>One line of example code is below:</p>
-<div class="highlight"><pre><span></span><code><span class="x">print htmlentities($r[3]);</span>
-</code></pre></div>
-<p>Before $r[3] is displayed on-screen, it is encoded.</p>
-<p>Feel free to explore the fixed code at <strong><a href="http://lab-2.3.sans.labs/guestbook-xss.phps">http://lab-2.3.sans.labs/guestbook-xss.phps</a></strong> (line 117).</p>
-<ol>
-<li>
-<p>Browse to <a href="http://lab-2.3.sans.labs/guestbook-xss.php">http://lab-2.3.sans.labs/guestbook-xss.php</a>.</p>
-</li>
-<li>
-<p>Look at the comments and explore why there is no longer a broken image sign but the entire XSS and CSRF string are simply displayed on the screen. Viewing the source of this page gives insight as to why this is no longer treated as an &lt;IMG&gt; tag but simply text on-screen.</p>
-</li>
-</ol>
 <hr />
-<h2 id="part-2-dom-based-xss-in-juice-shop">Part 2: DOM-Based XSS in Juice Shop</h2>
+<h2 id="part-1-basic-sql-injection">Part 1: Basic SQL Injection</h2>
+<h3 id="no-hints">No Hints</h3>
+<p>We are again using our "Animal Shelter" application. This time, we use a modified page that includes a search feature. The search feature allows for SQL injection. You can check the "Debug" checkbox to see the SQL query. The page can be found at <a href="http://lab-2.1.sans.labs/">http://lab-2.1.sans.labs/</a>.</p>
+<h3 id="step-by-step">Step by Step</h3>
 <ol>
 <li>
-<p>Juice Shop is implemented in Docker. To start it, type at the command line.</p>
-<div class="highlight"><pre><span></span><code>juiceshop start
+<p>Open <a href="http://lab-2.1.sans.labs/">http://lab-2.1.sans.labs/</a> in Google Chrome.</p>
+</li>
+<li>
+<p>Enter one of the animal names (for example, "Stash") in the search box and click "Submit". Only this animal should now be visible.</p>
+</li>
+<li>
+<p>Enter a single quote ( ' ) in the search box and click "Submit". This should trigger an SQL error. The SQL error message will include the query. Try to identify the vulnerability.</p>
+</li>
+</ol>
+<h4 id="digging-deeper">Digging Deeper</h4>
+<div class="admonition danger">
+<p class="admonition-title">Critical: The next few commands require you to include a space after the final '--'.</p>
+</div>
+<ol>
+<li>
+<p>Enter the string below in the search field and click submit. You will not see an error now, but all animals are visible.</p>
+<div class="highlight"><pre><span></span><code>&#39; OR 1=1 -- 
 </code></pre></div>
 </li>
 <li>
-<p>Open the browser and visit <a href="http://juiceshop:3000">http://juiceshop:3000</a>. Juice Shop can take a bit of time to load.</p>
+<p>Enter the below string and click "Submit".</p>
+<div class="highlight"><pre><span></span><code>&#39; UNION SELECT 1,2,3 -- 
+</code></pre></div>
+<p>The last step will again result in an error message. The error message will state that both SELECT statements in a UNION query need to return the same number of columns. Count the columns returned by the first statement and rewrite the second statement using the right number of columns.</p>
 </li>
 <li>
-<p>Explore the search field and attempt to identify the cross-site scripting vulnerability. Try test strings like:</p>
-<div class="highlight"><pre><span></span><code>ABC<span class="err">&lt;</span>&gt; &quot; &#39;
+<p>Enter the below string and hit submit. You will now get a broken image and the numbers 2 and 4 will be visible below the broken image.</p>
+<div class="highlight"><pre><span></span><code>&#39; UNION SELECT 1,2,3,4,5,6,7 -- 
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;text&#39;</span><span class="p">)&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-</code></pre></div>
-<p>What works or doesn't work?</p>
+<p><img alt="" class="zoom" src="media/image1.png" /></p>
+<p><strong>Result of Entering the Correct UNION Query</strong></p>
 </li>
 <li>
-<p>Try this exploit:</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;javascript:alert(&#39;test&#39;)&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<p>Replace the SELECT query with one selecting the username and password column from the animalshelter.users table</p>
+<div class="highlight"><pre><span></span><code>&#39; UNION SELECT 1,username,3,password,5,6,7 FROM animalshelter.users -- 
 </code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Do not forget the space after the -- in the end</p>
+</div>
+<p>You will now see two broken images (one for each user in the database). The usernames and passwords are displayed where you saw the numbers 2 and 4 in Step 6.</p>
 </li>
 <li>
-<p>Open the Chrome debugger. (Click on the three vertical dots in the top right. Then select "Developer Tools" from "More tools".)</p>
+<p>View the page source (CTRL-U) to see the password hashes more clearly.</p>
+<p>You may try other queries now.</p>
 </li>
-<li>
-<p>Select the "Network" tab. </p>
-<details class="question"><summary>Do you see any requests when you submit the search? Why not?</summary><p>The exploit in Step 4 works. This is DOM-based XSS that does not require data to be transferred to the server (Step 6: you will not see a network connection).</p>
+</ol>
+<details class="question"><summary>Can you create a query without the '--' in the end?</summary><p>Answer: <strong>' OR 1='1</strong></p>
 </details>
+<hr />
+<h2 id="part-2-phpbb-sql-injection">Part 2: phpBB SQL Injection</h2>
+<h3 id="no-hints_1">No Hints</h3>
+<p>The old version of phpBB we have installed here suffers from multiple SQL injection flaws. In this exercise, we explore an SQL injection flaw in the messaging interface. To trigger the flaw, log in at <a href="http://phpbb.sans.labs">http://phpbb.sans.labs</a> (username: sec522, password: training) and then use one of the hints to get you started (<a href="http://phpbb.sans.labs">http://phpbb.sans.labs</a>). The injection will only work if you are logged in. You may also want to explore the login form for additional opportunities to experiment with SQL injection.</p>
+<h3 id="step-by-step_1">Step by Step</h3>
+<p>We have a URL at hand that we know is vulnerable to SQL injection. The first step to test for SQL injection is to insert a quote into each field.</p>
+<p>The following steps will inspect a parameter used in the phpBB private messaging system.</p>
+<ol>
+<li>
+<p>Use Chrome to visit <strong><a href="http://phpbb.sans.labs">http://phpbb.sans.labs</a></strong>.</p>
+</li>
+<li>
+<p>Log in using the username "sec522" and the password "training".</p>
+</li>
+<li>
+<p>Click on the "You have no new messages" link at the top of the page.</p>
+</li>
+<li>
+<p>Click on the "Savebox" link.</p>
+</li>
+<li>
+<p>We are going to exploit this page. Open the following URL: <strong><a href="http://phpbb.sans.labs/hints.html">http://phpbb.sans.labs/hints.html</a></strong></p>
+<p>We will use the links on this page to explore and exploit the SQL injection vulnerability. Note how exploit URLs on this page will include a URL encoded single quote (%27) as part of the pm_sql_user parameter.</p>
+</li>
+<li>
+<p>We would want to know where in the statement the user input is located. Click on the second link (Exploit 1). Exploit 1 injects HTML into the SQL statement. This will make the injectable location visible in red.</p>
+</li>
+<li>
+<p>Return back to the hints page (<strong><a href="http://phpbb.sans.labs/hints.html">http://phpbb.sans.labs/hints.html</a></strong>)</p>
+</li>
+<li>
+<p>Read Exploit 2 to see how a union statement is used to join two distinct queries together. Click on the "Exploit 2" link. There is no error in the statement. We created a valid statement. The main purpose of this statement is to ensure the statement runs error free. If the number of fields is different between the two distinct statements, they cannot be "unioned" together.</p>
+</li>
+<li>
+<p>Return back to the hints page (<strong><a href="http://phpbb.sans.labs/hints.html">http://phpbb.sans.labs/hints.html</a></strong>).</p>
+<p>Exploit 3 simply makes the statement return \'aaa\', \'bbb\', and so on just to see which field can be returned on the screen, as some of the fields are not being returned on screen.</p>
+<p>Following Exploit 3, you will find a group of statements that use SQL injection to enumerate the table structure (infomation_schema holds all this information). One query at a time, information about the structure of the database is being returned; information such as table names and column names is gathered.</p>
+</li>
+<li>
+<p>The "Administrator Exploit" at the end of the page returns the administrator\'s username and password. Please click on this statement. This is dependent on the results of enumerating the table and column names in Step 11.</p>
+<p>We will dive into the source code of privmsg.php and investigate the reasons for the SQL injection. For the non-PHP-coders, do not worry; the code is really simple.</p>
+</li>
+<li>
+<p>Browse to <strong><a href="http://phpbb.sans.labs/privmsg.phps">http://phpbb.sans.labs/privmsg.phps</a></strong> (note the "s" at the end of the URL) to review the source code.</p>
+</li>
+<li>
+<p>Scroll to line 240 of the source code and review the variable $sql. Pay special attention to lines 226 and 229.</p>
+<p>$pm_sql_user on line 240 consists of data from line 226. Line 226 concatenates data from user input in $pm_sql_user with other data on lines 226 to 229. The .= operator means -- leave whatever is already in $pm_sql_user; in addition, also put the following data into $pm_sql_user. The $pm_sql_user variable isn\'t filtered or sanitized; it came straight from the user.</p>
+<p>Line 244 is where the user input gets concatenated with other static SQL strings to make the dynamic SQL statement. The resulting statement is passed to the database for execution on line 253.</p>
+<p>When raw user input gets to become part of a dynamic SQL query without validation, we know what the story looks like---SQL injection.</p>
 </li>
 </ol>
 <hr />
@@ -1111,7 +1086,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../2.2/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../1.4/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1120,19 +1095,19 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              2.2: Guestbook CSRF
+              1.4: SSRF and Credential Stealing
             </div>
           </div>
         </a>
       
       
-        <a href="../2.4/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../2.2/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              2.4: Unicode and File Upload
+              2.2: Guestbook CSRF
             </div>
           </div>
           <div class="md-footer__button md-icon">

@@ -14,7 +14,7 @@
     
     
       
-        <title>2.3: Cross-Site Scripting - SEC522 Workbook</title>
+        <title>Troubleshooting - SEC522 Workbook</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#cross-site-scripting" class="md-skip">
+        <a href="#common-errors" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              2.3: Cross-Site Scripting
+              Troubleshooting
             
           </span>
         </div>
@@ -178,12 +178,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
       
       <label class="md-nav__link" for="__nav_1">
         Introduction
@@ -211,11 +213,96 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../resources/troubleshooting/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Troubleshooting
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Troubleshooting
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hardware" class="md-nav__link">
+    Hardware
+  </a>
+  
+    <nav class="md-nav" aria-label="Hardware">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-host-supports-intel-vt-x-but-intel-vt-x-is-disabled" class="md-nav__link">
+    "The host supports Intel VT-x, but Intel VT-x is disabled"
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#high-resolution-screens" class="md-nav__link">
+    High-Resolution Screens
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    Windows
+  </a>
+  
+    <nav class="md-nav" aria-label="Windows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows-credentialdevice-guard" class="md-nav__link">
+    Windows Credential/Device Guard
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linux-cheat-sheet" class="md-nav__link">
+    Linux Cheat Sheet
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -246,7 +333,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../resources/tutorial_git/" class="md-nav__link">
+      <a href="../tutorial_git/" class="md-nav__link">
         Git Tutorial
       </a>
     </li>
@@ -285,7 +372,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../resources/preparation/" class="md-nav__link">
+      <a href="../preparation/" class="md-nav__link">
         Preparation
       </a>
     </li>
@@ -297,7 +384,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../resources/references/" class="md-nav__link">
+      <a href="../references/" class="md-nav__link">
         References
       </a>
     </li>
@@ -309,7 +396,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../resources/appendix/" class="md-nav__link">
+      <a href="../appendix/" class="md-nav__link">
         Appendix
       </a>
     </li>
@@ -396,7 +483,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../1.1/" class="md-nav__link">
+      <a href="../../exercises/1.1/" class="md-nav__link">
         1.1: HTTP Basics
       </a>
     </li>
@@ -408,7 +495,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../1.2/" class="md-nav__link">
+      <a href="../../exercises/1.2/" class="md-nav__link">
         1.2: Inspecting HTTP/2 Traffic
       </a>
     </li>
@@ -420,7 +507,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../1.3/" class="md-nav__link">
+      <a href="../../exercises/1.3/" class="md-nav__link">
         1.3: Isolation
       </a>
     </li>
@@ -432,7 +519,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../1.4/" class="md-nav__link">
+      <a href="../../exercises/1.4/" class="md-nav__link">
         1.4: SSRF and Credential Stealing
       </a>
     </li>
@@ -451,14 +538,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
       <label class="md-nav__link" for="__nav_3">
         Day 2
@@ -476,7 +561,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2.1/" class="md-nav__link">
+      <a href="../../exercises/2.1/" class="md-nav__link">
         2.1: SQL Injection
       </a>
     </li>
@@ -488,7 +573,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2.2/" class="md-nav__link">
+      <a href="../../exercises/2.2/" class="md-nav__link">
         2.2: Guestbook CSRF
       </a>
     </li>
@@ -498,90 +583,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          2.3: Cross-Site Scripting
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../exercises/2.3/" class="md-nav__link">
         2.3: Cross-Site Scripting
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#part-1-guestbook-xss-with-csrf" class="md-nav__link">
-    Part 1: Guestbook XSS with CSRF
-  </a>
-  
-    <nav class="md-nav" aria-label="Part 1: Guestbook XSS with CSRF">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#no-hints" class="md-nav__link">
-    No Hints
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-by-step" class="md-nav__link">
-    Step by Step
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#part-2-dom-based-xss-in-juice-shop" class="md-nav__link">
-    Part 2: DOM-Based XSS in Juice Shop
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
-    Conclusion
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#explore-further" class="md-nav__link">
-    Explore Further
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -591,7 +597,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2.4/" class="md-nav__link">
+      <a href="../../exercises/2.4/" class="md-nav__link">
         2.4: Unicode and File Upload
       </a>
     </li>
@@ -633,7 +639,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../3.1/" class="md-nav__link">
+      <a href="../../exercises/3.1/" class="md-nav__link">
         3.1: Authentication
       </a>
     </li>
@@ -645,7 +651,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../3.2/" class="md-nav__link">
+      <a href="../../exercises/3.2/" class="md-nav__link">
         3.2: Session Fixation and Session Breaking
       </a>
     </li>
@@ -657,7 +663,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../3.3/" class="md-nav__link">
+      <a href="../../exercises/3.3/" class="md-nav__link">
         3.3: OAuth and Access Control
       </a>
     </li>
@@ -669,7 +675,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../3.4/" class="md-nav__link">
+      <a href="../../exercises/3.4/" class="md-nav__link">
         3.4: Inspecting SSL Traffic
       </a>
     </li>
@@ -711,7 +717,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.1/" class="md-nav__link">
+      <a href="../../exercises/4.1/" class="md-nav__link">
         4.1: WSDL Enumeration and Parameter Tampering
       </a>
     </li>
@@ -723,7 +729,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.2/" class="md-nav__link">
+      <a href="../../exercises/4.2/" class="md-nav__link">
         4.2: XMLHttpRequest
       </a>
     </li>
@@ -735,7 +741,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.3/" class="md-nav__link">
+      <a href="../../exercises/4.3/" class="md-nav__link">
         4.3: Javascript Security Testing
       </a>
     </li>
@@ -747,7 +753,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.4/" class="md-nav__link">
+      <a href="../../exercises/4.4/" class="md-nav__link">
         4.4: Content Security Policy
       </a>
     </li>
@@ -789,7 +795,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../5.1/" class="md-nav__link">
+      <a href="../../exercises/5.1/" class="md-nav__link">
         5.1: DNS Rebinding
       </a>
     </li>
@@ -801,7 +807,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../5.2/" class="md-nav__link">
+      <a href="../../exercises/5.2/" class="md-nav__link">
         5.2: Clickjacking
       </a>
     </li>
@@ -813,7 +819,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../5.3/" class="md-nav__link">
+      <a href="../../exercises/5.3/" class="md-nav__link">
         5.3: HTML5
       </a>
     </li>
@@ -825,7 +831,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../5.4/" class="md-nav__link">
+      <a href="../../exercises/5.4/" class="md-nav__link">
         5.4: Sub Resource Integrity
       </a>
     </li>
@@ -837,7 +843,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../5.5/" class="md-nav__link">
+      <a href="../../exercises/5.5/" class="md-nav__link">
         5.5: Logging and Incident Response
       </a>
     </li>
@@ -910,190 +916,120 @@
     content: 'SANS SEC522 Workbook';
 }}
 @page :left { @bottom-left {
-  content: '2.3-' counter(page);
+  content: 'TT-' counter(page);
 }}
 @page :right { @bottom-right {
-  content: '2.3-' counter(page);
+  content: 'TT-' counter(page);
 }}
 </style>
 
-<h1 id="cross-site-scripting">Cross-Site Scripting</h1>
-<hr />
-<h4 id="objectives">Objectives</h4>
-<div class="codehilite"><pre><span></span><code>Estimated Time: 10 minutes
-</code></pre></div>
-
-<h5 id="part-1">Part 1:</h5>
-<blockquote>
-<p>You will learn how to identify XSS and how important it is to check all input fields for XSS. We will also learn how XSS can be abused against a guestbook web application and how XSS may result in CSRF.</p>
-</blockquote>
-<h5 id="part-2">Part 2:</h5>
-<blockquote>
-<p>Uses "Juice Shop", a pre-built web application with known vulnerabilities. Juice Shop is a modern Node.js based application. The search feature is vulnerable to a DOM-based XSS attack.</p>
-</blockquote>
-<h4 id="requirements">Requirements</h4>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Lab VM</li>
-</ul>
-<h2 id="part-1-guestbook-xss-with-csrf">Part 1: Guestbook XSS with CSRF</h2>
-<h3 id="no-hints">No Hints</h3>
-<p>Also, for the guestbook at <a href="http://lab-2.3.sans.labs/login.php">http://lab-2.3.sans.labs/login.php</a>, we experimented with this guestbook before. This time find the XSS vulnerability and exploit it to automatically approve posts that an administrator views. (Logins available - sec522/training and admin/admin)</p>
-<h3 id="step-by-step">Step by Step</h3>
-<p>For this part, we will revisit the guestbook system. The administrator of the site noticed the CSRF attack and decided to manually approve every single guestbook entry.</p>
+<h1 id="common-errors">Common Errors</h1>
+<h2 id="hardware">Hardware</h2>
+<h3 id="the-host-supports-intel-vt-x-but-intel-vt-x-is-disabled">"The host supports Intel VT-x, but Intel VT-x is disabled"</h3>
+<p>One reason starting the virtual machine may fail is having Intel VT-x disabled. If this is the case, you will see an error message about "The host supports Intel VT-x, but Intel VT-x is disabled". VT-x has to be enabled in your system BIOS, which slightly differs from system to system. You may need the instructor's help to find out how to fix this.</p>
+<h4 id="newer-systems-uefi-not-traditional-bios">Newer Systems (UEFI, not traditional BIOS)</h4>
 <ol>
 <li>
-<p>Using Chrome, browse to <strong><a href="http://lab-2.3.sans.labs/login.php">http://lab-2.3.sans.labs/login.php</a></strong>. </p>
+<p>Hold the SHIFT key while restarting your Windows System.</p>
 </li>
 <li>
-<p>Log in to the guestbook by using <strong>"sec522"</strong> and <strong>"training"</strong> as username and password.</p>
-<ol>
-<li>
-<p>Attempt to input two guest entries into the guestbook. The new guestbook requires the administrator to approve the entries before they are posted on the page.</p>
+<p>The system will restart and end up on a blue screen with various options. Select "Troubleshoot".</p>
 </li>
 <li>
-<p>Log out of the guestbook by clicking on the <strong>"Logout"</strong> link.</p>
+<p>From the "Troubleshoot" menu, select "Advanced Options".</p>
+</li>
+<li>
+<p>Select "UEFI Firmware Settings".</p>
+</li>
+<li>
+<p>Select "Restart".</p>
+</li>
+<li>
+<p>The system will restart again and give you the option to change your BIOS settings, usually by pressing F10. But watch the startup screen carefully for instructions.</p>
+</li>
+<li>
+<p>Continue at Step 3 below.</p>
 </li>
 </ol>
-</li>
-<li>
-<p>Log in with username <strong>"admin"</strong> and password <strong>"admin"</strong>. This allows you to log in as an administrator.</p>
-<p>Administrative functions are now available. This includes the ability to delete comments and to approve messages.</p>
+<h4 id="older-system-traditional-bios-not-uefi">Older System (traditional BIOS, not UEFI)</h4>
 <ol>
 <li>
-<p>There should be two comments awaiting approval. Please click delete on one of the comments. That comment should then be deleted.</p>
+<p>Reboot the system.</p>
 </li>
 <li>
-<p>There should be one comment left; click the <strong>"Approve All Posts"</strong> button to approve the comment to be displayed to the public.</p>
+<p>During boot, watch for which key to use to enter the BIOS settings. Common keys include F1, F10, and Delete.</p>
 </li>
 <li>
-<p>Click <strong>"Logout"</strong>.</p>
+<p>Once in the BIOS settings, look for "Virtualization Technology", "VT-x", or similar options and enable them. You can often find them on the "System Configuration" or "Security" page.</p>
+</li>
+<li>
+<p>Exit and save your changes.</p>
 </li>
 </ol>
-</li>
-</ol>
-<p>The CSRF attack is obviously no longer possible, as it would likely not get past the administrator, who will review the comments before allowing the public to see them.</p>
-<p><br></p>
-<p>Now that we understand how this guestbook system works, let's explore if it is vulnerable to attacks.</p>
+<p>The exact wording and instructions may change from system to system. You will need to have access to your BIOS settings. Some corporate configurations password-protect the settings. You will need to obtain the password to change them.</p>
+<h3 id="high-resolution-screens">High-Resolution Screens</h3>
+<p>Some modern laptops use very high-resolution screens ("Retina Screens"). This can lead to hard-to-read fonts within the virtual machine. The simplest way to make the screen readable is by reducing the resolution of your screen in Windows, which will essentially turn off the high-resolution feature.</p>
+<p>Apple laptops with high-resolution screens running MacOS and VMware Fusion do not suffer from this problem. If you do experience the issue, double-check your display settings:</p>
 <ol>
 <li>
-<p>Log in to the guestbook by using <strong>"sec522"</strong> and <strong>"training"</strong> as username and password.</p>
-<ol>
-<li>
-<p>Attempt to add one new comment. Put anything as name, email, and URL. For comments, enter the following string:</p>
-<div class="highlight"><pre><span></span><code>XSS<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;xss&#39;</span><span class="p">);&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-</code></pre></div>
+<p>Select "Virtual Machine" -&gt; "Settings..." from the VMware Fusion menu.</p>
 </li>
 <li>
-<p>Press the <strong>"Add"</strong> button.</p>
-<p>A pop-up box should appear with <strong>"xss"</strong> in it. The input from the user became part of the page; the script input becomes rendered in the browser as script. This is a classic case of stored XSS vulnerability.</p>
+<p>Select "Display".</p>
 </li>
 <li>
-<p><em>(Optional)</em> Feel free to view the source of the page to look for the XSS alert box and see why it became part of the scripting content in the page.</p>
-</li>
-<li>
-<p>Delete the XSS comment in the <strong>"waiting for approval"</strong> section, as this can be annoying since the pop-up box shows up in every page load. Click the <strong>"Delete Message"</strong> link in the XSS comment.</p>
-</li>
-<li>
-<p>Log out of the guestbook by clicking on the <strong>"Logout"</strong> link.</p>
-</li>
-</ol>
-<p>We have now proved the comment field to be vulnerable to XSS attack. Let's see how we can leverage this vulnerability.</p>
-<p>We know there is an XSS vulnerability in the comment field. Anyone looking at that comment will have their browser hijacked to run scripts. Hence, these browsers can be controlled. That is very useful: what if we can control the administrator's browser so that the comments could automatically be approved as soon as an administrator looks at them? Let's try this concept.</p>
-</li>
-<li>
-<p>Log in to the guestbook by using <strong>"sec522"</strong> and <strong>"training"</strong> as username and password.</p>
-<ol>
-<li>
-<p>Attempt to add one new comment. Put anything as name, email, and URL. For comments, put the following string:</p>
-<div class="highlight"><pre><span></span><code>You will approve this<span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;guestbook.php?f=approve&quot;</span><span class="p">&gt;</span>.
-</code></pre></div>
-<p><strong>f=approve</strong> is to trigger the <strong>"Approve all Posts"</strong> button we saw in the admin function.</p>
-</li>
-<li>
-<p>Click on <strong>"Add"</strong>.</p>
-<p>No action is triggered at this point. The CSRF string is waiting on the server to be retrieved by the administrator (as the admin logs in); the delivery mechanism from the attacker (sec522) to the administrator is XSS.</p>
-</li>
-<li>
-<p>Log out of the guestbook by clicking on the <strong>"Logout"</strong> link.</p>
-</li>
-</ol>
-</li>
-<li>
-<p>Log in with <strong>admin / admin</strong> as the credential. This allows you to log in as an administrator.</p>
-<p>We see that the comment is waiting for approval. It even contains a broken image icon in the comment.</p>
-<ol>
-<li>Without doing any delete or approval, click <strong>"Logout"</strong>. At this point, the administrator already unwillingly clicked on the <strong>Approve All Posts</strong> link to approve the comment. The browser did the approval on behalf of the administrator; the instruction came from the user's comment.</li>
-</ol>
-</li>
-<li>
-<p>Log in to the guestbook by using <strong>"sec522"</strong> and <strong>"training"</strong> as username and password.</p>
-<p>The comment is already shown on the screen. The administrator never intentionally approved the comments. XSS and CSRF approved the comment.</p>
-</li>
-</ol>
-<p><br></p>
-<div class="admonition info">
-<p class="admonition-title">Let's go over the whole attack scenario one more time. There are a couple of vulnerabilities at play in this exercise.</p>
-</div>
-<p>User sec522 logs in to post a comment on the guest book. With the text of the comment, the user sec522 also puts in an extra &lt;IMG&gt; tag, which links to the approval function and looks like an image that the browser should automatically load. Once this comment has been submitted, sec522 simply sits and waits till the administrator logs in.</p>
-<p>The administrator logs in and, upon logging in, the comments for approval automatically show up on the screen. The &lt;IMG&gt; tag appears to be an image to the administrator's browser, the &lt; and the &gt; tell the browser that these are HTML codes, and the browser happily obeys these instructions. The browser visits the link in the &lt;IMG&gt;, which leads to approving all of the comments.</p>
-<p>Then when sec522 user logs in again, the comment that sec522 user posted originally is showing up as approved.</p>
-<p>To demonstrate a fix for the XSS vulnerability, we have prepared a \"fixed\" version of the guestbook: "guestbook-xss.php". This file is essentially the same as the guestbook.php we have seen, except the XSS in the comment field is fixed.</p>
-<p>The htmlentities function in PHP is to used to encode characters such as &lt; &gt;, /, &amp;, \', or \" to HTML entities. For example, "\&lt; becomes "&lt;" and "\&gt;" becomes "&gt;" . When "\&lt; gets sent to the browser, the browser will interpret it as HTML. But when "&lt;" gets sent to the browser, the browser will display the "\&lt; symbol.</p>
-<p>One line of example code is below:</p>
-<div class="highlight"><pre><span></span><code><span class="x">print htmlentities($r[3]);</span>
-</code></pre></div>
-<p>Before $r[3] is displayed on-screen, it is encoded.</p>
-<p>Feel free to explore the fixed code at <strong><a href="http://lab-2.3.sans.labs/guestbook-xss.phps">http://lab-2.3.sans.labs/guestbook-xss.phps</a></strong> (line 117).</p>
-<ol>
-<li>
-<p>Browse to <a href="http://lab-2.3.sans.labs/guestbook-xss.php">http://lab-2.3.sans.labs/guestbook-xss.php</a>.</p>
-</li>
-<li>
-<p>Look at the comments and explore why there is no longer a broken image sign but the entire XSS and CSRF string are simply displayed on the screen. Viewing the source of this page gives insight as to why this is no longer treated as an &lt;IMG&gt; tag but simply text on-screen.</p>
+<p>Verify that your settings match the settings in the image below.</p>
+<p><img alt="" src="../media/image1.png" /></p>
+<p><strong>VMware Fusion Display Settings</strong></p>
 </li>
 </ol>
 <hr />
-<h2 id="part-2-dom-based-xss-in-juice-shop">Part 2: DOM-Based XSS in Juice Shop</h2>
+<h2 id="windows">Windows</h2>
+<h3 id="windows-credentialdevice-guard">Windows Credential/Device Guard</h3>
+<p>With Windows Credential Guard enabled, Windows will run in a Hyper-V virtual machine. This isn't obvious but will prevent VMware from running (VMware cannot run inside a virtual machine). You will see an error like:</p>
+<p>VMware Workstation and Device/Credential Guard are not compatible. VMware Workstation can be run after disabling Device/Credential Guard.</p>
+<p>To disable credential guard, follow these steps (copied from Microsoft's knowledge base article at <a href="https://docs.microsoft.com/en-us/windows/security/identity-protection/credential-guard/credential-guard-manage">https://docs.microsoft.com/en-us/windows/security/identity-protection/credential-guard/credential-guard-manage</a>.</p>
 <ol>
 <li>
-<p>Juice Shop is implemented in Docker. To start it, type at the command line.</p>
-<div class="highlight"><pre><span></span><code>juiceshop start
-</code></pre></div>
+<p>From the Group Policy Management Console, go to "Computer Configuration" -&gt; "Administrative Templates" -&gt; System -&gt; "Device Guard".</p>
 </li>
 <li>
-<p>Open the browser and visit <a href="http://juiceshop:3000">http://juiceshop:3000</a>. Juice Shop can take a bit of time to load.</p>
+<p>Double-click "Turn On Virtualization Based Security", and then click the "Enabled" option.</p>
 </li>
 <li>
-<p>Explore the search field and attempt to identify the cross-site scripting vulnerability. Try test strings like:</p>
-<div class="highlight"><pre><span></span><code>ABC<span class="err">&lt;</span>&gt; &quot; &#39;
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;text&#39;</span><span class="p">)&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-</code></pre></div>
-<p>What works or doesn't work?</p>
+<p>In the Select Platform Security Level box, choose "Secure Boot" or "Secure Boot and DMA Protection".</p>
 </li>
 <li>
-<p>Try this exploit:</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;javascript:alert(&#39;test&#39;)&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<p>In the Credential Guard Configuration box, click "Enabled with UEFI lock", and then click OK.</p>
+</li>
+<li>
+<p>Close the Group Policy Management Console.</p>
+<p>To enforce processing of the group policy, you can run </p>
+<div class="highlight"><pre><span></span><code>gpupdate /force.
 </code></pre></div>
-</li>
-<li>
-<p>Open the Chrome debugger. (Click on the three vertical dots in the top right. Then select "Developer Tools" from "More tools".)</p>
-</li>
-<li>
-<p>Select the "Network" tab. </p>
-<details class="question"><summary>Do you see any requests when you submit the search? Why not?</summary><p>The exploit in Step 4 works. This is DOM-based XSS that does not require data to be transferred to the server (Step 6: you will not see a network connection).</p>
-</details>
 </li>
 </ol>
 <hr />
-<h2 id="conclusion">Conclusion</h2>
-<hr />
-<h2 id="explore-further">Explore Further</h2>
-<ul>
-<li></li>
-</ul>
+<h2 id="linux-cheat-sheet">Linux Cheat Sheet</h2>
+<p>To navigate the virtual machine, you will need some basic Linux skills.</p>
+<p>The main user used for most exercises is "sec522". Dev522's home directory is /home/sec522.</p>
+<p>To open a terminal, click on the Terminal icon on the left. This area on the left is also referred to as the "Favorites" area.</p>
+<p><img alt="" src="../media/image2.png" /></p>
+<ol>
+<li>
+<p>Terminal Icon</p>
+<p>Once a terminal opens, you may navigate directories using the "cd" command.</p>
+<p>To edit a file, you can just use "gedit" followed by the filename. For example,</p>
+<div class="highlight"><pre><span></span><code>gedit /tmp/testing.txt
+</code></pre></div>
+<p>will edit the file "testing.txt" in the /tmp directory. Gedit is similar to Windows Notepad.</p>
+<p>For a more full-featured editor, we have Microsoft's Visual Studio Code available. You can start it by typing "code" on the command line, or by clicking on the icon on the left.</p>
+<p><img alt="" src="../media/image3.png" /></p>
+</li>
+<li>
+<p>Microsoft Visual Studio Code Icon</p>
+</li>
+</ol>
                 
               
               
@@ -1111,7 +1047,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../2.2/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../.." class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1120,19 +1056,19 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              2.2: Guestbook CSRF
+              Welcome!
             </div>
           </div>
         </a>
       
       
-        <a href="../2.4/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../tutorial_git/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              2.4: Unicode and File Upload
+              Git Tutorial
             </div>
           </div>
           <div class="md-footer__button md-icon">

@@ -937,12 +937,12 @@
 </ul>
 <h2 id="part-1-guestbook-xss-with-csrf">Part 1: Guestbook XSS with CSRF</h2>
 <h3 id="no-hints">No Hints</h3>
-<p>Also, for the guestbook at <a href="http://lab-2.3.sans.labs/login.php">http://lab-2.3.sans.labs/login.php</a>, we experimented with this guestbook before. This time find the XSS vulnerability and exploit it to automatically approve posts that an administrator views. (Logins available - sec522/training and admin/admin)</p>
+<p>Also, for the guestbook at <a href="http://www.sec522.org/guestbook2/guestbook.php">http://www.sec522.org/guestbook2/guestbook.php</a>, we experimented with this guestbook before. This time find the XSS vulnerability and exploit it to automatically approve posts that an administrator views.</p>
 <h3 id="step-by-step">Step by Step</h3>
 <p>For this part, we will revisit the guestbook system. The administrator of the site noticed the CSRF attack and decided to manually approve every single guestbook entry.</p>
 <ol>
 <li>
-<p>Using Chrome, browse to <strong><a href="http://lab-2.3.sans.labs/login.php">http://lab-2.3.sans.labs/login.php</a></strong>. </p>
+<p>Using Chrome, browse to <strong><a href="http://www.sec522.org/guestbook2/guestbook.php">http://www.sec522.org/guestbook2/guestbook.php</a></strong>. (We have different "guestbooks". Make sure you use "guestbook2".)</p>
 </li>
 <li>
 <p>Log in to the guestbook by using <strong>"sec522"</strong> and <strong>"training"</strong> as username and password.</p>
@@ -963,7 +963,7 @@
 <p>There should be two comments awaiting approval. Please click delete on one of the comments. That comment should then be deleted.</p>
 </li>
 <li>
-<p>There should be one comment left; click the <strong>"Approve All Posts"</strong> button to approve the comment to be displayed to the public.</p>
+<p>There should be one comment left; click the <strong>"Approve All"</strong> button to approve the comment to be displayed to the public.</p>
 </li>
 <li>
 <p>Click <strong>"Logout"</strong>.</p>
@@ -991,7 +991,7 @@
 <p><em>(Optional)</em> Feel free to view the source of the page to look for the XSS alert box and see why it became part of the scripting content in the page.</p>
 </li>
 <li>
-<p>Delete the XSS comment in the <strong>"waiting for approval"</strong> section, as this can be annoying since the pop-up box shows up in every page load. Click the <strong>"Delete Message"</strong> link in the XSS comment.</p>
+<p>Delete the XSS comment in the <strong>"waiting for approval"</strong> section, as this can be annoying since the pop-up box shows up in every page load. Click the <strong>"Delete"</strong> link in the XSS comment.</p>
 </li>
 <li>
 <p>Log out of the guestbook by clicking on the <strong>"Logout"</strong> link.</p>
@@ -1007,7 +1007,7 @@
 <p>Attempt to add one new comment. Put anything as name, email, and URL. For comments, put the following string:</p>
 <div class="highlight"><pre><span></span><code>You will approve this<span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;guestbook.php?f=approve&quot;</span><span class="p">&gt;</span>.
 </code></pre></div>
-<p><strong>f=approve</strong> is to trigger the <strong>"Approve all Posts"</strong> button we saw in the admin function.</p>
+<p><strong>f=approve</strong> is to trigger the <strong>"Approve all"</strong> button we saw in the admin function.</p>
 </li>
 <li>
 <p>Click on <strong>"Add"</strong>.</p>
@@ -1022,7 +1022,7 @@
 <p>Log in with <strong>admin / admin</strong> as the credential. This allows you to log in as an administrator.</p>
 <p>We see that the comment is waiting for approval. It even contains a broken image icon in the comment.</p>
 <ol>
-<li>Without doing any delete or approval, click <strong>"Logout"</strong>. At this point, the administrator already unwillingly clicked on the <strong>Approve All Posts</strong> link to approve the comment. The browser did the approval on behalf of the administrator; the instruction came from the user's comment.</li>
+<li>Without doing any delete or approval, click <strong>"Logout"</strong>. At this point, the administrator already unwillingly clicked on the <strong>'approve all'</strong> link to approve the comment. The browser did the approval on behalf of the administrator; the instruction came from the user's comment.</li>
 </ol>
 </li>
 <li>
@@ -1043,10 +1043,10 @@
 <div class="highlight"><pre><span></span><code><span class="x">print htmlentities($r[3]);</span>
 </code></pre></div>
 <p>Before $r[3] is displayed on-screen, it is encoded.</p>
-<p>Feel free to explore the fixed code at <strong><a href="http://lab-2.3.sans.labs/guestbook-xss.phps">http://lab-2.3.sans.labs/guestbook-xss.phps</a></strong> (line 117).</p>
+<p>Feel free to explore the fixed code at <strong><a href="http://www.sec522.org/guestbook2/guestbook-xss.phps">http://www.sec522.org/guestbook2/guestbook-xss.phps</a></strong> (line 117).</p>
 <ol>
 <li>
-<p>Browse to <a href="http://lab-2.3.sans.labs/guestbook-xss.php">http://lab-2.3.sans.labs/guestbook-xss.php</a>.</p>
+<p>Browse to <a href="http://www.sec522.org/guestbook2/guestbook-xss.php">http://www.sec522.org/guestbook2/guestbook-xss.php</a>.</p>
 </li>
 <li>
 <p>Look at the comments and explore why there is no longer a broken image sign but the entire XSS and CSRF string are simply displayed on the screen. Viewing the source of this page gives insight as to why this is no longer treated as an &lt;IMG&gt; tag but simply text on-screen.</p>
