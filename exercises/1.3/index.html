@@ -1041,16 +1041,11 @@
 <hr />
 <h2 id="part-2-docker-administration-tools">Part 2: Docker Administration Tools</h2>
 <h3 id="no-hints">No Hints</h3>
-<p>You start Portainer by running "portainer start" as root in a terminal. Portainer will listen on port 9000, and you can connect to it via Chrome (<a href="http://portainer.sans.labs:9000/">http://portainer.sans.labs:9000/</a>). Try to guess the login credentials and add a rogue admin user.</p>
+<p>Portainer is running on a container within the course environmnent, and you can connect to it via Chrome (<a href="http://portainer.sans.labs/">http://portainer.sans.labs/</a>). Try to guess the login credentials and add a rogue admin user.</p>
 <h3 id="step-by-step">Step by Step</h3>
 <ol>
 <li>
-<p>Open a terminal and type</p>
-<div class="highlight"><pre><span></span><code>sudo portainer start
-</code></pre></div>
-</li>
-<li>
-<p>Open Google Chrome and visit <a href="http://portainer.sans.labs:9000/">http://portainer.sans.labs:9000/</a></p>
+<p>Open Google Chrome and visit <a href="http://portainer.sans.labs">http://portainer.sans.labs</a></p>
 </li>
 <li>
 <p>Log in using the username "sec522" and the password "training".</p>
@@ -1079,11 +1074,6 @@
 <p>Click "Create user".</p>
 <p>You now created a new administrative user. Optionally, you may test this user by logging out of Portainer and logging in using the new credentials. An attacker could use this new user to access the system even after the administrator changed the password for the sec522 user.</p>
 <p>!!! question "What measures can an administrator take to prevent this exploit?</p>
-</li>
-<li>
-<p>You may want to stop Portainer by running in a terminal. However, you could also leave it turned on to later manage some Docker images we use.</p>
-<div class="highlight"><pre><span></span><code>sudo portainer stop
-</code></pre></div>
 </li>
 </ol>
 <hr />
