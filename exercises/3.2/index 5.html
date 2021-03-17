@@ -14,7 +14,7 @@
     
     
       
-        <title>3.3: OAuth and Access Control - SEC522 Workbook</title>
+        <title>3.2: Session Fixation and Session Breaking - SEC522 Workbook</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#oauth-and-access-control" class="md-skip">
+        <a href="#session-fixation-and-session-breaking" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              3.3: OAuth and Access Control
+              3.2: Session Fixation and Session Breaking
             
           </span>
         </div>
@@ -564,18 +564,6 @@
             
   
   
-  
-    <li class="md-nav__item">
-      <a href="../3.2/" class="md-nav__link">
-        3.2: Session Fixation and Session Breaking
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
     
   
   
@@ -587,12 +575,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          3.3: OAuth and Access Control
+          3.2: Session Fixation and Session Breaking
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        3.3: OAuth and Access Control
+        3.2: Session Fixation and Session Breaking
       </a>
       
         
@@ -609,11 +597,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#part-1-access-control" class="md-nav__link">
-    Part 1: Access Control
+  <a href="#part-1-session-fixation" class="md-nav__link">
+    Part 1: Session Fixation
   </a>
   
-    <nav class="md-nav" aria-label="Part 1: Access Control">
+    <nav class="md-nav" aria-label="Part 1: Session Fixation">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -630,17 +618,24 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#answers" class="md-nav__link">
+    Answers
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#part-2-oauth" class="md-nav__link">
-    Part 2: OAuth
+  <a href="#part-2-breaking-sessions" class="md-nav__link">
+    Part 2: Breaking Sessions
   </a>
   
-    <nav class="md-nav" aria-label="Part 2: OAuth">
+    <nav class="md-nav" aria-label="Part 2: Breaking Sessions">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -680,6 +675,18 @@
   
 </nav>
       
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.3/" class="md-nav__link">
+        3.3: OAuth and Access Control
+      </a>
     </li>
   
 
@@ -930,209 +937,130 @@
     content: 'SANS SEC522 Workbook';
 }}
 @page :left { @bottom-left {
-  content: '3.3-' counter(page);
+  content: '3.2-' counter(page);
 }}
 @page :right { @bottom-right {
-  content: '3.3-' counter(page);
+  content: '3.2-' counter(page);
 }}
 </style>
 
-<h1 id="oauth-and-access-control">OAuth and Access Control</h1>
+<h1 id="session-fixation-and-session-breaking">Session Fixation and Session Breaking</h1>
 <hr />
 <h4 id="objectives">Objectives</h4>
-<p>Estimated Time: 15 minutes</p>
+<p>Estimated Time: 12 minutes</p>
 <h5 id="part-1">Part 1:</h5>
 <blockquote>
-<p>We learned that for web applications, it is important to apply access control consistently throughout the entire application. In this exercise, we are examining a flaw that allows regular users to perform administrative functions. To explore this flaw, we first execute these actions as administrator to learn what is possible and then later try to replay these actions as a normal user.</p>
+<p>In the first part, you will learn how to identify and fix session fixation vulnerabilities.</p>
 </blockquote>
 <h5 id="part-2">Part 2:</h5>
 <blockquote>
-<p>In this exercise, you will walk through an OAuth authentication and later demonstrate how this application does not secure its OAuth tokens successfully</p>
+<p>In second part, you will experience weak session IDs and learn how an attacker may exploit them.</p>
 </blockquote>
 <h4 id="requirements">Requirements</h4>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Lab VM</li>
 </ul>
 <hr />
-<h2 id="part-1-access-control">Part 1: Access Control</h2>
+<h2 id="part-1-session-fixation">Part 1: Session Fixation</h2>
 <h3 id="no-hints">No Hints</h3>
-<p>Open <a href="http://lab-3.3.sans.labs/index.php">http://lab-3.3.sans.labs/index.php</a> in a browser. Feel free to explore on your own at this point. An administrator is able to adjust the status of an animal in the shelter (for example, flip the "Cat Aggressive" status) by clicking on the respective icon in the page describing an individual animal. Try to perform this action as a normal user. Admin username/pass is sec522/training and regular user is hackercat/training</p>
+<h5 id="edit">Edit</h5>
+<p>Load <a href="http://lab-3.2.sans.labs/">http://lab-3.2.sans.labs/</a> in Chrome. Two out of three login forms (links are at upper right hand corners) are susceptible to session fixation. Which one are vulnerable and why? (login/pass - sec522/training) </p>
 <h3 id="step-by-step">Step by Step</h3>
+<p>This exercise will ask you to run Firefox in addition to Chrome. To start Firefox when asked to, click on the Firefox icon at the left side of the screen. </p>
+<p>IMPORTANT: Do not "Refresh Firefox" or update Firefox. Click "Cancel" if a dialog box appears offering to refresh Firefox.</p>
 <ol>
 <li>
-<p>Open <a href="http://lab-3.3.sans.labs/index.php">http://lab-3.3.sans.labs/index.php</a> in Chrome.</p>
+<p>Load <a href="http://lab-3.2.sans.labs/login1.php">http://lab-3.2.sans.labs/login1.php</a> in the Chrome browser, this is the first login form. You will be redirected to a URL that includes a session ID as a get parameter. The session ID is random. It should look like: sec522=gn5blighc8a)o5ks45k3pu81l</p>
 </li>
 <li>
-<p>Click the "Start Exercise" button. This will direct you to our animal shelter login page.</p>
+<p>Copy the session ID and paste it into an empty file (you can use the text editor on the left favorite bar).</p>
 </li>
 <li>
-<p>Log in as an administrator (username: sec522, password: training). You will see a list of animals up for adoption.</p>
-</li>
-<li>
-<p>Click on an animal's image (for example, the first cat, "Cinnamon"). This will display a page with details about this particular animal.</p>
-</li>
-<li>
-<p>Bellow the image, you will see three icons. Click on one of the icons and it will change color from green to red (or red to green if it was red).</p>
-<p><img alt="" src="media/image1.png" /></p>
-<p><strong>Image of Individual Animal with Icons Indicating Status</strong></p>
-</li>
-<li>
-<p>Click on the "Log Out" link (top of the page below the title of the page).</p>
-</li>
-<li>
-<p>Click on the "Log In" link.</p>
-</li>
-<li>
-<p>Log in as a normal user (username: hackercat, password: training).</p>
-</li>
-<li>
-<p>Click on an animal.</p>
-</li>
-<li>
-<p>Verify that clicking on the animal's "status icons" does nothing.</p>
-</li>
-<li>
-<p>Click on the "Log Out" link.</p>
-</li>
-<li>
-<p>Click on the "Log In" link.</p>
-</li>
-<li>
-<p>Log in as an administrator (username: sec522, password: training).</p>
-<p>Now we will explore what happens when the administrator clicks on one of the status icons.</p>
-</li>
-<li>
-<p>Click on an animal's picture again to end up on the animal's individual page.</p>
-</li>
-<li>
-<p>Open the Google Chrome developer tools by pressing CTRL-Shift-I.</p>
-</li>
-<li>
-<p>Select the "Network" tab in the developer tools.</p>
-<p><img alt="" src="media/image2.png" /></p>
-<p><strong>Google Chrome Developer Tools With Network Tab Selected</strong></p>
-</li>
-<li>
-<p>Click on the "Dog" icon to change the animal's "Dog Aggressive" status. This will create a new entry in the developer tool window for "flip.php".</p>
-</li>
-<li>
-<p>Right-click on the "flip.php" entry and select "Copy" -> "Copy as cURL".</p>
-<p><img alt="" src="media/image3.png" /></p>
-<p><strong>Copy "flip.php" Request as cURL</strong></p>
-</li>
-<li>
-<p>Open an editor (for example, Visual Studio Code) and paste the request into an empty file.</p>
-</li>
-<li>
-<p>Save the file (recommended name: "test.sh" in the sec522 home directory, /home/student).</p>
-</li>
-<li>
-<p>Open a terminal.</p>
-</li>
-<li>
-<p>Execute the file:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">source</span> /home/student/test.sh
-</code></pre></div>
-<p>Your output will look like.</p>
-<p><img alt="" class="zoom" src="media/img-1615956484-20210317.png" /></p>
-<p><strong>Output of test.sh</strong></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The highlighted part in the end <strong>"status":"OK"</strong>. This indicates that the script ran successfully. At this point, you are still logged in as an administrator, and a successful script is what we expect.</p>
+<p>Log in using the first form, "Step 1", using the username "sec522" and the password "training". Did the session ID change? The form is vulnerable if it did not change.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>For a secure application. The session ID should change at the login time, otherwise, session fixation can occur.</p>
 </div>
 </li>
 <li>
-<p>Back on Chrome, click the "Log Out" link. </p>
+<p>To simulate the attacker, open a second browser. (Firefox is installed in the virtual machine. Search for it by clicking on "Activities".) Copy and paste the URL and check if you are indeed logged in. </p>
+<div class="admonition done">
+<p class="admonition-title">What have we accomplished?</p>
+<p>The firefox browser is to simulate the attacker's control. In real life attacks, the attacker would be providing that link containing a session ID to the user to login with. Once the user login with the provided session ID, the attacker can assume the identity of the user.</p>
+</div>
 </li>
 <li>
-<p>Run the script again, just like above:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">source</span> /home/sec522/test.sh
-</code></pre></div>
-<p>This time, the output will be an error:</p>
-<p><img alt="" class="zoom" src="media/img-1615956579-20210317.png" /></p>
-<p><strong>Terminal Output After Running the Script a Second Time After Logging Out</strong></p>
-<p>The script failed this time because "sec522" is no longer logged in, and the cookie included in the prior request in test.sh is no longer valid.</p>
+<p>Close Firefox and close the logged in tab in Chrome.</p>
 </li>
 <li>
-<p>Log in as a normal user again (username: hackercat, password: training).</p>
+<p>Using a new Chrome browser tab, load the second login page <a href="http://lab-3.2.sans.labs/login2.php">http://lab-3.2.sans.labs/login2.php</a></p>
 </li>
 <li>
-<p>Open the "Application" tab in Chrome's Developer Tool. Note that, depending on your screen resolution, this option may be available by clicking on the '>>' symbol in the top right area of the developer tools (see picture below).</p>
-<p><img alt="" src="media/image6.png" /></p>
-<p><strong>Opening the Application Tab</strong></p>
+<p>Again, copy paste the session ID from the browser URL.</p>
+<p>Log in using the Login #2 form.</p>
+<div class="admonition question">
+<p class="admonition-title">Did the session ID change?</p>
+</div>
 </li>
 <li>
-<p>Next, click on "Cookies" in the left part of the developer menu.</p>
+<p>Open Firefox again and copy the old session ID to the URL bar.</p>
+<div class="admonition question">
+<p class="admonition-title">Does it still work?</p>
+</div>
 </li>
 <li>
-<p>Click on "<a href="http://lab-3.3.sans.labs">http://lab-3.3.sans.labs</a>" under "Cookies".</p>
+<p>Now try the third and final login form #3 (<a href="http://lab-3.2.sans.labs/login3.php">http://lab-3.2.sans.labs/login3.php</a>). Log in again and compare the session IDs.</p>
 </li>
 <li>
-<p>Double-click on the "Value" to the right of "sec522_3_3". It will turn orange.</p>
-<p><img alt="" class="zoom" src="media/img-1615956927-20210317.png" /></p>
-<p><strong>Highlighting the Cookie Value</strong></p>
+<p>Again, copy the original session ID to the URL bar in Firefox.</p>
+<div class="admonition question">
+<p class="admonition-title">Does the page work?</p>
+</div>
 </li>
 <li>
-<p>Right-click on the highlighted value and select "Copy".</p>
-</li>
-<li>
-<p>Open the "test.sh" script you created earlier in your favorite editor. If you are using Visual Studio Code, all you need to do is open the editor and it should automatically open the last edited file.</p>
-</li>
-<li>
-<p>Find the cookie value. It will be the random string after "sec522_3_3=" and replace it with the cookie value you copied from Chrome. Just highlight the old value and "Paste" to overwrite it. If there is a single quote at the end of the session ID, do not delete it.</p>
-<p><img alt="" class="zoom" src="media/img-1615957247-20210317.png" /></p>
-<p><strong>Highlighted Cookie Value</strong></p>
-</li>
-<li>
-<p>Exit the editor.</p>
-</li>
-<li>
-<p>Switch back to the terminal.</p>
-</li>
-<li>
-<p>Run the script again. This time, the request should succeed. The figure below shows the terminal with all three requests: first, the one using the administrator's cookie; next, the failed request after the administrator logged out; and finally, the request we just sent with the regular user's cookie, which succeeded as well.</p>
+<p>Compare the source code of login #2 and loging #3:</p>
+<p><a href="http://lab-3.2.sans.labs/login2.phps">http://lab-3.2.sans.labs/login2.phps</a>  <br>
+<a href="http://lab-3.2.sans.labs/login3.phps">http://lab-3.2.sans.labs/login3.phps</a></p>
+<p>There are subtle differences in the location of session_regenerate_id. See lines 23 and 24 of the code. </p>
+<div class="admonition questions">
+<p class="admonition-title">What are the differences?</p>
+</div>
 </li>
 </ol>
-<p>The final request should not have succeeded. This proves that a normal user can execute an administrative request as long as the user knows what request to send.</p>
-<p>You may want to now return to the browser to check if the information was changed. You can also make additional edits to the script. Close to the end of the request you should see an "animalid" parameter that can be used to pick different animals. Experiment with it.</p>
-<p>Please suggest ways to fix the issues in the applications. You can review the source code of the script at <a href="http://lab-3.3.sans.labs/api/flip.phps">http://lab-3.3.sans.labs/api/flip.phps</a> .</p>
-<h2 id="part-2-oauth">Part 2: OAuth</h2>
+<h3 id="answers">Answers</h3>
+<details class="question"><summary>Did the session ID change?</summary><p>3 &amp; 5: The session ID did not change and can be used in a different browser.</p>
+<p>7: The session ID did change.</p>
+</details>
+<details class="question"><summary>Does it still work?</summary><p>8: The old session ID still works, and it is now associated with the user.</p>
+</details>
+<details class="question"><summary>Does the page work?</summary><p>10: The old session ID no longer works and you end up with a redirect loop---not elegant, but "secure".</p>
+</details>
+<details class="question"><summary>Does the page work?</summary><p>11: "fix2" regenerates the session ID after the login was verified. "fix3" regenerates the session ID first, so the user ID is never associated with the old session. Also, the old session is destroyed (the "true" parameter).</p>
+</details>
+<hr />
+<h2 id="part-2-breaking-sessions">Part 2: Breaking Sessions</h2>
 <h3 id="no-hints_1">No Hints</h3>
-<p>The exercise starts at <a href="http://lab-3.3.sans.labs/calendar/index.php">http://lab-3.3.sans.labs/calendar/index.php</a>. The basic steps are explained as part of the website.</p>
+<p>Go to <a href="http://lab-3.2.sans.labs/session/login.php">http://lab-3.2.sans.labs/session/login.php</a>. Log in using the username "sec522" and the password "training". Try to switch to a different user's account after logging in.</p>
 <h3 id="step-by-step_1">Step by Step</h3>
 <ol>
 <li>
-<p>The exercise starts at <a href="http://lab-3.3.sans.labs/calendar/index.php">http://lab-3.3.sans.labs/calendar/index.php</a>. The page implements a simple calendar display. But to use it, you need to allow the calendar page to retrieve your calendar from the animal shelter site. Click on the link on the page to be sent to the animal shelter.</p>
+<p>In Google Chrome, proceed to <strong><a href="http://lab-3.2.sans.labs/session/login.php">http://lab-3.2.sans.labs/session/login.php</a></strong> and log in using the username <strong>sec522</strong> and the password <strong>training</strong>.</p>
+<p><img alt="" class="zoom" src="media/img-1615442622-20210311.png" /></p>
+<p><strong>Account Balance Screen</strong></p>
 </li>
 <li>
-<p>At the animal shelter, you will need to log in (if you are not already logged in). The username is "sec522", the password is "training".</p>
+<p>Press SHIFT-CTRL-I to open the developer tools.</p>
 </li>
 <li>
-<p>Next, a simple page will ask you for permission to use the calendar. Inspect the URL. It will contain the client_id, which identifies the application requesting access. The "state" variable is used to identify the response returned to the client. Allow access by clicking "yes".</p>
+<p>Select the "Application" tab and select <a href="http://lab-3.2.sans.labs">http://lab-3.2.sans.labs</a> under Cookies.</p>
 </li>
 <li>
-<p>You will now be redirected back to the volunteer calendar app and your schedule should appear.</p>
-</li>
-<li>
-<p>Next, click on the "problem" link to learn more about the issue causing authentication tokens to leak.</p>
-</li>
-<li>
-<p>The problem page suggests that SQL injection is used to retrieve the tokens. Click on the "search page" link to be directed to the vulnerable page.</p>
-</li>
-<li>
-<p>Click the "Debug" checkbox</p>
-</li>
-<li>
-<p>Enter a single quote (') in the search box and hit "Submit"</p>
-</li>
-<li>
-<p>You will now see the vulnerable statement. The "animalname" parameter is injectable, and we can use a union statement to retrieve additional data. The union statement needs to retrieve the same number of columns as the original statement (7). The second column ("animalname") is easily displayed and we will use it for our exploit. Enter as a search:</p>
-<div class="admonition warning">
-<p class="admonition-title">Important: there is a space after the two dashes '--'.</p>
-</div>
-<div class="highlight"><pre><span></span><code><span class="err">&#39;</span> <span class="k">UNION</span> <span class="k">SELECT</span> <span class="mi">1</span><span class="p">,</span><span class="n">access_token</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span> <span class="k">FROM</span> <span class="n">oauth</span><span class="p">.</span><span class="n">oauth_access_tokens</span> <span class="k">LIMIT</span> <span class="mi">1</span> <span class="c1">-- </span>
-</code></pre></div>
-<p>The token for OAuth authentication (Refresh token) will be displayed below a broken picture on the result page.</p>
+<p>Double-click on the cookie value (value is 1) and change it to 2 . Reload the page.</p>
+<p><img alt="" class="zoom" src="media/img-1615443698-20210311.png" /></p>
+<p><strong>Chrome Developer Tools Cookies</strong></p>
+<p>You will now see a different account. Experiment with different values and try to find the account with the most donations.</p>
+<details class="question"><summary>Which account has the most donations?</summary><p><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#116;&#100;&#101;&#101;&#114;&#110;&#101;&#115;&#115;&#49;&#56;&#64;&#119;&#111;&#114;&#100;&#112;&#114;&#101;&#115;&#115;&#46;&#99;&#111;&#109;">&#116;&#100;&#101;&#101;&#114;&#110;&#101;&#115;&#115;&#49;&#56;&#64;&#119;&#111;&#114;&#100;&#112;&#114;&#101;&#115;&#115;&#46;&#99;&#111;&#109;</a> of value 45 has the most donation at $997.74</p>
+</details>
 </li>
 </ol>
 <hr />
@@ -1159,7 +1087,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../3.2/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../3.1/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1168,19 +1096,19 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              3.2: Session Fixation and Session Breaking
+              3.1: Authentication
             </div>
           </div>
         </a>
       
       
-        <a href="../3.4/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../3.3/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              3.4: Inspecting SSL Traffic
+              3.3: OAuth and Access Control
             </div>
           </div>
           <div class="md-footer__button md-icon">

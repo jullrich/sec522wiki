@@ -914,14 +914,14 @@
 </ul>
 <hr />
 <h3 id="no-hints">No Hints</h3>
-<p>Proceed to <a href="http://www.dev522.org/csp">http://www.sec522.org/csp</a>. The exercise will guide you through three parts. In each part, a CSP is shown that is too strict to display an image on the site. Modify the CSP to fix it. You can modify the CSP right on the page, and relevant CSP errors are displayed as well. You can also use the web console to learn more about the CSP issue.</p>
+<p>Proceed to <a href="http://lab-4.4.sans.labs/">http://lab-4.4.sans.labs/</a>. The exercise will guide you through three parts. In each part, a CSP is shown that is too strict to display an image on the site. Modify the CSP to fix it. You can modify the CSP right on the page, and relevant CSP errors are displayed as well. You can also use the web console to learn more about the CSP issue.</p>
 <h3 id="step-by-step-instructions">Step-by-Step Instructions</h3>
 <ol>
 <li>
-<p>Open <strong><a href="http://www.sec522.org/csp">http://www.sec522.org/csp</a></strong> in your browser.</p>
+<p>Open <strong><a href="http://lab-4.4.sans.labs/">http://lab-4.4.sans.labs/</a></strong> in your browser.</p>
 </li>
 <li>
-<p>On that page, you will find a link to <a href="http://www.dev522.org/csp/csperror.html">http://www.sec522.org/csp/csperror.html</a>. Open that link in a new window. At first, you will get a 404 error if no CSP error log exists yet.</p>
+<p>On that page, you will find a link to <a href="http://lab-4.4.sans.labs/">http://lab-4.4.sans.labs/</a>. Open that link in a new window. At first, you will get a 404 error if no CSP error log exists yet.</p>
 </li>
 <li>
 <p>Click on the "CSP Error 1" link.</p>
@@ -931,7 +931,7 @@
 </li>
 <li>
 <p>Inspect the blocked-uri section in the last error. </p>
-<details class="question"><summary>Does it match the img-src?</summary><p>img-src <a href="http://www.sec522.org">www.sec522.org</a> (instead of .com)</p>
+<details class="question"><summary>Does it match the img-src?</summary><p>img-src lab-1.1.sans.labs</p>
 </details>
 </li>
 <li>
@@ -945,7 +945,8 @@
 </li>
 <li>
 <p>For the next two pages, follow the same procedures as you did between Step 4 and Step 8.</p>
-<details class="question"><summary>Solutions</summary><p>CSP2: script-src 'self' 'unsafe-inline'</p>
+<details class="question"><summary>Solutions</summary><p>CSP1: img-src lab-4.4.sans.labs</p>
+<p>CSP2: script-src 'self' 'unsafe-inline'</p>
 <p>CSP3: script-src 'unsafe-inline' 'unsafe-eval'</p>
 </details>
 </li>

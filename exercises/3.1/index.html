@@ -954,7 +954,7 @@
 <h1 id="authentication-exercise">Authentication Exercise</h1>
 <hr />
 <h4 id="objectives">Objectives</h4>
-<div class="codehilite"><pre><span></span><code>Estimated Time: 12 minutes
+<div class="codehilite"><pre><span></span><code>Estimated Time: 22 minutes
 </code></pre></div>
 
 <h5 id="part-1">Part 1:</h5>
@@ -1017,7 +1017,7 @@
 <p><img alt="" class="zoom" src="media/img-1615789856-20210315.png" /></p>
 </li>
 <li>
-<p>Switch back to Chrom and reload the page.</p>
+<p>Switch back to Chrome and reload the page.</p>
 </li>
 <li>
 <p>The request will now be held by Burp. Use Burp to modify the request and change the User-Agent to "DOGBrowser" and also to delete the cookie line. Make sure there are no blank lines in between the HTTP headers. </p>
@@ -1030,37 +1030,40 @@
 </details>
 <hr />
 <h2 id="part-3-brute-forcing">Part 3: Brute Forcing</h2>
-<p>This is an additional challenge exercise on authentication building on the knowledge you acquired so far. This exercise is to simulate a device registration system where there is personal information being stored.</p>
+<p>This is an additional challenge exercise on authentication building on the knowledge you acquired so far. This exercise is to simulate a registration system where there is personal information being stored.</p>
 <ol>
-<li>Ensure not intercept...</li>
 <li>
-<p>Browse to <a href="http://www.sec522.org/auth/index3.php">http://www.sec522.org/auth/index3.php</a></p>
-<p>The page describes a registration system where the user has to use a special mobile device with the proper serial number to access or change information. The objective is to acquire as much information from this system as possible.</p>
+<p>Configure Chrome to bypass the Burp proxy via the Proxy Switcher plugin. The icon should be black in color.</p>
+</li>
+<li>
+<p>Browse to <a href="http://lab-3.1.sans.labs/donations.php">http://lab-3.1.sans.labs/donations.php</a></p>
+<p>The page has a lookup system where the user can review their own respective donation information. The objective is to acquire as much information from this system as possible.</p>
 <p>Use the following hints to help you:</p>
-<details class="hint"><summary>Hint #1</summary><p>What's the likely user-agent for "SANSpad"? How about the name of the device?</p>
+<details class="hint"><summary>Hint #1</summary><p>What's the likely user-agent for "DOGBrowser"? </p>
 </details>
-<details class="hint"><summary>Hint #2</summary><p>The serial number format is already provided.</p>
+<details class="hint"><summary>Hint #1</summary><p>What's the purpose of the cookie "browser"? </p>
 </details>
-<details class="hint"><summary>Hint #3</summary><p>Can you brute force the serial number? Scripting may help.</p>
+<details class="hint"><summary>Hint #2</summary><p>Can you brute force the donation number? Scripting may help.</p>
 </details>
-<details class="hint"><summary>Hint #4</summary><p>You can use the "Intruder" feature in Burp to assist with brute forcing the solution.</p>
+<details class="hint"><summary>Hint #3</summary><p>You can use the "Intruder" feature in Burp to assist with brute forcing the solution.</p>
 </details>
 </li>
 <li>
-<p>Go to <a href="http://www.dev522.org/auth/index3.php">http://www.sec522.org/auth/index3.php</a> in Chrome.</p>
+<p>The page asks for a donation ID. Guess one (maybe 1) and click "Send". The server does not seem to respond to this. </p>
 </li>
 <li>
-<p>The page asks for a serial number. Guess one (SN1425-1234) and click "Send".</p>
+<p>Let's inspect it in details. Configure Chrome to use Burp proxy via the Proxy Switcher and then reload the page.</p>
 </li>
 <li>
-<p>The server responds that we need to use the "SANSpad" browser. Use Burp to change the User-Agent to "SANSpad".</p>
+<p>In the Burp intercept window, edit the request so that the User-Agent in the request is "DOGBrowser". Also eliminate the <strong>browser=wrong</strong> cookie by deleting it.</p>
+<p><img alt="" class="zoom" src="media/img-1615961787-20210317.png" /></p>
 </li>
 <li>
-<p>You still need to guess a serial number. There are different ways to do this. We will use Burp in this example.</p>
+<p>The system should indicatet that the ID does not exist. You still need to guess a donation ID. There are different ways to do this. We will use Burp in this example.</p>
 </li>
 <li>
-<p>Select the Proxy-&gt;HTTP history tab in Burp and right-click on the last request for index3.php</p>
-<p><img alt="" src="media/image1.png" /></p>
+<p>Select the Proxy-&gt;HTTP history tab in Burp and right-click on the last request for donations.php</p>
+<p><img alt="" class="zoom" src="media/img-1615961937-20210317.png" /></p>
 </li>
 <li>
 <p>Send Request to Intruder</p>
@@ -1078,11 +1081,9 @@
 <p>Click the "Clear §" button. This will clear the auto-selected payload positions.</p>
 </li>
 <li>
-<p>Highlight the last four digits of the serial number, and click the "Add §" button. This will mark the last four digits for brute forcing. Also, verify the User-Agent ("SANSpad") and make sure the "Browser=wrong" cookie is removed.</p>
-<p><img alt="" src="media/image2.png" /></p>
-</li>
-<li>
-<p>Marking Position for Intruder</p>
+<p>Highlight the digit after <strong>donation=</strong>, and click the "Add §" button. This will mark the digits for brute forcing. Also, verify the User-Agent ("DOGBrowser") and make sure the "Browser=wrong" cookie is removed.</p>
+<p><img alt="" class="zoom" src="media/img-1615962113-20210317.png" /></p>
+<p><strong>Marking Position for Intruder</strong></p>
 </li>
 <li>
 <p>Select the "Payloads" tab.</p>
@@ -1091,17 +1092,15 @@
 <p>Select "Numbers" from the Payload type dropdown (you may have to scroll down).</p>
 </li>
 <li>
-<p>Select "1" as "From", 100 as "To" , "1" as "Step", "4" as minimum integer digits and 0 as maximum fraction digits (do not select a larger range, as the Burp Community Edition does rate-limit these requests).</p>
+<p>Select "1" as "From", 100 as "To" , "1" as "Step" and 0 as maximum fraction digits (do not select a larger range, as the Burp Community Edition does rate-limit these requests).</p>
 </li>
 <li>
 <p>Click "Start attack" and acknowledge the restrictions of the community edition.</p>
 </li>
 <li>
-<p>You do not have to wait for the attack to finish. Look for requests with unusual values in the "Length" column and click on them. Select the "Response" and "Render" tab at the bottom to review the response. For successful requests, you should see personal information displayed as part of the response. Request 2 and 5 (and others) will show positive results. You may need to scroll up in the result window to see the early responses.</p>
-<p><img alt="" src="media/image3.png" /></p>
-</li>
-<li>
-<p>Intruder Result</p>
+<p>You do not have to wait for the attack to finish. Look for requests with unusual values in the "Length" column and click on them. The larger responses are the ones we are interested in. Select the "Response" and "Render" tab at the bottom to review the response. For successful requests, you should see personal information displayed as part of the response. Request 6 and 17 (and many others) will show positive results. You may need to scroll up in the result window to see the early responses.</p>
+<p><img alt="" class="zoom" src="media/img-1615962378-20210317.png" /></p>
+<p><strong>Intruder Result</strong></p>
 </li>
 </ol>
 <hr />
@@ -1140,10 +1139,8 @@
 </li>
 <li>
 <p>You are now reaching the "My Account" page.</p>
-</li>
-</ol>
 <p>So far, you learned how to use a U2F token. For a physical token, you would have to pres a button instead of clicking "Approve". Next, we will learn how to bypass the token request.</p>
-<ol>
+</li>
 <li>
 <p>Click "Log Out" again.</p>
 </li>
@@ -1154,11 +1151,16 @@
 <p>Login using the username "sec522" and the password "training". You will be prompted for the U2F token again.</p>
 </li>
 <li>
-<p>Decline the U2F token request</p>
+<p>Decline the U2F token request, deny the U2F token and cancel the browser's authentication prompt. </p>
 </li>
 <li>
 <p>Open <a href="https://lab-3.1.sans.labs/myaccount.php">https://lab-3.1.sans.labs/myaccount.php</a> in Chrome. You will be able to access the page. You just accessed the "My Account" page without using the U2F token, bypassing the two-factor authentication requirement.</p>
 <p>The application logged you in after you entered the username and password. This often happens if the U2F authentication is added later. A better solution would not associate the users user id with the session until the U2F process is complete, or set a flag with the session that the U2F authentication has not yet completed.</p>
+<details class="bug"><summary>If all else fails</summary><p>This exercise required the use of a Linux U2F token software for authentication, this is used in lieu of a real Fido2 token (Fido2 is backward compatible with U2F). If resetting of the token software is need, please run the following command in the terminal window.</p>
+<div class="codehilite"><pre><span></span><code>systemctl --user restart softu2f
+</code></pre></div>
+
+</details>
 </li>
 </ol>
 <hr />
