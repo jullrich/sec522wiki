@@ -880,10 +880,8 @@
 </li>
 <li>
 <p>Look for operations listed in the WSDL file; specifically, look for the <strong>operation</strong> tag. You should be able to find it inside the <strong>portType</strong> element. If it is too hard to find the operation tag, press <strong>Ctrl-F</strong> to find the string on-screen.</p>
-</li>
-</ol>
 <p>The operations in this WSDL are as follows: GetDayofWeek, GetAnimal, GetUser and GetUserName. So there are four operations listed by this WSDL.</p>
-<ol>
+</li>
 <li>
 <p>Open SoapUI by clicking on the SoapUI icon on the left side of the screen. This application will take a full minute to load. Once loaded, you need need to skip through the offer to collect your personal information. Also close the Endpoint Explorer that pops up.</p>
 <p><img alt="" class="zoom" src="media/img-1615449094-20210311.png" /></p>
@@ -904,7 +902,7 @@
 <p>Click on the "+" to the left of "GetAnimal" and double-click on "Request 1".</p>
 </li>
 <li>
-<p>In the following request window, enter an ID (e.g., 1) in the appropriate spot in the XML. SoapUI prefills the location with a "?". The API Key is "catsruledogsdrool".</p>
+<p>In the following request window, enter an ID (e.g., 1) in the appropriate spot in the XML. SoapUI prefills the location with a "?". The API Key is <strong>catsruledogsdrool</strong>.</p>
 <p><img alt="" class="zoom" src="media/img-1615449346-20210311.png" /></p>
 <p><strong>XML Snippet for SOAP Request</strong></p>
 </li>
@@ -918,18 +916,21 @@
 <p>We have now triggered one operation; Inspect the remaining operations and find those that do not use an API key.</p>
 </li>
 <li>
-<p>Just like in Step 6 and 7, create requests for GetDayofWeek, GetUser and GetUserName. For "GetDayofWeek", the date uses the YYYY-MM-DD format. For example 2020-04-01 for April 1<sup>st</sup> 2020.</p>
+<p>Just like in Step 6 and 7, create requests for GetDayofWeek, GetUser and GetUserName. For "GetDayofWeek", the date uses the YYYY-MM-DD format. For example 2021-04-01 for April 1<sup>st</sup> 2021.</p>
 </li>
 <li>
-<p>GetDayofWeek and GetUser do not require an API key. GetDayofWeek has no sensitive information. But GetUser has. Just like in steps 6 through 8, use SoadUI to retrieve data for user # 1.</p>
+<p>GetDayofWeek and GetUser do not require an API key. GetDayofWeek has no sensitive information. But GetUser has. Just like in steps 6 through 8, use SoapUI to retrieve data for user # 1.</p>
 </li>
 </ol>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
+<ul>
+<li>XML based Web Services are common and while they are intended to communicate from machine to machine, it is possible to use clients such as SoapUI to interact with the service and exploit any flaws that are in the system. </li>
+</ul>
 <hr />
 <h2 id="explore-further">Explore Further</h2>
 <ul>
-<li></li>
+<li>Interact with public SOAP based web services such as <a href="http://www.dneonline.com/calculator.asmx">http://www.dneonline.com/calculator.asmx</a></li>
 </ul>
                 
               
