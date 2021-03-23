@@ -925,12 +925,12 @@
 </li>
 <li>
 <p>A translucent page is shown on the page, partially overlapping the existing web page. The translucent page contains content from <strong><a href="http://lab-5.2.sans.labs/vote.php">http://lab-5.2.sans.labs/vote.php</a></strong>. This is exactly how clickjacking happens. The translucent portion of the page was "on top" of the visible page; when the user clicks on the page, the mouse clicks are sent to the page on top. The user effectively clicks on something that he/she cannot see, and the mouse click is redirected to the other page.</p>
-</li>
-</ol>
 <p><br></p>
 <p>Let's inspect the effect of the clickjacking attack.</p>
-<ol>
-<li>Browse to <strong><a href="http://lab-5.2.sans.labs/vote.php">http://lab-5.2.sans.labs/vote.php</a></strong>. Check the counter. Why is the count so high?</li>
+</li>
+<li>
+<p>Browse to <strong><a href="http://lab-5.2.sans.labs/vote.php">http://lab-5.2.sans.labs/vote.php</a></strong>. Check the counter. Why is the count so high?</p>
+</li>
 </ol>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
@@ -947,14 +947,14 @@
 <p>Click on the <strong>"click here to reveal/hide iframe"</strong> link on the page. You will notice that the victim's content are not loaded this time, instead a broken symbol is shown for the translucent content. See if you can determine what is causing this attack to fail?</p>
 </li>
 <li>
-<p>Let us walk through the defense mechanics here. In Chrome tab with the page <a href="http://lab-5.2.sans.labs/clickjackcsp.php">http://lab-5.2.sans.labs/clickjackcsp.php</a>, launch the developer tools (Ctrl-Shift-I or Chrome menu -&gt; More Tools -&gt; Developer Tools). </p>
+<p>Let us walk through the defense mechanics here. In Chrome tab with the page <a href="http://lab-5.2.sans.labs/clickjackcsp.php">http://lab-5.2.sans.labs/clickjackcsp.php</a>, launch the Developer Tools (Ctrl-Shift-I). </p>
 </li>
 <li>
 <p>Refresh the page. This will let Developer Tools to reveal all the details of the page to you. Click on the <strong>Console</strong> tab in Developers Tools. There is one single error of the browser refusing to load the content of "<a href="http://lab-5.2.sans.labs/">http://lab-5.2.sans.labs/</a>" due to the Content Security Policy.</p>
 <p><img alt="" class="zoom" src="media/img-1615704078-20210314.png" /></p>
 </li>
 <li>
-<p>Let's also inspect the exact Content Security Policy that was sent to the browser from the victim's page. Click on the <strong>Network</strong> tab in Developers Tools. Look for <strong>votecsp.php</strong> and click on it. This will show the headers that were exchanged. Look at Response Headers and evaluate the Content Security Policy. Can you determine why it was blocked from loading by the attacker's page?</p>
+<p>Let's also inspect the exact Content Security Policy that was sent to the browser from the victim's page. Click on the <strong>Network</strong> tab in Developers Tools. Look for <strong>votecsp.php</strong> and click on it. Make sure the right hand side pane has "headers" selected at the top. This will show the headers that were exchanged. Look at Response Headers and evaluate the Content Security Policy. Can you determine why it was blocked from loading by the attacker's page?</p>
 <p><img alt="" class="zoom" src="media/img-1615704360-20210314.png" /></p>
 <div class="admonition solution">
 <p class="admonition-title">Content Security Policy</p>
@@ -967,6 +967,9 @@ This blocks the content within the HTTP response from being loaded into any Ifra
 </ol>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
+<ul>
+<li>CSP with frame-ancestor is effective at preventing the clickjacking attack from happening. </li>
+</ul>
 <hr />
 <h2 id="explore-further">Explore Further</h2>
 <ul>

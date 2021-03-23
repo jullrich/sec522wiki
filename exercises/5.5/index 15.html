@@ -14,7 +14,7 @@
     
     
       
-        <title>5.3: HTML5 - SEC522 Workbook</title>
+        <title>5.5: Logging and Incident Response - SEC522 Workbook</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#html5" class="md-skip">
+        <a href="#logging-and-incident-response" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              5.3: HTML5
+              5.5: Logging and Incident Response
             
           </span>
         </div>
@@ -693,90 +693,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          5.3: HTML5
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../5.3/" class="md-nav__link">
         5.3: HTML5
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#part-1-session-vs-local-storage" class="md-nav__link">
-    Part 1: Session vs. Local Storage
-  </a>
-  
-    <nav class="md-nav" aria-label="Part 1: Session vs. Local Storage">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#no-hints" class="md-nav__link">
-    No Hints
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-by-step" class="md-nav__link">
-    Step by Step
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#part-2-cross-window-messaging" class="md-nav__link">
-    Part 2: Cross-Window Messaging
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#part-3-input-validation" class="md-nav__link">
-    Part 3: Input Validation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
-    Conclusion
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -796,11 +717,77 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../5.5/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          5.5: Logging and Incident Response
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         5.5: Logging and Incident Response
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#no-hints" class="md-nav__link">
+    No Hints
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-by-step" class="md-nav__link">
+    Step by Step
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#answers" class="md-nav__link">
+    Answers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explore-further" class="md-nav__link">
+    Explore Further
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -871,172 +858,163 @@
     content: 'SANS SEC522 Workbook';
 }}
 @page :left { @bottom-left {
-  content: '5.3-' counter(page);
+  content: '5.5-' counter(page);
 }}
 @page :right { @bottom-right {
-  content: '5.3-' counter(page);
+  content: '5.5-' counter(page);
 }}
 </style>
 
-<h1 id="html5">HTML5</h1>
+<h1 id="logging-and-incident-response">Logging and Incident Response</h1>
 <hr />
 <h4 id="objectives">Objectives</h4>
 <div class="codehilite"><pre><span></span><code>Estimated Time: 10 minutes
 </code></pre></div>
 
-<h5 id="part-1">Part 1:</h5>
 <blockquote>
-<p>In this exercise, you will become familiar with various HTML5 features and how they affect security. The first exercise will cover the difference of local and session storage. The second one will showcase security issues in cross-window messaging. The third and last exercise will cover HTML5 input validation.</p>
-</blockquote>
-<h5 id="part-2">Part 2:</h5>
-<blockquote>
-<p>In this exercise, we will explore the potential problems with unsecure file upload handling and see for ourselves the effect of improperly handling upload.</p>
+<p>Use a standard web server log of an incident to figure out what happened.</p>
 </blockquote>
 <h4 id="requirements">Requirements</h4>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Lab VM</li>
 </ul>
 <hr />
-<h2 id="part-1-session-vs-local-storage">Part 1: Session vs. Local Storage</h2>
 <h3 id="no-hints">No Hints</h3>
-<p>Start at <a href="http://lab-5.3.sans.labs/html5.html">http://lab-5.3.sans.labs/html5.html</a>. You will find links to the three exercises and basic instruction about what to do. Attempt to fix the security issue for the stock trading application in #2.</p>
+<p>The application under attack is the animal shelters "Citrus Gateway". The "Citrus Gateway" allow access to internal application, but the shelter never really used it, so it sits in its default configuration exposed to the internet. There are two attacks happening. The log does not have necessarily all the information. For the second attack, the "CGW-User" header was logged. To play with the application, see <a href="http://lab-5.5.sans.labs/citrusgw/index.php">http://lab-5.5.sans.labs/citrusgw/index.php</a> . The files for the application can be found in /etc/docker/compose/5.5/web/html/citrusgw</p>
 <h3 id="step-by-step">Step by Step</h3>
+<p>The logs use the following format (the last field is only present for the last few lines of the log):</p>
+<pre style="white-space: pre-wrap;">
+[hostname] [attacker IP] - - [data/time] "METHOD URL HTTP/1.1" [Status Code] [Response Size] "-" "[User-Agent]" "CGW-User Header"
+</pre>
+
+<p>As an example, this line:</p>
+<pre style="white-space: pre-wrap;">
+www.sec522.org:80 127.0.0.1 - - [26/Jan/2020:00:25:58 -0500] "POST /citrusgw/api/newbm.php HTTP/1.1" 200 207 "-" "l33t@tt@ck" "test"
+</pre>
+
+<p>Indicates:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hostname</td>
+<td>www.s<span>ec</span>522.org</td>
+</tr>
+<tr>
+<td>Client IP (ignore for this exercise)</td>
+<td>127.0.0.1</td>
+</tr>
+<tr>
+<td>Date/Time</td>
+<td>26/Jan/2020:00:25:58 -0500</td>
+</tr>
+<tr>
+<td>HTTP Method</td>
+<td>POST</td>
+</tr>
+<tr>
+<td>URL Requested</td>
+<td>/citrusgw/api/newbm.php</td>
+</tr>
+<tr>
+<td>Status Code</td>
+<td>200 (OK)</td>
+</tr>
+<tr>
+<td>Response Size</td>
+<td>207 Bytes</td>
+</tr>
+<tr>
+<td>User-Agent</td>
+<td>l33t\@tt\@ck</td>
+</tr>
+<tr>
+<td>CGW-User Header</td>
+<td>test</td>
+</tr>
+</tbody>
+</table>
 <ol>
 <li>
-<p>Browse to <strong><a href="http://lab-5.3.sans.labs/html5.html">http://lab-5.3.sans.labs/html5.html</a></strong>.</p>
+<p>Explore the attacked application to become familiar with it. Start by loading <a href="http://lab-5.5.sans.labs/citrusgw/index.php">http://lab-5.5.sans.labs/citrusgw/index.php</a> in Google Chrome</p>
 </li>
 <li>
-<p>Click on "1 -- Local Storage and Session Storage".</p>
+<p>Log in using the credentials "sec522" and "training".</p>
 </li>
 <li>
-<p>Enter some random text in both text areas (Storage #1 and Storage #2).</p>
+<p>Enter a bookmark (any text will do).</p>
 </li>
 <li>
-<p>Click on both "Save" buttons.</p>
+<p>Click on the "Home" icon on your desktop.</p>
 </li>
 <li>
-<p>Open the same page, <strong><a href="http://lab-5.3.sans.labs/storage.html">http://lab-5.3.sans.labs/storage.html</a></strong>, in a new tab (press CTRL+T, or use the "File" menu in the browser).</p>
+<p>Open the "Documents" folder</p>
 </li>
 <li>
-<p>In this new tab, to the right of the text areas, you will see "Saved Data". Only one of these fields is prefilled; the other field is empty. For one of the text areas, LocalStorage was used. For the other one, we used SessionStorage. Which one is which?</p>
+<p>Open the "Logs" folder</p>
 </li>
 <li>
-<p>With both tabs open, enter different values in Storage #1 and Storage #2. Refresh the other tab to confirm your assumption.</p>
+<p>Double click on "attack.logs"</p>
 </li>
 <li>
-<p>In Chrome, open the developer tools (press SHIFT-CTRL-I) and select the "Application" tab. You will see options to inspect local and session storage on the left.</p>
-<p><img alt="" class="zoom" src="media/img-1615706413-20210314.png" /></p>
-<p><strong>Adjusting Local Storage</strong></p>
+<p>The file starts out with one type of attack. Review the first approximately 100 lines that are all accessing "index.php" and answer the following questions:</p>
+<div class="admonition note">
+<p class="admonition-title">1. What type of attack do you think the attacker conducted?</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">2. Any indication if the attack succeeded?</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">3. Any simple signature you could use to block this attacker?</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">4. Any defensive technique you would recommend?</p>
+</div>
 </li>
 <li>
-<p>You will be able to review Local Storage and Session Storage. You will see the values you entered in the text area. For Session Storage, you will see different values in different tabs.</p>
+<p>The second part of the exercise uses the log file you have already open, but the requests are now hitting newbm.php. Refer to the field list in the introduction above to identify which field changes for some of the requests.</p>
+</li>
+<li>
+<p>You may want to open /etc/docker/compose/5.5/web/html/citrusgw/api/newbm.php first in a text editor (Visual Studio Code) to understand a bit more what is happening.</p>
+<p>Try to answer these questions:</p>
+<div class="admonition note">
+<p class="admonition-title">5. What type of attack was the attacker launching?</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">6. Was it successful?</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">7. What other artifacts would you look for on this system to figure out if the attack was successful?</p>
+</div>
 </li>
 </ol>
-<details class="tip"><summary>Answer</summary><p>Storage #1 is kept in LocalStorage. Storage #2 is kept in SessionStorage. As a result, Storage #1 is the same for both tabs, while Storage #2 is different.</p>
+<h2 id="answers">Answers</h2>
+<details class="question"><summary>1. What type of attack do you think the attacker conducted?</summary><p>The attacker likely launched a brute force attack. The login page (index.php) was hit very quickly with what looks like similar requests.</p>
 </details>
-<hr />
-<h2 id="part-2-cross-window-messaging">Part 2: Cross-Window Messaging</h2>
-<ol>
-<li>
-<p>Open the "Cross-Domain Messaging" exercise at <a href="http://lab-5.3.sans.labs/trader.html">http://lab-5.3.sans.labs/trader.html</a></p>
-</li>
-<li>
-<p>You will see a simple "Stock Trading" application. Place a trade in the green "Trade" window by selecting a stock symbol and entering a quantity.</p>
-</li>
-<li>
-<p>After you click the "Execute" button, your trade will show up in the "Trade Status" frame. The stock trading application sends trades to the "Trade Status" frame, where they are then passed to the trading API.</p>
-</li>
-<li>
-<p>Click on the ad on the left to enable ads.</p>
-</li>
-<li>
-<p>After 10 seconds, the ad image will change. At the same time, a new trade will appear in the "Trade Status" window. Why?</p>
-</li>
-<li>
-<p>Open the Chrome developer tools (SHIFT-CTRL-I) and select the "Sources" tab.</p>
-</li>
-<li>
-<p>On the left, you will find "ad.html" after expanding "adframe (ad.html)" and "lab-5.3-evil.sans.labs". The "postMessage" function will be found on line 29.</p>
-<p><img alt="" class="zoom" src="media/img-1615706645-20210314.png" /></p>
-</li>
-<li>
-<p>Select "platform.html" on the left. This will bring up the trading platform's source code that receives the message.</p>
-</li>
-<li>
-<p>Does the function "receiveMessage" (starting on line 6) check for the origin of the message?</p>
-</li>
-<li>
-<p><strong>Extra Credit</strong> </p>
-<div class="admonition question">
-<p class="admonition-title">Can you fix the error?</p>
-</div>
-<p>You can find the source code for the files in /etc/docker/compose/5.3/web/html/platform.html.</p>
-</li>
-</ol>
-<details class="tip"><summary>Answer</summary><p>platform.html never checks the origin of the message. This will allow any window to send messages if that window can obtain a handle to the "platform" IFrame. To</p>
-<p>check for the origin, you could add this code.</p>
-<div class="highlight"><pre><span></span><code><span class="x">If ( event.origin != &#39;http://lab-5.3.sans.labs&#39;) {</span>
-<span class="x">    return 0</span>
-<span class="x">}</span>
-</code></pre></div>
-<p>In this example, checking the origin is, however, insufficient, as the ad is served from the same origin as the rest of the page. The ad should be loaded from a different origin.</p>
+<details class="question"><summary>2. Any indication if the attack succeeded?</summary><p>The last request returned a 302 status code (redirect) while the others returned a 200 code. This likely indicates that the last attempt succeeded.</p>
 </details>
-<hr />
-<h2 id="part-3-input-validation">Part 3: Input Validation</h2>
-<p>In this exercise, you will see four different input fields. Each field is supposed to validate the input to limit data submitted to the description to the left of the input field. For example, the user is not supposed to enter a number that exceeds 100 in the first input field. The actual validation is either too strict or too loose. Find out what needs to be improved to correct the regular expressions used to validate the data.</p>
-<ol>
-<li>
-<p>Open <a href="http://lab-5.3.sans.labs/valid.html">http://lab-5.3.sans.labs/valid.html</a> in Chrome.</p>
-</li>
-<li>
-<p>In the first input field, enter "1000" and click the "Submit" button. You will not receive an error message (but you should).</p>
-</li>
-<li>
-<p>Right-click on the input field and select "Inspect Element". This will highlight the respective line in the page's source code:</p>
-<div class="highlight"><pre><span></span><code>&lt;input type=&quot;text&quot; pattern=&quot;[0-9]+&quot;&gt;
-</code></pre></div>
-</li>
-<li>
-<p>Double-click on the regular expression. You will be able to edit it.</p>
-</li>
-<li>
-<p>Change it to [0-9][0-9]. Now the large input will be rejected. Note that in this case, you do not need anchors for regular expressions.</p>
-</li>
-<li>
-<p>Repeat Steps 2--5 for the other three input fields. Inspect the element to see the regular expression. Is it correct? If not, then try to enter input that would match the regular expression, but not the expected input. Also, verify if there is valid input that will be rejected.</p>
-</li>
-</ol>
-<details class="tip"><summary>Answer</summary><p>The correct regular expressions are:</p>
-<div class="admonition example">
-<p class="admonition-title">1</p>
-<div class="highlight"><pre><span></span><code>[0-9][0-9]
-</code></pre></div>
-<p>The original expression did not limit the length of the number. Other possible solutions: [0-9]{2}, \d\d, \d{2}</p>
-</div>
-<div class="admonition example">
-<p class="admonition-title">2</p>
-<div class="highlight"><pre><span></span><code>[0-9A-F]
-</code></pre></div>
-<p>The original expression allowed for letters up to H. G and H are not valid hexadecimal characters.</p>
-</div>
-<div class="admonition example">
-<p class="admonition-title">3</p>
-<div class="highlight"><pre><span></span><code>[0-9]{5}
-</code></pre></div>
-<p>Like the first input field, the length is not restricted. For extra credit, you could come up with a regular expression that allows for ZIP+4: [0-9]{5}(-[0-9]{4})?</p>
-</div>
-<div class="admonition example">
-<p class="admonition-title">4</p>
-<p>For international phone numbers, it is hard to limit the length, as different lengths apply for different countries. But the country code may start with a '+', which is not allowed here. +?[0-9]+ is a better pattern. The ITU-T, which sets standards for phone systems, recommends that numbers should never exceed 15 digits, which includes the country code. Following this standard, the regular expression would be +?\d{1,15}</p>
-</div>
+<details class="question"><summary>3. Any simple signature you could use to block this attacker?</summary><p>The attacker uses a very unique user agent. This user agent could easily be blocked with a firewall.</p>
+</details>
+<details class="question"><summary>4. Any defensive technique you would recommend?</summary><p>It may be a good idea to implement some kind of rate limiting and lock out for the login form.</p>
+</details>
+<details class="question"><summary>5. What type of attack was the attacker launching?</summary><p>The attacker attempted a directory traversal attack</p>
+</details>
+<details class="question"><summary>6. Was it successful?</summary><p>It may be successful as the response size changed for some of the request.</p>
+</details>
+<details class="question"><summary>7. What other artifacts would you look for on this system to figure out if the attack was successful?</summary><p>The attack attempts to write a file "test.txt" to a "tmp" directory, which may be found on the system.</p>
 </details>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
-<ul>
-<li>Modern HTML interface has many different functions that can make the website more responsive. At the same time, some of the features also impact security. </li>
-<li>Local storage and other browser based storage need careful evaluation on privacy and security impact before use.</li>
-</ul>
 <hr />
+<h2 id="explore-further">Explore Further</h2>
+<ul>
+<li></li>
+</ul>
                 
               
               
@@ -1054,7 +1032,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../5.2/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../5.4/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1063,25 +1041,11 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              5.2: Clickjacking
-            </div>
-          </div>
-        </a>
-      
-      
-        <a href="../5.4/" class="md-footer__link md-footer__link--next" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
               5.4: Sub Resource Integrity
             </div>
           </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
         </a>
+      
       
     </nav>
   

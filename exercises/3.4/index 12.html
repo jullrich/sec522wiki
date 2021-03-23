@@ -14,7 +14,7 @@
     
     
       
-        <title>5.3: HTML5 - SEC522 Workbook</title>
+        <title>3.4: Inspecting SSL Traffic - SEC522 Workbook</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#html5" class="md-skip">
+        <a href="#inspecting-ssl-traffic-with-wireshark" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              5.3: HTML5
+              3.4: Inspecting SSL Traffic
             
           </span>
         </div>
@@ -490,12 +490,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
       
       <label class="md-nav__link" for="__nav_4">
         Day 3
@@ -547,11 +549,90 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../3.4/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          3.4: Inspecting SSL Traffic
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         3.4: Inspecting SSL Traffic
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#inspecting-ssl-traffic" class="md-nav__link">
+    Inspecting SSL Traffic
+  </a>
+  
+    <nav class="md-nav" aria-label="Inspecting SSL Traffic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-hints" class="md-nav__link">
+    No Hints
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step" class="md-nav__link">
+    Step by Step
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-ssl-master-key" class="md-nav__link">
+    Advanced: SSL Master Key
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explore-further" class="md-nav__link">
+    Explore Further
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -646,14 +727,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
       
       <label class="md-nav__link" for="__nav_6">
         Day 5
@@ -693,90 +772,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          5.3: HTML5
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../5.3/" class="md-nav__link">
         5.3: HTML5
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#part-1-session-vs-local-storage" class="md-nav__link">
-    Part 1: Session vs. Local Storage
-  </a>
-  
-    <nav class="md-nav" aria-label="Part 1: Session vs. Local Storage">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#no-hints" class="md-nav__link">
-    No Hints
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-by-step" class="md-nav__link">
-    Step by Step
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#part-2-cross-window-messaging" class="md-nav__link">
-    Part 2: Cross-Window Messaging
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#part-3-input-validation" class="md-nav__link">
-    Part 3: Input Validation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
-    Conclusion
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -871,172 +871,169 @@
     content: 'SANS SEC522 Workbook';
 }}
 @page :left { @bottom-left {
-  content: '5.3-' counter(page);
+  content: '3.4-' counter(page);
 }}
 @page :right { @bottom-right {
-  content: '5.3-' counter(page);
+  content: '3.4-' counter(page);
 }}
 </style>
 
-<h1 id="html5">HTML5</h1>
+<h1 id="inspecting-ssl-traffic-with-wireshark">Inspecting SSL Traffic with Wireshark</h1>
 <hr />
 <h4 id="objectives">Objectives</h4>
-<div class="codehilite"><pre><span></span><code>Estimated Time: 10 minutes
+<div class="codehilite"><pre><span></span><code>Estimated Time: 15 minutes
 </code></pre></div>
 
 <h5 id="part-1">Part 1:</h5>
 <blockquote>
-<p>In this exercise, you will become familiar with various HTML5 features and how they affect security. The first exercise will cover the difference of local and session storage. The second one will showcase security issues in cross-window messaging. The third and last exercise will cover HTML5 input validation.</p>
-</blockquote>
-<h5 id="part-2">Part 2:</h5>
-<blockquote>
-<p>In this exercise, we will explore the potential problems with unsecure file upload handling and see for ourselves the effect of improperly handling upload.</p>
+<p>In this exercise, the objective is to learn about how SSL actually works. There have been a lot of misconceptions about how SSL works and what features it provides. Everyone seems to understand that SSL makes things secure, but exactly how is this done? We will try to demystify SSL in this exercise.</p>
 </blockquote>
 <h4 id="requirements">Requirements</h4>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Lab VM</li>
 </ul>
 <hr />
-<h2 id="part-1-session-vs-local-storage">Part 1: Session vs. Local Storage</h2>
+<h2 id="inspecting-ssl-traffic">Inspecting SSL Traffic</h2>
 <h3 id="no-hints">No Hints</h3>
-<p>Start at <a href="http://lab-5.3.sans.labs/html5.html">http://lab-5.3.sans.labs/html5.html</a>. You will find links to the three exercises and basic instruction about what to do. Attempt to fix the security issue for the stock trading application in #2.</p>
 <h3 id="step-by-step">Step by Step</h3>
+<p>We will use Wireshark to inspect a packet capture. Wireshark is a full-featured packet analysis tool. It includes the ability to decrypt SSL traffic as long as we provide the secret key or the session key negotiated between server and browser. In our example, we will use two files:</p>
+<ul>
+<li>
+<p>~/Documents/SSL/ssl.pcap -- a packet capture of https traffic</p>
+</li>
+<li>
+<p>~/Documents/SSL/server.key -- the secret key used by the server in the above sample captures.</p>
+</li>
+<li>
+<p>Click on the <strong>Wireshark</strong> icon on the left of the virtual machine desktop.</p>
+<p><img alt="" src="media/image1.png" /></p>
+<p><strong>Wireshark Icon</strong></p>
+</li>
+<li>
+<p>After Wireshark starts up, click on the top menu <strong>"File"</strong> and then <strong>"Open"</strong>. Select the following file: <strong>/home/student/Documents/SSL/ssl.pcap</strong></p>
+</li>
+</ul>
+<p>Wireshark will now display its familiar default "3-pane" layout. At the top,</p>
+<p>you will see a list of captured packets, one per line.</p>
+<p>The second pane will "explain" the currently highlighted packet.</p>
+<p>At the bottom, the third pane will display the entire packet in hexadecimal "as captured".</p>
+<p><img alt="" src="media/image2.png" /></p>
+<p><strong>Wireshark Default Display</strong></p>
+<p>The first three packets (Nos. 1--3) hold the TCP three-way handshake. They establish the TCP connection and do not indicate that we are going to use SSL.</p>
+<p>Packet 4, sent by the client (192.168.1.121) to the server (192.168.1.174), represents an "SSL Client Hello". With this packet, the client indicates that it would like to talk SSL to the server. It does provide some basic parameters that are used to negotiate the SSL connection.</p>
+<p>By inspecting the middle pane, try to identify the following parameters:</p>
+<details class="question"><summary>What SSL version is the client using?</summary><p>SSL 3.0</p>
+</details>
+<details class="question"><summary>How many cipher suites does the client support?</summary><p>12 </p>
+</details>
+<p><img alt="" src="media/image3.png" /></p>
+<p><strong>Client Hello Details</strong></p>
+<p>In packet #5, the server acknowledges receipt of the client hello.</p>
+<p>Packet 6 contains the server's response, a "Server Hello". This packet also includes the server's certificate. Just as for packet 4, identify the following parameters:</p>
+<details class="question"><summary>Which SSL version is the server accepting?</summary><p>SSL 3.0</p>
+</details>
+<details class="question"><summary>Which cipher suite did the server select?</summary><p>TLS_RSA_WITH_RC4_128_MD5</p>
+</details>
+<details class="question"><summary>Who issued the certificate?</summary><p>SANS CA</p>
+</details>
+<details class="question"><summary>What is the hostname (common name) of the server according to the certificate?</summary><p>sanshost</p>
+</details>
+<p><img alt="Server Hello Details" src="media/image4.png" /></p>
+<p><strong>Server Hello Details</strong></p>
+<p>Packet 12 is the first encrypted data packet. </p>
+<details class="question"><summary>How many bytes of encrypted data does it contain?</summary><p>434</p>
+</details>
+<p><img alt="" src="media/image5.png" /></p>
+<p><strong>Encrypted Packets</strong></p>
+<p>Next, we will try to decrypt the packets.</p>
+<p>To do so, we need to provide Wireshark with the secret key.</p>
+<ol>
+<li>Go to <strong>Edit-&gt;Preferences</strong>, then click on <strong>"Protocols"</strong> at the left-hand side of the Preferences window. Expand the list of protocols and find <strong>"TLS"</strong> (just type "TLS").</li>
+</ol>
+<p><img alt="" src="media/image6.png" /></p>
+<p><strong>SSL Configuration Dialog</strong></p>
 <ol>
 <li>
-<p>Browse to <strong><a href="http://lab-5.3.sans.labs/html5.html">http://lab-5.3.sans.labs/html5.html</a></strong>.</p>
+<p>Click on the <strong>"Edit"</strong> button to the right of "RSA keys list:" and click the "+" button in the lower left-hand corner to add a new key.</p>
 </li>
 <li>
-<p>Click on "1 -- Local Storage and Session Storage".</p>
+<p>You will now be able to enter the key parameters: IP Address: 192.168.1.174, Port: 443, Protocol: http. For the key file, please select <strong>"Documents"</strong> directory and then <strong>"SSL"</strong> where you can select the <strong>"/home/student/Documents/SSL/server.key"</strong>.</p>
+<p><img alt="" src="media/image7.png" /></p>
+<p><strong>SSL Key Configuration</strong></p>
+<p>Leave the "Password" field empty and click "OK" and close the "Preferences" Dialog by clicking OK. As soon as you close the dialogs, you should see decrypted traffic.</p>
+<p>Packets 12 and 14 are now decrypted.</p>
+<p><img alt="" src="media/image8.png" /></p>
 </li>
 <li>
-<p>Enter some random text in both text areas (Storage #1 and Storage #2).</p>
+<p>Decrypted Packets in Wireshark</p>
 </li>
 <li>
-<p>Click on both "Save" buttons.</p>
-</li>
-<li>
-<p>Open the same page, <strong><a href="http://lab-5.3.sans.labs/storage.html">http://lab-5.3.sans.labs/storage.html</a></strong>, in a new tab (press CTRL+T, or use the "File" menu in the browser).</p>
-</li>
-<li>
-<p>In this new tab, to the right of the text areas, you will see "Saved Data". Only one of these fields is prefilled; the other field is empty. For one of the text areas, LocalStorage was used. For the other one, we used SessionStorage. Which one is which?</p>
-</li>
-<li>
-<p>With both tabs open, enter different values in Storage #1 and Storage #2. Refresh the other tab to confirm your assumption.</p>
-</li>
-<li>
-<p>In Chrome, open the developer tools (press SHIFT-CTRL-I) and select the "Application" tab. You will see options to inspect local and session storage on the left.</p>
-<p><img alt="" class="zoom" src="media/img-1615706413-20210314.png" /></p>
-<p><strong>Adjusting Local Storage</strong></p>
-</li>
-<li>
-<p>You will be able to review Local Storage and Session Storage. You will see the values you entered in the text area. For Session Storage, you will see different values in different tabs.</p>
+<p>Right-click on packet #12, then select "Follow -&gt; SSL Stream" to reconstruct the payload of the HTTP request and response.</p>
 </li>
 </ol>
-<details class="tip"><summary>Answer</summary><p>Storage #1 is kept in LocalStorage. Storage #2 is kept in SessionStorage. As a result, Storage #1 is the same for both tabs, while Storage #2 is different.</p>
+<details class="question"><summary>What is the content of the payload of the response?</summary><p>HTTP Request - The page has HTML content of a message "The Secret key is: Perfect 10"</p>
 </details>
+<p><img alt="" src="media/image9.png" /></p>
+<p><strong>Decrypted SSL Stream</strong></p>
 <hr />
-<h2 id="part-2-cross-window-messaging">Part 2: Cross-Window Messaging</h2>
+<h2 id="advanced-ssl-master-key">Advanced: SSL Master Key</h2>
+<p>In this exercise, we will decrypt SSL without knowing the server's private key. After all, the client has to be able to decrypt the content without the server's keys. Instead, the symmetric key that is negotiated during the SSL handshake is needed. If Diffie-Hellman ciphers are used, then this is the only method to decrypt traffic.</p>
+<p>Chrome (and Firefox) are able to log the symmetric master keys to a file, and Wireshark is able to use this file to decrypt the content.</p>
 <ol>
 <li>
-<p>Open the "Cross-Domain Messaging" exercise at <a href="http://lab-5.3.sans.labs/trader.html">http://lab-5.3.sans.labs/trader.html</a></p>
+<p>Start Wireshark.</p>
 </li>
 <li>
-<p>You will see a simple "Stock Trading" application. Place a trade in the green "Trade" window by selecting a stock symbol and entering a quantity.</p>
+<p>Select the "Loopback: lo" interface and click the blue "fin" on the far left of the toolbar. Wireshark will now start to collect data.</p>
+<p><img alt="" src="media/image10.png" /></p>
+<p><strong>Starting Packet Capture in Wireshark</strong></p>
 </li>
 <li>
-<p>After you click the "Execute" button, your trade will show up in the "Trade Status" frame. The stock trading application sends trades to the "Trade Status" frame, where they are then passed to the trading API.</p>
+<p>Close Chrome first if it is running.</p>
 </li>
 <li>
-<p>Click on the ad on the left to enable ads.</p>
+<p>Open Chrome FROM THE COMMAND LINE (not by clicking on the icon). To do this, open a terminal and then enter "google-chrome". This will apply the necessary bash environment variables to Chrome to log the master keys.</p>
+<div class="highlight"><pre><span></span><code>google-chrome
+</code></pre></div>
 </li>
 <li>
-<p>After 10 seconds, the ad image will change. At the same time, a new trade will appear in the "Trade Status" window. Why?</p>
+<p>Visit <a href="https://wiki.sans.labs/">https://wiki.sans.labs/</a> (it is a TLS protected site)</p>
 </li>
 <li>
-<p>Open the Chrome developer tools (SHIFT-CTRL-I) and select the "Sources" tab.</p>
+<p>Close Google Chrome.</p>
 </li>
 <li>
-<p>On the left, you will find "ad.html" after expanding "adframe (ad.html)" and "lab-5.3-evil.sans.labs". The "postMessage" function will be found on line 29.</p>
-<p><img alt="" class="zoom" src="media/img-1615706645-20210314.png" /></p>
+<p>Stop the acquisition in Wireshark by clicking on the red square.</p>
 </li>
 <li>
-<p>Select "platform.html" on the left. This will bring up the trading platform's source code that receives the message.</p>
+<p>To display only the SSL traffic, enter "tls" as a filter and click "Apply". You will recognize the now-familiar packets like "Client Hello" and "Server Hello".</p>
 </li>
 <li>
-<p>Does the function "receiveMessage" (starting on line 6) check for the origin of the message?</p>
+<p>Just like before, we enter the RSA key configuration dialog. Select Edit-&gt;Preferences from the Wireshark menu and proceed to the SSL protocol configuration. But instead of editing the RSA keys list, we just select a (Pre)-Master-Secret log filename at the bottom of the dialog.</p>
 </li>
 <li>
-<p><strong>Extra Credit</strong> </p>
-<div class="admonition question">
-<p class="admonition-title">Can you fix the error?</p>
+<p>Use /home/student/Documents/sslkeylogfile.log</p>
+</li>
+<li>
+<p>Just like before, the HTTPS traffic will now be decrypted. But this time, we used symmetric keys captured by the client.</p>
+<div class="admonition information">
+<p class="admonition-title">Information</p>
+<p>The reason why we are launching Chrome from the shell is because of the environment variable in the shell environment called "SSLKEYLOGFILE". This environment variable tells the browser to capture a copy of the SSL key into the disk drive for debugging purpose.
+This method illustrated in part 2 of the exercise is exactly how anyone can debug their traffic with a TLS website. If you ever need to get to decipher the TLS protected traffic with a website, let's say, Google or Facebook. This method allows you to decrypt the traffic from the workstation.</p>
 </div>
-<p>You can find the source code for the files in /etc/docker/compose/5.3/web/html/platform.html.</p>
 </li>
 </ol>
-<details class="tip"><summary>Answer</summary><p>platform.html never checks the origin of the message. This will allow any window to send messages if that window can obtain a handle to the "platform" IFrame. To</p>
-<p>check for the origin, you could add this code.</p>
-<div class="highlight"><pre><span></span><code><span class="x">If ( event.origin != &#39;http://lab-5.3.sans.labs&#39;) {</span>
-<span class="x">    return 0</span>
-<span class="x">}</span>
-</code></pre></div>
-<p>In this example, checking the origin is, however, insufficient, as the ad is served from the same origin as the rest of the page. The ad should be loaded from a different origin.</p>
-</details>
-<hr />
-<h2 id="part-3-input-validation">Part 3: Input Validation</h2>
-<p>In this exercise, you will see four different input fields. Each field is supposed to validate the input to limit data submitted to the description to the left of the input field. For example, the user is not supposed to enter a number that exceeds 100 in the first input field. The actual validation is either too strict or too loose. Find out what needs to be improved to correct the regular expressions used to validate the data.</p>
-<ol>
-<li>
-<p>Open <a href="http://lab-5.3.sans.labs/valid.html">http://lab-5.3.sans.labs/valid.html</a> in Chrome.</p>
-</li>
-<li>
-<p>In the first input field, enter "1000" and click the "Submit" button. You will not receive an error message (but you should).</p>
-</li>
-<li>
-<p>Right-click on the input field and select "Inspect Element". This will highlight the respective line in the page's source code:</p>
-<div class="highlight"><pre><span></span><code>&lt;input type=&quot;text&quot; pattern=&quot;[0-9]+&quot;&gt;
-</code></pre></div>
-</li>
-<li>
-<p>Double-click on the regular expression. You will be able to edit it.</p>
-</li>
-<li>
-<p>Change it to [0-9][0-9]. Now the large input will be rejected. Note that in this case, you do not need anchors for regular expressions.</p>
-</li>
-<li>
-<p>Repeat Steps 2--5 for the other three input fields. Inspect the element to see the regular expression. Is it correct? If not, then try to enter input that would match the regular expression, but not the expected input. Also, verify if there is valid input that will be rejected.</p>
-</li>
-</ol>
-<details class="tip"><summary>Answer</summary><p>The correct regular expressions are:</p>
-<div class="admonition example">
-<p class="admonition-title">1</p>
-<div class="highlight"><pre><span></span><code>[0-9][0-9]
-</code></pre></div>
-<p>The original expression did not limit the length of the number. Other possible solutions: [0-9]{2}, \d\d, \d{2}</p>
-</div>
-<div class="admonition example">
-<p class="admonition-title">2</p>
-<div class="highlight"><pre><span></span><code>[0-9A-F]
-</code></pre></div>
-<p>The original expression allowed for letters up to H. G and H are not valid hexadecimal characters.</p>
-</div>
-<div class="admonition example">
-<p class="admonition-title">3</p>
-<div class="highlight"><pre><span></span><code>[0-9]{5}
-</code></pre></div>
-<p>Like the first input field, the length is not restricted. For extra credit, you could come up with a regular expression that allows for ZIP+4: [0-9]{5}(-[0-9]{4})?</p>
-</div>
-<div class="admonition example">
-<p class="admonition-title">4</p>
-<p>For international phone numbers, it is hard to limit the length, as different lengths apply for different countries. But the country code may start with a '+', which is not allowed here. +?[0-9]+ is a better pattern. The ITU-T, which sets standards for phone systems, recommends that numbers should never exceed 15 digits, which includes the country code. Following this standard, the regular expression would be +?\d{1,15}</p>
-</div>
-</details>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
 <ul>
-<li>Modern HTML interface has many different functions that can make the website more responsive. At the same time, some of the features also impact security. </li>
-<li>Local storage and other browser based storage need careful evaluation on privacy and security impact before use.</li>
+<li>While TLS/SSL is known for protecting traffic between two network hosts, the traffic protected by it can be reverted to cleartext given the right circumstances. </li>
+<li>To debug your own SSL/TLS traffic, use the SSLKEYLOGFILE environment variable to enable the debugging mode in the browser so that encryption key can be captured.</li>
 </ul>
 <hr />
+<h2 id="explore-further">Explore Further</h2>
+<ul>
+<li>Visit an Internet site with SSL and see if you can capture the TLS key on your SSL session.</li>
+</ul>
                 
               
               
@@ -1054,7 +1051,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../5.2/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../3.3/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1063,19 +1060,19 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              5.2: Clickjacking
+              3.3: OAuth and Access Control
             </div>
           </div>
         </a>
       
       
-        <a href="../5.4/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../4.1/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              5.4: Sub Resource Integrity
+              4.1: WSDL Enumeration and Parameter Tampering
             </div>
           </div>
           <div class="md-footer__button md-icon">
