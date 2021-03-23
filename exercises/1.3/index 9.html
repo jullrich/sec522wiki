@@ -14,7 +14,7 @@
     
     
       
-        <title>3.3: OAuth and Access Control - SEC522 Workbook</title>
+        <title>1.3: Isolation - SEC522 Workbook</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#oauth-and-access-control" class="md-skip">
+        <a href="#service-isolation" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              3.3: OAuth and Access Control
+              1.3: Isolation
             
           </span>
         </div>
@@ -309,7 +309,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../errata/G01_01/" class="md-nav__link">
+      <a href="../../errata/F01_01/" class="md-nav__link">
         F01_01
       </a>
     </li>
@@ -334,12 +334,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       <label class="md-nav__link" for="__nav_2">
         Day 1
@@ -379,11 +381,123 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../1.3/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          1.3: Isolation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         1.3: Isolation
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-ftphttp-server-isolation" class="md-nav__link">
+    Part 1: FTP/HTTP Server Isolation
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 1: FTP/HTTP Server Isolation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step-instructions" class="md-nav__link">
+    Step-by-Step Instructions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-docker-administration-tools" class="md-nav__link">
+    Part 2: Docker Administration Tools
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 2: Docker Administration Tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-hints" class="md-nav__link">
+    No Hints
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step" class="md-nav__link">
+    Step by Step
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-modsecurity-web-application-firewall" class="md-nav__link">
+    Part 3: ModSecurity Web Application Firewall
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 3: ModSecurity Web Application Firewall">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step_1" class="md-nav__link">
+    Step by Step
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explore-further" class="md-nav__link">
+    Explore Further
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -490,14 +604,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
       
       <label class="md-nav__link" for="__nav_4">
         Day 3
@@ -537,110 +649,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          3.3: OAuth and Access Control
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../3.3/" class="md-nav__link">
         3.3: OAuth and Access Control
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#part-1-access-control" class="md-nav__link">
-    Part 1: Access Control
-  </a>
-  
-    <nav class="md-nav" aria-label="Part 1: Access Control">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#no-hints" class="md-nav__link">
-    No Hints
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-by-step" class="md-nav__link">
-    Step by Step
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#part-2-oauth" class="md-nav__link">
-    Part 2: OAuth
-  </a>
-  
-    <nav class="md-nav" aria-label="Part 2: OAuth">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#no-hints_1" class="md-nav__link">
-    No Hints
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-by-step_1" class="md-nav__link">
-    Step by Step
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
-    Conclusion
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#explore-further" class="md-nav__link">
-    Explore Further
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -891,222 +904,188 @@
     content: 'SANS SEC522 Workbook';
 }}
 @page :left { @bottom-left {
-  content: '3.3-' counter(page);
+  content: '1.3-' counter(page);
 }}
 @page :right { @bottom-right {
-  content: '3.3-' counter(page);
+  content: '1.3-' counter(page);
 }}
 </style>
 
-<h1 id="oauth-and-access-control">OAuth and Access Control</h1>
+<h1 id="service-isolation">Service Isolation</h1>
 <hr />
 <h4 id="objectives">Objectives</h4>
-<p>Estimated Time: 15 minutes</p>
+<div class="codehilite"><pre><span></span><code>Estimated Time: 15 minutes
+</code></pre></div>
+
 <h5 id="part-1">Part 1:</h5>
 <blockquote>
-<p>We learned that for web applications, it is important to apply access control consistently throughout the entire application. In this exercise, we are examining a flaw that allows regular users to perform administrative functions. To explore this flaw, we first execute these actions as administrator to learn what is possible and then later try to replay these actions as a normal user.</p>
+<p>In this exercise, you will learn about the importance of isolating services like FTP and HTTP. We will also experiment with web application firewalls to demonstrate how they can prevent sensitive data leakage.</p>
 </blockquote>
 <h5 id="part-2">Part 2:</h5>
 <blockquote>
-<p>In this exercise, you will walk through an OAuth authentication and later demonstrate how this application does not secure its OAuth tokens successfully</p>
+<p>Many organizations deploy web applications in docker containers. Docker containers are administered via an API. Exposing the API, or tools that use it, will expose your Docker containers to attack. In this exercise, we will experiment with a common Docker administration tool called "Portainer".</p>
+</blockquote>
+<h5 id="part-3">Part 3:</h5>
+<blockquote>
+<p>In this part of the exercise, you will experiment the Web application firewall (mod_security) and it's capability to detect data leak post-compromise and view the logs captured by the Web Application Firewall</p>
 </blockquote>
 <h4 id="requirements">Requirements</h4>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Lab VM</li>
 </ul>
 <hr />
-<h2 id="part-1-access-control">Part 1: Access Control</h2>
+<h2 id="part-1-ftphttp-server-isolation">Part 1: FTP/HTTP Server Isolation</h2>
+<h3 id="step-by-step-instructions">Step-by-Step Instructions</h3>
+<ol>
+<li>
+<p>In Chrome, load the URL - <a href="http://lab-1.3.sans.labs/ftp/">http://lab-1.3.sans.labs/ftp/</a>. This will activate the exercise components.</p>
+</li>
+<li>
+<p>Click on the <strong>"FileZilla"</strong> icon on the left side of the screen (Favorites bar) to start the FTP client.</p>
+<p><img alt="" src="media/image1.png" /></p>
+<p><strong>FileZilla Icon</strong></p>
+</li>
+<li>
+<p>Once FileZilla is launched, enter <strong>lab-1.3.sans.labs</strong> as the host, the username as <strong>anonymous</strong> and password as <strong>testing</strong>. Click "Quickconnect" to connect.</p>
+<p><img alt="" class="zoom" src="media/img-1615525893-20210312.png" /></p>
+</li>
+<li>
+<p>After FileZilla is connected, select the "uploads" directory in the lower right-hand pane and set the "Local Site" to "/home/student/Documents/FTPFiles/".</p>
+<p><img alt="" class="zoom" src="media/img-1615526076-20210312.png" /></p>
+<p><strong>FileZilla Main Screen</strong></p>
+</li>
+<li>
+<p>Highlight the three files (config.php, phpinfo.php, phpshell.php) on the left and drag them to the "Remote Site" pane (lower right, where you clicked on "uploads"). The files are now uploaded.</p>
+<p><img alt="" class="zoom" src="media/img-1615527209-20210312.png" /></p>
+</li>
+<li>
+<p>FileZilla uploading files</p>
+</li>
+<li>
+<p>Open Chrome and make sure no proxy is selected.</p>
+</li>
+<li>
+<p>Proceed to <a href="http://lab-1.3.sans.labs/ftp/"><strong>http://lab-1.3.sans.labs/ftp</strong></a> in Chrome. You will see a directory listing showing the three files we just uploaded.</p>
+<p><img alt="" class="zoom" src="media/img-1615527387-20210312.png" /></p>
+<p><strong>FTP Directory in Chrome</strong></p>
+</li>
+<li>
+<p>Click on <strong>"phpinfo.php"</strong>. This will execute the phpinfo script we just uploaded. It uses the phpinfo() command to list various php configuration parameters.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The files that we uploaded earlier contained code. These code are executed by the webserver. </p>
+</div>
+</li>
+<li>
+<p>The PHP configuration is displayed on-screen. Let's inspect what we uploaded via FTP earlier.</p>
+</li>
+<li>
+<p>Open "Files" in the upper left-hand corner of the screen (in the Favorites bar) and navigate to Documents-&gt;FTPFiles. Double-click on "phpinfo.php". This will open the file in a text editor.</p>
+<p><img alt="" class="zoom" src="media/img-1615527606-20210312.png" /></p>
+<p><strong>File</strong></p>
+<p><img alt="" src="media/image5.png" /></p>
+<p><strong>phpinfo.php content</strong></p>
+</li>
+</ol>
+<p>The file contains a single PHP command, "phpinfo()". This command, if executed, creates the output we saw earlier. This proves that the server executed our code.</p>
+<ol>
+<li>
+<p>Go back to <a href="http://lab-1.3.sans.labs/ftp"><strong>http://lab-1.3.sans.labs/ftp</strong></a> in Chrome and click on <strong>"phpshell.php"</strong>.</p>
+</li>
+<li>
+<p>Log in with the username <strong>"**sec522</strong>"** and the password <strong>"**training</strong>".**</p>
+</li>
+<li>
+<p>Once logged in, users can run any shell command. The operating system in this instance is Unix. You can try normal Unix shell commands such as "ls" to show a listing of files or "uname -a" to show details about the operating system. Feel free to explore the interface and see what evil things can be done using this tool. You are essentially controlling the computer through this remote web shell interface and you are able to run any command the web server is permitted to run.</p>
+</li>
+</ol>
+<hr />
+<h2 id="part-2-docker-administration-tools">Part 2: Docker Administration Tools</h2>
 <h3 id="no-hints">No Hints</h3>
-<p>Open <a href="http://lab-3.3.sans.labs/index.php">http://lab-3.3.sans.labs/index.php</a> in a browser. Feel free to explore on your own at this point. An administrator is able to adjust the status of an animal in the shelter (for example, flip the "Cat Aggressive" status) by clicking on the respective icon in the page describing an individual animal. Try to perform this action as a normal user. Admin username/pass is sec522/training and regular user is hackercat/training</p>
+<p>Portainer is running on a container within the course environmnent, and you can connect to it via Chrome (<a href="http://portainer.sans.labs/">http://portainer.sans.labs/</a>). Try to guess the login credentials and add a rogue admin user.</p>
 <h3 id="step-by-step">Step by Step</h3>
 <ol>
 <li>
-<p>Open <a href="http://lab-3.3.sans.labs/index.php">http://lab-3.3.sans.labs/index.php</a> in Chrome.</p>
+<p>Open Google Chrome and visit <a href="http://portainer.sans.labs">http://portainer.sans.labs</a></p>
 </li>
 <li>
-<p>Click the "Login" button (upper right hand corner). This will direct you to our animal shelter login page.</p>
+<p>Log in using the username "sec522" and the password "training".</p>
 </li>
 <li>
-<p>Log in as an administrator (username: sec522, password: training). You will see a list of animals up for adoption.</p>
+<p>Click on "Users" on the left.</p>
 </li>
 <li>
-<p>Click on an animal's image (for example, the first cat, "Cinnamon"). This will display a page with details about this particular animal.</p>
+<p>Review the currently registered users in the lower part of the User Management interface on the right.</p>
+<details class="question"><summary>How many users are present?</summary><p>2</p>
+</details>
+<details class="question"><summary>What are their usernames?</summary><p>admin, sec522</p>
+</details>
+<details class="question"><summary>What are their roles?</summary><p>administrator</p>
+</details>
 </li>
 <li>
-<p>Bellow the image, you will see three icons. Click on one of the icons and it will change color from green to red (or red to green if it was red).</p>
-<p><img alt="" src="media/image1.png" /></p>
-<p><strong>Image of Individual Animal with Icons Indicating Status</strong></p>
+<p>Enter "hackercat" as the username and "training" as the password. Don't forget to enter "training" again to confirm the password.</p>
 </li>
 <li>
-<p>Click on the "Log Out" link (upper right hand corner).</p>
-</li>
-<li>
-<p>Click on the "Login again" link.</p>
-</li>
-<li>
-<p>Log in as a normal user (username: hackercat, password: training).</p>
-</li>
-<li>
-<p>Click on an animal.</p>
-</li>
-<li>
-<p>Verify that clicking on the animal's "status icons" does nothing.</p>
-</li>
-<li>
-<p>Click on the "Log Out" link (upper right hand corner).</p>
-</li>
-<li>
-<p>Click on the "Login again" link.</p>
-</li>
-<li>
-<p>Log in as an administrator (username: sec522, password: training).</p>
-<p>Now we will explore what happens when the administrator clicks on one of the status icons.</p>
-</li>
-<li>
-<p>Click on an animal's picture again to end up on the animal's individual page.</p>
-</li>
-<li>
-<p>Open the Google Chrome developer tools by pressing CTRL-Shift-I.</p>
-</li>
-<li>
-<p>Select the "Network" tab in the developer tools.</p>
-<p><img alt="" src="media/image2.png" /></p>
-<p><strong>Google Chrome Developer Tools With Network Tab Selected</strong></p>
-</li>
-<li>
-<p>Click on the "Dog" icon to change the animal's "Dog Aggressive" status. This will create a new entry in the developer tool window for "flip.php".</p>
-</li>
-<li>
-<p>Right-click on the "flip.php" entry and select "Copy" -> "Copy as cURL".</p>
-<p><img alt="" src="media/image3.png" /></p>
-<p><strong>Copy "flip.php" Request as cURL</strong></p>
-</li>
-<li>
-<p>Open an editor (for example, Visual Studio Code) and paste the request into an empty file.</p>
-</li>
-<li>
-<p>Save the file (recommended name: "test.sh" in the user's home directory, /home/student).</p>
-</li>
-<li>
-<p>Open a terminal.</p>
-</li>
-<li>
-<p>Execute the file:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">source</span> /home/student/test.sh
-</code></pre></div>
-<p>Your output will look like.</p>
-<p><img alt="" class="zoom" src="media/img-1615956484-20210317.png" /></p>
-<p><strong>Output of test.sh</strong></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The highlighted part in the end <strong>"status":"OK"</strong>. This indicates that the script ran successfully. At this point, you are still logged in as an administrator, and a successful script is what we expect.</p>
-</div>
-</li>
-<li>
-<p>Back on Chrome, click the "Log Out" link. </p>
-</li>
-<li>
-<p>Run the script again, just like above:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">source</span> /home/sec522/test.sh
-</code></pre></div>
-<p>This time, the output will be an error:</p>
-<p><img alt="" class="zoom" src="media/img-1615956579-20210317.png" /></p>
-<p><strong>Terminal Output After Running the Script a Second Time After Logging Out</strong></p>
-<p>The script failed this time because "sec522" is no longer logged in, and the cookie included in the prior request in test.sh is no longer valid.</p>
-</li>
-<li>
-<p>Log in as a normal user again (username: hackercat, password: training).</p>
-</li>
-<li>
-<p>Open the "Application" tab in Chrome's Developer Tool. Note that, depending on your screen resolution, this option may be available by clicking on the '>>' symbol in the top right area of the developer tools (see picture below).</p>
+<p>Check the "Administrator" option.</p>
 <p><img alt="" src="media/image6.png" /></p>
-<p><strong>Opening the Application Tab</strong></p>
+<p><strong>User Management Dialog in Portainer</strong></p>
 </li>
 <li>
-<p>Next, click on "Cookies" in the left part of the developer menu.</p>
-</li>
-<li>
-<p>Click on "<a href="http://lab-3.3.sans.labs">http://lab-3.3.sans.labs</a>" under "Cookies".</p>
-</li>
-<li>
-<p>Double-click on the "Value" to the right of "sec522_3_3". It will turn orange.</p>
-<p><img alt="" class="zoom" src="media/img-1615956927-20210317.png" /></p>
-<p><strong>Highlighting the Cookie Value</strong></p>
-</li>
-<li>
-<p>Right-click on the highlighted value and select "Copy".</p>
-</li>
-<li>
-<p>Open the "test.sh" script you created earlier in your favorite editor. If you are using Visual Studio Code, all you need to do is open the editor and it should automatically open the last edited file.</p>
-</li>
-<li>
-<p>Find the cookie value. It will be the random string after "sec522_3_3=" and replace it with the cookie value you copied from Chrome. Just highlight the old value and "Paste" to overwrite it. If there is a single quote at the end of the session ID, do not delete it.</p>
-<p><img alt="" class="zoom" src="media/img-1615957247-20210317.png" /></p>
-<p><strong>Highlighted Cookie Value</strong></p>
-</li>
-<li>
-<p>Exit the editor.</p>
-</li>
-<li>
-<p>Switch back to the terminal.</p>
-</li>
-<li>
-<p>Run the script again. This time, the request should succeed. The figure below shows the terminal with all three requests: first, the one using the administrator's cookie; next, the failed request after the administrator logged out; and finally, the request we just sent with the regular user's cookie, which succeeded as well.</p>
+<p>Click "Create user".</p>
+<p>You now created a new administrative user. Optionally, you may test this user by logging out of Portainer and logging in using the new credentials. An attacker could use this new user to access the system even after the administrator changed the password for the sec522 user.</p>
+<p>!!! question "What measures can an administrator take to prevent this exploit?</p>
 </li>
 </ol>
-<p>The final request should not have succeeded. This proves that a normal user can execute an administrative request as long as the user knows what request to send.</p>
-<p>You may want to now return to the browser to check if the information was changed. You can also make additional edits to the script. Close to the end of the request you should see an "animalid" parameter that can be used to pick different animals. Experiment with it.</p>
-<p>Please suggest ways to fix the issues in the applications. You can review the source code of the script at <a href="http://lab-3.3.sans.labs/api/flip.phps">http://lab-3.3.sans.labs/api/flip.phps</a> .</p>
-<h2 id="part-2-oauth">Part 2: OAuth</h2>
-<h3 id="no-hints_1">No Hints</h3>
-<p>The exercise starts at <a href="http://lab-3.3.sans.labs/calendar/index.php">http://lab-3.3.sans.labs/calendar/index.php</a>. The basic steps are explained as part of the website.</p>
+<hr />
+<h2 id="part-3-modsecurity-web-application-firewall">Part 3: ModSecurity Web Application Firewall</h2>
 <h3 id="step-by-step_1">Step by Step</h3>
+<p>We will experiment with the mod_security web application firewall in the following exercise.</p>
 <ol>
 <li>
-<p>The exercise starts at <a href="http://lab-3.3.sans.labs/calendar/index.php">http://lab-3.3.sans.labs/calendar/index.php</a>. The page implements a simple calendar display. But to use it, you need to allow the calendar page to retrieve your calendar from the animal shelter site. Click on the link on the page to be sent to the animal shelter.</p>
+<p>In Chrome, go to <a href="http://normalsecurity.sans.labs"><strong>http://normalsecurity.sans.labs</strong></a> and click on the two files "<strong>cc.html"</strong> and <strong>"trans.txt"</strong>.</p>
+<details class="question"><summary>What do these two files show?</summary><p><strong>cc.html</strong> shows transaction data including credit card numbers.</p>
+<p><strong>trans.txt</strong> leaks source code.</p>
+</details>
+<details class="question"><summary>Why is it a problem that our application leaks data like this?</summary><p><strong>cc.html</strong> - leaking credit card data is, of course, a problem.</p>
+<p><strong>trans.txt</strong> - an attacker could use this source code to find vulnerabilities.</p>
+</details>
 </li>
 <li>
-<p>At the animal shelter, you will need to log in (if you are not already logged in). The username is "sec522", the password is "training".</p>
-</li>
-<li>
-<p>Next, a simple page will ask you for permission to use the calendar. Inspect the URL. It will contain the client_id, which identifies the application requesting access. The "state" variable is used to identify the response returned to the client. Allow access by clicking "yes".</p>
-</li>
-<li>
-<p>You will now be redirected back to the volunteer calendar app and your schedule should appear.</p>
-</li>
-<li>
-<p>Next, click on the "problem" link to learn more about the issue causing authentication tokens to leak.</p>
-</li>
-<li>
-<p>The problem page suggests that SQL injection is used to retrieve the tokens. Click on the "search page" link to be directed to the vulnerable page.</p>
-</li>
-<li>
-<p>Click the "Debug" checkbox</p>
-</li>
-<li>
-<p>Enter a single quote (') in the search box and hit "Submit"</p>
-</li>
-<li>
-<p>You will now see the vulnerable statement. The "animalname" parameter is injectable, and we can use a union statement to retrieve additional data. The union statement needs to retrieve the same number of columns as the original statement (7). The second column ("animalname") is easily displayed and we will use it for our exploit. Enter as a search:</p>
-<div class="admonition warning">
-<p class="admonition-title">Important: there is a space after the two dashes '--'.</p>
+<p>Try <a href="http://normalsecurity.sans.labs/form.php">http://normalsecurity.sans.labs/form.php</a>. You will be able to submit the string "cats are evil" or other strings for that matter.</p>
+<div class="admonition switch">
+<p class="admonition-title">Switch</p>
+<p>We are now switching to the mod_security protected version of the same website</p>
 </div>
-<div class="highlight"><pre><span></span><code><span class="err">&#39;</span> <span class="k">UNION</span> <span class="k">SELECT</span> <span class="mi">1</span><span class="p">,</span><span class="n">access_token</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span> <span class="k">FROM</span> <span class="n">oauth</span><span class="p">.</span><span class="n">oauth_access_tokens</span> <span class="k">LIMIT</span> <span class="mi">1</span> <span class="c1">-- </span>
-</code></pre></div>
-<p>The token for OAuth authentication (Refresh token) will be displayed below a broken picture on the result page.</p>
+</li>
+<li>
+<p>Revisit the two URLs above (under <a href="http://modsecurity.sans.labs"><strong>http://modsecurity.sans.labs</strong></a>). What do you see now? (You may need to reload the page if you still see the original text.)</p>
+</li>
+<li>
+<p>Revisit <strong><a href="http://modsecurity.sans.labs/form.php">http://modsecurity.sans.labs/form.php</a></strong> and see if you can still enter "Cats are evil". Try "Cats are cute" instead.</p>
+</li>
+<li>
+<p>Go to <strong><a href="http://modsecurity.sans.labs">http://modsecurity.sans.labs</a></strong>. This URL is blocked as well now. Keep that in mind when inspecting the rules later.</p>
+</li>
+<li>
+<p>Review the web application firewall's log file at <strong><a href="http://modsecurity.sans.labs/modsecurity.log">http://modsecurity.sans.labs/modsecurity.log</a>.</strong></p>
+<div class="admonition question">
+<p class="admonition-title">Try to identify the log entries that indicate which URL was blocked and why?</p>
+</div>
+</li>
+<li>
+<p>Next, we are going to examine the ruleset to see what rules are triggered to block access to the file. Open the configuration file at <strong><a href="http://modsecurity.sans.labs/modsecurity.rules">http://modsecurity.sans.labs/modsecurity.rules</a>.</strong></p>
+<div class="admonition question">
+<p class="admonition-title">Try to understand what the rule is matching for.</p>
+</div>
 </li>
 </ol>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
-<ul>
-<li>While OAuth can offer secure and reliable authorization between two web sites, the token handling needs to be performed with extreme care. Compromises of tokens can be through other attacks such as SQL injection. Once an attacker acquire the refresh token, the attacker can use the token to get new Access Tokens for further access.</li>
-<li>Access control flaws can occur to the most modern applications. Keeping the access controls consistent is the key to successfully defend your application.</li>
-</ul>
 <hr />
 <h2 id="explore-further">Explore Further</h2>
 <ul>
-<li>Using the acquired refresh token to acquire new access tokens</li>
-<li>Are there other refresh tokens inside the database?</li>
+<li></li>
 </ul>
                 
               
@@ -1125,7 +1104,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../3.2/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../1.2/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1134,19 +1113,19 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              3.2: Session Fixation and Session Breaking
+              1.2: Inspecting HTTP/2 Traffic
             </div>
           </div>
         </a>
       
       
-        <a href="../3.4/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../1.4/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              3.4: Inspecting SSL Traffic
+              1.4: SSRF and Credential Stealing
             </div>
           </div>
           <div class="md-footer__button md-icon">

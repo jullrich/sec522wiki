@@ -14,7 +14,7 @@
     
     
       
-        <title>3.3: OAuth and Access Control - SEC522 Workbook</title>
+        <title>1.1: HTTP Basics - SEC522 Workbook</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#oauth-and-access-control" class="md-skip">
+        <a href="#http-basics" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              3.3: OAuth and Access Control
+              1.1: HTTP Basics
             
           </span>
         </div>
@@ -309,7 +309,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../errata/G01_01/" class="md-nav__link">
+      <a href="../../errata/F01_01/" class="md-nav__link">
         F01_01
       </a>
     </li>
@@ -334,12 +334,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       <label class="md-nav__link" for="__nav_2">
         Day 1
@@ -355,11 +357,116 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../1.1/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          1.1: HTTP Basics
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         1.1: HTTP Basics
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#part-0-introduction-to-burp-if-you-are-not-already-familiar-with-burp" class="md-nav__link">
+    Part 0: Introduction to Burp (If You Are Not Already Familiar with Burp)
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 0: Introduction to Burp (If You Are Not Already Familiar with Burp)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step" class="md-nav__link">
+    Step by Step
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-manipulating-http-requests" class="md-nav__link">
+    Part 1: Manipulating HTTP Requests
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 1: Manipulating HTTP Requests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step_1" class="md-nav__link">
+    Step by Step
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-intercepting-https-requests" class="md-nav__link">
+    Part 2: Intercepting HTTPS Requests
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 2: Intercepting HTTPS Requests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step_2" class="md-nav__link">
+    Step by Step
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explore-further" class="md-nav__link">
+    Explore Further
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -490,14 +597,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
       
       <label class="md-nav__link" for="__nav_4">
         Day 3
@@ -537,110 +642,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          3.3: OAuth and Access Control
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../3.3/" class="md-nav__link">
         3.3: OAuth and Access Control
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#part-1-access-control" class="md-nav__link">
-    Part 1: Access Control
-  </a>
-  
-    <nav class="md-nav" aria-label="Part 1: Access Control">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#no-hints" class="md-nav__link">
-    No Hints
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-by-step" class="md-nav__link">
-    Step by Step
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#part-2-oauth" class="md-nav__link">
-    Part 2: OAuth
-  </a>
-  
-    <nav class="md-nav" aria-label="Part 2: OAuth">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#no-hints_1" class="md-nav__link">
-    No Hints
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-by-step_1" class="md-nav__link">
-    Step by Step
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
-    Conclusion
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#explore-further" class="md-nav__link">
-    Explore Further
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -891,222 +897,235 @@
     content: 'SANS SEC522 Workbook';
 }}
 @page :left { @bottom-left {
-  content: '3.3-' counter(page);
+  content: '1.1-' counter(page);
 }}
 @page :right { @bottom-right {
-  content: '3.3-' counter(page);
+  content: '1.1-' counter(page);
 }}
 </style>
 
-<h1 id="oauth-and-access-control">OAuth and Access Control</h1>
+<h1 id="http-basics">HTTP Basics</h1>
 <hr />
 <h4 id="objectives">Objectives</h4>
-<p>Estimated Time: 15 minutes</p>
+<div class="codehilite"><pre><span></span><code>Estimated Time: 20 minutes
+</code></pre></div>
+
+<h5 id="part-0-if-you-are-not-already-familiar-with-burp">Part 0: <em>(if you are not already familiar with Burp)</em></h5>
+<blockquote>
+<p>In this exercise, we will use the Burp proxy to intercept HTTP requests and responses. The goal of the exercise is to become familiar with Burp.</p>
+</blockquote>
 <h5 id="part-1">Part 1:</h5>
 <blockquote>
-<p>We learned that for web applications, it is important to apply access control consistently throughout the entire application. In this exercise, we are examining a flaw that allows regular users to perform administrative functions. To explore this flaw, we first execute these actions as administrator to learn what is possible and then later try to replay these actions as a normal user.</p>
+<p>Learn how to manipulate requests and responses with Burp and how invalid requests and responses are affecting the browser and the server.</p>
 </blockquote>
 <h5 id="part-2">Part 2:</h5>
 <blockquote>
-<p>In this exercise, you will walk through an OAuth authentication and later demonstrate how this application does not secure its OAuth tokens successfully</p>
+<p>Understand how HTTPS requests can be intercepted with Burp and what limitations may exist.</p>
 </blockquote>
 <h4 id="requirements">Requirements</h4>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Lab VM</li>
 </ul>
 <hr />
-<h2 id="part-1-access-control">Part 1: Access Control</h2>
-<h3 id="no-hints">No Hints</h3>
-<p>Open <a href="http://lab-3.3.sans.labs/index.php">http://lab-3.3.sans.labs/index.php</a> in a browser. Feel free to explore on your own at this point. An administrator is able to adjust the status of an animal in the shelter (for example, flip the "Cat Aggressive" status) by clicking on the respective icon in the page describing an individual animal. Try to perform this action as a normal user. Admin username/pass is sec522/training and regular user is hackercat/training</p>
+<h2 id="part-0-introduction-to-burp-if-you-are-not-already-familiar-with-burp">Part 0: Introduction to Burp <em>(If You Are Not Already Familiar with Burp)</em></h2>
 <h3 id="step-by-step">Step by Step</h3>
+<p>Burp Community Edition is a free interception proxy created by PortSwigger. It can be used to inspect and manipulate HTTP requests, as well as HTTP responses. Any requests being sent by the browser can be intercepted by Burp. You will be able to edit requests before they are passed to the server. The reverse is also true: Any response from the server can be edited before the browser receives it.</p>
+<p><img alt="" src="media/image1.png" />
+<img alt="" src="media/image0.png" />
+<img alt="" src="media/image2.png" />
+<img alt="" src="media/image0.png" />
+<img alt="" src="media/image3.png" /></p>
+<p>Burp Overview</p>
 <ol>
 <li>
-<p>Open <a href="http://lab-3.3.sans.labs/index.php">http://lab-3.3.sans.labs/index.php</a> in Chrome.</p>
+<p>Start <strong>Burp</strong> by clicking on the icon on the left.</p>
+<p><img alt="" class="zoom" src="media/img-1614924823-20210305.png" /></p>
 </li>
 <li>
-<p>Click the "Login" button (upper right hand corner). This will direct you to our animal shelter login page.</p>
+<p>Accept License</p>
+<p>Click on "I  Accept" on the Terms and Conditions prompt.</p>
+<p><img alt="" class="zoom" src="media/img-1614924347-20210305.png" /></p>
+<div class="admonition danger">
+<p class="admonition-title"><em>DO NOT INSTALL ANY UPDATES!</em></p>
+<p>Please do not install any updates if prompted.</p>
+</div>
+<p>The Burp Community Edition only allows for temporary projects. Click "Next" on the Welcome screen.</p>
+<p><img alt="" src="media/image6.png" /></p>
 </li>
 <li>
-<p>Log in as an administrator (username: sec522, password: training). You will see a list of animals up for adoption.</p>
+<p>Next, select "Load from configuration file" and then select "Choose File" on the right hand side. </p>
+<p><img alt="" class="zoom" src="media/img-1615093867-20210307.png" /></p>
+<p>The file is located in the "Documents" directory and then "Burp" directory. The prepared configuration file is "sec522burp.json". Select to open the file and then "Start Burp" (the orange button on the lower right hand corner)</p>
+<p><img alt="" class="zoom" src="media/img-1615089483-20210306.png" /></p>
+<p>Eventually, you will see the main Burp window.</p>
+<p><img alt="" class="zoom" src="media/img-1615005632-20210305.png" /></p>
+<p><strong>Main Burp Window</strong></p>
 </li>
 <li>
-<p>Click on an animal's image (for example, the first cat, "Cinnamon"). This will display a page with details about this particular animal.</p>
+<p>For now, we want to disable interception via Burp. Instead, we would like to have Burp record requests and responses without holding them. Select the "Proxy" tab and make sure the "Intercept" button states "Intercept is off". Click the button to toggle it from "on" to "off".</p>
+<p><img alt="" class="zoom" src="media/img-1615005851-20210305.png" /></p>
 </li>
 <li>
-<p>Bellow the image, you will see three icons. Click on one of the icons and it will change color from green to red (or red to green if it was red).</p>
-<p><img alt="" src="media/image1.png" /></p>
-<p><strong>Image of Individual Animal with Icons Indicating Status</strong></p>
+<p>Start the <strong>Chrome</strong> web browser by clicking the Chrome icon on the left.</p>
+<p><img alt="" src="media/image9.png" /></p>
 </li>
 <li>
-<p>Click on the "Log Out" link (upper right hand corner).</p>
+<p>After Chrome starts, use the Proxy Switcher plugin to select Burp as a proxy. The Proxy Switcher plugin can be found in the top right corner of Chrome. The icon is gray to indicate that no proxy is selected, and Chrome connects directly. Once you select a proxy, the icon will be red. Click on the icon to open the settings. Select "Manual Proxy" to activate the proxy. "Burp" should be the active selection in the "Profile" dropdown.</p>
+<p><img alt="" class="zoom" src="media/img-1615006477-20210305.png" /></p>
 </li>
 <li>
-<p>Click on the "Login again" link.</p>
-</li>
-<li>
-<p>Log in as a normal user (username: hackercat, password: training).</p>
-</li>
-<li>
-<p>Click on an animal.</p>
-</li>
-<li>
-<p>Verify that clicking on the animal's "status icons" does nothing.</p>
-</li>
-<li>
-<p>Click on the "Log Out" link (upper right hand corner).</p>
-</li>
-<li>
-<p>Click on the "Login again" link.</p>
-</li>
-<li>
-<p>Log in as an administrator (username: sec522, password: training).</p>
-<p>Now we will explore what happens when the administrator clicks on one of the status icons.</p>
-</li>
-<li>
-<p>Click on an animal's picture again to end up on the animal's individual page.</p>
-</li>
-<li>
-<p>Open the Google Chrome developer tools by pressing CTRL-Shift-I.</p>
-</li>
-<li>
-<p>Select the "Network" tab in the developer tools.</p>
-<p><img alt="" src="media/image2.png" /></p>
-<p><strong>Google Chrome Developer Tools With Network Tab Selected</strong></p>
-</li>
-<li>
-<p>Click on the "Dog" icon to change the animal's "Dog Aggressive" status. This will create a new entry in the developer tool window for "flip.php".</p>
-</li>
-<li>
-<p>Right-click on the "flip.php" entry and select "Copy" -> "Copy as cURL".</p>
-<p><img alt="" src="media/image3.png" /></p>
-<p><strong>Copy "flip.php" Request as cURL</strong></p>
-</li>
-<li>
-<p>Open an editor (for example, Visual Studio Code) and paste the request into an empty file.</p>
-</li>
-<li>
-<p>Save the file (recommended name: "test.sh" in the user's home directory, /home/student).</p>
-</li>
-<li>
-<p>Open a terminal.</p>
-</li>
-<li>
-<p>Execute the file:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">source</span> /home/student/test.sh
-</code></pre></div>
-<p>Your output will look like.</p>
-<p><img alt="" class="zoom" src="media/img-1615956484-20210317.png" /></p>
-<p><strong>Output of test.sh</strong></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The highlighted part in the end <strong>"status":"OK"</strong>. This indicates that the script ran successfully. At this point, you are still logged in as an administrator, and a successful script is what we expect.</p>
+<p>Proxy Switcher Configuration</p>
+<p>If you wish to turn off interception later, just select "Direct" from the Proxy Switcher dialog.</p>
+<div class="admonition information">
+<p class="admonition-title">Proxy Switcher</p>
+<p>Proxy switcher gives you an easy means to toggle between traffic directly going from browser to website or routing through the Burp proxy. 
+When the Proxy Switcher icon is red, you know the traffic is going through the Burp proxy.
+If you toggle the Proxy Switcher to route traffic to Burp and Burp is not running, that could lead to the browser traffic to time out. </p>
 </div>
 </li>
 <li>
-<p>Back on Chrome, click the "Log Out" link. </p>
+<p>In Chrome, browse to <a href="http://lab-1.1.sans.labs/">http://lab-1.1.sans.labs/</a> (expect a small delay on this first page load)</p>
 </li>
 <li>
-<p>Run the script again, just like above:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">source</span> /home/sec522/test.sh
-</code></pre></div>
-<p>This time, the output will be an error:</p>
-<p><img alt="" class="zoom" src="media/img-1615956579-20210317.png" /></p>
-<p><strong>Terminal Output After Running the Script a Second Time After Logging Out</strong></p>
-<p>The script failed this time because "sec522" is no longer logged in, and the cookie included in the prior request in test.sh is no longer valid.</p>
+<p>You are now presented with an Animal Shelter web application. </p>
 </li>
 <li>
-<p>Log in as a normal user again (username: hackercat, password: training).</p>
+<p>If you pass these tests, switch back to Burp by clicking on the Burp icon <strong>in</strong> the "Favorites" list on the left (the bottom one). At this point, Burp is recording requests and responses, but not allowing you to alter them. You can inspect the requests and responses by selecting the "Target" tab.</p>
+<p><img alt="" class="zoom" src="media/img-1615097436-20210307.png" /></p>
 </li>
 <li>
-<p>Open the "Application" tab in Chrome's Developer Tool. Note that, depending on your screen resolution, this option may be available by clicking on the '>>' symbol in the top right area of the developer tools (see picture below).</p>
-<p><img alt="" src="media/image6.png" /></p>
-<p><strong>Opening the Application Tab</strong></p>
-</li>
-<li>
-<p>Next, click on "Cookies" in the left part of the developer menu.</p>
-</li>
-<li>
-<p>Click on "<a href="http://lab-3.3.sans.labs">http://lab-3.3.sans.labs</a>" under "Cookies".</p>
-</li>
-<li>
-<p>Double-click on the "Value" to the right of "sec522_3_3". It will turn orange.</p>
-<p><img alt="" class="zoom" src="media/img-1615956927-20210317.png" /></p>
-<p><strong>Highlighting the Cookie Value</strong></p>
-</li>
-<li>
-<p>Right-click on the highlighted value and select "Copy".</p>
-</li>
-<li>
-<p>Open the "test.sh" script you created earlier in your favorite editor. If you are using Visual Studio Code, all you need to do is open the editor and it should automatically open the last edited file.</p>
-</li>
-<li>
-<p>Find the cookie value. It will be the random string after "sec522_3_3=" and replace it with the cookie value you copied from Chrome. Just highlight the old value and "Paste" to overwrite it. If there is a single quote at the end of the session ID, do not delete it.</p>
-<p><img alt="" class="zoom" src="media/img-1615957247-20210317.png" /></p>
-<p><strong>Highlighted Cookie Value</strong></p>
-</li>
-<li>
-<p>Exit the editor.</p>
-</li>
-<li>
-<p>Switch back to the terminal.</p>
-</li>
-<li>
-<p>Run the script again. This time, the request should succeed. The figure below shows the terminal with all three requests: first, the one using the administrator's cookie; next, the failed request after the administrator logged out; and finally, the request we just sent with the regular user's cookie, which succeeded as well.</p>
+<p>Burp Target Tab</p>
+<p>Highlight the request for "/" (likely at the top).</p>
+<p>Use the information from the target tab to answer the following questions:</p>
+<details class="question"><summary>What method was used to request the page?</summary><p>GET</p>
+</details>
+<details class="question"><summary>What HTTP version did the browser use?</summary><p>1.1</p>
+</details>
+<details class="question"><summary>What browser (and version) was used?</summary><p>Chrome 89.0.4389.82</p>
+</details>
+<details class="question"><summary>What language does the browser prefer?</summary><p>en-US</p>
+</details>
+<details class="question"><summary>Which header is used specifically to tell the server that this browser prefers HTTPS? <br><em>(extra credit)</em></summary><p>Upgrade-Insecure-Requests: 1</p>
+</details>
 </li>
 </ol>
-<p>The final request should not have succeeded. This proves that a normal user can execute an administrative request as long as the user knows what request to send.</p>
-<p>You may want to now return to the browser to check if the information was changed. You can also make additional edits to the script. Close to the end of the request you should see an "animalid" parameter that can be used to pick different animals. Experiment with it.</p>
-<p>Please suggest ways to fix the issues in the applications. You can review the source code of the script at <a href="http://lab-3.3.sans.labs/api/flip.phps">http://lab-3.3.sans.labs/api/flip.phps</a> .</p>
-<h2 id="part-2-oauth">Part 2: OAuth</h2>
-<h3 id="no-hints_1">No Hints</h3>
-<p>The exercise starts at <a href="http://lab-3.3.sans.labs/calendar/index.php">http://lab-3.3.sans.labs/calendar/index.php</a>. The basic steps are explained as part of the website.</p>
+<h2 id="part-1-manipulating-http-requests">Part 1: Manipulating HTTP Requests</h2>
 <h3 id="step-by-step_1">Step by Step</h3>
 <ol>
 <li>
-<p>The exercise starts at <a href="http://lab-3.3.sans.labs/calendar/index.php">http://lab-3.3.sans.labs/calendar/index.php</a>. The page implements a simple calendar display. But to use it, you need to allow the calendar page to retrieve your calendar from the animal shelter site. Click on the link on the page to be sent to the animal shelter.</p>
+<p>Load <a href="http://lab-1.1.sans.labs/inspect.php">http://lab-1.1.sans.labs/inspect.php</a> in Chrome. This page is also accessible by clicking on the link (Inspect Headers) at upper right hand corner of the Animal Shelter main page. </p>
 </li>
 <li>
-<p>At the animal shelter, you will need to log in (if you are not already logged in). The username is "sec522", the password is "training".</p>
+<p>Make sure Burp is running</p>
 </li>
 <li>
-<p>Next, a simple page will ask you for permission to use the calendar. Inspect the URL. It will contain the client_id, which identifies the application requesting access. The "state" variable is used to identify the response returned to the client. Allow access by clicking "yes".</p>
-</li>
-<li>
-<p>You will now be redirected back to the volunteer calendar app and your schedule should appear.</p>
-</li>
-<li>
-<p>Next, click on the "problem" link to learn more about the issue causing authentication tokens to leak.</p>
-</li>
-<li>
-<p>The problem page suggests that SQL injection is used to retrieve the tokens. Click on the "search page" link to be directed to the vulnerable page.</p>
-</li>
-<li>
-<p>Click the "Debug" checkbox</p>
-</li>
-<li>
-<p>Enter a single quote (') in the search box and hit "Submit"</p>
-</li>
-<li>
-<p>You will now see the vulnerable statement. The "animalname" parameter is injectable, and we can use a union statement to retrieve additional data. The union statement needs to retrieve the same number of columns as the original statement (7). The second column ("animalname") is easily displayed and we will use it for our exploit. Enter as a search:</p>
+<p>In Burp, select the "Proxy" tab, and make sure "Intercept" is "on". If not, click on the button to enable it.</p>
+<p><img alt="" class="zoom" src="media/img-1615099916-20210307.png" /></p>
+<p><strong>Enabling Interception in Burp</strong></p>
 <div class="admonition warning">
-<p class="admonition-title">Important: there is a space after the two dashes '--'.</p>
+<p class="admonition-title">Warning</p>
+<p>After interception is enabled in Burp, and Burp is enabled as a proxy using Proxy Switcher in Chrome, all requests will be held by Burp. If you refresh your browser, the connection will appear to "hang" until you forward the request in Burp.</p>
 </div>
-<div class="highlight"><pre><span></span><code><span class="err">&#39;</span> <span class="k">UNION</span> <span class="k">SELECT</span> <span class="mi">1</span><span class="p">,</span><span class="n">access_token</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span> <span class="k">FROM</span> <span class="n">oauth</span><span class="p">.</span><span class="n">oauth_access_tokens</span> <span class="k">LIMIT</span> <span class="mi">1</span> <span class="c1">-- </span>
+</li>
+<li>
+<p>Enable Burp as a proxy in Chrome via Proxy Switcher.</p>
+<p><img alt="" class="zoom" src="media/img-1615100039-20210307.png" /></p>
+</li>
+<li>
+<p>Enabling Burp as a Proxy in Chrome via Proxy Switcher</p>
+</li>
+<li>
+<p>Reload the page in Chrome by clicking the </p>
+<p><img alt="" src="media/image14.png" /></p>
+</li>
+<li>
+<p>Switch to Burp (click the Burp icon at the bottom of the left "Favorites" bar)</p>
+<p>You will now see the request held by Burp. For now, we just want to make sure everything is working right.</p>
+</li>
+<li>
+<p>Click "Forward".</p>
+</li>
+<li>
+<p>Switch back to Chrome.</p>
+</li>
+<li>
+<p>Reload the page again.</p>
+</li>
+<li>
+<p>Switch to Burp. This time remove the "Host" header from the request. Make sure you remove the entire line. There should be no empty line left in the header.</p>
+</li>
+<li>
+<p>Click "Forward".</p>
+<details class="question"><summary>What error message does Chrome display?</summary><p>400 Bad Request</p>
+</details>
+</li>
+<li>
+<p>In Burp, select the "HTTP history" from the "Proxy" tab and select the last line to answer the next few questions. The last line should represent the request you just edited. You will find the answers by selecting the "Response" tab in the middle of the Burp window.</p>
+<details class="question"><summary>What status code did the server use to respond?</summary><p>400</p>
+</details>
+<details class="question"><summary>What server version was used?</summary><p>Apache/2.4.38 (Debian)</p>
+</details>
+</li>
+<li>
+<p>Reload the page once more.</p>
+</li>
+<li>
+<p>Switch back to the "Intercept" tab in Burp.</p>
+</li>
+<li>
+<p>In Burp, add a second "Referer" header with arbitrary content. (If there is no Referer header, then add two "Referer" headers to the request). For example:</p>
+<div class="highlight"><pre><span></span><code>Referer: http://www.test.com
+Referer: Some random nonsense
 </code></pre></div>
-<p>The token for OAuth authentication (Refresh token) will be displayed below a broken picture on the result page.</p>
+<p><img alt="" class="zoom" src="media/img-1615101268-20210307.png" /></p>
+<p><strong><em>Request in Burp with two "Referer" headers prior to clicking "Forward".</em></strong></p>
+</li>
+<li>
+<p>Once the response is returned, the page will display the Referer header as the web application received it. What do you see? The content of the first, second, or both headers?</p>
+<details class="question"><summary>Which data does the application receive for the 'Referer' header?</summary><p>The second</p>
+</details>
+</li>
+</ol>
+<hr />
+<h2 id="part-2-intercepting-https-requests">Part 2: Intercepting HTTPS Requests</h2>
+<h3 id="step-by-step_2">Step by Step</h3>
+<p>Load an HTTPS page via Burp. Inspect the certificate and explain why a warning is displayed.</p>
+<ol>
+<li>
+<p>Keeping Burp enabled from the prior exercise, but disable "Interception" (in the "Proxy" menu check the "Intercept" tab and toggle the "Intercept on/off" button) and visit any HTTPS page. For example, <a href="http://lab-1.1.sans.labs/">http://lab-1.1.sans.labs/</a>.</p>
+<div class="admonition question">
+<p class="admonition-title">You will receive a warning. Why?</p>
+</div>
+</li>
+<li>
+<p>Click on "Advanced".</p>
+</li>
+<li>
+<p>Inspect the certificate by clicking on "Not secure" to the left of the URL.</p>
+<p><img alt="" class="zoom" src="media/img-1615101609-20210307.png" /></p>
+<p><strong>TLS Security Warning.</strong></p>
+</li>
+<li>
+<p>Click on "Certificate (invalid)". This will display the certificate information:</p>
+<p><img alt="" class="zoom" src="media/img-1615101671-20210307.png" /></p>
+<p><strong>Burp Certificate</strong></p>
+<details class="question"><summary>Who issued the certificate?</summary><p>PortSwigger CA</p>
+</details>
+<details class="question"><summary>Which hostname is covered by the certificate?</summary><p>lab-1.1.sans.labs</p>
+</details>
 </li>
 </ol>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
 <ul>
-<li>While OAuth can offer secure and reliable authorization between two web sites, the token handling needs to be performed with extreme care. Compromises of tokens can be through other attacks such as SQL injection. Once an attacker acquire the refresh token, the attacker can use the token to get new Access Tokens for further access.</li>
-<li>Access control flaws can occur to the most modern applications. Keeping the access controls consistent is the key to successfully defend your application.</li>
+<li>Burp is a man-in-the middle proxy, allow you to intercept and manipulate requests prior to sending the request to server and before the response is received by the browser.</li>
+<li>Browser handles the request and response header, generally without the user being aware of their existance.</li>
+<li>The request headers have an impact on how the server process the request. The reponse headers also have an impact on the browser's behavior as well.</li>
 </ul>
 <hr />
 <h2 id="explore-further">Explore Further</h2>
 <ul>
-<li>Using the acquired refresh token to acquire new access tokens</li>
-<li>Are there other refresh tokens inside the database?</li>
+<li></li>
 </ul>
                 
               
@@ -1125,7 +1144,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../3.2/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../../errata/F01_01/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1134,19 +1153,19 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              3.2: Session Fixation and Session Breaking
+              F01_01
             </div>
           </div>
         </a>
       
       
-        <a href="../3.4/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../1.2/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              3.4: Inspecting SSL Traffic
+              1.2: Inspecting HTTP/2 Traffic
             </div>
           </div>
           <div class="md-footer__button md-icon">

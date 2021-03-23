@@ -14,7 +14,7 @@
     
     
       
-        <title>3.3: OAuth and Access Control - SEC522 Workbook</title>
+        <title>3.4: Inspecting SSL Traffic - SEC522 Workbook</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#oauth-and-access-control" class="md-skip">
+        <a href="#inspecting-ssl-traffic-with-wireshark" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              3.3: OAuth and Access Control
+              3.4: Inspecting SSL Traffic
             
           </span>
         </div>
@@ -309,7 +309,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../errata/G01_01/" class="md-nav__link">
+      <a href="../../errata/F01_01/" class="md-nav__link">
         F01_01
       </a>
     </li>
@@ -537,6 +537,18 @@
             
   
   
+  
+    <li class="md-nav__item">
+      <a href="../3.3/" class="md-nav__link">
+        3.3: OAuth and Access Control
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
     
   
   
@@ -548,12 +560,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          3.3: OAuth and Access Control
+          3.4: Inspecting SSL Traffic
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        3.3: OAuth and Access Control
+        3.4: Inspecting SSL Traffic
       </a>
       
         
@@ -570,11 +582,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#part-1-access-control" class="md-nav__link">
-    Part 1: Access Control
+  <a href="#inspecting-ssl-traffic" class="md-nav__link">
+    Inspecting SSL Traffic
   </a>
   
-    <nav class="md-nav" aria-label="Part 1: Access Control">
+    <nav class="md-nav" aria-label="Inspecting SSL Traffic">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -597,29 +609,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#part-2-oauth" class="md-nav__link">
-    Part 2: OAuth
+  <a href="#advanced-ssl-master-key" class="md-nav__link">
+    Advanced: SSL Master Key
   </a>
-  
-    <nav class="md-nav" aria-label="Part 2: OAuth">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#no-hints_1" class="md-nav__link">
-    No Hints
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-by-step_1" class="md-nav__link">
-    Step by Step
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -641,18 +633,6 @@
   
 </nav>
       
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../3.4/" class="md-nav__link">
-        3.4: Inspecting SSL Traffic
-      </a>
     </li>
   
 
@@ -891,222 +871,165 @@
     content: 'SANS SEC522 Workbook';
 }}
 @page :left { @bottom-left {
-  content: '3.3-' counter(page);
+  content: '3.4-' counter(page);
 }}
 @page :right { @bottom-right {
-  content: '3.3-' counter(page);
+  content: '3.4-' counter(page);
 }}
 </style>
 
-<h1 id="oauth-and-access-control">OAuth and Access Control</h1>
+<h1 id="inspecting-ssl-traffic-with-wireshark">Inspecting SSL Traffic with Wireshark</h1>
 <hr />
 <h4 id="objectives">Objectives</h4>
-<p>Estimated Time: 15 minutes</p>
+<div class="codehilite"><pre><span></span><code>Estimated Time: 15 minutes
+</code></pre></div>
+
 <h5 id="part-1">Part 1:</h5>
 <blockquote>
-<p>We learned that for web applications, it is important to apply access control consistently throughout the entire application. In this exercise, we are examining a flaw that allows regular users to perform administrative functions. To explore this flaw, we first execute these actions as administrator to learn what is possible and then later try to replay these actions as a normal user.</p>
+<p>In this exercise, the objective is to learn about how SSL actually works. There have been a lot of misconceptions about how SSL works and what features it provides. Everyone seems to understand that SSL makes things secure, but exactly how is this done? We will try to demystify SSL in this exercise.</p>
 </blockquote>
 <h5 id="part-2">Part 2:</h5>
-<blockquote>
-<p>In this exercise, you will walk through an OAuth authentication and later demonstrate how this application does not secure its OAuth tokens successfully</p>
-</blockquote>
+<blockquote></blockquote>
 <h4 id="requirements">Requirements</h4>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Lab VM</li>
 </ul>
 <hr />
-<h2 id="part-1-access-control">Part 1: Access Control</h2>
+<h2 id="inspecting-ssl-traffic">Inspecting SSL Traffic</h2>
 <h3 id="no-hints">No Hints</h3>
-<p>Open <a href="http://lab-3.3.sans.labs/index.php">http://lab-3.3.sans.labs/index.php</a> in a browser. Feel free to explore on your own at this point. An administrator is able to adjust the status of an animal in the shelter (for example, flip the "Cat Aggressive" status) by clicking on the respective icon in the page describing an individual animal. Try to perform this action as a normal user. Admin username/pass is sec522/training and regular user is hackercat/training</p>
 <h3 id="step-by-step">Step by Step</h3>
+<p>We will use Wireshark to inspect a packet capture. Wireshark is a full-featured packet analysis tool. It includes the ability to decrypt SSL traffic as long as we provide the secret key or the session key negotiated between server and browser. In our example, we will use two files:</p>
+<ul>
+<li>
+<p>~/Documents/SSL/ssl.pcap -- a packet capture of https traffic</p>
+</li>
+<li>
+<p>~/Documents/SSL/server.key -- the secret key used by the server in the above sample captures.</p>
+</li>
+<li>
+<p>Click on the <strong>Wireshark</strong> icon on the left of the virtual machine desktop.</p>
+<p><img alt="" src="media/image1.png" /></p>
+<p><strong>Wireshark Icon</strong></p>
+</li>
+<li>
+<p>After Wireshark starts up, click on the top menu <strong>"File"</strong> and then <strong>"Open"</strong>. Select the following file: <strong>/home/student/Documents/SSL/ssl.pcap</strong></p>
+</li>
+</ul>
+<p>Wireshark will now display its familiar default "3-pane" layout. At the top,</p>
+<p>you will see a list of captured packets, one per line.</p>
+<p>The second pane will "explain" the currently highlighted packet.</p>
+<p>At the bottom, the third pane will display the entire packet in hexadecimal "as captured".</p>
+<p><img alt="" src="media/image2.png" /></p>
+<p><strong>Wireshark Default Display</strong></p>
+<p>The first three packets (Nos. 1--3) hold the TCP three-way handshake. They establish the TCP connection and do not indicate that we are going to use SSL.</p>
+<p>Packet 4, sent by the client (192.168.1.121) to the server (192.168.1.174), represents an "SSL Client Hello". With this packet, the client indicates that it would like to talk SSL to the server. It does provide some basic parameters that are used to negotiate the SSL connection.</p>
+<p>By inspecting the middle pane, try to identify the following parameters:</p>
+<details class="question"><summary>What SSL version is the client using?</summary><p>SSL 3.0</p>
+</details>
+<details class="question"><summary>How many cipher suites does the client support?</summary><p>12 </p>
+</details>
+<p><img alt="" src="media/image3.png" /></p>
+<p><strong>Client Hello Details</strong></p>
+<p>In packet #5, the server acknowledges receipt of the client hello.</p>
+<p>Packet 6 contains the server's response, a "Server Hello". This packet also includes the server's certificate. Just as for packet 4, identify the following parameters:</p>
+<details class="question"><summary>Which SSL version is the server accepting?</summary><p>SSL 3.0</p>
+</details>
+<details class="question"><summary>Which cipher suite did the server select?</summary><p>TLS_RSA_WITH_RC4_128_MD5</p>
+</details>
+<details class="question"><summary>Who issued the certificate?</summary><p>SANS CA</p>
+</details>
+<details class="question"><summary>What is the hostname (common name) of the server according to the certificate?</summary><p>sanshost</p>
+</details>
+<p><img alt="Server Hello Details" src="media/image4.png" /></p>
+<p><strong>Server Hello Details</strong></p>
+<p>Packet 12 is the first encrypted data packet. </p>
+<details class="question"><summary>How many bytes of encrypted data does it contain?</summary><p>434</p>
+</details>
+<p><img alt="" src="media/image5.png" /></p>
+<p><strong>Encrypted Packets</strong></p>
+<p>Next, we will try to decrypt the packets.</p>
+<p>To do so, we need to provide Wireshark with the secret key.</p>
+<ol>
+<li>Go to <strong>Edit-&gt;Preferences</strong>, then click on <strong>"Protocols"</strong> at the left-hand side of the Preferences window. Expand the list of protocols and find <strong>"TLS"</strong> (just type "TLS").</li>
+</ol>
+<p><img alt="" src="media/image6.png" /></p>
+<p><strong>SSL Configuration Dialog</strong></p>
 <ol>
 <li>
-<p>Open <a href="http://lab-3.3.sans.labs/index.php">http://lab-3.3.sans.labs/index.php</a> in Chrome.</p>
+<p>Click on the <strong>"Edit"</strong> button to the right of "RSA keys list:" and click the "+" button in the lower left-hand corner to add a new key.</p>
 </li>
 <li>
-<p>Click the "Login" button (upper right hand corner). This will direct you to our animal shelter login page.</p>
+<p>You will now be able to enter the key parameters: IP Address: 192.168.1.174, Port: 443, Protocol: http. For the key file, please select <strong>"Documents"</strong> directory and then <strong>"SSL"</strong> where you can select the <strong>"/home/student/Documents/SSL/server.key"</strong>.</p>
+<p><img alt="" src="media/image7.png" /></p>
+<p><strong>SSL Key Configuration</strong></p>
+<p>Leave the "Password" field empty and click "OK" and close the "Preferences" Dialog by clicking OK. As soon as you close the dialogs, you should see decrypted traffic.</p>
+<p>Packets 12 and 14 are now decrypted.</p>
+<p><img alt="" src="media/image8.png" /></p>
 </li>
 <li>
-<p>Log in as an administrator (username: sec522, password: training). You will see a list of animals up for adoption.</p>
+<p>Decrypted Packets in Wireshark</p>
 </li>
 <li>
-<p>Click on an animal's image (for example, the first cat, "Cinnamon"). This will display a page with details about this particular animal.</p>
-</li>
-<li>
-<p>Bellow the image, you will see three icons. Click on one of the icons and it will change color from green to red (or red to green if it was red).</p>
-<p><img alt="" src="media/image1.png" /></p>
-<p><strong>Image of Individual Animal with Icons Indicating Status</strong></p>
-</li>
-<li>
-<p>Click on the "Log Out" link (upper right hand corner).</p>
-</li>
-<li>
-<p>Click on the "Login again" link.</p>
-</li>
-<li>
-<p>Log in as a normal user (username: hackercat, password: training).</p>
-</li>
-<li>
-<p>Click on an animal.</p>
-</li>
-<li>
-<p>Verify that clicking on the animal's "status icons" does nothing.</p>
-</li>
-<li>
-<p>Click on the "Log Out" link (upper right hand corner).</p>
-</li>
-<li>
-<p>Click on the "Login again" link.</p>
-</li>
-<li>
-<p>Log in as an administrator (username: sec522, password: training).</p>
-<p>Now we will explore what happens when the administrator clicks on one of the status icons.</p>
-</li>
-<li>
-<p>Click on an animal's picture again to end up on the animal's individual page.</p>
-</li>
-<li>
-<p>Open the Google Chrome developer tools by pressing CTRL-Shift-I.</p>
-</li>
-<li>
-<p>Select the "Network" tab in the developer tools.</p>
-<p><img alt="" src="media/image2.png" /></p>
-<p><strong>Google Chrome Developer Tools With Network Tab Selected</strong></p>
-</li>
-<li>
-<p>Click on the "Dog" icon to change the animal's "Dog Aggressive" status. This will create a new entry in the developer tool window for "flip.php".</p>
-</li>
-<li>
-<p>Right-click on the "flip.php" entry and select "Copy" -> "Copy as cURL".</p>
-<p><img alt="" src="media/image3.png" /></p>
-<p><strong>Copy "flip.php" Request as cURL</strong></p>
-</li>
-<li>
-<p>Open an editor (for example, Visual Studio Code) and paste the request into an empty file.</p>
-</li>
-<li>
-<p>Save the file (recommended name: "test.sh" in the user's home directory, /home/student).</p>
-</li>
-<li>
-<p>Open a terminal.</p>
-</li>
-<li>
-<p>Execute the file:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">source</span> /home/student/test.sh
-</code></pre></div>
-<p>Your output will look like.</p>
-<p><img alt="" class="zoom" src="media/img-1615956484-20210317.png" /></p>
-<p><strong>Output of test.sh</strong></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The highlighted part in the end <strong>"status":"OK"</strong>. This indicates that the script ran successfully. At this point, you are still logged in as an administrator, and a successful script is what we expect.</p>
-</div>
-</li>
-<li>
-<p>Back on Chrome, click the "Log Out" link. </p>
-</li>
-<li>
-<p>Run the script again, just like above:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">source</span> /home/sec522/test.sh
-</code></pre></div>
-<p>This time, the output will be an error:</p>
-<p><img alt="" class="zoom" src="media/img-1615956579-20210317.png" /></p>
-<p><strong>Terminal Output After Running the Script a Second Time After Logging Out</strong></p>
-<p>The script failed this time because "sec522" is no longer logged in, and the cookie included in the prior request in test.sh is no longer valid.</p>
-</li>
-<li>
-<p>Log in as a normal user again (username: hackercat, password: training).</p>
-</li>
-<li>
-<p>Open the "Application" tab in Chrome's Developer Tool. Note that, depending on your screen resolution, this option may be available by clicking on the '>>' symbol in the top right area of the developer tools (see picture below).</p>
-<p><img alt="" src="media/image6.png" /></p>
-<p><strong>Opening the Application Tab</strong></p>
-</li>
-<li>
-<p>Next, click on "Cookies" in the left part of the developer menu.</p>
-</li>
-<li>
-<p>Click on "<a href="http://lab-3.3.sans.labs">http://lab-3.3.sans.labs</a>" under "Cookies".</p>
-</li>
-<li>
-<p>Double-click on the "Value" to the right of "sec522_3_3". It will turn orange.</p>
-<p><img alt="" class="zoom" src="media/img-1615956927-20210317.png" /></p>
-<p><strong>Highlighting the Cookie Value</strong></p>
-</li>
-<li>
-<p>Right-click on the highlighted value and select "Copy".</p>
-</li>
-<li>
-<p>Open the "test.sh" script you created earlier in your favorite editor. If you are using Visual Studio Code, all you need to do is open the editor and it should automatically open the last edited file.</p>
-</li>
-<li>
-<p>Find the cookie value. It will be the random string after "sec522_3_3=" and replace it with the cookie value you copied from Chrome. Just highlight the old value and "Paste" to overwrite it. If there is a single quote at the end of the session ID, do not delete it.</p>
-<p><img alt="" class="zoom" src="media/img-1615957247-20210317.png" /></p>
-<p><strong>Highlighted Cookie Value</strong></p>
-</li>
-<li>
-<p>Exit the editor.</p>
-</li>
-<li>
-<p>Switch back to the terminal.</p>
-</li>
-<li>
-<p>Run the script again. This time, the request should succeed. The figure below shows the terminal with all three requests: first, the one using the administrator's cookie; next, the failed request after the administrator logged out; and finally, the request we just sent with the regular user's cookie, which succeeded as well.</p>
+<p>Right-click on packet #12, then select "Follow -&gt; SSL Stream" to reconstruct the payload of the HTTP request and response.</p>
 </li>
 </ol>
-<p>The final request should not have succeeded. This proves that a normal user can execute an administrative request as long as the user knows what request to send.</p>
-<p>You may want to now return to the browser to check if the information was changed. You can also make additional edits to the script. Close to the end of the request you should see an "animalid" parameter that can be used to pick different animals. Experiment with it.</p>
-<p>Please suggest ways to fix the issues in the applications. You can review the source code of the script at <a href="http://lab-3.3.sans.labs/api/flip.phps">http://lab-3.3.sans.labs/api/flip.phps</a> .</p>
-<h2 id="part-2-oauth">Part 2: OAuth</h2>
-<h3 id="no-hints_1">No Hints</h3>
-<p>The exercise starts at <a href="http://lab-3.3.sans.labs/calendar/index.php">http://lab-3.3.sans.labs/calendar/index.php</a>. The basic steps are explained as part of the website.</p>
-<h3 id="step-by-step_1">Step by Step</h3>
+<details class="question"><summary>What is the content of the payload of the response?</summary><p>HTTP Request - The page has HTML content of a message "The Secret key is: Perfect 10"</p>
+</details>
+<p><img alt="" src="media/image9.png" /></p>
+<p><strong>Decrypted SSL Stream</strong></p>
+<hr />
+<h2 id="advanced-ssl-master-key">Advanced: SSL Master Key</h2>
+<p>In this exercise, we will decrypt SSL without knowing the server's private key. After all, the client has to be able to decrypt the content without the server's keys. Instead, the symmetric key that is negotiated during the SSL handshake is needed. If Diffie-Hellman ciphers are used, then this is the only method to decrypt traffic.</p>
+<p>Chrome (and Firefox) are able to log the symmetric master keys to a file, and Wireshark is able to use this file to decrypt the content.</p>
 <ol>
 <li>
-<p>The exercise starts at <a href="http://lab-3.3.sans.labs/calendar/index.php">http://lab-3.3.sans.labs/calendar/index.php</a>. The page implements a simple calendar display. But to use it, you need to allow the calendar page to retrieve your calendar from the animal shelter site. Click on the link on the page to be sent to the animal shelter.</p>
+<p>Start Wireshark.</p>
 </li>
 <li>
-<p>At the animal shelter, you will need to log in (if you are not already logged in). The username is "sec522", the password is "training".</p>
+<p>Select the "Loopback: lo" interface and click the blue "fin" on the far left of the toolbar. Wireshark will now start to collect data.</p>
+<p><img alt="" src="media/image10.png" /></p>
+<p><strong>Starting Packet Capture in Wireshark</strong></p>
 </li>
 <li>
-<p>Next, a simple page will ask you for permission to use the calendar. Inspect the URL. It will contain the client_id, which identifies the application requesting access. The "state" variable is used to identify the response returned to the client. Allow access by clicking "yes".</p>
+<p>Close Chrome first if it is running.</p>
 </li>
 <li>
-<p>You will now be redirected back to the volunteer calendar app and your schedule should appear.</p>
-</li>
-<li>
-<p>Next, click on the "problem" link to learn more about the issue causing authentication tokens to leak.</p>
-</li>
-<li>
-<p>The problem page suggests that SQL injection is used to retrieve the tokens. Click on the "search page" link to be directed to the vulnerable page.</p>
-</li>
-<li>
-<p>Click the "Debug" checkbox</p>
-</li>
-<li>
-<p>Enter a single quote (') in the search box and hit "Submit"</p>
-</li>
-<li>
-<p>You will now see the vulnerable statement. The "animalname" parameter is injectable, and we can use a union statement to retrieve additional data. The union statement needs to retrieve the same number of columns as the original statement (7). The second column ("animalname") is easily displayed and we will use it for our exploit. Enter as a search:</p>
-<div class="admonition warning">
-<p class="admonition-title">Important: there is a space after the two dashes '--'.</p>
-</div>
-<div class="highlight"><pre><span></span><code><span class="err">&#39;</span> <span class="k">UNION</span> <span class="k">SELECT</span> <span class="mi">1</span><span class="p">,</span><span class="n">access_token</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span> <span class="k">FROM</span> <span class="n">oauth</span><span class="p">.</span><span class="n">oauth_access_tokens</span> <span class="k">LIMIT</span> <span class="mi">1</span> <span class="c1">-- </span>
+<p>Open Chrome FROM THE COMMAND LINE (not by clicking on the icon). To do this, open a terminal and then enter "google-chrome". This will apply the necessary bash environment variables to Chrome to log the master keys.</p>
+<div class="highlight"><pre><span></span><code>google-chrome
 </code></pre></div>
-<p>The token for OAuth authentication (Refresh token) will be displayed below a broken picture on the result page.</p>
+</li>
+<li>
+<p>Visit <a href="https://wiki.sans.labs/">https://wiki.sans.labs/</a> (it is a TLS protected site)</p>
+</li>
+<li>
+<p>Close Google Chrome.</p>
+</li>
+<li>
+<p>Stop the acquisition in Wireshark by clicking on the red square.</p>
+</li>
+<li>
+<p>To display only the SSL traffic, enter "tls" as a filter and click "Apply". You will recognize the now-familiar packets like "Client Hello" and "Server Hello".</p>
+</li>
+<li>
+<p>Just like before, we enter the RSA key configuration dialog. Select Edit-&gt;Preferences from the Wireshark menu and proceed to the SSL protocol configuration. But instead of editing the RSA keys list, we just select a (Pre)-Master-Secret log filename at the bottom of the dialog.</p>
+</li>
+<li>
+<p>Use /home/student/Documents/sslkeylogfile.log</p>
+</li>
+<li>
+<p>Just like before, the HTTPS traffic will now be decrypted. But this time, we used symmetric keys captured by the client.</p>
+<div class="admonition information">
+<p class="admonition-title">Information</p>
+<p>This method illustrated in part 2 of the exercise is exactly how anyone can debug their traffic with a TLS website. If you ever need to get to decipher the TLS protected traffic with a website, let's say, Google or Facebook. This method allows you to decrypt the traffic from the workstation.</p>
+</div>
 </li>
 </ol>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
-<ul>
-<li>While OAuth can offer secure and reliable authorization between two web sites, the token handling needs to be performed with extreme care. Compromises of tokens can be through other attacks such as SQL injection. Once an attacker acquire the refresh token, the attacker can use the token to get new Access Tokens for further access.</li>
-<li>Access control flaws can occur to the most modern applications. Keeping the access controls consistent is the key to successfully defend your application.</li>
-</ul>
 <hr />
 <h2 id="explore-further">Explore Further</h2>
 <ul>
-<li>Using the acquired refresh token to acquire new access tokens</li>
-<li>Are there other refresh tokens inside the database?</li>
+<li></li>
 </ul>
                 
               
@@ -1125,7 +1048,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../3.2/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../3.3/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1134,19 +1057,19 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              3.2: Session Fixation and Session Breaking
+              3.3: OAuth and Access Control
             </div>
           </div>
         </a>
       
       
-        <a href="../3.4/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../4.1/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              3.4: Inspecting SSL Traffic
+              4.1: WSDL Enumeration and Parameter Tampering
             </div>
           </div>
           <div class="md-footer__button md-icon">
