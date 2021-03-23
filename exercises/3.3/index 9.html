@@ -14,7 +14,7 @@
     
     
       
-        <title>1.2: Inspecting HTTP/2 Traffic - SEC522 Workbook</title>
+        <title>3.3: OAuth and Access Control - SEC522 Workbook</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#inspecting-http2-traffic-and-crafting-requests" class="md-skip">
+        <a href="#oauth-and-access-control" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              1.2: Inspecting HTTP/2 Traffic
+              3.3: OAuth and Access Control
             
           </span>
         </div>
@@ -334,14 +334,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
       
       <label class="md-nav__link" for="__nav_2">
         Day 1
@@ -369,130 +367,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          1.2: Inspecting HTTP/2 Traffic
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../1.2/" class="md-nav__link">
         1.2: Inspecting HTTP/2 Traffic
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#part-1-inspecting-http2-traffic" class="md-nav__link">
-    Part 1: Inspecting HTTP/2 Traffic
-  </a>
-  
-    <nav class="md-nav" aria-label="Part 1: Inspecting HTTP/2 Traffic">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#no-hints" class="md-nav__link">
-    No Hints
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-by-step" class="md-nav__link">
-    Step by Step
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#part-2-acquire-and-play-back-token" class="md-nav__link">
-    Part 2: Acquire and play back token
-  </a>
-  
-    <nav class="md-nav" aria-label="Part 2: Acquire and play back token">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#no-hints_1" class="md-nav__link">
-    No Hints
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-by-step_1" class="md-nav__link">
-    Step by Step
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#part-3-spoofing-an-http-request" class="md-nav__link">
-    Part 3: Spoofing an HTTP Request
-  </a>
-  
-    <nav class="md-nav" aria-label="Part 3: Spoofing an HTTP Request">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#no-hints_2" class="md-nav__link">
-    No Hints
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
-    Conclusion
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#explore-further" class="md-nav__link">
-    Explore Further
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -611,12 +490,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
       
       <label class="md-nav__link" for="__nav_4">
         Day 3
@@ -656,11 +537,110 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../3.3/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          3.3: OAuth and Access Control
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         3.3: OAuth and Access Control
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-access-control" class="md-nav__link">
+    Part 1: Access Control
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 1: Access Control">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-hints" class="md-nav__link">
+    No Hints
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step" class="md-nav__link">
+    Step by Step
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-oauth" class="md-nav__link">
+    Part 2: OAuth
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 2: OAuth">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-hints_1" class="md-nav__link">
+    No Hints
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step_1" class="md-nav__link">
+    Step by Step
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explore-further" class="md-nav__link">
+    Explore Further
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -911,145 +891,222 @@
     content: 'SANS SEC522 Workbook';
 }}
 @page :left { @bottom-left {
-  content: '1.2-' counter(page);
+  content: '3.3-' counter(page);
 }}
 @page :right { @bottom-right {
-  content: '1.2-' counter(page);
+  content: '3.3-' counter(page);
 }}
 </style>
 
-<h1 id="inspecting-http2-traffic-and-crafting-requests">Inspecting HTTP/2 Traffic and Crafting Requests</h1>
+<h1 id="oauth-and-access-control">OAuth and Access Control</h1>
 <hr />
 <h4 id="objectives">Objectives</h4>
-<div class="codehilite"><pre><span></span><code>Estimated Time: 10 minutes
-</code></pre></div>
-
+<p>Estimated Time: 15 minutes</p>
 <h5 id="part-1">Part 1:</h5>
 <blockquote>
-<p>In this exercise, you will inspect HTTP/2 traffic to better understand how it differs from HTTP/1.1</p>
+<p>We learned that for web applications, it is important to apply access control consistently throughout the entire application. In this exercise, we are examining a flaw that allows regular users to perform administrative functions. To explore this flaw, we first execute these actions as administrator to learn what is possible and then later try to replay these actions as a normal user.</p>
 </blockquote>
 <h5 id="part-2">Part 2:</h5>
 <blockquote>
-<p>First, you will try to use an authentication token retrieved in one request to send a second request. The section half of this exercise will teach you how to impersonate a valid browser using simple tools like "curl". You will first collect a request from a regular browser to create a "fingerprint" of the browser. Next, you will use "curl" to create a request that matches the fingerprint.</p>
+<p>In this exercise, you will walk through an OAuth authentication and later demonstrate how this application does not secure its OAuth tokens successfully</p>
 </blockquote>
-<h5 id="part-3">Part 3:</h5>
 <h4 id="requirements">Requirements</h4>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Lab VM</li>
 </ul>
 <hr />
-<h2 id="part-1-inspecting-http2-traffic">Part 1: Inspecting HTTP/2 Traffic</h2>
+<h2 id="part-1-access-control">Part 1: Access Control</h2>
 <h3 id="no-hints">No Hints</h3>
-<p>You will be using Wireshark to inspect an HTTP/2 packet capture. The packet capture can be found in /home/sec522/Documents/pcaps/http2.pcap. Find out which headers you can identify in the HTTP/2 request and response.</p>
+<p>Open <a href="http://lab-3.3.sans.labs/index.php">http://lab-3.3.sans.labs/index.php</a> in a browser. Feel free to explore on your own at this point. An administrator is able to adjust the status of an animal in the shelter (for example, flip the "Cat Aggressive" status) by clicking on the respective icon in the page describing an individual animal. Try to perform this action as a normal user. Admin username/pass is sec522/training and regular user is hackercat/training</p>
 <h3 id="step-by-step">Step by Step</h3>
 <ol>
 <li>
-<p>Open Wireshark by clicking on the blue "fin" on the left.</p>
+<p>Open <a href="http://lab-3.3.sans.labs/index.php">http://lab-3.3.sans.labs/index.php</a> in Chrome.</p>
+</li>
+<li>
+<p>Click the "Login" button (upper right hand corner). This will direct you to our animal shelter login page.</p>
+</li>
+<li>
+<p>Log in as an administrator (username: sec522, password: training). You will see a list of animals up for adoption.</p>
+</li>
+<li>
+<p>Click on an animal's image (for example, the first cat, "Cinnamon"). This will display a page with details about this particular animal.</p>
+</li>
+<li>
+<p>Bellow the image, you will see three icons. Click on one of the icons and it will change color from green to red (or red to green if it was red).</p>
 <p><img alt="" src="media/image1.png" /></p>
-<p><strong>Wireshark icon</strong></p>
+<p><strong>Image of Individual Animal with Icons Indicating Status</strong></p>
 </li>
 <li>
-<p>Open the packet capture using either Ctrl+O or "File" &gt; "Open" from the Wireshark menu. Navigate to /home/sec522/Documents/pcaps and open the file "http2.pcap" (you may find the file still listed as a "Recent" file, which may make things easier).</p>
+<p>Click on the "Log Out" link (upper right hand corner).</p>
 </li>
 <li>
-<p>Select packet #15 and investigate the middle pane of Wireshark. Expand the "Hypertext Transfer Protocol 2" section by clicking on the triangles to the left until you see the headers:</p>
+<p>Click on the "Login again" link.</p>
+</li>
+<li>
+<p>Log in as a normal user (username: hackercat, password: training).</p>
+</li>
+<li>
+<p>Click on an animal.</p>
+</li>
+<li>
+<p>Verify that clicking on the animal's "status icons" does nothing.</p>
+</li>
+<li>
+<p>Click on the "Log Out" link (upper right hand corner).</p>
+</li>
+<li>
+<p>Click on the "Login again" link.</p>
+</li>
+<li>
+<p>Log in as an administrator (username: sec522, password: training).</p>
+<p>Now we will explore what happens when the administrator clicks on one of the status icons.</p>
+</li>
+<li>
+<p>Click on an animal's picture again to end up on the animal's individual page.</p>
+</li>
+<li>
+<p>Open the Google Chrome developer tools by pressing CTRL-Shift-I.</p>
+</li>
+<li>
+<p>Select the "Network" tab in the developer tools.</p>
 <p><img alt="" src="media/image2.png" /></p>
-<p><strong>Wireshark Details</strong></p>
+<p><strong>Google Chrome Developer Tools With Network Tab Selected</strong></p>
 </li>
 <li>
-<p>Using Wireshark, answer these questions about the request:</p>
-<details class="question"><summary>Which user agent was used to collect the data?</summary><p>curl/7.58.0</p>
-</details>
-<details class="question"><summary>Which hostname did the client connect to?</summary><p><a href="http://www.sec522.org">www.sec522.org</a></p>
-</details>
+<p>Click on the "Dog" icon to change the animal's "Dog Aggressive" status. This will create a new entry in the developer tool window for "flip.php".</p>
 </li>
 <li>
-<p>Now select packet #21 and again inspect the HTTP/2 part in more detail. This packet contains the response.</p>
-<details class="question"><summary>What status code did the server return?</summary><p>200</p>
-</details>
-<details class="question"><summary>Which server version did we use?</summary><p>Apache 2.4.29</p>
-</details>
-<div class="admonition tip">
-<p class="admonition-title">Feel free to inspect any additional items in this sample.</p>
+<p>Right-click on the "flip.php" entry and select "Copy" -> "Copy as cURL".</p>
+<p><img alt="" src="media/image3.png" /></p>
+<p><strong>Copy "flip.php" Request as cURL</strong></p>
+</li>
+<li>
+<p>Open an editor (for example, Visual Studio Code) and paste the request into an empty file.</p>
+</li>
+<li>
+<p>Save the file (recommended name: "test.sh" in the user's home directory, /home/student).</p>
+</li>
+<li>
+<p>Open a terminal.</p>
+</li>
+<li>
+<p>Execute the file:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">source</span> /home/student/test.sh
+</code></pre></div>
+<p>Your output will look like.</p>
+<p><img alt="" class="zoom" src="media/img-1615956484-20210317.png" /></p>
+<p><strong>Output of test.sh</strong></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The highlighted part in the end <strong>"status":"OK"</strong>. This indicates that the script ran successfully. At this point, you are still logged in as an administrator, and a successful script is what we expect.</p>
 </div>
 </li>
+<li>
+<p>Back on Chrome, click the "Log Out" link. </p>
+</li>
+<li>
+<p>Run the script again, just like above:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">source</span> /home/sec522/test.sh
+</code></pre></div>
+<p>This time, the output will be an error:</p>
+<p><img alt="" class="zoom" src="media/img-1615956579-20210317.png" /></p>
+<p><strong>Terminal Output After Running the Script a Second Time After Logging Out</strong></p>
+<p>The script failed this time because "sec522" is no longer logged in, and the cookie included in the prior request in test.sh is no longer valid.</p>
+</li>
+<li>
+<p>Log in as a normal user again (username: hackercat, password: training).</p>
+</li>
+<li>
+<p>Open the "Application" tab in Chrome's Developer Tool. Note that, depending on your screen resolution, this option may be available by clicking on the '>>' symbol in the top right area of the developer tools (see picture below).</p>
+<p><img alt="" src="media/image6.png" /></p>
+<p><strong>Opening the Application Tab</strong></p>
+</li>
+<li>
+<p>Next, click on "Cookies" in the left part of the developer menu.</p>
+</li>
+<li>
+<p>Click on "<a href="http://lab-3.3.sans.labs">http://lab-3.3.sans.labs</a>" under "Cookies".</p>
+</li>
+<li>
+<p>Double-click on the "Value" to the right of "sec522_3_3". It will turn orange.</p>
+<p><img alt="" class="zoom" src="media/img-1615956927-20210317.png" /></p>
+<p><strong>Highlighting the Cookie Value</strong></p>
+</li>
+<li>
+<p>Right-click on the highlighted value and select "Copy".</p>
+</li>
+<li>
+<p>Open the "test.sh" script you created earlier in your favorite editor. If you are using Visual Studio Code, all you need to do is open the editor and it should automatically open the last edited file.</p>
+</li>
+<li>
+<p>Find the cookie value. It will be the random string after "sec522_3_3=" and replace it with the cookie value you copied from Chrome. Just highlight the old value and "Paste" to overwrite it. If there is a single quote at the end of the session ID, do not delete it.</p>
+<p><img alt="" class="zoom" src="media/img-1615957247-20210317.png" /></p>
+<p><strong>Highlighted Cookie Value</strong></p>
+</li>
+<li>
+<p>Exit the editor.</p>
+</li>
+<li>
+<p>Switch back to the terminal.</p>
+</li>
+<li>
+<p>Run the script again. This time, the request should succeed. The figure below shows the terminal with all three requests: first, the one using the administrator's cookie; next, the failed request after the administrator logged out; and finally, the request we just sent with the regular user's cookie, which succeeded as well.</p>
+</li>
 </ol>
-<hr />
-<h2 id="part-2-acquire-and-play-back-token">Part 2: Acquire and play back token</h2>
+<p>The final request should not have succeeded. This proves that a normal user can execute an administrative request as long as the user knows what request to send.</p>
+<p>You may want to now return to the browser to check if the information was changed. You can also make additional edits to the script. Close to the end of the request you should see an "animalid" parameter that can be used to pick different animals. Experiment with it.</p>
+<p>Please suggest ways to fix the issues in the applications. You can review the source code of the script at <a href="http://lab-3.3.sans.labs/api/flip.phps">http://lab-3.3.sans.labs/api/flip.phps</a> .</p>
+<h2 id="part-2-oauth">Part 2: OAuth</h2>
 <h3 id="no-hints_1">No Hints</h3>
-<p>The CSRF/ proof service at <a href="http://lab-1.2.sans.labs/authservice/index.php">http://lab-1.2.sans.labs/authservice/index.php</a> gives you a special token </p>
+<p>The exercise starts at <a href="http://lab-3.3.sans.labs/calendar/index.php">http://lab-3.3.sans.labs/calendar/index.php</a>. The basic steps are explained as part of the website.</p>
 <h3 id="step-by-step_1">Step by Step</h3>
 <ol>
 <li>
-<p>Open a terminal (click the "Terminal" icon on the left)</p>
+<p>The exercise starts at <a href="http://lab-3.3.sans.labs/calendar/index.php">http://lab-3.3.sans.labs/calendar/index.php</a>. The page implements a simple calendar display. But to use it, you need to allow the calendar page to retrieve your calendar from the animal shelter site. Click on the link on the page to be sent to the animal shelter.</p>
 </li>
 <li>
-<p>Use "curl" to send a PUT request to <a href="http://lab-1.2.sans.labs/authservice/index.php">http://lab-1.2.sans.labs/authservice/index.php</a></p>
-<div class="highlight"><pre><span></span><code>curl -iX PUT http://lab-1.2.sans.labs/authservice/index.php
+<p>At the animal shelter, you will need to log in (if you are not already logged in). The username is "sec522", the password is "training".</p>
+</li>
+<li>
+<p>Next, a simple page will ask you for permission to use the calendar. Inspect the URL. It will contain the client_id, which identifies the application requesting access. The "state" variable is used to identify the response returned to the client. Allow access by clicking "yes".</p>
+</li>
+<li>
+<p>You will now be redirected back to the volunteer calendar app and your schedule should appear.</p>
+</li>
+<li>
+<p>Next, click on the "problem" link to learn more about the issue causing authentication tokens to leak.</p>
+</li>
+<li>
+<p>The problem page suggests that SQL injection is used to retrieve the tokens. Click on the "search page" link to be directed to the vulnerable page.</p>
+</li>
+<li>
+<p>Click the "Debug" checkbox</p>
+</li>
+<li>
+<p>Enter a single quote (') in the search box and hit "Submit"</p>
+</li>
+<li>
+<p>You will now see the vulnerable statement. The "animalname" parameter is injectable, and we can use a union statement to retrieve additional data. The union statement needs to retrieve the same number of columns as the original statement (7). The second column ("animalname") is easily displayed and we will use it for our exploit. Enter as a search:</p>
+<div class="admonition warning">
+<p class="admonition-title">Important: there is a space after the two dashes '--'.</p>
+</div>
+<div class="highlight"><pre><span></span><code><span class="err">&#39;</span> <span class="k">UNION</span> <span class="k">SELECT</span> <span class="mi">1</span><span class="p">,</span><span class="n">access_token</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span> <span class="k">FROM</span> <span class="n">oauth</span><span class="p">.</span><span class="n">oauth_access_tokens</span> <span class="k">LIMIT</span> <span class="mi">1</span> <span class="c1">-- </span>
 </code></pre></div>
-<p>The return will include an "Auth-Token" header:</p>
-<div class="highlight"><pre><span></span><code>HTTP/1.1 200 OK
-Date: Thu, 11 Mar 2021 02:56:38 GMT
-Server: Apache/2.4.38 (Debian)
-X-Powered-By: PHP/7.4.15
-<span class="hll">Auth-Token: [use this value for the next step]
-</span>Vary: Accept-Encoding
-Content-Length: 89
-Content-Type: text/html; charset=UTF-8
-</code></pre></div>
-</li>
-<li>
-<p>Now create a request to <a href="http://lab-1.2.sans.labs/authservice/test.php">http://lab-1.2.sans.labs/authservice/test.php</a> using this Auth-Token header (replace "TOKEN" with the value you received in step 2.</p>
-<div class="highlight"><pre><span></span><code>curl -i -H <span class="s1">&#39;Auth-Token: &lt;Token you got earlier&gt;&#39;</span> http://lab-1.2.sans.labs/authservice/test.php
-</code></pre></div>
-<p>The return will let you know if you got it right</p>
-</li>
-</ol>
-<h2 id="part-3-spoofing-an-http-request">Part 3: Spoofing an HTTP Request</h2>
-<h3 id="no-hints_2">No Hints</h3>
-<p>The exercise starts at <a href="http://lab-1.2.sans.labs/spoofchallenge/index.html">http://lab-1.2.sans.labs/spoofchallenge/index.html</a> . The page includes brief instructions showing you how to proceed.</p>
-<ol>
-<li>
-<p>Open <a href="http://lab-1.2.sans.labs/spoofchallenge/index.html">http://lab-1.2.sans.labs/spoofchallenge/index.html</a> in Chrome.</p>
-</li>
-<li>
-<p>Click on the "Step 1" link. This will open the page fingerprint.php and display your browser fingerprint.</p>
-</li>
-<li>
-<p>Click "Save Fingerprint". You will now see the saved fingerprint in the lower half of the page.</p>
-</li>
-<li>
-<p>Open a terminal window (for example by clicking on the "Terminal" icon on the left)</p>
-</li>
-<li>
-<p>Enter:</p>
-<div class="highlight"><pre><span></span><code>curl http://lab-1.2.sans.labs/spoofchallenge/fingerprinttest.php
-</code></pre></div>
-<p>You will see a number of errors due to missing or incomplete headers.</p>
-</li>
-<li>
-<p>Now add individual headers using the curl "-H" option. For example to add the User-Agent header use (the URL in the end is abbreviated. Use the same URL as in step 5).</p>
-<div class="highlight"><pre><span></span><code>curl -H <span class="s2">&quot;User-Agent: [some user agent]&quot;</span> http://www...
-</code></pre></div>
-</li>
-<li>
-<p>Add more headers. Read the error messages for any missing headers, or values that you do not have right yet.</p>
-</li>
-<li>
-<p>As you add the "Accept:" header, the output may be compressed and you will get a warning indicating that the output is binary. Pipe the output to "zcat" if you see the warning. For example like in the abbreviated command below:</p>
-<div class="highlight"><pre><span></span><code>curl -H [... any headers... ] http://[url] | zcat
-</code></pre></div>
-</li>
-<li>
-<p>For a solution, see <a href="http://lab-1.2.sans.labs/spoofchallenge/solution.php">http://lab-1.2.sans.labs/spoofchallenge/solution.php</a></p>
+<p>The token for OAuth authentication (Refresh token) will be displayed below a broken picture on the result page.</p>
 </li>
 </ol>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
+<ul>
+<li>While OAuth can offer secure and reliable authorization between two web sites, the token handling needs to be performed with extreme care. Compromises of tokens can be through other attacks such as SQL injection. Once an attacker acquire the refresh token, the attacker can use the token to get new Access Tokens for further access.</li>
+<li>Access control flaws can occur to the most modern applications. Keeping the access controls consistent is the key to successfully defend your application.</li>
+</ul>
 <hr />
 <h2 id="explore-further">Explore Further</h2>
 <ul>
-<li></li>
+<li>Using the acquired refresh token to acquire new access tokens</li>
+<li>Are there other refresh tokens inside the database?</li>
 </ul>
                 
               
@@ -1068,7 +1125,7 @@ Content-Type: text/html; charset=UTF-8
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../1.1/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../3.2/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1077,19 +1134,19 @@ Content-Type: text/html; charset=UTF-8
               <span class="md-footer__direction">
                 Previous
               </span>
-              1.1: HTTP Basics
+              3.2: Session Fixation and Session Breaking
             </div>
           </div>
         </a>
       
       
-        <a href="../1.3/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../3.4/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              1.3: Isolation
+              3.4: Inspecting SSL Traffic
             </div>
           </div>
           <div class="md-footer__button md-icon">

@@ -14,7 +14,7 @@
     
     
       
-        <title>1.2: Inspecting HTTP/2 Traffic - SEC522 Workbook</title>
+        <title>4.4: Content Security Policy - SEC522 Workbook</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#inspecting-http2-traffic-and-crafting-requests" class="md-skip">
+        <a href="#content-security-policy" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              1.2: Inspecting HTTP/2 Traffic
+              4.4: Content Security Policy
             
           </span>
         </div>
@@ -334,14 +334,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
       
       <label class="md-nav__link" for="__nav_2">
         Day 1
@@ -369,130 +367,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          1.2: Inspecting HTTP/2 Traffic
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../1.2/" class="md-nav__link">
         1.2: Inspecting HTTP/2 Traffic
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#part-1-inspecting-http2-traffic" class="md-nav__link">
-    Part 1: Inspecting HTTP/2 Traffic
-  </a>
-  
-    <nav class="md-nav" aria-label="Part 1: Inspecting HTTP/2 Traffic">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#no-hints" class="md-nav__link">
-    No Hints
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-by-step" class="md-nav__link">
-    Step by Step
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#part-2-acquire-and-play-back-token" class="md-nav__link">
-    Part 2: Acquire and play back token
-  </a>
-  
-    <nav class="md-nav" aria-label="Part 2: Acquire and play back token">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#no-hints_1" class="md-nav__link">
-    No Hints
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-by-step_1" class="md-nav__link">
-    Step by Step
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#part-3-spoofing-an-http-request" class="md-nav__link">
-    Part 3: Spoofing an HTTP Request
-  </a>
-  
-    <nav class="md-nav" aria-label="Part 3: Spoofing an HTTP Request">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#no-hints_2" class="md-nav__link">
-    No Hints
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
-    Conclusion
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#explore-further" class="md-nav__link">
-    Explore Further
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -689,12 +568,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
       
       <label class="md-nav__link" for="__nav_5">
         Day 4
@@ -746,11 +627,70 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../4.4/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          4.4: Content Security Policy
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         4.4: Content Security Policy
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#no-hints" class="md-nav__link">
+    No Hints
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-by-step-instructions" class="md-nav__link">
+    Step-by-Step Instructions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explore-further" class="md-nav__link">
+    Explore Further
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -911,137 +851,65 @@
     content: 'SANS SEC522 Workbook';
 }}
 @page :left { @bottom-left {
-  content: '1.2-' counter(page);
+  content: '4.4-' counter(page);
 }}
 @page :right { @bottom-right {
-  content: '1.2-' counter(page);
+  content: '4.4-' counter(page);
 }}
 </style>
 
-<h1 id="inspecting-http2-traffic-and-crafting-requests">Inspecting HTTP/2 Traffic and Crafting Requests</h1>
+<h1 id="content-security-policy">Content Security Policy</h1>
 <hr />
 <h4 id="objectives">Objectives</h4>
-<div class="codehilite"><pre><span></span><code>Estimated Time: 10 minutes
+<div class="codehilite"><pre><span></span><code>Estimated Time: 15 minutes
 </code></pre></div>
 
-<h5 id="part-1">Part 1:</h5>
 <blockquote>
-<p>In this exercise, you will inspect HTTP/2 traffic to better understand how it differs from HTTP/1.1</p>
+<p>Content Security Policy (CSP) is a great tool to limit JavaScript that an attacker may inject into a page. But if the CSP is too tight, then JavaScript code that was added by the developer may not run. In this exercise, you will learn how to debug CSPs.</p>
 </blockquote>
 <h5 id="part-2">Part 2:</h5>
-<blockquote>
-<p>First, you will try to use an authentication token retrieved in one request to send a second request. The section half of this exercise will teach you how to impersonate a valid browser using simple tools like "curl". You will first collect a request from a regular browser to create a "fingerprint" of the browser. Next, you will use "curl" to create a request that matches the fingerprint.</p>
-</blockquote>
-<h5 id="part-3">Part 3:</h5>
+<blockquote></blockquote>
 <h4 id="requirements">Requirements</h4>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Lab VM</li>
 </ul>
 <hr />
-<h2 id="part-1-inspecting-http2-traffic">Part 1: Inspecting HTTP/2 Traffic</h2>
 <h3 id="no-hints">No Hints</h3>
-<p>You will be using Wireshark to inspect an HTTP/2 packet capture. The packet capture can be found in /home/sec522/Documents/pcaps/http2.pcap. Find out which headers you can identify in the HTTP/2 request and response.</p>
-<h3 id="step-by-step">Step by Step</h3>
+<p>Proceed to <a href="http://lab-4.4.sans.labs/">http://lab-4.4.sans.labs/</a>. The exercise will guide you through three parts. In each part, a CSP is shown that is too strict to display an image on the site. Modify the CSP to fix it. You can modify the CSP right on the page, and relevant CSP errors are displayed as well. You can also use the web console to learn more about the CSP issue.</p>
+<h3 id="step-by-step-instructions">Step-by-Step Instructions</h3>
 <ol>
 <li>
-<p>Open Wireshark by clicking on the blue "fin" on the left.</p>
-<p><img alt="" src="media/image1.png" /></p>
-<p><strong>Wireshark icon</strong></p>
+<p>Open <strong><a href="http://lab-4.4.sans.labs/">http://lab-4.4.sans.labs/</a></strong> in your browser.</p>
 </li>
 <li>
-<p>Open the packet capture using either Ctrl+O or "File" &gt; "Open" from the Wireshark menu. Navigate to /home/sec522/Documents/pcaps and open the file "http2.pcap" (you may find the file still listed as a "Recent" file, which may make things easier).</p>
+<p>On that page, you will find a link to <a href="http://lab-4.4.sans.labs/">http://lab-4.4.sans.labs/</a>. Open that link in a new window. At first, you will get a 404 error if no CSP error log exists yet.</p>
 </li>
 <li>
-<p>Select packet #15 and investigate the middle pane of Wireshark. Expand the "Hypertext Transfer Protocol 2" section by clicking on the triangles to the left until you see the headers:</p>
-<p><img alt="" src="media/image2.png" /></p>
-<p><strong>Wireshark Details</strong></p>
+<p>Click on the "CSP Error 1" link.</p>
 </li>
 <li>
-<p>Using Wireshark, answer these questions about the request:</p>
-<details class="question"><summary>Which user agent was used to collect the data?</summary><p>curl/7.58.0</p>
-</details>
-<details class="question"><summary>Which hostname did the client connect to?</summary><p><a href="http://www.sec522.org">www.sec522.org</a></p>
+<p>The page is missing an image. The "Last Error" section will show the last CSP error. You may have to reload the page if the section is empty. You can also refresh the error log page to get the latest errors, but that page may be difficult to read.</p>
+</li>
+<li>
+<p>Inspect the blocked-uri section in the last error. </p>
+<details class="question"><summary>Does it match the img-src?</summary><p>img-src lab-1.1.sans.labs</p>
 </details>
 </li>
 <li>
-<p>Now select packet #21 and again inspect the HTTP/2 part in more detail. This packet contains the response.</p>
-<details class="question"><summary>What status code did the server return?</summary><p>200</p>
+<p>Edit the CSP to reflect the correct img-src.</p>
+</li>
+<li>
+<p>Click "Update".</p>
+</li>
+<li>
+<p>If your CSP is correct, then the image of a cat will appear, as well as a link to the next exercise.</p>
+</li>
+<li>
+<p>For the next two pages, follow the same procedures as you did between Step 4 and Step 8.</p>
+<details class="question"><summary>Solutions</summary><p>CSP1: img-src lab-4.4.sans.labs</p>
+<p>CSP2: script-src 'self' 'unsafe-inline'</p>
+<p>CSP3: script-src 'unsafe-inline' 'unsafe-eval'</p>
 </details>
-<details class="question"><summary>Which server version did we use?</summary><p>Apache 2.4.29</p>
-</details>
-<div class="admonition tip">
-<p class="admonition-title">Feel free to inspect any additional items in this sample.</p>
-</div>
-</li>
-</ol>
-<hr />
-<h2 id="part-2-acquire-and-play-back-token">Part 2: Acquire and play back token</h2>
-<h3 id="no-hints_1">No Hints</h3>
-<p>The CSRF/ proof service at <a href="http://lab-1.2.sans.labs/authservice/index.php">http://lab-1.2.sans.labs/authservice/index.php</a> gives you a special token </p>
-<h3 id="step-by-step_1">Step by Step</h3>
-<ol>
-<li>
-<p>Open a terminal (click the "Terminal" icon on the left)</p>
-</li>
-<li>
-<p>Use "curl" to send a PUT request to <a href="http://lab-1.2.sans.labs/authservice/index.php">http://lab-1.2.sans.labs/authservice/index.php</a></p>
-<div class="highlight"><pre><span></span><code>curl -iX PUT http://lab-1.2.sans.labs/authservice/index.php
-</code></pre></div>
-<p>The return will include an "Auth-Token" header:</p>
-<div class="highlight"><pre><span></span><code>HTTP/1.1 200 OK
-Date: Thu, 11 Mar 2021 02:56:38 GMT
-Server: Apache/2.4.38 (Debian)
-X-Powered-By: PHP/7.4.15
-<span class="hll">Auth-Token: [use this value for the next step]
-</span>Vary: Accept-Encoding
-Content-Length: 89
-Content-Type: text/html; charset=UTF-8
-</code></pre></div>
-</li>
-<li>
-<p>Now create a request to <a href="http://lab-1.2.sans.labs/authservice/test.php">http://lab-1.2.sans.labs/authservice/test.php</a> using this Auth-Token header (replace "TOKEN" with the value you received in step 2.</p>
-<div class="highlight"><pre><span></span><code>curl -i -H <span class="s1">&#39;Auth-Token: &lt;Token you got earlier&gt;&#39;</span> http://lab-1.2.sans.labs/authservice/test.php
-</code></pre></div>
-<p>The return will let you know if you got it right</p>
-</li>
-</ol>
-<h2 id="part-3-spoofing-an-http-request">Part 3: Spoofing an HTTP Request</h2>
-<h3 id="no-hints_2">No Hints</h3>
-<p>The exercise starts at <a href="http://lab-1.2.sans.labs/spoofchallenge/index.html">http://lab-1.2.sans.labs/spoofchallenge/index.html</a> . The page includes brief instructions showing you how to proceed.</p>
-<ol>
-<li>
-<p>Open <a href="http://lab-1.2.sans.labs/spoofchallenge/index.html">http://lab-1.2.sans.labs/spoofchallenge/index.html</a> in Chrome.</p>
-</li>
-<li>
-<p>Click on the "Step 1" link. This will open the page fingerprint.php and display your browser fingerprint.</p>
-</li>
-<li>
-<p>Click "Save Fingerprint". You will now see the saved fingerprint in the lower half of the page.</p>
-</li>
-<li>
-<p>Open a terminal window (for example by clicking on the "Terminal" icon on the left)</p>
-</li>
-<li>
-<p>Enter:</p>
-<div class="highlight"><pre><span></span><code>curl http://lab-1.2.sans.labs/spoofchallenge/fingerprinttest.php
-</code></pre></div>
-<p>You will see a number of errors due to missing or incomplete headers.</p>
-</li>
-<li>
-<p>Now add individual headers using the curl "-H" option. For example to add the User-Agent header use (the URL in the end is abbreviated. Use the same URL as in step 5).</p>
-<div class="highlight"><pre><span></span><code>curl -H <span class="s2">&quot;User-Agent: [some user agent]&quot;</span> http://www...
-</code></pre></div>
-</li>
-<li>
-<p>Add more headers. Read the error messages for any missing headers, or values that you do not have right yet.</p>
-</li>
-<li>
-<p>As you add the "Accept:" header, the output may be compressed and you will get a warning indicating that the output is binary. Pipe the output to "zcat" if you see the warning. For example like in the abbreviated command below:</p>
-<div class="highlight"><pre><span></span><code>curl -H [... any headers... ] http://[url] | zcat
-</code></pre></div>
-</li>
-<li>
-<p>For a solution, see <a href="http://lab-1.2.sans.labs/spoofchallenge/solution.php">http://lab-1.2.sans.labs/spoofchallenge/solution.php</a></p>
 </li>
 </ol>
 <hr />
@@ -1068,7 +936,7 @@ Content-Type: text/html; charset=UTF-8
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../1.1/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../4.3/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1077,19 +945,19 @@ Content-Type: text/html; charset=UTF-8
               <span class="md-footer__direction">
                 Previous
               </span>
-              1.1: HTTP Basics
+              4.3: Javascript Security Testing
             </div>
           </div>
         </a>
       
       
-        <a href="../1.3/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../5.1/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              1.3: Isolation
+              5.1: DNS Rebinding
             </div>
           </div>
           <div class="md-footer__button md-icon">

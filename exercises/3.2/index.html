@@ -925,40 +925,40 @@
 <h2 id="part-1-session-fixation">Part 1: Session Fixation</h2>
 <h3 id="no-hints">No Hints</h3>
 <h5 id="edit">Edit</h5>
-<p>Load <a href="http://lab-3.2.sans.labs/">http://lab-3.2.sans.labs/</a> in Chrome. Two out of three login forms (links are at upper right hand corners) are susceptible to session fixation. Which one are vulnerable and why? (login/pass - sec522/training) </p>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>Load <a href="http://lab-3.2.sans.labs/login.php">http://lab-3.2.sans.labs/login.php</a> in Chrome. The first two forms are susceptible to session fixation. Why? (In particular, the second one is not that obvious.) The third form is not susceptible.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
 <h3 id="step-by-step">Step by Step</h3>
 <p>This exercise will ask you to run Firefox in addition to Chrome. To start Firefox when asked to, click on the Firefox icon at the left side of the screen. </p>
 <p>IMPORTANT: Do not "Refresh Firefox" or update Firefox. Click "Cancel" if a dialog box appears offering to refresh Firefox.</p>
 <ol>
 <li>
-<p>Load <a href="http://lab-3.2.sans.labs/login1.php">http://lab-3.2.sans.labs/login1.php</a> in the Chrome browser, this is the first login form. You will be redirected to a URL that includes a session ID as a get parameter. The session ID is random. It should look like: sec522=gn5blighc8a)o5ks45k3pu81l</p>
+<p>Load <a href="http://www.sec522.org/ex2/2/index.php">http://www.sec522.org/ex2/2/index.php</a> in the browser. You will be redirected to a URL that includes a session ID as a get parameter. The session ID is random. It should look like: PHPSESID=gn5blighc8a)o5ks45k3pu81l</p>
 </li>
 <li>
-<p>Copy the session ID and paste it into an empty file (you can use the text editor on the left favorite bar).</p>
+<p>Copy the session ID and paste it into an empty file (you can use the text editor on the left).</p>
 </li>
 <li>
 <p>Log in using the first form, "Step 1", using the username "sec522" and the password "training". Did the session ID change? The form is vulnerable if it did not change.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>For a secure application. The session ID should change at the login time, otherwise, session fixation can occur.</p>
-</div>
 </li>
 <li>
-<p>To simulate the attacker, open a second browser. (Firefox is installed in the virtual machine. Search for it by clicking on "Activities".) Copy and paste the URL and check if you are indeed logged in. </p>
-<div class="admonition done">
-<p class="admonition-title">What have we accomplished?</p>
-<p>The firefox browser is to simulate the attacker's control. In real life attacks, the attacker would be providing that link containing a session ID to the user to login with. Once the user login with the provided session ID, the attacker can assume the identity of the user.</p>
-</div>
+<p>To simulate the attacker, open a second browser. (Firefox is installed in the virtual machine. Search for it by clicking on "Activities".) Copy and paste the URL and check if you are indeed logged in.</p>
 </li>
 <li>
-<p>Close Firefox and close the logged in tab in Chrome.</p>
+<p>Close Firefox and close the logged in tab.</p>
 </li>
 <li>
-<p>Using a new Chrome browser tab, load the second login page <a href="http://lab-3.2.sans.labs/login2.php">http://lab-3.2.sans.labs/login2.php</a></p>
+<p>Click on "Clear Session Data" button to obtain a new session ID.</p>
 </li>
 <li>
 <p>Again, copy paste the session ID from the browser URL.</p>
-<p>Log in using the Login #2 form.</p>
+<p>Log in using the "Step 2" form.</p>
 <div class="admonition question">
 <p class="admonition-title">Did the session ID change?</p>
 </div>
@@ -970,7 +970,7 @@
 </div>
 </li>
 <li>
-<p>Now try the third and final login form #3 (<a href="http://lab-3.2.sans.labs/login3.php">http://lab-3.2.sans.labs/login3.php</a>). Log in again and compare the session IDs.</p>
+<p>Now try the third and final form ("Step 3"). Log in again and compare the session IDs.</p>
 </li>
 <li>
 <p>Again, copy the original session ID to the URL bar in Firefox.</p>
@@ -979,10 +979,10 @@
 </div>
 </li>
 <li>
-<p>Compare the source code of login #2 and loging #3:</p>
-<p><a href="http://lab-3.2.sans.labs/login2.phps">http://lab-3.2.sans.labs/login2.phps</a>  <br>
-<a href="http://lab-3.2.sans.labs/login3.phps">http://lab-3.2.sans.labs/login3.phps</a></p>
-<p>There are subtle differences in the location of session_regenerate_id. See lines 23 and 24 of the code. </p>
+<p>Compare the source code:</p>
+<p><a href="http://www.sec522org/ex2/2/fix2.phps">http://www.sec522org/ex2/2/fix2.phps</a>  <br>
+<a href="http://www.sec522org/ex2/2/fix3.phps">http://www.sec522org/ex2/2/fix3.phps</a></p>
+<p>There are subtle differences in the location of session_regenerate_id. See lines 14 and 16 of the code. </p>
 <div class="admonition questions">
 <p class="admonition-title">What are the differences?</p>
 </div>
