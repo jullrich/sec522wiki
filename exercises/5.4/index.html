@@ -758,13 +758,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#explore-further" class="md-nav__link">
-    Explore Further
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -878,16 +871,13 @@
 <p>Open <a href="http://lab-5.4.sans.labs/subresourceintegrity.php">http://lab-5.4.sans.labs/subresourceintegrity.php</a> in Google Chrome. </p>
 </li>
 <li>
-<p>Click on the link to <a href="http://lab-5.4.sans.labs/donations.php">http://lab-5.4.sans.labs/donations.php</a>.</p>
+<p>Click on the link to donations.php - <a href="http://lab-5.4.sans.labs/donations.php">http://lab-5.4.sans.labs/donations.php</a>.</p>
 </li>
 <li>
 <p>Fill out the donation form and click “Submit.” You will see a “Thank you” page, and all looks good.</p>
 </li>
 <li>
-<p>Use the “Back” button in Google Chrome to restart the exercise.</p>
-</li>
-<li>
-<p>Click on the <a href="http://lab-5.4.sans.labs/donations.php">http://lab-5.4.sans.labs/donations.php</a> link again.</p>
+<p>Click on the <a href="http://lab-5.4.sans.labs/donations.php">http://lab-5.4.sans.labs/donations.php</a> link again to restart the exercise.</p>
 </li>
 <li>
 <p>Press Ctrl-Shift-I to open the Developers Tools.</p>
@@ -896,7 +886,7 @@
 <p>Click on the “Sources” tab in the Developers Tools.</p>
 </li>
 <li>
-<p>Open the “donations.js” file and inspect the “accountid”. Note how the account ID has been altered to “evilcataccount”.</p>
+<p>Under the js folder, open the “donations.js” file and inspect the “accountid”. Note how the account ID has been altered to “evilcataccount” by an unknown attacker!</p>
 <p><img alt="" class="zoom" src="media/img-1615709782-20210314.png" />
 <strong>Content of donations.js</strong></p>
 </li>
@@ -910,39 +900,48 @@
 <p>Enter “ls” to obtain a directory listing. You will see a file called “dontations_for_stupid_dogs.js”.</p>
 </li>
 <li>
-<p>Use the “diff” command to compare the dontations_for_stupid_dogs.js file to the donations.js file (see Figure 62). The files are identical with the exception of the account ID.</p>
+<p>Use the “diff” command to compare the dontations_for_stupid_dogs.js file to the donations.js file. The files are identical with the exception of the account ID.</p>
+<p>In a terminal, run </p>
+<p><div class="highlight"><pre><span></span><code>diff donations_for_stupid_dogs.js  donations.js
+</code></pre></div>
+to show the differences between two files.</p>
 </li>
 <li>
 <p>Calculate the hash of the “good” file:
-<div class="highlight"><pre><span></span><code> openssl dgst -sha384 -binary &lt; donations_for_stupid_dogs.js | openssl base64 -A
+<div class="highlight"><pre><span></span><code>openssl dgst -sha384 -binary &lt; donations_for_stupid_dogs.js | openssl base64 -A
 </code></pre></div>
 You should get the following hash: wZGpBo0UBEBZ2r+uvUPUVH8gvHqHHPJr5Yt9aK+W5D9cSxNhgvF6lAHxsf0gAXbw</p>
 </li>
 <li>
-<p>Open /etc/docker/compose/5.4/web/html/donations.php in an editor (Visual Studio Code) and add the “integrity” attribute to the script tag for “donations.js” in line 16. Keep the file open.</p>
+<p>Open <strong>/etc/docker/compose/5.4/web/html/donations.php</strong> in an editor (Visual Studio Code) and add the “integrity” attribute to the script tag for “donations.js” in line 16. (Solutions below) Save the file after you are done editing and keep the file open.</p>
 </li>
 <li>
-<p>Reload the donations page. You will now see an error on the console in the debugger.</p>
+<p>Reload the donations page. You will now see an error on the console tab in the Developer Tools.</p>
+<div class="admonition information">
+<p class="admonition-title">Information</p>
+<p>We have generated a hash (signature) of the legitimate JavaScript but the file being referenced remotely is a file that has been altered by the unknown attacker. As the hashes are not matching, the browser is not going to execute the JavaScript. </p>
+</div>
 </li>
 <li>
-<p>Change line 16 of the donations.php to use “donations_for_stupid_dogs.js” instead of donations.php.</p>
+<p>Change line 17 of the donations.php to use “donations_for_stupid_dogs.js” instead of donations.php (keep the integirty parameter intact).</p>
 </li>
 <li>
-<p>Reload the donations page. The script will now load.</p>
+<p>Reload the donations page. The script will now load as the signature matches.</p>
 </li>
 </ol>
 <p>The “integrity” parameter will indicate to the browser that the file has changed. The browser is now able to block scripts if they changed.</p>
 <details class="solution"><summary>Solution</summary><p>Here is the JavaScript reference with integrity attributes embeded (line 16 of donations.php). 
-<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">&quot;/js/jquery.js&quot;</span> <span class="nx">integrity</span><span class="o">=</span><span class="s2">&quot;sha384-wZGpBo0UBEBZ2r+uvUPUVH8gvHqHHPJr5Yt9aK+W5D9cSxNhgvF6lAHxsf0gAXbw&quot;</span><span class="o">&gt;&lt;</span><span class="err">/script&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">&quot;/js/donations.js&quot;</span> <span class="nx">integrity</span><span class="o">=</span><span class="s2">&quot;sha384-wZGpBo0UBEBZ2r+uvUPUVH8gvHqHHPJr5Yt9aK+W5D9cSxNhgvF6lAHxsf0gAXbw&quot;</span><span class="o">&gt;&lt;</span><span class="err">/script&gt;</span>
 </code></pre></div></p>
 </details>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
-<hr />
-<h2 id="explore-further">Explore Further</h2>
 <ul>
-<li></li>
+<li>Subresource integrity is useful for making sure that content being loaded from a remote location is of a specific version or that it hasn't been altered.</li>
+<li>When using Subresource integrity, the destination resource changes will cause the browser to stop loading the resource.</li>
+<li>Subresource integirty works for any <link> and <script> elements</li>
 </ul>
+<hr />
                 
               
               

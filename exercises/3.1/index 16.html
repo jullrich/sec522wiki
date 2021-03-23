@@ -14,7 +14,7 @@
     
     
       
-        <title>3.4: Inspecting SSL Traffic - SEC522 Workbook</title>
+        <title>3.1: Authentication - SEC522 Workbook</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#inspecting-ssl-traffic-with-wireshark" class="md-skip">
+        <a href="#authentication-exercise" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              3.4: Inspecting SSL Traffic
+              3.1: Authentication
             
           </span>
         </div>
@@ -513,11 +513,124 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../3.1/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          3.1: Authentication
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         3.1: Authentication
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#part-0-optional-simple-user-agent-based-authentication" class="md-nav__link">
+    Part 0: (Optional) Simple User-Agent-Based Authentication
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 0: (Optional) Simple User-Agent-Based Authentication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-hints" class="md-nav__link">
+    No Hints
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step-instructions" class="md-nav__link">
+    Step-by-Step Instructions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-more-complex-but-still-weak-authentication" class="md-nav__link">
+    Part 2: More Complex, But Still Weak, Authentication
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-brute-forcing" class="md-nav__link">
+    Part 3: Brute Forcing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-4-u2f-and-bypassing-2nd-factor" class="md-nav__link">
+    Part 4: U2F And Bypassing 2nd Factor
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 4: U2F And Bypassing 2nd Factor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-hints_1" class="md-nav__link">
+    No Hints
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step" class="md-nav__link">
+    Step by Step
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explore-further" class="md-nav__link">
+    Explore Further
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -549,90 +662,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          3.4: Inspecting SSL Traffic
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../3.4/" class="md-nav__link">
         3.4: Inspecting SSL Traffic
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#inspecting-ssl-traffic" class="md-nav__link">
-    Inspecting SSL Traffic
-  </a>
-  
-    <nav class="md-nav" aria-label="Inspecting SSL Traffic">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#no-hints" class="md-nav__link">
-    No Hints
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-by-step" class="md-nav__link">
-    Step by Step
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#advanced-ssl-master-key" class="md-nav__link">
-    Advanced: SSL Master Key
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
-    Conclusion
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#explore-further" class="md-nav__link">
-    Explore Further
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -871,168 +905,231 @@
     content: 'SANS SEC522 Workbook';
 }}
 @page :left { @bottom-left {
-  content: '3.4-' counter(page);
+  content: '3.1-' counter(page);
 }}
 @page :right { @bottom-right {
-  content: '3.4-' counter(page);
+  content: '3.1-' counter(page);
 }}
 </style>
 
-<h1 id="inspecting-ssl-traffic-with-wireshark">Inspecting SSL Traffic with Wireshark</h1>
+<h1 id="authentication-exercise">Authentication Exercise</h1>
 <hr />
 <h4 id="objectives">Objectives</h4>
-<div class="codehilite"><pre><span></span><code>Estimated Time: 15 minutes
+<div class="codehilite"><pre><span></span><code>Estimated Time: 22 minutes
 </code></pre></div>
 
 <h5 id="part-1">Part 1:</h5>
 <blockquote>
-<p>In this exercise, the objective is to learn about how SSL actually works. There have been a lot of misconceptions about how SSL works and what features it provides. Everyone seems to understand that SSL makes things secure, but exactly how is this done? We will try to demystify SSL in this exercise.</p>
+<p>In this exercise, we will experiment with different examples of weak authentication and demonstrate how to break them.</p>
+</blockquote>
+<h5 id="part-2">Part 2:</h5>
+<blockquote>
+<p>In this exercise, we will experiment with different examples of weak authentication and demonstrate how to break them.</p>
+</blockquote>
+<h5 id="part-3">Part 3:</h5>
+<blockquote>
+<p>In this exercise, you will walk through the use of U2F (Universal Two-Factor) tokens for two factor authentication. We use a software simulation of a token (softu2f). After registering and testing the token, we will experiment with a method to bypass the use of the token.</p>
 </blockquote>
 <h4 id="requirements">Requirements</h4>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Lab VM</li>
 </ul>
 <hr />
-<h2 id="inspecting-ssl-traffic">Inspecting SSL Traffic</h2>
+<h2 id="part-0-optional-simple-user-agent-based-authentication">Part 0: <em>(Optional)</em> Simple User-Agent-Based Authentication</h2>
 <h3 id="no-hints">No Hints</h3>
-<h3 id="step-by-step">Step by Step</h3>
-<p>We will use Wireshark to inspect a packet capture. Wireshark is a full-featured packet analysis tool. It includes the ability to decrypt SSL traffic as long as we provide the secret key or the session key negotiated between server and browser. In our example, we will use two files:</p>
-<ul>
-<li>
-<p>~/Documents/SSL/ssl.pcap -- a packet capture of https traffic</p>
-</li>
-<li>
-<p>~/Documents/SSL/server.key -- the secret key used by the server in the above sample captures.</p>
-</li>
-<li>
-<p>Click on the <strong>Wireshark</strong> icon on the left of the virtual machine desktop.</p>
-<p><img alt="" src="media/image1.png" /></p>
-<p><strong>Wireshark Icon</strong></p>
-</li>
-<li>
-<p>After Wireshark starts up, click on the top menu <strong>"File"</strong> and then <strong>"Open"</strong>. Select the following file: <strong>/home/student/Documents/SSL/ssl.pcap</strong></p>
-</li>
-</ul>
-<p>Wireshark will now display its familiar default "3-pane" layout. At the top,</p>
-<p>you will see a list of captured packets, one per line.</p>
-<p>The second pane will "explain" the currently highlighted packet.</p>
-<p>At the bottom, the third pane will display the entire packet in hexadecimal "as captured".</p>
-<p><img alt="" src="media/image2.png" /></p>
-<p><strong>Wireshark Default Display</strong></p>
-<p>The first three packets (Nos. 1--3) hold the TCP three-way handshake. They establish the TCP connection and do not indicate that we are going to use SSL.</p>
-<p>Packet 4, sent by the client (192.168.1.121) to the server (192.168.1.174), represents an "SSL Client Hello". With this packet, the client indicates that it would like to talk SSL to the server. It does provide some basic parameters that are used to negotiate the SSL connection.</p>
-<p>By inspecting the middle pane, try to identify the following parameters:</p>
-<details class="question"><summary>What SSL version is the client using?</summary><p>SSL 3.0</p>
-</details>
-<details class="question"><summary>How many cipher suites does the client support?</summary><p>12 </p>
-</details>
-<p><img alt="" src="media/image3.png" /></p>
-<p><strong>Client Hello Details</strong></p>
-<p>In packet #5, the server acknowledges receipt of the client hello.</p>
-<p>Packet 6 contains the server's response, a "Server Hello". This packet also includes the server's certificate. Just as for packet 4, identify the following parameters:</p>
-<details class="question"><summary>Which SSL version is the server accepting?</summary><p>SSL 3.0</p>
-</details>
-<details class="question"><summary>Which cipher suite did the server select?</summary><p>TLS_RSA_WITH_RC4_128_MD5</p>
-</details>
-<details class="question"><summary>Who issued the certificate?</summary><p>SANS CA</p>
-</details>
-<details class="question"><summary>What is the hostname (common name) of the server according to the certificate?</summary><p>sanshost</p>
-</details>
-<p><img alt="Server Hello Details" src="media/image4.png" /></p>
-<p><strong>Server Hello Details</strong></p>
-<p>Packet 12 is the first encrypted data packet. </p>
-<details class="question"><summary>How many bytes of encrypted data does it contain?</summary><p>434</p>
-</details>
-<p><img alt="" src="media/image5.png" /></p>
-<p><strong>Encrypted Packets</strong></p>
-<p>Next, we will try to decrypt the packets.</p>
-<p>To do so, we need to provide Wireshark with the secret key.</p>
-<ol>
-<li>Go to <strong>Edit-&gt;Preferences</strong>, then click on <strong>"Protocols"</strong> at the left-hand side of the Preferences window. Expand the list of protocols and find <strong>"TLS"</strong> (just type "TLS").</li>
-</ol>
-<p><img alt="" src="media/image6.png" /></p>
-<p><strong>SSL Configuration Dialog</strong></p>
+<h3 id="step-by-step-instructions">Step-by-Step Instructions</h3>
 <ol>
 <li>
-<p>Click on the <strong>"Edit"</strong> button to the right of "RSA keys list:" and click the "+" button in the lower left-hand corner to add a new key.</p>
+<p>Use Chrome to proceed to <a href="http://lab-3.1.sans.labs/uaauth.php"><strong>http://lab-3.1.sans.labs/uaauth.php</strong></a>. The page will indicate that you are using the wrong browser.</p>
 </li>
 <li>
-<p>You will now be able to enter the key parameters: IP Address: 192.168.1.174, Port: 443, Protocol: http. For the key file, please select <strong>"Documents"</strong> directory and then <strong>"SSL"</strong> where you can select the <strong>"/home/student/Documents/SSL/server.key"</strong>.</p>
-<p><img alt="" src="media/image7.png" /></p>
-<p><strong>SSL Key Configuration</strong></p>
-<p>Leave the "Password" field empty and click "OK" and close the "Preferences" Dialog by clicking OK. As soon as you close the dialogs, you should see decrypted traffic.</p>
-<p>Packets 12 and 14 are now decrypted.</p>
-<p><img alt="" src="media/image8.png" /></p>
+<p>Start Burp and configure Chrome to use Burp via the Proxy Switcher plugin.</p>
 </li>
 <li>
-<p>Decrypted Packets in Wireshark</p>
+<p>Check to make sure interception is on in Burp ("Proxy" -&gt;"Intercept" -&gt; "Intercept is on").</p>
 </li>
 <li>
-<p>Right-click on packet #12, then select "Follow -&gt; TLS Stream" to reconstruct the payload of the HTTP request and response.</p>
+<p>Reload the page in the browser.</p>
+</li>
+<li>
+<p>The request will now be held by Burp. Use Burp to modify the request and change the User-Agent to "CatBrowser".</p>
+</li>
+<li>
+<p>Click "Forward" in Burp. The modified request will now be sent, and Chrome should display the page with a thank you statement for using the SANS browser.</p>
 </li>
 </ol>
-<details class="question"><summary>What is the content of the payload of the response?</summary><p>HTTP Request - The page has HTML content of a message "The Secret key is: Perfect 10"</p>
-</details>
-<p><img alt="" src="media/image9.png" /></p>
-<p><strong>Decrypted SSL Stream</strong></p>
 <hr />
-<h2 id="advanced-ssl-master-key">Advanced: SSL Master Key</h2>
-<p>In this exercise, we will decrypt SSL without knowing the server's private key. After all, the client has to be able to decrypt the content without the server's keys. Instead, the symmetric key that is negotiated during the SSL handshake is needed. If Diffie-Hellman ciphers are used, then this is the only method to decrypt traffic.</p>
-<p>Chrome (and Firefox) are able to log the symmetric master keys to a file, and Wireshark is able to use this file to decrypt the content.</p>
+<h2 id="part-2-more-complex-but-still-weak-authentication">Part 2: More Complex, But Still Weak, Authentication</h2>
 <ol>
 <li>
-<p>Start Wireshark.</p>
+<p>Ensure that the Chrome is set to sending all browser traffic through Burp - the ProxySwitcher in Chome should be "red" in color.</p>
 </li>
 <li>
-<p>Select the "Loopback: lo" interface and click the blue "fin" on the far left of the toolbar. Wireshark will now start to collect data.</p>
-<p><img alt="" src="media/image10.png" /></p>
-<p><strong>Starting Packet Capture in Wireshark</strong></p>
+<p>Open <a href="http://lab-3.1.sans.labs/ua2auth.php">http://lab-3.1.sans.labs/ua2auth.php</a> in Chrome. </p>
 </li>
 <li>
-<p>Close Chrome first if it is running.</p>
+<p>Switch over to Burp and allow all traffic to pass without modification. Keep clicking on "<strong>Forward</strong>" in Burp's Proxy Intercept. This page looks just like the page we examined in the exercise above but there seems to be some subtle difference.</p>
 </li>
 <li>
-<p>Open Chrome FROM THE COMMAND LINE (not by clicking on the icon). To do this, open a terminal and then enter "google-chrome". This will apply the necessary bash environment variables to Chrome to log the master keys.</p>
-<div class="highlight"><pre><span></span><code>google-chrome
-</code></pre></div>
+<p>To inspect this previous request, in Burp, we change over to the "<strong>Target</strong>" tab.</p>
 </li>
 <li>
-<p>Visit <a href="https://wiki.sans.labs/">https://wiki.sans.labs/</a> (it is a TLS protected site)</p>
+<p>Look for the most request to "ua2auth.php" and click on it. At the bottom pane of the Burp window is the response details. Due to the window sizing, you might have to adjust the pane to let the response be visible. There is the "three dots symbol" that allow you to adjust the pane sizes. In the response section, you will see the browser cookie being set by the server. We will need to get rid of this cookie in order to get to the website.</p>
+<p><img alt="" class="zoom" src="media/img-1615789856-20210315.png" /></p>
 </li>
 <li>
-<p>Close Google Chrome.</p>
+<p>Switch back to Chrome and reload the page.</p>
 </li>
 <li>
-<p>Stop the acquisition in Wireshark by clicking on the red square.</p>
+<p>The request will now be held by Burp. Use Burp to modify the request and change the User-Agent to "DOGBrowser" and also to delete the cookie line. Make sure there are no blank lines in between the HTTP headers. </p>
 </li>
 <li>
-<p>To display only the SSL traffic, enter "tls" as a filter and click "Apply". You will recognize the now-familiar packets like "Client Hello" and "Server Hello".</p>
+<p>Click "Forward" for all the following requests. You will then see the protected page.</p>
+</li>
+</ol>
+<details class="question"><summary>What trick did the developer play to harden the page? Was it sufficient?</summary><p>The developer coded the authnetication such that when the "wrong" browser connect to the webpage, the application provides a cookie to the browser so that the application can reference the use of "wrong" browser in subsequent requests. </p>
+</details>
+<hr />
+<h2 id="part-3-brute-forcing">Part 3: Brute Forcing</h2>
+<p>This is an additional challenge exercise on authentication building on the knowledge you acquired so far. This exercise is to simulate a registration system where there is personal information being stored.</p>
+<ol>
+<li>
+<p>Configure Chrome to bypass the Burp proxy via the Proxy Switcher plugin. The icon should be black in color.</p>
 </li>
 <li>
-<p>Just like before, we enter the RSA key configuration dialog. Select Edit-&gt;Preferences from the Wireshark menu and proceed to the SSL protocol configuration. But instead of editing the RSA keys list, we just select a (Pre)-Master-Secret log filename at the bottom of the dialog.</p>
+<p>Browse to <a href="http://lab-3.1.sans.labs/donations.php">http://lab-3.1.sans.labs/donations.php</a></p>
+<p>The page has a lookup system where the user can review their own respective donation information. The objective is to acquire as much information from this system as possible.</p>
+<p>Use the following hints to help you:</p>
+<details class="hint"><summary>Hint #1</summary><p>What's the likely user-agent for "DOGBrowser"? </p>
+</details>
+<details class="hint"><summary>Hint #1</summary><p>What's the purpose of the cookie "browser"? </p>
+</details>
+<details class="hint"><summary>Hint #2</summary><p>Can you brute force the donation number? Scripting may help.</p>
+</details>
+<details class="hint"><summary>Hint #3</summary><p>You can use the "Intruder" feature in Burp to assist with brute forcing the solution.</p>
+</details>
 </li>
 <li>
-<p>Use /home/student/Documents/sslkeylogfile.log</p>
+<p>The page asks for a donation ID. Guess one (maybe 1) and click "Send". The server does not seem to respond to this. </p>
 </li>
 <li>
-<p>Just like before, the HTTPS traffic will now be decrypted. But this time, we used symmetric keys captured by the client.</p>
+<p>Let's inspect it in details. Configure Chrome to use Burp proxy via the Proxy Switcher and then reload the page.</p>
+</li>
+<li>
+<p>In the Burp intercept window, edit the request so that the User-Agent in the request is "DOGBrowser". Also eliminate the <strong>browser=wrong</strong> cookie by deleting it.</p>
+<p><img alt="" class="zoom" src="media/img-1615961787-20210317.png" /></p>
+</li>
+<li>
+<p>The system should indicatet that the ID does not exist. You still need to guess a donation ID. There are different ways to do this. We will use Burp in this example.</p>
+</li>
+<li>
+<p>Select the Proxy-&gt;HTTP history tab in Burp and right-click on the last request for donations.php</p>
+<p><img alt="" class="zoom" src="media/img-1615961937-20210317.png" /></p>
+</li>
+<li>
+<p>Send Request to Intruder</p>
+</li>
+<li>
+<p>Select "Send to Intruder".</p>
+</li>
+<li>
+<p>Click on the "Intruder" tab (it should now be highlighted in orange).</p>
+</li>
+<li>
+<p>Select the "Positions" tab.</p>
+</li>
+<li>
+<p>Click the "Clear §" button. This will clear the auto-selected payload positions.</p>
+</li>
+<li>
+<p>Highlight the digit after <strong>donation=</strong>, and click the "Add §" button. This will mark the digits for brute forcing. Also, verify the User-Agent ("DOGBrowser") and make sure the "Browser=wrong" cookie is removed.</p>
+<p><img alt="" class="zoom" src="media/img-1615962113-20210317.png" /></p>
+<p><strong>Marking Position for Intruder</strong></p>
+</li>
+<li>
+<p>Select the "Payloads" tab.</p>
+</li>
+<li>
+<p>Select "Numbers" from the Payload type dropdown (you may have to scroll down).</p>
+</li>
+<li>
+<p>Select "1" as "From", 100 as "To" , "1" as "Step" and 0 as maximum fraction digits (do not select a larger range, as the Burp Community Edition does rate-limit these requests).</p>
+</li>
+<li>
+<p>Click "Start attack" and acknowledge the restrictions of the community edition.</p>
+</li>
+<li>
+<p>You do not have to wait for the attack to finish. Look for requests with unusual values in the "Length" column and click on them. The larger responses are the ones we are interested in. Select the "Response" and "Render" tab at the bottom to review the response. For successful requests, you should see personal information displayed as part of the response. Request 6 and 17 (and many others) will show positive results. You may need to scroll up in the result window to see the early responses.</p>
+<p><img alt="" class="zoom" src="media/img-1615962378-20210317.png" /></p>
+<p><strong>Intruder Result</strong></p>
+</li>
+</ol>
+<hr />
+<h2 id="part-4-u2f-and-bypassing-2nd-factor">Part 4: U2F And Bypassing 2<sup>nd</sup> Factor</h2>
+<h3 id="no-hints_1">No Hints</h3>
+<p>Start at <a href="https://lab-3.1.sans.labs/login.php">https://lab-3.1.sans.labs/login.php</a> . Click "Reset U2F Data". Next log in and follow the instructions to setup the token. Once you setup and verified that the token is working: Try to reach the "myaccount.php" without using the token (just use the username and password).</p>
+<h3 id="step-by-step">Step by Step</h3>
+<ol>
+<li>
+<p>Open <a href="https://lab-3.1.sans.labs/login.php">https://lab-3.1.sans.labs/login.php</a> in Google Chrome.</p>
+</li>
+<li>
+<p>Click on "Reset U2F Data" (lower left corner of the page).</p>
+</li>
+<li>
+<p>Login using the username "sec522" and the password "training". You will see a popup at the top of the browser asking you to "Approve" the use of the virtual U2F token.</p>
+<p><img alt="" src="media/image4.png" /></p>
+<p><strong>U2F Dialog</strong></p>
+</li>
+<li>
+<p>Click "approve". You will now be redirected to the "My Account" page at <a href="https://lab-3.1.sans.labs/myaccount.php">https://lab-3.1.sans.labs/myaccount.php</a></p>
+</li>
+<li>
+<p>Click on "Log Out". You will be redirected to the login page.</p>
 <div class="admonition information">
 <p class="admonition-title">Information</p>
-<p>The reason why we are launching Chrome from the shell is because of the environment variable in the shell environment called "SSLKEYLOGFILE". This environment variable tells the browser to capture a copy of the SSL key into the disk drive for debugging purpose.
-This method illustrated in part 2 of the exercise is exactly how anyone can debug their traffic with a TLS website. If you ever need to get to decipher the TLS protected traffic with a website, let's say, Google or Facebook. This method allows you to decrypt the traffic from the workstation.</p>
+<p>At this point, we have registered a token with the server. There is a key pair generated and the server is storing the key information so that it can be used in the futue to authenticate the user when the user login. </p>
+<p>You may have noticed that you have to click on the token approval earlier. This is a design of Fido2 compatible tokens (whether it's the Android OS, iOS, keyfobs) they all require explicit user approval to avoid accidental and unintentional approvals.</p>
 </div>
+</li>
+<li>
+<p>Login again using username "sec522" and password "training".</p>
+</li>
+<li>
+<p>Again, you will be asked to approve the use of the U2F token</p>
+</li>
+<li>
+<p>You are now reaching the "My Account" page.</p>
+<p>So far, you learned how to use a U2F token. For a physical token, you would have to pres a button instead of clicking "Approve". Next, we will learn how to bypass the token request.</p>
+</li>
+<li>
+<p>Click "Log Out" again.</p>
+</li>
+<li>
+<p>Verify that you are actually logged out: Try to open <a href="https://lab-3.1.sans.labs/myaccount.php">https://lab-3.1.sans.labs/myaccount.php</a> in the browser. You will be redirected to the login page.</p>
+</li>
+<li>
+<p>Login using the username "sec522" and the password "training". You will be prompted for the U2F token again.</p>
+</li>
+<li>
+<p>Decline the U2F token request, deny the U2F token and cancel the browser's authentication prompt. </p>
+</li>
+<li>
+<p>Open <a href="https://lab-3.1.sans.labs/myaccount.php">https://lab-3.1.sans.labs/myaccount.php</a> in Chrome. You will be able to access the page. You just accessed the "My Account" page without using the U2F token, bypassing the two-factor authentication requirement.</p>
+<p>The application logged you in after you entered the username and password. This often happens if the U2F authentication is added later. A better solution would not associate the users user id with the session until the U2F process is complete, or set a flag with the session that the U2F authentication has not yet completed.</p>
+<details class="bug"><summary>If all else fails</summary><p>This exercise required the use of a Linux U2F token software for authentication, this is used in lieu of a real Fido2 token (Fido2 is backward compatible with U2F). If resetting of the token software is need, please run the following command in the terminal window.</p>
+<div class="codehilite"><pre><span></span><code>systemctl --user restart softu2f
+</code></pre></div>
+
+</details>
 </li>
 </ol>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
-<ul>
-<li>While TLS/SSL is known for protecting traffic between two network hosts, the traffic protected by it can be reverted to cleartext given the right circumstances. </li>
-<li>To debug your own SSL/TLS traffic, use the SSLKEYLOGFILE environment variable to enable the debugging mode in the browser so that encryption key can be captured.</li>
-</ul>
 <hr />
 <h2 id="explore-further">Explore Further</h2>
 <ul>
-<li>Visit an Internet site with SSL and see if you can capture the TLS key on your SSL session.</li>
+<li></li>
 </ul>
                 
               
@@ -1051,7 +1148,7 @@ This method illustrated in part 2 of the exercise is exactly how anyone can debu
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../3.3/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../2.4/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1060,19 +1157,19 @@ This method illustrated in part 2 of the exercise is exactly how anyone can debu
               <span class="md-footer__direction">
                 Previous
               </span>
-              3.3: OAuth and Access Control
+              2.4: Unicode and File Upload
             </div>
           </div>
         </a>
       
       
-        <a href="../4.1/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../3.2/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              4.1: WSDL Enumeration and Parameter Tampering
+              3.2: Session Fixation and Session Breaking
             </div>
           </div>
           <div class="md-footer__button md-icon">
