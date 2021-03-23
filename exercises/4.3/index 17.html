@@ -14,7 +14,7 @@
     
     
       
-        <title>4.1: WSDL Enumeration and Parameter Tampering - SEC522 Workbook</title>
+        <title>4.3: Javascript Security Testing - SEC522 Workbook</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#wsdl-enumeration-and-parameter-tampering" class="md-skip">
+        <a href="#javascript-security-testing" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              4.1: WSDL Enumeration and Parameter Tampering
+              4.3: Javascript Security Testing
             
           </span>
         </div>
@@ -591,6 +591,30 @@
             
   
   
+  
+    <li class="md-nav__item">
+      <a href="../4.1/" class="md-nav__link">
+        4.1: WSDL Enumeration and Parameter Tampering
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.2/" class="md-nav__link">
+        4.2: XMLHttpRequest
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
     
   
   
@@ -602,12 +626,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          4.1: WSDL Enumeration and Parameter Tampering
+          4.3: Javascript Security Testing
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        4.1: WSDL Enumeration and Parameter Tampering
+        4.3: Javascript Security Testing
       </a>
       
         
@@ -624,15 +648,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#no-hints" class="md-nav__link">
-    No Hints
+  <a href="#part-1-accessing-arbitrary-shopping-carts" class="md-nav__link">
+    Part 1: Accessing Arbitrary Shopping Carts
   </a>
+  
+    <nav class="md-nav" aria-label="Part 1: Accessing Arbitrary Shopping Carts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step" class="md-nav__link">
+    Step by Step
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-by-step" class="md-nav__link">
-    Step by Step
+  <a href="#part-2-analyzing-minimized-javascript-advanced" class="md-nav__link">
+    Part 2: Analyzing Minimized JavaScript (Advanced)
   </a>
   
 </li>
@@ -655,30 +692,6 @@
   
 </nav>
       
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../4.2/" class="md-nav__link">
-        4.2: XMLHttpRequest
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../4.3/" class="md-nav__link">
-        4.3: Javascript Security Testing
-      </a>
     </li>
   
 
@@ -851,86 +864,101 @@
     content: 'SANS SEC522 Workbook';
 }}
 @page :left { @bottom-left {
-  content: '4.1-' counter(page);
+  content: '4.3-' counter(page);
 }}
 @page :right { @bottom-right {
-  content: '4.1-' counter(page);
+  content: '4.3-' counter(page);
 }}
 </style>
 
-<h1 id="wsdl-enumeration-and-parameter-tampering">WSDL Enumeration and Parameter Tampering</h1>
+<h1 id="javascript-security-testing">JavaScript Security Testing</h1>
 <hr />
 <h4 id="objectives">Objectives</h4>
-<div class="codehilite"><pre><span></span><code>Estimated Time: 10 minutes
+<div class="codehilite"><pre><span></span><code>Estimated Time: 15 minutes
 </code></pre></div>
 
+<h5 id="part-1">Part 1:</h5>
 <blockquote>
-<p>In this exercise, we will experiment with the SOAP Web Services injection and request manipulation techniques. The emphasis is on the fact that Web Services can be attacked just like a standard HTTP request in the case of a normal Web Application.</p>
+<p>In this exercise, we will experiment with the built-in JavaScript debugger in Chrome and learn the basics of using this debugger for understanding the JavaScript running on a webpage.</p>
 </blockquote>
 <h4 id="requirements">Requirements</h4>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Lab VM</li>
 </ul>
-<h3 id="no-hints">No Hints</h3>
-<p>Go to <a href="http://lab-4.1.sans.labs/soapapi/?wsdl">http://lab-4.1.sans.labs/soapapi/?wsdl</a>. Inspect the WSDL (this will be a lot easier with a tool like SOAPUI. See the left "Favorite" bar). There are two requests that do not require authentication. Identify the one that is sensitive and try to retrieve data.</p>
+<hr />
+<h2 id="part-1-accessing-arbitrary-shopping-carts">Part 1: Accessing Arbitrary Shopping Carts</h2>
 <h3 id="step-by-step">Step by Step</h3>
+<p>Chrome and many other browsers include capable JavaScript debuggers. They are commonly used by security professionals to understand the inner workings of a piece of JavaScript code.</p>
+<div class="admonition note">
+<p class="admonition-title">This exercise uses Juice Shop.</p>
+</div>
 <ol>
 <li>
-<p>Go to <strong><a href="http://lab-4.1.sans.labs/soapapi/?wsdl">http://lab-4.1.sans.labs/soapapi/?wsdl</a></strong>. Your browser is a very good viewer for XML content, such as the WSDL file. With the WSDL content now on the screen, we can look for operations.</p>
+<p>Start Juice Shop. Open a terminal and type</p>
+<div class="highlight"><pre><span></span><code>juiceshop start
+</code></pre></div>
+<p>You may see an error if Juice Shop is already running.</p>
 </li>
 <li>
-<p>Look for operations listed in the WSDL file; specifically, look for the <strong>operation</strong> tag. You should be able to find it inside the <strong>portType</strong> element. If it is too hard to find the operation tag, press <strong>Ctrl-F</strong> to find the string on-screen.</p>
-<p>The operations in this WSDL are as follows: GetDayofWeek, GetAnimal, GetUser and GetUserName. So there are four operations listed by this WSDL.</p>
+<p>Go to Juice Shop in Chrome by visiting the URL <a href="http://juiceshop:3000">http://juiceshop:3000</a>.</p>
 </li>
 <li>
-<p>Open SoapUI by clicking on the SoapUI icon on the left side of the screen. This application will take a full minute to load. Once loaded, you need need to skip through the offer to collect your personal information. Also close the Endpoint Explorer that pops up.</p>
-<p><img alt="" class="zoom" src="media/img-1615449094-20210311.png" /></p>
-<p><strong>SoapUI Icon</strong></p>
+<p>Log in to Juice Shop using <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#101;&#99;&#53;&#50;&#50;&#64;&#115;&#101;&#99;&#53;&#50;&#50;&#46;&#111;&#114;&#103;">&#115;&#101;&#99;&#53;&#50;&#50;&#64;&#115;&#101;&#99;&#53;&#50;&#50;&#46;&#111;&#114;&#103;</a> and the password "training". Register a new account if the login fails (Juice Shop will reset its database whenever it is shut down).</p>
 </li>
 <li>
-<p>Create a new project by clicking on the link from the main screen or through <strong>File &gt; New SOAP Project</strong> from the menu or the hotkey combination Ctrl + N.  When the New SOAP Project dialog opens, give your new project a name (e.g., "SEC522"), and load the WSDL from the URL - 
-   <div class="highlight"><pre><span></span><code>http://lab-4.1.sans.labs/soapapi/?wsdl
-</code></pre></div></p>
-<p><img alt="" class="zoom" src="media/img-1615449176-20210311.png" /></p>
-<p><strong>Creating a New SOAP Project in SoapUI.</strong></p>
+<p>Press CTRL-SHIFT-I to open the debugger in Chrome.</p>
 </li>
 <li>
-<p>Click "OK".</p>
-<p>This will load the WSDL and on the left-hand side you will see the "Operations". The operations in this WSDL are as follows: GetAnimal, GetDayofWeek, GetUser, and GetUserName, as we gathered in an earlier part of this exercise.</p>
+<p>Select "Application" -&gt; "Session Storage" and review the session storage for "juiceshop".</p>
 </li>
 <li>
-<p>Click on the "+" to the left of "GetAnimal" and double-click on "Request 1".</p>
+<p>You will see a parameter called "bid". Change it to a different number (e.g., "3").</p>
 </li>
 <li>
-<p>In the following request window, enter an ID (e.g., 1) in the appropriate spot in the XML. SoapUI prefills the location with a "?". The API Key is <strong>catsruledogsdrool</strong>.</p>
-<p><img alt="" class="zoom" src="media/img-1615449346-20210311.png" /></p>
-<p><strong>XML Snippet for SOAP Request</strong></p>
+<p>Review the shopping cart in Juice Shop ("Your Basket") by clicking on the shopping cart at the top of the page. You will see someone else's items.</p>
+</li>
+</ol>
+<h2 id="part-2-analyzing-minimized-javascript-advanced">Part 2: Analyzing Minimized JavaScript <em>(Advanced)</em></h2>
+<ol>
+<li>
+<p>In the Chrome Debugger, select "Sources" and open the "main-es2018.js" file.</p>
 </li>
 <li>
-<p>Next, click on the little "" ("Play") icon in the upper left-hand corner of the request window.</p>
-<p>You should now see the response in parsed XML. </p>
-<p><img alt="" class="zoom" src="media/img-1615449409-20210311.png" /></p>
+<p>Click the "{}" at the lower left-hand corner of the source code window. This will make the minimized code more readable.</p>
+<p><img alt="" class="zoom" src="media/img-%21%5B%5D%28./media/image1.png%29.png" /></p>
+<p><strong>JavaScript Debugger "main-es2018.js"</strong></p>
 </li>
 <li>
-<p>XML Response in SoapUI.</p>
-<p>We have now triggered one operation; Inspect the remaining operations and find those that do not use an API key.</p>
+<p>Line 12206-12218 contains obfuscated JavaScript code meant to hide a particular endpoint. Copy the code, starting with function(), all the way to "toLowerCase()" in line 12218.</p>
+<p><img alt="" class="zoom" src="media/img-1615871276-20210316.png" /></p>
+<p><strong>Obfuscated JavaScript Code</strong></p>
 </li>
 <li>
-<p>Just like in Step 6 and 7, create requests for GetDayofWeek, GetUser and GetUserName. For "GetDayofWeek", the date uses the YYYY-MM-DD format. For example 2021-04-01 for April 1<sup>st</sup> 2021.</p>
+<p>Change to the <strong>Console</strong> tab (at the top). Type ""+ (empty quotes followed by "+") into the console and paste the code you copied right after the "+". Hit enter. You will see the deobfuscated result. (see answers at the end for the solution).</p>
+<p><img alt="" class="zoom" src="media/img-1615871434-20210316.png" /></p>
+<p><strong>Pasted Code in Console</strong></p>
+<details class="question"><summary>Solution</summary><p>The token is: "tokensale-ico-ea".</p>
+<p>The hidden URL includes a white paper for a "Juicecoin" ICO.</p>
+</details>
 </li>
 <li>
-<p>GetDayofWeek and GetUser do not require an API key. GetDayofWeek has no sensitive information. But GetUserName has. Just like in steps 6 through 8, use SoapUI to retrieve data for user # 1.</p>
+<p>Go to the hidden endpoint (<a href="http://juiceshop:3000/#/[solution">http://juiceshop:3000/#/[solution</a> from step 4]).</p>
+<div class="admonition information">
+<p class="admonition-title">Information</p>
+<p>Despite the effort from the developer to obfuscate the "key" in the JavaScript code, the code is reversible with some level of coding skills. Lessons learned - do not hide keys in obfuscation.</p>
+</div>
 </li>
 </ol>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
 <ul>
-<li>XML based Web Services are common and while they are intended to communicate from machine to machine, it is possible to use clients such as SoapUI to interact with the service and exploit any flaws that are in the system. </li>
+<li>JavaScript loaded in the browser can be reverse engineered by the user easily. A debugger comes with every browser and can be used to understand the flow of the JavaScript programs. </li>
+<li>Obfuscation using JavaScript does not safeguard the program code or the logic/data hidden by the script.</li>
 </ul>
 <hr />
 <h2 id="explore-further">Explore Further</h2>
 <ul>
-<li>Interact with public SOAP based web services such as <a href="http://www.dneonline.com/calculator.asmx">http://www.dneonline.com/calculator.asmx</a></li>
+<li>Explore other flaws within Juice Shop</li>
 </ul>
                 
               
@@ -949,7 +977,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../3.4/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../4.2/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -958,19 +986,19 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              3.4: Inspecting SSL Traffic
+              4.2: XMLHttpRequest
             </div>
           </div>
         </a>
       
       
-        <a href="../4.2/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../4.4/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              4.2: XMLHttpRequest
+              4.4: Content Security Policy
             </div>
           </div>
           <div class="md-footer__button md-icon">

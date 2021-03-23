@@ -14,7 +14,7 @@
     
     
       
-        <title>4.1: WSDL Enumeration and Parameter Tampering - SEC522 Workbook</title>
+        <title>3.1: Authentication - SEC522 Workbook</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#wsdl-enumeration-and-parameter-tampering" class="md-skip">
+        <a href="#authentication-exercise" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              4.1: WSDL Enumeration and Parameter Tampering
+              3.1: Authentication
             
           </span>
         </div>
@@ -490,12 +490,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
       
       <label class="md-nav__link" for="__nav_4">
         Day 3
@@ -511,11 +513,124 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../3.1/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          3.1: Authentication
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         3.1: Authentication
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#part-0-optional-simple-user-agent-based-authentication" class="md-nav__link">
+    Part 0: (Optional) Simple User-Agent-Based Authentication
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 0: (Optional) Simple User-Agent-Based Authentication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-hints" class="md-nav__link">
+    No Hints
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step-instructions" class="md-nav__link">
+    Step-by-Step Instructions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-more-complex-but-still-weak-authentication" class="md-nav__link">
+    Part 2: More Complex, But Still Weak, Authentication
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-brute-forcing" class="md-nav__link">
+    Part 3: Brute Forcing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-4-u2f-and-bypassing-2nd-factor" class="md-nav__link">
+    Part 4: U2F And Bypassing 2nd Factor
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 4: U2F And Bypassing 2nd Factor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-hints_1" class="md-nav__link">
+    No Hints
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step" class="md-nav__link">
+    Step by Step
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explore-further" class="md-nav__link">
+    Explore Further
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -568,14 +683,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
       
       <label class="md-nav__link" for="__nav_5">
         Day 4
@@ -591,70 +704,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          4.1: WSDL Enumeration and Parameter Tampering
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../4.1/" class="md-nav__link">
         4.1: WSDL Enumeration and Parameter Tampering
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#no-hints" class="md-nav__link">
-    No Hints
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-by-step" class="md-nav__link">
-    Step by Step
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
-    Conclusion
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#explore-further" class="md-nav__link">
-    Explore Further
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -851,86 +905,231 @@
     content: 'SANS SEC522 Workbook';
 }}
 @page :left { @bottom-left {
-  content: '4.1-' counter(page);
+  content: '3.1-' counter(page);
 }}
 @page :right { @bottom-right {
-  content: '4.1-' counter(page);
+  content: '3.1-' counter(page);
 }}
 </style>
 
-<h1 id="wsdl-enumeration-and-parameter-tampering">WSDL Enumeration and Parameter Tampering</h1>
+<h1 id="authentication-exercise">Authentication Exercise</h1>
 <hr />
 <h4 id="objectives">Objectives</h4>
-<div class="codehilite"><pre><span></span><code>Estimated Time: 10 minutes
+<div class="codehilite"><pre><span></span><code>Estimated Time: 22 minutes
 </code></pre></div>
 
+<h5 id="part-1">Part 1:</h5>
 <blockquote>
-<p>In this exercise, we will experiment with the SOAP Web Services injection and request manipulation techniques. The emphasis is on the fact that Web Services can be attacked just like a standard HTTP request in the case of a normal Web Application.</p>
+<p>In this exercise, we will experiment with different examples of weak authentication and demonstrate how to break them.</p>
+</blockquote>
+<h5 id="part-2">Part 2:</h5>
+<blockquote>
+<p>In this exercise, we will experiment with different examples of weak authentication and demonstrate how to break them.</p>
+</blockquote>
+<h5 id="part-3">Part 3:</h5>
+<blockquote>
+<p>In this exercise, you will walk through the use of U2F (Universal Two-Factor) tokens for two factor authentication. We use a software simulation of a token (softu2f). After registering and testing the token, we will experiment with a method to bypass the use of the token.</p>
 </blockquote>
 <h4 id="requirements">Requirements</h4>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Lab VM</li>
 </ul>
+<hr />
+<h2 id="part-0-optional-simple-user-agent-based-authentication">Part 0: <em>(Optional)</em> Simple User-Agent-Based Authentication</h2>
 <h3 id="no-hints">No Hints</h3>
-<p>Go to <a href="http://lab-4.1.sans.labs/soapapi/?wsdl">http://lab-4.1.sans.labs/soapapi/?wsdl</a>. Inspect the WSDL (this will be a lot easier with a tool like SOAPUI. See the left "Favorite" bar). There are two requests that do not require authentication. Identify the one that is sensitive and try to retrieve data.</p>
+<h3 id="step-by-step-instructions">Step-by-Step Instructions</h3>
+<ol>
+<li>
+<p>Use Chrome to proceed to <a href="http://lab-3.1.sans.labs/uaauth.php"><strong>http://lab-3.1.sans.labs/uaauth.php</strong></a>. The page will indicate that you are using the wrong browser.</p>
+</li>
+<li>
+<p>Start Burp and configure Chrome to use Burp via the Proxy Switcher plugin.</p>
+</li>
+<li>
+<p>Check to make sure interception is on in Burp ("Proxy" -&gt;"Intercept" -&gt; "Intercept is on").</p>
+</li>
+<li>
+<p>Reload the page in the browser.</p>
+</li>
+<li>
+<p>The request will now be held by Burp. Use Burp to modify the request and change the User-Agent to "CatBrowser".</p>
+</li>
+<li>
+<p>Click "Forward" in Burp. The modified request will now be sent, and Chrome should display the page with a thank you statement for using the SANS browser.</p>
+</li>
+</ol>
+<hr />
+<h2 id="part-2-more-complex-but-still-weak-authentication">Part 2: More Complex, But Still Weak, Authentication</h2>
+<ol>
+<li>
+<p>Ensure that the Chrome is set to sending all browser traffic through Burp - the ProxySwitcher in Chome should be "red" in color.</p>
+</li>
+<li>
+<p>Open <a href="http://lab-3.1.sans.labs/ua2auth.php">http://lab-3.1.sans.labs/ua2auth.php</a> in Chrome. </p>
+</li>
+<li>
+<p>Switch over to Burp and allow all traffic to pass without modification. Keep clicking on "<strong>Forward</strong>" in Burp's Proxy Intercept. This page looks just like the page we examined in the exercise above but there seems to be some subtle difference.</p>
+</li>
+<li>
+<p>To inspect this previous request, in Burp, we change over to the "<strong>Target</strong>" tab.</p>
+</li>
+<li>
+<p>Look for the most request to "ua2auth.php" and click on it. At the bottom pane of the Burp window is the response details. Due to the window sizing, you might have to adjust the pane to let the response be visible. There is the "three dots symbol" that allow you to adjust the pane sizes. In the response section, you will see the browser cookie being set by the server. We will need to get rid of this cookie in order to get to the website.</p>
+<p><img alt="" class="zoom" src="media/img-1615789856-20210315.png" /></p>
+</li>
+<li>
+<p>Switch back to Chrome and reload the page.</p>
+</li>
+<li>
+<p>The request will now be held by Burp. Use Burp to modify the request and change the User-Agent to "DOGBrowser" and also to delete the cookie line. Make sure there are no blank lines in between the HTTP headers. </p>
+</li>
+<li>
+<p>Click "Forward" for all the following requests. You will then see the protected page.</p>
+</li>
+</ol>
+<details class="question"><summary>What trick did the developer play to harden the page? Was it sufficient?</summary><p>The developer coded the authnetication such that when the "wrong" browser connect to the webpage, the application provides a cookie to the browser so that the application can reference the use of "wrong" browser in subsequent requests. </p>
+</details>
+<hr />
+<h2 id="part-3-brute-forcing">Part 3: Brute Forcing</h2>
+<p>This is an additional challenge exercise on authentication building on the knowledge you acquired so far. This exercise is to simulate a registration system where there is personal information being stored.</p>
+<ol>
+<li>
+<p>Configure Chrome to bypass the Burp proxy via the Proxy Switcher plugin. The icon should be black in color.</p>
+</li>
+<li>
+<p>Browse to <a href="http://lab-3.1.sans.labs/donations.php">http://lab-3.1.sans.labs/donations.php</a></p>
+<p>The page has a lookup system where the user can review their own respective donation information. The objective is to acquire as much information from this system as possible.</p>
+<p>Use the following hints to help you:</p>
+<details class="hint"><summary>Hint #1</summary><p>What's the likely user-agent for "DOGBrowser"? </p>
+</details>
+<details class="hint"><summary>Hint #1</summary><p>What's the purpose of the cookie "browser"? </p>
+</details>
+<details class="hint"><summary>Hint #2</summary><p>Can you brute force the donation number? Scripting may help.</p>
+</details>
+<details class="hint"><summary>Hint #3</summary><p>You can use the "Intruder" feature in Burp to assist with brute forcing the solution.</p>
+</details>
+</li>
+<li>
+<p>The page asks for a donation ID. Guess one (maybe 1) and click "Send". The server does not seem to respond to this. </p>
+</li>
+<li>
+<p>Let's inspect it in details. Configure Chrome to use Burp proxy via the Proxy Switcher and then reload the page.</p>
+</li>
+<li>
+<p>In the Burp intercept window, edit the request so that the User-Agent in the request is "DOGBrowser". Also eliminate the <strong>browser=wrong</strong> cookie by deleting it.</p>
+<p><img alt="" class="zoom" src="media/img-1615961787-20210317.png" /></p>
+</li>
+<li>
+<p>The system should indicatet that the ID does not exist. You still need to guess a donation ID. There are different ways to do this. We will use Burp in this example.</p>
+</li>
+<li>
+<p>Select the Proxy-&gt;HTTP history tab in Burp and right-click on the last request for donations.php</p>
+<p><img alt="" class="zoom" src="media/img-1615961937-20210317.png" /></p>
+</li>
+<li>
+<p>Send Request to Intruder</p>
+</li>
+<li>
+<p>Select "Send to Intruder".</p>
+</li>
+<li>
+<p>Click on the "Intruder" tab (it should now be highlighted in orange).</p>
+</li>
+<li>
+<p>Select the "Positions" tab.</p>
+</li>
+<li>
+<p>Click the "Clear §" button. This will clear the auto-selected payload positions.</p>
+</li>
+<li>
+<p>Highlight the digit after <strong>donation=</strong>, and click the "Add §" button. This will mark the digits for brute forcing. Also, verify the User-Agent ("DOGBrowser") and make sure the "Browser=wrong" cookie is removed.</p>
+<p><img alt="" class="zoom" src="media/img-1615962113-20210317.png" /></p>
+<p><strong>Marking Position for Intruder</strong></p>
+</li>
+<li>
+<p>Select the "Payloads" tab.</p>
+</li>
+<li>
+<p>Select "Numbers" from the Payload type dropdown (you may have to scroll down).</p>
+</li>
+<li>
+<p>Select "1" as "From", 100 as "To" , "1" as "Step" and 0 as maximum fraction digits (do not select a larger range, as the Burp Community Edition does rate-limit these requests).</p>
+</li>
+<li>
+<p>Click "Start attack" and acknowledge the restrictions of the community edition.</p>
+</li>
+<li>
+<p>You do not have to wait for the attack to finish. Look for requests with unusual values in the "Length" column and click on them. The larger responses are the ones we are interested in. Select the "Response" and "Render" tab at the bottom to review the response. For successful requests, you should see personal information displayed as part of the response. Request 6 and 17 (and many others) will show positive results. You may need to scroll up in the result window to see the early responses.</p>
+<p><img alt="" class="zoom" src="media/img-1615962378-20210317.png" /></p>
+<p><strong>Intruder Result</strong></p>
+</li>
+</ol>
+<hr />
+<h2 id="part-4-u2f-and-bypassing-2nd-factor">Part 4: U2F And Bypassing 2<sup>nd</sup> Factor</h2>
+<h3 id="no-hints_1">No Hints</h3>
+<p>Start at <a href="https://lab-3.1.sans.labs/login.php">https://lab-3.1.sans.labs/login.php</a> . Click "Reset U2F Data". Next log in and follow the instructions to setup the token. Once you setup and verified that the token is working: Try to reach the "myaccount.php" without using the token (just use the username and password).</p>
 <h3 id="step-by-step">Step by Step</h3>
 <ol>
 <li>
-<p>Go to <strong><a href="http://lab-4.1.sans.labs/soapapi/?wsdl">http://lab-4.1.sans.labs/soapapi/?wsdl</a></strong>. Your browser is a very good viewer for XML content, such as the WSDL file. With the WSDL content now on the screen, we can look for operations.</p>
+<p>Open <a href="https://lab-3.1.sans.labs/login.php">https://lab-3.1.sans.labs/login.php</a> in Google Chrome.</p>
 </li>
 <li>
-<p>Look for operations listed in the WSDL file; specifically, look for the <strong>operation</strong> tag. You should be able to find it inside the <strong>portType</strong> element. If it is too hard to find the operation tag, press <strong>Ctrl-F</strong> to find the string on-screen.</p>
-<p>The operations in this WSDL are as follows: GetDayofWeek, GetAnimal, GetUser and GetUserName. So there are four operations listed by this WSDL.</p>
+<p>Click on "Reset U2F Data" (lower left corner of the page).</p>
 </li>
 <li>
-<p>Open SoapUI by clicking on the SoapUI icon on the left side of the screen. This application will take a full minute to load. Once loaded, you need need to skip through the offer to collect your personal information. Also close the Endpoint Explorer that pops up.</p>
-<p><img alt="" class="zoom" src="media/img-1615449094-20210311.png" /></p>
-<p><strong>SoapUI Icon</strong></p>
+<p>Login using the username "sec522" and the password "training". You will see a popup at the top of the browser asking you to "Approve" the use of the virtual U2F token.</p>
+<p><img alt="" src="media/image4.png" /></p>
+<p><strong>U2F Dialog</strong></p>
 </li>
 <li>
-<p>Create a new project by clicking on the link from the main screen or through <strong>File &gt; New SOAP Project</strong> from the menu or the hotkey combination Ctrl + N.  When the New SOAP Project dialog opens, give your new project a name (e.g., "SEC522"), and load the WSDL from the URL - 
-   <div class="highlight"><pre><span></span><code>http://lab-4.1.sans.labs/soapapi/?wsdl
-</code></pre></div></p>
-<p><img alt="" class="zoom" src="media/img-1615449176-20210311.png" /></p>
-<p><strong>Creating a New SOAP Project in SoapUI.</strong></p>
+<p>Click "approve". You will now be redirected to the "My Account" page at <a href="https://lab-3.1.sans.labs/myaccount.php">https://lab-3.1.sans.labs/myaccount.php</a></p>
 </li>
 <li>
-<p>Click "OK".</p>
-<p>This will load the WSDL and on the left-hand side you will see the "Operations". The operations in this WSDL are as follows: GetAnimal, GetDayofWeek, GetUser, and GetUserName, as we gathered in an earlier part of this exercise.</p>
+<p>Click on "Log Out". You will be redirected to the login page.</p>
+<div class="admonition information">
+<p class="admonition-title">Information</p>
+<p>At this point, we have registered a token with the server. There is a key pair generated and the server is storing the key information so that it can be used in the futue to authenticate the user when the user login. </p>
+<p>You may have noticed that you have to click on the token approval earlier. This is a design of Fido2 compatible tokens (whether it's the Android OS, iOS, keyfobs) they all require explicit user approval to avoid accidental and unintentional approvals.</p>
+</div>
 </li>
 <li>
-<p>Click on the "+" to the left of "GetAnimal" and double-click on "Request 1".</p>
+<p>Login again using username "sec522" and password "training".</p>
 </li>
 <li>
-<p>In the following request window, enter an ID (e.g., 1) in the appropriate spot in the XML. SoapUI prefills the location with a "?". The API Key is <strong>catsruledogsdrool</strong>.</p>
-<p><img alt="" class="zoom" src="media/img-1615449346-20210311.png" /></p>
-<p><strong>XML Snippet for SOAP Request</strong></p>
+<p>Again, you will be asked to approve the use of the U2F token</p>
 </li>
 <li>
-<p>Next, click on the little "" ("Play") icon in the upper left-hand corner of the request window.</p>
-<p>You should now see the response in parsed XML. </p>
-<p><img alt="" class="zoom" src="media/img-1615449409-20210311.png" /></p>
+<p>You are now reaching the "My Account" page.</p>
+<p>So far, you learned how to use a U2F token. For a physical token, you would have to pres a button instead of clicking "Approve". Next, we will learn how to bypass the token request.</p>
 </li>
 <li>
-<p>XML Response in SoapUI.</p>
-<p>We have now triggered one operation; Inspect the remaining operations and find those that do not use an API key.</p>
+<p>Click "Log Out" again.</p>
 </li>
 <li>
-<p>Just like in Step 6 and 7, create requests for GetDayofWeek, GetUser and GetUserName. For "GetDayofWeek", the date uses the YYYY-MM-DD format. For example 2021-04-01 for April 1<sup>st</sup> 2021.</p>
+<p>Verify that you are actually logged out: Try to open <a href="https://lab-3.1.sans.labs/myaccount.php">https://lab-3.1.sans.labs/myaccount.php</a> in the browser. You will be redirected to the login page.</p>
 </li>
 <li>
-<p>GetDayofWeek and GetUser do not require an API key. GetDayofWeek has no sensitive information. But GetUserName has. Just like in steps 6 through 8, use SoapUI to retrieve data for user # 1.</p>
+<p>Login using the username "sec522" and the password "training". You will be prompted for the U2F token again.</p>
+</li>
+<li>
+<p>Decline the U2F token request, deny the U2F token and cancel the browser's authentication prompt. </p>
+</li>
+<li>
+<p>Open <a href="https://lab-3.1.sans.labs/myaccount.php">https://lab-3.1.sans.labs/myaccount.php</a> in Chrome. You will be able to access the page. You just accessed the "My Account" page without using the U2F token, bypassing the two-factor authentication requirement.</p>
+<p>The application logged you in after you entered the username and password. This often happens if the U2F authentication is added later. A better solution would not associate the users user id with the session until the U2F process is complete, or set a flag with the session that the U2F authentication has not yet completed.</p>
+<details class="bug"><summary>If all else fails</summary><p>This exercise required the use of a Linux U2F token software for authentication, this is used in lieu of a real Fido2 token (Fido2 is backward compatible with U2F). If resetting of the token software is need, please run the following command in the terminal window.</p>
+<div class="codehilite"><pre><span></span><code>systemctl --user restart softu2f
+</code></pre></div>
+
+</details>
 </li>
 </ol>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
-<ul>
-<li>XML based Web Services are common and while they are intended to communicate from machine to machine, it is possible to use clients such as SoapUI to interact with the service and exploit any flaws that are in the system. </li>
-</ul>
 <hr />
 <h2 id="explore-further">Explore Further</h2>
 <ul>
-<li>Interact with public SOAP based web services such as <a href="http://www.dneonline.com/calculator.asmx">http://www.dneonline.com/calculator.asmx</a></li>
+<li></li>
 </ul>
                 
               
@@ -949,7 +1148,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../3.4/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../2.4/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -958,19 +1157,19 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              3.4: Inspecting SSL Traffic
+              2.4: Unicode and File Upload
             </div>
           </div>
         </a>
       
       
-        <a href="../4.2/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../3.2/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              4.2: XMLHttpRequest
+              3.2: Session Fixation and Session Breaking
             </div>
           </div>
           <div class="md-footer__button md-icon">

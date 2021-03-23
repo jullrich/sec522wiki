@@ -14,7 +14,7 @@
     
     
       
-        <title>4.1: WSDL Enumeration and Parameter Tampering - SEC522 Workbook</title>
+        <title>4.4: Content Security Policy - SEC522 Workbook</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#wsdl-enumeration-and-parameter-tampering" class="md-skip">
+        <a href="#content-security-policy" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              4.1: WSDL Enumeration and Parameter Tampering
+              4.4: Content Security Policy
             
           </span>
         </div>
@@ -591,70 +591,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          4.1: WSDL Enumeration and Parameter Tampering
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../4.1/" class="md-nav__link">
         4.1: WSDL Enumeration and Parameter Tampering
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#no-hints" class="md-nav__link">
-    No Hints
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-by-step" class="md-nav__link">
-    Step by Step
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
-    Conclusion
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#explore-further" class="md-nav__link">
-    Explore Further
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -686,11 +627,70 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../4.4/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          4.4: Content Security Policy
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         4.4: Content Security Policy
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#no-hints" class="md-nav__link">
+    No Hints
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-by-step-instructions" class="md-nav__link">
+    Step-by-Step Instructions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explore-further" class="md-nav__link">
+    Explore Further
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -851,86 +851,78 @@
     content: 'SANS SEC522 Workbook';
 }}
 @page :left { @bottom-left {
-  content: '4.1-' counter(page);
+  content: '4.4-' counter(page);
 }}
 @page :right { @bottom-right {
-  content: '4.1-' counter(page);
+  content: '4.4-' counter(page);
 }}
 </style>
 
-<h1 id="wsdl-enumeration-and-parameter-tampering">WSDL Enumeration and Parameter Tampering</h1>
+<h1 id="content-security-policy">Content Security Policy</h1>
 <hr />
 <h4 id="objectives">Objectives</h4>
-<div class="codehilite"><pre><span></span><code>Estimated Time: 10 minutes
+<div class="codehilite"><pre><span></span><code>Estimated Time: 15 minutes
 </code></pre></div>
 
 <blockquote>
-<p>In this exercise, we will experiment with the SOAP Web Services injection and request manipulation techniques. The emphasis is on the fact that Web Services can be attacked just like a standard HTTP request in the case of a normal Web Application.</p>
+<p>Content Security Policy (CSP) is a great tool to limit JavaScript that an attacker may inject into a page. But if the CSP is too tight, then JavaScript code that was added by the developer may not run. In this exercise, you will learn how to debug CSPs.</p>
 </blockquote>
+<h5 id="part-2">Part 2:</h5>
+<blockquote></blockquote>
 <h4 id="requirements">Requirements</h4>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Lab VM</li>
 </ul>
+<hr />
 <h3 id="no-hints">No Hints</h3>
-<p>Go to <a href="http://lab-4.1.sans.labs/soapapi/?wsdl">http://lab-4.1.sans.labs/soapapi/?wsdl</a>. Inspect the WSDL (this will be a lot easier with a tool like SOAPUI. See the left "Favorite" bar). There are two requests that do not require authentication. Identify the one that is sensitive and try to retrieve data.</p>
-<h3 id="step-by-step">Step by Step</h3>
+<p>Proceed to <a href="http://lab-4.4.sans.labs/">http://lab-4.4.sans.labs/</a>. The exercise will guide you through three parts. In each part, a CSP is shown that is too strict to display an image on the site. Modify the CSP to fix it. You can modify the CSP right on the page, and relevant CSP errors are displayed as well. You can also use the web console to learn more about the CSP issue.</p>
+<h3 id="step-by-step-instructions">Step-by-Step Instructions</h3>
 <ol>
 <li>
-<p>Go to <strong><a href="http://lab-4.1.sans.labs/soapapi/?wsdl">http://lab-4.1.sans.labs/soapapi/?wsdl</a></strong>. Your browser is a very good viewer for XML content, such as the WSDL file. With the WSDL content now on the screen, we can look for operations.</p>
+<p>Open <strong><a href="http://lab-4.4.sans.labs/">http://lab-4.4.sans.labs/</a></strong> in your browser.</p>
 </li>
 <li>
-<p>Look for operations listed in the WSDL file; specifically, look for the <strong>operation</strong> tag. You should be able to find it inside the <strong>portType</strong> element. If it is too hard to find the operation tag, press <strong>Ctrl-F</strong> to find the string on-screen.</p>
-<p>The operations in this WSDL are as follows: GetDayofWeek, GetAnimal, GetUser and GetUserName. So there are four operations listed by this WSDL.</p>
+<p>On that page, you will find a link to <a href="http://lab-4.4.sans.labs/csperror.html">http://lab-4.4.sans.labs/csperror.html</a> which is the log file. Open that link in a new window. </p>
 </li>
 <li>
-<p>Open SoapUI by clicking on the SoapUI icon on the left side of the screen. This application will take a full minute to load. Once loaded, you need need to skip through the offer to collect your personal information. Also close the Endpoint Explorer that pops up.</p>
-<p><img alt="" class="zoom" src="media/img-1615449094-20210311.png" /></p>
-<p><strong>SoapUI Icon</strong></p>
+<p>Click on the "CSP Error 1" link.</p>
 </li>
 <li>
-<p>Create a new project by clicking on the link from the main screen or through <strong>File &gt; New SOAP Project</strong> from the menu or the hotkey combination Ctrl + N.  When the New SOAP Project dialog opens, give your new project a name (e.g., "SEC522"), and load the WSDL from the URL - 
-   <div class="highlight"><pre><span></span><code>http://lab-4.1.sans.labs/soapapi/?wsdl
-</code></pre></div></p>
-<p><img alt="" class="zoom" src="media/img-1615449176-20210311.png" /></p>
-<p><strong>Creating a New SOAP Project in SoapUI.</strong></p>
+<p>The page is missing an image. The "Last Error" section will show the last CSP error. You may have to reload the page if the section is empty. You can also refresh the error log page to get the latest errors, but that page may be difficult to read.</p>
 </li>
 <li>
-<p>Click "OK".</p>
-<p>This will load the WSDL and on the left-hand side you will see the "Operations". The operations in this WSDL are as follows: GetAnimal, GetDayofWeek, GetUser, and GetUserName, as we gathered in an earlier part of this exercise.</p>
+<p>Inspect the blocked-uri section in the last error. </p>
+<details class="question"><summary>Does it match the img-src?</summary><p>img-src lab-1.1.sans.labs</p>
+</details>
 </li>
 <li>
-<p>Click on the "+" to the left of "GetAnimal" and double-click on "Request 1".</p>
+<p>Edit the CSP to reflect the correct img-src.</p>
 </li>
 <li>
-<p>In the following request window, enter an ID (e.g., 1) in the appropriate spot in the XML. SoapUI prefills the location with a "?". The API Key is <strong>catsruledogsdrool</strong>.</p>
-<p><img alt="" class="zoom" src="media/img-1615449346-20210311.png" /></p>
-<p><strong>XML Snippet for SOAP Request</strong></p>
+<p>Click "Update".</p>
 </li>
 <li>
-<p>Next, click on the little "" ("Play") icon in the upper left-hand corner of the request window.</p>
-<p>You should now see the response in parsed XML. </p>
-<p><img alt="" class="zoom" src="media/img-1615449409-20210311.png" /></p>
+<p>If your CSP is correct, then the image of a cat will appear, as well as a link to the next exercise.</p>
 </li>
 <li>
-<p>XML Response in SoapUI.</p>
-<p>We have now triggered one operation; Inspect the remaining operations and find those that do not use an API key.</p>
-</li>
-<li>
-<p>Just like in Step 6 and 7, create requests for GetDayofWeek, GetUser and GetUserName. For "GetDayofWeek", the date uses the YYYY-MM-DD format. For example 2021-04-01 for April 1<sup>st</sup> 2021.</p>
-</li>
-<li>
-<p>GetDayofWeek and GetUser do not require an API key. GetDayofWeek has no sensitive information. But GetUserName has. Just like in steps 6 through 8, use SoapUI to retrieve data for user # 1.</p>
+<p>For the next two pages, follow the same procedures as you did between Step 4 and Step 8.</p>
+<details class="question"><summary>Solutions</summary><p>CSP1: img-src lab-4.4.sans.labs</p>
+<p>CSP2: script-src 'self' 'unsafe-inline'</p>
+<p>CSP3: script-src 'unsafe-inline' 'unsafe-eval'</p>
+</details>
 </li>
 </ol>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
 <ul>
-<li>XML based Web Services are common and while they are intended to communicate from machine to machine, it is possible to use clients such as SoapUI to interact with the service and exploit any flaws that are in the system. </li>
+<li>CSP is effective at protecting the web page against multiple types of attacks.</li>
+<li>CSP Requires some careful configuration, otherwise, it can backfire and render portions of the site not working.</li>
+<li>Using the CSP logging function (report-uri) is a must for troubleshooting</li>
 </ul>
 <hr />
 <h2 id="explore-further">Explore Further</h2>
 <ul>
-<li>Interact with public SOAP based web services such as <a href="http://www.dneonline.com/calculator.asmx">http://www.dneonline.com/calculator.asmx</a></li>
+<li>Can you think of the scenarios where CSP can be bypassed?</li>
 </ul>
                 
               
@@ -949,7 +941,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../3.4/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../4.3/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -958,19 +950,19 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              3.4: Inspecting SSL Traffic
+              4.3: Javascript Security Testing
             </div>
           </div>
         </a>
       
       
-        <a href="../4.2/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../5.1/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              4.2: XMLHttpRequest
+              5.1: DNS Rebinding
             </div>
           </div>
           <div class="md-footer__button md-icon">
