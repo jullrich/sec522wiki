@@ -14,7 +14,7 @@
     
     
       
-        <title>4.3: Javascript Security Testing - SEC522 Workbook</title>
+        <title>1.4: SSRF and Credential Stealing - SEC522 Workbook</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#javascript-security-testing" class="md-skip">
+        <a href="#ssrf-and-credentials-stealing-services" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              4.3: Javascript Security Testing
+              1.4: SSRF and Credential Stealing
             
           </span>
         </div>
@@ -334,12 +334,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       <label class="md-nav__link" for="__nav_2">
         Day 1
@@ -391,11 +393,70 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../1.4/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          1.4: SSRF and Credential Stealing
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         1.4: SSRF and Credential Stealing
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#no-hints" class="md-nav__link">
+    No Hints
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-by-step" class="md-nav__link">
+    Step by Step
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explore-further" class="md-nav__link">
+    Explore Further
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -568,14 +629,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
       
       <label class="md-nav__link" for="__nav_5">
         Day 4
@@ -615,83 +674,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          4.3: Javascript Security Testing
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../4.3/" class="md-nav__link">
         4.3: Javascript Security Testing
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#part-1-accessing-arbitrary-shopping-carts" class="md-nav__link">
-    Part 1: Accessing Arbitrary Shopping Carts
-  </a>
-  
-    <nav class="md-nav" aria-label="Part 1: Accessing Arbitrary Shopping Carts">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#step-by-step" class="md-nav__link">
-    Step by Step
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#part-2-analyzing-minimized-javascript-advanced" class="md-nav__link">
-    Part 2: Analyzing Minimized JavaScript (Advanced)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
-    Conclusion
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#explore-further" class="md-nav__link">
-    Explore Further
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -864,101 +851,64 @@
     content: 'SANS SEC522 Workbook';
 }}
 @page :left { @bottom-left {
-  content: '4.3-' counter(page);
+  content: '1.4-' counter(page);
 }}
 @page :right { @bottom-right {
-  content: '4.3-' counter(page);
+  content: '1.4-' counter(page);
 }}
 </style>
 
-<h1 id="javascript-security-testing">JavaScript Security Testing</h1>
+<h1 id="ssrf-and-credentials-stealing-services">SSRF and Credentials Stealing Services</h1>
 <hr />
 <h4 id="objectives">Objectives</h4>
-<div class="codehilite"><pre><span></span><code>Estimated Time: 15 minutes
+<div class="codehilite"><pre><span></span><code>Estimated Time: 10 minutes
 </code></pre></div>
 
-<h5 id="part-1">Part 1:</h5>
 <blockquote>
-<p>In this exercise, we will experiment with the built-in JavaScript debugger in Chrome and learn the basics of using this debugger for understanding the JavaScript running on a webpage.</p>
+<p>This exercise simulates a cloud compromise due to SSRF vulnerability. You will first exploit the SSRF vulnerability, and then use the retrieved data to access a cloud storage service. You should understand how SSRF can be used to expose internal services and how that information can be used for additional compromise.</p>
 </blockquote>
 <h4 id="requirements">Requirements</h4>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Lab VM</li>
 </ul>
 <hr />
-<h2 id="part-1-accessing-arbitrary-shopping-carts">Part 1: Accessing Arbitrary Shopping Carts</h2>
+<h3 id="no-hints">No Hints</h3>
+<p>Start at <a href="http://lab-1.4.sans.labs/ssrf.php">http://lab-1.4.sans.labs/ssrf.php</a>. The page will provide additional hints.</p>
 <h3 id="step-by-step">Step by Step</h3>
-<p>Chrome and many other browsers include capable JavaScript debuggers. They are commonly used by security professionals to understand the inner workings of a piece of JavaScript code.</p>
-<div class="admonition note">
-<p class="admonition-title">This exercise uses Juice Shop.</p>
-</div>
 <ol>
 <li>
-<p>Start Juice Shop. Open a terminal and type</p>
-<div class="highlight"><pre><span></span><code>juiceshop start
-</code></pre></div>
-<p>You may see an error if Juice Shop is already running.</p>
+<p>Open <a href="http://lab-1.4.sans.labs/ssrf.php">http://lab-1.4.sans.labs/ssrf.php</a> in a browser. The page will allow you to add RSS feed URLs. The server will retrieve the feed without validating the source.</p>
 </li>
 <li>
-<p>Go to Juice Shop in Chrome by visiting the URL <a href="http://juiceshop:3000">http://juiceshop:3000</a>.</p>
+<p>To test it, enter <a href="http://lab-1.4.sans.labs/">http://lab-1.4.sans.labs/</a> as a URL in the Feed URL. You will see the HTML content of the page being retrieved and displayed.</p>
 </li>
 <li>
-<p>Log in to Juice Shop using <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#101;&#99;&#53;&#50;&#50;&#64;&#115;&#101;&#99;&#53;&#50;&#50;&#46;&#111;&#114;&#103;">&#115;&#101;&#99;&#53;&#50;&#50;&#64;&#115;&#101;&#99;&#53;&#50;&#50;&#46;&#111;&#114;&#103;</a> and the password "training". Register a new account if the login fails (Juice Shop will reset its database whenever it is shut down).</p>
+<p>There is a meta-data server at 169.254.169.254. Retrieve its index by using <a href="http://169.254.169.254">http://169.254.169.254</a> as "Feed URL".</p>
 </li>
 <li>
-<p>Press CTRL-SHIFT-I to open the debugger in Chrome.</p>
+<p>Explore the content of the service by retrieving the content of directories (e.g. <a href="http://169.254.169.254/latest">http://169.254.169.254/latest</a> ).</p>
 </li>
 <li>
-<p>Select "Application" -&gt; "Session Storage" and review the session storage for "juiceshop".</p>
+<p>The server uses a special local URL for meta data like authentication tokens. Try this URL (important: do not forget the slash in the end).</p>
+<p><a href="http://169.254.169.254/latest/meta-data/iam/security-credentials/cg-ec2-role-cgidmxg5qsmw9b/">http://169.254.169.254/latest/meta-data/iam/security-credentials/cg-ec2-role-cgidmxg5qsmw9b/</a></p>
 </li>
 <li>
-<p>You will see a parameter called "bid". Change it to a different number (e.g., "3").</p>
+<p>Copy the entire response (including the enclosing { } ) to a file called "/home/sec522/.sawssecret". You can do this either with the terminal or with Visual Studio Code.</p>
 </li>
 <li>
-<p>Review the shopping cart in Juice Shop ("Your Basket") by clicking on the shopping cart at the top of the page. You will see someone else's items.</p>
-</li>
-</ol>
-<h2 id="part-2-analyzing-minimized-javascript-advanced">Part 2: Analyzing Minimized JavaScript <em>(Advanced)</em></h2>
-<ol>
-<li>
-<p>In the Chrome Debugger, select "Sources" and open the "main-es2018.js" file.</p>
-</li>
-<li>
-<p>Click the "{}" at the lower left-hand corner of the source code window. This will make the minimized code more readable.</p>
-<p><img alt="" class="zoom" src="media/img-%21%5B%5D%28./media/image1.png%29.png" /></p>
-<p><strong>JavaScript Debugger "main-es2018.js"</strong></p>
-</li>
-<li>
-<p>Line 12206-12218 contains obfuscated JavaScript code meant to hide a particular endpoint. Copy the code, starting with function(), all the way to "toLowerCase()" in line 12218.</p>
-<p><img alt="" class="zoom" src="media/img-1615871276-20210316.png" /></p>
-<p><strong>Obfuscated JavaScript Code</strong></p>
-</li>
-<li>
-<p>Change to the <strong>Console</strong> tab (at the top). Type ""+ (empty quotes followed by "+") into the console and paste the code you copied right after the "+". Hit enter. You will see the deobfuscated result. (see answers at the end for the solution).</p>
-<p><img alt="" class="zoom" src="media/img-1615871434-20210316.png" /></p>
-<p><strong>Pasted Code in Console</strong></p>
-<details class="question"><summary>Solution</summary><p>The token is: "tokensale-ico-ea".</p>
-<p>The hidden URL includes a white paper for a "Juicecoin" ICO.</p>
-</details>
-</li>
-<li>
-<p>Go to the hidden endpoint (<a href="http://juiceshop:3000/#/[solution">http://juiceshop:3000/#/[solution</a> from step 4]).</p>
-<div class="admonition information">
-<p class="admonition-title">Information</p>
-<p>Despite the effort from the developer to obfuscate the "key" in the JavaScript code, the code is reversible with some level of coding skills. Lessons learned - do not hide keys in obfuscation.</p>
-</div>
+<p>Open a terminal and run "s-aws" to gain access to the storage repository. "s-aws" reads credentials from the /home/sec522/.sawssecret file.</p>
 </li>
 </ol>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
 <ul>
-<li>JavaScript loaded in the browser can be reverse engineered by the user easily. A debugger comes with every browser and can be used to understand the flow of the JavaScript programs. </li>
-<li>Obfuscation using JavaScript does not safeguard the program code or the logic/data hidden by the script.</li>
+<li>SSRF can lead to the web server becoming a relay point for sending a HTTP request on behalf of the client. Since the request is sent by the Web server, it could access resources that are only accessible to the Web server such as DMZ or internal network resources.</li>
+<li>In public Cloud environment, specifically the Infrastructure as a Service Computing, the orign of the HTTP request matters a great deal. Through SSRF attacks, it is possible to acquire credentials for the Virtual Machine that the web application is running on and then pivot over to attack/access other Cloud based components.</li>
 </ul>
 <hr />
 <h2 id="explore-further">Explore Further</h2>
 <ul>
-<li>Explore other flaws within Juice Shop</li>
+<li></li>
 </ul>
                 
               
@@ -977,7 +927,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../4.2/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../1.3/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -986,19 +936,19 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              4.2: XMLHttpRequest
+              1.3: Isolation
             </div>
           </div>
         </a>
       
       
-        <a href="../4.4/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../2.1/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              4.4: Content Security Policy
+              2.1: SQL Injection
             </div>
           </div>
           <div class="md-footer__button md-icon">

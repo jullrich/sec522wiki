@@ -14,7 +14,7 @@
     
     
       
-        <title>4.3: Javascript Security Testing - SEC522 Workbook</title>
+        <title>4.4: Content Security Policy - SEC522 Workbook</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#javascript-security-testing" class="md-skip">
+        <a href="#content-security-policy" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              4.3: Javascript Security Testing
+              4.4: Content Security Policy
             
           </span>
         </div>
@@ -615,6 +615,18 @@
             
   
   
+  
+    <li class="md-nav__item">
+      <a href="../4.3/" class="md-nav__link">
+        4.3: Javascript Security Testing
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
     
   
   
@@ -626,12 +638,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          4.3: Javascript Security Testing
+          4.4: Content Security Policy
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        4.3: Javascript Security Testing
+        4.4: Content Security Policy
       </a>
       
         
@@ -648,28 +660,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#part-1-accessing-arbitrary-shopping-carts" class="md-nav__link">
-    Part 1: Accessing Arbitrary Shopping Carts
+  <a href="#no-hints" class="md-nav__link">
+    No Hints
   </a>
-  
-    <nav class="md-nav" aria-label="Part 1: Accessing Arbitrary Shopping Carts">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#step-by-step" class="md-nav__link">
-    Step by Step
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#part-2-analyzing-minimized-javascript-advanced" class="md-nav__link">
-    Part 2: Analyzing Minimized JavaScript (Advanced)
+  <a href="#step-by-step-instructions" class="md-nav__link">
+    Step-by-Step Instructions
   </a>
   
 </li>
@@ -692,18 +691,6 @@
   
 </nav>
       
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../4.4/" class="md-nav__link">
-        4.4: Content Security Policy
-      </a>
     </li>
   
 
@@ -864,101 +851,73 @@
     content: 'SANS SEC522 Workbook';
 }}
 @page :left { @bottom-left {
-  content: '4.3-' counter(page);
+  content: '4.4-' counter(page);
 }}
 @page :right { @bottom-right {
-  content: '4.3-' counter(page);
+  content: '4.4-' counter(page);
 }}
 </style>
 
-<h1 id="javascript-security-testing">JavaScript Security Testing</h1>
+<h1 id="content-security-policy">Content Security Policy</h1>
 <hr />
 <h4 id="objectives">Objectives</h4>
 <div class="codehilite"><pre><span></span><code>Estimated Time: 15 minutes
 </code></pre></div>
 
-<h5 id="part-1">Part 1:</h5>
 <blockquote>
-<p>In this exercise, we will experiment with the built-in JavaScript debugger in Chrome and learn the basics of using this debugger for understanding the JavaScript running on a webpage.</p>
+<p>Content Security Policy (CSP) is a great tool to limit JavaScript that an attacker may inject into a page. But if the CSP is too tight, then JavaScript code that was added by the developer may not run. In this exercise, you will learn how to debug CSPs.</p>
 </blockquote>
+<h5 id="part-2">Part 2:</h5>
+<blockquote></blockquote>
 <h4 id="requirements">Requirements</h4>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Lab VM</li>
 </ul>
 <hr />
-<h2 id="part-1-accessing-arbitrary-shopping-carts">Part 1: Accessing Arbitrary Shopping Carts</h2>
-<h3 id="step-by-step">Step by Step</h3>
-<p>Chrome and many other browsers include capable JavaScript debuggers. They are commonly used by security professionals to understand the inner workings of a piece of JavaScript code.</p>
-<div class="admonition note">
-<p class="admonition-title">This exercise uses Juice Shop.</p>
-</div>
+<h3 id="no-hints">No Hints</h3>
+<p>Proceed to <a href="http://lab-4.4.sans.labs/">http://lab-4.4.sans.labs/</a>. The exercise will guide you through three parts. In each part, a CSP is shown that is too strict to display an image on the site. Modify the CSP to fix it. You can modify the CSP right on the page, and relevant CSP errors are displayed as well. You can also use the web console to learn more about the CSP issue.</p>
+<h3 id="step-by-step-instructions">Step-by-Step Instructions</h3>
 <ol>
 <li>
-<p>Start Juice Shop. Open a terminal and type</p>
-<div class="highlight"><pre><span></span><code>juiceshop start
-</code></pre></div>
-<p>You may see an error if Juice Shop is already running.</p>
+<p>Open <strong><a href="http://lab-4.4.sans.labs/">http://lab-4.4.sans.labs/</a></strong> in your browser.</p>
 </li>
 <li>
-<p>Go to Juice Shop in Chrome by visiting the URL <a href="http://juiceshop:3000">http://juiceshop:3000</a>.</p>
+<p>On that page, you will find a link to <a href="http://lab-4.4.sans.labs/">http://lab-4.4.sans.labs/</a>. Open that link in a new window. At first, you will get a 404 error if no CSP error log exists yet.</p>
 </li>
 <li>
-<p>Log in to Juice Shop using <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#101;&#99;&#53;&#50;&#50;&#64;&#115;&#101;&#99;&#53;&#50;&#50;&#46;&#111;&#114;&#103;">&#115;&#101;&#99;&#53;&#50;&#50;&#64;&#115;&#101;&#99;&#53;&#50;&#50;&#46;&#111;&#114;&#103;</a> and the password "training". Register a new account if the login fails (Juice Shop will reset its database whenever it is shut down).</p>
+<p>Click on the "CSP Error 1" link.</p>
 </li>
 <li>
-<p>Press CTRL-SHIFT-I to open the debugger in Chrome.</p>
+<p>The page is missing an image. The "Last Error" section will show the last CSP error. You may have to reload the page if the section is empty. You can also refresh the error log page to get the latest errors, but that page may be difficult to read.</p>
 </li>
 <li>
-<p>Select "Application" -&gt; "Session Storage" and review the session storage for "juiceshop".</p>
-</li>
-<li>
-<p>You will see a parameter called "bid". Change it to a different number (e.g., "3").</p>
-</li>
-<li>
-<p>Review the shopping cart in Juice Shop ("Your Basket") by clicking on the shopping cart at the top of the page. You will see someone else's items.</p>
-</li>
-</ol>
-<h2 id="part-2-analyzing-minimized-javascript-advanced">Part 2: Analyzing Minimized JavaScript <em>(Advanced)</em></h2>
-<ol>
-<li>
-<p>In the Chrome Debugger, select "Sources" and open the "main-es2018.js" file.</p>
-</li>
-<li>
-<p>Click the "{}" at the lower left-hand corner of the source code window. This will make the minimized code more readable.</p>
-<p><img alt="" class="zoom" src="media/img-%21%5B%5D%28./media/image1.png%29.png" /></p>
-<p><strong>JavaScript Debugger "main-es2018.js"</strong></p>
-</li>
-<li>
-<p>Line 12206-12218 contains obfuscated JavaScript code meant to hide a particular endpoint. Copy the code, starting with function(), all the way to "toLowerCase()" in line 12218.</p>
-<p><img alt="" class="zoom" src="media/img-1615871276-20210316.png" /></p>
-<p><strong>Obfuscated JavaScript Code</strong></p>
-</li>
-<li>
-<p>Change to the <strong>Console</strong> tab (at the top). Type ""+ (empty quotes followed by "+") into the console and paste the code you copied right after the "+". Hit enter. You will see the deobfuscated result. (see answers at the end for the solution).</p>
-<p><img alt="" class="zoom" src="media/img-1615871434-20210316.png" /></p>
-<p><strong>Pasted Code in Console</strong></p>
-<details class="question"><summary>Solution</summary><p>The token is: "tokensale-ico-ea".</p>
-<p>The hidden URL includes a white paper for a "Juicecoin" ICO.</p>
+<p>Inspect the blocked-uri section in the last error. </p>
+<details class="question"><summary>Does it match the img-src?</summary><p>img-src lab-1.1.sans.labs</p>
 </details>
 </li>
 <li>
-<p>Go to the hidden endpoint (<a href="http://juiceshop:3000/#/[solution">http://juiceshop:3000/#/[solution</a> from step 4]).</p>
-<div class="admonition information">
-<p class="admonition-title">Information</p>
-<p>Despite the effort from the developer to obfuscate the "key" in the JavaScript code, the code is reversible with some level of coding skills. Lessons learned - do not hide keys in obfuscation.</p>
-</div>
+<p>Edit the CSP to reflect the correct img-src.</p>
+</li>
+<li>
+<p>Click "Update".</p>
+</li>
+<li>
+<p>If your CSP is correct, then the image of a cat will appear, as well as a link to the next exercise.</p>
+</li>
+<li>
+<p>For the next two pages, follow the same procedures as you did between Step 4 and Step 8.</p>
+<details class="question"><summary>Solutions</summary><p>CSP1: img-src lab-4.4.sans.labs</p>
+<p>CSP2: script-src 'self' 'unsafe-inline'</p>
+<p>CSP3: script-src 'unsafe-inline' 'unsafe-eval'</p>
+</details>
 </li>
 </ol>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
-<ul>
-<li>JavaScript loaded in the browser can be reverse engineered by the user easily. A debugger comes with every browser and can be used to understand the flow of the JavaScript programs. </li>
-<li>Obfuscation using JavaScript does not safeguard the program code or the logic/data hidden by the script.</li>
-</ul>
 <hr />
 <h2 id="explore-further">Explore Further</h2>
 <ul>
-<li>Explore other flaws within Juice Shop</li>
+<li></li>
 </ul>
                 
               
@@ -977,7 +936,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../4.2/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../4.3/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -986,19 +945,19 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              4.2: XMLHttpRequest
+              4.3: Javascript Security Testing
             </div>
           </div>
         </a>
       
       
-        <a href="../4.4/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../5.1/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              4.4: Content Security Policy
+              5.1: DNS Rebinding
             </div>
           </div>
           <div class="md-footer__button md-icon">

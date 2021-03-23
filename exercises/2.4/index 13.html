@@ -14,7 +14,7 @@
     
     
       
-        <title>4.3: Javascript Security Testing - SEC522 Workbook</title>
+        <title>2.4: Unicode and File Upload - SEC522 Workbook</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#javascript-security-testing" class="md-skip">
+        <a href="#unicode-and-file-upload" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              4.3: Javascript Security Testing
+              2.4: Unicode and File Upload
             
           </span>
         </div>
@@ -412,12 +412,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       <label class="md-nav__link" for="__nav_3">
         Day 2
@@ -469,11 +471,110 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../2.4/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          2.4: Unicode and File Upload
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         2.4: Unicode and File Upload
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-international-domain-names" class="md-nav__link">
+    Part 1: International Domain Names
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 1: International Domain Names">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step" class="md-nav__link">
+    Step by Step
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-xss-via-inappropriate-character-set-conversion" class="md-nav__link">
+    Part 2: XSS via Inappropriate Character Set Conversion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-file-upload" class="md-nav__link">
+    Part 3: File Upload
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 3: File Upload">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-hints" class="md-nav__link">
+    No Hints
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step_1" class="md-nav__link">
+    Step by Step
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explore-further" class="md-nav__link">
+    Explore Further
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -568,14 +669,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
       
       <label class="md-nav__link" for="__nav_5">
         Day 4
@@ -615,83 +714,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          4.3: Javascript Security Testing
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../4.3/" class="md-nav__link">
         4.3: Javascript Security Testing
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#part-1-accessing-arbitrary-shopping-carts" class="md-nav__link">
-    Part 1: Accessing Arbitrary Shopping Carts
-  </a>
-  
-    <nav class="md-nav" aria-label="Part 1: Accessing Arbitrary Shopping Carts">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#step-by-step" class="md-nav__link">
-    Step by Step
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#part-2-analyzing-minimized-javascript-advanced" class="md-nav__link">
-    Part 2: Analyzing Minimized JavaScript (Advanced)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
-    Conclusion
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#explore-further" class="md-nav__link">
-    Explore Further
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -864,101 +891,170 @@
     content: 'SANS SEC522 Workbook';
 }}
 @page :left { @bottom-left {
-  content: '4.3-' counter(page);
+  content: '2.4-' counter(page);
 }}
 @page :right { @bottom-right {
-  content: '4.3-' counter(page);
+  content: '2.4-' counter(page);
 }}
 </style>
 
-<h1 id="javascript-security-testing">JavaScript Security Testing</h1>
+<h1 id="unicode-and-file-upload">Unicode and File Upload</h1>
 <hr />
 <h4 id="objectives">Objectives</h4>
-<div class="codehilite"><pre><span></span><code>Estimated Time: 15 minutes
+<div class="codehilite"><pre><span></span><code>Estimated Time: 10 minutes
 </code></pre></div>
 
 <h5 id="part-1">Part 1:</h5>
 <blockquote>
-<p>In this exercise, we will experiment with the built-in JavaScript debugger in Chrome and learn the basics of using this debugger for understanding the JavaScript running on a webpage.</p>
+<p>In this exercise, you will experience some of the visual problems associated with international domain names.</p>
+</blockquote>
+<h5 id="part-2">Part 2:</h5>
+<blockquote>
+<p>In this exercise, we will explore the XSS that can be induced with injecting unexpected character sets input.</p>
+</blockquote>
+<h5 id="part-3">Part 3:</h5>
+<blockquote>
+<p>In this exercise, we will evaluate the threats of handling file upload from users.</p>
 </blockquote>
 <h4 id="requirements">Requirements</h4>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Lab VM</li>
 </ul>
 <hr />
-<h2 id="part-1-accessing-arbitrary-shopping-carts">Part 1: Accessing Arbitrary Shopping Carts</h2>
+<h2 id="part-1-international-domain-names">Part 1: International Domain Names</h2>
 <h3 id="step-by-step">Step by Step</h3>
-<p>Chrome and many other browsers include capable JavaScript debuggers. They are commonly used by security professionals to understand the inner workings of a piece of JavaScript code.</p>
-<div class="admonition note">
-<p class="admonition-title">This exercise uses Juice Shop.</p>
-</div>
 <ol>
 <li>
-<p>Start Juice Shop. Open a terminal and type</p>
-<div class="highlight"><pre><span></span><code>juiceshop start
-</code></pre></div>
-<p>You may see an error if Juice Shop is already running.</p>
+<p>Browse to <a href="http://lab-2.4.sans.labs/unicode.html">http://lab-2.4.sans.labs/unicode.html</a>.</p>
 </li>
 <li>
-<p>Go to Juice Shop in Chrome by visiting the URL <a href="http://juiceshop:3000">http://juiceshop:3000</a>.</p>
+<p>The task is to determine which of the domain names listed on this page do not contain any international characters. Can you visually determine that?</p>
 </li>
 <li>
-<p>Log in to Juice Shop using <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#101;&#99;&#53;&#50;&#50;&#64;&#115;&#101;&#99;&#53;&#50;&#50;&#46;&#111;&#114;&#103;">&#115;&#101;&#99;&#53;&#50;&#50;&#64;&#115;&#101;&#99;&#53;&#50;&#50;&#46;&#111;&#114;&#103;</a> and the password "training". Register a new account if the login fails (Juice Shop will reset its database whenever it is shut down).</p>
+<p>To test your answer, open the <a href="http://lab-2.4.sans.labs/unicode-convert/convert.htm">Unicode Converter</a> in a new browser tab.</p>
+<p><img alt="" class="zoom" src="media/img-1615014117-20210306.png" /></p>
 </li>
 <li>
-<p>Press CTRL-SHIFT-I to open the debugger in Chrome.</p>
+<p>Copy/paste each of the domain names into the converter (CTRL-C: copy, CTRL-V: paste).</p>
 </li>
 <li>
-<p>Select "Application" -&gt; "Session Storage" and review the session storage for "juiceshop".</p>
-</li>
-<li>
-<p>You will see a parameter called "bid". Change it to a different number (e.g., "3").</p>
-</li>
-<li>
-<p>Review the shopping cart in Juice Shop ("Your Basket") by clicking on the shopping cart at the top of the page. You will see someone else's items.</p>
+<p>Paste the domain name into the green "Mixed Input" field. The output of the "Unicode U+hex" field usually gives away any non-ASCII characters.</p>
+<p>The "IDN Converter", linked from the question page, can also help identify Unicode domain names.</p>
+<details class="question"><summary>Solutions</summary><p>You can find the solutions at this location <a href="http://lab-2.4.sans.labs/unicode-solutions.htm">http://lab-2.4.sans.labs/unicode-solutions.htm</a></p>
+</details>
 </li>
 </ol>
-<h2 id="part-2-analyzing-minimized-javascript-advanced">Part 2: Analyzing Minimized JavaScript <em>(Advanced)</em></h2>
+<hr />
+<h2 id="part-2-xss-via-inappropriate-character-set-conversion">Part 2: XSS via Inappropriate Character Set Conversion</h2>
 <ol>
 <li>
-<p>In the Chrome Debugger, select "Sources" and open the "main-es2018.js" file.</p>
+<p>Go to <a href="http://lab-2.4.sans.labs/unicode.txt">http://lab-2.4.sans.labs/unicode.txt</a>. This file is UTF-16 encoded and displays some "Chinese" characters. The characters themselves don't make any sense at this point.</p>
 </li>
 <li>
-<p>Click the "{}" at the lower left-hand corner of the source code window. This will make the minimized code more readable.</p>
-<p><img alt="" class="zoom" src="media/img-%21%5B%5D%28./media/image1.png%29.png" /></p>
-<p><strong>JavaScript Debugger "main-es2018.js"</strong></p>
+<p>Go to <a href="http://lab-2.4.sans.labs/unicodexss.php">http://lab-2.4.sans.labs/unicodexss.php</a>. This page will load the file we looked at above and display it using a UTF-8 character set. In this context, you will see an "XSS" popup.</p>
 </li>
 <li>
-<p>Line 12206-12218 contains obfuscated JavaScript code meant to hide a particular endpoint. Copy the code, starting with function(), all the way to "toLowerCase()" in line 12218.</p>
-<p><img alt="" class="zoom" src="media/img-1615871276-20210316.png" /></p>
-<p><strong>Obfuscated JavaScript Code</strong></p>
+<p>Let's check the source code for unicodexss.php by going to <a href="http://lab-2.4.sans.labs/unicodexss.phps">http://lab-2.4.sans.labs/unicodexss.phps</a>. You will see that the file calls file_get_contents (line 9), a simple function that will read a file and send its contents to the browser.</p>
 </li>
 <li>
-<p>Change to the <strong>Console</strong> tab (at the top). Type ""+ (empty quotes followed by "+") into the console and paste the code you copied right after the "+". Hit enter. You will see the deobfuscated result. (see answers at the end for the solution).</p>
-<p><img alt="" class="zoom" src="media/img-1615871434-20210316.png" /></p>
-<p><strong>Pasted Code in Console</strong></p>
-<details class="question"><summary>Solution</summary><p>The token is: "tokensale-ico-ea".</p>
-<p>The hidden URL includes a white paper for a "Juicecoin" ICO.</p>
+<p>Open a terminal and run:</p>
+<div class="highlight"><pre><span></span><code>cat /etc/docker/compose/2.4/web/html/unicode.txt
+</code></pre></div>
+</li>
+</ol>
+<p>This will display the "script" in the OS context, it's not showing the Chinese characters we saw earlier.</p>
+<hr />
+<h2 id="part-3-file-upload">Part 3: File Upload</h2>
+<h3 id="no-hints">No Hints</h3>
+<p>The upload function of the TWiki system is our test subject in this exercise. Browse to <strong><a href="http://lab-2.4.sans.labs/fileupload.php">http://lab-2.4.sans.labs/fileupload.php</a></strong> and experiment with the upload function, then browse through the "Documents" directory on the desktop and see how you can leverage the upload feature to compromise the upload system.</p>
+<h3 id="step-by-step_1">Step by Step</h3>
+<ol>
+<li>
+<p>With Chrome, browse to <a href="http://lab-2.4.sans.labs/fileupload.php">http://lab-2.4.sans.labs/fileupload.php</a></p>
+<p>In this system, users can upload an image or document.</p>
+</li>
+<li>
+<p>Click the button labeled "Choose File", then navigate to <strong>Documents</strong> (left tab) then select the <strong>hackercat.php.1</strong> file. Click on <strong>open</strong>.</p>
+<p><img alt="" class="zoom" src="media/img-1615666680-20210313.png" /></p>
+</li>
+<li>
+<p>You should now see the local file selected. Click on <strong>"Upload File"</strong> at the to the right side of the file selection.</p>
+<p>The file is then uploaded to the server and is subsequently displayed on the main page as part of the attachment to the page (new files at the top).</p>
+</li>
+<li>
+<p>Click the link for "hackercat.php.1".</p>
+<details class="question"><summary>What is being displayed on-screen?</summary><p>At the top of the page, there are some corrupted characters and then followed by the PHP environment details. To understand the content displayed on the screen and what is going on behind the scene, we need to review the file we uploaded to the server.</p>
 </details>
 </li>
 <li>
-<p>Go to the hidden endpoint (<a href="http://juiceshop:3000/#/[solution">http://juiceshop:3000/#/[solution</a> from step 4]).</p>
-<div class="admonition information">
-<p class="admonition-title">Information</p>
-<p>Despite the effort from the developer to obfuscate the "key" in the JavaScript code, the code is reversible with some level of coding skills. Lessons learned - do not hide keys in obfuscation.</p>
-</div>
+<p>Use Text Editor or Visual Studio Code (see icon on the left favorite bar) to open the <strong>hackercat.php.1</strong> file. It is located within the <strong>Documents</strong> directory.</p>
 </li>
 </ol>
+<p><br></p>
+<p>The editor may complain that there are invalid characters in the file. You can click on <strong>"Edit Anyway"</strong> to ignore the warning. Within the first three lines of the file, you should find "&lt;?php phpinfo() ?&gt;"; it is a single PHP programming command. phpinfo(); is a call to a function that displays the status of the current PHP environment to the user. What we have seen in the browser when we click on the uploaded file is actually the result of this command executing. Although the rest of the content in the file are binary characters forming a gif graphic file, the PHP interpreter picks out the content it understands and attempts to execute the command.</p>
+<p>We have successfully uploaded the file and executed the commands within the file. Execution of scripting command is a serious compromise of server security.</p>
+<p>In most modern Linux distributions, PHP is often bundled and enabled by default. Any file with a ".php" extension is executed by PHP interpreter.</p>
+<p>In the /etc/docker/compose/2.4/vhost.conf configuration file, which controls both the Apache and the PHP instance, there is the following configuration line:</p>
+<div class="highlight"><pre><span></span><code>&lt;FilesMatch &quot;.+.ph(ar|p|tml)&quot;&gt;
+    SetHandler application/x-httpd-php
+&lt;/FilesMatch&gt;
+</code></pre></div>
+<p>This tells the Apache server to pass any file that <strong>contains</strong> .php to the PHP interpreter for execution. This means not just .php but also .php.1 or .php.bak as well. This Apache configuration is the default in mutiple Linux distributions.</p>
+<p>The upload code in TWiki had anticipated someone might upload PHP code, so numberous filters are implemented. You can inspect them directly at <strong><a href="http://lab-2.4.sans.labs/fileupload.phps">http://lab-2.4.sans.labs/fileupload.phps</a></strong> and the code are below as well</p>
+<div class="highlight"><pre><span></span><code><span class="x">   # retrieve file parameters</span>
+
+<span class="x">   $sTmpFile=$_FILES[&#39;file&#39;][&#39;tmp_name&#39;];</span>
+<span class="x">   $sFileName=$_FILES[&#39;file&#39;][&#39;name&#39;];</span>
+<span class="x">   $nFileSize=$_FILES[&#39;file&#39;][&#39;size&#39;];</span>
+<span class="x">   $aCheck=getimagesize($sTmpFile);</span>
+
+<span class="x">   # check if it is an image</span>
+
+<span class="x">   if ( $aCheck !== false ) {</span>
+<span class="x">       $sMessage .= &#39;File is an image.&lt;br/&gt;&#39;;</span>
+<span class="x">   } else {</span>
+<span class="x">       $sError .= &#39;File is not an image.&lt;br/&gt;&#39;;</span>
+<span class="x">   }</span>
+
+<span class="x">   # check file size</span>
+
+<span class="x">   if ( file_exists(&quot;images/&quot;.$sFileName) ) {</span>
+<span class="x">       $sError .= &#39;File already exists.&lt;br/&gt;&#39;;</span>
+<span class="x">   }</span>
+
+<span class="x">   # check if the extension is .php</span>
+
+<span class="hll"><span class="x">   if ( preg_match(&#39;/\.php$/&#39;,$sFileName) ) {</span>
+</span><span class="x">      $sError .= &#39;Filename has the wrong extension.&lt;br/&gt;&#39;;</span>
+<span class="x">   }</span>
+
+<span class="x">   # check mime type</span>
+
+<span class="x">   if ( mime_content_type($sTmpFile)===&#39;image/gif&#39; ||</span>
+<span class="x">        mime_content_type($sTmpFile)===&#39;image/png&#39; ||</span>
+<span class="x">        mime_content_type($sTmpFile)===&#39;image/jpg&#39; ||</span>
+<span class="x">        mime_content_type($sTmpFile)===&#39;image/jpeg&#39; ) {</span>
+<span class="x">      $sMessage.=&#39;File type: &#39;.mime_content_type($sTmpFile);</span>
+<span class="x">   } else {</span>
+<span class="x">      $sError.=&#39;Wrong File type: &#39;.mime_content_type($sTmpFile);</span>
+<span class="x">   }</span>
+</code></pre></div>
+<p>This only blocks extensions like ".php" but not .php.1. Double extensions like ".php.1" can be used to bypass this filter.</p>
+<p>How can this type of vulnerability be avoided? There are multiple mitigation avenues.</p>
+<p>As soon as the server receives the file, it can change the file extension to make sure it cannot be executed. For example, changing everything with a ".txt" extension will make any script interpreted as text format.</p>
+<p>If the file does not need to be downloaded by the user in normal operation, do not store the file in web directories. Hide the file on the server in a directory outside of the web-accessible files. If the files must be downloaded by other users, ensure there are no execution rights on the directory or the file itself. Various platforms have different ways to do this. Essentially, the file or the whole directory storing uploaded content should be denied any execution of code.</p>
+<p>In the case of double extension files, an Apache config may be used to disallow any use of double extension ".php.xxx" files.</p>
+<div class="highlight"><pre><span></span><code>&lt;FilesMatch &quot;.php.$&quot;&gt;
+    Order deny, allow
+    Allow from all
+&lt;/FilesMatch&gt;
+</code></pre></div>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
-<ul>
-<li>JavaScript loaded in the browser can be reverse engineered by the user easily. A debugger comes with every browser and can be used to understand the flow of the JavaScript programs. </li>
-<li>Obfuscation using JavaScript does not safeguard the program code or the logic/data hidden by the script.</li>
-</ul>
 <hr />
 <h2 id="explore-further">Explore Further</h2>
 <ul>
-<li>Explore other flaws within Juice Shop</li>
+<li></li>
 </ul>
                 
               
@@ -977,7 +1073,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../4.2/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../2.3/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -986,19 +1082,19 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              4.2: XMLHttpRequest
+              2.3: Cross-Site Scripting
             </div>
           </div>
         </a>
       
       
-        <a href="../4.4/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../3.1/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              4.4: Content Security Policy
+              3.1: Authentication
             </div>
           </div>
           <div class="md-footer__button md-icon">

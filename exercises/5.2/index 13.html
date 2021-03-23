@@ -14,7 +14,7 @@
     
     
       
-        <title>4.3: Javascript Security Testing - SEC522 Workbook</title>
+        <title>5.2: Clickjacking - SEC522 Workbook</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#javascript-security-testing" class="md-skip">
+        <a href="#clickjacking" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              4.3: Javascript Security Testing
+              5.2: Clickjacking
             
           </span>
         </div>
@@ -568,14 +568,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
       
       <label class="md-nav__link" for="__nav_5">
         Day 4
@@ -615,83 +613,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          4.3: Javascript Security Testing
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../4.3/" class="md-nav__link">
         4.3: Javascript Security Testing
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#part-1-accessing-arbitrary-shopping-carts" class="md-nav__link">
-    Part 1: Accessing Arbitrary Shopping Carts
-  </a>
-  
-    <nav class="md-nav" aria-label="Part 1: Accessing Arbitrary Shopping Carts">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#step-by-step" class="md-nav__link">
-    Step by Step
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#part-2-analyzing-minimized-javascript-advanced" class="md-nav__link">
-    Part 2: Analyzing Minimized JavaScript (Advanced)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
-    Conclusion
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#explore-further" class="md-nav__link">
-    Explore Further
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -720,12 +646,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
       
       <label class="md-nav__link" for="__nav_6">
         Day 5
@@ -753,11 +681,90 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../5.2/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          5.2: Clickjacking
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         5.2: Clickjacking
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-clickjacking-attack" class="md-nav__link">
+    Part 1: Clickjacking Attack
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 1: Clickjacking Attack">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-hints" class="md-nav__link">
+    No Hints
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step" class="md-nav__link">
+    Step by Step
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-defending-against-clickjacking-with-csp" class="md-nav__link">
+    Part 2: Defending Against ClickJacking with CSP
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explore-further" class="md-nav__link">
+    Explore Further
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -864,101 +871,106 @@
     content: 'SANS SEC522 Workbook';
 }}
 @page :left { @bottom-left {
-  content: '4.3-' counter(page);
+  content: '5.2-' counter(page);
 }}
 @page :right { @bottom-right {
-  content: '4.3-' counter(page);
+  content: '5.2-' counter(page);
 }}
 </style>
 
-<h1 id="javascript-security-testing">JavaScript Security Testing</h1>
+<h1 id="clickjacking">Clickjacking</h1>
 <hr />
 <h4 id="objectives">Objectives</h4>
-<div class="codehilite"><pre><span></span><code>Estimated Time: 15 minutes
+<div class="codehilite"><pre><span></span><code>Estimated Time: 10 minutes
 </code></pre></div>
 
 <h5 id="part-1">Part 1:</h5>
 <blockquote>
-<p>In this exercise, we will experiment with the built-in JavaScript debugger in Chrome and learn the basics of using this debugger for understanding the JavaScript running on a webpage.</p>
+<p>In this exercise, you will experiment with a clickjacking exploit.</p>
+</blockquote>
+<h5 id="part-2">Part 2:</h5>
+<blockquote>
+<p>In this exercise, you will experiment with the defensive controls against the Clickjacking attack</p>
 </blockquote>
 <h4 id="requirements">Requirements</h4>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Lab VM</li>
 </ul>
 <hr />
-<h2 id="part-1-accessing-arbitrary-shopping-carts">Part 1: Accessing Arbitrary Shopping Carts</h2>
-<h3 id="step-by-step">Step by Step</h3>
-<p>Chrome and many other browsers include capable JavaScript debuggers. They are commonly used by security professionals to understand the inner workings of a piece of JavaScript code.</p>
-<div class="admonition note">
-<p class="admonition-title">This exercise uses Juice Shop.</p>
+<h2 id="part-1-clickjacking-attack">Part 1: Clickjacking Attack</h2>
+<h3 id="no-hints">No Hints</h3>
+<p>The page <a href="http://www.evilexample.com/clickjacking/index.htm">http://www.evilexample.com/clickjacking/index.htm</a> implements a clickjacking exploit. Explore how it works. </p>
+<div class="admonition question">
+<p class="admonition-title">Which page is being 'clickjacked'?</p>
 </div>
+<h3 id="step-by-step">Step by Step</h3>
 <ol>
 <li>
-<p>Start Juice Shop. Open a terminal and type</p>
-<div class="highlight"><pre><span></span><code>juiceshop start
-</code></pre></div>
-<p>You may see an error if Juice Shop is already running.</p>
+<p>Browse to <strong><a href="http://lab-5.2.sans.labs/vote.php">http://lab-5.2.sans.labs/vote.php</a></strong>.</p>
 </li>
 <li>
-<p>Go to Juice Shop in Chrome by visiting the URL <a href="http://juiceshop:3000">http://juiceshop:3000</a>.</p>
+<p>This is a very simple page where user can click on either red or blue box for voting and the vote is tallied. </p>
 </li>
 <li>
-<p>Log in to Juice Shop using <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#101;&#99;&#53;&#50;&#50;&#64;&#115;&#101;&#99;&#53;&#50;&#50;&#46;&#111;&#114;&#103;">&#115;&#101;&#99;&#53;&#50;&#50;&#64;&#115;&#101;&#99;&#53;&#50;&#50;&#46;&#111;&#114;&#103;</a> and the password "training". Register a new account if the login fails (Juice Shop will reset its database whenever it is shut down).</p>
+<p>Click the <strong>"Dogs are the best!"</strong> and <strong>"Cats are the best!"</strong> button a few times each to observe how this works.</p>
 </li>
 <li>
-<p>Press CTRL-SHIFT-I to open the debugger in Chrome.</p>
+<p>Browse to <strong><a href="http://lab-5.2.sans.labs/clickjack.php">http://lab-5.2.sans.labs/clickjack.php</a></strong>. (Clickjacked vote on the upper right hand corner) This is an evil page that exploits clickjacking vulnerability.</p>
 </li>
 <li>
-<p>Select "Application" -&gt; "Session Storage" and review the session storage for "juiceshop".</p>
+<p>Try to click on the <strong>"Dogs are the best"</strong>. Although not much seems to be happening to the user, actions have already been taken in the background.</p>
 </li>
 <li>
-<p>You will see a parameter called "bid". Change it to a different number (e.g., "3").</p>
+<p>Click on the <strong>"click here to reveal/hide iframe"</strong> link on the page.</p>
 </li>
 <li>
-<p>Review the shopping cart in Juice Shop ("Your Basket") by clicking on the shopping cart at the top of the page. You will see someone else's items.</p>
+<p>A translucent page is shown on the page, partially overlapping the existing web page. The translucent page contains content from <strong><a href="http://lab-5.2.sans.labs/vote.php">http://lab-5.2.sans.labs/vote.php</a></strong>. This is exactly how clickjacking happens. The translucent portion of the page was "on top" of the visible page; when the user clicks on the page, the mouse clicks are sent to the page on top. The user effectively clicks on something that he/she cannot see, and the mouse click is redirected to the other page.</p>
 </li>
 </ol>
-<h2 id="part-2-analyzing-minimized-javascript-advanced">Part 2: Analyzing Minimized JavaScript <em>(Advanced)</em></h2>
+<p><br></p>
+<p>Let's inspect the effect of the clickjacking attack.</p>
+<ol>
+<li>Browse to <strong><a href="http://lab-5.2.sans.labs/vote.php">http://lab-5.2.sans.labs/vote.php</a></strong>. Check the counter. Why is the count so high?</li>
+</ol>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>In clickjacking, the attacker sets up pages that look harmless and entices the victim to click on some parts of the page. Hidden from the view of the victim, there is an invisible layer of another webpage which is receiving all the mouse clicks</p>
+</div>
+<hr />
+<h2 id="part-2-defending-against-clickjacking-with-csp">Part 2: Defending Against ClickJacking with CSP</h2>
+<p>Clickjacking defense essentially relies on headers from Website to let the browser know whether the content can be inside an IFrame. Being loaded in IFrame essentially means that a malicious party can ClickJack the website.</p>
 <ol>
 <li>
-<p>In the Chrome Debugger, select "Sources" and open the "main-es2018.js" file.</p>
+<p>Browse to <a href="http://lab-5.2.sans.labs/clickjackcsp.php">http://lab-5.2.sans.labs/clickjackcsp.php</a>. This page is very similar to the attack page earlier in that it loads a victim page so that mouse click from the user will land on the content inside the IFrame.</p>
 </li>
 <li>
-<p>Click the "{}" at the lower left-hand corner of the source code window. This will make the minimized code more readable.</p>
-<p><img alt="" class="zoom" src="media/img-%21%5B%5D%28./media/image1.png%29.png" /></p>
-<p><strong>JavaScript Debugger "main-es2018.js"</strong></p>
+<p>Click on the <strong>"click here to reveal/hide iframe"</strong> link on the page. You will notice that the victim's content are not loaded this time, instead a broken symbol is shown for the translucent content. See if you can determine what is causing this attack to fail?</p>
 </li>
 <li>
-<p>Line 12206-12218 contains obfuscated JavaScript code meant to hide a particular endpoint. Copy the code, starting with function(), all the way to "toLowerCase()" in line 12218.</p>
-<p><img alt="" class="zoom" src="media/img-1615871276-20210316.png" /></p>
-<p><strong>Obfuscated JavaScript Code</strong></p>
+<p>Let us walk through the defense mechanics here. In Chrome tab with the page <a href="http://lab-5.2.sans.labs/clickjackcsp.php">http://lab-5.2.sans.labs/clickjackcsp.php</a>, launch the developer tools (Ctrl-Shift-I or Chrome menu -&gt; More Tools -&gt; Developer Tools). </p>
 </li>
 <li>
-<p>Change to the <strong>Console</strong> tab (at the top). Type ""+ (empty quotes followed by "+") into the console and paste the code you copied right after the "+". Hit enter. You will see the deobfuscated result. (see answers at the end for the solution).</p>
-<p><img alt="" class="zoom" src="media/img-1615871434-20210316.png" /></p>
-<p><strong>Pasted Code in Console</strong></p>
-<details class="question"><summary>Solution</summary><p>The token is: "tokensale-ico-ea".</p>
-<p>The hidden URL includes a white paper for a "Juicecoin" ICO.</p>
-</details>
+<p>Refresh the page. This will let Developer Tools to reveal all the details of the page to you. Click on the <strong>Console</strong> tab in Developers Tools. There is one single error of the browser refusing to load the content of "<a href="http://lab-5.2.sans.labs/">http://lab-5.2.sans.labs/</a>" due to the Content Security Policy.</p>
+<p><img alt="" class="zoom" src="media/img-1615704078-20210314.png" /></p>
 </li>
 <li>
-<p>Go to the hidden endpoint (<a href="http://juiceshop:3000/#/[solution">http://juiceshop:3000/#/[solution</a> from step 4]).</p>
-<div class="admonition information">
-<p class="admonition-title">Information</p>
-<p>Despite the effort from the developer to obfuscate the "key" in the JavaScript code, the code is reversible with some level of coding skills. Lessons learned - do not hide keys in obfuscation.</p>
+<p>Let's also inspect the exact Content Security Policy that was sent to the browser from the victim's page. Click on the <strong>Network</strong> tab in Developers Tools. Look for <strong>votecsp.php</strong> and click on it. This will show the headers that were exchanged. Look at Response Headers and evaluate the Content Security Policy. Can you determine why it was blocked from loading by the attacker's page?</p>
+<p><img alt="" class="zoom" src="media/img-1615704360-20210314.png" /></p>
+<div class="admonition solution">
+<p class="admonition-title">Content Security Policy</p>
+<p>The Content Security Policy loaded was 
+<div class="highlight"><pre><span></span><code><span class="err">    Content-Security-Policy: frame-ancestors &quot;none&quot;;</span>
+</code></pre></div>
+This blocks the content within the HTTP response from being loaded into any Iframe.</p>
 </div>
 </li>
 </ol>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
-<ul>
-<li>JavaScript loaded in the browser can be reverse engineered by the user easily. A debugger comes with every browser and can be used to understand the flow of the JavaScript programs. </li>
-<li>Obfuscation using JavaScript does not safeguard the program code or the logic/data hidden by the script.</li>
-</ul>
 <hr />
 <h2 id="explore-further">Explore Further</h2>
 <ul>
-<li>Explore other flaws within Juice Shop</li>
+<li>If the Content Security Policy conflicts with X-Frame-Options header, what happens? Does the browser complain about it?</li>
 </ul>
                 
               
@@ -977,7 +989,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../4.2/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../5.1/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -986,19 +998,19 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              4.2: XMLHttpRequest
+              5.1: DNS Rebinding
             </div>
           </div>
         </a>
       
       
-        <a href="../4.4/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../5.3/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              4.4: Content Security Policy
+              5.3: HTML5
             </div>
           </div>
           <div class="md-footer__button md-icon">

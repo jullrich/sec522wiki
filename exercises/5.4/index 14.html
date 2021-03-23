@@ -14,7 +14,7 @@
     
     
       
-        <title>4.3: Javascript Security Testing - SEC522 Workbook</title>
+        <title>5.4: Sub Resource Integrity - SEC522 Workbook</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#javascript-security-testing" class="md-skip">
+        <a href="#sub-resource-integrity" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              4.3: Javascript Security Testing
+              5.4: Sub Resource Integrity
             
           </span>
         </div>
@@ -568,14 +568,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
       
       <label class="md-nav__link" for="__nav_5">
         Day 4
@@ -615,83 +613,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          4.3: Javascript Security Testing
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../4.3/" class="md-nav__link">
         4.3: Javascript Security Testing
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#part-1-accessing-arbitrary-shopping-carts" class="md-nav__link">
-    Part 1: Accessing Arbitrary Shopping Carts
-  </a>
-  
-    <nav class="md-nav" aria-label="Part 1: Accessing Arbitrary Shopping Carts">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#step-by-step" class="md-nav__link">
-    Step by Step
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#part-2-analyzing-minimized-javascript-advanced" class="md-nav__link">
-    Part 2: Analyzing Minimized JavaScript (Advanced)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
-    Conclusion
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#explore-further" class="md-nav__link">
-    Explore Further
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -720,12 +646,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
       
       <label class="md-nav__link" for="__nav_6">
         Day 5
@@ -777,11 +705,70 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../5.4/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          5.4: Sub Resource Integrity
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         5.4: Sub Resource Integrity
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#no-hints" class="md-nav__link">
+    No Hints
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-by-step" class="md-nav__link">
+    Step by Step
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explore-further" class="md-nav__link">
+    Explore Further
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -864,101 +851,97 @@
     content: 'SANS SEC522 Workbook';
 }}
 @page :left { @bottom-left {
-  content: '4.3-' counter(page);
+  content: '5.4-' counter(page);
 }}
 @page :right { @bottom-right {
-  content: '4.3-' counter(page);
+  content: '5.4-' counter(page);
 }}
 </style>
 
-<h1 id="javascript-security-testing">JavaScript Security Testing</h1>
+<h1 id="sub-resource-integrity">Sub Resource Integrity</h1>
 <hr />
 <h4 id="objectives">Objectives</h4>
-<div class="codehilite"><pre><span></span><code>Estimated Time: 15 minutes
+<div class="codehilite"><pre><span></span><code>Estimated Time: 6 minutes
 </code></pre></div>
 
-<h5 id="part-1">Part 1:</h5>
-<blockquote>
-<p>In this exercise, we will experiment with the built-in JavaScript debugger in Chrome and learn the basics of using this debugger for understanding the JavaScript running on a webpage.</p>
-</blockquote>
+<p>Understand how sub resources integrity can help prevent some attacks that swap components hosted by third parties for malicious components.</p>
 <h4 id="requirements">Requirements</h4>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Lab VM</li>
 </ul>
 <hr />
-<h2 id="part-1-accessing-arbitrary-shopping-carts">Part 1: Accessing Arbitrary Shopping Carts</h2>
+<h3 id="no-hints">No Hints</h3>
+<p>Start the exercise at <a href="http://lab-5.4.sans.labs/donations.php">http://lab-5.4.sans.labs/donations.php</a> and follow the instructions provided.</p>
 <h3 id="step-by-step">Step by Step</h3>
-<p>Chrome and many other browsers include capable JavaScript debuggers. They are commonly used by security professionals to understand the inner workings of a piece of JavaScript code.</p>
-<div class="admonition note">
-<p class="admonition-title">This exercise uses Juice Shop.</p>
-</div>
 <ol>
 <li>
-<p>Start Juice Shop. Open a terminal and type</p>
-<div class="highlight"><pre><span></span><code>juiceshop start
+<p>Open <a href="http://lab-5.4.sans.labs/subresourceintegrity.php">http://lab-5.4.sans.labs/subresourceintegrity.php</a> in Google Chrome. </p>
+</li>
+<li>
+<p>Click on the link to <a href="http://lab-5.4.sans.labs/donations.php">http://lab-5.4.sans.labs/donations.php</a>.</p>
+</li>
+<li>
+<p>Fill out the donation form and click “Submit.” You will see a “Thank you” page, and all looks good.</p>
+</li>
+<li>
+<p>Use the “Back” button in Google Chrome to restart the exercise.</p>
+</li>
+<li>
+<p>Click on the <a href="http://lab-5.4.sans.labs/donations.php">http://lab-5.4.sans.labs/donations.php</a> link again.</p>
+</li>
+<li>
+<p>Press Ctrl-Shift-I to open the Developers Tools.</p>
+</li>
+<li>
+<p>Click on the “Sources” tab in the Developers Tools.</p>
+</li>
+<li>
+<p>Open the “donations.js” file and inspect the “accountid”. Note how the account ID has been altered to “evilcataccount”.</p>
+<p><img alt="" class="zoom" src="media/img-1615709782-20210314.png" />
+<strong>Content of donations.js</strong></p>
+</li>
+<li>
+<p>Open a terminal and enter
+    <div class="highlight"><pre><span></span><code>cd /etc/docker/compose/5.4/web/html/js 
 </code></pre></div>
-<p>You may see an error if Juice Shop is already running.</p>
+    to change to the directory with the respective files.</p>
 </li>
 <li>
-<p>Go to Juice Shop in Chrome by visiting the URL <a href="http://juiceshop:3000">http://juiceshop:3000</a>.</p>
+<p>Enter “ls” to obtain a directory listing. You will see a file called “dontations_for_stupid_dogs.js”.</p>
 </li>
 <li>
-<p>Log in to Juice Shop using <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#101;&#99;&#53;&#50;&#50;&#64;&#115;&#101;&#99;&#53;&#50;&#50;&#46;&#111;&#114;&#103;">&#115;&#101;&#99;&#53;&#50;&#50;&#64;&#115;&#101;&#99;&#53;&#50;&#50;&#46;&#111;&#114;&#103;</a> and the password "training". Register a new account if the login fails (Juice Shop will reset its database whenever it is shut down).</p>
+<p>Use the “diff” command to compare the dontations_for_stupid_dogs.js file to the donations.js file (see Figure 62). The files are identical with the exception of the account ID.</p>
 </li>
 <li>
-<p>Press CTRL-SHIFT-I to open the debugger in Chrome.</p>
+<p>Calculate the hash of the “good” file:
+<div class="highlight"><pre><span></span><code> openssl dgst -sha384 -binary &lt; donations_for_stupid_dogs.js | openssl base64 -A
+</code></pre></div>
+You should get the following hash: wZGpBo0UBEBZ2r+uvUPUVH8gvHqHHPJr5Yt9aK+W5D9cSxNhgvF6lAHxsf0gAXbw</p>
 </li>
 <li>
-<p>Select "Application" -&gt; "Session Storage" and review the session storage for "juiceshop".</p>
+<p>Open /etc/docker/compose/5.4/web/html/donations.php in an editor (Visual Studio Code) and add the “integrity” attribute to the script tag for “donations.js” in line 16. Keep the file open.</p>
 </li>
 <li>
-<p>You will see a parameter called "bid". Change it to a different number (e.g., "3").</p>
+<p>Reload the donations page. You will now see an error on the console in the debugger.</p>
 </li>
 <li>
-<p>Review the shopping cart in Juice Shop ("Your Basket") by clicking on the shopping cart at the top of the page. You will see someone else's items.</p>
+<p>Change line 16 of the donations.php to use “donations_for_stupid_dogs.js” instead of donations.php.</p>
+</li>
+<li>
+<p>Reload the donations page. The script will now load.</p>
 </li>
 </ol>
-<h2 id="part-2-analyzing-minimized-javascript-advanced">Part 2: Analyzing Minimized JavaScript <em>(Advanced)</em></h2>
-<ol>
-<li>
-<p>In the Chrome Debugger, select "Sources" and open the "main-es2018.js" file.</p>
-</li>
-<li>
-<p>Click the "{}" at the lower left-hand corner of the source code window. This will make the minimized code more readable.</p>
-<p><img alt="" class="zoom" src="media/img-%21%5B%5D%28./media/image1.png%29.png" /></p>
-<p><strong>JavaScript Debugger "main-es2018.js"</strong></p>
-</li>
-<li>
-<p>Line 12206-12218 contains obfuscated JavaScript code meant to hide a particular endpoint. Copy the code, starting with function(), all the way to "toLowerCase()" in line 12218.</p>
-<p><img alt="" class="zoom" src="media/img-1615871276-20210316.png" /></p>
-<p><strong>Obfuscated JavaScript Code</strong></p>
-</li>
-<li>
-<p>Change to the <strong>Console</strong> tab (at the top). Type ""+ (empty quotes followed by "+") into the console and paste the code you copied right after the "+". Hit enter. You will see the deobfuscated result. (see answers at the end for the solution).</p>
-<p><img alt="" class="zoom" src="media/img-1615871434-20210316.png" /></p>
-<p><strong>Pasted Code in Console</strong></p>
-<details class="question"><summary>Solution</summary><p>The token is: "tokensale-ico-ea".</p>
-<p>The hidden URL includes a white paper for a "Juicecoin" ICO.</p>
+<p>The “integrity” parameter will indicate to the browser that the file has changed. The browser is now able to block scripts if they changed.</p>
+<details class="solution"><summary>Solution</summary><p>Here is the JavaScript reference with integrity attributes embeded (line 16 of donations.php). 
+<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">&quot;/js/jquery.js&quot;</span> <span class="nx">integrity</span><span class="o">=</span><span class="s2">&quot;sha384-wZGpBo0UBEBZ2r+uvUPUVH8gvHqHHPJr5Yt9aK+W5D9cSxNhgvF6lAHxsf0gAXbw&quot;</span><span class="o">&gt;&lt;</span><span class="err">/script&gt;</span>
+</code></pre></div></p>
 </details>
-</li>
-<li>
-<p>Go to the hidden endpoint (<a href="http://juiceshop:3000/#/[solution">http://juiceshop:3000/#/[solution</a> from step 4]).</p>
-<div class="admonition information">
-<p class="admonition-title">Information</p>
-<p>Despite the effort from the developer to obfuscate the "key" in the JavaScript code, the code is reversible with some level of coding skills. Lessons learned - do not hide keys in obfuscation.</p>
-</div>
-</li>
-</ol>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
-<ul>
-<li>JavaScript loaded in the browser can be reverse engineered by the user easily. A debugger comes with every browser and can be used to understand the flow of the JavaScript programs. </li>
-<li>Obfuscation using JavaScript does not safeguard the program code or the logic/data hidden by the script.</li>
-</ul>
 <hr />
 <h2 id="explore-further">Explore Further</h2>
 <ul>
-<li>Explore other flaws within Juice Shop</li>
+<li></li>
 </ul>
                 
               
@@ -977,7 +960,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../4.2/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../5.3/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -986,19 +969,19 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              4.2: XMLHttpRequest
+              5.3: HTML5
             </div>
           </div>
         </a>
       
       
-        <a href="../4.4/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../5.5/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              4.4: Content Security Policy
+              5.5: Logging and Incident Response
             </div>
           </div>
           <div class="md-footer__button md-icon">

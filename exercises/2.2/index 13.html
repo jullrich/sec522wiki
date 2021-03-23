@@ -14,7 +14,7 @@
     
     
       
-        <title>4.3: Javascript Security Testing - SEC522 Workbook</title>
+        <title>2.2: Guestbook CSRF - SEC522 Workbook</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#javascript-security-testing" class="md-skip">
+        <a href="#guestbook-csrf" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              4.3: Javascript Security Testing
+              2.2: Guestbook CSRF
             
           </span>
         </div>
@@ -412,12 +412,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       <label class="md-nav__link" for="__nav_3">
         Day 2
@@ -445,11 +447,76 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../2.2/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          2.2: Guestbook CSRF
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         2.2: Guestbook CSRF
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#identifying-exploiting-csrf" class="md-nav__link">
+    Identifying &amp; Exploiting CSRF
+  </a>
+  
+    <nav class="md-nav" aria-label="Identifying &amp; Exploiting CSRF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-hints" class="md-nav__link">
+    No Hints
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step" class="md-nav__link">
+    Step by Step
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -568,14 +635,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
       
       <label class="md-nav__link" for="__nav_5">
         Day 4
@@ -615,83 +680,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          4.3: Javascript Security Testing
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../4.3/" class="md-nav__link">
         4.3: Javascript Security Testing
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#part-1-accessing-arbitrary-shopping-carts" class="md-nav__link">
-    Part 1: Accessing Arbitrary Shopping Carts
-  </a>
-  
-    <nav class="md-nav" aria-label="Part 1: Accessing Arbitrary Shopping Carts">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#step-by-step" class="md-nav__link">
-    Step by Step
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#part-2-analyzing-minimized-javascript-advanced" class="md-nav__link">
-    Part 2: Analyzing Minimized JavaScript (Advanced)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
-    Conclusion
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#explore-further" class="md-nav__link">
-    Explore Further
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -864,102 +857,77 @@
     content: 'SANS SEC522 Workbook';
 }}
 @page :left { @bottom-left {
-  content: '4.3-' counter(page);
+  content: '2.2-' counter(page);
 }}
 @page :right { @bottom-right {
-  content: '4.3-' counter(page);
+  content: '2.2-' counter(page);
 }}
 </style>
 
-<h1 id="javascript-security-testing">JavaScript Security Testing</h1>
+<h1 id="guestbook-csrf">Guestbook CSRF</h1>
 <hr />
 <h4 id="objectives">Objectives</h4>
-<div class="codehilite"><pre><span></span><code>Estimated Time: 15 minutes
+<div class="codehilite"><pre><span></span><code>Estimated Time: 10 minutes
 </code></pre></div>
 
-<h5 id="part-1">Part 1:</h5>
 <blockquote>
-<p>In this exercise, we will experiment with the built-in JavaScript debugger in Chrome and learn the basics of using this debugger for understanding the JavaScript running on a webpage.</p>
+<p>In this exercise, we will investigate the impact of CSRF on a simple guestbook application. We will learn how to identify and exploit CSRF vulnerabilities.</p>
 </blockquote>
 <h4 id="requirements">Requirements</h4>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Lab VM</li>
 </ul>
 <hr />
-<h2 id="part-1-accessing-arbitrary-shopping-carts">Part 1: Accessing Arbitrary Shopping Carts</h2>
+<h2 id="identifying-exploiting-csrf">Identifying &amp; Exploiting CSRF</h2>
+<h3 id="no-hints">No Hints</h3>
+<p>The guestbook requires users to log in to post. But due to a CSRF vulnerability, it is possible to trick users into posting without their knowledge as long as they are logged in. Explore the guestbook at <a href="http://lab-2.2.sans.labs/login.php">http://lab-2.2.sans.labs/login.php</a> (user/pass - sec522/training). Try to exploit the vulnerability and suggest a fix.</p>
 <h3 id="step-by-step">Step by Step</h3>
-<p>Chrome and many other browsers include capable JavaScript debuggers. They are commonly used by security professionals to understand the inner workings of a piece of JavaScript code.</p>
-<div class="admonition note">
-<p class="admonition-title">This exercise uses Juice Shop.</p>
-</div>
 <ol>
 <li>
-<p>Start Juice Shop. Open a terminal and type</p>
-<div class="highlight"><pre><span></span><code>juiceshop start
+<p>Using Chrome, browse to <a href="http://lab-2.2.sans.labs/login.php">http://lab-2.2.sans.labs/login.php</a>.</p>
+</li>
+<li>
+<p>Log in. Username: <strong>"sec522"</strong>, Password: <strong>"training"</strong>.</p>
+<ul>
+<li>Feel free to explore the guestbook and attempt to add some entries into the guestbook. Remember, at this point, you are logged in to the guestbook.</li>
+</ul>
+</li>
+<li>
+<p>Open a second browser window (Ctrl-N), and visit <a href="http://lab-2.2.sans.labs/attack.php">http://lab-2.2.sans.labs/attack.php</a>. Alternatively, a new browser tab works too.</p>
+</li>
+<li>
+<p>Switch back to the other browser window (loaded with the guestbook page) and refresh the page.</p>
+<p>On the guestbook page, there is an extra guestbook entry that was never entered. What is happening here?</p>
+</li>
+<li>
+<p>Change back to the window with the attack.php opened. Press Ctrl-U to view the source code of the page.</p>
+</li>
+<li>
+<p>Read the page source carefully; pay close attention to the IFrame.</p>
+<p>This self-signing guestbook phenomenon is caused by CSRF (Cross-Site Request Forgery). The following line of HTML code is in the attack.php that was visited earlier.</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;visibility:hidden&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;http://lab-2.2.sans.labs/guestbook.php?f=add&amp;name=Evil+Cat&amp;email=kitten@evilexample.com&amp;url=http://evilexample.com&amp;comments=I+need+more+wetfood+or+I+will_hack_you!+The+Cat&quot;</span> <span class="p">/&gt;</span>
 </code></pre></div>
-<p>You may see an error if Juice Shop is already running.</p>
+<p>It contains a link to the guestbook, asking the guestbook to add an entry. Since this IFrame is set to be invisible, the user does not know of its presence.</p>
 </li>
 <li>
-<p>Go to Juice Shop in Chrome by visiting the URL <a href="http://juiceshop:3000">http://juiceshop:3000</a>.</p>
+<p>Change back to the guestbook window and <strong>click on the logout link</strong> to log out of the guestbook.</p>
 </li>
 <li>
-<p>Log in to Juice Shop using <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#101;&#99;&#53;&#50;&#50;&#64;&#115;&#101;&#99;&#53;&#50;&#50;&#46;&#111;&#114;&#103;">&#115;&#101;&#99;&#53;&#50;&#50;&#64;&#115;&#101;&#99;&#53;&#50;&#50;&#46;&#111;&#114;&#103;</a> and the password "training". Register a new account if the login fails (Juice Shop will reset its database whenever it is shut down).</p>
+<p>Switch back to the attack window. Refresh the page on <strong><a href="http://lab-2.2.sans.labs/attack.php">http://lab-2.2.sans.labs/attack.php</a></strong>. This is to attempt the CSRF attack once more.</p>
 </li>
 <li>
-<p>Press CTRL-SHIFT-I to open the debugger in Chrome.</p>
-</li>
-<li>
-<p>Select "Application" -&gt; "Session Storage" and review the session storage for "juiceshop".</p>
-</li>
-<li>
-<p>You will see a parameter called "bid". Change it to a different number (e.g., "3").</p>
-</li>
-<li>
-<p>Review the shopping cart in Juice Shop ("Your Basket") by clicking on the shopping cart at the top of the page. You will see someone else's items.</p>
+<p>Switch back once again to the other window with <strong><a href="http://lab-2.2.sans.labs/guestbook.php">http://lab-2.2.sans.labs/guestbook.php</a></strong> and log in with "sec522" and "training" as username/password.</p>
 </li>
 </ol>
-<h2 id="part-2-analyzing-minimized-javascript-advanced">Part 2: Analyzing Minimized JavaScript <em>(Advanced)</em></h2>
-<ol>
-<li>
-<p>In the Chrome Debugger, select "Sources" and open the "main-es2018.js" file.</p>
-</li>
-<li>
-<p>Click the "{}" at the lower left-hand corner of the source code window. This will make the minimized code more readable.</p>
-<p><img alt="" class="zoom" src="media/img-%21%5B%5D%28./media/image1.png%29.png" /></p>
-<p><strong>JavaScript Debugger "main-es2018.js"</strong></p>
-</li>
-<li>
-<p>Line 12206-12218 contains obfuscated JavaScript code meant to hide a particular endpoint. Copy the code, starting with function(), all the way to "toLowerCase()" in line 12218.</p>
-<p><img alt="" class="zoom" src="media/img-1615871276-20210316.png" /></p>
-<p><strong>Obfuscated JavaScript Code</strong></p>
-</li>
-<li>
-<p>Change to the <strong>Console</strong> tab (at the top). Type ""+ (empty quotes followed by "+") into the console and paste the code you copied right after the "+". Hit enter. You will see the deobfuscated result. (see answers at the end for the solution).</p>
-<p><img alt="" class="zoom" src="media/img-1615871434-20210316.png" /></p>
-<p><strong>Pasted Code in Console</strong></p>
-<details class="question"><summary>Solution</summary><p>The token is: "tokensale-ico-ea".</p>
-<p>The hidden URL includes a white paper for a "Juicecoin" ICO.</p>
+<details class="question"><summary>How come no extra entry is added this time?</summary><p>If the session is not active (the user logged out), the attack simply doesn't work.</p>
 </details>
-</li>
-<li>
-<p>Go to the hidden endpoint (<a href="http://juiceshop:3000/#/[solution">http://juiceshop:3000/#/[solution</a> from step 4]).</p>
-<div class="admonition information">
-<p class="admonition-title">Information</p>
-<p>Despite the effort from the developer to obfuscate the "key" in the JavaScript code, the code is reversible with some level of coding skills. Lessons learned - do not hide keys in obfuscation.</p>
-</div>
-</li>
-</ol>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
 <ul>
-<li>JavaScript loaded in the browser can be reverse engineered by the user easily. A debugger comes with every browser and can be used to understand the flow of the JavaScript programs. </li>
-<li>Obfuscation using JavaScript does not safeguard the program code or the logic/data hidden by the script.</li>
+<li>CSRF only works while the user is logged into the application with active session.</li>
+<li>Attacker steer the browser to submit request on behalf of the user. The request has the credential of the user attached.  </li>
 </ul>
 <hr />
-<h2 id="explore-further">Explore Further</h2>
-<ul>
-<li>Explore other flaws within Juice Shop</li>
-</ul>
                 
               
               
@@ -977,7 +945,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../4.2/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../2.1/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -986,19 +954,19 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              4.2: XMLHttpRequest
+              2.1: SQL Injection
             </div>
           </div>
         </a>
       
       
-        <a href="../4.4/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../2.3/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              4.4: Content Security Policy
+              2.3: Cross-Site Scripting
             </div>
           </div>
           <div class="md-footer__button md-icon">

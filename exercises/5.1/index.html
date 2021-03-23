@@ -904,7 +904,7 @@
 <p>In this exercise, we will explore the possibilities of DNS rebinding (anti-DNS pinning) attacks firsthand. The attack demonstrated is dependent on the DNS record timing out within the browser, and then the attacker can rebind another host, making the victim\'s browser confused about the actual IP of the host it is trying to reach.</p>
 <ol>
 <li>
-<p>Using Chrome, browse to <strong><a href="http://lab-5.1.sans.labs/evil.php">http://lab-5.1.sans.labs/evil.php</a></strong>. This is the "Good Dog Pics" page. The host you are connecting to is <strong>lab-5.1.sans.labs</strong></p>
+<p>Using Chrome, browse to <strong><a href="http://lab-5.1.sans.labs/evil.php">http://lab-5.1.sans.labs/evil.php</a></strong>. This is the "Good Dog Pics" page. The host you are connecting to is <strong>lab-5.1.sans.labs</strong>. </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The host name lab-5.1.sans.labs have dog picture. Watch how this fact is important later.</p>
@@ -914,22 +914,18 @@
 <p>We are now going to the attacker's controled site. Using Chrome, browse to <strong><a href="http://lab-5.1-evil.sans.labs/evil.php">http://lab-5.1-evil.sans.labs/evil.php</a></strong>. The host name is similar to the one in previous step but this is a different site. The content are also different as well.</p>
 </li>
 <li>
-<p>Click the "CLICK HERE TO SWITCH DNS" link to start the rebinding. Click OK on the Javascript prompt.</p>
-</li>
-<li>
-<p>You will be presented with a Javascript prompt. This triggers a DNS changes on the server end as indicated by the content of the pop up box. The IP for the lab-5.1-evil.sans.labs was 127.0.5.11 and it is being changed to 127.0.5.1. What that means is anyone asking for the IP of lab-5.1-evil.sans.labs will now be presented with 127.0.5.1. </p>
-</li>
-</ol>
+<p>You will be presented with a Javascript prompt. This triggers a DNS changes on the server end as indicated by the content of the pop up box. The IP for the lab-5.1-evil.sans.labs was <strong>127.0.5.11</strong> and it is being changed to <strong>127.0.5.1</strong>. What that means is anyone asking for the IP of lab-5.1-evil.sans.labs will now be presented with 127.0.5.1. </p>
 <p><img alt="" class="zoom" src="media/img-1615693291-20210313.png" /></p>
-<ol>
+</li>
 <li>
 <p>After about 2 minutes, reload the page in the browser. Notice the URL? It is still <a href="http://lab-5.1-evil.sans.labs/evil.php">http://lab-5.1-evil.sans.labs/evil.php</a> but the content in the page are coming from the "Good Dog Pics" page which is at the IP address 127.0.5.1. </p>
-</li>
-<li>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>The exercise starts off with the browser visiting lab-5.1-evil.sans.labs (127.0.5.11). At this time, the browser has the IP of the host pinned. After around 120 seconds when the DNS TTL expires, we reloaded the page. This time, the sans.labs DNS replies that lab-5.1-evil.sans.labs is located at 127.0.5.1 (not the same as before). This IP happens to be the server for lab-5.1.sans.labs (the Dog page). The Same Origin Policy has been violated with the time out and second DNS query since your browser URL is pointing to one domain and the content is coming from another location.</p>
+</div>
 </li>
 <li>
-<p>After this exercise, please click the Reeset DNS and restart the browser to ensure all cached host records (DNS pin) is gone.</p>
+<p>After this exercise, please click the Reset DNS and restart the browser to ensure all cached host records (DNS pin) is gone.</p>
 </li>
 </ol>
 <hr />
@@ -940,7 +936,7 @@
 <p>Browse to <a href="http://lab-5.1-evil.sans.labs/eviljs.php">http://lab-5.1-evil.sans.labs/eviljs.php</a></p>
 </li>
 <li>
-<p>Similar to the previous exercise, we start off with the evil cat's page and Javascript immediately kick into action to change the DNS in the background. There is a long wait for the DNS pin to expire within the JavaScript engine. Click "OK" to the Javascript prompt.</p>
+<p>Similar to the previous exercise, we start off with the evil cat's page and Javascript immediately kick into action to change the DNS in the background. There is a long wait for the DNS pin to expire within the JavaScript engine. Review the change in the Javascript prompt and then click "OK".</p>
 </li>
 <li>
 <p>The JavaScript automatically count down. In the background, every second there is a fetch request being sent to determine if the DNS pin has been lifted by the browser so the DNS would be re-queried and therefore change to the alternative host. </p>
@@ -951,10 +947,13 @@
 </ol>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
+<ul>
+<li>DNS rebinding allows attacker to "confused" the browser into loading content from a different origin than what's specified by the host name and domain name. </li>
+</ul>
 <hr />
 <h2 id="explore-further">Explore Further</h2>
 <ul>
-<li></li>
+<li>What would happen if the target site has TLS enabled?</li>
 </ul>
                 
               
