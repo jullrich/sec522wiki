@@ -1082,7 +1082,7 @@ Referer: Some random nonsense
 </li>
 <li>
 <p>Once the response is returned, the page will display the Referer header as the web application received it. What do you see? The content of the first, second, or both headers?</p>
-<details class="question"><summary>Which data does the application receive for the 'Referer' header?</summary><p>The second</p>
+<details class="question"><summary>Which data does the application receive for the 'Referer' header?</summary><p>Both, separated by a comma (,)</p>
 </details>
 </li>
 </ol>
@@ -1092,7 +1092,7 @@ Referer: Some random nonsense
 <p>Load an HTTPS page via Burp. Inspect the certificate and explain why a warning is displayed.</p>
 <ol>
 <li>
-<p>Keeping Burp enabled from the prior exercise, but disable "Interception" (in the "Proxy" menu check the "Intercept" tab and toggle the "Intercept on/off" button) and visit any HTTPS page. For example, <a href="http://lab-1.1.sans.labs/">http://lab-1.1.sans.labs/</a>.</p>
+<p>Keeping Burp enabled from the prior exercise, but disable "Interception" (in the "Proxy" menu check the "Intercept" tab and toggle the "Intercept on/off" button) and visit any HTTPS page. For example, <a href="https://lab-1.1.sans.labs/">https://lab-1.1.sans.labs/</a>.</p>
 <div class="admonition question">
 <p class="admonition-title">You will receive a warning. Why?</p>
 </div>
@@ -1125,7 +1125,8 @@ Referer: Some random nonsense
 <hr />
 <h2 id="explore-further">Explore Further</h2>
 <ul>
-<li></li>
+<li>What is HTTP response code 418?</li>
+<li>With interception on, try the following links <a href="https://lab-1.1.sans.labs/images/">https://lab-1.1.sans.labs/images/</a> and <a href="https://lab-1.1.sans.labs/images">https://lab-1.1.sans.labs/images</a>. What are the differences?</li>
 </ul>
                 
               

@@ -1043,7 +1043,7 @@
 <p>We will experiment with the mod_security web application firewall in the following exercise.</p>
 <ol>
 <li>
-<p>In Chrome, go to <a href="http://normalsecurity.sans.labs"><strong>http://normalsecurity.sans.labs</strong></a> and click on the two files "<strong>cc.html"</strong> and <strong>"trans.txt"</strong>.</p>
+<p>In Chrome, go to <a href="http://normalsecurity.sans.labs"><strong>http://normalsecurity.sans.labs</strong></a> and click on the two files "<strong>Credit Card Data (cc.html)"</strong> and <strong>"Source Code (trans.txt)"</strong>.</p>
 <details class="question"><summary>What do these two files show?</summary><p><strong>cc.html</strong> shows transaction data including credit card numbers.</p>
 <p><strong>trans.txt</strong> leaks source code.</p>
 </details>
@@ -1065,10 +1065,7 @@
 <p>Revisit <strong><a href="http://modsecurity.sans.labs/form.php">http://modsecurity.sans.labs/form.php</a></strong> and see if you can still enter "Cats are evil". Try "Cats are cute" instead.</p>
 </li>
 <li>
-<p>Go to <strong><a href="http://modsecurity.sans.labs">http://modsecurity.sans.labs</a></strong>. This URL is blocked as well now. Keep that in mind when inspecting the rules later.</p>
-</li>
-<li>
-<p>Review the web application firewall's log file at <strong><a href="http://modsecurity.sans.labs/modsecurity.log">http://modsecurity.sans.labs/modsecurity.log</a>.</strong></p>
+<p>Review the web application firewall's log file at <strong><a href="http://modsecurity.sans.labs/modsecurity.log">http://modsecurity.sans.labs/modsecurity.log</a></strong></p>
 <div class="admonition question">
 <p class="admonition-title">Try to identify the log entries that indicate which URL was blocked and why?</p>
 </div>
@@ -1082,10 +1079,14 @@
 </ol>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
+<ul>
+<li>Architecture supporting the application has a huge impact on the overall security. Isolation and segmentation are common approaches to secure the application.</li>
+<li>Web Application Firewall are versatile security tools to implement security at the HTTP level without a lot of programming or coding.</li>
+</ul>
 <hr />
 <h2 id="explore-further">Explore Further</h2>
 <ul>
-<li></li>
+<li>Think about how to implement Web Application Firewall to a production application.</li>
 </ul>
                 
               

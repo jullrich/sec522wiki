@@ -933,6 +933,9 @@
 <p>First, you will try to use an authentication token retrieved in one request to send a second request. The section half of this exercise will teach you how to impersonate a valid browser using simple tools like "curl". You will first collect a request from a regular browser to create a "fingerprint" of the browser. Next, you will use "curl" to create a request that matches the fingerprint.</p>
 </blockquote>
 <h5 id="part-3">Part 3:</h5>
+<blockquote>
+<p>This exercise is an extension to the previous two exercises where the crafting of headers have to be exact. </p>
+</blockquote>
 <h4 id="requirements">Requirements</h4>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Lab VM</li>
@@ -1046,10 +1049,14 @@ Content-Type: text/html; charset=UTF-8
 </ol>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
+<ul>
+<li>HTTP 2 is the current version of HTTP standard which has the original protocol on much more optimized basis. </li>
+<li>HTTP Request headers manipulation is a big part of security defense and offense. HTTP headers in both request and response affects the functions of browser or server. In modern day applications, the headers are where authentication tokens and security decisions are transported.</li>
+</ul>
 <hr />
 <h2 id="explore-further">Explore Further</h2>
 <ul>
-<li></li>
+<li>Can you use HTTP 2 over cleartext?</li>
 </ul>
                 
               
