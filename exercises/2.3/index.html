@@ -253,30 +253,6 @@
   
 
           
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../resources/references/" class="md-nav__link">
-        References
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../resources/appendix/" class="md-nav__link">
-        Appendix
-      </a>
-    </li>
-  
-
-          
         </ul>
       </nav>
     </li>
@@ -310,7 +286,7 @@
   
     <li class="md-nav__item">
       <a href="../../errata/G01_01/" class="md-nav__link">
-        F01_01
+        G01_01
       </a>
     </li>
   
@@ -926,49 +902,42 @@
 <li>
 <p>There should be one comment left; click the <strong>"Approve All Posts"</strong> button to approve the comment to be displayed to the public.</p>
 </li>
-<li>
-<p>Click <strong>"Logout"</strong>.</p>
-</li>
 </ol>
 </li>
 </ol>
 <p>The CSRF attack is obviously no longer possible, as it would likely not get past the administrator, who will review the comments before allowing the public to see them.</p>
 <p><br></p>
 <p>Now that we understand how this guestbook system works, let's explore if it is vulnerable to attacks.</p>
-<ol>
-<li>
-<p>Log in to the guestbook by using <strong>"sec522"</strong> and <strong>"training"</strong> as username and password.</p>
-<ol>
-<li>
-<p>Attempt to add one new comment. Put anything as name, email, and URL. For comments, enter the following string:</p>
-<div class="highlight"><pre><span></span><code>XSS<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;xss&#39;</span><span class="p">);&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<div class="codehilite"><pre><span></span><code>1. Attempt to add one new comment. Put anything as name, email, and URL. For comments, enter the following string:
+
+    ```html
+    XSS&lt;script&gt;alert(&#39;xss&#39;);&lt;/script&gt;
+    ```
+
+2. Press the **&quot;Add&quot;** button. The message is awaiting for the administrator to approve as indicated by the message in the response page.
+
+    A pop-up box should appear with **&quot;xss&quot;** in it. The input from the user became part of the page; the script input becomes rendered in the browser as script. This is a classic case of stored XSS vulnerability.
+
+3. _(Optional)_ Feel free to view the source of the page to look for the XSS alert box and see why it became part of the scripting content in the page.
+
+4.  Delete the XSS comment in the **&quot;waiting for approval&quot;** section, as this can be annoying since the pop-up box shows up in every page load. Click the **&quot;Delete Message&quot;** link in the XSS comment.
+
+5. Log out of the guestbook by clicking on the **&quot;Logout&quot;** link.
+
+We have now proved the comment field to be vulnerable to XSS attack. Let&#39;s see how we can leverage this vulnerability.
+
+We know there is an XSS vulnerability in the comment field. Anyone looking at that comment will have their browser hijacked to run scripts. Hence, these browsers can be controlled. That is very useful: what if we can control the administrator&#39;s browser so that the comments could automatically be approved as soon as an administrator looks at them? Let&#39;s try this concept.
 </code></pre></div>
-</li>
-<li>
-<p>Press the <strong>"Add"</strong> button.</p>
-<p>A pop-up box should appear with <strong>"xss"</strong> in it. The input from the user became part of the page; the script input becomes rendered in the browser as script. This is a classic case of stored XSS vulnerability.</p>
-</li>
-<li>
-<p><em>(Optional)</em> Feel free to view the source of the page to look for the XSS alert box and see why it became part of the scripting content in the page.</p>
-</li>
-<li>
-<p>Delete the XSS comment in the <strong>"waiting for approval"</strong> section, as this can be annoying since the pop-up box shows up in every page load. Click the <strong>"Delete Message"</strong> link in the XSS comment.</p>
-</li>
-<li>
-<p>Log out of the guestbook by clicking on the <strong>"Logout"</strong> link.</p>
-</li>
-</ol>
-<p>We have now proved the comment field to be vulnerable to XSS attack. Let's see how we can leverage this vulnerability.</p>
-<p>We know there is an XSS vulnerability in the comment field. Anyone looking at that comment will have their browser hijacked to run scripts. Hence, these browsers can be controlled. That is very useful: what if we can control the administrator's browser so that the comments could automatically be approved as soon as an administrator looks at them? Let's try this concept.</p>
-</li>
+
+<ol>
 <li>
 <p>Log in to the guestbook by using <strong>"sec522"</strong> and <strong>"training"</strong> as username and password.</p>
 <ol>
 <li>
 <p>Attempt to add one new comment. Put anything as name, email, and URL. For comments, put the following string:</p>
-<div class="highlight"><pre><span></span><code>You will approve this<span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;guestbook.php?f=approve&quot;</span><span class="p">&gt;</span>.
+<div class="highlight"><pre><span></span><code>You will approve this<span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;guestbook.php?approve=Y&quot;</span><span class="p">&gt;</span>.
 </code></pre></div>
-<p><strong>f=approve</strong> is to trigger the <strong>"Approve all Posts"</strong> button we saw in the admin function.</p>
+<p><strong>approve=Y</strong> is to trigger the <strong>"Approve all Posts"</strong> button we saw in the admin function.</p>
 </li>
 <li>
 <p>Click on <strong>"Add"</strong>.</p>
@@ -978,6 +947,10 @@
 <p>Log out of the guestbook by clicking on the <strong>"Logout"</strong> link.</p>
 </li>
 </ol>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>At this point, the sec522 user had submitted an attack into the system awaiting for the administrator to stumble upon it.</p>
+</div>
 </li>
 <li>
 <p>Log in with <strong>admin / admin</strong> as the credential. This allows you to log in as an administrator.</p>

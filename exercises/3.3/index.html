@@ -253,30 +253,6 @@
   
 
           
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../resources/references/" class="md-nav__link">
-        References
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../resources/appendix/" class="md-nav__link">
-        Appendix
-      </a>
-    </li>
-  
-
-          
         </ul>
       </nav>
     </li>
@@ -310,7 +286,7 @@
   
     <li class="md-nav__item">
       <a href="../../errata/G01_01/" class="md-nav__link">
-        F01_01
+        G01_01
       </a>
     </li>
   
@@ -1078,16 +1054,7 @@
 <p>Next, click on the "problem" link to learn more about the issue causing authentication tokens to leak.</p>
 </li>
 <li>
-<p>The problem page suggests that SQL injection is used to retrieve the tokens. Click on the "search page" link to be directed to the vulnerable page.</p>
-</li>
-<li>
-<p>Click the "Debug" checkbox</p>
-</li>
-<li>
-<p>Enter a single quote (') in the search box and hit "Submit"</p>
-</li>
-<li>
-<p>You will now see the vulnerable statement. The "animalname" parameter is injectable, and we can use a union statement to retrieve additional data. The union statement needs to retrieve the same number of columns as the original statement (7). The second column ("animalname") is easily displayed and we will use it for our exploit. Enter as a search:</p>
+<p>The link already SQL injected the target page. You will now see the vulnerable statement. The "animalname" parameter is injectable, and we can use a union statement to retrieve additional data. The union statement needs to retrieve the same number of columns as the original statement (7). The second column ("animalname") is easily displayed and we will use it for our exploit. Enter as a search:</p>
 <div class="admonition warning">
 <p class="admonition-title">Important: there is a space after the two dashes '--'.</p>
 </div>
