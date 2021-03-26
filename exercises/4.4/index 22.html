@@ -14,7 +14,7 @@
     
     
       
-        <title>2.3: Cross-Site Scripting - SEC522 Workbook</title>
+        <title>4.4: Content Security Policy - SEC522 Workbook</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#cross-site-scripting" class="md-skip">
+        <a href="#content-security-policy" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              2.3: Cross-Site Scripting
+              4.4: Content Security Policy
             
           </span>
         </div>
@@ -388,14 +388,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
       <label class="md-nav__link" for="__nav_3">
         Day 2
@@ -435,90 +433,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          2.3: Cross-Site Scripting
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../2.3/" class="md-nav__link">
         2.3: Cross-Site Scripting
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#part-1-guestbook-xss-with-csrf" class="md-nav__link">
-    Part 1: Guestbook XSS with CSRF
-  </a>
-  
-    <nav class="md-nav" aria-label="Part 1: Guestbook XSS with CSRF">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#no-hints" class="md-nav__link">
-    No Hints
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-by-step" class="md-nav__link">
-    Step by Step
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#part-2-dom-based-xss-in-juice-shop" class="md-nav__link">
-    Part 2: DOM-Based XSS in Juice Shop
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
-    Conclusion
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#explore-further" class="md-nav__link">
-    Explore Further
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -625,12 +544,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
       
       <label class="md-nav__link" for="__nav_5">
         Day 4
@@ -682,11 +603,70 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../4.4/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          4.4: Content Security Policy
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         4.4: Content Security Policy
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#no-hints" class="md-nav__link">
+    No Hints
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-by-step-instructions" class="md-nav__link">
+    Step-by-Step Instructions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explore-further" class="md-nav__link">
+    Explore Further
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -847,187 +827,78 @@
     content: 'SANS SEC522 Workbook';
 }}
 @page :left { @bottom-left {
-  content: '2.3-' counter(page);
+  content: '4.4-' counter(page);
 }}
 @page :right { @bottom-right {
-  content: '2.3-' counter(page);
+  content: '4.4-' counter(page);
 }}
 </style>
 
-<h1 id="cross-site-scripting">Cross-Site Scripting</h1>
+<h1 id="content-security-policy">Content Security Policy</h1>
 <hr />
 <h4 id="objectives">Objectives</h4>
-<div class="codehilite"><pre><span></span><code>Estimated Time: 10 minutes
+<div class="codehilite"><pre><span></span><code>Estimated Time: 15 minutes
 </code></pre></div>
 
-<h5 id="part-1">Part 1:</h5>
 <blockquote>
-<p>You will learn how to identify XSS and how important it is to check all input fields for XSS. We will also learn how XSS can be abused against a guestbook web application and how XSS may result in CSRF.</p>
+<p>Content Security Policy (CSP) is a great tool to limit JavaScript that an attacker may inject into a page. But if the CSP is too tight, then JavaScript code that was added by the developer may not run. In this exercise, you will learn how to debug CSPs.</p>
 </blockquote>
 <h5 id="part-2">Part 2:</h5>
-<blockquote>
-<p>Uses "Juice Shop", a pre-built web application with known vulnerabilities. Juice Shop is a modern Node.js based application. The search feature is vulnerable to a DOM-based XSS attack.</p>
-</blockquote>
+<blockquote></blockquote>
 <h4 id="requirements">Requirements</h4>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Lab VM</li>
 </ul>
-<h2 id="part-1-guestbook-xss-with-csrf">Part 1: Guestbook XSS with CSRF</h2>
-<h3 id="no-hints">No Hints</h3>
-<p>Also, for the guestbook at <a href="http://lab-2.3.sans.labs/login.php">http://lab-2.3.sans.labs/login.php</a>, we experimented with this guestbook before. This time find the XSS vulnerability and exploit it to automatically approve posts that an administrator views. (Logins available - sec522/training and admin/admin)</p>
-<h3 id="step-by-step">Step by Step</h3>
-<p>For this part, we will revisit the guestbook system. The administrator of the site noticed the CSRF attack and decided to manually approve every single guestbook entry.</p>
-<ol>
-<li>
-<p>Using Chrome, browse to <strong><a href="http://lab-2.3.sans.labs/login.php">http://lab-2.3.sans.labs/login.php</a></strong>. </p>
-</li>
-<li>
-<p>Log in to the guestbook by using <strong>"sec522"</strong> and <strong>"training"</strong> as username and password.</p>
-<ol>
-<li>
-<p>Attempt to input two guest entries into the guestbook. The new guestbook requires the administrator to approve the entries before they are posted on the page.</p>
-</li>
-<li>
-<p>Log out of the guestbook by clicking on the <strong>"Logout"</strong> link.</p>
-</li>
-</ol>
-</li>
-<li>
-<p>Log in with username <strong>"admin"</strong> and password <strong>"admin"</strong>. This allows you to log in as an administrator.</p>
-<p>Administrative functions are now available. This includes the ability to delete comments and to approve messages.</p>
-<ol>
-<li>
-<p>There should be two comments awaiting approval. Please click delete on one of the comments. That comment should then be deleted.</p>
-</li>
-<li>
-<p>There should be one comment left; click the <strong>"Approve All Posts"</strong> button to approve the comment to be displayed to the public.</p>
-</li>
-</ol>
-</li>
-</ol>
-<p>The CSRF attack is obviously no longer possible, as it would likely not get past the administrator, who will review the comments before allowing the public to see them.</p>
-<p><br></p>
-<p>Now that we understand how this guestbook system works, let's explore if it is vulnerable to attacks.</p>
-<ol>
-<li>
-<p>Attempt to add one new comment. Put anything as name, email, and URL. For comments, enter the following string:</p>
-<div class="highlight"><pre><span></span><code>XSS<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;xss&#39;</span><span class="p">);&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-</code></pre></div>
-</li>
-<li>
-<p>Press the <strong>"Add"</strong> button. The message is awaiting for the administrator to approve as indicated by the message in the response page.</p>
-<p>A pop-up box should appear with <strong>"xss"</strong> in it. The input from the user became part of the page; the script input becomes rendered in the browser as script. This is a classic case of stored XSS vulnerability.</p>
-</li>
-<li>
-<p><em>(Optional)</em> Feel free to view the source of the page to look for the XSS alert box and see why it became part of the scripting content in the page.</p>
-</li>
-<li>
-<p>Delete the XSS comment in the <strong>"waiting for approval"</strong> section, as this can be annoying since the pop-up box shows up in every page load. Click the <strong>"Delete Message"</strong> link in the XSS comment.</p>
-</li>
-<li>
-<p>Log out of the guestbook by clicking on the <strong>"Logout"</strong> link.</p>
-</li>
-</ol>
-<p>We have now proved the comment field to be vulnerable to XSS attack. Let's see how we can leverage this vulnerability.</p>
-<p>We know there is an XSS vulnerability in the comment field. Anyone looking at that comment will have their browser hijacked to run scripts. Hence, these browsers can be controlled. That is very useful: what if we can control the administrator's browser so that the comments could automatically be approved as soon as an administrator looks at them? Let's try this concept.</p>
-<ol>
-<li>
-<p>Log in to the guestbook by using <strong>"sec522"</strong> and <strong>"training"</strong> as username and password.</p>
-<ol>
-<li>
-<p>Attempt to add one new comment. Put anything as name, email, and URL. For comments, put the following string:</p>
-<div class="highlight"><pre><span></span><code>You will approve this<span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;guestbook.php?approve=Y&quot;</span><span class="p">&gt;</span>.
-</code></pre></div>
-<p><strong>approve=Y</strong> is to trigger the <strong>"Approve all Posts"</strong> button we saw in the admin function.</p>
-</li>
-<li>
-<p>Click on <strong>"Add"</strong>.</p>
-<p>No action is triggered at this point. The CSRF string is waiting on the server to be retrieved by the administrator (as the admin logs in); the delivery mechanism from the attacker (sec522) to the administrator is XSS.</p>
-</li>
-<li>
-<p>Log out of the guestbook by clicking on the <strong>"Logout"</strong> link.</p>
-</li>
-</ol>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>At this point, the sec522 user had submitted an attack into the system awaiting for the administrator to stumble upon it.</p>
-</div>
-</li>
-<li>
-<p>Log in with <strong>admin / admin</strong> as the credential. This allows you to log in as an administrator.</p>
-<p>We see that the comment is waiting for approval. It even contains a broken image icon in the comment.</p>
-<ol>
-<li>Without doing any delete or approval, click <strong>"Logout"</strong>. At this point, the administrator already unwillingly clicked on the <strong>Approve All Posts</strong> link to approve the comment. The browser did the approval on behalf of the administrator; the instruction came from the user's comment.</li>
-</ol>
-</li>
-<li>
-<p>Log in to the guestbook by using <strong>"sec522"</strong> and <strong>"training"</strong> as username and password.</p>
-<p>The comment is already shown on the screen. The administrator never intentionally approved the comments. XSS and CSRF approved the comment.</p>
-</li>
-</ol>
-<p><br></p>
-<div class="admonition info">
-<p class="admonition-title">Let's go over the whole attack scenario one more time. There are a couple of vulnerabilities at play in this exercise.</p>
-</div>
-<p>User sec522 logs in to post a comment on the guest book. With the text of the comment, the user sec522 also puts in an extra &lt;IMG&gt; tag, which links to the approval function and looks like an image that the browser should automatically load. Once this comment has been submitted, sec522 simply sits and waits till the administrator logs in.</p>
-<p>The administrator logs in and, upon logging in, the comments for approval automatically show up on the screen. The &lt;IMG&gt; tag appears to be an image to the administrator's browser, the &lt; and the &gt; tell the browser that these are HTML codes, and the browser happily obeys these instructions. The browser visits the link in the &lt;IMG&gt;, which leads to approving all of the comments.</p>
-<p>Then when sec522 user logs in again, the comment that sec522 user posted originally is showing up as approved.</p>
-<p>To demonstrate a fix for the XSS vulnerability, we have prepared a \"fixed\" version of the guestbook: "guestbook-xss.php". This file is essentially the same as the guestbook.php we have seen, except the XSS in the comment field is fixed.</p>
-<p>The htmlentities function in PHP is to used to encode characters such as &lt; &gt;, /, &amp;, \', or \" to HTML entities. For example, "\&lt; becomes "&lt;" and "\&gt;" becomes "&gt;" . When "\&lt; gets sent to the browser, the browser will interpret it as HTML. But when "&lt;" gets sent to the browser, the browser will display the "\&lt; symbol.</p>
-<p>One line of example code is below:</p>
-<div class="highlight"><pre><span></span><code><span class="x">print htmlentities($r[3]);</span>
-</code></pre></div>
-<p>Before $r[3] is displayed on-screen, it is encoded.</p>
-<p>Feel free to explore the fixed code at <strong><a href="http://lab-2.3.sans.labs/guestbook-xss.phps">http://lab-2.3.sans.labs/guestbook-xss.phps</a></strong> (line 117).</p>
-<ol>
-<li>
-<p>Browse to <a href="http://lab-2.3.sans.labs/guestbook-xss.php">http://lab-2.3.sans.labs/guestbook-xss.php</a>.</p>
-</li>
-<li>
-<p>Look at the comments and explore why there is no longer a broken image sign but the entire XSS and CSRF string are simply displayed on the screen. Viewing the source of this page gives insight as to why this is no longer treated as an &lt;IMG&gt; tag but simply text on-screen.</p>
-</li>
-</ol>
 <hr />
-<h2 id="part-2-dom-based-xss-in-juice-shop">Part 2: DOM-Based XSS in Juice Shop</h2>
+<h3 id="no-hints">No Hints</h3>
+<p>Proceed to <a href="http://lab-4.4.sans.labs/">http://lab-4.4.sans.labs/</a>. The exercise will guide you through three parts. In each part, a CSP is shown that is too strict to display an image on the site. Modify the CSP to fix it. You can modify the CSP right on the page, and relevant CSP errors are displayed as well. You can also use the web console to learn more about the CSP issue.</p>
+<h3 id="step-by-step-instructions">Step-by-Step Instructions</h3>
 <ol>
 <li>
-<p>Juice Shop is implemented in Docker. To start it, type at the command line.</p>
-<div class="highlight"><pre><span></span><code>juiceshop start
-</code></pre></div>
+<p>Open <strong><a href="http://lab-4.4.sans.labs/">http://lab-4.4.sans.labs/</a></strong> in your browser.</p>
 </li>
 <li>
-<p>Open the browser and visit <a href="http://juiceshop:3000">http://juiceshop:3000</a>. Juice Shop can take a bit of time to load.</p>
+<p>On that page, you will find a link to <a href="http://lab-4.4.sans.labs/csperror.html">http://lab-4.4.sans.labs/csperror.html</a> which is the log file. Open that link in a new window. </p>
 </li>
 <li>
-<p>Explore the search field and attempt to identify the cross-site scripting vulnerability. Try test strings like:</p>
-<div class="highlight"><pre><span></span><code>ABC<span class="err">&lt;</span>&gt; &quot; &#39;
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;text&#39;</span><span class="p">)&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-</code></pre></div>
-<p>What works or doesn't work?</p>
+<p>Click on the "CSP Error 1" link.</p>
 </li>
 <li>
-<p>Try this exploit:</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;javascript:alert(&#39;test&#39;)&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
-</code></pre></div>
+<p>The page is missing an image. The "Last Error" section will show the last CSP error. You may have to reload the page if the section is empty. You can also refresh the error log page to get the latest errors, but that page may be difficult to read.</p>
 </li>
 <li>
-<p>Open the Chrome debugger. (Click on the three vertical dots in the top right. Then select "Developer Tools" from "More tools".)</p>
+<p>Inspect the blocked-uri section in the last error. </p>
+<details class="question"><summary>Does it match the img-src?</summary><p>img-src lab-1.1.sans.labs</p>
+</details>
 </li>
 <li>
-<p>Select the "Network" tab. </p>
-<details class="question"><summary>Do you see any requests when you submit the search? Why not?</summary><p>The exploit in Step 4 works. This is DOM-based XSS that does not require data to be transferred to the server (Step 6: you will not see a network connection).</p>
+<p>Edit the CSP to reflect the correct img-src.</p>
+</li>
+<li>
+<p>Click "Update".</p>
+</li>
+<li>
+<p>If your CSP is correct, then the image of a cat will appear, as well as a link to the next exercise.</p>
+</li>
+<li>
+<p>For the next two pages, follow the same procedures as you did between Step 4 and Step 8.</p>
+<details class="question"><summary>Solutions</summary><p>CSP1: img-src lab-4.4.sans.labs</p>
+<p>CSP2: script-src 'self' 'unsafe-inline'</p>
+<p>CSP3: script-src 'unsafe-inline' 'unsafe-eval'</p>
 </details>
 </li>
 </ol>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
+<ul>
+<li>CSP is effective at protecting the web page against multiple types of attacks.</li>
+<li>CSP Requires some careful configuration, otherwise, it can backfire and render portions of the site not working.</li>
+<li>Using the CSP logging function (report-uri) is a must for troubleshooting</li>
+</ul>
 <hr />
 <h2 id="explore-further">Explore Further</h2>
 <ul>
-<li></li>
+<li>Can you think of the scenarios where CSP can be bypassed?</li>
 </ul>
                 
               
@@ -1046,7 +917,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../2.2/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../4.3/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1055,19 +926,19 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              2.2: Guestbook CSRF
+              4.3: Javascript Security Testing
             </div>
           </div>
         </a>
       
       
-        <a href="../2.4/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../5.1/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              2.4: Unicode and File Upload
+              5.1: DNS Rebinding
             </div>
           </div>
           <div class="md-footer__button md-icon">
