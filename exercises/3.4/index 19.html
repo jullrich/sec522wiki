@@ -14,7 +14,7 @@
     
     
       
-        <title>5.4: Sub Resource Integrity - SEC522 Workbook</title>
+        <title>3.4: Inspecting SSL Traffic - SEC522 Workbook</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#sub-resource-integrity" class="md-skip">
+        <a href="#inspecting-ssl-traffic-with-wireshark" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              5.4: Sub Resource Integrity
+              3.4: Inspecting SSL Traffic
             
           </span>
         </div>
@@ -466,12 +466,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
       
       <label class="md-nav__link" for="__nav_4">
         Day 3
@@ -523,11 +525,90 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../3.4/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          3.4: Inspecting SSL Traffic
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         3.4: Inspecting SSL Traffic
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#inspecting-ssl-traffic" class="md-nav__link">
+    Inspecting SSL Traffic
+  </a>
+  
+    <nav class="md-nav" aria-label="Inspecting SSL Traffic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-hints" class="md-nav__link">
+    No Hints
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step" class="md-nav__link">
+    Step by Step
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-ssl-master-key" class="md-nav__link">
+    Advanced: SSL Master Key
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explore-further" class="md-nav__link">
+    Explore Further
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -622,14 +703,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
       
       <label class="md-nav__link" for="__nav_6">
         Day 5
@@ -681,63 +760,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          5.4: Sub Resource Integrity
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../5.4/" class="md-nav__link">
         5.4: Sub Resource Integrity
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#no-hints" class="md-nav__link">
-    No Hints
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-by-step" class="md-nav__link">
-    Step by Step
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
-    Conclusion
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -820,102 +847,168 @@
     content: 'SANS SEC522 Workbook';
 }}
 @page :left { @bottom-left {
-  content: '5.4-' counter(page);
+  content: '3.4-' counter(page);
 }}
 @page :right { @bottom-right {
-  content: '5.4-' counter(page);
+  content: '3.4-' counter(page);
 }}
 </style>
 
-<h1 id="sub-resource-integrity">Sub Resource Integrity</h1>
+<h1 id="inspecting-ssl-traffic-with-wireshark">Inspecting SSL Traffic with Wireshark</h1>
 <hr />
 <h4 id="objectives">Objectives</h4>
-<div class="codehilite"><pre><span></span><code>Estimated Time: 6 minutes
+<div class="codehilite"><pre><span></span><code>Estimated Time: 15 minutes
 </code></pre></div>
 
-<p>Understand how sub resources integrity can help prevent some attacks that swap components hosted by third parties for malicious components.</p>
+<h5 id="part-1">Part 1:</h5>
+<blockquote>
+<p>In this exercise, the objective is to learn about how SSL actually works. There have been a lot of misconceptions about how SSL works and what features it provides. Everyone seems to understand that SSL makes things secure, but exactly how is this done? We will try to demystify SSL in this exercise.</p>
+</blockquote>
 <h4 id="requirements">Requirements</h4>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Lab VM</li>
 </ul>
 <hr />
+<h2 id="inspecting-ssl-traffic">Inspecting SSL Traffic</h2>
 <h3 id="no-hints">No Hints</h3>
-<p>Start the exercise at <a href="http://lab-5.4.sans.labs/donations.php">http://lab-5.4.sans.labs/donations.php</a> and follow the instructions provided.</p>
 <h3 id="step-by-step">Step by Step</h3>
+<p>We will use Wireshark to inspect a packet capture. Wireshark is a full-featured packet analysis tool. It includes the ability to decrypt SSL traffic as long as we provide the secret key or the session key negotiated between server and browser. In our example, we will use two files:</p>
+<ul>
+<li>
+<p>~/Documents/SSL/ssl.pcap -- a packet capture of https traffic</p>
+</li>
+<li>
+<p>~/Documents/SSL/server.key -- the secret key used by the server in the above sample captures.</p>
+</li>
+<li>
+<p>Click on the <strong>Wireshark</strong> icon on the left of the virtual machine desktop.</p>
+<p><img alt="" src="media/image1.png" /></p>
+<p><strong>Wireshark Icon</strong></p>
+</li>
+<li>
+<p>After Wireshark starts up, click on the top menu <strong>"File"</strong> and then <strong>"Open"</strong>. Select the following file: <strong>/home/student/Documents/SSL/ssl.pcap</strong></p>
+</li>
+</ul>
+<p>Wireshark will now display its familiar default "3-pane" layout. At the top,</p>
+<p>you will see a list of captured packets, one per line.</p>
+<p>The second pane will "explain" the currently highlighted packet.</p>
+<p>At the bottom, the third pane will display the entire packet in hexadecimal "as captured".</p>
+<p><img alt="" src="media/image2.png" /></p>
+<p><strong>Wireshark Default Display</strong></p>
+<p>The first three packets (Nos. 1--3) hold the TCP three-way handshake. They establish the TCP connection and do not indicate that we are going to use SSL.</p>
+<p>Packet 4, sent by the client (192.168.1.121) to the server (192.168.1.174), represents an "SSL Client Hello". With this packet, the client indicates that it would like to talk SSL to the server. It does provide some basic parameters that are used to negotiate the SSL connection.</p>
+<p>By inspecting the middle pane, try to identify the following parameters:</p>
+<details class="question"><summary>What SSL version is the client using?</summary><p>SSL 3.0</p>
+</details>
+<details class="question"><summary>How many cipher suites does the client support?</summary><p>12 </p>
+</details>
+<p><img alt="" src="media/image3.png" /></p>
+<p><strong>Client Hello Details</strong></p>
+<p>In packet #5, the server acknowledges receipt of the client hello.</p>
+<p>Packet 6 contains the server's response, a "Server Hello". This packet also includes the server's certificate. Just as for packet 4, identify the following parameters:</p>
+<details class="question"><summary>Which SSL version is the server accepting?</summary><p>SSL 3.0</p>
+</details>
+<details class="question"><summary>Which cipher suite did the server select?</summary><p>TLS_RSA_WITH_RC4_128_MD5</p>
+</details>
+<details class="question"><summary>Who issued the certificate?</summary><p>SANS CA</p>
+</details>
+<details class="question"><summary>What is the hostname (common name) of the server according to the certificate?</summary><p>sanshost</p>
+</details>
+<p><img alt="Server Hello Details" src="media/image4.png" /></p>
+<p><strong>Server Hello Details</strong></p>
+<p>Packet 12 is the first encrypted data packet. </p>
+<details class="question"><summary>How many bytes of encrypted data does it contain?</summary><p>434</p>
+</details>
+<p><img alt="" src="media/image5.png" /></p>
+<p><strong>Encrypted Packets</strong></p>
+<p>Next, we will try to decrypt the packets.</p>
+<p>To do so, we need to provide Wireshark with the secret key.</p>
+<ol>
+<li>Go to <strong>Edit-&gt;Preferences</strong>, then click on <strong>"Protocols"</strong> at the left-hand side of the Preferences window. Expand the list of protocols and find <strong>"TLS"</strong> (just type "TLS").</li>
+</ol>
+<p><img alt="" src="media/image6.png" /></p>
+<p><strong>SSL Configuration Dialog</strong></p>
 <ol>
 <li>
-<p>Open <a href="http://lab-5.4.sans.labs/subresourceintegrity.php">http://lab-5.4.sans.labs/subresourceintegrity.php</a> in Google Chrome. </p>
+<p>Click on the <strong>"Edit"</strong> button to the right of "RSA keys list:" and click the "+" button in the lower left-hand corner to add a new key.</p>
 </li>
 <li>
-<p>Click on the link to donations.php - <a href="http://lab-5.4.sans.labs/donations.php">http://lab-5.4.sans.labs/donations.php</a>.</p>
+<p>You will now be able to enter the key parameters: IP Address: 192.168.1.174, Port: 443, Protocol: http. For the key file, please select <strong>"Documents"</strong> directory and then <strong>"SSL"</strong> where you can select the <strong>"/home/student/Documents/SSL/server.key"</strong>.</p>
+<p><img alt="" src="media/image7.png" /></p>
+<p><strong>SSL Key Configuration</strong></p>
+<p>Leave the "Password" field empty and click "OK" and close the "Preferences" Dialog by clicking OK. As soon as you close the dialogs, you should see decrypted traffic.</p>
+<p>Packets 12 and 14 are now decrypted.</p>
+<p><img alt="" src="media/image8.png" /></p>
 </li>
 <li>
-<p>Fill out the donation form and click “Submit.” You will see a “Thank you” page, and all looks good.</p>
+<p>Decrypted Packets in Wireshark</p>
 </li>
 <li>
-<p>Click on the <a href="http://lab-5.4.sans.labs/donations.php">http://lab-5.4.sans.labs/donations.php</a> link again to restart the exercise.</p>
-</li>
-<li>
-<p>Press Ctrl-Shift-I to open the Developers Tools.</p>
-</li>
-<li>
-<p>Click on the “Sources” tab in the Developers Tools.</p>
-</li>
-<li>
-<p>Under the js folder, open the “donations.js” file and inspect the “accountid”. Note how the account ID has been altered to “evilcataccount” by an unknown attacker!</p>
-<p><img alt="" class="zoom" src="media/img-1615709782-20210314.png" />
-<strong>Content of donations.js</strong></p>
-</li>
-<li>
-<p>Open a terminal and enter
-    <div class="highlight"><pre><span></span><code>cd /etc/docker/compose/5.4/web/html/js 
-</code></pre></div>
-    to change to the directory with the respective files.</p>
-</li>
-<li>
-<p>Enter “ls” to obtain a directory listing. You will see a file called “dontations_for_stupid_dogs.js”.</p>
-</li>
-<li>
-<p>Use the “diff” command to compare the dontations_for_stupid_dogs.js file to the donations.js file. The files are identical with the exception of the account ID.</p>
-<p>In a terminal, run </p>
-<p><div class="highlight"><pre><span></span><code>diff donations_for_stupid_dogs.js  donations.js
-</code></pre></div>
-to show the differences between two files.</p>
-</li>
-<li>
-<p>Calculate the hash of the “good” file:
-<div class="highlight"><pre><span></span><code>openssl dgst -sha384 -binary &lt; donations_for_stupid_dogs.js | openssl base64 -A
-</code></pre></div>
-You should get the following hash: wZGpBo0UBEBZ2r+uvUPUVH8gvHqHHPJr5Yt9aK+W5D9cSxNhgvF6lAHxsf0gAXbw</p>
-</li>
-<li>
-<p>Open <strong>/etc/docker/compose/5.4/web/html/donations.php</strong> in an editor (Visual Studio Code) and add the “integrity” attribute to the script tag for “donations.js” in line 17. (Solutions below) Save the file after you are done editing and keep the file open.</p>
-</li>
-<li>
-<p>Reload the donations page. You will now see an error on the console tab in the Developer Tools.</p>
-<div class="admonition information">
-<p class="admonition-title">Information</p>
-<p>We have generated a hash (signature) of the legitimate JavaScript but the file being referenced remotely is a file that has been altered by the unknown attacker. As the hashes are not matching, the browser is not going to execute the JavaScript. </p>
-</div>
-</li>
-<li>
-<p>Change line 17 of the donations.php to use “donations_for_stupid_dogs.js” instead of donations.php (keep the integirty parameter intact).</p>
-</li>
-<li>
-<p>Reload the donations page. The script will now load as the signature matches.</p>
+<p>Right-click on packet #12, then select "Follow -&gt; TLS Stream" to reconstruct the payload of the HTTP request and response.</p>
 </li>
 </ol>
-<p>The “integrity” parameter will indicate to the browser that the file has changed. The browser is now able to block scripts if they changed.</p>
-<details class="solution"><summary>Solution</summary><p>Here is the JavaScript reference with integrity attributes embeded (line 17 of donations.php). 
-<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">&quot;/js/donations.js&quot;</span> <span class="nx">integrity</span><span class="o">=</span><span class="s2">&quot;sha384-wZGpBo0UBEBZ2r+uvUPUVH8gvHqHHPJr5Yt9aK+W5D9cSxNhgvF6lAHxsf0gAXbw&quot;</span><span class="o">&gt;&lt;</span><span class="err">/script&gt;</span>
-</code></pre></div></p>
+<details class="question"><summary>What is the content of the payload of the response?</summary><p>HTTP Request - The page has HTML content of a message "The Secret key is: Perfect 10"</p>
 </details>
+<p><img alt="" src="media/image9.png" /></p>
+<p><strong>Decrypted SSL Stream</strong></p>
+<hr />
+<h2 id="advanced-ssl-master-key">Advanced: SSL Master Key</h2>
+<p>In this exercise, we will decrypt SSL without knowing the server's private key. After all, the client has to be able to decrypt the content without the server's keys. Instead, the symmetric key that is negotiated during the SSL handshake is needed. If Diffie-Hellman ciphers are used, then this is the only method to decrypt traffic.</p>
+<p>Chrome (and Firefox) are able to log the symmetric master keys to a file, and Wireshark is able to use this file to decrypt the content.</p>
+<ol>
+<li>
+<p>Start Wireshark.</p>
+</li>
+<li>
+<p>Select the "Loopback: lo" interface and click the blue "fin" on the far left of the toolbar. Wireshark will now start to collect data.</p>
+<p><img alt="" src="media/image10.png" /></p>
+<p><strong>Starting Packet Capture in Wireshark</strong></p>
+</li>
+<li>
+<p>Close Chrome first if it is running.</p>
+</li>
+<li>
+<p>Open Chrome FROM THE COMMAND LINE (not by clicking on the icon). To do this, open a terminal and then enter "google-chrome". This will apply the necessary bash environment variables to Chrome to log the master keys.</p>
+<div class="highlight"><pre><span></span><code>google-chrome
+</code></pre></div>
+</li>
+<li>
+<p>Visit <a href="https://wiki.sans.labs/">https://wiki.sans.labs/</a> (it is a TLS protected site)</p>
+</li>
+<li>
+<p>Close Google Chrome.</p>
+</li>
+<li>
+<p>Stop the acquisition in Wireshark by clicking on the red square.</p>
+</li>
+<li>
+<p>To display only the SSL traffic, enter "tls" as a filter and click "Apply". You will recognize the now-familiar packets like "Client Hello" and "Server Hello".</p>
+</li>
+<li>
+<p>Just like before, we enter the RSA key configuration dialog. Select Edit-&gt;Preferences from the Wireshark menu and proceed to the TLS protocol configuration. But instead of editing the RSA keys list, we just select a (Pre)-Master-Secret log filename at the bottom of the dialog.</p>
+</li>
+<li>
+<p>Use /home/student/Documents/sslkeylogfile.log</p>
+</li>
+<li>
+<p>Just like before, the HTTPS traffic will now be decrypted. But this time, we used symmetric keys captured by the client.</p>
+<div class="admonition information">
+<p class="admonition-title">Information</p>
+<p>The reason why we are launching Chrome from the shell is because of the environment variable in the shell environment called "SSLKEYLOGFILE". This environment variable tells the browser to capture a copy of the SSL key into the disk drive for debugging purpose.
+This method illustrated in part 2 of the exercise is exactly how anyone can debug their traffic with a TLS website. If you ever need to get to decipher the TLS protected traffic with a website, let's say, Google or Facebook. This method allows you to decrypt the traffic from the workstation.</p>
+</div>
+</li>
+</ol>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
 <ul>
-<li>Subresource integrity is useful for making sure that content being loaded from a remote location is of a specific version or that it hasn't been altered.</li>
-<li>When using Subresource integrity, the destination resource changes will cause the browser to stop loading the resource.</li>
-<li>Subresource integirty works for any &lt;link> and &lt;script> elements</li>
+<li>While TLS/SSL is known for protecting traffic between two network hosts, the traffic protected by it can be reverted to cleartext given the right circumstances. </li>
+<li>To debug your own SSL/TLS traffic, use the SSLKEYLOGFILE environment variable to enable the debugging mode in the browser so that encryption key can be captured.</li>
+</ul>
+<hr />
+<h2 id="explore-further">Explore Further</h2>
+<ul>
+<li>Visit an Internet site with SSL and see if you can capture the TLS key on your SSL session.</li>
 </ul>
                 
               
@@ -934,7 +1027,7 @@ You should get the following hash: wZGpBo0UBEBZ2r+uvUPUVH8gvHqHHPJr5Yt9aK+W5D9cS
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../5.3/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../3.3/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -943,19 +1036,19 @@ You should get the following hash: wZGpBo0UBEBZ2r+uvUPUVH8gvHqHHPJr5Yt9aK+W5D9cS
               <span class="md-footer__direction">
                 Previous
               </span>
-              5.3: HTML5
+              3.3: OAuth and Access Control
             </div>
           </div>
         </a>
       
       
-        <a href="../5.5/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../4.1/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              5.5: Logging and Incident Response
+              4.1: WSDL Enumeration and Parameter Tampering
             </div>
           </div>
           <div class="md-footer__button md-icon">

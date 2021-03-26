@@ -14,7 +14,7 @@
     
     
       
-        <title>5.4: Sub Resource Integrity - SEC522 Workbook</title>
+        <title>Troubleshooting - SEC522 Workbook</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#sub-resource-integrity" class="md-skip">
+        <a href="#common-errors" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              5.4: Sub Resource Integrity
+              Troubleshooting
             
           </span>
         </div>
@@ -178,12 +178,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
       
       <label class="md-nav__link" for="__nav_1">
         Introduction
@@ -211,11 +213,96 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../resources/troubleshooting/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Troubleshooting
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Troubleshooting
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hardware" class="md-nav__link">
+    Hardware
+  </a>
+  
+    <nav class="md-nav" aria-label="Hardware">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-host-supports-intel-vt-x-but-intel-vt-x-is-disabled" class="md-nav__link">
+    "The host supports Intel VT-x, but Intel VT-x is disabled"
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#high-resolution-screens" class="md-nav__link">
+    High-Resolution Screens
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    Windows
+  </a>
+  
+    <nav class="md-nav" aria-label="Windows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows-credentialdevice-guard" class="md-nav__link">
+    Windows Credential/Device Guard
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linux-cheat-sheet" class="md-nav__link">
+    Linux Cheat Sheet
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -246,7 +333,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../resources/preparation/" class="md-nav__link">
+      <a href="../preparation/" class="md-nav__link">
         Preparation
       </a>
     </li>
@@ -333,7 +420,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../1.1/" class="md-nav__link">
+      <a href="../../exercises/1.1/" class="md-nav__link">
         1.1: HTTP Basics
       </a>
     </li>
@@ -345,7 +432,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../1.2/" class="md-nav__link">
+      <a href="../../exercises/1.2/" class="md-nav__link">
         1.2: Inspecting HTTP/2 Traffic
       </a>
     </li>
@@ -357,7 +444,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../1.3/" class="md-nav__link">
+      <a href="../../exercises/1.3/" class="md-nav__link">
         1.3: Isolation
       </a>
     </li>
@@ -369,7 +456,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../1.4/" class="md-nav__link">
+      <a href="../../exercises/1.4/" class="md-nav__link">
         1.4: SSRF and Credential Stealing
       </a>
     </li>
@@ -411,7 +498,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2.1/" class="md-nav__link">
+      <a href="../../exercises/2.1/" class="md-nav__link">
         2.1: SQL Injection
       </a>
     </li>
@@ -423,7 +510,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2.2/" class="md-nav__link">
+      <a href="../../exercises/2.2/" class="md-nav__link">
         2.2: Guestbook CSRF
       </a>
     </li>
@@ -435,7 +522,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2.3/" class="md-nav__link">
+      <a href="../../exercises/2.3/" class="md-nav__link">
         2.3: Cross-Site Scripting
       </a>
     </li>
@@ -447,7 +534,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2.4/" class="md-nav__link">
+      <a href="../../exercises/2.4/" class="md-nav__link">
         2.4: Unicode and File Upload
       </a>
     </li>
@@ -489,7 +576,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../3.1/" class="md-nav__link">
+      <a href="../../exercises/3.1/" class="md-nav__link">
         3.1: Authentication
       </a>
     </li>
@@ -501,7 +588,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../3.2/" class="md-nav__link">
+      <a href="../../exercises/3.2/" class="md-nav__link">
         3.2: Session Fixation and Session Breaking
       </a>
     </li>
@@ -513,7 +600,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../3.3/" class="md-nav__link">
+      <a href="../../exercises/3.3/" class="md-nav__link">
         3.3: OAuth and Access Control
       </a>
     </li>
@@ -525,7 +612,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../3.4/" class="md-nav__link">
+      <a href="../../exercises/3.4/" class="md-nav__link">
         3.4: Inspecting SSL Traffic
       </a>
     </li>
@@ -567,7 +654,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.1/" class="md-nav__link">
+      <a href="../../exercises/4.1/" class="md-nav__link">
         4.1: WSDL Enumeration and Parameter Tampering
       </a>
     </li>
@@ -579,7 +666,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.2/" class="md-nav__link">
+      <a href="../../exercises/4.2/" class="md-nav__link">
         4.2: XMLHttpRequest
       </a>
     </li>
@@ -591,7 +678,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.3/" class="md-nav__link">
+      <a href="../../exercises/4.3/" class="md-nav__link">
         4.3: Javascript Security Testing
       </a>
     </li>
@@ -603,7 +690,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.4/" class="md-nav__link">
+      <a href="../../exercises/4.4/" class="md-nav__link">
         4.4: Content Security Policy
       </a>
     </li>
@@ -622,14 +709,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
       
       <label class="md-nav__link" for="__nav_6">
         Day 5
@@ -647,7 +732,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../5.1/" class="md-nav__link">
+      <a href="../../exercises/5.1/" class="md-nav__link">
         5.1: DNS Rebinding
       </a>
     </li>
@@ -659,7 +744,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../5.2/" class="md-nav__link">
+      <a href="../../exercises/5.2/" class="md-nav__link">
         5.2: Clickjacking
       </a>
     </li>
@@ -671,7 +756,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../5.3/" class="md-nav__link">
+      <a href="../../exercises/5.3/" class="md-nav__link">
         5.3: HTML5
       </a>
     </li>
@@ -681,63 +766,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          5.4: Sub Resource Integrity
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../exercises/5.4/" class="md-nav__link">
         5.4: Sub Resource Integrity
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#no-hints" class="md-nav__link">
-    No Hints
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-by-step" class="md-nav__link">
-    Step by Step
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
-    Conclusion
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -747,7 +780,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../5.5/" class="md-nav__link">
+      <a href="../../exercises/5.5/" class="md-nav__link">
         5.5: Logging and Incident Response
       </a>
     </li>
@@ -820,103 +853,120 @@
     content: 'SANS SEC522 Workbook';
 }}
 @page :left { @bottom-left {
-  content: '5.4-' counter(page);
+  content: 'TT-' counter(page);
 }}
 @page :right { @bottom-right {
-  content: '5.4-' counter(page);
+  content: 'TT-' counter(page);
 }}
 </style>
 
-<h1 id="sub-resource-integrity">Sub Resource Integrity</h1>
-<hr />
-<h4 id="objectives">Objectives</h4>
-<div class="codehilite"><pre><span></span><code>Estimated Time: 6 minutes
-</code></pre></div>
-
-<p>Understand how sub resources integrity can help prevent some attacks that swap components hosted by third parties for malicious components.</p>
-<h4 id="requirements">Requirements</h4>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Lab VM</li>
-</ul>
-<hr />
-<h3 id="no-hints">No Hints</h3>
-<p>Start the exercise at <a href="http://lab-5.4.sans.labs/donations.php">http://lab-5.4.sans.labs/donations.php</a> and follow the instructions provided.</p>
-<h3 id="step-by-step">Step by Step</h3>
+<h1 id="common-errors">Common Errors</h1>
+<h2 id="hardware">Hardware</h2>
+<h3 id="the-host-supports-intel-vt-x-but-intel-vt-x-is-disabled">"The host supports Intel VT-x, but Intel VT-x is disabled"</h3>
+<p>One reason starting the virtual machine may fail is having Intel VT-x disabled. If this is the case, you will see an error message about "The host supports Intel VT-x, but Intel VT-x is disabled". VT-x has to be enabled in your system BIOS, which slightly differs from system to system. You may need the instructor's help to find out how to fix this.</p>
+<h4 id="newer-systems-uefi-not-traditional-bios">Newer Systems (UEFI, not traditional BIOS)</h4>
 <ol>
 <li>
-<p>Open <a href="http://lab-5.4.sans.labs/subresourceintegrity.php">http://lab-5.4.sans.labs/subresourceintegrity.php</a> in Google Chrome. </p>
+<p>Hold the SHIFT key while restarting your Windows System.</p>
 </li>
 <li>
-<p>Click on the link to donations.php - <a href="http://lab-5.4.sans.labs/donations.php">http://lab-5.4.sans.labs/donations.php</a>.</p>
+<p>The system will restart and end up on a blue screen with various options. Select "Troubleshoot".</p>
 </li>
 <li>
-<p>Fill out the donation form and click “Submit.” You will see a “Thank you” page, and all looks good.</p>
+<p>From the "Troubleshoot" menu, select "Advanced Options".</p>
 </li>
 <li>
-<p>Click on the <a href="http://lab-5.4.sans.labs/donations.php">http://lab-5.4.sans.labs/donations.php</a> link again to restart the exercise.</p>
+<p>Select "UEFI Firmware Settings".</p>
 </li>
 <li>
-<p>Press Ctrl-Shift-I to open the Developers Tools.</p>
+<p>Select "Restart".</p>
 </li>
 <li>
-<p>Click on the “Sources” tab in the Developers Tools.</p>
+<p>The system will restart again and give you the option to change your BIOS settings, usually by pressing F10. But watch the startup screen carefully for instructions.</p>
 </li>
 <li>
-<p>Under the js folder, open the “donations.js” file and inspect the “accountid”. Note how the account ID has been altered to “evilcataccount” by an unknown attacker!</p>
-<p><img alt="" class="zoom" src="media/img-1615709782-20210314.png" />
-<strong>Content of donations.js</strong></p>
-</li>
-<li>
-<p>Open a terminal and enter
-    <div class="highlight"><pre><span></span><code>cd /etc/docker/compose/5.4/web/html/js 
-</code></pre></div>
-    to change to the directory with the respective files.</p>
-</li>
-<li>
-<p>Enter “ls” to obtain a directory listing. You will see a file called “dontations_for_stupid_dogs.js”.</p>
-</li>
-<li>
-<p>Use the “diff” command to compare the dontations_for_stupid_dogs.js file to the donations.js file. The files are identical with the exception of the account ID.</p>
-<p>In a terminal, run </p>
-<p><div class="highlight"><pre><span></span><code>diff donations_for_stupid_dogs.js  donations.js
-</code></pre></div>
-to show the differences between two files.</p>
-</li>
-<li>
-<p>Calculate the hash of the “good” file:
-<div class="highlight"><pre><span></span><code>openssl dgst -sha384 -binary &lt; donations_for_stupid_dogs.js | openssl base64 -A
-</code></pre></div>
-You should get the following hash: wZGpBo0UBEBZ2r+uvUPUVH8gvHqHHPJr5Yt9aK+W5D9cSxNhgvF6lAHxsf0gAXbw</p>
-</li>
-<li>
-<p>Open <strong>/etc/docker/compose/5.4/web/html/donations.php</strong> in an editor (Visual Studio Code) and add the “integrity” attribute to the script tag for “donations.js” in line 17. (Solutions below) Save the file after you are done editing and keep the file open.</p>
-</li>
-<li>
-<p>Reload the donations page. You will now see an error on the console tab in the Developer Tools.</p>
-<div class="admonition information">
-<p class="admonition-title">Information</p>
-<p>We have generated a hash (signature) of the legitimate JavaScript but the file being referenced remotely is a file that has been altered by the unknown attacker. As the hashes are not matching, the browser is not going to execute the JavaScript. </p>
-</div>
-</li>
-<li>
-<p>Change line 17 of the donations.php to use “donations_for_stupid_dogs.js” instead of donations.php (keep the integirty parameter intact).</p>
-</li>
-<li>
-<p>Reload the donations page. The script will now load as the signature matches.</p>
+<p>Continue at Step 3 below.</p>
 </li>
 </ol>
-<p>The “integrity” parameter will indicate to the browser that the file has changed. The browser is now able to block scripts if they changed.</p>
-<details class="solution"><summary>Solution</summary><p>Here is the JavaScript reference with integrity attributes embeded (line 17 of donations.php). 
-<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">&quot;/js/donations.js&quot;</span> <span class="nx">integrity</span><span class="o">=</span><span class="s2">&quot;sha384-wZGpBo0UBEBZ2r+uvUPUVH8gvHqHHPJr5Yt9aK+W5D9cSxNhgvF6lAHxsf0gAXbw&quot;</span><span class="o">&gt;&lt;</span><span class="err">/script&gt;</span>
-</code></pre></div></p>
-</details>
+<h4 id="older-system-traditional-bios-not-uefi">Older System (traditional BIOS, not UEFI)</h4>
+<ol>
+<li>
+<p>Reboot the system.</p>
+</li>
+<li>
+<p>During boot, watch for which key to use to enter the BIOS settings. Common keys include F1, F10, and Delete.</p>
+</li>
+<li>
+<p>Once in the BIOS settings, look for "Virtualization Technology", "VT-x", or similar options and enable them. You can often find them on the "System Configuration" or "Security" page.</p>
+</li>
+<li>
+<p>Exit and save your changes.</p>
+</li>
+</ol>
+<p>The exact wording and instructions may change from system to system. You will need to have access to your BIOS settings. Some corporate configurations password-protect the settings. You will need to obtain the password to change them.</p>
+<h3 id="high-resolution-screens">High-Resolution Screens</h3>
+<p>Some modern laptops use very high-resolution screens ("Retina Screens"). This can lead to hard-to-read fonts within the virtual machine. The simplest way to make the screen readable is by reducing the resolution of your screen in Windows, which will essentially turn off the high-resolution feature.</p>
+<p>Apple laptops with high-resolution screens running MacOS and VMware Fusion do not suffer from this problem. If you do experience the issue, double-check your display settings:</p>
+<ol>
+<li>
+<p>Select "Virtual Machine" -&gt; "Settings..." from the VMware Fusion menu.</p>
+</li>
+<li>
+<p>Select "Display".</p>
+</li>
+<li>
+<p>Verify that your settings match the settings in the image below.</p>
+<p><img alt="" src="../media/image1.png" /></p>
+<p><strong>VMware Fusion Display Settings</strong></p>
+</li>
+</ol>
 <hr />
-<h2 id="conclusion">Conclusion</h2>
-<ul>
-<li>Subresource integrity is useful for making sure that content being loaded from a remote location is of a specific version or that it hasn't been altered.</li>
-<li>When using Subresource integrity, the destination resource changes will cause the browser to stop loading the resource.</li>
-<li>Subresource integirty works for any &lt;link> and &lt;script> elements</li>
-</ul>
+<h2 id="windows">Windows</h2>
+<h3 id="windows-credentialdevice-guard">Windows Credential/Device Guard</h3>
+<p>With Windows Credential Guard enabled, Windows will run in a Hyper-V virtual machine. This isn't obvious but will prevent VMware from running (VMware cannot run inside a virtual machine). You will see an error like:</p>
+<p>VMware Workstation and Device/Credential Guard are not compatible. VMware Workstation can be run after disabling Device/Credential Guard.</p>
+<p>To disable credential guard, follow these steps (copied from Microsoft's knowledge base article at <a href="https://docs.microsoft.com/en-us/windows/security/identity-protection/credential-guard/credential-guard-manage">https://docs.microsoft.com/en-us/windows/security/identity-protection/credential-guard/credential-guard-manage</a>.</p>
+<ol>
+<li>
+<p>From the Group Policy Management Console, go to "Computer Configuration" -&gt; "Administrative Templates" -&gt; System -&gt; "Device Guard".</p>
+</li>
+<li>
+<p>Double-click "Turn On Virtualization Based Security", and then click the "Enabled" option.</p>
+</li>
+<li>
+<p>In the Select Platform Security Level box, choose "Secure Boot" or "Secure Boot and DMA Protection".</p>
+</li>
+<li>
+<p>In the Credential Guard Configuration box, click "Enabled with UEFI lock", and then click OK.</p>
+</li>
+<li>
+<p>Close the Group Policy Management Console.</p>
+<p>To enforce processing of the group policy, you can run </p>
+<div class="highlight"><pre><span></span><code>gpupdate /force.
+</code></pre></div>
+</li>
+</ol>
+<hr />
+<h2 id="linux-cheat-sheet">Linux Cheat Sheet</h2>
+<p>To navigate the virtual machine, you will need some basic Linux skills.</p>
+<p>The main user used for most exercises is "sec522". Dev522's home directory is /home/sec522.</p>
+<p>To open a terminal, click on the Terminal icon on the left. This area on the left is also referred to as the "Favorites" area.</p>
+<p><img alt="" src="../media/image2.png" /></p>
+<ol>
+<li>
+<p>Terminal Icon</p>
+<p>Once a terminal opens, you may navigate directories using the "cd" command.</p>
+<p>To edit a file, you can just use "gedit" followed by the filename. For example,</p>
+<div class="highlight"><pre><span></span><code>gedit /tmp/testing.txt
+</code></pre></div>
+<p>will edit the file "testing.txt" in the /tmp directory. Gedit is similar to Windows Notepad.</p>
+<p>For a more full-featured editor, we have Microsoft's Visual Studio Code available. You can start it by typing "code" on the command line, or by clicking on the icon on the left.</p>
+<p><img alt="" src="../media/image3.png" /></p>
+</li>
+<li>
+<p>Microsoft Visual Studio Code Icon</p>
+</li>
+</ol>
                 
               
               
@@ -934,7 +984,7 @@ You should get the following hash: wZGpBo0UBEBZ2r+uvUPUVH8gvHqHHPJr5Yt9aK+W5D9cS
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../5.3/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../.." class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -943,19 +993,19 @@ You should get the following hash: wZGpBo0UBEBZ2r+uvUPUVH8gvHqHHPJr5Yt9aK+W5D9cS
               <span class="md-footer__direction">
                 Previous
               </span>
-              5.3: HTML5
+              Welcome!
             </div>
           </div>
         </a>
       
       
-        <a href="../5.5/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../preparation/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              5.5: Logging and Incident Response
+              Preparation
             </div>
           </div>
           <div class="md-footer__button md-icon">

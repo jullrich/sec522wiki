@@ -14,7 +14,7 @@
     
     
       
-        <title>5.4: Sub Resource Integrity - SEC522 Workbook</title>
+        <title>1.4: SSRF and Credential Stealing - SEC522 Workbook</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#sub-resource-integrity" class="md-skip">
+        <a href="#ssrf-and-credentials-stealing-services" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              5.4: Sub Resource Integrity
+              1.4: SSRF and Credential Stealing
             
           </span>
         </div>
@@ -310,12 +310,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       <label class="md-nav__link" for="__nav_2">
         Day 1
@@ -367,11 +369,70 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../1.4/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          1.4: SSRF and Credential Stealing
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         1.4: SSRF and Credential Stealing
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#no-hints" class="md-nav__link">
+    No Hints
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-by-step" class="md-nav__link">
+    Step by Step
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explore-further" class="md-nav__link">
+    Explore Further
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -622,14 +683,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
       
       <label class="md-nav__link" for="__nav_6">
         Day 5
@@ -681,63 +740,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          5.4: Sub Resource Integrity
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../5.4/" class="md-nav__link">
         5.4: Sub Resource Integrity
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#no-hints" class="md-nav__link">
-    No Hints
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-by-step" class="md-nav__link">
-    Step by Step
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
-    Conclusion
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -820,102 +827,64 @@
     content: 'SANS SEC522 Workbook';
 }}
 @page :left { @bottom-left {
-  content: '5.4-' counter(page);
+  content: '1.4-' counter(page);
 }}
 @page :right { @bottom-right {
-  content: '5.4-' counter(page);
+  content: '1.4-' counter(page);
 }}
 </style>
 
-<h1 id="sub-resource-integrity">Sub Resource Integrity</h1>
+<h1 id="ssrf-and-credentials-stealing-services">SSRF and Credentials Stealing Services</h1>
 <hr />
 <h4 id="objectives">Objectives</h4>
-<div class="codehilite"><pre><span></span><code>Estimated Time: 6 minutes
+<div class="codehilite"><pre><span></span><code>Estimated Time: 10 minutes
 </code></pre></div>
 
-<p>Understand how sub resources integrity can help prevent some attacks that swap components hosted by third parties for malicious components.</p>
+<blockquote>
+<p>This exercise simulates a cloud compromise due to SSRF vulnerability. You will first exploit the SSRF vulnerability, and then use the retrieved data to access a cloud storage service. You should understand how SSRF can be used to expose internal services and how that information can be used for additional compromise.</p>
+</blockquote>
 <h4 id="requirements">Requirements</h4>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Lab VM</li>
 </ul>
 <hr />
 <h3 id="no-hints">No Hints</h3>
-<p>Start the exercise at <a href="http://lab-5.4.sans.labs/donations.php">http://lab-5.4.sans.labs/donations.php</a> and follow the instructions provided.</p>
+<p>Start at <a href="http://lab-1.4.sans.labs/ssrf.php">http://lab-1.4.sans.labs/ssrf.php</a>. The page will provide additional hints.</p>
 <h3 id="step-by-step">Step by Step</h3>
 <ol>
 <li>
-<p>Open <a href="http://lab-5.4.sans.labs/subresourceintegrity.php">http://lab-5.4.sans.labs/subresourceintegrity.php</a> in Google Chrome. </p>
+<p>Open <a href="http://lab-1.4.sans.labs/ssrf.php">http://lab-1.4.sans.labs/ssrf.php</a> in a browser. The page will allow you to add RSS feed URLs. The server will retrieve the feed without validating the source.</p>
 </li>
 <li>
-<p>Click on the link to donations.php - <a href="http://lab-5.4.sans.labs/donations.php">http://lab-5.4.sans.labs/donations.php</a>.</p>
+<p>To test it, enter <a href="http://lab-1.4.sans.labs/">http://lab-1.4.sans.labs/</a> as a URL in the Feed URL. You will see the HTML content of the page being retrieved and displayed.</p>
 </li>
 <li>
-<p>Fill out the donation form and click “Submit.” You will see a “Thank you” page, and all looks good.</p>
+<p>There is a meta-data server at 169.254.169.254. Retrieve its index by using <a href="http://169.254.169.254">http://169.254.169.254</a> as "Feed URL".</p>
 </li>
 <li>
-<p>Click on the <a href="http://lab-5.4.sans.labs/donations.php">http://lab-5.4.sans.labs/donations.php</a> link again to restart the exercise.</p>
+<p>Explore the content of the service by retrieving the content of directories (e.g. <a href="http://169.254.169.254/latest">http://169.254.169.254/latest</a> ).</p>
 </li>
 <li>
-<p>Press Ctrl-Shift-I to open the Developers Tools.</p>
+<p>The server uses a special local URL for meta data like authentication tokens. Try this URL (important: do not forget the slash in the end).</p>
+<p><a href="http://169.254.169.254/latest/meta-data/iam/security-credentials/cg-ec2-role-cgidmxg5qsmw9b/">http://169.254.169.254/latest/meta-data/iam/security-credentials/cg-ec2-role-cgidmxg5qsmw9b/</a></p>
 </li>
 <li>
-<p>Click on the “Sources” tab in the Developers Tools.</p>
+<p>Copy the entire response (including the enclosing { } ) to a file called "/home/student/.sawssecret". You can do this either with the terminal or with Visual Studio Code.</p>
 </li>
 <li>
-<p>Under the js folder, open the “donations.js” file and inspect the “accountid”. Note how the account ID has been altered to “evilcataccount” by an unknown attacker!</p>
-<p><img alt="" class="zoom" src="media/img-1615709782-20210314.png" />
-<strong>Content of donations.js</strong></p>
-</li>
-<li>
-<p>Open a terminal and enter
-    <div class="highlight"><pre><span></span><code>cd /etc/docker/compose/5.4/web/html/js 
-</code></pre></div>
-    to change to the directory with the respective files.</p>
-</li>
-<li>
-<p>Enter “ls” to obtain a directory listing. You will see a file called “dontations_for_stupid_dogs.js”.</p>
-</li>
-<li>
-<p>Use the “diff” command to compare the dontations_for_stupid_dogs.js file to the donations.js file. The files are identical with the exception of the account ID.</p>
-<p>In a terminal, run </p>
-<p><div class="highlight"><pre><span></span><code>diff donations_for_stupid_dogs.js  donations.js
-</code></pre></div>
-to show the differences between two files.</p>
-</li>
-<li>
-<p>Calculate the hash of the “good” file:
-<div class="highlight"><pre><span></span><code>openssl dgst -sha384 -binary &lt; donations_for_stupid_dogs.js | openssl base64 -A
-</code></pre></div>
-You should get the following hash: wZGpBo0UBEBZ2r+uvUPUVH8gvHqHHPJr5Yt9aK+W5D9cSxNhgvF6lAHxsf0gAXbw</p>
-</li>
-<li>
-<p>Open <strong>/etc/docker/compose/5.4/web/html/donations.php</strong> in an editor (Visual Studio Code) and add the “integrity” attribute to the script tag for “donations.js” in line 17. (Solutions below) Save the file after you are done editing and keep the file open.</p>
-</li>
-<li>
-<p>Reload the donations page. You will now see an error on the console tab in the Developer Tools.</p>
-<div class="admonition information">
-<p class="admonition-title">Information</p>
-<p>We have generated a hash (signature) of the legitimate JavaScript but the file being referenced remotely is a file that has been altered by the unknown attacker. As the hashes are not matching, the browser is not going to execute the JavaScript. </p>
-</div>
-</li>
-<li>
-<p>Change line 17 of the donations.php to use “donations_for_stupid_dogs.js” instead of donations.php (keep the integirty parameter intact).</p>
-</li>
-<li>
-<p>Reload the donations page. The script will now load as the signature matches.</p>
+<p>Open a terminal and run "s-aws" to gain access to the storage repository. "s-aws" reads credentials from the /home/student/.sawssecret file.</p>
 </li>
 </ol>
-<p>The “integrity” parameter will indicate to the browser that the file has changed. The browser is now able to block scripts if they changed.</p>
-<details class="solution"><summary>Solution</summary><p>Here is the JavaScript reference with integrity attributes embeded (line 17 of donations.php). 
-<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">&quot;/js/donations.js&quot;</span> <span class="nx">integrity</span><span class="o">=</span><span class="s2">&quot;sha384-wZGpBo0UBEBZ2r+uvUPUVH8gvHqHHPJr5Yt9aK+W5D9cSxNhgvF6lAHxsf0gAXbw&quot;</span><span class="o">&gt;&lt;</span><span class="err">/script&gt;</span>
-</code></pre></div></p>
-</details>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
 <ul>
-<li>Subresource integrity is useful for making sure that content being loaded from a remote location is of a specific version or that it hasn't been altered.</li>
-<li>When using Subresource integrity, the destination resource changes will cause the browser to stop loading the resource.</li>
-<li>Subresource integirty works for any &lt;link> and &lt;script> elements</li>
+<li>SSRF can lead to the web server becoming a relay point for sending a HTTP request on behalf of the client. Since the request is sent by the Web server, it could access resources that are only accessible to the Web server such as DMZ or internal network resources.</li>
+<li>In public Cloud environment, specifically the Infrastructure as a Service Computing, the orign of the HTTP request matters a great deal. Through SSRF attacks, it is possible to acquire credentials for the Virtual Machine that the web application is running on and then pivot over to attack/access other Cloud based components.</li>
+</ul>
+<hr />
+<h2 id="explore-further">Explore Further</h2>
+<ul>
+<li>Look up the IMDS (Instance Metadata Service) in Cloud Security Provider and determine if they are vulnerable to similar type of flaws.</li>
 </ul>
                 
               
@@ -934,7 +903,7 @@ You should get the following hash: wZGpBo0UBEBZ2r+uvUPUVH8gvHqHHPJr5Yt9aK+W5D9cS
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../5.3/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../1.3/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -943,19 +912,19 @@ You should get the following hash: wZGpBo0UBEBZ2r+uvUPUVH8gvHqHHPJr5Yt9aK+W5D9cS
               <span class="md-footer__direction">
                 Previous
               </span>
-              5.3: HTML5
+              1.3: Isolation
             </div>
           </div>
         </a>
       
       
-        <a href="../5.5/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../2.1/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              5.5: Logging and Incident Response
+              2.1: SQL Injection
             </div>
           </div>
           <div class="md-footer__button md-icon">
