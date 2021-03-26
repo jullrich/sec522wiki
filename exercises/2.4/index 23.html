@@ -14,7 +14,7 @@
     
     
       
-        <title>2.3: Cross-Site Scripting - SEC522 Workbook</title>
+        <title>2.4: Unicode and File Upload - SEC522 Workbook</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#cross-site-scripting" class="md-skip">
+        <a href="#unicode-and-file-upload" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              2.3: Cross-Site Scripting
+              2.4: Unicode and File Upload
             
           </span>
         </div>
@@ -435,6 +435,18 @@
             
   
   
+  
+    <li class="md-nav__item">
+      <a href="../2.3/" class="md-nav__link">
+        2.3: Cross-Site Scripting
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
     
   
   
@@ -446,12 +458,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          2.3: Cross-Site Scripting
+          2.4: Unicode and File Upload
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        2.3: Cross-Site Scripting
+        2.4: Unicode and File Upload
       </a>
       
         
@@ -468,19 +480,12 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#part-1-guestbook-xss-with-csrf" class="md-nav__link">
-    Part 1: Guestbook XSS with CSRF
+  <a href="#part-1-international-domain-names" class="md-nav__link">
+    Part 1: International Domain Names
   </a>
   
-    <nav class="md-nav" aria-label="Part 1: Guestbook XSS with CSRF">
+    <nav class="md-nav" aria-label="Part 1: International Domain Names">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#no-hints" class="md-nav__link">
-    No Hints
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#step-by-step" class="md-nav__link">
@@ -495,9 +500,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#part-2-dom-based-xss-in-juice-shop" class="md-nav__link">
-    Part 2: DOM-Based XSS in Juice Shop
+  <a href="#part-2-xss-via-inappropriate-character-set-conversion" class="md-nav__link">
+    Part 2: XSS via Inappropriate Character Set Conversion
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-file-upload" class="md-nav__link">
+    Part 3: File Upload
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 3: File Upload">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-hints" class="md-nav__link">
+    No Hints
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step_1" class="md-nav__link">
+    Step by Step
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -519,18 +551,6 @@
   
 </nav>
       
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2.4/" class="md-nav__link">
-        2.4: Unicode and File Upload
-      </a>
     </li>
   
 
@@ -847,14 +867,14 @@
     content: 'SANS SEC522 Workbook';
 }}
 @page :left { @bottom-left {
-  content: '2.3-' counter(page);
+  content: '2.4-' counter(page);
 }}
 @page :right { @bottom-right {
-  content: '2.3-' counter(page);
+  content: '2.4-' counter(page);
 }}
 </style>
 
-<h1 id="cross-site-scripting">Cross-Site Scripting</h1>
+<h1 id="unicode-and-file-upload">Unicode and File Upload</h1>
 <hr />
 <h4 id="objectives">Objectives</h4>
 <div class="codehilite"><pre><span></span><code>Estimated Time: 10 minutes
@@ -862,175 +882,149 @@
 
 <h5 id="part-1">Part 1:</h5>
 <blockquote>
-<p>You will learn how to identify XSS and how important it is to check all input fields for XSS. We will also learn how XSS can be abused against a guestbook web application and how XSS may result in CSRF.</p>
+<p>In this exercise, you will experience some of the visual problems associated with international domain names.</p>
 </blockquote>
 <h5 id="part-2">Part 2:</h5>
 <blockquote>
-<p>Uses "Juice Shop", a pre-built web application with known vulnerabilities. Juice Shop is a modern Node.js based application. The search feature is vulnerable to a DOM-based XSS attack.</p>
+<p>In this exercise, we will explore the XSS that can be induced with injecting unexpected character sets input.</p>
+</blockquote>
+<h5 id="part-3">Part 3:</h5>
+<blockquote>
+<p>In this exercise, we will evaluate the threats of handling file upload from users.</p>
 </blockquote>
 <h4 id="requirements">Requirements</h4>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Lab VM</li>
 </ul>
-<h2 id="part-1-guestbook-xss-with-csrf">Part 1: Guestbook XSS with CSRF</h2>
-<h3 id="no-hints">No Hints</h3>
-<p>Also, for the guestbook at <a href="http://lab-2.3.sans.labs/login.php">http://lab-2.3.sans.labs/login.php</a>, we experimented with this guestbook before. This time find the XSS vulnerability and exploit it to automatically approve posts that an administrator views. (Logins available - sec522/training and admin/admin)</p>
-<h3 id="step-by-step">Step by Step</h3>
-<p>For this part, we will revisit the guestbook system. The administrator of the site noticed the CSRF attack and decided to manually approve every single guestbook entry.</p>
-<ol>
-<li>
-<p>Using Chrome, browse to <strong><a href="http://lab-2.3.sans.labs/login.php">http://lab-2.3.sans.labs/login.php</a></strong>. </p>
-</li>
-<li>
-<p>Log in to the guestbook by using <strong>"sec522"</strong> and <strong>"training"</strong> as username and password.</p>
-<ol>
-<li>
-<p>Attempt to input two guest entries into the guestbook. The new guestbook requires the administrator to approve the entries before they are posted on the page.</p>
-</li>
-<li>
-<p>Log out of the guestbook by clicking on the <strong>"Logout"</strong> link.</p>
-</li>
-</ol>
-</li>
-<li>
-<p>Log in with username <strong>"admin"</strong> and password <strong>"admin"</strong>. This allows you to log in as an administrator.</p>
-<p>Administrative functions are now available. This includes the ability to delete comments and to approve messages.</p>
-<ol>
-<li>
-<p>There should be two comments awaiting approval. Please click delete on one of the comments. That comment should then be deleted.</p>
-</li>
-<li>
-<p>There should be one comment left; click the <strong>"Approve All Posts"</strong> button to approve the comment to be displayed to the public.</p>
-</li>
-</ol>
-</li>
-<li>
-<p>Log out of the guestbook by clicking on the <strong>"Logout"</strong> link.</p>
-</li>
-</ol>
-<p>The CSRF attack towards other users is obviously no longer possible, as it would likely not get past the administrator, who will review the comments before allowing the public to see them.</p>
-<p><br></p>
-<p>Now that we understand how this guestbook system works, let's explore if it is vulnerable to attacks.</p>
-<ol>
-<li>
-<p>Log in to the guestbook by using <strong>"sec522"</strong> and <strong>"training"</strong> as username and password.</p>
-</li>
-<li>
-<p>Attempt to add one new comment. Put anything as name, email, and URL. For comments, enter the following string:</p>
-<div class="highlight"><pre><span></span><code>XSS<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;xss&#39;</span><span class="p">);&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-</code></pre></div>
-</li>
-<li>
-<p>Press the <strong>"Add"</strong> button. The message is awaiting for the administrator to approve as indicated by the message in the response page.</p>
-</li>
-<li>
-<p>Click <strong>"Logout"</strong> then log in with username <strong>"admin"</strong> and password <strong>"admin"</strong>.
-   A pop-up box should appear with <strong>"xss"</strong> in it. The input from the user became part of the page; the script input becomes rendered in the browser as script. This is a classic case of stored XSS vulnerability.</p>
-</li>
-<li>
-<p><em>(Optional)</em> Feel free to view the source of the page to look for the XSS alert box and see why it became part of the scripting content in the page.</p>
-</li>
-<li>
-<p>Delete the XSS comment in the <strong>"waiting for approval"</strong> section, as this can be annoying since the pop-up box shows up in every page load. Click the <strong>"Delete Message"</strong> link in the XSS comment.</p>
-</li>
-<li>
-<p>Log out of the guestbook by clicking on the <strong>"Logout"</strong> link.</p>
-</li>
-</ol>
-<p>We have now proved the comment field to be vulnerable to XSS attack. Let's see how we can leverage this vulnerability.</p>
-<p>We know there is an XSS vulnerability in the comment field. Anyone looking at that comment will have their browser hijacked to run scripts. Hence, these browsers can be controlled. That is very useful: what if we can control the administrator's browser so that the comments could automatically be approved as soon as an administrator looks at them? Let's try this concept.</p>
-<ol>
-<li>
-<p>Log in to the guestbook by using <strong>"sec522"</strong> and <strong>"training"</strong> as username and password.</p>
-<ol>
-<li>
-<p>Attempt to add one new comment. Put anything as name, email, and URL. For comments, put the following string:</p>
-<div class="highlight"><pre><span></span><code>You will approve this<span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;guestbook.php?approve=Y&quot;</span><span class="p">&gt;</span>.
-</code></pre></div>
-<p><strong>approve=Y</strong> is to trigger the <strong>"Approve all Posts"</strong> button we saw in the admin function.</p>
-</li>
-<li>
-<p>Click on <strong>"Add"</strong>.</p>
-<p>No action is triggered at this point. The CSRF string is waiting on the server to be retrieved by the administrator (as the admin logs in); the delivery mechanism from the attacker (sec522) to the administrator is XSS.</p>
-</li>
-<li>
-<p>Log out of the guestbook by clicking on the <strong>"Logout"</strong> link.</p>
-</li>
-</ol>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>At this point, the sec522 user had submitted an attack into the system awaiting for the administrator to stumble upon it.</p>
-</div>
-</li>
-<li>
-<p>Log in with <strong>admin / admin</strong> as the credential. This allows you to log in as an administrator.</p>
-<p>We see that the comment is waiting for approval. It even contains a broken image icon in the comment.</p>
-<ol>
-<li>Without doing any delete or approval, click <strong>"Logout"</strong>. At this point, the administrator already unwillingly clicked on the <strong>Approve All Posts</strong> link to approve the comment. The browser did the approval on behalf of the administrator; the instruction came from the user's comment.</li>
-</ol>
-</li>
-<li>
-<p>Log in to the guestbook by using <strong>"sec522"</strong> and <strong>"training"</strong> as username and password.</p>
-<p>The comment is already shown on the screen. The administrator never intentionally approved the comments. XSS and CSRF approved the comment.</p>
-</li>
-</ol>
-<p><br></p>
-<div class="admonition info">
-<p class="admonition-title">Let's go over the whole attack scenario one more time. There are a couple of vulnerabilities at play in this exercise.</p>
-</div>
-<p>User sec522 logs in to post a comment on the guest book. With the text of the comment, the user sec522 also puts in an extra &lt;IMG&gt; tag, which links to the approval function and looks like an image that the browser should automatically load. Once this comment has been submitted, sec522 simply sits and waits till the administrator logs in.</p>
-<p>The administrator logs in and, upon logging in, the comments for approval automatically show up on the screen. The &lt;IMG&gt; tag appears to be an image to the administrator's browser, the &lt; and the &gt; tell the browser that these are HTML codes, and the browser happily obeys these instructions. The browser visits the link in the &lt;IMG&gt;, which leads to approving all of the comments.</p>
-<p>Then when sec522 user logs in again, the comment that sec522 user posted originally is showing up as approved.</p>
-<p>To demonstrate a fix for the XSS vulnerability, we have prepared a \"fixed\" version of the guestbook: "guestbook-xss.php". This file is essentially the same as the guestbook.php we have seen, except the XSS in the comment field is fixed.</p>
-<p>The htmlentities function in PHP is to used to encode characters such as &lt; &gt;, /, &amp;, \', or \" to HTML entities. For example, "\&lt; becomes "&lt;" and "\&gt;" becomes "&gt;" . When "\&lt; gets sent to the browser, the browser will interpret it as HTML. But when "&lt;" gets sent to the browser, the browser will display the "\&lt; symbol.</p>
-<p>One line of example code is below:</p>
-<div class="highlight"><pre><span></span><code><span class="x">print htmlentities($r[3]);</span>
-</code></pre></div>
-<p>Before $r[3] is displayed on-screen, it is encoded.</p>
-<p>Feel free to explore the fixed code at <strong><a href="http://lab-2.3.sans.labs/guestbook-xss.phps">http://lab-2.3.sans.labs/guestbook-xss.phps</a></strong> (line 117).</p>
-<ol>
-<li>
-<p>Browse to <a href="http://lab-2.3.sans.labs/guestbook-xss.php">http://lab-2.3.sans.labs/guestbook-xss.php</a>.</p>
-</li>
-<li>
-<p>Look at the comments and explore why there is no longer a broken image sign but the entire XSS and CSRF string are simply displayed on the screen. Viewing the source of this page gives insight as to why this is no longer treated as an &lt;IMG&gt; tag but simply text on-screen.</p>
-</li>
-</ol>
 <hr />
-<h2 id="part-2-dom-based-xss-in-juice-shop">Part 2: DOM-Based XSS in Juice Shop</h2>
+<h2 id="part-1-international-domain-names">Part 1: International Domain Names</h2>
+<h3 id="step-by-step">Step by Step</h3>
 <ol>
 <li>
-<p>Juice Shop is implemented in Docker. To start it, type at the command line.</p>
-<div class="highlight"><pre><span></span><code>juiceshop start
-</code></pre></div>
+<p>Browse to <a href="http://lab-2.4.sans.labs/unicode.html">http://lab-2.4.sans.labs/unicode.html</a>.</p>
 </li>
 <li>
-<p>Open the browser and visit <a href="http://juiceshop:3000">http://juiceshop:3000</a>. Juice Shop can take a bit of time to load.</p>
+<p>The task is to determine which of the domain names listed on this page do not contain any international characters. Can you visually determine that?</p>
 </li>
 <li>
-<p>Explore the search field and attempt to identify the cross-site scripting vulnerability. Try test strings like:</p>
-<div class="highlight"><pre><span></span><code>ABC<span class="err">&lt;</span>&gt; &quot; &#39;
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;text&#39;</span><span class="p">)&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-</code></pre></div>
-<p>What works or doesn't work?</p>
+<p>To test your answer, open the <a href="http://lab-2.4.sans.labs/unicode-convert/convert.htm">Unicode Converter</a> in a new browser tab.</p>
+<p><img alt="" class="zoom" src="media/img-1615014117-20210306.png" /></p>
 </li>
 <li>
-<p>Try this exploit:</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;javascript:alert(&#39;test&#39;)&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
-</code></pre></div>
+<p>Copy/paste each of the domain names into the converter (CTRL-C: copy, CTRL-V: paste).</p>
 </li>
 <li>
-<p>Open the Chrome debugger. (Click on the three vertical dots in the top right. Then select "Developer Tools" from "More tools".)</p>
-</li>
-<li>
-<p>Select the "Network" tab. </p>
-<details class="question"><summary>Do you see any requests when you submit the search? Why not?</summary><p>The exploit in Step 4 works. This is DOM-based XSS that does not require data to be transferred to the server (Step 6: you will not see a network connection).</p>
+<p>Paste the domain name into the green "Mixed Input" field. The output of the "Unicode U+hex" field usually gives away any non-ASCII characters.</p>
+<p>The "IDN Converter", linked from the question page, can also help identify Unicode domain names.</p>
+<details class="question"><summary>Solutions</summary><p>You can find the solutions at this location <a href="http://lab-2.4.sans.labs/unicode-solutions.htm">http://lab-2.4.sans.labs/unicode-solutions.htm</a></p>
 </details>
 </li>
 </ol>
+<hr />
+<h2 id="part-2-xss-via-inappropriate-character-set-conversion">Part 2: XSS via Inappropriate Character Set Conversion</h2>
+<ol>
+<li>
+<p>Go to <a href="http://lab-2.4.sans.labs/unicode.txt">http://lab-2.4.sans.labs/unicode.txt</a>. This file is UTF-16 encoded and displays some "Chinese" characters. The characters themselves don't make any sense at this point.</p>
+</li>
+<li>
+<p>Go to <a href="http://lab-2.4.sans.labs/unicodexss.php">http://lab-2.4.sans.labs/unicodexss.php</a>. This page will load the file we looked at above and display it using a UTF-8 character set. In this context, you will see an "XSS" popup.</p>
+</li>
+<li>
+<p>Let's check the source code for unicodexss.php by going to <a href="http://lab-2.4.sans.labs/unicodexss.phps">http://lab-2.4.sans.labs/unicodexss.phps</a>. You will see that the file calls file_get_contents (line 9), a simple function that will read a file and send its contents to the browser.</p>
+</li>
+<li>
+<p>Open a terminal and run:</p>
+<div class="highlight"><pre><span></span><code>cat /etc/docker/compose/2.4/web/html/unicode.txt
+</code></pre></div>
+</li>
+</ol>
+<p>This will display the "script" in the OS context, it's not showing the Chinese characters we saw earlier.</p>
+<hr />
+<h2 id="part-3-file-upload">Part 3: File Upload</h2>
+<h3 id="no-hints">No Hints</h3>
+<p>The upload function of the TWiki system is our test subject in this exercise. Browse to <strong><a href="http://lab-2.4.sans.labs/fileupload.php">http://lab-2.4.sans.labs/fileupload.php</a></strong> and experiment with the upload function, then browse through the "Documents" directory on the desktop and see how you can leverage the upload feature to compromise the upload system.</p>
+<h3 id="step-by-step_1">Step by Step</h3>
+<ol>
+<li>
+<p>With Chrome, browse to <a href="http://lab-2.4.sans.labs/fileupload.php">http://lab-2.4.sans.labs/fileupload.php</a></p>
+<p>In this system, users can upload an image or document.</p>
+</li>
+<li>
+<p>Click the button labeled "Choose File", then navigate to <strong>Documents</strong> (left tab) then select the <strong>hackercat.php.1</strong> file. Click on <strong>open</strong>.</p>
+<p><img alt="" class="zoom" src="media/img-1615666680-20210313.png" /></p>
+</li>
+<li>
+<p>You should now see the local file selected. Click on <strong>"Upload Image"</strong> at the to the right side of the file selection.</p>
+<p>The file is then uploaded to the server and is subsequently displayed on the main page as part of the attachment to the page (new files at the top).</p>
+</li>
+<li>
+<p>Click the link for "hackercat.php.1".</p>
+<details class="question"><summary>What is being displayed on-screen?</summary><p>At the top of the page, there are some corrupted characters and then followed by the PHP environment details. To understand the content displayed on the screen and what is going on behind the scene, we need to review the file we uploaded to the server.</p>
+</details>
+</li>
+<li>
+<p>Use Text Editor or Visual Studio Code (see icon on the left favorite bar) to open the <strong>hackercat.php.1</strong> file. It is located within the <strong>Documents</strong> directory.</p>
+</li>
+</ol>
+<p><br></p>
+<p>The editor may complain that there are invalid characters in the file. You can click on <strong>"Edit Anyway"</strong> to ignore the warning. Within the first three lines of the file, you should find "&lt;?php phpinfo() ?&gt;"; it is a single PHP programming command. phpinfo(); is a call to a function that displays the status of the current PHP environment to the user. What we have seen in the browser when we click on the uploaded file is actually the result of this command executing. Although the rest of the content in the file are binary characters forming a gif graphic file, the PHP interpreter picks out the content it understands and attempts to execute the command.</p>
+<p>We have successfully uploaded the file and executed the commands within the file. Execution of scripting command is a serious compromise of server security.</p>
+<p>In most modern Linux distributions, PHP is often bundled and enabled by default. Any file with a ".php" extension is executed by PHP interpreter.</p>
+<p>In the /etc/docker/compose/2.4/vhost.conf configuration file, which controls both the Apache and the PHP instance, there is the following configuration line:</p>
+<div class="highlight"><pre><span></span><code>&lt;FilesMatch &quot;.+.ph(ar|p|tml)&quot;&gt;
+    SetHandler application/x-httpd-php
+&lt;/FilesMatch&gt;
+</code></pre></div>
+<p>This tells the Apache server to pass any file that <strong>contains</strong> .php to the PHP interpreter for execution. This means not just .php but also .php.1 or .php.bak as well. This Apache configuration is the default in mutiple Linux distributions.</p>
+<p>The upload code in TWiki had anticipated someone might upload PHP code, so numberous filters are implemented. You can inspect them directly at <strong><a href="http://lab-2.4.sans.labs/fileupload.phps">http://lab-2.4.sans.labs/fileupload.phps</a></strong> and the code are below as well</p>
+<div class="highlight"><pre><span></span><code><span class="x">   # retrieve file parameters</span>
+
+<span class="x">   $sTmpFile=$_FILES[&#39;file&#39;][&#39;tmp_name&#39;];</span>
+<span class="x">   $sFileName=$_FILES[&#39;file&#39;][&#39;name&#39;];</span>
+<span class="x">   $nFileSize=$_FILES[&#39;file&#39;][&#39;size&#39;];</span>
+<span class="x">   $aCheck=getimagesize($sTmpFile);</span>
+
+<span class="x">   # check if it is an image</span>
+
+<span class="x">   if ( $aCheck !== false ) {</span>
+<span class="x">       $sMessage .= &#39;File is an image.&lt;br/&gt;&#39;;</span>
+<span class="x">   } else {</span>
+<span class="x">       $sError .= &#39;File is not an image.&lt;br/&gt;&#39;;</span>
+<span class="x">   }</span>
+
+<span class="x">   # check file size</span>
+
+<span class="x">   if ( file_exists(&quot;images/&quot;.$sFileName) ) {</span>
+<span class="x">       $sError .= &#39;File already exists.&lt;br/&gt;&#39;;</span>
+<span class="x">   }</span>
+
+<span class="x">   # check if the extension is .php</span>
+
+<span class="hll"><span class="x">   if ( preg_match(&#39;/\.php$/&#39;,$sFileName) ) {</span>
+</span><span class="x">      $sError .= &#39;Filename has the wrong extension.&lt;br/&gt;&#39;;</span>
+<span class="x">   }</span>
+
+<span class="x">   # check mime type</span>
+
+<span class="x">   if ( mime_content_type($sTmpFile)===&#39;image/gif&#39; ||</span>
+<span class="x">        mime_content_type($sTmpFile)===&#39;image/png&#39; ||</span>
+<span class="x">        mime_content_type($sTmpFile)===&#39;image/jpg&#39; ||</span>
+<span class="x">        mime_content_type($sTmpFile)===&#39;image/jpeg&#39; ) {</span>
+<span class="x">      $sMessage.=&#39;File type: &#39;.mime_content_type($sTmpFile);</span>
+<span class="x">   } else {</span>
+<span class="x">      $sError.=&#39;Wrong File type: &#39;.mime_content_type($sTmpFile);</span>
+<span class="x">   }</span>
+</code></pre></div>
+<p>This only blocks extensions like ".php" but not .php.1. Double extensions like ".php.1" can be used to bypass this filter.</p>
+<p>How can this type of vulnerability be avoided? There are multiple mitigation avenues.</p>
+<p>As soon as the server receives the file, it can change the file extension to make sure it cannot be executed. For example, changing everything with a ".txt" extension will make any script interpreted as text format.</p>
+<p>If the file does not need to be downloaded by the user in normal operation, do not store the file in web directories. Hide the file on the server in a directory outside of the web-accessible files. If the files must be downloaded by other users, ensure there are no execution rights on the directory or the file itself. Various platforms have different ways to do this. Essentially, the file or the whole directory storing uploaded content should be denied any execution of code.</p>
+<p>In the case of double extension files, an Apache config may be used to disallow any use of double extension ".php.xxx" files.</p>
+<div class="highlight"><pre><span></span><code>&lt;FilesMatch &quot;.php.$&quot;&gt;
+    Order deny, allow
+    Allow from all
+&lt;/FilesMatch&gt;
+</code></pre></div>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
 <hr />
@@ -1055,7 +1049,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../2.2/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../2.3/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1064,19 +1058,19 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              2.2: Guestbook CSRF
+              2.3: Cross-Site Scripting
             </div>
           </div>
         </a>
       
       
-        <a href="../2.4/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../3.1/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              2.4: Unicode and File Upload
+              3.1: Authentication
             </div>
           </div>
           <div class="md-footer__button md-icon">
