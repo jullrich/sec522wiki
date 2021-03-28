@@ -231,13 +231,13 @@
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_3" type="checkbox" id="__nav_1_3" >
       
       <label class="md-nav__link" for="__nav_1_3">
-        Tutorials
+        Course
         <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="Tutorials" data-md-level="2">
+      <nav class="md-nav" aria-label="Course" data-md-level="2">
         <label class="md-nav__title" for="__nav_1_3">
           <span class="md-nav__icon md-icon"></span>
-          Tutorials
+          Course
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -246,8 +246,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../resources/tutorial_git/" class="md-nav__link">
-        Git Tutorial
+      <a href="../../resources/preparation/" class="md-nav__link">
+        Preparation
       </a>
     </li>
   
@@ -270,74 +270,11 @@
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4" type="checkbox" id="__nav_1_4" >
       
       <label class="md-nav__link" for="__nav_1_4">
-        Course
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Course" data-md-level="2">
-        <label class="md-nav__title" for="__nav_1_4">
-          <span class="md-nav__icon md-icon"></span>
-          Course
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../resources/preparation/" class="md-nav__link">
-        Preparation
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../resources/references/" class="md-nav__link">
-        References
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../resources/appendix/" class="md-nav__link">
-        Appendix
-      </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_5" type="checkbox" id="__nav_1_5" >
-      
-      <label class="md-nav__link" for="__nav_1_5">
         Errata & Patches
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Errata & Patches" data-md-level="2">
-        <label class="md-nav__title" for="__nav_1_5">
+        <label class="md-nav__title" for="__nav_1_4">
           <span class="md-nav__icon md-icon"></span>
           Errata & Patches
         </label>
@@ -348,8 +285,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../errata/F01_01/" class="md-nav__link">
-        F01_01
+      <a href="../../errata/G01_01/" class="md-nav__link">
+        G01_01
       </a>
     </li>
   
@@ -753,11 +690,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#part-1-simple-clickjacking" class="md-nav__link">
-    Part 1: Simple Clickjacking
+  <a href="#part-1-clickjacking-attack" class="md-nav__link">
+    Part 1: Clickjacking Attack
   </a>
   
-    <nav class="md-nav" aria-label="Part 1: Simple Clickjacking">
+    <nav class="md-nav" aria-label="Part 1: Clickjacking Attack">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -780,15 +717,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#part-2-x-frame-options" class="md-nav__link">
-    Part 2: X-Frame-Options
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#part-3-framebusting" class="md-nav__link">
-    Part 3: Framebusting
+  <a href="#part-2-defending-against-clickjacking-with-csp" class="md-nav__link">
+    Part 2: Defending Against ClickJacking with CSP
   </a>
   
 </li>
@@ -932,99 +862,94 @@
 
 <h5 id="part-1">Part 1:</h5>
 <blockquote>
-<p>In this exercise, you will experiment with a clickjacking exploit and explore methods to protect your application from clickjacking.</p>
+<p>In this exercise, you will experiment with a clickjacking exploit.</p>
 </blockquote>
 <h5 id="part-2">Part 2:</h5>
-<blockquote></blockquote>
-<h5 id="part-3">Part 3:</h5>
-<blockquote></blockquote>
+<blockquote>
+<p>In this exercise, you will experiment with the defensive controls against the Clickjacking attack</p>
+</blockquote>
 <h4 id="requirements">Requirements</h4>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Lab VM</li>
 </ul>
 <hr />
-<h2 id="part-1-simple-clickjacking">Part 1: Simple Clickjacking</h2>
+<h2 id="part-1-clickjacking-attack">Part 1: Clickjacking Attack</h2>
 <h3 id="no-hints">No Hints</h3>
-<p>The page <a href="http://www.evilexample.com/clickjacking/index.htm">http://www.evilexample.com/clickjacking/index.htm</a> implements a clickjacking exploit. Explore how it works. </p>
+<p>The page <a href="http://lab-5.2.sans.labs/clickjack.php">http://lab-5.2.sans.labs/clickjack.php</a> implements a clickjacking exploit. Explore how it works. </p>
 <div class="admonition question">
 <p class="admonition-title">Which page is being 'clickjacked'?</p>
 </div>
 <h3 id="step-by-step">Step by Step</h3>
 <ol>
 <li>
-<p>Close the Chrome browser and relaunch it from the desktop.</p>
-<p>Browse to <strong><a href="http://www.defendapp.com/pay/pay.php">http://www.defendapp.com/pay/pay.php</a></strong>.</p>
+<p>Browse to <strong><a href="http://lab-5.2.sans.labs/vote.php">http://lab-5.2.sans.labs/vote.php</a></strong>.</p>
 </li>
 <li>
-<p>This is a very simple page. The idea is when the user clicks on "I agree to pay you", the payment is transferred, and some transaction is triggered. The counter tracks how many times the button has been clicked, signifying how many times the user had committed to paying.</p>
+<p>This is a very simple page where user can click on either red or blue box for voting and the vote is tallied. </p>
 </li>
 <li>
-<p>Click the <strong>"I agree to pay you"</strong> button a few times.</p>
+<p>Click the <strong>"Dogs are the best!"</strong> and <strong>"Cats are the best!"</strong> button a few times each to observe how this works.</p>
 </li>
 <li>
-<p>Click on <strong>"Reset Counter"</strong>. The counter is now set to zero.</p>
+<p>Browse to <strong><a href="http://lab-5.2.sans.labs/clickjack.php">http://lab-5.2.sans.labs/clickjack.php</a></strong>. (Clickjacked vote on the upper right hand corner) This is an evil page that exploits clickjacking vulnerability.</p>
 </li>
 <li>
-<p>Browse to <strong><a href="http://www.evilexample.com/clickjacking/index.htm">http://www.evilexample.com/clickjacking/index.htm</a></strong>. This is an evil page that exploits clickjacking vulnerability.</p>
+<p>Try to click on the <strong>"Dogs are the best"</strong>. Although not much seems to be happening to the user, actions have already been taken in the background.</p>
 </li>
 <li>
-<p>Try to click on the kitten as it emerges from the pot. Although not much seems to be happening to the user, actions have already been taken in the background.</p>
+<p>Click on the <strong>"click here to reveal/hide iframe"</strong> link on the page.</p>
 </li>
 <li>
-<p>Click on the <strong>"Show hidden Iframe"</strong> button on the page.</p>
-</li>
-<li>
-<p>A translucent page is shown on the page, partially overlapping the existing page. The translucent page contains content from <strong><a href="http://www.defendapp.com/pay/pay.php">http://www.defendapp.com/pay/pay.php</a></strong>. This is exactly how clickjacking happens. The translucent portion of the page was \"on top\" of the visible page; when the user clicks on the page, the mouse clicks are sent to the page on top. The user effectively clicks on something that he/she cannot see, and the mouse click is redirected to the other page.</p>
-</li>
-</ol>
+<p>A translucent page is shown on the page, partially overlapping the existing web page. The translucent page contains content from <strong><a href="http://lab-5.2.sans.labs/vote.php">http://lab-5.2.sans.labs/vote.php</a></strong>. This is exactly how clickjacking happens. The translucent portion of the page was "on top" of the visible page; when the user clicks on the page, the mouse clicks are sent to the page on top. The user effectively clicks on something that he/she cannot see, and the mouse click is redirected to the other page.</p>
 <p><br></p>
 <p>Let's inspect the effect of the clickjacking attack.</p>
-<ol>
-<li>
-<p>Browse to <a href="http://www.defendapp.com/pay/pay.php">http://www.defendapp.com/pay/pay.php</a>. Check the counter. Why is the count so high?</p>
 </li>
 <li>
-<p>The clicks in the previous page were redirected to the payment page. In clickjacking, the attacker sets up pages that look harmless and entices the victim to click on some parts of the page. Hidden from the view of the victim, there is an invisible layer of another webpage.</p>
+<p>Browse to <strong><a href="http://lab-5.2.sans.labs/vote.php">http://lab-5.2.sans.labs/vote.php</a></strong>. Check the counter. Why is the count higher than last time you loaded this page?</p>
 </li>
 </ol>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>In clickjacking, the attacker sets up pages that look harmless and entices the victim to click on some parts of the page. Hidden from the view of the victim, there is an invisible layer of another webpage which is receiving all the mouse clicks</p>
+</div>
 <hr />
-<h2 id="part-2-x-frame-options">Part 2: X-Frame-Options</h2>
-<p>Another mechanism that NoScript provides is to disallow certain content to be loaded in a frame when the X-Frame-Options header is set.</p>
-<p><a href="http://www.evilexample.com/xframe/index.htm">http://www.evilexample.com/xframe/index.htm</a> contains a similar page to the previous Clickjacking example, the only difference is the hidden page is in /pay-xframe directory instead of /pay (on <a href="http://www.defendapp.com">www.defendapp.com</a>). The version of the page under /pay-xframe comes with X-FRAME-OPTIONS: SAMEORIGIN in the HTTP response header (feel free to check out the page with Burp Proxy to validate the existence of the header). When this header is set to SAMEORIGIN, the content in the page cannot be displayed within a frame (must be loaded as a full page instead).</p>
+<h2 id="part-2-defending-against-clickjacking-with-csp">Part 2: Defending Against ClickJacking with CSP</h2>
+<p>Clickjacking defense essentially relies on headers from Website to let the browser know whether the content can be inside an IFrame. Being loaded in IFrame essentially means that a malicious party can ClickJack the website.</p>
 <ol>
 <li>
-<p>Browse to <strong><a href="http://www.evilexample.com/xframe/index.htm">http://www.evilexample.com/xframe/index.htm</a></strong>.</p>
+<p>Browse to <a href="http://lab-5.2.sans.labs/clickjackcsp.php">http://lab-5.2.sans.labs/clickjackcsp.php</a>. This page is very similar to the attack page earlier in that it loads a victim page so that mouse click from the user will land on the content inside the IFrame.</p>
 </li>
 <li>
-<p>Click on \"<strong>Show hidden Iframe</strong>\" button.</p>
-</li>
-</ol>
-<p>The IFrame was not loaded properly because of the X-Frame-Options header. The content owner deemed the content inappropriate for loading within an IFrame.</p>
-<p>Check Chrome's debugger (CTRL-Shift-I). You will see an error message ("Refused to display '<a href="http://www.defendapp.com/pay-xframe/pay.php">http://www.defendapp.com/pay-xframe/pay.php</a>' in an index.htm:1 frame because it set the 'X-Frame-Options' to 'sameorigin'").</p>
-<h2 id="part-3-framebusting">Part 3: Framebusting</h2>
-<ol>
-<li>
-<p>Browse to <a href="http://www.evilexample.com/framebust/index.htm">http://www.evilexample.com/framebust/index.htm</a></p>
-<p>A JavaScript warning pops up on the screen. However, in newer versions of Google Chrome like the one we are using here, the redirect is blocked.</p>
-<p>This mechanism requires JavaScript and will not work if JavaScript is disabled.</p>
+<p>Click on the <strong>"click here to reveal/hide iframe"</strong> link on the page. You will notice that the victim's content are not loaded this time, instead a broken symbol is shown for the translucent content. See if you can determine what is causing this attack to fail?</p>
 </li>
 <li>
-<p>Turn off JavaScript using the Web Developer toolbar.</p>
-<p><img alt="" src="media/image1.png" /></p>
+<p>Let us walk through the defense mechanics here. In Chrome tab with the page <a href="http://lab-5.2.sans.labs/clickjackcsp.php">http://lab-5.2.sans.labs/clickjackcsp.php</a>, launch the Developer Tools (Ctrl-Shift-I). </p>
 </li>
 <li>
-<p>Browse to <a href="http://www.evilexample.com/framebust/index.htm">http://www.evilexample.com/framebust/index.htm</a>. The frame busting code no longer works. Feel free to view source and check out the frame busting JavaScript code.</p>
+<p>Refresh the page. This will let Developer Tools to reveal all the details of the page to you. Click on the <strong>Console</strong> tab in Developers Tools. There is one single error of the browser refusing to load the content of "<a href="http://lab-5.2.sans.labs/">http://lab-5.2.sans.labs/</a>" due to the Content Security Policy.</p>
+<p><img alt="" class="zoom" src="media/img-1615704078-20210314.png" /></p>
 </li>
 <li>
-<p>Don't forget to enable JavaScript again.</p>
+<p>Let's also inspect the exact Content Security Policy that was sent to the browser from the victim's page. Click on the <strong>Network</strong> tab in Developers Tools. Look for <strong>votecsp.php</strong> and click on it. Make sure the right hand side pane has "headers" selected at the top. This will show the headers that were exchanged. Look at Response Headers and evaluate the Content Security Policy. Can you determine why it was blocked from loading by the attacker's page?</p>
+<p><img alt="" class="zoom" src="media/img-1615704360-20210314.png" /></p>
+<div class="admonition solution">
+<p class="admonition-title">Content Security Policy</p>
+<p>The Content Security Policy loaded was 
+<div class="highlight"><pre><span></span><code><span class="err">    Content-Security-Policy: frame-ancestors &quot;none&quot;;</span>
+</code></pre></div>
+This blocks the content within the HTTP response from being loaded into any Iframe.</p>
+</div>
 </li>
 </ol>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
+<ul>
+<li>CSP with frame-ancestor is effective at preventing the clickjacking attack from happening. </li>
+</ul>
 <hr />
 <h2 id="explore-further">Explore Further</h2>
 <ul>
-<li></li>
+<li>If the Content Security Policy conflicts with X-Frame-Options header, what happens? Does the browser complain about it?</li>
 </ul>
                 
               

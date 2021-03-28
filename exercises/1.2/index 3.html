@@ -231,13 +231,13 @@
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_3" type="checkbox" id="__nav_1_3" >
       
       <label class="md-nav__link" for="__nav_1_3">
-        Tutorials
+        Course
         <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="Tutorials" data-md-level="2">
+      <nav class="md-nav" aria-label="Course" data-md-level="2">
         <label class="md-nav__title" for="__nav_1_3">
           <span class="md-nav__icon md-icon"></span>
-          Tutorials
+          Course
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -246,8 +246,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../resources/tutorial_git/" class="md-nav__link">
-        Git Tutorial
+      <a href="../../resources/preparation/" class="md-nav__link">
+        Preparation
       </a>
     </li>
   
@@ -270,74 +270,11 @@
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4" type="checkbox" id="__nav_1_4" >
       
       <label class="md-nav__link" for="__nav_1_4">
-        Course
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Course" data-md-level="2">
-        <label class="md-nav__title" for="__nav_1_4">
-          <span class="md-nav__icon md-icon"></span>
-          Course
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../resources/preparation/" class="md-nav__link">
-        Preparation
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../resources/references/" class="md-nav__link">
-        References
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../resources/appendix/" class="md-nav__link">
-        Appendix
-      </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_5" type="checkbox" id="__nav_1_5" >
-      
-      <label class="md-nav__link" for="__nav_1_5">
         Errata & Patches
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Errata & Patches" data-md-level="2">
-        <label class="md-nav__title" for="__nav_1_5">
+        <label class="md-nav__title" for="__nav_1_4">
           <span class="md-nav__icon md-icon"></span>
           Errata & Patches
         </label>
@@ -348,8 +285,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../errata/F01_01/" class="md-nav__link">
-        F01_01
+      <a href="../../errata/G01_01/" class="md-nav__link">
+        G01_01
       </a>
     </li>
   
@@ -972,6 +909,9 @@
 <p>First, you will try to use an authentication token retrieved in one request to send a second request. The section half of this exercise will teach you how to impersonate a valid browser using simple tools like "curl". You will first collect a request from a regular browser to create a "fingerprint" of the browser. Next, you will use "curl" to create a request that matches the fingerprint.</p>
 </blockquote>
 <h5 id="part-3">Part 3:</h5>
+<blockquote>
+<p>This exercise is an extension to the previous two exercises where the crafting of headers have to be exact. </p>
+</blockquote>
 <h4 id="requirements">Requirements</h4>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Lab VM</li>
@@ -979,7 +919,7 @@
 <hr />
 <h2 id="part-1-inspecting-http2-traffic">Part 1: Inspecting HTTP/2 Traffic</h2>
 <h3 id="no-hints">No Hints</h3>
-<p>You will be using Wireshark to inspect an HTTP/2 packet capture. The packet capture can be found in /home/student/Documents/pcaps/http2.pcap. Find out which headers you can identify in the HTTP/2 request and response.</p>
+<p>You will be using Wireshark to inspect an HTTP/2 packet capture. The packet capture can be found in /home/sec522/Documents/pcaps/http2.pcap. Find out which headers you can identify in the HTTP/2 request and response.</p>
 <h3 id="step-by-step">Step by Step</h3>
 <ol>
 <li>
@@ -988,7 +928,7 @@
 <p><strong>Wireshark icon</strong></p>
 </li>
 <li>
-<p>Open the packet capture using either Ctrl+O or "File" &gt; "Open" from the Wireshark menu. Navigate to /home/student/Documents/pcaps and open the file "http2.pcap" (you may find the file still listed as a "Recent" file, which may make things easier).</p>
+<p>Open the packet capture using either Ctrl+O or "File" &gt; "Open" from the Wireshark menu. Navigate to /home/sec522/Documents/pcaps and open the file "http2.pcap" (you may find the file still listed as a "Recent" file, which may make things easier).</p>
 </li>
 <li>
 <p>Select packet #15 and investigate the middle pane of Wireshark. Expand the "Hypertext Transfer Protocol 2" section by clicking on the triangles to the left until you see the headers:</p>
@@ -1085,10 +1025,14 @@ Content-Type: text/html; charset=UTF-8
 </ol>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
+<ul>
+<li>HTTP 2 is the current version of HTTP standard which has the original protocol on much more optimized basis. </li>
+<li>HTTP Request headers manipulation is a big part of security defense and offense. HTTP headers in both request and response affects the functions of browser or server. In modern day applications, the headers are where authentication tokens and security decisions are transported.</li>
+</ul>
 <hr />
 <h2 id="explore-further">Explore Further</h2>
 <ul>
-<li></li>
+<li>Can you use HTTP 2 over cleartext?</li>
 </ul>
                 
               

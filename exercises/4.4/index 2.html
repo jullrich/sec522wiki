@@ -231,13 +231,13 @@
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_3" type="checkbox" id="__nav_1_3" >
       
       <label class="md-nav__link" for="__nav_1_3">
-        Tutorials
+        Course
         <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="Tutorials" data-md-level="2">
+      <nav class="md-nav" aria-label="Course" data-md-level="2">
         <label class="md-nav__title" for="__nav_1_3">
           <span class="md-nav__icon md-icon"></span>
-          Tutorials
+          Course
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -246,8 +246,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../resources/tutorial_git/" class="md-nav__link">
-        Git Tutorial
+      <a href="../../resources/preparation/" class="md-nav__link">
+        Preparation
       </a>
     </li>
   
@@ -270,74 +270,11 @@
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4" type="checkbox" id="__nav_1_4" >
       
       <label class="md-nav__link" for="__nav_1_4">
-        Course
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Course" data-md-level="2">
-        <label class="md-nav__title" for="__nav_1_4">
-          <span class="md-nav__icon md-icon"></span>
-          Course
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../resources/preparation/" class="md-nav__link">
-        Preparation
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../resources/references/" class="md-nav__link">
-        References
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../resources/appendix/" class="md-nav__link">
-        Appendix
-      </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_5" type="checkbox" id="__nav_1_5" >
-      
-      <label class="md-nav__link" for="__nav_1_5">
         Errata & Patches
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Errata & Patches" data-md-level="2">
-        <label class="md-nav__title" for="__nav_1_5">
+        <label class="md-nav__title" for="__nav_1_4">
           <span class="md-nav__icon md-icon"></span>
           Errata & Patches
         </label>
@@ -348,8 +285,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../errata/F01_01/" class="md-nav__link">
-        F01_01
+      <a href="../../errata/G01_01/" class="md-nav__link">
+        G01_01
       </a>
     </li>
   
@@ -914,14 +851,14 @@
 </ul>
 <hr />
 <h3 id="no-hints">No Hints</h3>
-<p>Proceed to <a href="http://www.dev522.org/csp">http://www.sec522.org/csp</a>. The exercise will guide you through three parts. In each part, a CSP is shown that is too strict to display an image on the site. Modify the CSP to fix it. You can modify the CSP right on the page, and relevant CSP errors are displayed as well. You can also use the web console to learn more about the CSP issue.</p>
+<p>Proceed to <a href="http://lab-4.4.sans.labs/">http://lab-4.4.sans.labs/</a>. The exercise will guide you through three parts. In each part, a CSP is shown that is too strict to display an image on the site. Modify the CSP to fix it. You can modify the CSP right on the page, and relevant CSP errors are displayed as well. You can also use the web console to learn more about the CSP issue.</p>
 <h3 id="step-by-step-instructions">Step-by-Step Instructions</h3>
 <ol>
 <li>
-<p>Open <strong><a href="http://www.sec522.org/csp">http://www.sec522.org/csp</a></strong> in your browser.</p>
+<p>Open <strong><a href="http://lab-4.4.sans.labs/">http://lab-4.4.sans.labs/</a></strong> in your browser.</p>
 </li>
 <li>
-<p>On that page, you will find a link to <a href="http://www.dev522.org/csp/csperror.html">http://www.sec522.org/csp/csperror.html</a>. Open that link in a new window. At first, you will get a 404 error if no CSP error log exists yet.</p>
+<p>On that page, you will find a link to <a href="http://lab-4.4.sans.labs/csperror.html">http://lab-4.4.sans.labs/csperror.html</a> which is the log file. Open that link in a new window. </p>
 </li>
 <li>
 <p>Click on the "CSP Error 1" link.</p>
@@ -931,7 +868,7 @@
 </li>
 <li>
 <p>Inspect the blocked-uri section in the last error. </p>
-<details class="question"><summary>Does it match the img-src?</summary><p>img-src <a href="http://www.sec522.org">www.sec522.org</a> (instead of .com)</p>
+<details class="question"><summary>Does it match the img-src?</summary><p>img-src lab-1.1.sans.labs</p>
 </details>
 </li>
 <li>
@@ -945,17 +882,23 @@
 </li>
 <li>
 <p>For the next two pages, follow the same procedures as you did between Step 4 and Step 8.</p>
-<details class="question"><summary>Solutions</summary><p>CSP2: script-src 'self' 'unsafe-inline'</p>
+<details class="question"><summary>Solutions</summary><p>CSP1: img-src lab-4.4.sans.labs</p>
+<p>CSP2: script-src 'self' 'unsafe-inline'</p>
 <p>CSP3: script-src 'unsafe-inline' 'unsafe-eval'</p>
 </details>
 </li>
 </ol>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
+<ul>
+<li>CSP is effective at protecting the web page against multiple types of attacks.</li>
+<li>CSP Requires some careful configuration, otherwise, it can backfire and render portions of the site not working.</li>
+<li>Using the CSP logging function (report-uri) is a must for troubleshooting</li>
+</ul>
 <hr />
 <h2 id="explore-further">Explore Further</h2>
 <ul>
-<li></li>
+<li>Can you think of the scenarios where CSP can be bypassed?</li>
 </ul>
                 
               

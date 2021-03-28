@@ -231,13 +231,13 @@
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_3" type="checkbox" id="__nav_1_3" >
       
       <label class="md-nav__link" for="__nav_1_3">
-        Tutorials
+        Course
         <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="Tutorials" data-md-level="2">
+      <nav class="md-nav" aria-label="Course" data-md-level="2">
         <label class="md-nav__title" for="__nav_1_3">
           <span class="md-nav__icon md-icon"></span>
-          Tutorials
+          Course
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -246,8 +246,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../resources/tutorial_git/" class="md-nav__link">
-        Git Tutorial
+      <a href="../../resources/preparation/" class="md-nav__link">
+        Preparation
       </a>
     </li>
   
@@ -270,74 +270,11 @@
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4" type="checkbox" id="__nav_1_4" >
       
       <label class="md-nav__link" for="__nav_1_4">
-        Course
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Course" data-md-level="2">
-        <label class="md-nav__title" for="__nav_1_4">
-          <span class="md-nav__icon md-icon"></span>
-          Course
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../resources/preparation/" class="md-nav__link">
-        Preparation
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../resources/references/" class="md-nav__link">
-        References
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../resources/appendix/" class="md-nav__link">
-        Appendix
-      </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_5" type="checkbox" id="__nav_1_5" >
-      
-      <label class="md-nav__link" for="__nav_1_5">
         Errata & Patches
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Errata & Patches" data-md-level="2">
-        <label class="md-nav__title" for="__nav_1_5">
+        <label class="md-nav__title" for="__nav_1_4">
           <span class="md-nav__icon md-icon"></span>
           Errata & Patches
         </label>
@@ -348,8 +285,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../errata/F01_01/" class="md-nav__link">
-        F01_01
+      <a href="../../errata/G01_01/" class="md-nav__link">
+        G01_01
       </a>
     </li>
   
@@ -1009,7 +946,7 @@
 <p><strong>FTP Directory in Chrome</strong></p>
 </li>
 <li>
-<p>Click on <strong>"phpinfo.php"</strong>. This will execute the phpinfo script we just uploaded. It uses the phpinfo() command to list various php configuration parameters.</p>
+<p>Click on <strong>phpinfo.php</strong>. This will execute the phpinfo script we just uploaded. It uses the phpinfo() command to list various php configuration parameters.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The files that we uploaded earlier contained code. These code are executed by the webserver. </p>
@@ -1032,7 +969,7 @@
 <p>Go back to <a href="http://lab-1.3.sans.labs/ftp"><strong>http://lab-1.3.sans.labs/ftp</strong></a> in Chrome and click on <strong>"phpshell.php"</strong>.</p>
 </li>
 <li>
-<p>Log in with the username <strong>"**sec522</strong>"** and the password <strong>"**training</strong>".**</p>
+<p>Log in with the username <strong>sec522</strong> and the password <strong>training</strong>.</p>
 </li>
 <li>
 <p>Once logged in, users can run any shell command. The operating system in this instance is Unix. You can try normal Unix shell commands such as "ls" to show a listing of files or "uname -a" to show details about the operating system. Feel free to explore the interface and see what evil things can be done using this tool. You are essentially controlling the computer through this remote web shell interface and you are able to run any command the web server is permitted to run.</p>
@@ -1041,16 +978,11 @@
 <hr />
 <h2 id="part-2-docker-administration-tools">Part 2: Docker Administration Tools</h2>
 <h3 id="no-hints">No Hints</h3>
-<p>You start Portainer by running "portainer start" as root in a terminal. Portainer will listen on port 9000, and you can connect to it via Chrome (<a href="http://www.sec522.org:9000">http://www.sec522.org:9000</a>). Try to guess the login credentials and add a rogue admin user.</p>
+<p>Portainer is running on a container within the course environmnent, and you can connect to it via Chrome (<a href="http://portainer.sans.labs/">http://portainer.sans.labs/</a>). Try to guess the login credentials and add a rogue admin user.</p>
 <h3 id="step-by-step">Step by Step</h3>
 <ol>
 <li>
-<p>Open a terminal and type</p>
-<div class="highlight"><pre><span></span><code>sudo portainer start
-</code></pre></div>
-</li>
-<li>
-<p>Open Google Chrome and visit <a href="http://lab-1.3.sans.labs:9000/">http://lab-1.3.sans.labs:9000/</a></p>
+<p>Open Google Chrome and visit <a href="http://portainer.sans.labs">http://portainer.sans.labs</a></p>
 </li>
 <li>
 <p>Log in using the username "sec522" and the password "training".</p>
@@ -1080,11 +1012,6 @@
 <p>You now created a new administrative user. Optionally, you may test this user by logging out of Portainer and logging in using the new credentials. An attacker could use this new user to access the system even after the administrator changed the password for the sec522 user.</p>
 <p>!!! question "What measures can an administrator take to prevent this exploit?</p>
 </li>
-<li>
-<p>You may want to stop Portainer by running in a terminal. However, you could also leave it turned on to later manage some Docker images we use.</p>
-<div class="highlight"><pre><span></span><code>sudo portainer stop
-</code></pre></div>
-</li>
 </ol>
 <hr />
 <h2 id="part-3-modsecurity-web-application-firewall">Part 3: ModSecurity Web Application Firewall</h2>
@@ -1092,7 +1019,7 @@
 <p>We will experiment with the mod_security web application firewall in the following exercise.</p>
 <ol>
 <li>
-<p>In Chrome, go to <a href="http://normalsecurity.sans.labs"><strong>http://normalsecurity.sans.labs</strong></a> and click on the two files "<strong>cc.html"</strong> and <strong>"trans.txt"</strong>.</p>
+<p>In Chrome, go to <a href="http://normalsecurity.sans.labs"><strong>http://normalsecurity.sans.labs</strong></a> and click on the two files "<strong>Credit Card Data (cc.html)"</strong> and <strong>"Source Code (trans.txt)"</strong>.</p>
 <details class="question"><summary>What do these two files show?</summary><p><strong>cc.html</strong> shows transaction data including credit card numbers.</p>
 <p><strong>trans.txt</strong> leaks source code.</p>
 </details>
@@ -1114,10 +1041,7 @@
 <p>Revisit <strong><a href="http://modsecurity.sans.labs/form.php">http://modsecurity.sans.labs/form.php</a></strong> and see if you can still enter "Cats are evil". Try "Cats are cute" instead.</p>
 </li>
 <li>
-<p>Go to <strong><a href="http://modsecurity.sans.labs">http://modsecurity.sans.labs</a></strong>. This URL is blocked as well now. Keep that in mind when inspecting the rules later.</p>
-</li>
-<li>
-<p>Review the web application firewall's log file at <strong><a href="http://modsecurity.sans.labs/modsecurity.log">http://modsecurity.sans.labs/modsecurity.log</a>.</strong></p>
+<p>Review the web application firewall's log file at <strong><a href="http://modsecurity.sans.labs/modsecurity.log">http://modsecurity.sans.labs/modsecurity.log</a></strong></p>
 <div class="admonition question">
 <p class="admonition-title">Try to identify the log entries that indicate which URL was blocked and why?</p>
 </div>
@@ -1131,10 +1055,14 @@
 </ol>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
+<ul>
+<li>Architecture supporting the application has a huge impact on the overall security. Isolation and segmentation are common approaches to secure the application.</li>
+<li>Web Application Firewall are versatile security tools to implement security at the HTTP level without a lot of programming or coding.</li>
+</ul>
 <hr />
 <h2 id="explore-further">Explore Further</h2>
 <ul>
-<li></li>
+<li>Think about how to implement Web Application Firewall to a production application.</li>
 </ul>
                 
               

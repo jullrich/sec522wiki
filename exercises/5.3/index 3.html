@@ -231,13 +231,13 @@
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_3" type="checkbox" id="__nav_1_3" >
       
       <label class="md-nav__link" for="__nav_1_3">
-        Tutorials
+        Course
         <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="Tutorials" data-md-level="2">
+      <nav class="md-nav" aria-label="Course" data-md-level="2">
         <label class="md-nav__title" for="__nav_1_3">
           <span class="md-nav__icon md-icon"></span>
-          Tutorials
+          Course
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -246,8 +246,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../resources/tutorial_git/" class="md-nav__link">
-        Git Tutorial
+      <a href="../../resources/preparation/" class="md-nav__link">
+        Preparation
       </a>
     </li>
   
@@ -270,74 +270,11 @@
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4" type="checkbox" id="__nav_1_4" >
       
       <label class="md-nav__link" for="__nav_1_4">
-        Course
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Course" data-md-level="2">
-        <label class="md-nav__title" for="__nav_1_4">
-          <span class="md-nav__icon md-icon"></span>
-          Course
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../resources/preparation/" class="md-nav__link">
-        Preparation
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../resources/references/" class="md-nav__link">
-        References
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../resources/appendix/" class="md-nav__link">
-        Appendix
-      </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_5" type="checkbox" id="__nav_1_5" >
-      
-      <label class="md-nav__link" for="__nav_1_5">
         Errata & Patches
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Errata & Patches" data-md-level="2">
-        <label class="md-nav__title" for="__nav_1_5">
+        <label class="md-nav__title" for="__nav_1_4">
           <span class="md-nav__icon md-icon"></span>
           Errata & Patches
         </label>
@@ -348,8 +285,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../errata/F01_01/" class="md-nav__link">
-        F01_01
+      <a href="../../errata/G01_01/" class="md-nav__link">
+        G01_01
       </a>
     </li>
   
@@ -806,22 +743,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#answers" class="md-nav__link">
-    Answers
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#conclusion" class="md-nav__link">
     Conclusion
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#explore-further" class="md-nav__link">
-    Explore Further
   </a>
   
 </li>
@@ -952,11 +875,11 @@
 <hr />
 <h2 id="part-1-session-vs-local-storage">Part 1: Session vs. Local Storage</h2>
 <h3 id="no-hints">No Hints</h3>
-<p>Start at <a href="http://www.sec522.org/html5">http://www.sec522.org/html5</a>. You will find links to the three exercises and basic instruction about what to do. Attempt to fix the security issue for the stock trading application in #2.</p>
+<p>Start at <a href="http://lab-5.3.sans.labs/html5.html">http://lab-5.3.sans.labs/html5.html</a>. You will find links to the three exercises and basic instruction about what to do. Attempt to fix the security issue for the stock trading application in #2.</p>
 <h3 id="step-by-step">Step by Step</h3>
 <ol>
 <li>
-<p>Browse to <strong><a href="http://www.sec522.org/html5">http://www.sec522.org/html5</a></strong>.</p>
+<p>Browse to <strong><a href="http://lab-5.3.sans.labs/html5.html">http://lab-5.3.sans.labs/html5.html</a></strong>.</p>
 </li>
 <li>
 <p>Click on "1 -- Local Storage and Session Storage".</p>
@@ -968,7 +891,7 @@
 <p>Click on both "Save" buttons.</p>
 </li>
 <li>
-<p>Open the same page, <a href="http://www.sec522.org/html5/storage.html">http://www.sec522.org/html5/storage.html</a>, in a new tab (press CTRL+T, or use the "File" menu in the browser).</p>
+<p>Open the same page, <strong><a href="http://lab-5.3.sans.labs/storage.html">http://lab-5.3.sans.labs/storage.html</a></strong>, in a new tab (press CTRL+T, or use the "File" menu in the browser).</p>
 </li>
 <li>
 <p>In this new tab, to the right of the text areas, you will see "Saved Data". Only one of these fields is prefilled; the other field is empty. For one of the text areas, LocalStorage was used. For the other one, we used SessionStorage. Which one is which?</p>
@@ -978,21 +901,20 @@
 </li>
 <li>
 <p>In Chrome, open the developer tools (press SHIFT-CTRL-I) and select the "Application" tab. You will see options to inspect local and session storage on the left.</p>
-<p><img alt="" src="media/image1.png" /></p>
+<p><img alt="" class="zoom" src="media/img-1615706413-20210314.png" /></p>
 <p><strong>Adjusting Local Storage</strong></p>
 </li>
 <li>
 <p>You will be able to review Local Storage and Session Storage. You will see the values you entered in the text area. For Session Storage, you will see different values in different tabs.</p>
 </li>
 </ol>
-<div class="admonition tip">
-<p class="admonition-title">Answers at the end of this exercise.</p>
-</div>
+<details class="tip"><summary>Answer</summary><p>Storage #1 is kept in LocalStorage. Storage #2 is kept in SessionStorage. As a result, Storage #1 is the same for both tabs, while Storage #2 is different.</p>
+</details>
 <hr />
 <h2 id="part-2-cross-window-messaging">Part 2: Cross-Window Messaging</h2>
 <ol>
 <li>
-<p>Open the "Cross-Domain Messaging" exercise at <a href="http://www.sec522.org/html5">http://www.sec522.org/html5</a></p>
+<p>Open the "Cross-Domain Messaging" exercise at <a href="http://lab-5.3.sans.labs/trader.html">http://lab-5.3.sans.labs/trader.html</a></p>
 </li>
 <li>
 <p>You will see a simple "Stock Trading" application. Place a trade in the green "Trade" window by selecting a stock symbol and entering a quantity.</p>
@@ -1010,8 +932,8 @@
 <p>Open the Chrome developer tools (SHIFT-CTRL-I) and select the "Sources" tab.</p>
 </li>
 <li>
-<p>On the left, you will find "ad.html" after expanding "adframe (ad.html)". The "postMessage" function will be found on line 29.</p>
-<p><img alt="" src="media/image2.png" /></p>
+<p>On the left, you will find "ad.html" after expanding "adframe (ad.html)" and "lab-5.3-evil.sans.labs". (If there are no content under ad.html, reload the web page) The "postMessage" function will be found on line 29.</p>
+<p><img alt="" class="zoom" src="media/img-1615706645-20210314.png" /></p>
 </li>
 <li>
 <p>Select "platform.html" on the left. This will bring up the trading platform's source code that receives the message.</p>
@@ -1024,21 +946,29 @@
 <div class="admonition question">
 <p class="admonition-title">Can you fix the error?</p>
 </div>
-<p>You can find the source code for the files in /srv/www/sec522.org/html/html5/platform.html.</p>
+<p>You can find the source code for the files in /etc/docker/compose/5.3/web/html/platform.html.</p>
 </li>
 </ol>
+<details class="tip"><summary>Answer</summary><p>platform.html never checks the origin of the message. This will allow any window to send messages if that window can obtain a handle to the "platform" IFrame. To</p>
+<p>check for the origin, you could add this code.</p>
+<div class="highlight"><pre><span></span><code><span class="x">If ( event.origin != &#39;http://lab-5.3.sans.labs&#39;) {</span>
+<span class="x">    return 0</span>
+<span class="x">}</span>
+</code></pre></div>
+<p>In this example, checking the origin is, however, insufficient, as the ad is served from the same origin as the rest of the page. The ad should be loaded from a different origin.</p>
+</details>
 <hr />
 <h2 id="part-3-input-validation">Part 3: Input Validation</h2>
 <p>In this exercise, you will see four different input fields. Each field is supposed to validate the input to limit data submitted to the description to the left of the input field. For example, the user is not supposed to enter a number that exceeds 100 in the first input field. The actual validation is either too strict or too loose. Find out what needs to be improved to correct the regular expressions used to validate the data.</p>
 <ol>
 <li>
-<p>Open <a href="http://www.sec522.org/html5/valid.html">http://www.sec522.org/html5/valid.html</a> in Chrome.</p>
+<p>Open <a href="http://lab-5.3.sans.labs/valid.html">http://lab-5.3.sans.labs/valid.html</a> in Chrome.</p>
 </li>
 <li>
 <p>In the first input field, enter "1000" and click the "Submit" button. You will not receive an error message (but you should).</p>
 </li>
 <li>
-<p>Right-click on the input field and select "Inspect Element". This will highlight the respective line in the page's source code:</p>
+<p>Right-click on the input field and select "Inspect". This will highlight the respective line in the page's source code:</p>
 <div class="highlight"><pre><span></span><code>&lt;input type=&quot;text&quot; pattern=&quot;[0-9]+&quot;&gt;
 </code></pre></div>
 </li>
@@ -1052,19 +982,7 @@
 <p>Repeat Steps 2--5 for the other three input fields. Inspect the element to see the regular expression. Is it correct? If not, then try to enter input that would match the regular expression, but not the expected input. Also, verify if there is valid input that will be rejected.</p>
 </li>
 </ol>
-<h2 id="answers">Answers</h2>
-<h4 id="part-1_1">Part 1:</h4>
-<p>Storage #1 is kept in LocalStorage. Storage #2 is kept in SessionStorage. As a result, Storage #1 is the same for both tabs, while Storage #2 is different.</p>
-<h4 id="part-2_1">Part 2:</h4>
-<p>platform.html never checks the origin of the message. This will allow any window to send messages if that window can obtain a handle to the "platform" IFrame. To</p>
-<p>check for the origin, you could add this code.</p>
-<div class="highlight"><pre><span></span><code><span class="x">If ( event.origin != &#39;http://www.sec522.org&#39;) {</span>
-<span class="x">    return 0</span>
-<span class="x">}</span>
-</code></pre></div>
-<p>In this example, checking the origin is, however, insufficient, as the ad is served from the same origin as the rest of the page. The ad should be loaded from a different origin.</p>
-<h4 id="part-3">Part 3:</h4>
-<p>The correct regular expressions are:</p>
+<details class="tip"><summary>Answer</summary><p>The correct regular expressions are:</p>
 <div class="admonition example">
 <p class="admonition-title">1</p>
 <div class="highlight"><pre><span></span><code>[0-9][0-9]
@@ -1087,13 +1005,14 @@
 <p class="admonition-title">4</p>
 <p>For international phone numbers, it is hard to limit the length, as different lengths apply for different countries. But the country code may start with a '+', which is not allowed here. +?[0-9]+ is a better pattern. The ITU-T, which sets standards for phone systems, recommends that numbers should never exceed 15 digits, which includes the country code. Following this standard, the regular expression would be +?\d{1,15}</p>
 </div>
+</details>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
-<hr />
-<h2 id="explore-further">Explore Further</h2>
 <ul>
-<li></li>
+<li>Modern HTML interface has many different functions that can make the website more responsive. At the same time, some of the features also impact security. </li>
+<li>Local storage and other browser based storage need careful evaluation on privacy and security impact before use.</li>
 </ul>
+<hr />
                 
               
               
