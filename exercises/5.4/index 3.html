@@ -231,13 +231,13 @@
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_3" type="checkbox" id="__nav_1_3" >
       
       <label class="md-nav__link" for="__nav_1_3">
-        Tutorials
+        Course
         <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="Tutorials" data-md-level="2">
+      <nav class="md-nav" aria-label="Course" data-md-level="2">
         <label class="md-nav__title" for="__nav_1_3">
           <span class="md-nav__icon md-icon"></span>
-          Tutorials
+          Course
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -246,8 +246,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../resources/tutorial_git/" class="md-nav__link">
-        Git Tutorial
+      <a href="../../resources/preparation/" class="md-nav__link">
+        Preparation
       </a>
     </li>
   
@@ -270,74 +270,11 @@
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4" type="checkbox" id="__nav_1_4" >
       
       <label class="md-nav__link" for="__nav_1_4">
-        Course
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Course" data-md-level="2">
-        <label class="md-nav__title" for="__nav_1_4">
-          <span class="md-nav__icon md-icon"></span>
-          Course
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../resources/preparation/" class="md-nav__link">
-        Preparation
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../resources/references/" class="md-nav__link">
-        References
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../resources/appendix/" class="md-nav__link">
-        Appendix
-      </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_5" type="checkbox" id="__nav_1_5" >
-      
-      <label class="md-nav__link" for="__nav_1_5">
         Errata & Patches
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Errata & Patches" data-md-level="2">
-        <label class="md-nav__title" for="__nav_1_5">
+        <label class="md-nav__title" for="__nav_1_4">
           <span class="md-nav__icon md-icon"></span>
           Errata & Patches
         </label>
@@ -348,8 +285,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../errata/F01_01/" class="md-nav__link">
-        F01_01
+      <a href="../../errata/G01_01/" class="md-nav__link">
+        G01_01
       </a>
     </li>
   
@@ -791,22 +728,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#answers" class="md-nav__link">
-    Answers
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#conclusion" class="md-nav__link">
     Conclusion
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#explore-further" class="md-nav__link">
-    Explore Further
   </a>
   
 </li>
@@ -888,7 +811,7 @@
             
           
           <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
+            <article class="md-content__inner md-typeset"><a class="md-content__button md-icon" download href="../../pdf/combined.pdf" title="PDF Export"><svg style="height: 1.2rem; width: 1.2rem;" viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg"><path d="M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zm76.45 211.36l-96.42 95.7c-6.65 6.61-17.39 6.61-24.04 0l-96.42-95.7C73.42 337.29 80.54 320 94.82 320H160v-80c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v80h65.18c14.28 0 21.4 17.29 11.27 27.36zM377 105L279.1 7c-4.5-4.5-10.6-7-17-7H256v128h128v-6.1c0-6.3-2.5-12.4-7-16.9z"></path></svg></a>
               
                 
                 
@@ -907,152 +830,92 @@
 <h1 id="sub-resource-integrity">Sub Resource Integrity</h1>
 <hr />
 <h4 id="objectives">Objectives</h4>
-<div class="codehilite"><pre><span></span><code>Estimated Time: 12 minutes
+<div class="codehilite"><pre><span></span><code>Estimated Time: 6 minutes
 </code></pre></div>
 
-<blockquote>
-<p>Use a standard web server log of an incident to figure out what happened.</p>
-</blockquote>
+<p>Understand how sub resources integrity can help prevent some attacks that swap components hosted by third parties for malicious components.</p>
 <h4 id="requirements">Requirements</h4>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Lab VM</li>
 </ul>
 <hr />
 <h3 id="no-hints">No Hints</h3>
-<p>The application under attack is the animal shelters "Citrus Gateway". The "Citrus Gateway" allow access to internal application, but the shelter never really used it, so it sits in its default configuration exposed to the internet. There are two attacks happening. The log does not have necessarily all the information. For the second attack, the "CGW-User" header was logged. To play with the application, see <a href="http://www.sec522.org/citrusgw/index.php">http://www.sec522.org/citrusgw/index.php</a> . The files for the application can be found in /var/www/sec522.org/html/citrusgw/</p>
+<p>Start the exercise at <a href="http://lab-5.4.sans.labs/donations.php">http://lab-5.4.sans.labs/donations.php</a> and follow the instructions provided.</p>
 <h3 id="step-by-step">Step by Step</h3>
-<p>The logs use the following format (the last field is only present for the last few lines of the log):</p>
-<pre style="white-space: pre-wrap;">
-[hostname] [attacker IP] - - [data/time] "METHOD URL HTTP/1.1" [Status Code] [Response Size] "-" "[User-Agent]" "CGW-User Header"
-</pre>
-
-<p>As an example, this line:</p>
-<pre style="white-space: pre-wrap;">
-www.sec522.org:80 127.0.0.1 - - [26/Jan/2020:00:25:58 -0500] "POST /citrusgw/api/newbm.php HTTP/1.1" 200 207 "-" "l33t@tt@ck" "test"
-</pre>
-
-<p>Indicates:</p>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Hostname</td>
-<td>www.s<span>ec</span>522.org</td>
-</tr>
-<tr>
-<td>Client IP (ignore for this exercise)</td>
-<td>127.0.0.1</td>
-</tr>
-<tr>
-<td>Date/Time</td>
-<td>26/Jan/2020:00:25:58 -0500</td>
-</tr>
-<tr>
-<td>HTTP Method</td>
-<td>POST</td>
-</tr>
-<tr>
-<td>URL Requested</td>
-<td>/citrusgw/api/newbm.php</td>
-</tr>
-<tr>
-<td>Status Code</td>
-<td>200 (OK)</td>
-</tr>
-<tr>
-<td>Response Size</td>
-<td>207 Bytes</td>
-</tr>
-<tr>
-<td>User-Agent</td>
-<td>l33t\@tt\@ck</td>
-</tr>
-<tr>
-<td>CGW-User Header</td>
-<td>test</td>
-</tr>
-</tbody>
-</table>
 <ol>
 <li>
-<p>Explore the attacked application to become familiar with it. Start by loading <a href="http://www.sec522.org/citrusgw/index.php">http://www.sec522.org/citrusgw/index.php</a> in Google Chrome</p>
+<p>Open <a href="http://lab-5.4.sans.labs/subresourceintegrity.php">http://lab-5.4.sans.labs/subresourceintegrity.php</a> in Google Chrome. </p>
 </li>
 <li>
-<p>Log in using the credentials "sec522" and "training".</p>
+<p>Click on the link to donations.php - <a href="http://lab-5.4.sans.labs/donations.php">http://lab-5.4.sans.labs/donations.php</a>.</p>
 </li>
 <li>
-<p>Enter a bookmark (any text will do).</p>
+<p>Fill out the donation form and click “Submit.” You will see a “Thank you” page, and all looks good.</p>
 </li>
 <li>
-<p>Click on the "Home" icon on your desktop.</p>
+<p>Click on the <a href="http://lab-5.4.sans.labs/donations.php">http://lab-5.4.sans.labs/donations.php</a> link again to restart the exercise.</p>
 </li>
 <li>
-<p>Open the "Documents" folder</p>
+<p>Press Ctrl-Shift-I to open the Developers Tools.</p>
 </li>
 <li>
-<p>Open the "Logs" folder</p>
+<p>Click on the “Sources” tab in the Developers Tools.</p>
 </li>
 <li>
-<p>Double click on "attack.logs"</p>
+<p>Under the js folder, open the “donations.js” file and inspect the “accountid”. Note how the account ID has been altered to “evilcataccount” by an unknown attacker!</p>
+<p><img alt="" class="zoom" src="media/img-1615709782-20210314.png" />
+<strong>Content of donations.js</strong></p>
 </li>
 <li>
-<p>The file starts out with one type of attack. Review the first approximately 100 lines that are all accessing "index.php" and answer the following questions:</p>
-<div class="admonition note">
-<p class="admonition-title">1. What type of attack do you think the attacker conducted?</p>
+<p>Open a terminal and enter
+    <div class="highlight"><pre><span></span><code>cd /etc/docker/compose/5.4/web/html/js 
+</code></pre></div>
+    to change to the directory with the respective files.</p>
+</li>
+<li>
+<p>Enter “ls” to obtain a directory listing. You will see a file called “dontations_for_stupid_dogs.js”.</p>
+</li>
+<li>
+<p>Use the “diff” command to compare the dontations_for_stupid_dogs.js file to the donations.js file. The files are identical with the exception of the account ID.</p>
+<p>In a terminal, run </p>
+<p><div class="highlight"><pre><span></span><code>diff donations_for_stupid_dogs.js  donations.js
+</code></pre></div>
+to show the differences between two files.</p>
+</li>
+<li>
+<p>Calculate the hash of the “good” file:
+<div class="highlight"><pre><span></span><code>openssl dgst -sha384 -binary &lt; donations_for_stupid_dogs.js | openssl base64 -A
+</code></pre></div>
+You should get the following hash: wZGpBo0UBEBZ2r+uvUPUVH8gvHqHHPJr5Yt9aK+W5D9cSxNhgvF6lAHxsf0gAXbw</p>
+</li>
+<li>
+<p>Open <strong>/etc/docker/compose/5.4/web/html/donations.php</strong> in an editor (Visual Studio Code) and add the “integrity” attribute to the script tag for “donations.js” in line 17. (Solutions below) Save the file after you are done editing and keep the file open.</p>
+</li>
+<li>
+<p>Reload the donations page. You will now see an error on the console tab in the Developer Tools.</p>
+<div class="admonition information">
+<p class="admonition-title">Information</p>
+<p>We have generated a hash (signature) of the legitimate JavaScript but the file being referenced remotely is a file that has been altered by the unknown attacker. As the hashes are not matching, the browser is not going to execute the JavaScript. </p>
 </div>
-<div class="admonition note">
-<p class="admonition-title">2. Any indication if the attack succeeded?</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">3. Any simple signature you could use to block this attacker?</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">4. Any defensive technique you would recommend?</p>
-</div>
 </li>
 <li>
-<p>The second part of the exercise uses the log file you have already open, but the requests are now hitting newbm.php. Refer to the field list in the introduction above to identify which field changes for some of the requests.</p>
+<p>Change line 17 of the donations.php to use “donations_for_stupid_dogs.js” instead of donations.php (keep the integirty parameter intact).</p>
 </li>
 <li>
-<p>You may want to open /var/www/dev522.org/citrusgw/api/newbm.php first in a text editor (Visual Studio Code) to understand a bit more what is happening.</p>
-<p>Try to answer these questions:</p>
-<div class="admonition note">
-<p class="admonition-title">5. What type of attack was the attacker launching?</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">6. Was it successful?</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">7. What other artifacts would you look for on this system to figure out if the attack was successful?</p>
-</div>
+<p>Reload the donations page. The script will now load as the signature matches.</p>
 </li>
 </ol>
-<h2 id="answers">Answers</h2>
-<details class="question"><summary>1. What type of attack do you think the attacker conducted?</summary><p>The attacker likely launched a brute force attack. The login page (index.php) was hit very quickly with what looks like similar requests.</p>
-</details>
-<details class="question"><summary>2. Any indication if the attack succeeded?</summary><p>The last request returned a 302 status code (redirect) while the others returned a 200 code. This likely indicates that the last attempt succeeded.</p>
-</details>
-<details class="question"><summary>3. Any simple signature you could use to block this attacker?</summary><p>The attacker uses a very unique user agent. This user agent could easily be blocked with a firewall.</p>
-</details>
-<details class="question"><summary>4. Any defensive technique you would recommend?</summary><p>It may be a good idea to implement some kind of rate limiting and lock out for the login form.</p>
-</details>
-<details class="question"><summary>5. What type of attack was the attacker launching?</summary><p>The attacker attempted a directory traversal attack</p>
-</details>
-<details class="question"><summary>6. Was it successful?</summary><p>It may be successful as the response size changed for some of the request.</p>
-</details>
-<details class="question"><summary>7. What other artifacts would you look for on this system to figure out if the attack was successful?</summary><p>The attack attempts to write a file "test.txt" to a "tmp" directory, which may be found on the system.</p>
+<p>The “integrity” parameter will indicate to the browser that the file has changed. The browser is now able to block scripts if they changed.</p>
+<details class="solution"><summary>Solution</summary><p>Here is the JavaScript reference with integrity attributes embeded (line 17 of donations.php). 
+<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">&quot;/js/donations.js&quot;</span> <span class="nx">integrity</span><span class="o">=</span><span class="s2">&quot;sha384-wZGpBo0UBEBZ2r+uvUPUVH8gvHqHHPJr5Yt9aK+W5D9cSxNhgvF6lAHxsf0gAXbw&quot;</span><span class="o">&gt;&lt;</span><span class="err">/script&gt;</span>
+</code></pre></div></p>
 </details>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
-<hr />
-<h2 id="explore-further">Explore Further</h2>
 <ul>
-<li></li>
+<li>Subresource integrity is useful for making sure that content being loaded from a remote location is of a specific version or that it hasn't been altered.</li>
+<li>When using Subresource integrity, the destination resource changes will cause the browser to stop loading the resource.</li>
+<li>Subresource integirty works for any &lt;link> and &lt;script> elements</li>
 </ul>
                 
               

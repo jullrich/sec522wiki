@@ -231,13 +231,13 @@
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_3" type="checkbox" id="__nav_1_3" >
       
       <label class="md-nav__link" for="__nav_1_3">
-        Tutorials
+        Course
         <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="Tutorials" data-md-level="2">
+      <nav class="md-nav" aria-label="Course" data-md-level="2">
         <label class="md-nav__title" for="__nav_1_3">
           <span class="md-nav__icon md-icon"></span>
-          Tutorials
+          Course
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -246,8 +246,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../resources/tutorial_git/" class="md-nav__link">
-        Git Tutorial
+      <a href="../../resources/preparation/" class="md-nav__link">
+        Preparation
       </a>
     </li>
   
@@ -270,74 +270,11 @@
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4" type="checkbox" id="__nav_1_4" >
       
       <label class="md-nav__link" for="__nav_1_4">
-        Course
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Course" data-md-level="2">
-        <label class="md-nav__title" for="__nav_1_4">
-          <span class="md-nav__icon md-icon"></span>
-          Course
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../resources/preparation/" class="md-nav__link">
-        Preparation
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../resources/references/" class="md-nav__link">
-        References
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../resources/appendix/" class="md-nav__link">
-        Appendix
-      </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_5" type="checkbox" id="__nav_1_5" >
-      
-      <label class="md-nav__link" for="__nav_1_5">
         Errata & Patches
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Errata & Patches" data-md-level="2">
-        <label class="md-nav__title" for="__nav_1_5">
+        <label class="md-nav__title" for="__nav_1_4">
           <span class="md-nav__icon md-icon"></span>
           Errata & Patches
         </label>
@@ -348,8 +285,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../errata/F01_01/" class="md-nav__link">
-        F01_01
+      <a href="../../errata/G01_01/" class="md-nav__link">
+        G01_01
       </a>
     </li>
   
@@ -901,7 +838,7 @@
             
           
           <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
+            <article class="md-content__inner md-typeset"><a class="md-content__button md-icon" download href="../../pdf/combined.pdf" title="PDF Export"><svg style="height: 1.2rem; width: 1.2rem;" viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg"><path d="M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zm76.45 211.36l-96.42 95.7c-6.65 6.61-17.39 6.61-24.04 0l-96.42-95.7C73.42 337.29 80.54 320 94.82 320H160v-80c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v80h65.18c14.28 0 21.4 17.29 11.27 27.36zM377 105L279.1 7c-4.5-4.5-10.6-7-17-7H256v128h128v-6.1c0-6.3-2.5-12.4-7-16.9z"></path></svg></a>
               
                 
                 
@@ -927,8 +864,6 @@
 <blockquote>
 <p>In this exercise, the objective is to learn about how SSL actually works. There have been a lot of misconceptions about how SSL works and what features it provides. Everyone seems to understand that SSL makes things secure, but exactly how is this done? We will try to demystify SSL in this exercise.</p>
 </blockquote>
-<h5 id="part-2">Part 2:</h5>
-<blockquote></blockquote>
 <h4 id="requirements">Requirements</h4>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Lab VM</li>
@@ -963,54 +898,33 @@
 <p>The first three packets (Nos. 1--3) hold the TCP three-way handshake. They establish the TCP connection and do not indicate that we are going to use SSL.</p>
 <p>Packet 4, sent by the client (192.168.1.121) to the server (192.168.1.174), represents an "SSL Client Hello". With this packet, the client indicates that it would like to talk SSL to the server. It does provide some basic parameters that are used to negotiate the SSL connection.</p>
 <p>By inspecting the middle pane, try to identify the following parameters:</p>
-<div class="admonition question">
-<p class="admonition-title">What SSL version is the client using?</p>
-<p>&nbsp;
-&nbsp;</p>
-</div>
-<div class="admonition question">
-<p class="admonition-title">How many cipher suites does the client support?</p>
-<p>&nbsp;
-&nbsp;</p>
-</div>
+<details class="question"><summary>What SSL version is the client using?</summary><p>SSL 3.0</p>
+</details>
+<details class="question"><summary>How many cipher suites does the client support?</summary><p>12 </p>
+</details>
 <p><img alt="" src="media/image3.png" /></p>
 <p><strong>Client Hello Details</strong></p>
 <p>In packet #5, the server acknowledges receipt of the client hello.</p>
 <p>Packet 6 contains the server's response, a "Server Hello". This packet also includes the server's certificate. Just as for packet 4, identify the following parameters:</p>
-<div class="admonition question">
-<p class="admonition-title">Which SSL version is the server accepting?</p>
-<p>&nbsp;
-&nbsp;</p>
-</div>
-<div class="admonition question">
-<p class="admonition-title">Which cipher suite did the server select?</p>
-<p>&nbsp;
-&nbsp;</p>
-</div>
-<div class="admonition question">
-<p class="admonition-title">Who issued the certificate?</p>
-<p>&nbsp;
-&nbsp;</p>
-</div>
-<div class="admonition question">
-<p class="admonition-title">What is the hostname (common name) of the server according to the certificate?</p>
-<p>&nbsp;
-&nbsp;</p>
-</div>
+<details class="question"><summary>Which SSL version is the server accepting?</summary><p>SSL 3.0</p>
+</details>
+<details class="question"><summary>Which cipher suite did the server select?</summary><p>TLS_RSA_WITH_RC4_128_MD5</p>
+</details>
+<details class="question"><summary>Who issued the certificate?</summary><p>SANS CA</p>
+</details>
+<details class="question"><summary>What is the hostname (common name) of the server according to the certificate?</summary><p>sanshost</p>
+</details>
 <p><img alt="Server Hello Details" src="media/image4.png" /></p>
 <p><strong>Server Hello Details</strong></p>
 <p>Packet 12 is the first encrypted data packet. </p>
-<div class="admonition question">
-<p class="admonition-title">How many bytes of encrypted data does it contain?</p>
-<p>&nbsp;
-&nbsp;</p>
-</div>
+<details class="question"><summary>How many bytes of encrypted data does it contain?</summary><p>434</p>
+</details>
 <p><img alt="" src="media/image5.png" /></p>
 <p><strong>Encrypted Packets</strong></p>
 <p>Next, we will try to decrypt the packets.</p>
 <p>To do so, we need to provide Wireshark with the secret key.</p>
 <ol>
-<li>Go to <strong>Edit-&gt;Preferences</strong>, then click on <strong>"Protocols"</strong> at the left-hand side of the Preferences window. Expand the list of protocols and find <strong>"SSL"</strong> (just type "SSL").</li>
+<li>Go to <strong>Edit-&gt;Preferences</strong>, then click on <strong>"Protocols"</strong> at the left-hand side of the Preferences window. Expand the list of protocols and find <strong>"TLS"</strong> (just type "TLS").</li>
 </ol>
 <p><img alt="" src="media/image6.png" /></p>
 <p><strong>SSL Configuration Dialog</strong></p>
@@ -1030,14 +944,11 @@
 <p>Decrypted Packets in Wireshark</p>
 </li>
 <li>
-<p>Right-click on packet #12, then select "Follow -&gt; SSL Stream" to reconstruct the payload of the HTTP request and response.</p>
+<p>Right-click on packet #12, then select "Follow -&gt; TLS Stream" to reconstruct the payload of the HTTP request and response.</p>
 </li>
 </ol>
-<div class="admonition question">
-<p class="admonition-title">What is the content of the payload of the response?</p>
-<p>&nbsp;
-&nbsp;</p>
-</div>
+<details class="question"><summary>What is the content of the payload of the response?</summary><p>HTTP Request - The page has HTML content of a message "The Secret key is: Perfect 10"</p>
+</details>
 <p><img alt="" src="media/image9.png" /></p>
 <p><strong>Decrypted SSL Stream</strong></p>
 <hr />
@@ -1062,7 +973,7 @@
 </code></pre></div>
 </li>
 <li>
-<p>Visit <a href="https://wiki.sans.labs/">https://wiki.sans.labs/</a> </p>
+<p>Visit <a href="https://wiki.sans.labs/">https://wiki.sans.labs/</a> (it is a TLS protected site)</p>
 </li>
 <li>
 <p>Close Google Chrome.</p>
@@ -1071,24 +982,33 @@
 <p>Stop the acquisition in Wireshark by clicking on the red square.</p>
 </li>
 <li>
-<p>To display only the SSL traffic, enter "ssl" as a filter and click "Apply". You will recognize the now-familiar packets like "Client Hello" and "Server Hello".</p>
+<p>To display only the SSL traffic, enter "tls" as a filter and click "Apply". You will recognize the now-familiar packets like "Client Hello" and "Server Hello".</p>
 </li>
 <li>
-<p>Just like before, we enter the RSA key configuration dialog. Select Edit-&gt;Preferences from the Wireshark menu and proceed to the SSL protocol configuration. But instead of editing the RSA keys list, we just select a (Pre)-Master-Secret log filename at the bottom of the dialog.</p>
+<p>Just like before, we enter the RSA key configuration dialog. Select Edit-&gt;Preferences from the Wireshark menu and proceed to the TLS protocol configuration. But instead of editing the RSA keys list, we just select a (Pre)-Master-Secret log filename at the bottom of the dialog.</p>
 </li>
 <li>
 <p>Use /home/student/Documents/sslkeylogfile.log</p>
 </li>
 <li>
 <p>Just like before, the HTTPS traffic will now be decrypted. But this time, we used symmetric keys captured by the client.</p>
+<div class="admonition information">
+<p class="admonition-title">Information</p>
+<p>The reason why we are launching Chrome from the shell is because of the environment variable in the shell environment called "SSLKEYLOGFILE". This environment variable tells the browser to capture a copy of the SSL key into the disk drive for debugging purpose.
+This method illustrated in part 2 of the exercise is exactly how anyone can debug their traffic with a TLS website. If you ever need to get to decipher the TLS protected traffic with a website, let's say, Google or Facebook. This method allows you to decrypt the traffic from the workstation.</p>
+</div>
 </li>
 </ol>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
+<ul>
+<li>While TLS/SSL is known for protecting traffic between two network hosts, the traffic protected by it can be reverted to cleartext given the right circumstances. </li>
+<li>To debug your own SSL/TLS traffic, use the SSLKEYLOGFILE environment variable to enable the debugging mode in the browser so that encryption key can be captured.</li>
+</ul>
 <hr />
 <h2 id="explore-further">Explore Further</h2>
 <ul>
-<li></li>
+<li>Visit an Internet site with SSL and see if you can capture the TLS key on your SSL session.</li>
 </ul>
                 
               

@@ -231,13 +231,13 @@
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_3" type="checkbox" id="__nav_1_3" >
       
       <label class="md-nav__link" for="__nav_1_3">
-        Tutorials
+        Course
         <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="Tutorials" data-md-level="2">
+      <nav class="md-nav" aria-label="Course" data-md-level="2">
         <label class="md-nav__title" for="__nav_1_3">
           <span class="md-nav__icon md-icon"></span>
-          Tutorials
+          Course
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -246,8 +246,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../resources/tutorial_git/" class="md-nav__link">
-        Git Tutorial
+      <a href="../../resources/preparation/" class="md-nav__link">
+        Preparation
       </a>
     </li>
   
@@ -270,74 +270,11 @@
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4" type="checkbox" id="__nav_1_4" >
       
       <label class="md-nav__link" for="__nav_1_4">
-        Course
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Course" data-md-level="2">
-        <label class="md-nav__title" for="__nav_1_4">
-          <span class="md-nav__icon md-icon"></span>
-          Course
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../resources/preparation/" class="md-nav__link">
-        Preparation
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../resources/references/" class="md-nav__link">
-        References
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../resources/appendix/" class="md-nav__link">
-        Appendix
-      </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_5" type="checkbox" id="__nav_1_5" >
-      
-      <label class="md-nav__link" for="__nav_1_5">
         Errata & Patches
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Errata & Patches" data-md-level="2">
-        <label class="md-nav__title" for="__nav_1_5">
+        <label class="md-nav__title" for="__nav_1_4">
           <span class="md-nav__icon md-icon"></span>
           Errata & Patches
         </label>
@@ -348,8 +285,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../errata/F01_01/" class="md-nav__link">
-        F01_01
+      <a href="../../errata/G01_01/" class="md-nav__link">
+        G01_01
       </a>
     </li>
   
@@ -937,12 +874,12 @@
 </ul>
 <h2 id="part-1-guestbook-xss-with-csrf">Part 1: Guestbook XSS with CSRF</h2>
 <h3 id="no-hints">No Hints</h3>
-<p>Also, for the guestbook at <a href="http://www.sec522.org/guestbook2/guestbook.php">http://www.sec522.org/guestbook2/guestbook.php</a>, we experimented with this guestbook before. This time find the XSS vulnerability and exploit it to automatically approve posts that an administrator views.</p>
+<p>Also, for the guestbook at <a href="http://lab-2.3.sans.labs/login.php">http://lab-2.3.sans.labs/login.php</a>, we experimented with this guestbook before. This time find the XSS vulnerability and exploit it to automatically approve posts that an administrator views. (Logins available - sec522/training and admin/admin)</p>
 <h3 id="step-by-step">Step by Step</h3>
 <p>For this part, we will revisit the guestbook system. The administrator of the site noticed the CSRF attack and decided to manually approve every single guestbook entry.</p>
 <ol>
 <li>
-<p>Using Chrome, browse to <strong><a href="http://www.sec522.org/guestbook2/guestbook.php">http://www.sec522.org/guestbook2/guestbook.php</a></strong>. (We have different "guestbooks". Make sure you use "guestbook2".)</p>
+<p>Using Chrome, browse to <strong><a href="http://lab-2.3.sans.labs/login.php">http://lab-2.3.sans.labs/login.php</a></strong>. </p>
 </li>
 <li>
 <p>Log in to the guestbook by using <strong>"sec522"</strong> and <strong>"training"</strong> as username and password.</p>
@@ -963,35 +900,38 @@
 <p>There should be two comments awaiting approval. Please click delete on one of the comments. That comment should then be deleted.</p>
 </li>
 <li>
-<p>There should be one comment left; click the <strong>"Approve All"</strong> button to approve the comment to be displayed to the public.</p>
+<p>There should be one comment left; click the <strong>"Approve All Posts"</strong> button to approve the comment to be displayed to the public.</p>
+</li>
+</ol>
 </li>
 <li>
-<p>Click <strong>"Logout"</strong>.</p>
+<p>Log out of the guestbook by clicking on the <strong>"Logout"</strong> link.</p>
 </li>
 </ol>
-</li>
-</ol>
-<p>The CSRF attack is obviously no longer possible, as it would likely not get past the administrator, who will review the comments before allowing the public to see them.</p>
+<p>The CSRF attack towards other users is obviously no longer possible, as it would likely not get past the administrator, who will review the comments before allowing the public to see them.</p>
 <p><br></p>
 <p>Now that we understand how this guestbook system works, let's explore if it is vulnerable to attacks.</p>
 <ol>
 <li>
 <p>Log in to the guestbook by using <strong>"sec522"</strong> and <strong>"training"</strong> as username and password.</p>
-<ol>
+</li>
 <li>
 <p>Attempt to add one new comment. Put anything as name, email, and URL. For comments, enter the following string:</p>
 <div class="highlight"><pre><span></span><code>XSS<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;xss&#39;</span><span class="p">);&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </code></pre></div>
 </li>
 <li>
-<p>Press the <strong>"Add"</strong> button.</p>
-<p>A pop-up box should appear with <strong>"xss"</strong> in it. The input from the user became part of the page; the script input becomes rendered in the browser as script. This is a classic case of stored XSS vulnerability.</p>
+<p>Press the <strong>"Add"</strong> button. The message is awaiting for the administrator to approve as indicated by the message in the response page.</p>
+</li>
+<li>
+<p>Click <strong>"Logout"</strong> then log in with username <strong>"admin"</strong> and password <strong>"admin"</strong>.
+   A pop-up box should appear with <strong>"xss"</strong> in it. The input from the user became part of the page; the script input becomes rendered in the browser as script. This is a classic case of stored XSS vulnerability.</p>
 </li>
 <li>
 <p><em>(Optional)</em> Feel free to view the source of the page to look for the XSS alert box and see why it became part of the scripting content in the page.</p>
 </li>
 <li>
-<p>Delete the XSS comment in the <strong>"waiting for approval"</strong> section, as this can be annoying since the pop-up box shows up in every page load. Click the <strong>"Delete"</strong> link in the XSS comment.</p>
+<p>Delete the XSS comment in the <strong>"waiting for approval"</strong> section, as this can be annoying since the pop-up box shows up in every page load. Click the <strong>"Delete Message"</strong> link in the XSS comment.</p>
 </li>
 <li>
 <p>Log out of the guestbook by clicking on the <strong>"Logout"</strong> link.</p>
@@ -999,15 +939,15 @@
 </ol>
 <p>We have now proved the comment field to be vulnerable to XSS attack. Let's see how we can leverage this vulnerability.</p>
 <p>We know there is an XSS vulnerability in the comment field. Anyone looking at that comment will have their browser hijacked to run scripts. Hence, these browsers can be controlled. That is very useful: what if we can control the administrator's browser so that the comments could automatically be approved as soon as an administrator looks at them? Let's try this concept.</p>
-</li>
+<ol>
 <li>
 <p>Log in to the guestbook by using <strong>"sec522"</strong> and <strong>"training"</strong> as username and password.</p>
 <ol>
 <li>
 <p>Attempt to add one new comment. Put anything as name, email, and URL. For comments, put the following string:</p>
-<div class="highlight"><pre><span></span><code>You will approve this<span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;guestbook.php?f=approve&quot;</span><span class="p">&gt;</span>.
+<div class="highlight"><pre><span></span><code>You will approve this<span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;guestbook.php?approve=Y&quot;</span><span class="p">&gt;</span>.
 </code></pre></div>
-<p><strong>f=approve</strong> is to trigger the <strong>"Approve all"</strong> button we saw in the admin function.</p>
+<p><strong>approve=Y</strong> is to trigger the <strong>"Approve all Posts"</strong> button we saw in the admin function.</p>
 </li>
 <li>
 <p>Click on <strong>"Add"</strong>.</p>
@@ -1017,12 +957,16 @@
 <p>Log out of the guestbook by clicking on the <strong>"Logout"</strong> link.</p>
 </li>
 </ol>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>At this point, the sec522 user had submitted an attack into the system awaiting for the administrator to stumble upon it.</p>
+</div>
 </li>
 <li>
 <p>Log in with <strong>admin / admin</strong> as the credential. This allows you to log in as an administrator.</p>
 <p>We see that the comment is waiting for approval. It even contains a broken image icon in the comment.</p>
 <ol>
-<li>Without doing any delete or approval, click <strong>"Logout"</strong>. At this point, the administrator already unwillingly clicked on the <strong>'approve all'</strong> link to approve the comment. The browser did the approval on behalf of the administrator; the instruction came from the user's comment.</li>
+<li>Without doing any delete or approval, click <strong>"Logout"</strong>. At this point, the administrator already unwillingly clicked on the <strong>Approve All Posts</strong> link to approve the comment. The browser did the approval on behalf of the administrator; the instruction came from the user's comment.</li>
 </ol>
 </li>
 <li>
@@ -1043,10 +987,10 @@
 <div class="highlight"><pre><span></span><code><span class="x">print htmlentities($r[3]);</span>
 </code></pre></div>
 <p>Before $r[3] is displayed on-screen, it is encoded.</p>
-<p>Feel free to explore the fixed code at <strong><a href="http://www.sec522.org/guestbook2/guestbook-xss.phps">http://www.sec522.org/guestbook2/guestbook-xss.phps</a></strong> (line 117).</p>
+<p>Feel free to explore the fixed code at <strong><a href="http://lab-2.3.sans.labs/guestbook-xss.phps">http://lab-2.3.sans.labs/guestbook-xss.phps</a></strong> (line 117).</p>
 <ol>
 <li>
-<p>Browse to <a href="http://www.sec522.org/guestbook2/guestbook-xss.php">http://www.sec522.org/guestbook2/guestbook-xss.php</a>.</p>
+<p>Browse to <a href="http://lab-2.3.sans.labs/guestbook-xss.php">http://lab-2.3.sans.labs/guestbook-xss.php</a>.</p>
 </li>
 <li>
 <p>Look at the comments and explore why there is no longer a broken image sign but the entire XSS and CSRF string are simply displayed on the screen. Viewing the source of this page gives insight as to why this is no longer treated as an &lt;IMG&gt; tag but simply text on-screen.</p>

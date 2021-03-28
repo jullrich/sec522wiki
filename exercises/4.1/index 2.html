@@ -231,13 +231,13 @@
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_3" type="checkbox" id="__nav_1_3" >
       
       <label class="md-nav__link" for="__nav_1_3">
-        Tutorials
+        Course
         <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="Tutorials" data-md-level="2">
+      <nav class="md-nav" aria-label="Course" data-md-level="2">
         <label class="md-nav__title" for="__nav_1_3">
           <span class="md-nav__icon md-icon"></span>
-          Tutorials
+          Course
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -246,8 +246,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../resources/tutorial_git/" class="md-nav__link">
-        Git Tutorial
+      <a href="../../resources/preparation/" class="md-nav__link">
+        Preparation
       </a>
     </li>
   
@@ -270,74 +270,11 @@
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4" type="checkbox" id="__nav_1_4" >
       
       <label class="md-nav__link" for="__nav_1_4">
-        Course
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Course" data-md-level="2">
-        <label class="md-nav__title" for="__nav_1_4">
-          <span class="md-nav__icon md-icon"></span>
-          Course
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../resources/preparation/" class="md-nav__link">
-        Preparation
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../resources/references/" class="md-nav__link">
-        References
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../resources/appendix/" class="md-nav__link">
-        Appendix
-      </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_5" type="checkbox" id="__nav_1_5" >
-      
-      <label class="md-nav__link" for="__nav_1_5">
         Errata & Patches
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Errata & Patches" data-md-level="2">
-        <label class="md-nav__title" for="__nav_1_5">
+        <label class="md-nav__title" for="__nav_1_4">
           <span class="md-nav__icon md-icon"></span>
           Errata & Patches
         </label>
@@ -348,8 +285,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../errata/F01_01/" class="md-nav__link">
-        F01_01
+      <a href="../../errata/G01_01/" class="md-nav__link">
+        G01_01
       </a>
     </li>
   
@@ -911,41 +848,37 @@
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Lab VM</li>
 </ul>
 <h3 id="no-hints">No Hints</h3>
-<p>Go to <a href="http://www.sec522.org/shelter/soapapi/?wsdl">http://www.sec522.org/shelter/soapapi/?wsdl</a>. Inspect the WSDL (this will be a lot easier with a tool like SOAPUI. See the left "Favorite" bar). There are two requests that do not require authentication. Identify the one that is sensitive and try to retrieve data.</p>
+<p>Go to <a href="http://lab-4.1.sans.labs/soapapi/?wsdl">http://lab-4.1.sans.labs/soapapi/?wsdl</a>. Inspect the WSDL (this will be a lot easier with a tool like SOAPUI. See the left "Favorite" bar). There are two requests that do not require authentication. Identify the one that is sensitive and try to retrieve data.</p>
 <h3 id="step-by-step">Step by Step</h3>
 <ol>
 <li>
-<p>Goto <a href="http://www.sec522.org/shelter/soapapi/?wsdl">http://www.sec522.org/shelter/soapapi/?wsdl</a>. Your browser is a very good viewer for XML content, such as the WSDL file. With the WSDL content now on the screen, we can look for operations.</p>
+<p>Go to <strong><a href="http://lab-4.1.sans.labs/soapapi/?wsdl">http://lab-4.1.sans.labs/soapapi/?wsdl</a></strong>. Your browser is a very good viewer for XML content, such as the WSDL file. With the WSDL content now on the screen, we can look for operations.</p>
 </li>
 <li>
 <p>Look for operations listed in the WSDL file; specifically, look for the <strong>operation</strong> tag. You should be able to find it inside the <strong>portType</strong> element. If it is too hard to find the operation tag, press <strong>Ctrl-F</strong> to find the string on-screen.</p>
+<p>The operations in this WSDL are as follows: GetDayofWeek, GetAnimal, GetUser and GetUserName. So there are four operations listed by this WSDL.</p>
 </li>
-</ol>
-<p>The operations in this WSDL are as follows: getFirstName, getLastName, getCreditCard, and getLoginCount. So there are four operations listed by this WSDL.</p>
-<ol>
 <li>
-<p>Open SoapUI by clicking on the SoapUI icon on the left side of the screen. This application will take a full minute to load.</p>
+<p>Open SoapUI by clicking on the SoapUI icon on the left side of the screen. This application will take a full minute to load. Once loaded, you need need to skip through the offer to collect your personal information. Also close the Endpoint Explorer that pops up.</p>
 <p><img alt="" class="zoom" src="media/img-1615449094-20210311.png" /></p>
 <p><strong>SoapUI Icon</strong></p>
 </li>
 <li>
-<p>Create a new project by using <strong>File &gt; New SOAP Project</strong> from the menu, the hotkey combination Ctrl + N, or by right-clicking on "Projects" on the left side of the window and selecting "New SOAP Project". When the New SOAP Project dialog opens, give your new project a name (e.g., "SEC522"), and load the WSDL from the URL - 
-   <div class="highlight"><pre><span></span><code>http://lab-4.1.sans.labs/soapui/?wsdl
+<p>Create a new project by clicking on the link from the main screen or through <strong>File &gt; New SOAP Project</strong> from the menu or the hotkey combination Ctrl + N.  When the New SOAP Project dialog opens, give your new project a name (e.g., "SEC522"), and load the WSDL from the URL - 
+   <div class="highlight"><pre><span></span><code>http://lab-4.1.sans.labs/soapapi/?wsdl
 </code></pre></div></p>
 <p><img alt="" class="zoom" src="media/img-1615449176-20210311.png" /></p>
 <p><strong>Creating a New SOAP Project in SoapUI.</strong></p>
 </li>
 <li>
 <p>Click "OK".</p>
-</li>
-</ol>
 <p>This will load the WSDL and on the left-hand side you will see the "Operations". The operations in this WSDL are as follows: GetAnimal, GetDayofWeek, GetUser, and GetUserName, as we gathered in an earlier part of this exercise.</p>
-<ol>
+</li>
 <li>
 <p>Click on the "+" to the left of "GetAnimal" and double-click on "Request 1".</p>
 </li>
 <li>
-<p>In the following request window, enter an ID (e.g., 1) in the appropriate spot in the XML. SoapUI prefills the location with a "?". The API Key is "catsruledogsdrool".</p>
+<p>In the following request window, enter an ID (e.g., 1) in the appropriate spot in the XML. SoapUI prefills the location with a "?". The API Key is <strong>catsruledogsdrool</strong>.</p>
 <p><img alt="" class="zoom" src="media/img-1615449346-20210311.png" /></p>
 <p><strong>XML Snippet for SOAP Request</strong></p>
 </li>
@@ -959,18 +892,21 @@
 <p>We have now triggered one operation; Inspect the remaining operations and find those that do not use an API key.</p>
 </li>
 <li>
-<p>Just like in Step 6 and 7, create requests for GetDayofWeek, GetUser and GetUserName. For "GetDayofWeek", the date uses the YYYY-MM-DD format. For example 2020-04-01 for April 1<sup>st</sup> 2020.</p>
+<p>Just like in Step 6 and 7, create requests for GetDayofWeek, GetUser and GetUserName. For "GetDayofWeek", the date uses the YYYY-MM-DD format. For example 2021-04-01 for April 1<sup>st</sup> 2021.</p>
 </li>
 <li>
-<p>GetDayofWeek and GetUser do not require an API key. GetDayofWeek has no sensitive information. But GetUser has. Just like in steps 6 through 8, use SoadUI to retrieve data for user # 1.</p>
+<p>GetDayofWeek and GetUser do not require an API key. GetDayofWeek has no sensitive information. But GetUserName has. Just like in steps 6 through 8, use SoapUI to retrieve data for user # 1.</p>
 </li>
 </ol>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
+<ul>
+<li>XML based Web Services are common and while they are intended to communicate from machine to machine, it is possible to use clients such as SoapUI to interact with the service and exploit any flaws that are in the system. </li>
+</ul>
 <hr />
 <h2 id="explore-further">Explore Further</h2>
 <ul>
-<li></li>
+<li>Interact with public SOAP based web services such as <a href="http://www.dneonline.com/calculator.asmx">http://www.dneonline.com/calculator.asmx</a></li>
 </ul>
                 
               
