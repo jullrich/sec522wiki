@@ -17,49 +17,48 @@
   font-family: "Ubuntu";
   white-space: pre;
   color: black;
-
   table, img, svg {
     break-inside: avoid;
   }
 }
 
 @page :left {
-  @top-center {
-    font-size: small;
+   @top-center {
+       font-size: small;
+      content: '';       
   }
-  
+
   @bottom-left {
-    display: none;
-    /*font-size: small;
-    content: counter(page);*/
+      font-size: small;
+      content: '' !important;            
   }
   @bottom-center {
-    display: none;
-    font-size: small;
-/*    content: '© 2020 Jason Lam & Dr. Johannes Ullrich';*/
+      font-size: small;
+      content: '';      
   }
+
   @bottom-right {
-/*    font-size: small;
-    content: 'SEC522';*/
-    display: none
+      font-size: small;
+      content: '' !important;
   }
 }
 
 @page :right {
   @top-center {
-    font-size: small;
+      font-size: small;
+      content: '';      
   }
 
   @bottom-left {
-    font-size: small;
-    content: 'SEC522';
+      font-size: small;
+      content: '' !important;      
   }
   @bottom-center {
-    font-size: small;
-    content: '© 2020 Jason Lam & Dr. Johannes Ullrich';
+      font-size: small;
+      content: '';      
   }
   @bottom-right {
-    font-size: small;
-    content: counter(page);
+      font-size: small;
+      content: '' !important;
   }
 }
