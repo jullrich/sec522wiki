@@ -27,19 +27,22 @@
   @top-center {
     font-size: small;
   }
-/*  
+  
   @bottom-left {
-    font-size: small;
-    content: counter(page);
+    display: none;
+    /*font-size: small;
+    content: counter(page);*/
   }
   @bottom-center {
+    display: none;
     font-size: small;
-    content: '© 2020 Jason Lam & Dr. Johannes Ullrich';
+/*    content: '© 2020 Jason Lam & Dr. Johannes Ullrich';*/
   }
   @bottom-right {
-    font-size: small;
-    content: 'SEC522';
-  }*/
+/*    font-size: small;
+    content: 'SEC522';*/
+    display: none
+  }
 }
 
 @page :right {
