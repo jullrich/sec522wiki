@@ -27,7 +27,7 @@
   @top-center {
     font-size: small;
   }
-  
+/*  
   @bottom-left {
     font-size: small;
     content: counter(page);
@@ -39,7 +39,7 @@
   @bottom-right {
     font-size: small;
     content: 'SEC522';
-  }
+  }*/
 }
 
 @page :right {
