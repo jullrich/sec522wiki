@@ -231,13 +231,13 @@
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_3" type="checkbox" id="__nav_1_3" >
       
       <label class="md-nav__link" for="__nav_1_3">
-        Tutorials
+        Course
         <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="Tutorials" data-md-level="2">
+      <nav class="md-nav" aria-label="Course" data-md-level="2">
         <label class="md-nav__title" for="__nav_1_3">
           <span class="md-nav__icon md-icon"></span>
-          Tutorials
+          Course
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -246,8 +246,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../resources/tutorial_git/" class="md-nav__link">
-        Git Tutorial
+      <a href="../../resources/preparation/" class="md-nav__link">
+        Preparation
       </a>
     </li>
   
@@ -270,74 +270,11 @@
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4" type="checkbox" id="__nav_1_4" >
       
       <label class="md-nav__link" for="__nav_1_4">
-        Course
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Course" data-md-level="2">
-        <label class="md-nav__title" for="__nav_1_4">
-          <span class="md-nav__icon md-icon"></span>
-          Course
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../resources/preparation/" class="md-nav__link">
-        Preparation
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../resources/references/" class="md-nav__link">
-        References
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../resources/appendix/" class="md-nav__link">
-        Appendix
-      </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_5" type="checkbox" id="__nav_1_5" >
-      
-      <label class="md-nav__link" for="__nav_1_5">
         Errata & Patches
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Errata & Patches" data-md-level="2">
-        <label class="md-nav__title" for="__nav_1_5">
+        <label class="md-nav__title" for="__nav_1_4">
           <span class="md-nav__icon md-icon"></span>
           Errata & Patches
         </label>
@@ -348,8 +285,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../errata/F01_01/" class="md-nav__link">
-        F01_01
+      <a href="../../errata/G01_01/" class="md-nav__link">
+        G01_01
       </a>
     </li>
   
@@ -888,7 +825,7 @@
             
           
           <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
+            <article class="md-content__inner md-typeset"><a class="md-content__button md-icon" download href="../../pdf/combined.pdf" title="PDF Export"><svg style="height: 1.2rem; width: 1.2rem;" viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg"><path d="M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zm76.45 211.36l-96.42 95.7c-6.65 6.61-17.39 6.61-24.04 0l-96.42-95.7C73.42 337.29 80.54 320 94.82 320H160v-80c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v80h65.18c14.28 0 21.4 17.29 11.27 27.36zM377 105L279.1 7c-4.5-4.5-10.6-7-17-7H256v128h128v-6.1c0-6.3-2.5-12.4-7-16.9z"></path></svg></a>
               
                 
                 
@@ -919,7 +856,7 @@
 </ul>
 <hr />
 <h3 id="no-hints">No Hints</h3>
-<p>The application under attack is the animal shelters "Citrus Gateway". The "Citrus Gateway" allow access to internal application, but the shelter never really used it, so it sits in its default configuration exposed to the internet. There are two attacks happening. The log does not have necessarily all the information. For the second attack, the "CGW-User" header was logged. To play with the application, see <a href="http://www.sec522.org/citrusgw/index.php">http://www.sec522.org/citrusgw/index.php</a> . The files for the application can be found in /var/www/sec522.org/html/citrusgw/</p>
+<p>The application under attack is the animal shelters "Citrus Gateway". The "Citrus Gateway" allow access to internal application, but the shelter never really used it, so it sits in its default configuration exposed to the internet. There are two attacks happening. The log does not have necessarily all the information. For the second attack, the "CGW-User" header was logged. To play with the application, see <a href="http://lab-5.5.sans.labs/citrusgw/index.php">http://lab-5.5.sans.labs/citrusgw/index.php</a> . The files for the application can be found in /etc/docker/compose/5.5/web/html/citrusgw</p>
 <h3 id="step-by-step">Step by Step</h3>
 <p>The logs use the following format (the last field is only present for the last few lines of the log):</p>
 <pre style="white-space: pre-wrap;">
@@ -980,7 +917,7 @@ www.sec522.org:80 127.0.0.1 - - [26/Jan/2020:00:25:58 -0500] "POST /citrusgw/api
 </table>
 <ol>
 <li>
-<p>Explore the attacked application to become familiar with it. Start by loading <a href="http://www.sec522.org/citrusgw/index.php">http://www.sec522.org/citrusgw/index.php</a> in Google Chrome</p>
+<p>Explore the attacked application to become familiar with it. Start by loading <a href="http://lab-5.5.sans.labs/citrusgw/index.php">http://lab-5.5.sans.labs/citrusgw/index.php</a> in Google Chrome</p>
 </li>
 <li>
 <p>Log in using the credentials "sec522" and "training".</p>
@@ -989,7 +926,7 @@ www.sec522.org:80 127.0.0.1 - - [26/Jan/2020:00:25:58 -0500] "POST /citrusgw/api
 <p>Enter a bookmark (any text will do).</p>
 </li>
 <li>
-<p>Click on the "Home" icon on your desktop.</p>
+<p>Click on the "Files" icon on your desktop (Favorite menu on the left).</p>
 </li>
 <li>
 <p>Open the "Documents" folder</p>
@@ -1019,7 +956,7 @@ www.sec522.org:80 127.0.0.1 - - [26/Jan/2020:00:25:58 -0500] "POST /citrusgw/api
 <p>The second part of the exercise uses the log file you have already open, but the requests are now hitting newbm.php. Refer to the field list in the introduction above to identify which field changes for some of the requests.</p>
 </li>
 <li>
-<p>You may want to open /var/www/dev522.org/citrusgw/api/newbm.php first in a text editor (Visual Studio Code) to understand a bit more what is happening.</p>
+<p>You may want to open /etc/docker/compose/5.5/web/html/citrusgw/api/newbm.php first in a text editor (Visual Studio Code) to understand a bit more what is happening.</p>
 <p>Try to answer these questions:</p>
 <div class="admonition note">
 <p class="admonition-title">5. What type of attack was the attacker launching?</p>
@@ -1049,10 +986,13 @@ www.sec522.org:80 127.0.0.1 - - [26/Jan/2020:00:25:58 -0500] "POST /citrusgw/api
 </details>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
+<ul>
+<li>Log analysis can yield a lot of insights on the activities of the application. In incident response scenario, logs are often the main source of information to understand what had happened. </li>
+</ul>
 <hr />
 <h2 id="explore-further">Explore Further</h2>
 <ul>
-<li></li>
+<li>How do you fix an application coding issue illustrated in this exercise?</li>
 </ul>
                 
               
