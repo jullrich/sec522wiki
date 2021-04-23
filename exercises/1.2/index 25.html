@@ -14,7 +14,7 @@
     
     
       
-        <title>5.4: Sub Resource Integrity - SEC522 Workbook</title>
+        <title>1.2: Inspecting HTTP/2 Traffic - SEC522 Workbook</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#sub-resource-integrity" class="md-skip">
+        <a href="#inspecting-http2-traffic-and-crafting-requests" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              5.4: Sub Resource Integrity
+              1.2: Inspecting HTTP/2 Traffic
             
           </span>
         </div>
@@ -310,12 +310,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       <label class="md-nav__link" for="__nav_2">
         Day 1
@@ -343,11 +345,130 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../1.2/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          1.2: Inspecting HTTP/2 Traffic
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         1.2: Inspecting HTTP/2 Traffic
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-inspecting-http2-traffic" class="md-nav__link">
+    Part 1: Inspecting HTTP/2 Traffic
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 1: Inspecting HTTP/2 Traffic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-hints" class="md-nav__link">
+    No Hints
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step" class="md-nav__link">
+    Step by Step
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-acquire-and-play-back-token" class="md-nav__link">
+    Part 2: Acquire and play back token
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 2: Acquire and play back token">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-hints_1" class="md-nav__link">
+    No Hints
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step_1" class="md-nav__link">
+    Step by Step
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-spoofing-an-http-request" class="md-nav__link">
+    Part 3: Spoofing an HTTP Request
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 3: Spoofing an HTTP Request">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-hints_2" class="md-nav__link">
+    No Hints
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explore-further" class="md-nav__link">
+    Explore Further
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -622,14 +743,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
       
       <label class="md-nav__link" for="__nav_6">
         Day 5
@@ -681,63 +800,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          5.4: Sub Resource Integrity
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../5.4/" class="md-nav__link">
         5.4: Sub Resource Integrity
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#no-hints" class="md-nav__link">
-    No Hints
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-by-step" class="md-nav__link">
-    Step by Step
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
-    Conclusion
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -820,102 +887,153 @@
     content: 'SANS SEC522 Workbook';
 }}
 @page :left { @bottom-left {
-  content: '5.4-' counter(page);
+  content: '1.2-' counter(page);
 }}
 @page :right { @bottom-right {
-  content: '5.4-' counter(page);
+  content: '1.2-' counter(page);
 }}
 </style>
 
-<h1 id="sub-resource-integrity">Sub Resource Integrity</h1>
+<p><img alt="" display="none" src="http://lab-1.2.sans.labs/img.png" /></p>
+<h1 id="inspecting-http2-traffic-and-crafting-requests">Inspecting HTTP/2 Traffic and Crafting Requests</h1>
 <hr />
 <h4 id="objectives">Objectives</h4>
-<div class="codehilite"><pre><span></span><code>Estimated Time: 6 minutes
+<div class="codehilite"><pre><span></span><code>Estimated Time: 10 minutes
 </code></pre></div>
 
-<p>Understand how sub resources integrity can help prevent some attacks that swap components hosted by third parties for malicious components.</p>
+<h5 id="part-1">Part 1:</h5>
+<blockquote>
+<p>In this exercise, you will inspect HTTP/2 traffic to better understand how it differs from HTTP/1.1</p>
+</blockquote>
+<h5 id="part-2">Part 2:</h5>
+<blockquote>
+<p>First, you will try to use an authentication token retrieved in one request to send a second request. The section half of this exercise will teach you how to impersonate a valid browser using simple tools like "curl". You will first collect a request from a regular browser to create a "fingerprint" of the browser. Next, you will use "curl" to create a request that matches the fingerprint.</p>
+</blockquote>
+<h5 id="part-3">Part 3:</h5>
+<blockquote>
+<p>This exercise is an extension to the previous two exercises where the crafting of headers have to be exact. </p>
+</blockquote>
 <h4 id="requirements">Requirements</h4>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Lab VM</li>
 </ul>
 <hr />
+<h2 id="part-1-inspecting-http2-traffic">Part 1: Inspecting HTTP/2 Traffic</h2>
 <h3 id="no-hints">No Hints</h3>
-<p>Start the exercise at <a href="http://lab-5.4.sans.labs/donations.php">http://lab-5.4.sans.labs/donations.php</a> and follow the instructions provided.</p>
+<p>You will be using Wireshark to inspect an HTTP/2 packet capture. The packet capture can be found in /home/student/Documents/pcaps/http2.pcap. Find out which headers you can identify in the HTTP/2 request and response.</p>
 <h3 id="step-by-step">Step by Step</h3>
 <ol>
 <li>
-<p>Open <a href="http://lab-5.4.sans.labs/subresourceintegrity.php">http://lab-5.4.sans.labs/subresourceintegrity.php</a> in Google Chrome. </p>
+<p>Open Wireshark by clicking on the blue "fin" on the left.</p>
+<p><img alt="" src="media/image1.png" /></p>
+<p><strong>Wireshark icon</strong></p>
 </li>
 <li>
-<p>Click on the link to donations.php - <a href="http://lab-5.4.sans.labs/donations.php">http://lab-5.4.sans.labs/donations.php</a>.</p>
+<p>Open the packet capture using either Ctrl+O or "File" &gt; "Open" from the Wireshark menu. Navigate to /home/student/Documents/pcaps and open the file "http2.pcap" (you may find the file still listed as a "Recent" file, which may make things easier).</p>
 </li>
 <li>
-<p>Fill out the donation form and click “Submit.” You will see a “Thank you” page, and all looks good.</p>
+<p>Select packet #15 and investigate the middle pane of Wireshark. Expand the "Hypertext Transfer Protocol 2" section by clicking on the triangles to the left until you see the headers:</p>
+<p><img alt="" src="media/image2.png" /></p>
+<p><strong>Wireshark Details</strong></p>
 </li>
 <li>
-<p>Click on the <a href="http://lab-5.4.sans.labs/donations.php">http://lab-5.4.sans.labs/donations.php</a> link again to restart the exercise.</p>
+<p>Using Wireshark, answer these questions about the request:</p>
+<details class="question"><summary>Which user agent was used to collect the data?</summary><p>curl/7.58.0</p>
+</details>
+<details class="question"><summary>Which hostname did the client connect to?</summary><p><a href="http://www.sec522.org">www.sec522.org</a></p>
+</details>
 </li>
 <li>
-<p>Press Ctrl-Shift-I to open the Developers Tools.</p>
-</li>
-<li>
-<p>Click on the “Sources” tab in the Developers Tools.</p>
-</li>
-<li>
-<p>Under the js folder, open the “donations.js” file and inspect the “accountid”. Note how the account ID has been altered to “evilcataccount” by an unknown attacker!</p>
-<p><img alt="" class="zoom" src="media/img-1615709782-20210314.png" />
-<strong>Content of donations.js</strong></p>
-</li>
-<li>
-<p>Open a terminal and enter
-    <div class="highlight"><pre><span></span><code>cd /etc/docker/compose/5.4/web/html/js 
-</code></pre></div>
-    to change to the directory with the respective files.</p>
-</li>
-<li>
-<p>Enter “ls” to obtain a directory listing. You will see a file called “dontations_for_stupid_dogs.js”.</p>
-</li>
-<li>
-<p>Use the “diff” command to compare the dontations_for_stupid_dogs.js file to the donations.js file. The files are identical with the exception of the account ID.</p>
-<p>In a terminal, run </p>
-<p><div class="highlight"><pre><span></span><code>diff donations_for_stupid_dogs.js  donations.js
-</code></pre></div>
-to show the differences between two files.</p>
-</li>
-<li>
-<p>Calculate the hash of the “good” file:
-<div class="highlight"><pre><span></span><code>openssl dgst -sha384 -binary &lt; donations_for_stupid_dogs.js | openssl base64 -A
-</code></pre></div>
-You should get the following hash: wZGpBo0UBEBZ2r+uvUPUVH8gvHqHHPJr5Yt9aK+W5D9cSxNhgvF6lAHxsf0gAXbw</p>
-</li>
-<li>
-<p>Open <strong>/etc/docker/compose/5.4/web/html/donations.php</strong> in an editor (Visual Studio Code) and add the “integrity” attribute to the script tag for “donations.js” in line 17. (Solutions below) Save the file after you are done editing and keep the file open.</p>
-</li>
-<li>
-<p>Reload the donations page. You will now see an error on the console tab in the Developer Tools.</p>
-<div class="admonition information">
-<p class="admonition-title">Information</p>
-<p>We have generated a hash (signature) of the legitimate JavaScript but the file being referenced remotely is a file that has been altered by the unknown attacker. As the hashes are not matching, the browser is not going to execute the JavaScript. </p>
+<p>Now select packet #21 and again inspect the HTTP/2 part in more detail. This packet contains the response.</p>
+<details class="question"><summary>What status code did the server return?</summary><p>200</p>
+</details>
+<details class="question"><summary>Which server version did we use?</summary><p>Apache 2.4.29</p>
+</details>
+<div class="admonition tip">
+<p class="admonition-title">Feel free to inspect any additional items in this sample.</p>
 </div>
 </li>
+</ol>
+<hr />
+<h2 id="part-2-acquire-and-play-back-token">Part 2: Acquire and play back token</h2>
+<h3 id="no-hints_1">No Hints</h3>
+<p>The CSRF/ proof service at <a href="http://lab-1.2.sans.labs/authservice/index.php">http://lab-1.2.sans.labs/authservice/index.php</a> gives you a special token </p>
+<h3 id="step-by-step_1">Step by Step</h3>
+<ol>
 <li>
-<p>Change line 17 of the donations.php to use “donations_for_stupid_dogs.js” instead of donations.php (keep the integirty parameter intact).</p>
+<p>Open a terminal (click the "Terminal" icon on the left)</p>
 </li>
 <li>
-<p>Reload the donations page. The script will now load as the signature matches.</p>
+<p>Use "curl" to send a PUT request to <a href="http://lab-1.2.sans.labs/authservice/index.php">http://lab-1.2.sans.labs/authservice/index.php</a></p>
+<div class="highlight"><pre><span></span><code>curl -iX PUT http://lab-1.2.sans.labs/authservice/index.php
+</code></pre></div>
+<p>The return will include an "Auth-Token" header:</p>
+<div class="highlight"><pre><span></span><code>HTTP/1.1 200 OK
+Date: Thu, 11 Mar 2021 02:56:38 GMT
+Server: Apache/2.4.38 (Debian)
+X-Powered-By: PHP/7.4.15
+<span class="hll">Auth-Token: [use this value for the next step]
+</span>Vary: Accept-Encoding
+Content-Length: 89
+Content-Type: text/html; charset=UTF-8
+</code></pre></div>
+</li>
+<li>
+<p>Now create a request to <a href="http://lab-1.2.sans.labs/authservice/test.php">http://lab-1.2.sans.labs/authservice/test.php</a> using this Auth-Token header (replace "TOKEN" with the value you received in step 2.</p>
+<div class="highlight"><pre><span></span><code>curl -i -H <span class="s1">&#39;Auth-Token: &lt;Token you got earlier&gt;&#39;</span> http://lab-1.2.sans.labs/authservice/test.php
+</code></pre></div>
+<p>The return will let you know if you got it right</p>
 </li>
 </ol>
-<p>The “integrity” parameter will indicate to the browser that the file has changed. The browser is now able to block scripts if they changed.</p>
-<details class="solution"><summary>Solution</summary><p>Here is the JavaScript reference with integrity attributes embeded (line 17 of donations.php). 
-<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">&quot;/js/donations_for_stupid_dogs.js&quot;</span> <span class="nx">integrity</span><span class="o">=</span><span class="s2">&quot;sha384-wZGpBo0UBEBZ2r+uvUPUVH8gvHqHHPJr5Yt9aK+W5D9cSxNhgvF6lAHxsf0gAXbw&quot;</span><span class="o">&gt;&lt;</span><span class="err">/script&gt;</span>
-</code></pre></div></p>
-</details>
+<h2 id="part-3-spoofing-an-http-request">Part 3: Spoofing an HTTP Request</h2>
+<h3 id="no-hints_2">No Hints</h3>
+<p>The exercise starts at <a href="http://lab-1.2.sans.labs/spoofchallenge/index.html">http://lab-1.2.sans.labs/spoofchallenge/index.html</a> . The page includes brief instructions showing you how to proceed.</p>
+<ol>
+<li>
+<p>Open <a href="http://lab-1.2.sans.labs/spoofchallenge/index.html">http://lab-1.2.sans.labs/spoofchallenge/index.html</a> in Chrome.</p>
+</li>
+<li>
+<p>Click on the "Step 1" link. This will open the page fingerprint.php and display your browser fingerprint.</p>
+</li>
+<li>
+<p>Click "Save Fingerprint". You will now see the saved fingerprint in the lower half of the page.</p>
+</li>
+<li>
+<p>Open a terminal window (for example by clicking on the "Terminal" icon on the left)</p>
+</li>
+<li>
+<p>Enter:</p>
+<div class="highlight"><pre><span></span><code>curl http://lab-1.2.sans.labs/spoofchallenge/fingerprinttest.php
+</code></pre></div>
+<p>You will see a number of errors due to missing or incomplete headers.</p>
+</li>
+<li>
+<p>Now add individual headers using the curl "-H" option. For example to add the User-Agent header use (the URL in the end is abbreviated. Use the same URL as in step 5).</p>
+<div class="highlight"><pre><span></span><code>curl -H <span class="s2">&quot;User-Agent: [some user agent]&quot;</span> http://www...
+</code></pre></div>
+</li>
+<li>
+<p>Add more headers. Read the error messages for any missing headers, or values that you do not have right yet.</p>
+</li>
+<li>
+<p>As you add the "Accept:" header, the output may be compressed and you will get a warning indicating that the output is binary. Pipe the output to "zcat" if you see the warning. For example like in the abbreviated command below:</p>
+<div class="highlight"><pre><span></span><code>curl -H [... any headers... ] http://[url] | zcat
+</code></pre></div>
+</li>
+<li>
+<p>For a solution, see <a href="http://lab-1.2.sans.labs/spoofchallenge/solution.php">http://lab-1.2.sans.labs/spoofchallenge/solution.php</a></p>
+</li>
+</ol>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
 <ul>
-<li>Subresource integrity is useful for making sure that content being loaded from a remote location is of a specific version or that it hasn't been altered.</li>
-<li>When using Subresource integrity, the destination resource changes will cause the browser to stop loading the resource.</li>
-<li>Subresource integirty works for any &lt;link> and &lt;script> elements</li>
+<li>HTTP 2 is the current version of HTTP standard which has the original protocol on much more optimized basis. </li>
+<li>HTTP Request headers manipulation is a big part of security defense and offense. HTTP headers in both request and response affects the functions of browser or server. In modern day applications, the headers are where authentication tokens and security decisions are transported.</li>
+</ul>
+<hr />
+<h2 id="explore-further">Explore Further</h2>
+<ul>
+<li>Can you use HTTP 2 over cleartext?</li>
 </ul>
                 
               
@@ -934,7 +1052,7 @@ You should get the following hash: wZGpBo0UBEBZ2r+uvUPUVH8gvHqHHPJr5Yt9aK+W5D9cS
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../5.3/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../1.1/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -943,19 +1061,19 @@ You should get the following hash: wZGpBo0UBEBZ2r+uvUPUVH8gvHqHHPJr5Yt9aK+W5D9cS
               <span class="md-footer__direction">
                 Previous
               </span>
-              5.3: HTML5
+              1.1: HTTP Basics
             </div>
           </div>
         </a>
       
       
-        <a href="../5.5/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../1.3/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              5.5: Logging and Incident Response
+              1.3: Isolation
             </div>
           </div>
           <div class="md-footer__button md-icon">

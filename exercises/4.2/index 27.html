@@ -14,7 +14,7 @@
     
     
       
-        <title>5.4: Sub Resource Integrity - SEC522 Workbook</title>
+        <title>4.2: XMLHttpRequest - SEC522 Workbook</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#sub-resource-integrity" class="md-skip">
+        <a href="#xmlhttprequest-and-same-origin-policy" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              5.4: Sub Resource Integrity
+              4.2: XMLHttpRequest
             
           </span>
         </div>
@@ -544,12 +544,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
       
       <label class="md-nav__link" for="__nav_5">
         Day 4
@@ -577,11 +579,76 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../4.2/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          4.2: XMLHttpRequest
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         4.2: XMLHttpRequest
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#xmlhttprequest-and-same-origin-policy_1" class="md-nav__link">
+    XMLHttpRequest and Same Origin Policy
+  </a>
+  
+    <nav class="md-nav" aria-label="XMLHttpRequest and Same Origin Policy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step" class="md-nav__link">
+    Step by Step
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explore-further" class="md-nav__link">
+    Explore Further
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -622,14 +689,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
       
       <label class="md-nav__link" for="__nav_6">
         Day 5
@@ -681,63 +746,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          5.4: Sub Resource Integrity
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../5.4/" class="md-nav__link">
         5.4: Sub Resource Integrity
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#no-hints" class="md-nav__link">
-    No Hints
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-by-step" class="md-nav__link">
-    Step by Step
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
-    Conclusion
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -820,102 +833,103 @@
     content: 'SANS SEC522 Workbook';
 }}
 @page :left { @bottom-left {
-  content: '5.4-' counter(page);
+  content: '4.2-' counter(page);
 }}
 @page :right { @bottom-right {
-  content: '5.4-' counter(page);
+  content: '4.2-' counter(page);
 }}
 </style>
 
-<h1 id="sub-resource-integrity">Sub Resource Integrity</h1>
+<h1 id="xmlhttprequest-and-same-origin-policy">XMLHttpRequest and Same Origin Policy</h1>
 <hr />
 <h4 id="objectives">Objectives</h4>
-<div class="codehilite"><pre><span></span><code>Estimated Time: 6 minutes
+<div class="codehilite"><pre><span></span><code>Estimated Time: 10 minutes
 </code></pre></div>
 
-<p>Understand how sub resources integrity can help prevent some attacks that swap components hosted by third parties for malicious components.</p>
+<h5 id="part-1">Part 1:</h5>
+<blockquote>
+<p>In this exercise, we will experiment with the JavaScript method XMLHttpRequest and the ability of this request to generate HTTP requests and fetch data within a JavaScript.</p>
+</blockquote>
 <h4 id="requirements">Requirements</h4>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Lab VM</li>
 </ul>
 <hr />
-<h3 id="no-hints">No Hints</h3>
-<p>Start the exercise at <a href="http://lab-5.4.sans.labs/donations.php">http://lab-5.4.sans.labs/donations.php</a> and follow the instructions provided.</p>
+<h2 id="xmlhttprequest-and-same-origin-policy_1">XMLHttpRequest and Same Origin Policy</h2>
 <h3 id="step-by-step">Step by Step</h3>
 <ol>
 <li>
-<p>Open <a href="http://lab-5.4.sans.labs/subresourceintegrity.php">http://lab-5.4.sans.labs/subresourceintegrity.php</a> in Google Chrome. </p>
+<p>Make sure Chrome is running.</p>
 </li>
 <li>
-<p>Click on the link to donations.php - <a href="http://lab-5.4.sans.labs/donations.php">http://lab-5.4.sans.labs/donations.php</a>.</p>
+<p>Browse to <strong><a href="http://lab-4.2.sans.labs/sop.php">http://lab-4.2.sans.labs/sop.php</a></strong>.</p>
 </li>
 <li>
-<p>Fill out the donation form and click “Submit.” You will see a “Thank you” page, and all looks good.</p>
+<p>This page is assembled with contents from static HTML and also XMLHttpRequest. Let's explore more of the innerworkings of this page. Launch the Developer Tools (Ctrl-Shift-I) and select the <strong>Sources</strong> tab from the top and then select sop.php.</p>
 </li>
 <li>
-<p>Click on the <a href="http://lab-5.4.sans.labs/donations.php">http://lab-5.4.sans.labs/donations.php</a> link again to restart the exercise.</p>
-</li>
-<li>
-<p>Press Ctrl-Shift-I to open the Developers Tools.</p>
-</li>
-<li>
-<p>Click on the “Sources” tab in the Developers Tools.</p>
-</li>
-<li>
-<p>Under the js folder, open the “donations.js” file and inspect the “accountid”. Note how the account ID has been altered to “evilcataccount” by an unknown attacker!</p>
-<p><img alt="" class="zoom" src="media/img-1615709782-20210314.png" />
-<strong>Content of donations.js</strong></p>
-</li>
-<li>
-<p>Open a terminal and enter
-    <div class="highlight"><pre><span></span><code>cd /etc/docker/compose/5.4/web/html/js 
+<p>The source of the page including the JavaScript that loads all the content within the page. Please review the code from line 39-53.</p>
+<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+<span class="hll">    <span class="nx">url</span> <span class="o">=</span> <span class="s1">&#39;http://lab-4.2.sans.labs/content.php&#39;</span><span class="p">;</span>
+</span>    <span class="nx">req</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+    <span class="nx">req</span><span class="p">.</span><span class="nx">onreadystatechange</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span> <span class="nx">req</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">==</span> <span class="mf">4</span> <span class="p">)</span>  <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">response</span><span class="o">=</span><span class="s1">&#39;waiting...&#39;</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span> <span class="nx">req</span><span class="p">.</span><span class="nx">status</span> <span class="o">==</span> <span class="mf">200</span> <span class="p">)</span>  <span class="p">{</span>
+        <span class="nx">response</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">responseText</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">response</span><span class="o">=</span><span class="s2">&quot;Sorry. The data could not be retrieved. Error:&quot;</span><span class="o">+</span><span class="nx">req</span><span class="p">.</span><span class="nx">statusText</span><span class="p">;</span>
+
+        <span class="p">}</span>    
+        <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;content&#39;</span><span class="p">).</span><span class="nx">innerHTML</span><span class="o">=</span><span class="nx">response</span><span class="p">;</span>
+    <span class="p">}</span> 
+    <span class="p">}</span>
+    <span class="nx">req</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span><span class="nx">url</span><span class="p">,</span><span class="kc">true</span><span class="p">);</span>
+    <span class="nx">req</span><span class="p">.</span><span class="nx">send</span><span class="p">();</span>
+<span class="o">&lt;</span><span class="err">/script&gt;</span>
 </code></pre></div>
-    to change to the directory with the respective files.</p>
+<p>By reading the page source, answer these questions:</p>
+<details class="question"><summary>What value is the url variable holding?</summary><p>The url variable is holding the URL of the resource to be fetched by XMLHTTPRequest. The content.txt file is in the lab-4.2.sans.labs server. This location will have a great effect on a later part of this lab.</p>
+</details>
+<details class="question"><summary>Which statement in the JavaScript code executes the sending of an HTTP request?</summary><p>The "req.send();" statement sends the XMLHTTPRequest out to the web server.</p>
+</details>
 </li>
 <li>
-<p>Enter “ls” to obtain a directory listing. You will see a file called “dontations_for_stupid_dogs.js”.</p>
+<p>Reload the page then switch over to the "Network" tab at the top. Look for <strong>content.php</strong> at the bottom tab. Close the bottom right tab (click the X next to Headers)</p>
+<p><img alt="" class="zoom" src="media/img-1615864340-20210315.png" /></p>
 </li>
 <li>
-<p>Use the “diff” command to compare the dontations_for_stupid_dogs.js file to the donations.js file. The files are identical with the exception of the account ID.</p>
-<p>In a terminal, run </p>
-<p><div class="highlight"><pre><span></span><code>diff donations_for_stupid_dogs.js  donations.js
+<p>See the request type by the browser, it is XHR.</p>
+<p><img alt="" class="zoom" src="media/img-1615864409-20210315.png" /></p>
+<p>It is time to experience the restriction imposed by the Same Origin Policy.</p>
+</li>
+<li>
+<p>Browse to <strong><a href="http://lab-4.2-evil.sans.labs/sop.php">http://lab-4.2-evil.sans.labs/sop.php</a></strong> (note the URL is different than the one we used before)</p>
+</li>
+<li>
+<p>With the Developer Tools, inspect the "Console" tab from the top tab menu. Take a look at the red error messages. It's clear that this content.php is blocked.</p>
+</li>
+<li>
+<p>Take a look at the source code by selecting the <strong>Sources</strong> tab from the top and then select <strong>sop.php</strong>. Please review line 39 onwards which is the portion of the code causing the browser violation.</p>
+<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+<span class="hll">    <span class="nx">url</span> <span class="o">=</span> <span class="s1">&#39;http://lab-4.2.sans.labs/content.php&#39;</span><span class="p">;</span>
+</span>    <span class="nx">req</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+    <span class="nx">req</span><span class="p">.</span><span class="nx">onreadystatechange</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<span class="p">......</span>
 </code></pre></div>
-to show the differences between two files.</p>
-</li>
-<li>
-<p>Calculate the hash of the “good” file:
-<div class="highlight"><pre><span></span><code>openssl dgst -sha384 -binary &lt; donations_for_stupid_dogs.js | openssl base64 -A
-</code></pre></div>
-You should get the following hash: wZGpBo0UBEBZ2r+uvUPUVH8gvHqHHPJr5Yt9aK+W5D9cSxNhgvF6lAHxsf0gAXbw</p>
-</li>
-<li>
-<p>Open <strong>/etc/docker/compose/5.4/web/html/donations.php</strong> in an editor (Visual Studio Code) and add the “integrity” attribute to the script tag for “donations.js” in line 17. (Solutions below) Save the file after you are done editing and keep the file open.</p>
-</li>
-<li>
-<p>Reload the donations page. You will now see an error on the console tab in the Developer Tools.</p>
-<div class="admonition information">
-<p class="admonition-title">Information</p>
-<p>We have generated a hash (signature) of the legitimate JavaScript but the file being referenced remotely is a file that has been altered by the unknown attacker. As the hashes are not matching, the browser is not going to execute the JavaScript. </p>
-</div>
-</li>
-<li>
-<p>Change line 17 of the donations.php to use “donations_for_stupid_dogs.js” instead of donations.php (keep the integirty parameter intact).</p>
-</li>
-<li>
-<p>Reload the donations page. The script will now load as the signature matches.</p>
 </li>
 </ol>
-<p>The “integrity” parameter will indicate to the browser that the file has changed. The browser is now able to block scripts if they changed.</p>
-<details class="solution"><summary>Solution</summary><p>Here is the JavaScript reference with integrity attributes embeded (line 17 of donations.php). 
-<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">&quot;/js/donations_for_stupid_dogs.js&quot;</span> <span class="nx">integrity</span><span class="o">=</span><span class="s2">&quot;sha384-wZGpBo0UBEBZ2r+uvUPUVH8gvHqHHPJr5Yt9aK+W5D9cSxNhgvF6lAHxsf0gAXbw&quot;</span><span class="o">&gt;&lt;</span><span class="err">/script&gt;</span>
-</code></pre></div></p>
-</details>
+<p>XMLHTTPRequest targets "lab-4.2.sans.labs" under Same Origin Policy; if the URL is not "lab-4.2-<strong>evil</strong>.sans.labs", the browser will not continue with the request. As you can tell, XMLHTTPRequest happens in the background, silently making HTTP requests on your behalf. If it is allowed to request contents across domains, it would be very dangerous to the user. Think of the situation in which the user visits evil.com where there is JavaScript instructing the browser to attack another site using XMLHTTPRequest, sans.org. If the Same Origin Policy does not stop this, your browser will be attacking sans.org without your knowledge.</p>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
 <ul>
-<li>Subresource integrity is useful for making sure that content being loaded from a remote location is of a specific version or that it hasn't been altered.</li>
-<li>When using Subresource integrity, the destination resource changes will cause the browser to stop loading the resource.</li>
-<li>Subresource integirty works for any &lt;link> and &lt;script> elements</li>
+<li>Same Origin Policy restriction is embeded in the browser. </li>
+<li>Sam Origin Policy prevent content (scripts) from one origin to directly interact with the content from another origin.</li>
+</ul>
+<hr />
+<h2 id="explore-further">Explore Further</h2>
+<ul>
+<li>Find out how you can disable the Same Origin Policy in the browser</li>
 </ul>
                 
               
@@ -934,7 +948,7 @@ You should get the following hash: wZGpBo0UBEBZ2r+uvUPUVH8gvHqHHPJr5Yt9aK+W5D9cS
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../5.3/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../4.1/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -943,19 +957,19 @@ You should get the following hash: wZGpBo0UBEBZ2r+uvUPUVH8gvHqHHPJr5Yt9aK+W5D9cS
               <span class="md-footer__direction">
                 Previous
               </span>
-              5.3: HTML5
+              4.1: WSDL Enumeration and Parameter Tampering
             </div>
           </div>
         </a>
       
       
-        <a href="../5.5/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../4.3/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              5.5: Logging and Incident Response
+              4.3: Javascript Security Testing
             </div>
           </div>
           <div class="md-footer__button md-icon">
