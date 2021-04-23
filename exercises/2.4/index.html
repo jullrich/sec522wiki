@@ -858,7 +858,7 @@
             
           
           <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset"><a class="md-content__button md-icon" download href="../../pdf/combined.pdf" title="PDF Export"><svg style="height: 1.2rem; width: 1.2rem;" viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg"><path d="M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zm76.45 211.36l-96.42 95.7c-6.65 6.61-17.39 6.61-24.04 0l-96.42-95.7C73.42 337.29 80.54 320 94.82 320H160v-80c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v80h65.18c14.28 0 21.4 17.29 11.27 27.36zM377 105L279.1 7c-4.5-4.5-10.6-7-17-7H256v128h128v-6.1c0-6.3-2.5-12.4-7-16.9z"></path></svg></a>
+            <article class="md-content__inner md-typeset">
               
                 
                 
@@ -942,7 +942,7 @@
 <hr />
 <h2 id="part-3-file-upload">Part 3: File Upload</h2>
 <h3 id="no-hints">No Hints</h3>
-<p>The upload function of the TWiki system is our test subject in this exercise. Browse to <strong><a href="http://lab-2.4.sans.labs/fileupload.php">http://lab-2.4.sans.labs/fileupload.php</a></strong> and experiment with the upload function, then browse through the "Documents" directory on the desktop and see how you can leverage the upload feature to compromise the upload system.</p>
+<p>The upload function of this application is our test subject in this exercise. Browse to <strong><a href="http://lab-2.4.sans.labs/fileupload.php">http://lab-2.4.sans.labs/fileupload.php</a></strong> and experiment with the upload function, then browse through the "Documents" directory on the desktop and see how you can leverage the upload feature to compromise the upload system.</p>
 <h3 id="step-by-step_1">Step by Step</h3>
 <ol>
 <li>
@@ -976,7 +976,7 @@
 &lt;/FilesMatch&gt;
 </code></pre></div>
 <p>This tells the Apache server to pass any file that <strong>contains</strong> .php to the PHP interpreter for execution. This means not just .php but also .php.1 or .php.bak as well. This Apache configuration is the default in mutiple Linux distributions.</p>
-<p>The upload code in TWiki had anticipated someone might upload PHP code, so numberous filters are implemented. You can inspect them directly at <strong><a href="http://lab-2.4.sans.labs/fileupload.phps">http://lab-2.4.sans.labs/fileupload.phps</a></strong> and the code are below as well</p>
+<p>The upload code in the application had anticipated someone might upload PHP code, so numberous filters are implemented. You can inspect them directly at <strong><a href="http://lab-2.4.sans.labs/fileupload.phps">http://lab-2.4.sans.labs/fileupload.phps</a></strong> and the code are below as well</p>
 <div class="highlight"><pre><span></span><code><span class="x">   # retrieve file parameters</span>
 
 <span class="x">   $sTmpFile=$_FILES[&#39;file&#39;][&#39;tmp_name&#39;];</span>
