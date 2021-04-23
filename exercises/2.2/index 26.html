@@ -14,7 +14,7 @@
     
     
       
-        <title>4.2: XMLHttpRequest - SEC522 Workbook</title>
+        <title>2.2: Guestbook CSRF - SEC522 Workbook</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#xmlhttprequest-and-same-origin-policy" class="md-skip">
+        <a href="#guestbook-csrf" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              4.2: XMLHttpRequest
+              2.2: Guestbook CSRF
             
           </span>
         </div>
@@ -388,12 +388,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       <label class="md-nav__link" for="__nav_3">
         Day 2
@@ -421,11 +423,76 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../2.2/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          2.2: Guestbook CSRF
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         2.2: Guestbook CSRF
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#identifying-exploiting-csrf" class="md-nav__link">
+    Identifying &amp; Exploiting CSRF
+  </a>
+  
+    <nav class="md-nav" aria-label="Identifying &amp; Exploiting CSRF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-hints" class="md-nav__link">
+    No Hints
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step" class="md-nav__link">
+    Step by Step
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -544,14 +611,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
       
       <label class="md-nav__link" for="__nav_5">
         Day 4
@@ -579,76 +644,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          4.2: XMLHttpRequest
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../4.2/" class="md-nav__link">
         4.2: XMLHttpRequest
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#xmlhttprequest-and-same-origin-policy_1" class="md-nav__link">
-    XMLHttpRequest and Same Origin Policy
-  </a>
-  
-    <nav class="md-nav" aria-label="XMLHttpRequest and Same Origin Policy">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#step-by-step" class="md-nav__link">
-    Step by Step
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
-    Conclusion
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#explore-further" class="md-nav__link">
-    Explore Further
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -833,104 +833,77 @@
     content: 'SANS SEC522 Workbook';
 }}
 @page :left { @bottom-left {
-  content: '4.2-' counter(page);
+  content: '2.2-' counter(page);
 }}
 @page :right { @bottom-right {
-  content: '4.2-' counter(page);
+  content: '2.2-' counter(page);
 }}
 </style>
 
-<h1 id="xmlhttprequest-and-same-origin-policy">XMLHttpRequest and Same Origin Policy</h1>
+<h1 id="guestbook-csrf">Guestbook CSRF</h1>
 <hr />
 <h4 id="objectives">Objectives</h4>
 <div class="codehilite"><pre><span></span><code>Estimated Time: 10 minutes
 </code></pre></div>
 
-<h5 id="part-1">Part 1:</h5>
 <blockquote>
-<p>In this exercise, we will experiment with the JavaScript method XMLHttpRequest and the ability of this request to generate HTTP requests and fetch data within a JavaScript.</p>
+<p>In this exercise, we will investigate the impact of CSRF on a simple guestbook application. We will learn how to identify and exploit CSRF vulnerabilities.</p>
 </blockquote>
 <h4 id="requirements">Requirements</h4>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Lab VM</li>
 </ul>
 <hr />
-<h2 id="xmlhttprequest-and-same-origin-policy_1">XMLHttpRequest and Same Origin Policy</h2>
+<h2 id="identifying-exploiting-csrf">Identifying &amp; Exploiting CSRF</h2>
+<h3 id="no-hints">No Hints</h3>
+<p>The guestbook requires users to log in to post. But due to a CSRF vulnerability, it is possible to trick users into posting without their knowledge as long as they are logged in. Explore the guestbook at <a href="http://lab-2.2.sans.labs/login.php">http://lab-2.2.sans.labs/login.php</a> (user/pass - sec522/training). Try to exploit the vulnerability and suggest a fix.</p>
 <h3 id="step-by-step">Step by Step</h3>
 <ol>
 <li>
-<p>Make sure Chrome is running.</p>
+<p>Using Chrome, browse to <a href="http://lab-2.2.sans.labs/login.php">http://lab-2.2.sans.labs/login.php</a>.</p>
 </li>
 <li>
-<p>Browse to <strong><a href="http://lab-4.2.sans.labs/sop.php">http://lab-4.2.sans.labs/sop.php</a></strong>.</p>
+<p>Log in. Username: <strong>"sec522"</strong>, Password: <strong>"training"</strong>.</p>
+<ul>
+<li>Feel free to explore the guestbook and attempt to add some entries into the guestbook. Remember, at this point, you are logged in to the guestbook.</li>
+</ul>
 </li>
 <li>
-<p>This page is assembled with contents from static HTML and also XMLHttpRequest. Let's explore more of the innerworkings of this page. Launch the Developer Tools (Ctrl-Shift-I) and select the <strong>Sources</strong> tab from the top and then select sop.php.</p>
+<p>Open a second browser window (Ctrl-N), and visit <a href="http://lab-2.2.sans.labs/attack.php">http://lab-2.2.sans.labs/attack.php</a>. Alternatively, a new browser tab works too.</p>
 </li>
 <li>
-<p>The source of the page including the JavaScript that loads all the content within the page. Please review the code from line 39-53.</p>
-<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
-<span class="hll">    <span class="nx">url</span> <span class="o">=</span> <span class="s1">&#39;http://lab-4.2.sans.labs/content.php&#39;</span><span class="p">;</span>
-</span>    <span class="nx">req</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
-    <span class="nx">req</span><span class="p">.</span><span class="nx">onreadystatechange</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span> <span class="nx">req</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">==</span> <span class="mf">4</span> <span class="p">)</span>  <span class="p">{</span>
-        <span class="kd">var</span> <span class="nx">response</span><span class="o">=</span><span class="s1">&#39;waiting...&#39;</span><span class="p">;</span>
-        <span class="k">if</span> <span class="p">(</span> <span class="nx">req</span><span class="p">.</span><span class="nx">status</span> <span class="o">==</span> <span class="mf">200</span> <span class="p">)</span>  <span class="p">{</span>
-        <span class="nx">response</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">responseText</span><span class="p">;</span>
-        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="nx">response</span><span class="o">=</span><span class="s2">&quot;Sorry. The data could not be retrieved. Error:&quot;</span><span class="o">+</span><span class="nx">req</span><span class="p">.</span><span class="nx">statusText</span><span class="p">;</span>
-
-        <span class="p">}</span>    
-        <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;content&#39;</span><span class="p">).</span><span class="nx">innerHTML</span><span class="o">=</span><span class="nx">response</span><span class="p">;</span>
-    <span class="p">}</span> 
-    <span class="p">}</span>
-    <span class="nx">req</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span><span class="nx">url</span><span class="p">,</span><span class="kc">true</span><span class="p">);</span>
-    <span class="nx">req</span><span class="p">.</span><span class="nx">send</span><span class="p">();</span>
-<span class="o">&lt;</span><span class="err">/script&gt;</span>
+<p>Switch back to the other browser window (loaded with the guestbook page) and refresh the page.</p>
+<p>On the guestbook page, there is an extra guestbook entry that was never entered. What is happening here?</p>
+</li>
+<li>
+<p>Change back to the window with the attack.php opened. Press Ctrl-U to view the source code of the page.</p>
+</li>
+<li>
+<p>Read the page source carefully; pay close attention to the IFrame.</p>
+<p>This self-signing guestbook phenomenon is caused by CSRF (Cross-Site Request Forgery). The following line of HTML code is in the attack.php that was visited earlier.</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;visibility:hidden&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;http://lab-2.2.sans.labs/guestbook.php?f=add&amp;name=Evil+Cat&amp;email=kitten@evilexample.com&amp;url=http://evilexample.com&amp;comments=I+need+more+wetfood+or+I+will_hack_you!+The+Cat&quot;</span> <span class="p">/&gt;</span>
 </code></pre></div>
-<p>By reading the page source, answer these questions:</p>
-<details class="question"><summary>What value is the url variable holding?</summary><p>The url variable is holding the URL of the resource to be fetched by XMLHTTPRequest. The content.txt file is in the lab-4.2.sans.labs server. This location will have a great effect on a later part of this lab.</p>
-</details>
-<details class="question"><summary>Which statement in the JavaScript code executes the sending of an HTTP request?</summary><p>The "req.send();" statement sends the XMLHTTPRequest out to the web server.</p>
-</details>
+<p>It contains a link to the guestbook, asking the guestbook to add an entry. Since this IFrame is set to be invisible, the user does not know of its presence.</p>
 </li>
 <li>
-<p>Reload the page then switch over to the "Network" tab at the top. Look for <strong>content.php</strong> at the bottom tab. Close the bottom right tab (click the X next to Headers)</p>
-<p><img alt="" class="zoom" src="media/img-1615864340-20210315.png" /></p>
+<p>Change back to the guestbook window and <strong>click on the logout link</strong> to log out of the guestbook.</p>
 </li>
 <li>
-<p>See the request type by the browser, it is XHR.</p>
-<p><img alt="" class="zoom" src="media/img-1615864409-20210315.png" /></p>
-<p>It is time to experience the restriction imposed by the Same Origin Policy.</p>
+<p>Switch back to the attack window. Refresh the page on <strong><a href="http://lab-2.2.sans.labs/attack.php">http://lab-2.2.sans.labs/attack.php</a></strong>. This is to attempt the CSRF attack once more.</p>
 </li>
 <li>
-<p>Browse to <strong><a href="http://lab-4.2-evil.sans.labs/sop.php">http://lab-4.2-evil.sans.labs/sop.php</a></strong> (note the URL is different than the one we used before)</p>
-</li>
-<li>
-<p>With the Developer Tools, inspect the "Console" tab from the top tab menu. Take a look at the red error messages. It's clear that this content.php is blocked.</p>
-</li>
-<li>
-<p>Take a look at the source code by selecting the <strong>Sources</strong> tab from the top and then select <strong>sop.php</strong>. Please review line 39 onwards which is the portion of the code causing the browser violation.</p>
-<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
-<span class="hll">    <span class="nx">url</span> <span class="o">=</span> <span class="s1">&#39;http://lab-4.2.sans.labs/content.php&#39;</span><span class="p">;</span>
-</span>    <span class="nx">req</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
-    <span class="nx">req</span><span class="p">.</span><span class="nx">onreadystatechange</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-<span class="p">......</span>
-</code></pre></div>
+<p>Switch back once again to the other window with <strong><a href="http://lab-2.2.sans.labs/guestbook.php">http://lab-2.2.sans.labs/guestbook.php</a></strong> and log in with "sec522" and "training" as username/password.</p>
 </li>
 </ol>
-<p>XMLHTTPRequest targets "lab-4.2.sans.labs" under Same Origin Policy; if the URL is not "lab-4.2-<strong>evil</strong>.sans.labs", the browser will not continue with the request. As you can tell, XMLHTTPRequest happens in the background, silently making HTTP requests on your behalf. If it is allowed to request contents across domains, it would be very dangerous to the user. Think of the situation in which the user visits evil.com where there is JavaScript instructing the browser to attack another site using XMLHTTPRequest, sans.org. If the Same Origin Policy does not stop this, your browser will be attacking sans.org without your knowledge.</p>
+<details class="question"><summary>How come no extra entry is added this time?</summary><p>If the session is not active (the user logged out), the attack simply doesn't work.</p>
+</details>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
 <ul>
-<li>Same Origin Policy restriction is embeded in the browser. </li>
-<li>Sam Origin Policy prevent content (scripts) from one origin to directly interact with the content from another origin.</li>
+<li>CSRF only works while the user is logged into the application with active session.</li>
+<li>Attacker steer the browser to submit request on behalf of the user. The request has the credential of the user attached.  </li>
 </ul>
 <hr />
-<h2 id="explore-further">Explore Further</h2>
-<ul>
-<li>Find out how you can disable the Same Origin Policy in the browser</li>
-</ul>
                 
               
               
@@ -948,7 +921,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../4.1/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../2.1/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -957,19 +930,19 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              4.1: WSDL Enumeration and Parameter Tampering
+              2.1: SQL Injection
             </div>
           </div>
         </a>
       
       
-        <a href="../4.3/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../2.3/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              4.3: Javascript Security Testing
+              2.3: Cross-Site Scripting
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -984,7 +957,7 @@
       <div class="md-footer-copyright">
         
           <div class="md-footer-copyright__highlight">
-            Copyright &copy; 2021 Jason Lam & Dr. Johannes Ullrich
+            Copyright &copy; 2020 Jason Lam & Dr. Johannes Ullrich
           </div>
         
         Made with
