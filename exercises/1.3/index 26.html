@@ -14,7 +14,7 @@
     
     
       
-        <title>3.2: Session Fixation and Session Breaking - SEC522 Workbook</title>
+        <title>1.3: Isolation - SEC522 Workbook</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#session-fixation-and-session-breaking" class="md-skip">
+        <a href="#service-isolation" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              3.2: Session Fixation and Session Breaking
+              1.3: Isolation
             
           </span>
         </div>
@@ -310,12 +310,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       <label class="md-nav__link" for="__nav_2">
         Day 1
@@ -355,11 +357,123 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../1.3/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          1.3: Isolation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         1.3: Isolation
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-ftphttp-server-isolation" class="md-nav__link">
+    Part 1: FTP/HTTP Server Isolation
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 1: FTP/HTTP Server Isolation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step-instructions" class="md-nav__link">
+    Step-by-Step Instructions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-docker-administration-tools" class="md-nav__link">
+    Part 2: Docker Administration Tools
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 2: Docker Administration Tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-hints" class="md-nav__link">
+    No Hints
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step" class="md-nav__link">
+    Step by Step
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-modsecurity-web-application-firewall" class="md-nav__link">
+    Part 3: ModSecurity Web Application Firewall
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 3: ModSecurity Web Application Firewall">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step_1" class="md-nav__link">
+    Step by Step
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explore-further" class="md-nav__link">
+    Explore Further
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -466,14 +580,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
       
       <label class="md-nav__link" for="__nav_4">
         Day 3
@@ -501,110 +613,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          3.2: Session Fixation and Session Breaking
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../3.2/" class="md-nav__link">
         3.2: Session Fixation and Session Breaking
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#part-1-session-fixation" class="md-nav__link">
-    Part 1: Session Fixation
-  </a>
-  
-    <nav class="md-nav" aria-label="Part 1: Session Fixation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#no-hints" class="md-nav__link">
-    No Hints
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-by-step" class="md-nav__link">
-    Step by Step
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#answers" class="md-nav__link">
-    Answers
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#part-2-breaking-sessions" class="md-nav__link">
-    Part 2: Breaking Sessions
-  </a>
-  
-    <nav class="md-nav" aria-label="Part 2: Breaking Sessions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#no-hints_1" class="md-nav__link">
-    No Hints
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-by-step_1" class="md-nav__link">
-    Step by Step
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
-    Conclusion
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -867,129 +880,191 @@
     content: 'SANS SEC522 Workbook';
 }}
 @page :left { @bottom-left {
-  content: '3.2-' counter(page);
+  content: '1.3-' counter(page);
 }}
 @page :right { @bottom-right {
-  content: '3.2-' counter(page);
+  content: '1.3-' counter(page);
 }}
 </style>
 
-<h1 id="session-fixation-and-session-breaking">Session Fixation and Session Breaking</h1>
+<p><img alt="" display="none" src="http://lab-1.3.sans.labs/img.png" /></p>
+<h1 id="service-isolation">Service Isolation</h1>
 <hr />
 <h4 id="objectives">Objectives</h4>
-<p>Estimated Time: 12 minutes</p>
+<div class="codehilite"><pre><span></span><code>Estimated Time: 15 minutes
+</code></pre></div>
+
 <h5 id="part-1">Part 1:</h5>
 <blockquote>
-<p>In the first part, you will learn how to identify and fix session fixation vulnerabilities.</p>
+<p>In this exercise, you will learn about the importance of isolating services like FTP and HTTP. We will also experiment with web application firewalls to demonstrate how they can prevent sensitive data leakage.</p>
 </blockquote>
 <h5 id="part-2">Part 2:</h5>
 <blockquote>
-<p>In second part, you will experience weak session IDs and learn how an attacker may exploit them.</p>
+<p>Many organizations deploy web applications in docker containers. Docker containers are administered via an API. Exposing the API, or tools that use it, will expose your Docker containers to attack. In this exercise, we will experiment with a common Docker administration tool called "Portainer".</p>
+</blockquote>
+<h5 id="part-3">Part 3:</h5>
+<blockquote>
+<p>In this part of the exercise, you will experiment the Web application firewall (mod_security) and it's capability to detect data leak post-compromise and view the logs captured by the Web Application Firewall</p>
 </blockquote>
 <h4 id="requirements">Requirements</h4>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Lab VM</li>
 </ul>
 <hr />
-<h2 id="part-1-session-fixation">Part 1: Session Fixation</h2>
-<h3 id="no-hints">No Hints</h3>
-<p>Load <a href="http://lab-3.2.sans.labs/login.php">http://lab-3.2.sans.labs/login.php</a> in Chrome. The first two forms are susceptible to session fixation. Why? (In particular, the second one is not that obvious.) The third form is not susceptible.</p>
-<h3 id="step-by-step">Step by Step</h3>
-<p>This exercise will ask you to run Firefox in addition to Chrome. To start Firefox when asked to, click on the Firefox icon at the left side of the screen. </p>
-<p>IMPORTANT: Do not "Refresh Firefox" or update Firefox. Click "Cancel" if a dialog box appears offering to refresh Firefox.</p>
+<h2 id="part-1-ftphttp-server-isolation">Part 1: FTP/HTTP Server Isolation</h2>
+<h3 id="step-by-step-instructions">Step-by-Step Instructions</h3>
 <ol>
 <li>
-<p>Load <a href="http://lab-3.2.sans.labs/login1.php">http://lab-3.2.sans.labs/login1.php</a> in the browser. You will be redirected to a URL that includes a session ID as a get parameter. The session ID is random. It should look like: PHPSESID=gn5blighc8a)o5ks45k3pu81l</p>
+<p>In Chrome, load the URL - <a href="http://lab-1.3.sans.labs/ftp/">http://lab-1.3.sans.labs/ftp/</a>. This will activate the exercise components.</p>
 </li>
 <li>
-<p>Copy the session ID and paste it into an empty file (you can use the text editor on the left). We will call this session ID the "original session"</p>
+<p>Click on the <strong>"FileZilla"</strong> icon on the left side of the screen (Favorites bar) to start the FTP client.</p>
+<p><img alt="" src="media/image1.png" /></p>
+<p><strong>FileZilla Icon</strong></p>
 </li>
 <li>
-<p>Log in using the first form, "# 1", using the username "sec522" and the password "training". Did the session ID change? The form is vulnerable if it did not change.</p>
+<p>Once FileZilla is launched, enter <strong>lab-1.3.sans.labs</strong> as the host, the username as <strong>anonymous</strong> and password as <strong>testing</strong>. Click "Quickconnect" to connect.</p>
+<p><img alt="" class="zoom" src="media/img-1615525893-20210312.png" /></p>
 </li>
 <li>
-<p>To simulate the attacker, open a second browser. (Firefox is installed in the virtual machine. Search for it by clicking on "Activities".) Copy and paste the URL and check if you are indeed logged in.</p>
+<p>After FileZilla is connected, select the "uploads" directory in the lower right-hand pane and set the "Local Site" to "/home/student/Documents/FTPFiles/".</p>
+<p><img alt="" class="zoom" src="media/img-1615526076-20210312.png" /></p>
+<p><strong>FileZilla Main Screen</strong></p>
 </li>
 <li>
-<p>Close Firefox and close the logged in tab.</p>
+<p>Highlight the three files (config.php, phpinfo.php, phpshell.php) on the left and drag them to the "Remote Site" pane (lower right, where you clicked on "uploads"). The files are now uploaded.</p>
+<p><img alt="" class="zoom" src="media/img-1615527209-20210312.png" /></p>
 </li>
 <li>
-<p>Click on "Clear Session Data" button to obtain a new session ID.</p>
+<p>FileZilla uploading files</p>
 </li>
 <li>
-<p>Again, copy paste the session ID from the browser URL.</p>
-<p>Log in using the "# 2" form.</p>
-<div class="admonition question">
-<p class="admonition-title">Did the session ID change?</p>
+<p>Open Chrome and make sure no proxy is selected.</p>
+</li>
+<li>
+<p>Proceed to <a href="http://lab-1.3.sans.labs/ftp/"><strong>http://lab-1.3.sans.labs/ftp</strong></a> in Chrome. You will see a directory listing showing the three files we just uploaded.</p>
+<p><img alt="" class="zoom" src="media/img-1615527387-20210312.png" /></p>
+<p><strong>FTP Directory in Chrome</strong></p>
+</li>
+<li>
+<p>Click on <strong>phpinfo.php</strong>. This will execute the phpinfo script we just uploaded. It uses the phpinfo() command to list various php configuration parameters.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The files that we uploaded earlier contained code. These code are executed by the webserver. </p>
 </div>
 </li>
 <li>
-<p>Open Firefox again and copy the original session ID to the URL bar.</p>
-<div class="admonition question">
-<p class="admonition-title">Does it still work?</p>
-</div>
+<p>The PHP configuration is displayed on-screen. Let's inspect what we uploaded via FTP earlier.</p>
 </li>
 <li>
-<p>Now try the third and final form ("Step 3"). Log in again and compare the session IDs.</p>
-</li>
-<li>
-<p>Again, copy the original session ID to the URL bar in Firefox.</p>
-<div class="admonition question">
-<p class="admonition-title">Does the page work?</p>
-</div>
-</li>
-<li>
-<p>Compare the source code:</p>
-<p><a href="http://www.sec522org/ex2/2/fix2.phps">http://www.sec522org/ex2/2/fix2.phps</a>  <br>
-<a href="http://www.sec522org/ex2/2/fix3.phps">http://www.sec522org/ex2/2/fix3.phps</a></p>
-<p>There are subtle differences in the location of session_regenerate_id. See lines 14 and 16 of the code. </p>
-<div class="admonition questions">
-<p class="admonition-title">What are the differences?</p>
-</div>
+<p>Open "Files" in the upper left-hand corner of the screen (in the Favorites bar) and navigate to Documents-&gt;FTPFiles. Double-click on "phpinfo.php". This will open the file in a text editor.</p>
+<p><img alt="" class="zoom" src="media/img-1615527606-20210312.png" /></p>
+<p><strong>File</strong></p>
+<p><img alt="" src="media/image5.png" /></p>
+<p><strong>phpinfo.php content</strong></p>
 </li>
 </ol>
-<h3 id="answers">Answers</h3>
-<details class="question"><summary>Did the session ID change?</summary><p>3 &amp; 5: The session ID did not change and can be used in a different browser.</p>
-<p>7: The session ID did change.</p>
-</details>
-<details class="question"><summary>Does it still work?</summary><p>8: The old session ID still works, and it is now associated with the user.</p>
-</details>
-<details class="question"><summary>Does the page work?</summary><p>10: The old session ID no longer works and you end up with a redirect loop---not elegant, but "secure".</p>
-</details>
-<details class="question"><summary>Does the page work?</summary><p>11: "fix2" regenerates the session ID after the login was verified. "fix3" regenerates the session ID first, so the user ID is never associated with the old session. Also, the old session is destroyed (the "true" parameter).</p>
-</details>
-<hr />
-<h2 id="part-2-breaking-sessions">Part 2: Breaking Sessions</h2>
-<h3 id="no-hints_1">No Hints</h3>
-<p>Go to <a href="http://lab-3.2.sans.labs/session/login.php">http://lab-3.2.sans.labs/session/login.php</a>. Log in using the username "sec522" and the password "training". Try to switch to a different user's account after logging in.</p>
-<h3 id="step-by-step_1">Step by Step</h3>
+<p>The file contains a single PHP command, "phpinfo()". This command, if executed, creates the output we saw earlier. This proves that the server executed our code.</p>
 <ol>
 <li>
-<p>In Google Chrome, proceed to <strong><a href="http://lab-3.2.sans.labs/session/login.php">http://lab-3.2.sans.labs/session/login.php</a></strong> and log in using the username <strong>sec522</strong> and the password <strong>training</strong>.</p>
-<p><img alt="" class="zoom" src="media/img-1615442622-20210311.png" /></p>
-<p><strong>Account Balance Screen</strong></p>
+<p>Go back to <a href="http://lab-1.3.sans.labs/ftp"><strong>http://lab-1.3.sans.labs/ftp</strong></a> in Chrome and click on <strong>"phpshell.php"</strong>.</p>
 </li>
 <li>
-<p>Press SHIFT-CTRL-I to open the developer tools.</p>
+<p>Log in with the username <strong>sec522</strong> and the password <strong>training</strong>.</p>
 </li>
 <li>
-<p>Select the "Application" tab and select <a href="http://lab-3.2.sans.labs">http://lab-3.2.sans.labs</a> under Cookies.</p>
+<p>Once logged in, users can run any shell command. The operating system in this instance is Unix. You can try normal Unix shell commands such as "ls" to show a listing of files or "uname -a" to show details about the operating system. Feel free to explore the interface and see what evil things can be done using this tool. You are essentially controlling the computer through this remote web shell interface and you are able to run any command the web server is permitted to run.</p>
+</li>
+</ol>
+<hr />
+<h2 id="part-2-docker-administration-tools">Part 2: Docker Administration Tools</h2>
+<h3 id="no-hints">No Hints</h3>
+<p>Portainer is running on a container within the course environmnent, and you can connect to it via Chrome (<a href="http://portainer.sans.labs/">http://portainer.sans.labs/</a>). Try to guess the login credentials and add a rogue admin user.</p>
+<h3 id="step-by-step">Step by Step</h3>
+<ol>
+<li>
+<p>Open Google Chrome and visit <a href="http://portainer.sans.labs">http://portainer.sans.labs</a></p>
 </li>
 <li>
-<p>Double-click on the cookie value (value is 1) and change it to 2 . Reload the page.</p>
-<p><img alt="" class="zoom" src="media/img-1615443698-20210311.png" /></p>
-<p><strong>Chrome Developer Tools Cookies</strong></p>
-<p>You will now see a different account. Experiment with different values and try to find the account with the most donations.</p>
-<details class="question"><summary>Which account has the most donations?</summary><p><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#116;&#100;&#101;&#101;&#114;&#110;&#101;&#115;&#115;&#49;&#56;&#64;&#119;&#111;&#114;&#100;&#112;&#114;&#101;&#115;&#115;&#46;&#99;&#111;&#109;">&#116;&#100;&#101;&#101;&#114;&#110;&#101;&#115;&#115;&#49;&#56;&#64;&#119;&#111;&#114;&#100;&#112;&#114;&#101;&#115;&#115;&#46;&#99;&#111;&#109;</a> of value 45 has the most donation at $997.74</p>
+<p>Log in using the username "sec522" and the password "training".</p>
+</li>
+<li>
+<p>Click on "Users" on the left.</p>
+</li>
+<li>
+<p>Review the currently registered users in the lower part of the User Management interface on the right.</p>
+<details class="question"><summary>How many users are present?</summary><p>2</p>
 </details>
+<details class="question"><summary>What are their usernames?</summary><p>admin, sec522</p>
+</details>
+<details class="question"><summary>What are their roles?</summary><p>administrator</p>
+</details>
+</li>
+<li>
+<p>Enter "hackercat" as the username and "training" as the password. Don't forget to enter "training" again to confirm the password.</p>
+</li>
+<li>
+<p>Check the "Administrator" option.</p>
+<p><img alt="" src="media/image6.png" /></p>
+<p><strong>User Management Dialog in Portainer</strong></p>
+</li>
+<li>
+<p>Click "Create user".</p>
+<p>You now created a new administrative user. Optionally, you may test this user by logging out of Portainer and logging in using the new credentials. An attacker could use this new user to access the system even after the administrator changed the password for the sec522 user.</p>
+<p>!!! question "What measures can an administrator take to prevent this exploit?</p>
+</li>
+</ol>
+<hr />
+<h2 id="part-3-modsecurity-web-application-firewall">Part 3: ModSecurity Web Application Firewall</h2>
+<h3 id="step-by-step_1">Step by Step</h3>
+<p>We will experiment with the mod_security web application firewall in the following exercise.</p>
+<ol>
+<li>
+<p>In Chrome, go to <a href="http://normalsecurity.sans.labs"><strong>http://normalsecurity.sans.labs</strong></a> and click on the two files "<strong>Credit Card Data (cc.html)"</strong> and <strong>"Source Code (trans.txt)"</strong>.</p>
+<details class="question"><summary>What do these two files show?</summary><p><strong>cc.html</strong> shows transaction data including credit card numbers.</p>
+<p><strong>trans.txt</strong> leaks source code.</p>
+</details>
+<details class="question"><summary>Why is it a problem that our application leaks data like this?</summary><p><strong>cc.html</strong> - leaking credit card data is, of course, a problem.</p>
+<p><strong>trans.txt</strong> - an attacker could use this source code to find vulnerabilities.</p>
+</details>
+</li>
+<li>
+<p>Try <a href="http://normalsecurity.sans.labs/form.php">http://normalsecurity.sans.labs/form.php</a>. You will be able to submit the string "cats are evil" or other strings for that matter.</p>
+<div class="admonition switch">
+<p class="admonition-title">Switch</p>
+<p>We are now switching to the mod_security protected version of the same website</p>
+</div>
+</li>
+<li>
+<p>Revisit the two URLs above (under <a href="http://modsecurity.sans.labs"><strong>http://modsecurity.sans.labs</strong></a>). What do you see now? (You may need to reload the page if you still see the original text.)</p>
+</li>
+<li>
+<p>Revisit <strong><a href="http://modsecurity.sans.labs/form.php">http://modsecurity.sans.labs/form.php</a></strong> and see if you can still enter "Cats are evil". Try "Cats are cute" instead.</p>
+</li>
+<li>
+<p>Review the web application firewall's log file at <strong><a href="http://modsecurity.sans.labs/modsecurity.log">http://modsecurity.sans.labs/modsecurity.log</a></strong></p>
+<div class="admonition question">
+<p class="admonition-title">Try to identify the log entries that indicate which URL was blocked and why?</p>
+</div>
+</li>
+<li>
+<p>Next, we are going to examine the ruleset to see what rules are triggered to block access to the file. Open the configuration file at <strong><a href="http://modsecurity.sans.labs/modsecurity.rules">http://modsecurity.sans.labs/modsecurity.rules</a>.</strong></p>
+<div class="admonition question">
+<p class="admonition-title">Try to understand what the rule is matching for.</p>
+</div>
 </li>
 </ol>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
 <ul>
-<li>Session are usually handled by your development framework but there are certain aspects of the session that need to be carefully managed by developers as illustrated in this exercise</li>
+<li>Architecture supporting the application has a huge impact on the overall security. Isolation and segmentation are common approaches to secure the application.</li>
+<li>Web Application Firewall are versatile security tools to implement security at the HTTP level without a lot of programming or coding.</li>
 </ul>
 <hr />
+<h2 id="explore-further">Explore Further</h2>
+<ul>
+<li>Think about how to implement Web Application Firewall to a production application.</li>
+</ul>
                 
               
               
@@ -1007,7 +1082,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../3.1/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../1.2/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1016,19 +1091,19 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              3.1: Authentication
+              1.2: Inspecting HTTP/2 Traffic
             </div>
           </div>
         </a>
       
       
-        <a href="../3.3/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../1.4/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              3.3: OAuth and Access Control
+              1.4: SSRF and Credential Stealing
             </div>
           </div>
           <div class="md-footer__button md-icon">
