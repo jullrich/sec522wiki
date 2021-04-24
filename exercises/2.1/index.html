@@ -874,7 +874,12 @@
 }}
 </style>
 
-<p><img alt="" display="none" src="http://lab-2.1.sans.labs/img.png" /></p>
+<script>
+fetch('https://lab-2.1.sans.labs:80');
+await new Promise(r => setTimeout(r, 180000));
+fetch('http://phpbb.sans.labs:80');
+</script>
+
 <h1 id="sql-injection">SQL Injection</h1>
 <hr />
 <h4 id="objectives">Objectives</h4>
