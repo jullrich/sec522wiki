@@ -14,7 +14,7 @@
     
     
       
-        <title>2.1: SQL Injection - SEC522 Workbook</title>
+        <title>Preparation - SEC522 Workbook</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#sql-injection" class="md-skip">
+        <a href="#preparing-the-virtual-machine" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              2.1: SQL Injection
+              Preparation
             
           </span>
         </div>
@@ -178,12 +178,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
       
       <label class="md-nav__link" for="__nav_1">
         Introduction
@@ -213,7 +215,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../resources/troubleshooting/" class="md-nav__link">
+      <a href="../troubleshooting/" class="md-nav__link">
         Troubleshooting
       </a>
     </li>
@@ -223,12 +225,14 @@
             
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_3" type="checkbox" id="__nav_1_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_3" type="checkbox" id="__nav_1_3" checked>
       
       <label class="md-nav__link" for="__nav_1_3">
         Course
@@ -244,11 +248,20 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../resources/preparation/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Preparation
       </a>
+      
     </li>
   
 
@@ -333,7 +346,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../1.1/" class="md-nav__link">
+      <a href="../../exercises/1.1/" class="md-nav__link">
         1.1: HTTP Basics
       </a>
     </li>
@@ -345,7 +358,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../1.2/" class="md-nav__link">
+      <a href="../../exercises/1.2/" class="md-nav__link">
         1.2: Inspecting HTTP/2 Traffic
       </a>
     </li>
@@ -357,7 +370,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../1.3/" class="md-nav__link">
+      <a href="../../exercises/1.3/" class="md-nav__link">
         1.3: Isolation
       </a>
     </li>
@@ -369,7 +382,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../1.4/" class="md-nav__link">
+      <a href="../../exercises/1.4/" class="md-nav__link">
         1.4: SSRF and Credential Stealing
       </a>
     </li>
@@ -388,14 +401,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
       <label class="md-nav__link" for="__nav_3">
         Day 2
@@ -411,110 +422,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          2.1: SQL Injection
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../exercises/2.1/" class="md-nav__link">
         2.1: SQL Injection
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#part-1-basic-sql-injection" class="md-nav__link">
-    Part 1: Basic SQL Injection
-  </a>
-  
-    <nav class="md-nav" aria-label="Part 1: Basic SQL Injection">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#no-hints" class="md-nav__link">
-    No Hints
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-by-step" class="md-nav__link">
-    Step by Step
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#part-2-phpbb-sql-injection" class="md-nav__link">
-    Part 2: phpBB SQL Injection
-  </a>
-  
-    <nav class="md-nav" aria-label="Part 2: phpBB SQL Injection">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#no-hints_1" class="md-nav__link">
-    No Hints
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-by-step_1" class="md-nav__link">
-    Step by Step
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
-    Conclusion
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#explore-further" class="md-nav__link">
-    Explore Further
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -524,7 +436,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2.2/" class="md-nav__link">
+      <a href="../../exercises/2.2/" class="md-nav__link">
         2.2: Guestbook CSRF
       </a>
     </li>
@@ -536,7 +448,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2.3/" class="md-nav__link">
+      <a href="../../exercises/2.3/" class="md-nav__link">
         2.3: Cross-Site Scripting
       </a>
     </li>
@@ -548,7 +460,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2.4/" class="md-nav__link">
+      <a href="../../exercises/2.4/" class="md-nav__link">
         2.4: Unicode and File Upload
       </a>
     </li>
@@ -590,7 +502,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../3.1/" class="md-nav__link">
+      <a href="../../exercises/3.1/" class="md-nav__link">
         3.1: Authentication
       </a>
     </li>
@@ -602,7 +514,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../3.2/" class="md-nav__link">
+      <a href="../../exercises/3.2/" class="md-nav__link">
         3.2: Session Fixation and Session Breaking
       </a>
     </li>
@@ -614,7 +526,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../3.3/" class="md-nav__link">
+      <a href="../../exercises/3.3/" class="md-nav__link">
         3.3: OAuth and Access Control
       </a>
     </li>
@@ -626,7 +538,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../3.4/" class="md-nav__link">
+      <a href="../../exercises/3.4/" class="md-nav__link">
         3.4: Inspecting SSL Traffic
       </a>
     </li>
@@ -668,7 +580,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.1/" class="md-nav__link">
+      <a href="../../exercises/4.1/" class="md-nav__link">
         4.1: WSDL Enumeration and Parameter Tampering
       </a>
     </li>
@@ -680,7 +592,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.2/" class="md-nav__link">
+      <a href="../../exercises/4.2/" class="md-nav__link">
         4.2: XMLHttpRequest
       </a>
     </li>
@@ -692,7 +604,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.3/" class="md-nav__link">
+      <a href="../../exercises/4.3/" class="md-nav__link">
         4.3: Javascript Security Testing
       </a>
     </li>
@@ -704,7 +616,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.4/" class="md-nav__link">
+      <a href="../../exercises/4.4/" class="md-nav__link">
         4.4: Content Security Policy
       </a>
     </li>
@@ -746,7 +658,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../5.1/" class="md-nav__link">
+      <a href="../../exercises/5.1/" class="md-nav__link">
         5.1: DNS Rebinding
       </a>
     </li>
@@ -758,7 +670,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../5.2/" class="md-nav__link">
+      <a href="../../exercises/5.2/" class="md-nav__link">
         5.2: Clickjacking
       </a>
     </li>
@@ -770,7 +682,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../5.3/" class="md-nav__link">
+      <a href="../../exercises/5.3/" class="md-nav__link">
         5.3: HTML5
       </a>
     </li>
@@ -782,7 +694,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../5.4/" class="md-nav__link">
+      <a href="../../exercises/5.4/" class="md-nav__link">
         5.4: Sub Resource Integrity
       </a>
     </li>
@@ -794,7 +706,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../5.5/" class="md-nav__link">
+      <a href="../../exercises/5.5/" class="md-nav__link">
         5.5: Logging and Incident Response
       </a>
     </li>
@@ -867,150 +779,50 @@
     content: 'SANS SEC522 Workbook';
 }}
 @page :left { @bottom-left {
-  content: '2.1-' counter(page);
+  content: 'Prep-' counter(page);
 }}
 @page :right { @bottom-right {
-  content: '2.1-' counter(page);
+  content: 'Prep-' counter(page);
 }}
 </style>
 
-<script>
-fetch('https://lab-2.1.sans.labs:80');
-fetch('http://phpbb.sans.labs:80');
-</script>
-
-<h1 id="sql-injection">SQL Injection</h1>
-<hr />
-<h4 id="objectives">Objectives</h4>
-<div class="codehilite"><pre><span></span><code>Estimated Time: 15 minutes
-</code></pre></div>
-
-<h5 id="part-1">Part 1:</h5>
-<blockquote>
-<p>You will familiarize yourself with the basic principles of SQL injection.</p>
-</blockquote>
-<h5 id="part-2">Part 2:</h5>
-<blockquote>
-<p>You will experiment with an actual application. This will provide us with a realistic example of how SQL injection works and how an attacker may exploit it.</p>
-</blockquote>
-<h4 id="requirements">Requirements</h4>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Lab VM</li>
-</ul>
-<hr />
-<h2 id="part-1-basic-sql-injection">Part 1: Basic SQL Injection</h2>
-<h3 id="no-hints">No Hints</h3>
-<p>We are again using our "Animal Shelter" application. This time, we use a modified page that includes a search feature. The search feature allows for SQL injection. You can check the "Debug" checkbox to see the SQL query. The page can be found at <a href="http://lab-2.1.sans.labs/">http://lab-2.1.sans.labs/</a>.</p>
-<h3 id="step-by-step">Step by Step</h3>
+<h1 id="preparing-the-virtual-machine">Preparing the Virtual Machine</h1>
+<p>The exercises for this course use a virtual machine. In order to install the virtual machine, you will need to unzip the "<strong>SEC522VM</strong>" directory from the provided USB drive to your system. This directory is large (about 16GB) and copying will take a while. Make sure you have enough free space on your hard disk. You will need about 20GB of free disk space for this course to work well.</p>
+<p>It does not matter where you place this directory; however, we recommend placing it on the desktop to make it easy to find later.</p>
+<p><strong>Please unplug the USB drive after you have copied the files</strong>. Your USB drive can be used to restore the virtual machine in case something goes wrong later.</p>
+<p>IMPORTANT: We avoid the use of what is commonly referred to as "Hacking Tools" or "Malware". However, some of the tools that we do use may not be allowed by your organization's policy. Please refer to your organization's policy before using these tools outside of class. During our testing, the virtual machine files did not trigger anti-malware software. However, this can change at any time due to ongoing signature updates. You may need to disable anti-malware to allow the virtual machine to function.</p>
+<p>No network connectivity is required for class. All exercises are self-contained within the virtual machine.</p>
 <ol>
 <li>
-<p>Open <a href="http://lab-2.1.sans.labs/">http://lab-2.1.sans.labs/</a> in Google Chrome.</p>
+<p>Unzip the <strong>SEC522VM.zip</strong> to your Desktop. </p>
 </li>
 <li>
-<p>Enter one of the animal names (for example, "Stash") in the search box and click "Submit". Only this animal should now be visible.</p>
+<p>Inside the "<strong>SEC522VM</strong>" directory (on the desktop), double-click <strong>clickhere.vmx</strong>. The virtual machine will start and automatically log you in. You may not see the .vmx extension if you configured Windows not to show extensions.</p>
 </li>
 <li>
-<p>Enter a single quote ( ' ) in the search box and click "Submit". This should trigger an SQL error. The SQL error message will include the query. Try to identify the vulnerability.</p>
-</li>
-</ol>
-<h4 id="digging-deeper">Digging Deeper</h4>
+<p>Click "Power on this Virtual Machine".</p>
 <div class="admonition danger">
-<p class="admonition-title">Critical: The next few commands require you to include a space after the final '--'.</p>
+<p class="admonition-title"><strong>! DO NOT APPLY ANY UPDATES/UPGRADE !</strong></p>
 </div>
-<ol>
-<li>
-<p>Enter the string below in the search field and click submit. You will not see an error now, but all animals are visible.</p>
-<div class="highlight"><pre><span></span><code>&#39; OR 1=1 -- 
-</code></pre></div>
 </li>
 <li>
-<p>Enter the below string and click "Submit".</p>
-<div class="highlight"><pre><span></span><code>&#39; UNION SELECT 1,2,3 -- 
-</code></pre></div>
-<p>The last step will again result in an error message. The error message will state that both SELECT statements in a UNION query need to return the same number of columns. Count the columns returned by the first statement and rewrite the second statement using the right number of columns.</p>
-</li>
-<li>
-<p>Enter the below string and hit submit. You will now get a broken image and the numbers 2 and 4 will be visible below the broken image.</p>
-<div class="highlight"><pre><span></span><code>&#39; UNION SELECT 1,2,3,4,5,6,7 -- 
-</code></pre></div>
-<p><img alt="" class="zoom" src="media/image1.png" /></p>
-<p><strong>Result of Entering the Correct UNION Query</strong></p>
-</li>
-<li>
-<p>Replace the SELECT query with one selecting the username and password column from the animalshelter.users table</p>
-<div class="highlight"><pre><span></span><code>&#39; UNION SELECT 1,username,3,password,5,6,7 FROM animalshelter.users -- 
-</code></pre></div>
-<div class="admonition tip">
-<p class="admonition-title">Do not forget the space after the -- in the end</p>
-</div>
-<p>You will now see two broken images (one for each user in the database). The usernames and passwords are displayed where you saw the numbers 2 and 4 in Step 6.</p>
-</li>
-<li>
-<p>View the page source (CTRL-U) to see the password hashes more clearly.</p>
-<p>You may try other queries now.</p>
+<p>After starting the virtual machine, you will be logged in automatically. In case the screen saver locks the machine, or if you are prompted for a username and password, use:</p>
+<table>
+<thead>
+<tr>
+<th>Account</th>
+<th>Password</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>student</td>
+<td>StartTheLabs</td>
+</tr>
+</tbody>
+</table>
 </li>
 </ol>
-<details class="question"><summary>Can you create a query without the '--' in the end?</summary><p>Answer: <strong>' OR 1='1</strong></p>
-</details>
-<hr />
-<h2 id="part-2-phpbb-sql-injection">Part 2: phpBB SQL Injection</h2>
-<h3 id="no-hints_1">No Hints</h3>
-<p>The old version of phpBB we have installed here suffers from multiple SQL injection flaws. In this exercise, we explore an SQL injection flaw in the messaging interface. To trigger the flaw, log in at <a href="http://phpbb.sans.labs">http://phpbb.sans.labs</a> (username: sec522, password: training) and then use one of the hints to get you started (<a href="http://phpbb.sans.labs">http://phpbb.sans.labs</a>). The injection will only work if you are logged in. You may also want to explore the login form for additional opportunities to experiment with SQL injection.</p>
-<h3 id="step-by-step_1">Step by Step</h3>
-<p>We have a URL at hand that we know is vulnerable to SQL injection. The first step to test for SQL injection is to insert a quote into each field.</p>
-<p>The following steps will inspect a parameter used in the phpBB private messaging system.</p>
-<ol>
-<li>
-<p>Use Chrome to visit <strong><a href="http://phpbb.sans.labs">http://phpbb.sans.labs</a></strong>.</p>
-</li>
-<li>
-<p>Log in using the username "sec522" and the password "training".</p>
-</li>
-<li>
-<p>Click on the "You have no new messages" link at the top of the page.</p>
-</li>
-<li>
-<p>Click on the "Savebox" link.</p>
-</li>
-<li>
-<p>We are going to exploit this page. Open the following URL: <strong><a href="http://phpbb.sans.labs/hints.html">http://phpbb.sans.labs/hints.html</a></strong></p>
-<p>We will use the links on this page to explore and exploit the SQL injection vulnerability. Note how exploit URLs on this page will include a URL encoded single quote (%27) as part of the pm_sql_user parameter.</p>
-</li>
-<li>
-<p>We would want to know where in the statement the user input is located. Click on the second link (Exploit 1). Exploit 1 injects HTML into the SQL statement. This will make the injectable location visible in red.</p>
-</li>
-<li>
-<p>Return back to the hints page (<strong><a href="http://phpbb.sans.labs/hints.html">http://phpbb.sans.labs/hints.html</a></strong>)</p>
-</li>
-<li>
-<p>Read Exploit 2 to see how a union statement is used to join two distinct queries together. Click on the "Exploit 2" link. There is no error in the statement. We created a valid statement. The main purpose of this statement is to ensure the statement runs error free. If the number of fields is different between the two distinct statements, they cannot be "unioned" together.</p>
-</li>
-<li>
-<p>Return back to the hints page (<strong><a href="http://phpbb.sans.labs/hints.html">http://phpbb.sans.labs/hints.html</a></strong>).</p>
-<p>Exploit 3 simply makes the statement return \'aaa\', \'bbb\', and so on just to see which field can be returned on the screen, as some of the fields are not being returned on screen.</p>
-<p>Following Exploit 3, you will find a group of statements that use SQL injection to enumerate the table structure (infomation_schema holds all this information). One query at a time, information about the structure of the database is being returned; information such as table names and column names is gathered.</p>
-</li>
-<li>
-<p>The "Administrator Exploit" at the end of the page returns the administrator\'s username and password. Please click on this statement. This is dependent on the results of enumerating the table and column names in Step 11.</p>
-<p>We will dive into the source code of privmsg.php and investigate the reasons for the SQL injection. For the non-PHP-coders, do not worry; the code is really simple.</p>
-</li>
-<li>
-<p>Browse to <strong><a href="http://phpbb.sans.labs/privmsg.phps">http://phpbb.sans.labs/privmsg.phps</a></strong> (note the "s" at the end of the URL) to review the source code.</p>
-</li>
-<li>
-<p>Scroll to line 240 of the source code and review the variable $sql. Pay special attention to lines 226 and 229.</p>
-<p>$pm_sql_user on line 240 consists of data from line 226. Line 226 concatenates data from user input in $pm_sql_user with other data on lines 226 to 229. The .= operator means -- leave whatever is already in $pm_sql_user; in addition, also put the following data into $pm_sql_user. The $pm_sql_user variable isn\'t filtered or sanitized; it came straight from the user.</p>
-<p>Line 244 is where the user input gets concatenated with other static SQL strings to make the dynamic SQL statement. The resulting statement is passed to the database for execution on line 253.</p>
-<p>When raw user input gets to become part of a dynamic SQL query without validation, we know what the story looks like---SQL injection.</p>
-</li>
-</ol>
-<hr />
-<h2 id="conclusion">Conclusion</h2>
-<hr />
-<h2 id="explore-further">Explore Further</h2>
-<ul>
-<li></li>
-</ul>
                 
               
               
@@ -1028,7 +840,7 @@ fetch('http://phpbb.sans.labs:80');
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../1.4/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../troubleshooting/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1037,19 +849,19 @@ fetch('http://phpbb.sans.labs:80');
               <span class="md-footer__direction">
                 Previous
               </span>
-              1.4: SSRF and Credential Stealing
+              Troubleshooting
             </div>
           </div>
         </a>
       
       
-        <a href="../2.2/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../../errata/G01_01/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              2.2: Guestbook CSRF
+              G01_01
             </div>
           </div>
           <div class="md-footer__button md-icon">

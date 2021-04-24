@@ -14,7 +14,7 @@
     
     
       
-        <title>2.1: SQL Injection - SEC522 Workbook</title>
+        <title>3.1: Authentication - SEC522 Workbook</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#sql-injection" class="md-skip">
+        <a href="#authentication-exercise" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              2.1: SQL Injection
+              3.1: Authentication
             
           </span>
         </div>
@@ -388,14 +388,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
       <label class="md-nav__link" for="__nav_3">
         Day 2
@@ -411,110 +409,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          2.1: SQL Injection
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../2.1/" class="md-nav__link">
         2.1: SQL Injection
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#part-1-basic-sql-injection" class="md-nav__link">
-    Part 1: Basic SQL Injection
-  </a>
-  
-    <nav class="md-nav" aria-label="Part 1: Basic SQL Injection">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#no-hints" class="md-nav__link">
-    No Hints
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-by-step" class="md-nav__link">
-    Step by Step
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#part-2-phpbb-sql-injection" class="md-nav__link">
-    Part 2: phpBB SQL Injection
-  </a>
-  
-    <nav class="md-nav" aria-label="Part 2: phpBB SQL Injection">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#no-hints_1" class="md-nav__link">
-    No Hints
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-by-step_1" class="md-nav__link">
-    Step by Step
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
-    Conclusion
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#explore-further" class="md-nav__link">
-    Explore Further
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -567,12 +466,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
       
       <label class="md-nav__link" for="__nav_4">
         Day 3
@@ -588,11 +489,124 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../3.1/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          3.1: Authentication
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         3.1: Authentication
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#part-0-optional-simple-user-agent-based-authentication" class="md-nav__link">
+    Part 0: (Optional) Simple User-Agent-Based Authentication
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 0: (Optional) Simple User-Agent-Based Authentication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-hints" class="md-nav__link">
+    No Hints
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step-instructions" class="md-nav__link">
+    Step-by-Step Instructions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-more-complex-but-still-weak-authentication" class="md-nav__link">
+    Part 2: More Complex, But Still Weak, Authentication
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-brute-forcing" class="md-nav__link">
+    Part 3: Brute Forcing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-4-u2f-and-bypassing-2nd-factor" class="md-nav__link">
+    Part 4: U2F And Bypassing 2nd Factor
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 4: U2F And Bypassing 2nd Factor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-hints_1" class="md-nav__link">
+    No Hints
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step" class="md-nav__link">
+    Step by Step
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explore-further" class="md-nav__link">
+    Explore Further
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -867,149 +881,235 @@
     content: 'SANS SEC522 Workbook';
 }}
 @page :left { @bottom-left {
-  content: '2.1-' counter(page);
+  content: '3.1-' counter(page);
 }}
 @page :right { @bottom-right {
-  content: '2.1-' counter(page);
+  content: '3.1-' counter(page);
 }}
 </style>
 
-<script>
-fetch('https://lab-2.1.sans.labs:80');
-fetch('http://phpbb.sans.labs:80');
-</script>
-
-<h1 id="sql-injection">SQL Injection</h1>
+<h1 id="authentication-exercise">Authentication Exercise</h1>
 <hr />
 <h4 id="objectives">Objectives</h4>
-<div class="codehilite"><pre><span></span><code>Estimated Time: 15 minutes
+<div class="codehilite"><pre><span></span><code>Estimated Time: 22 minutes
 </code></pre></div>
 
 <h5 id="part-1">Part 1:</h5>
 <blockquote>
-<p>You will familiarize yourself with the basic principles of SQL injection.</p>
+<p>In this exercise, we will experiment with different examples of weak authentication and demonstrate how to break them.</p>
 </blockquote>
 <h5 id="part-2">Part 2:</h5>
 <blockquote>
-<p>You will experiment with an actual application. This will provide us with a realistic example of how SQL injection works and how an attacker may exploit it.</p>
+<p>In this exercise, we will experiment with different examples of weak authentication and demonstrate how to break them.</p>
+</blockquote>
+<h5 id="part-3">Part 3:</h5>
+<blockquote>
+<p>In this exercise, you will walk through the use of U2F (Universal Two-Factor) tokens for two factor authentication. We use a software simulation of a token (softu2f). After registering and testing the token, we will experiment with a method to bypass the use of the token.</p>
 </blockquote>
 <h4 id="requirements">Requirements</h4>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Lab VM</li>
 </ul>
 <hr />
-<h2 id="part-1-basic-sql-injection">Part 1: Basic SQL Injection</h2>
+<h2 id="part-0-optional-simple-user-agent-based-authentication">Part 0: <em>(Optional)</em> Simple User-Agent-Based Authentication</h2>
 <h3 id="no-hints">No Hints</h3>
-<p>We are again using our "Animal Shelter" application. This time, we use a modified page that includes a search feature. The search feature allows for SQL injection. You can check the "Debug" checkbox to see the SQL query. The page can be found at <a href="http://lab-2.1.sans.labs/">http://lab-2.1.sans.labs/</a>.</p>
+<h3 id="step-by-step-instructions">Step-by-Step Instructions</h3>
+<ol>
+<li>
+<p>Use Chrome to proceed to <a href="http://lab-3.1.sans.labs/uaauth.php"><strong>http://lab-3.1.sans.labs/uaauth.php</strong></a>. The page will indicate that you are using the wrong browser.</p>
+</li>
+<li>
+<p>Start Burp and configure Chrome to use Burp via the Proxy Switcher plugin.</p>
+</li>
+<li>
+<p>Check to make sure interception is on in Burp ("Proxy" -&gt;"Intercept" -&gt; "Intercept is on").</p>
+</li>
+<li>
+<p>Reload the page in the browser.</p>
+</li>
+<li>
+<p>The request will now be held by Burp. Use Burp to modify the request and change the User-Agent to "CatBrowser".</p>
+</li>
+<li>
+<p>Click "Forward" in Burp. The modified request will now be sent, and Chrome should display the page with a thank you statement for using the SANS browser.</p>
+</li>
+</ol>
+<hr />
+<h2 id="part-2-more-complex-but-still-weak-authentication">Part 2: More Complex, But Still Weak, Authentication</h2>
+<ol>
+<li>
+<p>Ensure that the Chrome is set to sending all browser traffic through Burp - the ProxySwitcher in Chome should be "red" in color.</p>
+</li>
+<li>
+<p>Open <a href="http://lab-3.1.sans.labs/ua2auth.php">http://lab-3.1.sans.labs/ua2auth.php</a> in Chrome. </p>
+</li>
+<li>
+<p>Switch over to Burp and allow all traffic to pass without modification. Keep clicking on "<strong>Forward</strong>" in Burp's Proxy Intercept. This page looks just like the page we examined in the exercise above but there seems to be some subtle difference.</p>
+</li>
+<li>
+<p>To inspect this previous request, in Burp, we change over to the "<strong>Target</strong>" tab.</p>
+</li>
+<li>
+<p>Look for the most request to "ua2auth.php" and click on it. At the bottom pane of the Burp window is the response details. Due to the window sizing, you might have to adjust the pane to let the response be visible. There is the "three dots symbol" that allow you to adjust the pane sizes. In the response section, you will see the browser cookie being set by the server. We will need to get rid of this cookie in order to get to the website.</p>
+<p><img alt="" class="zoom" src="media/img-1615789856-20210315.png" /></p>
+</li>
+<li>
+<p>Switch back to Chrome and reload the page.</p>
+</li>
+<li>
+<p>The request will now be held by Burp. Use Burp to modify the request and change the User-Agent to "DOGBrowser" and also to delete the cookie line. Make sure there are no blank lines in between the HTTP headers. </p>
+</li>
+<li>
+<p>Click "Forward" for all the following requests. You will then see the protected page.</p>
+</li>
+</ol>
+<details class="question"><summary>What trick did the developer play to harden the page? Was it sufficient?</summary><p>The developer coded the authnetication such that when the "wrong" browser connect to the webpage, the application provides a cookie to the browser so that the application can reference the use of "wrong" browser in subsequent requests. </p>
+</details>
+<hr />
+<h2 id="part-3-brute-forcing">Part 3: Brute Forcing</h2>
+<p>This is an additional challenge exercise on authentication building on the knowledge you acquired so far. This exercise is to simulate a registration system where there is personal information being stored.</p>
+<ol>
+<li>
+<p>Configure Chrome to bypass the Burp proxy via the Proxy Switcher plugin. The icon should be black in color.</p>
+</li>
+<li>
+<p>Browse to <a href="http://lab-3.1.sans.labs/donations.php">http://lab-3.1.sans.labs/donations.php</a></p>
+<p>The page has a lookup system where the user can review their own respective donation information. The objective is to acquire as much information from this system as possible.</p>
+<p>Use the following hints to help you:</p>
+<details class="hint"><summary>Hint #1</summary><p>What's the likely user-agent for "DOGBrowser"? </p>
+</details>
+<details class="hint"><summary>Hint #1</summary><p>What's the purpose of the cookie "browser"? </p>
+</details>
+<details class="hint"><summary>Hint #2</summary><p>Can you brute force the donation number? Scripting may help.</p>
+</details>
+<details class="hint"><summary>Hint #3</summary><p>You can use the "Intruder" feature in Burp to assist with brute forcing the solution.</p>
+</details>
+</li>
+<li>
+<p>The page asks for a donation ID. Guess one (maybe 1) and click "Send". The server does not seem to respond to this. </p>
+</li>
+<li>
+<p>Let's inspect it in details. Configure Chrome to use Burp proxy via the Proxy Switcher and then reload the page.</p>
+</li>
+<li>
+<p>In the Burp intercept window, edit the request so that the User-Agent in the request is "DOGBrowser". Also eliminate the <strong>browser=wrong</strong> cookie by deleting it.</p>
+<p><img alt="" class="zoom" src="media/img-1615961787-20210317.png" /></p>
+</li>
+<li>
+<p>The system should indicatet that the ID does not exist. You still need to guess a donation ID. There are different ways to do this. We will use Burp in this example.</p>
+</li>
+<li>
+<p>Select the Proxy-&gt;HTTP history tab in Burp and right-click on the last request for donations.php</p>
+<p><img alt="" class="zoom" src="media/img-1615961937-20210317.png" /></p>
+</li>
+<li>
+<p>Send Request to Intruder</p>
+</li>
+<li>
+<p>Select "Send to Intruder".</p>
+</li>
+<li>
+<p>Click on the "Intruder" tab (it should now be highlighted in orange).</p>
+</li>
+<li>
+<p>Select the "Positions" tab.</p>
+</li>
+<li>
+<p>Click the "Clear §" button. This will clear the auto-selected payload positions.</p>
+</li>
+<li>
+<p>Highlight the digit after <strong>donation=</strong>, and click the "Add §" button. This will mark the digits for brute forcing. Also, verify the User-Agent ("DOGBrowser") and make sure the "Browser=wrong" cookie is removed.</p>
+<p><img alt="" class="zoom" src="media/img-1615962113-20210317.png" /></p>
+<p><strong>Marking Position for Intruder</strong></p>
+</li>
+<li>
+<p>Select the "Payloads" tab.</p>
+</li>
+<li>
+<p>Select "Numbers" from the Payload type dropdown (you may have to scroll down).</p>
+</li>
+<li>
+<p>Select "1" as "From", 100 as "To" , "1" as "Step" and 0 as maximum fraction digits (do not select a larger range, as the Burp Community Edition does rate-limit these requests).</p>
+</li>
+<li>
+<p>Click "Start attack" and acknowledge the restrictions of the community edition.</p>
+</li>
+<li>
+<p>You do not have to wait for the attack to finish. Look for requests with unusual values in the "Length" column and click on them. The larger responses are the ones we are interested in. Select the "Response" and "Render" tab at the bottom to review the response. For successful requests, you should see personal information displayed as part of the response. Request 6 and 17 (and many others) will show positive results. You may need to scroll up in the result window to see the early responses.</p>
+<p><img alt="" class="zoom" src="media/img-1615962378-20210317.png" /></p>
+<p><strong>Intruder Result</strong></p>
+</li>
+</ol>
+<hr />
+<h2 id="part-4-u2f-and-bypassing-2nd-factor">Part 4: U2F And Bypassing 2<sup>nd</sup> Factor</h2>
+<h3 id="no-hints_1">No Hints</h3>
+<p>Start at <a href="https://lab-3.1.sans.labs/login.php">https://lab-3.1.sans.labs/login.php</a> . Click "Reset U2F Data". Next log in and follow the instructions to setup the token. Once you setup and verified that the token is working: Try to reach the "myaccount.php" without using the token (just use the username and password).</p>
 <h3 id="step-by-step">Step by Step</h3>
 <ol>
 <li>
-<p>Open <a href="http://lab-2.1.sans.labs/">http://lab-2.1.sans.labs/</a> in Google Chrome.</p>
+<p>Open <a href="https://lab-3.1.sans.labs/login.php">https://lab-3.1.sans.labs/login.php</a> in Google Chrome.</p>
 </li>
 <li>
-<p>Enter one of the animal names (for example, "Stash") in the search box and click "Submit". Only this animal should now be visible.</p>
+<p>Click on "Reset U2F Data" (lower left corner of the page).</p>
 </li>
 <li>
-<p>Enter a single quote ( ' ) in the search box and click "Submit". This should trigger an SQL error. The SQL error message will include the query. Try to identify the vulnerability.</p>
+<p>Login using the username "sec522" and the password "training". You will see a popup at the top of the browser asking you to "Approve" the use of the virtual U2F token.</p>
+<p><img alt="" src="media/image4.png" /></p>
+<p><strong>U2F Dialog</strong></p>
 </li>
-</ol>
-<h4 id="digging-deeper">Digging Deeper</h4>
-<div class="admonition danger">
-<p class="admonition-title">Critical: The next few commands require you to include a space after the final '--'.</p>
+<li>
+<p>Click "approve". You will now be redirected to the "My Account" page at <a href="https://lab-3.1.sans.labs/myaccount.php">https://lab-3.1.sans.labs/myaccount.php</a></p>
+</li>
+<li>
+<p>Click on "Log Out". You will be redirected to the login page.</p>
+<div class="admonition information">
+<p class="admonition-title">Information</p>
+<p>At this point, we have registered a token with the server. There is a key pair generated and the server is storing the key information so that it can be used in the futue to authenticate the user when the user login. </p>
+<p>You may have noticed that you have to click on the token approval earlier. This is a design of Fido2 compatible tokens (whether it's the Android OS, iOS, keyfobs) they all require explicit user approval to avoid accidental and unintentional approvals.</p>
 </div>
-<ol>
+</li>
 <li>
-<p>Enter the string below in the search field and click submit. You will not see an error now, but all animals are visible.</p>
-<div class="highlight"><pre><span></span><code>&#39; OR 1=1 -- 
+<p>Login again using username "sec522" and password "training".</p>
+</li>
+<li>
+<p>Again, you will be asked to approve the use of the U2F token</p>
+</li>
+<li>
+<p>You are now reaching the "My Account" page.</p>
+<p>So far, you learned how to use a U2F token. For a physical token, you would have to pres a button instead of clicking "Approve". Next, we will learn how to bypass the token request.</p>
+</li>
+<li>
+<p>Click "Log Out" again.</p>
+</li>
+<li>
+<p>Verify that you are actually logged out: Try to open <a href="https://lab-3.1.sans.labs/myaccount.php">https://lab-3.1.sans.labs/myaccount.php</a> in the browser. You will be redirected to the login page.</p>
+</li>
+<li>
+<p>Login using the username "sec522" and the password "training". You will be prompted for the U2F token again.</p>
+</li>
+<li>
+<p>Decline the U2F token request, deny the U2F token and cancel the browser's authentication prompt. </p>
+</li>
+<li>
+<p>Open <a href="https://lab-3.1.sans.labs/myaccount.php">https://lab-3.1.sans.labs/myaccount.php</a> in Chrome. You will be able to access the page. You just accessed the "My Account" page without using the U2F token, bypassing the two-factor authentication requirement.</p>
+<p>The application logged you in after you entered the username and password. This often happens if the U2F authentication is added later. A better solution would not associate the users user id with the session until the U2F process is complete, or set a flag with the session that the U2F authentication has not yet completed.</p>
+<details class="bug"><summary>If all else fails</summary><p>This exercise required the use of a Linux U2F token software for authentication, this is used in lieu of a real Fido2 token (Fido2 is backward compatible with U2F). If resetting of the token software is need, please run the following command in the terminal window.</p>
+<div class="codehilite"><pre><span></span><code>systemctl --user restart softu2f
 </code></pre></div>
-</li>
-<li>
-<p>Enter the below string and click "Submit".</p>
-<div class="highlight"><pre><span></span><code>&#39; UNION SELECT 1,2,3 -- 
-</code></pre></div>
-<p>The last step will again result in an error message. The error message will state that both SELECT statements in a UNION query need to return the same number of columns. Count the columns returned by the first statement and rewrite the second statement using the right number of columns.</p>
-</li>
-<li>
-<p>Enter the below string and hit submit. You will now get a broken image and the numbers 2 and 4 will be visible below the broken image.</p>
-<div class="highlight"><pre><span></span><code>&#39; UNION SELECT 1,2,3,4,5,6,7 -- 
-</code></pre></div>
-<p><img alt="" class="zoom" src="media/image1.png" /></p>
-<p><strong>Result of Entering the Correct UNION Query</strong></p>
-</li>
-<li>
-<p>Replace the SELECT query with one selecting the username and password column from the animalshelter.users table</p>
-<div class="highlight"><pre><span></span><code>&#39; UNION SELECT 1,username,3,password,5,6,7 FROM animalshelter.users -- 
-</code></pre></div>
-<div class="admonition tip">
-<p class="admonition-title">Do not forget the space after the -- in the end</p>
-</div>
-<p>You will now see two broken images (one for each user in the database). The usernames and passwords are displayed where you saw the numbers 2 and 4 in Step 6.</p>
-</li>
-<li>
-<p>View the page source (CTRL-U) to see the password hashes more clearly.</p>
-<p>You may try other queries now.</p>
-</li>
-</ol>
-<details class="question"><summary>Can you create a query without the '--' in the end?</summary><p>Answer: <strong>' OR 1='1</strong></p>
+
 </details>
-<hr />
-<h2 id="part-2-phpbb-sql-injection">Part 2: phpBB SQL Injection</h2>
-<h3 id="no-hints_1">No Hints</h3>
-<p>The old version of phpBB we have installed here suffers from multiple SQL injection flaws. In this exercise, we explore an SQL injection flaw in the messaging interface. To trigger the flaw, log in at <a href="http://phpbb.sans.labs">http://phpbb.sans.labs</a> (username: sec522, password: training) and then use one of the hints to get you started (<a href="http://phpbb.sans.labs">http://phpbb.sans.labs</a>). The injection will only work if you are logged in. You may also want to explore the login form for additional opportunities to experiment with SQL injection.</p>
-<h3 id="step-by-step_1">Step by Step</h3>
-<p>We have a URL at hand that we know is vulnerable to SQL injection. The first step to test for SQL injection is to insert a quote into each field.</p>
-<p>The following steps will inspect a parameter used in the phpBB private messaging system.</p>
-<ol>
-<li>
-<p>Use Chrome to visit <strong><a href="http://phpbb.sans.labs">http://phpbb.sans.labs</a></strong>.</p>
-</li>
-<li>
-<p>Log in using the username "sec522" and the password "training".</p>
-</li>
-<li>
-<p>Click on the "You have no new messages" link at the top of the page.</p>
-</li>
-<li>
-<p>Click on the "Savebox" link.</p>
-</li>
-<li>
-<p>We are going to exploit this page. Open the following URL: <strong><a href="http://phpbb.sans.labs/hints.html">http://phpbb.sans.labs/hints.html</a></strong></p>
-<p>We will use the links on this page to explore and exploit the SQL injection vulnerability. Note how exploit URLs on this page will include a URL encoded single quote (%27) as part of the pm_sql_user parameter.</p>
-</li>
-<li>
-<p>We would want to know where in the statement the user input is located. Click on the second link (Exploit 1). Exploit 1 injects HTML into the SQL statement. This will make the injectable location visible in red.</p>
-</li>
-<li>
-<p>Return back to the hints page (<strong><a href="http://phpbb.sans.labs/hints.html">http://phpbb.sans.labs/hints.html</a></strong>)</p>
-</li>
-<li>
-<p>Read Exploit 2 to see how a union statement is used to join two distinct queries together. Click on the "Exploit 2" link. There is no error in the statement. We created a valid statement. The main purpose of this statement is to ensure the statement runs error free. If the number of fields is different between the two distinct statements, they cannot be "unioned" together.</p>
-</li>
-<li>
-<p>Return back to the hints page (<strong><a href="http://phpbb.sans.labs/hints.html">http://phpbb.sans.labs/hints.html</a></strong>).</p>
-<p>Exploit 3 simply makes the statement return \'aaa\', \'bbb\', and so on just to see which field can be returned on the screen, as some of the fields are not being returned on screen.</p>
-<p>Following Exploit 3, you will find a group of statements that use SQL injection to enumerate the table structure (infomation_schema holds all this information). One query at a time, information about the structure of the database is being returned; information such as table names and column names is gathered.</p>
-</li>
-<li>
-<p>The "Administrator Exploit" at the end of the page returns the administrator\'s username and password. Please click on this statement. This is dependent on the results of enumerating the table and column names in Step 11.</p>
-<p>We will dive into the source code of privmsg.php and investigate the reasons for the SQL injection. For the non-PHP-coders, do not worry; the code is really simple.</p>
-</li>
-<li>
-<p>Browse to <strong><a href="http://phpbb.sans.labs/privmsg.phps">http://phpbb.sans.labs/privmsg.phps</a></strong> (note the "s" at the end of the URL) to review the source code.</p>
-</li>
-<li>
-<p>Scroll to line 240 of the source code and review the variable $sql. Pay special attention to lines 226 and 229.</p>
-<p>$pm_sql_user on line 240 consists of data from line 226. Line 226 concatenates data from user input in $pm_sql_user with other data on lines 226 to 229. The .= operator means -- leave whatever is already in $pm_sql_user; in addition, also put the following data into $pm_sql_user. The $pm_sql_user variable isn\'t filtered or sanitized; it came straight from the user.</p>
-<p>Line 244 is where the user input gets concatenated with other static SQL strings to make the dynamic SQL statement. The resulting statement is passed to the database for execution on line 253.</p>
-<p>When raw user input gets to become part of a dynamic SQL query without validation, we know what the story looks like---SQL injection.</p>
 </li>
 </ol>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
+<ul>
+<li>There are various ways to authenticate users and some are more secure than others</li>
+<li>Authentication needs to be based on 1. something you know 2. something you have 3. something you are; or a combination of those three things. Authentication would be insecure if the data it is relied upon can easily be forged.</li>
+</ul>
 <hr />
 <h2 id="explore-further">Explore Further</h2>
 <ul>
-<li></li>
+<li>Explore <a href="https://webauthn.me/debugger">https://webauthn.me/debugger</a> for WebAuthn and Fido2</li>
 </ul>
                 
               
@@ -1028,7 +1128,7 @@ fetch('http://phpbb.sans.labs:80');
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../1.4/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../2.4/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1037,19 +1137,19 @@ fetch('http://phpbb.sans.labs:80');
               <span class="md-footer__direction">
                 Previous
               </span>
-              1.4: SSRF and Credential Stealing
+              2.4: Unicode and File Upload
             </div>
           </div>
         </a>
       
       
-        <a href="../2.2/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../3.2/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              2.2: Guestbook CSRF
+              3.2: Session Fixation and Session Breaking
             </div>
           </div>
           <div class="md-footer__button md-icon">
