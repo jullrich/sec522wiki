@@ -14,7 +14,7 @@
     
     
       
-        <title>3.2: Session Fixation and Session Breaking - SEC522 Workbook</title>
+        <title>Troubleshooting - SEC522 Workbook</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#session-fixation-and-session-breaking" class="md-skip">
+        <a href="#common-errors" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              3.2: Session Fixation and Session Breaking
+              Troubleshooting
             
           </span>
         </div>
@@ -178,12 +178,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
       
       <label class="md-nav__link" for="__nav_1">
         Introduction
@@ -211,11 +213,96 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../resources/troubleshooting/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Troubleshooting
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Troubleshooting
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hardware" class="md-nav__link">
+    Hardware
+  </a>
+  
+    <nav class="md-nav" aria-label="Hardware">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-host-supports-intel-vt-x-but-intel-vt-x-is-disabled" class="md-nav__link">
+    "The host supports Intel VT-x, but Intel VT-x is disabled"
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#high-resolution-screens" class="md-nav__link">
+    High-Resolution Screens
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    Windows
+  </a>
+  
+    <nav class="md-nav" aria-label="Windows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows-credentialdevice-guard" class="md-nav__link">
+    Windows Credential/Device Guard
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linux-cheat-sheet" class="md-nav__link">
+    Linux Cheat Sheet
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -246,7 +333,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../resources/preparation/" class="md-nav__link">
+      <a href="../preparation/" class="md-nav__link">
         Preparation
       </a>
     </li>
@@ -333,7 +420,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../1.1/" class="md-nav__link">
+      <a href="../../exercises/1.1/" class="md-nav__link">
         1.1: HTTP Basics
       </a>
     </li>
@@ -345,7 +432,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../1.2/" class="md-nav__link">
+      <a href="../../exercises/1.2/" class="md-nav__link">
         1.2: Inspecting HTTP/2 Traffic
       </a>
     </li>
@@ -357,7 +444,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../1.3/" class="md-nav__link">
+      <a href="../../exercises/1.3/" class="md-nav__link">
         1.3: Isolation
       </a>
     </li>
@@ -369,7 +456,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../1.4/" class="md-nav__link">
+      <a href="../../exercises/1.4/" class="md-nav__link">
         1.4: SSRF and Credential Stealing
       </a>
     </li>
@@ -411,7 +498,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2.1/" class="md-nav__link">
+      <a href="../../exercises/2.1/" class="md-nav__link">
         2.1: SQL Injection
       </a>
     </li>
@@ -423,7 +510,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2.2/" class="md-nav__link">
+      <a href="../../exercises/2.2/" class="md-nav__link">
         2.2: Guestbook CSRF
       </a>
     </li>
@@ -435,7 +522,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2.3/" class="md-nav__link">
+      <a href="../../exercises/2.3/" class="md-nav__link">
         2.3: Cross-Site Scripting
       </a>
     </li>
@@ -447,7 +534,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2.4/" class="md-nav__link">
+      <a href="../../exercises/2.4/" class="md-nav__link">
         2.4: Unicode and File Upload
       </a>
     </li>
@@ -466,14 +553,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
       
       <label class="md-nav__link" for="__nav_4">
         Day 3
@@ -491,7 +576,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../3.1/" class="md-nav__link">
+      <a href="../../exercises/3.1/" class="md-nav__link">
         3.1: Authentication
       </a>
     </li>
@@ -501,103 +586,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          3.2: Session Fixation and Session Breaking
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../exercises/3.2/" class="md-nav__link">
         3.2: Session Fixation and Session Breaking
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#part-1-session-fixation" class="md-nav__link">
-    Part 1: Session Fixation
-  </a>
-  
-    <nav class="md-nav" aria-label="Part 1: Session Fixation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#no-hints" class="md-nav__link">
-    No Hints
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-by-step" class="md-nav__link">
-    Step by Step
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#part-2-breaking-sessions" class="md-nav__link">
-    Part 2: Breaking Sessions
-  </a>
-  
-    <nav class="md-nav" aria-label="Part 2: Breaking Sessions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#no-hints_1" class="md-nav__link">
-    No Hints
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-by-step_1" class="md-nav__link">
-    Step by Step
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
-    Conclusion
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -607,7 +600,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../3.3/" class="md-nav__link">
+      <a href="../../exercises/3.3/" class="md-nav__link">
         3.3: OAuth and Access Control
       </a>
     </li>
@@ -619,7 +612,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../3.4/" class="md-nav__link">
+      <a href="../../exercises/3.4/" class="md-nav__link">
         3.4: Inspecting SSL Traffic
       </a>
     </li>
@@ -661,7 +654,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.1/" class="md-nav__link">
+      <a href="../../exercises/4.1/" class="md-nav__link">
         4.1: WSDL Enumeration and Parameter Tampering
       </a>
     </li>
@@ -673,7 +666,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.2/" class="md-nav__link">
+      <a href="../../exercises/4.2/" class="md-nav__link">
         4.2: XMLHttpRequest
       </a>
     </li>
@@ -685,7 +678,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.3/" class="md-nav__link">
+      <a href="../../exercises/4.3/" class="md-nav__link">
         4.3: Javascript Security Testing
       </a>
     </li>
@@ -697,7 +690,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.4/" class="md-nav__link">
+      <a href="../../exercises/4.4/" class="md-nav__link">
         4.4: Content Security Policy
       </a>
     </li>
@@ -739,7 +732,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../5.1/" class="md-nav__link">
+      <a href="../../exercises/5.1/" class="md-nav__link">
         5.1: DNS Rebinding
       </a>
     </li>
@@ -751,7 +744,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../5.2/" class="md-nav__link">
+      <a href="../../exercises/5.2/" class="md-nav__link">
         5.2: Clickjacking
       </a>
     </li>
@@ -763,7 +756,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../5.3/" class="md-nav__link">
+      <a href="../../exercises/5.3/" class="md-nav__link">
         5.3: HTML5
       </a>
     </li>
@@ -775,7 +768,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../5.4/" class="md-nav__link">
+      <a href="../../exercises/5.4/" class="md-nav__link">
         5.4: Sub Resource Integrity
       </a>
     </li>
@@ -787,7 +780,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../5.5/" class="md-nav__link">
+      <a href="../../exercises/5.5/" class="md-nav__link">
         5.5: Logging and Incident Response
       </a>
     </li>
@@ -860,121 +853,120 @@
     content: 'SANS SEC522 Workbook';
 }}
 @page :left { @bottom-left {
-  content: '3.2-' counter(page);
+  content: 'TT-' counter(page);
 }}
 @page :right { @bottom-right {
-  content: '3.2-' counter(page);
+  content: 'TT-' counter(page);
 }}
 </style>
 
-<script>
-fetch('https://lab-3.2.sans.labs:80');
-</script>
-
-<h1 id="session-fixation-and-session-breaking">Session Fixation and Session Breaking</h1>
-<hr />
-<h4 id="objectives">Objectives</h4>
-<p>Estimated Time: 12 minutes</p>
-<h5 id="part-1">Part 1:</h5>
-<blockquote>
-<p>In the first part, you will learn how to identify and fix session fixation vulnerabilities.</p>
-</blockquote>
-<h5 id="part-2">Part 2:</h5>
-<blockquote>
-<p>In second part, you will experience weak session IDs and learn how an attacker may exploit them.</p>
-</blockquote>
-<h4 id="requirements">Requirements</h4>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Lab VM</li>
-</ul>
-<hr />
-<h2 id="part-1-session-fixation">Part 1: Session Fixation</h2>
-<h3 id="no-hints">No Hints</h3>
-<p>Load <a href="http://lab-3.2.sans.labs/login1.php">http://lab-3.2.sans.labs/login1.php</a> in Chrome. There are also login2.php and login3.php . The username is sec522 and password is training. The first two forms are susceptible to session fixation. Why? (In particular, the second one is not that obvious.) The third form is not susceptible. Can you determine why?</p>
-<h3 id="step-by-step">Step by Step</h3>
-<p>This exercise will ask you to run Firefox in addition to Chrome. To start Firefox when asked to, click on the Firefox icon at the left side of the screen. </p>
-<p>IMPORTANT: Do not "Refresh Firefox" or update Firefox. Click "Cancel" if a dialog box appears offering to refresh Firefox.</p>
+<h1 id="common-errors">Common Errors</h1>
+<h2 id="hardware">Hardware</h2>
+<h3 id="the-host-supports-intel-vt-x-but-intel-vt-x-is-disabled">"The host supports Intel VT-x, but Intel VT-x is disabled"</h3>
+<p>One reason starting the virtual machine may fail is having Intel VT-x disabled. If this is the case, you will see an error message about "The host supports Intel VT-x, but Intel VT-x is disabled". VT-x has to be enabled in your system BIOS, which slightly differs from system to system. You may need the instructor's help to find out how to fix this.</p>
+<h4 id="newer-systems-uefi-not-traditional-bios">Newer Systems (UEFI, not traditional BIOS)</h4>
 <ol>
 <li>
-<p>Load <a href="http://lab-3.2.sans.labs/login1.php">http://lab-3.2.sans.labs/login1.php</a> in the browser. You will be redirected to a URL that includes a session ID as a get parameter. The session ID is random. It should look like: sec522=gn5blighc8a)o5ks45k3pu81l</p>
+<p>Hold the SHIFT key while restarting your Windows System.</p>
 </li>
 <li>
-<p>Copy the session ID and paste it into an empty file (you can use the Visual Studio Code on the left). We will call this session ID the "original session"</p>
+<p>The system will restart and end up on a blue screen with various options. Select "Troubleshoot".</p>
 </li>
 <li>
-<p>To simulate the attacker's view, open the Firefox browser by clicking on the Firefox icon on the left menu bar. Copy and paste the full URL from Chrome to Firefox. In the session fixation attack scenario, the attacker would set the session ID prior to the victim logging in. At this point, the attacker using Firefox and victim using Chrome both have the same session ID in the browser.  </p>
+<p>From the "Troubleshoot" menu, select "Advanced Options".</p>
 </li>
 <li>
-<p>Go back to Chrome. Log in using the username "sec522" and the password "training". Did the session ID change from the "orginal session" you captured in step 2? The form is vulnerable to session fixation if it did not change.</p>
+<p>Select "UEFI Firmware Settings".</p>
 </li>
 <li>
-<p>To see how the attacker can exploit this - go back to Firefox and change the URL, replace the URL's "login1.php" to "guestbook.php" and leaving all other portion of the URL intact. If attacker (Firefox) is logged in and not being redirected to the login page. The application is vulnerable to session fixation.</p>
-<p><img alt="" class="zoom" src="media/img-1619303254-20210424.png" /></p>
-<div class="admonition information">
-<p class="admonition-title">Information</p>
-<p>The implication of is step is for the attacker to test whether the user has logged in with the session. You will find that both attacker and victim are logged in using different browsers and both using the same logged in session.</p>
-</div>
+<p>Select "Restart".</p>
 </li>
 <li>
-<p>Close Firefox and back in Chrome, click the "Logout" link in the Guestbook application.</p>
+<p>The system will restart again and give you the option to change your BIOS settings, usually by pressing F10. But watch the startup screen carefully for instructions.</p>
 </li>
 <li>
-<p>Click on "Login Again" which will bring you to the next login form - "login2.php". This is a slightly different version of the login form.</p>
+<p>Continue at Step 3 below.</p>
+</li>
+</ol>
+<h4 id="older-system-traditional-bios-not-uefi">Older System (traditional BIOS, not UEFI)</h4>
+<ol>
+<li>
+<p>Reboot the system.</p>
 </li>
 <li>
-<p>With the login2.php, please repeat the same process from step 2 (see above) to step 6.</p>
-<details class="question"><summary>While the session ID is changed in Chrome in step 4, is attacker still able to access the logged in session in step 5?</summary><p>If the attacker does not get redirected to the login page, that means that attacker is still able to use the session even though the session ID looks different on Chrome.</p>
-</details>
+<p>During boot, watch for which key to use to enter the BIOS settings. Common keys include F1, F10, and Delete.</p>
 </li>
 <li>
-<p>Click on "Login Again" which will bring you to the next login form - "login3.php".</p>
+<p>Once in the BIOS settings, look for "Virtualization Technology", "VT-x", or similar options and enable them. You can often find them on the "System Configuration" or "Security" page.</p>
 </li>
 <li>
-<p>With the login3.php, please repeat the same process from step 2 (see above) to step 6.</p>
-<details class="question"><summary>In step 5, is the attacker redirected to the login page?</summary><p>If the attacker is redirected to the login page, that means that the session ID presented by the attacker is not associated with any user. Essentially, session fixation did not work.</p>
-</details>
+<p>Exit and save your changes.</p>
+</li>
+</ol>
+<p>The exact wording and instructions may change from system to system. You will need to have access to your BIOS settings. Some corporate configurations password-protect the settings. You will need to obtain the password to change them.</p>
+<h3 id="high-resolution-screens">High-Resolution Screens</h3>
+<p>Some modern laptops use very high-resolution screens ("Retina Screens"). This can lead to hard-to-read fonts within the virtual machine. The simplest way to make the screen readable is by reducing the resolution of your screen in Windows, which will essentially turn off the high-resolution feature.</p>
+<p>Apple laptops with high-resolution screens running MacOS and VMware Fusion do not suffer from this problem. If you do experience the issue, double-check your display settings:</p>
+<ol>
+<li>
+<p>Select "Virtual Machine" -&gt; "Settings..." from the VMware Fusion menu.</p>
 </li>
 <li>
-<p>Compare the two source code files below, it's best to open them in two browser tabs side by side so they can be compared.</p>
-<p><a href="http://lab-3.2.sans.labs/login2.phps">http://lab-3.2.sans.labs/login2.phps</a>  <br>
-<a href="http://lab-3.2.sans.labs/login3.phps">http://lab-3.2.sans.labs/login3.phps</a></p>
-<p>Pay attention to line 23 to 25. There are subtle differences in the location of session_regenerate_id.  </p>
-<details class="question"><summary>What are the differences?</summary><p>"fix2" regenerates the session ID after the login was verified. "fix3" regenerates the session ID first, so the user ID is never associated with the old session. </p>
-</details>
+<p>Select "Display".</p>
+</li>
+<li>
+<p>Verify that your settings match the settings in the image below.</p>
+<p><img alt="" src="../media/image1.png" /></p>
+<p><strong>VMware Fusion Display Settings</strong></p>
 </li>
 </ol>
 <hr />
-<h2 id="part-2-breaking-sessions">Part 2: Breaking Sessions</h2>
-<h3 id="no-hints_1">No Hints</h3>
-<p>Go to <a href="http://lab-3.2.sans.labs/session/login.php">http://lab-3.2.sans.labs/session/login.php</a>. Log in using the username "sec522" and the password "training". Try to switch to a different user's account after logging in.</p>
-<h3 id="step-by-step_1">Step by Step</h3>
+<h2 id="windows">Windows</h2>
+<h3 id="windows-credentialdevice-guard">Windows Credential/Device Guard</h3>
+<p>With Windows Credential Guard enabled, Windows will run in a Hyper-V virtual machine. This isn't obvious but will prevent VMware from running (VMware cannot run inside a virtual machine). You will see an error like:</p>
+<p>VMware Workstation and Device/Credential Guard are not compatible. VMware Workstation can be run after disabling Device/Credential Guard.</p>
+<p>To disable credential guard, follow these steps (copied from Microsoft's knowledge base article at <a href="https://docs.microsoft.com/en-us/windows/security/identity-protection/credential-guard/credential-guard-manage">https://docs.microsoft.com/en-us/windows/security/identity-protection/credential-guard/credential-guard-manage</a>.</p>
 <ol>
 <li>
-<p>In Google Chrome, proceed to <strong><a href="http://lab-3.2.sans.labs/session/login.php">http://lab-3.2.sans.labs/session/login.php</a></strong> and log in using the username <strong>sec522</strong> and the password <strong>training</strong>.</p>
-<p><img alt="" class="zoom" src="media/img-1615442622-20210311.png" /></p>
-<p><strong>Account Balance Screen</strong></p>
+<p>From the Group Policy Management Console, go to "Computer Configuration" -&gt; "Administrative Templates" -&gt; System -&gt; "Device Guard".</p>
 </li>
 <li>
-<p>Press SHIFT-CTRL-I to open the developer tools.</p>
+<p>Double-click "Turn On Virtualization Based Security", and then click the "Enabled" option.</p>
 </li>
 <li>
-<p>Select the "Application" tab and select <a href="http://lab-3.2.sans.labs">http://lab-3.2.sans.labs</a> under Cookies.</p>
+<p>In the Select Platform Security Level box, choose "Secure Boot" or "Secure Boot and DMA Protection".</p>
 </li>
 <li>
-<p>Double-click on the cookie value (value is 1) and change it to 2 . Reload the page.</p>
-<p><img alt="" class="zoom" src="media/img-1615443698-20210311.png" /></p>
-<p><strong>Chrome Developer Tools Cookies</strong></p>
-<p>You will now see a different account. Experiment with different values and try to find the account with the most donations.</p>
-<details class="question"><summary>Which account has the most donations?</summary><p><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#116;&#100;&#101;&#101;&#114;&#110;&#101;&#115;&#115;&#49;&#56;&#64;&#119;&#111;&#114;&#100;&#112;&#114;&#101;&#115;&#115;&#46;&#99;&#111;&#109;">&#116;&#100;&#101;&#101;&#114;&#110;&#101;&#115;&#115;&#49;&#56;&#64;&#119;&#111;&#114;&#100;&#112;&#114;&#101;&#115;&#115;&#46;&#99;&#111;&#109;</a> of value 45 has the most donation at $997.74</p>
-</details>
+<p>In the Credential Guard Configuration box, click "Enabled with UEFI lock", and then click OK.</p>
+</li>
+<li>
+<p>Close the Group Policy Management Console.</p>
+<p>To enforce processing of the group policy, you can run </p>
+<div class="highlight"><pre><span></span><code>gpupdate /force.
+</code></pre></div>
 </li>
 </ol>
 <hr />
-<h2 id="conclusion">Conclusion</h2>
-<ul>
-<li>Session are usually handled by your development framework but there are certain aspects of the session that need to be carefully managed by developers as illustrated in this exercise</li>
-</ul>
-<hr />
+<h2 id="linux-cheat-sheet">Linux Cheat Sheet</h2>
+<p>To navigate the virtual machine, you will need some basic Linux skills.</p>
+<p>The main user used for most exercises is "sec522". Dev522's home directory is /home/sec522.</p>
+<p>To open a terminal, click on the Terminal icon on the left. This area on the left is also referred to as the "Favorites" area.</p>
+<p><img alt="" src="../media/image2.png" /></p>
+<ol>
+<li>
+<p>Terminal Icon</p>
+<p>Once a terminal opens, you may navigate directories using the "cd" command.</p>
+<p>To edit a file, you can just use "gedit" followed by the filename. For example,</p>
+<div class="highlight"><pre><span></span><code>gedit /tmp/testing.txt
+</code></pre></div>
+<p>will edit the file "testing.txt" in the /tmp directory. Gedit is similar to Windows Notepad.</p>
+<p>For a more full-featured editor, we have Microsoft's Visual Studio Code available. You can start it by typing "code" on the command line, or by clicking on the icon on the left.</p>
+<p><img alt="" src="../media/image3.png" /></p>
+</li>
+<li>
+<p>Microsoft Visual Studio Code Icon</p>
+</li>
+</ol>
                 
               
               
@@ -992,7 +984,7 @@ fetch('https://lab-3.2.sans.labs:80');
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../3.1/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../.." class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1001,19 +993,19 @@ fetch('https://lab-3.2.sans.labs:80');
               <span class="md-footer__direction">
                 Previous
               </span>
-              3.1: Authentication
+              Welcome!
             </div>
           </div>
         </a>
       
       
-        <a href="../3.3/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../preparation/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              3.3: OAuth and Access Control
+              Preparation
             </div>
           </div>
           <div class="md-footer__button md-icon">

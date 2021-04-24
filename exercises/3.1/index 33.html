@@ -14,7 +14,7 @@
     
     
       
-        <title>3.2: Session Fixation and Session Breaking - SEC522 Workbook</title>
+        <title>3.1: Authentication - SEC522 Workbook</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#session-fixation-and-session-breaking" class="md-skip">
+        <a href="#authentication-exercise" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              3.2: Session Fixation and Session Breaking
+              3.1: Authentication
             
           </span>
         </div>
@@ -489,18 +489,6 @@
             
   
   
-  
-    <li class="md-nav__item">
-      <a href="../3.1/" class="md-nav__link">
-        3.1: Authentication
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
     
   
   
@@ -512,12 +500,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          3.2: Session Fixation and Session Breaking
+          3.1: Authentication
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        3.2: Session Fixation and Session Breaking
+        3.1: Authentication
       </a>
       
         
@@ -534,15 +522,56 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#part-1-session-fixation" class="md-nav__link">
-    Part 1: Session Fixation
+  <a href="#part-0-optional-simple-user-agent-based-authentication" class="md-nav__link">
+    Part 0: (Optional) Simple User-Agent-Based Authentication
   </a>
   
-    <nav class="md-nav" aria-label="Part 1: Session Fixation">
+    <nav class="md-nav" aria-label="Part 0: (Optional) Simple User-Agent-Based Authentication">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#no-hints" class="md-nav__link">
+    No Hints
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step-instructions" class="md-nav__link">
+    Step-by-Step Instructions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-more-complex-but-still-weak-authentication" class="md-nav__link">
+    Part 2: More Complex, But Still Weak, Authentication
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-brute-forcing" class="md-nav__link">
+    Part 3: Brute Forcing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-4-u2f-and-bypassing-2nd-factor" class="md-nav__link">
+    Part 4: U2F And Bypassing 2nd Factor
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 4: U2F And Bypassing 2nd Factor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-hints_1" class="md-nav__link">
     No Hints
   </a>
   
@@ -561,35 +590,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#part-2-breaking-sessions" class="md-nav__link">
-    Part 2: Breaking Sessions
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
   </a>
-  
-    <nav class="md-nav" aria-label="Part 2: Breaking Sessions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#no-hints_1" class="md-nav__link">
-    No Hints
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-by-step_1" class="md-nav__link">
-    Step by Step
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
-    Conclusion
+  <a href="#explore-further" class="md-nav__link">
+    Explore Further
   </a>
   
 </li>
@@ -598,6 +607,18 @@
   
 </nav>
       
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.2/" class="md-nav__link">
+        3.2: Session Fixation and Session Breaking
+      </a>
     </li>
   
 
@@ -860,121 +881,236 @@
     content: 'SANS SEC522 Workbook';
 }}
 @page :left { @bottom-left {
-  content: '3.2-' counter(page);
+  content: '3.1-' counter(page);
 }}
 @page :right { @bottom-right {
-  content: '3.2-' counter(page);
+  content: '3.1-' counter(page);
 }}
 </style>
 
-<script>
-fetch('https://lab-3.2.sans.labs:80');
-</script>
-
-<h1 id="session-fixation-and-session-breaking">Session Fixation and Session Breaking</h1>
+<h1 id="authentication-exercise">Authentication Exercise</h1>
 <hr />
 <h4 id="objectives">Objectives</h4>
-<p>Estimated Time: 12 minutes</p>
+<div class="codehilite"><pre><span></span><code>Estimated Time: 22 minutes
+</code></pre></div>
+
 <h5 id="part-1">Part 1:</h5>
 <blockquote>
-<p>In the first part, you will learn how to identify and fix session fixation vulnerabilities.</p>
+<p>In this exercise, we will experiment with different examples of weak authentication and demonstrate how to break them.</p>
 </blockquote>
 <h5 id="part-2">Part 2:</h5>
 <blockquote>
-<p>In second part, you will experience weak session IDs and learn how an attacker may exploit them.</p>
+<p>In this exercise, we will experiment with different examples of weak authentication and demonstrate how to break them.</p>
+</blockquote>
+<h5 id="part-3">Part 3:</h5>
+<blockquote>
+<p>In this exercise, you will walk through the use of U2F (Universal Two-Factor) tokens for two factor authentication. We use a software simulation of a token (softu2f). After registering and testing the token, we will experiment with a method to bypass the use of the token.</p>
 </blockquote>
 <h4 id="requirements">Requirements</h4>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Lab VM</li>
 </ul>
 <hr />
-<h2 id="part-1-session-fixation">Part 1: Session Fixation</h2>
+<h2 id="part-0-optional-simple-user-agent-based-authentication">Part 0: <em>(Optional)</em> Simple User-Agent-Based Authentication</h2>
 <h3 id="no-hints">No Hints</h3>
-<p>Load <a href="http://lab-3.2.sans.labs/login1.php">http://lab-3.2.sans.labs/login1.php</a> in Chrome. There are also login2.php and login3.php . The username is sec522 and password is training. The first two forms are susceptible to session fixation. Why? (In particular, the second one is not that obvious.) The third form is not susceptible. Can you determine why?</p>
-<h3 id="step-by-step">Step by Step</h3>
-<p>This exercise will ask you to run Firefox in addition to Chrome. To start Firefox when asked to, click on the Firefox icon at the left side of the screen. </p>
-<p>IMPORTANT: Do not "Refresh Firefox" or update Firefox. Click "Cancel" if a dialog box appears offering to refresh Firefox.</p>
+<h3 id="step-by-step-instructions">Step-by-Step Instructions</h3>
 <ol>
 <li>
-<p>Load <a href="http://lab-3.2.sans.labs/login1.php">http://lab-3.2.sans.labs/login1.php</a> in the browser. You will be redirected to a URL that includes a session ID as a get parameter. The session ID is random. It should look like: sec522=gn5blighc8a)o5ks45k3pu81l</p>
+<p>Use Chrome to proceed to <a href="http://lab-3.1.sans.labs/uaauth.php"><strong>http://lab-3.1.sans.labs/uaauth.php</strong></a>. The page will indicate that you are using the wrong browser.</p>
 </li>
 <li>
-<p>Copy the session ID and paste it into an empty file (you can use the Visual Studio Code on the left). We will call this session ID the "original session"</p>
+<p>Start Burp and configure Chrome to use Burp via the Proxy Switcher plugin.</p>
 </li>
 <li>
-<p>To simulate the attacker's view, open the Firefox browser by clicking on the Firefox icon on the left menu bar. Copy and paste the full URL from Chrome to Firefox. In the session fixation attack scenario, the attacker would set the session ID prior to the victim logging in. At this point, the attacker using Firefox and victim using Chrome both have the same session ID in the browser.  </p>
+<p>Check to make sure interception is on in Burp ("Proxy" -&gt;"Intercept" -&gt; "Intercept is on").</p>
 </li>
 <li>
-<p>Go back to Chrome. Log in using the username "sec522" and the password "training". Did the session ID change from the "orginal session" you captured in step 2? The form is vulnerable to session fixation if it did not change.</p>
+<p>Reload the page in the browser.</p>
 </li>
 <li>
-<p>To see how the attacker can exploit this - go back to Firefox and change the URL, replace the URL's "login1.php" to "guestbook.php" and leaving all other portion of the URL intact. If attacker (Firefox) is logged in and not being redirected to the login page. The application is vulnerable to session fixation.</p>
-<p><img alt="" class="zoom" src="media/img-1619303254-20210424.png" /></p>
-<div class="admonition information">
-<p class="admonition-title">Information</p>
-<p>The implication of is step is for the attacker to test whether the user has logged in with the session. You will find that both attacker and victim are logged in using different browsers and both using the same logged in session.</p>
-</div>
+<p>The request will now be held by Burp. Use Burp to modify the request and change the User-Agent to "CatBrowser".</p>
 </li>
 <li>
-<p>Close Firefox and back in Chrome, click the "Logout" link in the Guestbook application.</p>
-</li>
-<li>
-<p>Click on "Login Again" which will bring you to the next login form - "login2.php". This is a slightly different version of the login form.</p>
-</li>
-<li>
-<p>With the login2.php, please repeat the same process from step 2 (see above) to step 6.</p>
-<details class="question"><summary>While the session ID is changed in Chrome in step 4, is attacker still able to access the logged in session in step 5?</summary><p>If the attacker does not get redirected to the login page, that means that attacker is still able to use the session even though the session ID looks different on Chrome.</p>
-</details>
-</li>
-<li>
-<p>Click on "Login Again" which will bring you to the next login form - "login3.php".</p>
-</li>
-<li>
-<p>With the login3.php, please repeat the same process from step 2 (see above) to step 6.</p>
-<details class="question"><summary>In step 5, is the attacker redirected to the login page?</summary><p>If the attacker is redirected to the login page, that means that the session ID presented by the attacker is not associated with any user. Essentially, session fixation did not work.</p>
-</details>
-</li>
-<li>
-<p>Compare the two source code files below, it's best to open them in two browser tabs side by side so they can be compared.</p>
-<p><a href="http://lab-3.2.sans.labs/login2.phps">http://lab-3.2.sans.labs/login2.phps</a>  <br>
-<a href="http://lab-3.2.sans.labs/login3.phps">http://lab-3.2.sans.labs/login3.phps</a></p>
-<p>Pay attention to line 23 to 25. There are subtle differences in the location of session_regenerate_id.  </p>
-<details class="question"><summary>What are the differences?</summary><p>"fix2" regenerates the session ID after the login was verified. "fix3" regenerates the session ID first, so the user ID is never associated with the old session. </p>
-</details>
+<p>Click "Forward" in Burp. The modified request will now be sent, and Chrome should display the page with a thank you statement for using the SANS browser.</p>
 </li>
 </ol>
 <hr />
-<h2 id="part-2-breaking-sessions">Part 2: Breaking Sessions</h2>
-<h3 id="no-hints_1">No Hints</h3>
-<p>Go to <a href="http://lab-3.2.sans.labs/session/login.php">http://lab-3.2.sans.labs/session/login.php</a>. Log in using the username "sec522" and the password "training". Try to switch to a different user's account after logging in.</p>
-<h3 id="step-by-step_1">Step by Step</h3>
+<h2 id="part-2-more-complex-but-still-weak-authentication">Part 2: More Complex, But Still Weak, Authentication</h2>
 <ol>
 <li>
-<p>In Google Chrome, proceed to <strong><a href="http://lab-3.2.sans.labs/session/login.php">http://lab-3.2.sans.labs/session/login.php</a></strong> and log in using the username <strong>sec522</strong> and the password <strong>training</strong>.</p>
-<p><img alt="" class="zoom" src="media/img-1615442622-20210311.png" /></p>
-<p><strong>Account Balance Screen</strong></p>
+<p>Ensure that the Chrome is set to sending all browser traffic through Burp - the ProxySwitcher in Chome should be "red" in color.</p>
 </li>
 <li>
-<p>Press SHIFT-CTRL-I to open the developer tools.</p>
+<p>Open <a href="http://lab-3.1.sans.labs/ua2auth.php">http://lab-3.1.sans.labs/ua2auth.php</a> in Chrome. </p>
 </li>
 <li>
-<p>Select the "Application" tab and select <a href="http://lab-3.2.sans.labs">http://lab-3.2.sans.labs</a> under Cookies.</p>
+<p>Switch over to Burp and allow all traffic to pass without modification. Keep clicking on "<strong>Forward</strong>" in Burp's Proxy Intercept. This page looks just like the page we examined in the exercise above but there seems to be some subtle difference.</p>
 </li>
 <li>
-<p>Double-click on the cookie value (value is 1) and change it to 2 . Reload the page.</p>
-<p><img alt="" class="zoom" src="media/img-1615443698-20210311.png" /></p>
-<p><strong>Chrome Developer Tools Cookies</strong></p>
-<p>You will now see a different account. Experiment with different values and try to find the account with the most donations.</p>
-<details class="question"><summary>Which account has the most donations?</summary><p><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#116;&#100;&#101;&#101;&#114;&#110;&#101;&#115;&#115;&#49;&#56;&#64;&#119;&#111;&#114;&#100;&#112;&#114;&#101;&#115;&#115;&#46;&#99;&#111;&#109;">&#116;&#100;&#101;&#101;&#114;&#110;&#101;&#115;&#115;&#49;&#56;&#64;&#119;&#111;&#114;&#100;&#112;&#114;&#101;&#115;&#115;&#46;&#99;&#111;&#109;</a> of value 45 has the most donation at $997.74</p>
+<p>To inspect this previous request, in Burp, we change over to the "<strong>Target</strong>" tab.</p>
+</li>
+<li>
+<p>Look for the most request to "ua2auth.php" and click on it. At the bottom pane of the Burp window is the response details. Due to the window sizing, you might have to adjust the pane to let the response be visible. There is the "three dots symbol" that allow you to adjust the pane sizes. In the response section, you will see the browser cookie being set by the server. We will need to get rid of this cookie in order to get to the website.</p>
+<p><img alt="" class="zoom" src="media/img-1615789856-20210315.png" /></p>
+</li>
+<li>
+<p>Switch back to Chrome and reload the page.</p>
+</li>
+<li>
+<p>The request will now be held by Burp. Use Burp to modify the request and change the User-Agent to "DOGBrowser" and also to delete the cookie line. Make sure there are no blank lines in between the HTTP headers. </p>
+</li>
+<li>
+<p>Click "Forward" for all the following requests. You will then see the protected page.</p>
+</li>
+</ol>
+<details class="question"><summary>What trick did the developer play to harden the page? Was it sufficient?</summary><p>The developer coded the authnetication such that when the "wrong" browser connect to the webpage, the application provides a cookie to the browser so that the application can reference the use of "wrong" browser in subsequent requests. </p>
+</details>
+<hr />
+<h2 id="part-3-brute-forcing">Part 3: Brute Forcing</h2>
+<p>This is an additional challenge exercise on authentication building on the knowledge you acquired so far. This exercise is to simulate a registration system where there is personal information being stored.</p>
+<ol>
+<li>
+<p>Configure Chrome to bypass the Burp proxy via the Proxy Switcher plugin. The icon should be black in color.</p>
+</li>
+<li>
+<p>Browse to <a href="http://lab-3.1.sans.labs/donations.php">http://lab-3.1.sans.labs/donations.php</a></p>
+<p>The page has a lookup system where the user can review their own respective donation information. The objective is to acquire as much information from this system as possible.</p>
+<p>Use the following hints to help you:</p>
+<details class="hint"><summary>Hint #1</summary><p>What's the likely user-agent for "DOGBrowser"? </p>
+</details>
+<details class="hint"><summary>Hint #1</summary><p>What's the purpose of the cookie "browser"? </p>
+</details>
+<details class="hint"><summary>Hint #2</summary><p>Can you brute force the donation number? Scripting may help.</p>
+</details>
+<details class="hint"><summary>Hint #3</summary><p>You can use the "Intruder" feature in Burp to assist with brute forcing the solution.</p>
+</details>
+</li>
+<li>
+<p>The page asks for a donation ID. Guess one (maybe 1) and click "Send". The server does not seem to respond to this. </p>
+</li>
+<li>
+<p>Let's inspect it in details. Configure Chrome to use Burp proxy via the Proxy Switcher and then reload the page.</p>
+</li>
+<li>
+<p>In the Burp intercept window, edit the request so that the User-Agent in the request is "DOGBrowser". Also eliminate the <strong>browser=wrong</strong> cookie by deleting it.</p>
+<p><img alt="" class="zoom" src="media/img-1615961787-20210317.png" /></p>
+</li>
+<li>
+<p>The system should indicatet that the ID does not exist. You still need to guess a donation ID. There are different ways to do this. We will use Burp in this example.</p>
+</li>
+<li>
+<p>Select the Proxy-&gt;HTTP history tab in Burp and right-click on the last request for donations.php</p>
+<p><img alt="" class="zoom" src="media/img-1615961937-20210317.png" /></p>
+</li>
+<li>
+<p>Send Request to Intruder</p>
+</li>
+<li>
+<p>Select "Send to Intruder".</p>
+</li>
+<li>
+<p>Click on the "Intruder" tab (it should now be highlighted in orange).</p>
+</li>
+<li>
+<p>Select the "Positions" tab.</p>
+</li>
+<li>
+<p>Click the "Clear §" button. This will clear the auto-selected payload positions.</p>
+</li>
+<li>
+<p>Highlight the digit after <strong>donation=</strong>, and click the "Add §" button. This will mark the digits for brute forcing. Also, verify the User-Agent ("DOGBrowser") and make sure the "Browser=wrong" cookie is removed.</p>
+<p><img alt="" class="zoom" src="media/img-1615962113-20210317.png" /></p>
+<p><strong>Marking Position for Intruder</strong></p>
+</li>
+<li>
+<p>Select the "Payloads" tab.</p>
+</li>
+<li>
+<p>Select "Numbers" from the Payload type dropdown (you may have to scroll down).</p>
+</li>
+<li>
+<p>Select "1" as "From", 100 as "To" , "1" as "Step" and 0 as maximum fraction digits (do not select a larger range, as the Burp Community Edition does rate-limit these requests).</p>
+</li>
+<li>
+<p>Click "Start attack" and acknowledge the restrictions of the community edition.</p>
+</li>
+<li>
+<p>You do not have to wait for the attack to finish. Look for requests with unusual values in the "Length" column and click on them. The larger responses are the ones we are interested in. Select the "Response" and "Render" tab at the bottom to review the response. For successful requests, you should see personal information displayed as part of the response. Request 6 and 17 (and many others) will show positive results. You may need to scroll up in the result window to see the early responses.</p>
+<p><img alt="" class="zoom" src="media/img-1615962378-20210317.png" /></p>
+<p><strong>Intruder Result</strong></p>
+</li>
+</ol>
+<hr />
+<h2 id="part-4-u2f-and-bypassing-2nd-factor">Part 4: U2F And Bypassing 2<sup>nd</sup> Factor</h2>
+<h3 id="no-hints_1">No Hints</h3>
+<p>Start at <a href="https://lab-3.1.sans.labs/login.php">https://lab-3.1.sans.labs/login.php</a> . Click "Reset U2F Data". Next log in and follow the instructions to setup the token. Once you setup and verified that the token is working: Try to reach the "myaccount.php" without using the token (just use the username and password).</p>
+<h3 id="step-by-step">Step by Step</h3>
+<ol>
+<li>
+<p>Open <a href="https://lab-3.1.sans.labs/login.php">https://lab-3.1.sans.labs/login.php</a> in Google Chrome.</p>
+</li>
+<li>
+<p>Click on "Reset U2F Data" (lower left corner of the page).</p>
+</li>
+<li>
+<p>Login using the username "sec522" and the password "training". You will see a popup at the top of the browser asking you to "Approve" the use of the virtual U2F token.</p>
+<p><img alt="" src="media/image4.png" /></p>
+<p><strong>U2F Dialog</strong></p>
+</li>
+<li>
+<p>Click "approve". You will now be redirected to the "My Account" page at <a href="https://lab-3.1.sans.labs/myaccount.php">https://lab-3.1.sans.labs/myaccount.php</a></p>
+</li>
+<li>
+<p>Click on "Log Out". You will be redirected to the login page.</p>
+<div class="admonition information">
+<p class="admonition-title">Information</p>
+<p>At this point, we have registered a token with the server. There is a key pair generated and the server is storing the key information so that it can be used in the futue to authenticate the user when the user login. </p>
+<p>You may have noticed that you have to click on the token approval earlier. This is a design of Fido2 compatible tokens (whether it's the Android OS, iOS, keyfobs) they all require explicit user approval to avoid accidental and unintentional approvals.</p>
+</div>
+</li>
+<li>
+<p>Login again using username "sec522" and password "training".</p>
+</li>
+<li>
+<p>Again, you will be asked to approve the use of the U2F token</p>
+</li>
+<li>
+<p>You are now reaching the "My Account" page.</p>
+<p>So far, you learned how to use a U2F token. For a physical token, you would have to pres a button instead of clicking "Approve". Next, we will learn how to bypass the token request.</p>
+</li>
+<li>
+<p>Click "Log Out" again.</p>
+</li>
+<li>
+<p>Verify that you are actually logged out: Try to open <a href="https://lab-3.1.sans.labs/myaccount.php">https://lab-3.1.sans.labs/myaccount.php</a> in the browser. You will be redirected to the login page.</p>
+</li>
+<li>
+<p>Login using the username "sec522" and the password "training". You will be prompted for the U2F token again.</p>
+</li>
+<li>
+<p>Decline the U2F token request, deny the U2F token and cancel the browser's authentication prompt. </p>
+</li>
+<li>
+<p>Open <a href="https://lab-3.1.sans.labs/myaccount.php">https://lab-3.1.sans.labs/myaccount.php</a> in Chrome. You will be able to access the page. You just accessed the "My Account" page without using the U2F token, bypassing the two-factor authentication requirement.</p>
+<p>The application logged you in after you entered the username and password. This often happens if the U2F authentication is added later. A better solution would not associate the users user id with the session until the U2F process is complete, or set a flag with the session that the U2F authentication has not yet completed.</p>
+<details class="bug"><summary>If all else fails</summary><p>This exercise required the use of a Linux U2F token software for authentication, this is used in lieu of a real Fido2 token (Fido2 is backward compatible with U2F). If resetting of the token software is need, please run the following command in the terminal window.</p>
+<div class="codehilite"><pre><span></span><code>systemctl --user restart softu2f
+</code></pre></div>
+
 </details>
 </li>
 </ol>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
 <ul>
-<li>Session are usually handled by your development framework but there are certain aspects of the session that need to be carefully managed by developers as illustrated in this exercise</li>
+<li>There are various ways to authenticate users and some are more secure than others</li>
+<li>Authentication needs to be based on 1. something you know 2. something you have 3. something you are; or a combination of those three things. Authentication would be insecure if the data it is relied upon can easily be forged.</li>
 </ul>
 <hr />
+<h2 id="explore-further">Explore Further</h2>
+<ul>
+<li>Explore <a href="https://webauthn.me/debugger">https://webauthn.me/debugger</a> for WebAuthn and Fido2</li>
+</ul>
                 
               
               
@@ -992,7 +1128,7 @@ fetch('https://lab-3.2.sans.labs:80');
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../3.1/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../2.4/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1001,19 +1137,19 @@ fetch('https://lab-3.2.sans.labs:80');
               <span class="md-footer__direction">
                 Previous
               </span>
-              3.1: Authentication
+              2.4: Unicode and File Upload
             </div>
           </div>
         </a>
       
       
-        <a href="../3.3/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../3.2/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              3.3: OAuth and Access Control
+              3.2: Session Fixation and Session Breaking
             </div>
           </div>
           <div class="md-footer__button md-icon">
