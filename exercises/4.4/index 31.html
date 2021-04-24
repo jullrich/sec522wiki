@@ -14,7 +14,7 @@
     
     
       
-        <title>3.2: Session Fixation and Session Breaking - SEC522 Workbook</title>
+        <title>4.4: Content Security Policy - SEC522 Workbook</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#session-fixation-and-session-breaking" class="md-skip">
+        <a href="#content-security-policy" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              3.2: Session Fixation and Session Breaking
+              4.4: Content Security Policy
             
           </span>
         </div>
@@ -466,14 +466,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
       
       <label class="md-nav__link" for="__nav_4">
         Day 3
@@ -501,103 +499,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          3.2: Session Fixation and Session Breaking
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../3.2/" class="md-nav__link">
         3.2: Session Fixation and Session Breaking
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#part-1-session-fixation" class="md-nav__link">
-    Part 1: Session Fixation
-  </a>
-  
-    <nav class="md-nav" aria-label="Part 1: Session Fixation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#no-hints" class="md-nav__link">
-    No Hints
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-by-step" class="md-nav__link">
-    Step by Step
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#part-2-breaking-sessions" class="md-nav__link">
-    Part 2: Breaking Sessions
-  </a>
-  
-    <nav class="md-nav" aria-label="Part 2: Breaking Sessions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#no-hints_1" class="md-nav__link">
-    No Hints
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-by-step_1" class="md-nav__link">
-    Step by Step
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
-    Conclusion
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -638,12 +544,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
       
       <label class="md-nav__link" for="__nav_5">
         Day 4
@@ -695,11 +603,70 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../4.4/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          4.4: Content Security Policy
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         4.4: Content Security Policy
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#no-hints" class="md-nav__link">
+    No Hints
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-by-step-instructions" class="md-nav__link">
+    Step-by-Step Instructions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explore-further" class="md-nav__link">
+    Explore Further
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -860,120 +827,79 @@
     content: 'SANS SEC522 Workbook';
 }}
 @page :left { @bottom-left {
-  content: '3.2-' counter(page);
+  content: '4.4-' counter(page);
 }}
 @page :right { @bottom-right {
-  content: '3.2-' counter(page);
+  content: '4.4-' counter(page);
 }}
 </style>
 
-<script>
-fetch('https://lab-3.2.sans.labs:80');
-</script>
-
-<h1 id="session-fixation-and-session-breaking">Session Fixation and Session Breaking</h1>
+<h1 id="content-security-policy">Content Security Policy</h1>
 <hr />
 <h4 id="objectives">Objectives</h4>
-<p>Estimated Time: 12 minutes</p>
-<h5 id="part-1">Part 1:</h5>
+<div class="codehilite"><pre><span></span><code>Estimated Time: 15 minutes
+</code></pre></div>
+
 <blockquote>
-<p>In the first part, you will learn how to identify and fix session fixation vulnerabilities.</p>
+<p>Content Security Policy (CSP) is a great tool to limit JavaScript that an attacker may inject into a page. But if the CSP is too tight, then JavaScript code that was added by the developer may not run. In this exercise, you will learn how to debug CSPs.</p>
 </blockquote>
 <h5 id="part-2">Part 2:</h5>
-<blockquote>
-<p>In second part, you will experience weak session IDs and learn how an attacker may exploit them.</p>
-</blockquote>
+<blockquote></blockquote>
 <h4 id="requirements">Requirements</h4>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Lab VM</li>
 </ul>
 <hr />
-<h2 id="part-1-session-fixation">Part 1: Session Fixation</h2>
 <h3 id="no-hints">No Hints</h3>
-<p>Load <a href="http://lab-3.2.sans.labs/login1.php">http://lab-3.2.sans.labs/login1.php</a> in Chrome. There are also login2.php and login3.php . The username is sec522 and password is training. The first two forms are susceptible to session fixation. Why? (In particular, the second one is not that obvious.) The third form is not susceptible. Can you determine why?</p>
-<h3 id="step-by-step">Step by Step</h3>
-<p>This exercise will ask you to run Firefox in addition to Chrome. To start Firefox when asked to, click on the Firefox icon at the left side of the screen. </p>
-<p>IMPORTANT: Do not "Refresh Firefox" or update Firefox. Click "Cancel" if a dialog box appears offering to refresh Firefox.</p>
+<p>Proceed to <a href="http://lab-4.4.sans.labs/">http://lab-4.4.sans.labs/</a>. The exercise will guide you through three parts. In each part, a CSP is shown that is too strict to display an image on the site. Modify the CSP to fix it. You can modify the CSP right on the page, and relevant CSP errors are displayed as well. You can also use the web console to learn more about the CSP issue.</p>
+<h3 id="step-by-step-instructions">Step-by-Step Instructions</h3>
 <ol>
 <li>
-<p>Load <a href="http://lab-3.2.sans.labs/login1.php">http://lab-3.2.sans.labs/login1.php</a> in the browser. You will be redirected to a URL that includes a session ID as a get parameter. The session ID is random. It should look like: sec522=gn5blighc8a)o5ks45k3pu81l</p>
+<p>Open <strong><a href="http://lab-4.4.sans.labs/">http://lab-4.4.sans.labs/</a></strong> in your browser.</p>
 </li>
 <li>
-<p>Copy the session ID and paste it into an empty file (you can use the Visual Studio Code on the left). We will call this session ID the "original session"</p>
+<p>On that page, you will find a link to <a href="http://lab-4.4.sans.labs/csperror.html">http://lab-4.4.sans.labs/csperror.html</a> which is the log file. Open that link in a new window. </p>
 </li>
 <li>
-<p>To simulate the attacker's view, open the Firefox browser by clicking on the Firefox icon on the left menu bar. Copy and paste the full URL from Chrome to Firefox. In the session fixation attack scenario, the attacker would set the session ID prior to the victim logging in. At this point, the attacker using Firefox and victim using Chrome both have the same session ID in the browser.  </p>
+<p>Click on the "CSP Error 1" link.</p>
 </li>
 <li>
-<p>Go back to Chrome. Log in using the username "sec522" and the password "training". Did the session ID change from the "orginal session" you captured in step 2? The form is vulnerable to session fixation if it did not change.</p>
+<p>The page is missing an image. The "Last Error" section will show the last CSP error. You may have to reload the page if the section is empty. You can also refresh the error log page to get the latest errors, but that page may be difficult to read.</p>
 </li>
 <li>
-<p>To see how the attacker can exploit this - go back to Firefox and change the URL, replace the URL's "login1.php" to "guestbook.php" and leaving all other portion of the URL intact. If attacker (Firefox) is logged in and not being redirected to the login page. The application is vulnerable to session fixation.</p>
-<div class="admonition information">
-<p class="admonition-title">Information</p>
-<p>The implication of is step is for the attacker to test whether the user has logged in with the session. You will find that both attacker and victim are logged in using different browsers and both using the same logged in session.</p>
-</div>
-</li>
-<li>
-<p>Close Firefox and back in Chrome, click the "Logout" link in the Guestbook application.</p>
-</li>
-<li>
-<p>Click on "Login Again" which will bring you to the next login form - "login2.php". This is a slightly different version of the login form.</p>
-</li>
-<li>
-<p>With the login2.php, please repeat the same process from step 2 (see above) to step 6.</p>
-<details class="question"><summary>While the session ID is changed in Chrome in step 4, is attacker still able to access the logged in session in step 5?</summary><p>If the attacker does not get redirected to the login page, that means that attacker is still able to use the session even though the session ID looks different on Chrome.</p>
+<p>Inspect the blocked-uri section in the last error. </p>
+<details class="question"><summary>Does it match the img-src?</summary><p>img-src lab-1.1.sans.labs</p>
 </details>
 </li>
 <li>
-<p>Click on "Login Again" which will bring you to the next login form - "login3.php".</p>
+<p>Edit the CSP to reflect the correct img-src.</p>
 </li>
 <li>
-<p>With the login3.php, please repeat the same process from step 2 (see above) to step 6.</p>
-<details class="question"><summary>In step 5, is the attacker redirected to the login page?</summary><p>If the attacker is redirected to the login page, that means that the session ID presented by the attacker is not associated with any user. Essentially, session fixation did not work.</p>
-</details>
+<p>Click "Update".</p>
 </li>
 <li>
-<p>Compare the two source code files below, it's best to open them in two browser tabs side by side so they can be compared.</p>
-<p><a href="http://lab-3.2.sans.labs/login2.phps">http://lab-3.2.sans.labs/login2.phps</a>  <br>
-<a href="http://lab-3.2.sans.labs/login3.phps">http://lab-3.2.sans.labs/login3.phps</a></p>
-<p>Pay attention to line 23 to 25. There are subtle differences in the location of session_regenerate_id.  </p>
-<details class="question"><summary>What are the differences?</summary><p>"fix2" regenerates the session ID after the login was verified. "fix3" regenerates the session ID first, so the user ID is never associated with the old session. Also, the old session is destroyed (the "true" parameter).</p>
-</details>
-</li>
-</ol>
-<hr />
-<h2 id="part-2-breaking-sessions">Part 2: Breaking Sessions</h2>
-<h3 id="no-hints_1">No Hints</h3>
-<p>Go to <a href="http://lab-3.2.sans.labs/session/login.php">http://lab-3.2.sans.labs/session/login.php</a>. Log in using the username "sec522" and the password "training". Try to switch to a different user's account after logging in.</p>
-<h3 id="step-by-step_1">Step by Step</h3>
-<ol>
-<li>
-<p>In Google Chrome, proceed to <strong><a href="http://lab-3.2.sans.labs/session/login.php">http://lab-3.2.sans.labs/session/login.php</a></strong> and log in using the username <strong>sec522</strong> and the password <strong>training</strong>.</p>
-<p><img alt="" class="zoom" src="media/img-1615442622-20210311.png" /></p>
-<p><strong>Account Balance Screen</strong></p>
+<p>If your CSP is correct, then the image of a cat will appear, as well as a link to the next exercise.</p>
 </li>
 <li>
-<p>Press SHIFT-CTRL-I to open the developer tools.</p>
-</li>
-<li>
-<p>Select the "Application" tab and select <a href="http://lab-3.2.sans.labs">http://lab-3.2.sans.labs</a> under Cookies.</p>
-</li>
-<li>
-<p>Double-click on the cookie value (value is 1) and change it to 2 . Reload the page.</p>
-<p><img alt="" class="zoom" src="media/img-1615443698-20210311.png" /></p>
-<p><strong>Chrome Developer Tools Cookies</strong></p>
-<p>You will now see a different account. Experiment with different values and try to find the account with the most donations.</p>
-<details class="question"><summary>Which account has the most donations?</summary><p><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#116;&#100;&#101;&#101;&#114;&#110;&#101;&#115;&#115;&#49;&#56;&#64;&#119;&#111;&#114;&#100;&#112;&#114;&#101;&#115;&#115;&#46;&#99;&#111;&#109;">&#116;&#100;&#101;&#101;&#114;&#110;&#101;&#115;&#115;&#49;&#56;&#64;&#119;&#111;&#114;&#100;&#112;&#114;&#101;&#115;&#115;&#46;&#99;&#111;&#109;</a> of value 45 has the most donation at $997.74</p>
+<p>For the next two pages, follow the same procedures as you did between Step 4 and Step 8.</p>
+<details class="question"><summary>Solutions</summary><p>CSP1: img-src lab-4.4.sans.labs</p>
+<p>CSP2: script-src 'self' 'unsafe-inline'</p>
+<p>CSP3: script-src 'unsafe-inline' 'unsafe-eval'</p>
 </details>
 </li>
 </ol>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
 <ul>
-<li>Session are usually handled by your development framework but there are certain aspects of the session that need to be carefully managed by developers as illustrated in this exercise</li>
+<li>CSP is effective at protecting the web page against multiple types of attacks.</li>
+<li>CSP Requires some careful configuration, otherwise, it can backfire and render portions of the site not working.</li>
+<li>Using the CSP logging function (report-uri) is a must for troubleshooting</li>
 </ul>
 <hr />
+<h2 id="explore-further">Explore Further</h2>
+<ul>
+<li>Can you think of the scenarios where CSP can be bypassed?</li>
+</ul>
                 
               
               
@@ -991,7 +917,7 @@ fetch('https://lab-3.2.sans.labs:80');
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../3.1/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../4.3/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1000,19 +926,19 @@ fetch('https://lab-3.2.sans.labs:80');
               <span class="md-footer__direction">
                 Previous
               </span>
-              3.1: Authentication
+              4.3: Javascript Security Testing
             </div>
           </div>
         </a>
       
       
-        <a href="../3.3/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../5.1/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              3.3: OAuth and Access Control
+              5.1: DNS Rebinding
             </div>
           </div>
           <div class="md-footer__button md-icon">

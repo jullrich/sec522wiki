@@ -555,6 +555,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#answers" class="md-nav__link">
+    Answers
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -867,10 +874,6 @@
 }}
 </style>
 
-<script>
-fetch('https://lab-3.2.sans.labs:80');
-</script>
-
 <h1 id="session-fixation-and-session-breaking">Session Fixation and Session Breaking</h1>
 <hr />
 <h4 id="objectives">Objectives</h4>
@@ -890,58 +893,71 @@ fetch('https://lab-3.2.sans.labs:80');
 <hr />
 <h2 id="part-1-session-fixation">Part 1: Session Fixation</h2>
 <h3 id="no-hints">No Hints</h3>
-<p>Load <a href="http://lab-3.2.sans.labs/login1.php">http://lab-3.2.sans.labs/login1.php</a> in Chrome. There are also login2.php and login3.php . The username is sec522 and password is training. The first two forms are susceptible to session fixation. Why? (In particular, the second one is not that obvious.) The third form is not susceptible. Can you determine why?</p>
+<p>Load <a href="http://lab-3.2.sans.labs/login.php">http://lab-3.2.sans.labs/login.php</a> in Chrome. The first two forms are susceptible to session fixation. Why? (In particular, the second one is not that obvious.) The third form is not susceptible.</p>
 <h3 id="step-by-step">Step by Step</h3>
 <p>This exercise will ask you to run Firefox in addition to Chrome. To start Firefox when asked to, click on the Firefox icon at the left side of the screen. </p>
 <p>IMPORTANT: Do not "Refresh Firefox" or update Firefox. Click "Cancel" if a dialog box appears offering to refresh Firefox.</p>
 <ol>
 <li>
-<p>Load <a href="http://lab-3.2.sans.labs/login1.php">http://lab-3.2.sans.labs/login1.php</a> in the browser. You will be redirected to a URL that includes a session ID as a get parameter. The session ID is random. It should look like: sec522=gn5blighc8a)o5ks45k3pu81l</p>
+<p>Load <a href="http://lab-3.2.sans.labs/login1.php">http://lab-3.2.sans.labs/login1.php</a> in the browser. You will be redirected to a URL that includes a session ID as a get parameter. The session ID is random. It should look like: PHPSESID=gn5blighc8a)o5ks45k3pu81l</p>
 </li>
 <li>
-<p>Copy the session ID and paste it into an empty file (you can use the Visual Studio Code on the left). We will call this session ID the "original session"</p>
+<p>Copy the session ID and paste it into an empty file (you can use the text editor on the left). We will call this session ID the "original session"</p>
 </li>
 <li>
-<p>To simulate the attacker's view, open the Firefox browser by clicking on the Firefox icon on the left menu bar. Copy and paste the full URL from Chrome to Firefox. In the session fixation attack scenario, the attacker would set the session ID prior to the victim logging in. At this point, the attacker using Firefox and victim using Chrome both have the same session ID in the browser.  </p>
+<p>Log in using the first form, "# 1", using the username "sec522" and the password "training". Did the session ID change? The form is vulnerable if it did not change.</p>
 </li>
 <li>
-<p>Go back to Chrome. Log in using the username "sec522" and the password "training". Did the session ID change from the "orginal session" you captured in step 2? The form is vulnerable to session fixation if it did not change.</p>
+<p>To simulate the attacker, open a second browser. (Firefox is installed in the virtual machine. Search for it by clicking on "Activities".) Copy and paste the URL and check if you are indeed logged in.</p>
 </li>
 <li>
-<p>To see how the attacker can exploit this - go back to Firefox and change the URL, replace the URL's "login1.php" to "guestbook.php" and leaving all other portion of the URL intact. If attacker (Firefox) is logged in and not being redirected to the login page. The application is vulnerable to session fixation.</p>
-<div class="admonition information">
-<p class="admonition-title">Information</p>
-<p>The implication of is step is for the attacker to test whether the user has logged in with the session. You will find that both attacker and victim are logged in using different browsers and both using the same logged in session.</p>
+<p>Close Firefox and close the logged in tab.</p>
+</li>
+<li>
+<p>Click on "Clear Session Data" button to obtain a new session ID.</p>
+</li>
+<li>
+<p>Again, copy paste the session ID from the browser URL.</p>
+<p>Log in using the "# 2" form.</p>
+<div class="admonition question">
+<p class="admonition-title">Did the session ID change?</p>
 </div>
 </li>
 <li>
-<p>Close Firefox and back in Chrome, click the "Logout" link in the Guestbook application.</p>
+<p>Open Firefox again and copy the original session ID to the URL bar.</p>
+<div class="admonition question">
+<p class="admonition-title">Does it still work?</p>
+</div>
 </li>
 <li>
-<p>Click on "Login Again" which will bring you to the next login form - "login2.php". This is a slightly different version of the login form.</p>
+<p>Now try the third and final form ("Step 3"). Log in again and compare the session IDs.</p>
 </li>
 <li>
-<p>With the login2.php, please repeat the same process from step 2 (see above) to step 6.</p>
-<details class="question"><summary>While the session ID is changed in Chrome in step 4, is attacker still able to access the logged in session in step 5?</summary><p>If the attacker does not get redirected to the login page, that means that attacker is still able to use the session even though the session ID looks different on Chrome.</p>
-</details>
+<p>Again, copy the original session ID to the URL bar in Firefox.</p>
+<div class="admonition question">
+<p class="admonition-title">Does the page work?</p>
+</div>
 </li>
 <li>
-<p>Click on "Login Again" which will bring you to the next login form - "login3.php".</p>
-</li>
-<li>
-<p>With the login3.php, please repeat the same process from step 2 (see above) to step 6.</p>
-<details class="question"><summary>In step 5, is the attacker redirected to the login page?</summary><p>If the attacker is redirected to the login page, that means that the session ID presented by the attacker is not associated with any user. Essentially, session fixation did not work.</p>
-</details>
-</li>
-<li>
-<p>Compare the two source code files below, it's best to open them in two browser tabs side by side so they can be compared.</p>
-<p><a href="http://lab-3.2.sans.labs/login2.phps">http://lab-3.2.sans.labs/login2.phps</a>  <br>
-<a href="http://lab-3.2.sans.labs/login3.phps">http://lab-3.2.sans.labs/login3.phps</a></p>
-<p>Pay attention to line 23 to 25. There are subtle differences in the location of session_regenerate_id.  </p>
-<details class="question"><summary>What are the differences?</summary><p>"fix2" regenerates the session ID after the login was verified. "fix3" regenerates the session ID first, so the user ID is never associated with the old session. Also, the old session is destroyed (the "true" parameter).</p>
-</details>
+<p>Compare the source code:</p>
+<p><a href="http://lab-3.2.sans.labs/fix2.phps">http://lab-3.2.sans.labs/fix2.phps</a>  <br>
+<a href="http://lab-3.2.sans.labs/fix3.phps">http://lab-3.2.sans.labs/fix3.phps</a></p>
+<p>There are subtle differences in the location of session_regenerate_id. See lines 14 and 16 of the code. </p>
+<div class="admonition questions">
+<p class="admonition-title">What are the differences?</p>
+</div>
 </li>
 </ol>
+<h3 id="answers">Answers</h3>
+<details class="question"><summary>Did the session ID change?</summary><p>3 &amp; 5: The session ID did not change and can be used in a different browser.</p>
+<p>7: The session ID did change.</p>
+</details>
+<details class="question"><summary>Does it still work?</summary><p>8: The old session ID still works, and it is now associated with the user.</p>
+</details>
+<details class="question"><summary>Does the page work?</summary><p>10: The old session ID no longer works and you end up with a redirect loop---not elegant, but "secure".</p>
+</details>
+<details class="question"><summary>Does the page work?</summary><p>11: "fix2" regenerates the session ID after the login was verified. "fix3" regenerates the session ID first, so the user ID is never associated with the old session. Also, the old session is destroyed (the "true" parameter).</p>
+</details>
 <hr />
 <h2 id="part-2-breaking-sessions">Part 2: Breaking Sessions</h2>
 <h3 id="no-hints_1">No Hints</h3>
