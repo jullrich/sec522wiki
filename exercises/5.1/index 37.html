@@ -14,7 +14,7 @@
     
     
       
-        <title>3.2: Session Fixation and Session Breaking - SEC522 Workbook</title>
+        <title>5.1: DNS Rebinding - SEC522 Workbook</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#session-fixation-and-session-breaking" class="md-skip">
+        <a href="#dns-rebinding" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              3.2: Session Fixation and Session Breaking
+              5.1: DNS Rebinding
             
           </span>
         </div>
@@ -466,14 +466,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
       
       <label class="md-nav__link" for="__nav_4">
         Day 3
@@ -501,103 +499,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          3.2: Session Fixation and Session Breaking
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../3.2/" class="md-nav__link">
         3.2: Session Fixation and Session Breaking
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#part-1-session-fixation" class="md-nav__link">
-    Part 1: Session Fixation
-  </a>
-  
-    <nav class="md-nav" aria-label="Part 1: Session Fixation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#no-hints" class="md-nav__link">
-    No Hints
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-by-step" class="md-nav__link">
-    Step by Step
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#part-2-breaking-sessions" class="md-nav__link">
-    Part 2: Breaking Sessions
-  </a>
-  
-    <nav class="md-nav" aria-label="Part 2: Breaking Sessions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#no-hints_1" class="md-nav__link">
-    No Hints
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-by-step_1" class="md-nav__link">
-    Step by Step
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
-    Conclusion
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -716,12 +622,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
       
       <label class="md-nav__link" for="__nav_6">
         Day 5
@@ -737,11 +645,90 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../5.1/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          5.1: DNS Rebinding
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         5.1: DNS Rebinding
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-simple-dns-rebinding" class="md-nav__link">
+    Part 1: Simple DNS Rebinding
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 1: Simple DNS Rebinding">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-hints" class="md-nav__link">
+    No Hints
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step" class="md-nav__link">
+    Step by Step
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-javascript-based-rebinding-with-xmlhttprequest" class="md-nav__link">
+    Part 2: JavaScript based Rebinding with XMLHTTPRequest
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explore-further" class="md-nav__link">
+    Explore Further
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -860,120 +847,97 @@
     content: 'SANS SEC522 Workbook';
 }}
 @page :left { @bottom-left {
-  content: '3.2-' counter(page);
+  content: '5.1-' counter(page);
 }}
 @page :right { @bottom-right {
-  content: '3.2-' counter(page);
+  content: '5.1-' counter(page);
 }}
 </style>
 
 <script>
-fetch('https://lab-3.2.sans.labs:80');
+fetch('https://lab-5.1.sans.labs:80');
 </script>
 
-<h1 id="session-fixation-and-session-breaking">Session Fixation and Session Breaking</h1>
+<h1 id="dns-rebinding">DNS Rebinding</h1>
 <hr />
 <h4 id="objectives">Objectives</h4>
-<p>Estimated Time: 12 minutes</p>
+<div class="codehilite"><pre><span></span><code>Estimated Time: 15 minutes
+</code></pre></div>
+
 <h5 id="part-1">Part 1:</h5>
 <blockquote>
-<p>In the first part, you will learn how to identify and fix session fixation vulnerabilities.</p>
+<p>In this exercise, you will learn how a modern browser deals with DNS rebinding issues and how an attacker may exploit this flaw.</p>
 </blockquote>
 <h5 id="part-2">Part 2:</h5>
 <blockquote>
-<p>In second part, you will experience weak session IDs and learn how an attacker may exploit them.</p>
+<p>In this exercise, you will see for yourself a practical way that attacker can use Javascript to get around the anti-DNS rebinding mechanism of the browsers.</p>
 </blockquote>
 <h4 id="requirements">Requirements</h4>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Lab VM</li>
 </ul>
 <hr />
-<h2 id="part-1-session-fixation">Part 1: Session Fixation</h2>
+<h2 id="part-1-simple-dns-rebinding">Part 1: Simple DNS Rebinding</h2>
 <h3 id="no-hints">No Hints</h3>
-<p>Load <a href="http://lab-3.2.sans.labs/login1.php">http://lab-3.2.sans.labs/login1.php</a> in Chrome. There are also login2.php and login3.php . The username is sec522 and password is training. The first two forms are susceptible to session fixation. Why? (In particular, the second one is not that obvious.) The third form is not susceptible. Can you determine why?</p>
+<p>There are two parts to this exercise. In the first part, you will experiment with DNS rebinding without taking advantage of JavaScript. The second exercise explores the use of JavaScript and XMLHTTPRequest to profile the anti-DNS rebinding done by the browser. Start at <a href="http://lab-5.1-evil.sans.labs/evil.php">http://lab-5.1-evil.sans.labs/evil.php</a>.</p>
 <h3 id="step-by-step">Step by Step</h3>
-<p>This exercise will ask you to run Firefox in addition to Chrome. To start Firefox when asked to, click on the Firefox icon at the left side of the screen. </p>
-<p>IMPORTANT: Do not "Refresh Firefox" or update Firefox. Click "Cancel" if a dialog box appears offering to refresh Firefox.</p>
+<p>In this exercise, we will explore the possibilities of DNS rebinding (anti-DNS pinning) attacks firsthand. The attack demonstrated is dependent on the DNS record timing out within the browser, and then the attacker can rebind another host, making the victim\'s browser confused about the actual IP of the host it is trying to reach.</p>
 <ol>
 <li>
-<p>Load <a href="http://lab-3.2.sans.labs/login1.php">http://lab-3.2.sans.labs/login1.php</a> in the browser. You will be redirected to a URL that includes a session ID as a get parameter. The session ID is random. It should look like: sec522=gn5blighc8a)o5ks45k3pu81l</p>
-</li>
-<li>
-<p>Copy the session ID and paste it into an empty file (you can use the Visual Studio Code on the left). We will call this session ID the "original session"</p>
-</li>
-<li>
-<p>To simulate the attacker's view, open the Firefox browser by clicking on the Firefox icon on the left menu bar. Copy and paste the full URL from Chrome to Firefox. In the session fixation attack scenario, the attacker would set the session ID prior to the victim logging in. At this point, the attacker using Firefox and victim using Chrome both have the same session ID in the browser.  </p>
-</li>
-<li>
-<p>Go back to Chrome. Log in using the username "sec522" and the password "training". Did the session ID change from the "orginal session" you captured in step 2? The form is vulnerable to session fixation if it did not change.</p>
-</li>
-<li>
-<p>To see how the attacker can exploit this - go back to Firefox and change the URL, replace the URL's "login1.php" to "guestbook.php" and leaving all other portion of the URL intact. If attacker (Firefox) is logged in and not being redirected to the login page. The application is vulnerable to session fixation.</p>
-<div class="admonition information">
-<p class="admonition-title">Information</p>
-<p>The implication of is step is for the attacker to test whether the user has logged in with the session. You will find that both attacker and victim are logged in using different browsers and both using the same logged in session.</p>
+<p>Using Chrome, browse to <strong><a href="http://lab-5.1.sans.labs/evil.php">http://lab-5.1.sans.labs/evil.php</a></strong>. This is the "Good Dog Pics" page. The host you are connecting to is <strong>lab-5.1.sans.labs</strong>. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The host name lab-5.1.sans.labs have dog picture. Watch how this fact is important later.</p>
 </div>
 </li>
 <li>
-<p>Close Firefox and back in Chrome, click the "Logout" link in the Guestbook application.</p>
+<p>We are now going to the attacker's controled site. Using Chrome, browse to <strong><a href="http://lab-5.1-evil.sans.labs/evil.php">http://lab-5.1-evil.sans.labs/evil.php</a></strong>. The host name is similar to the one in previous step but this is a different site. The content are also different as well.</p>
 </li>
 <li>
-<p>Click on "Login Again" which will bring you to the next login form - "login2.php". This is a slightly different version of the login form.</p>
+<p>Click on <strong>CLICK HERE TO SWITCH DNS</strong>. This will start the process of DNS rebinding. </p>
 </li>
 <li>
-<p>With the login2.php, please repeat the same process from step 2 (see above) to step 6.</p>
-<details class="question"><summary>While the session ID is changed in Chrome in step 4, is attacker still able to access the logged in session in step 5?</summary><p>If the attacker does not get redirected to the login page, that means that attacker is still able to use the session even though the session ID looks different on Chrome.</p>
-</details>
+<p>You will be presented with a Javascript prompt. This triggers a DNS changes on the server end as indicated by the content of the pop up box. The IP for the lab-5.1-evil.sans.labs was <strong>127.0.5.11</strong> and it is being changed to <strong>127.0.5.1</strong>. What that means is anyone asking for the IP of lab-5.1-evil.sans.labs will now be presented with 127.0.5.1. </p>
+<p><img alt="" class="zoom" src="media/img-1615693291-20210313.png" /></p>
 </li>
 <li>
-<p>Click on "Login Again" which will bring you to the next login form - "login3.php".</p>
+<p>After about 2 minutes, reload the page in the browser. Notice the URL? It is still <a href="http://lab-5.1-evil.sans.labs/evil.php">http://lab-5.1-evil.sans.labs/evil.php</a> but the content in the page are coming from the "Good Dog Pics" page which is at the IP address 127.0.5.1. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The exercise starts off with the browser visiting lab-5.1-evil.sans.labs (127.0.5.11). At this time, the browser has the IP of the host pinned. After around 120 seconds when the DNS TTL expires, we reloaded the page. This time, the sans.labs DNS replies that lab-5.1-evil.sans.labs is located at 127.0.5.1 (not the same as before). This IP happens to be the server for lab-5.1.sans.labs (the Dog page). The Same Origin Policy has been violated with the time out and second DNS query since your browser URL is pointing to one domain and the content is coming from another location.</p>
+</div>
 </li>
 <li>
-<p>With the login3.php, please repeat the same process from step 2 (see above) to step 6.</p>
-<details class="question"><summary>In step 5, is the attacker redirected to the login page?</summary><p>If the attacker is redirected to the login page, that means that the session ID presented by the attacker is not associated with any user. Essentially, session fixation did not work.</p>
-</details>
-</li>
-<li>
-<p>Compare the two source code files below, it's best to open them in two browser tabs side by side so they can be compared.</p>
-<p><a href="http://lab-3.2.sans.labs/login2.phps">http://lab-3.2.sans.labs/login2.phps</a>  <br>
-<a href="http://lab-3.2.sans.labs/login3.phps">http://lab-3.2.sans.labs/login3.phps</a></p>
-<p>Pay attention to line 23 to 25. There are subtle differences in the location of session_regenerate_id.  </p>
-<details class="question"><summary>What are the differences?</summary><p>"fix2" regenerates the session ID after the login was verified. "fix3" regenerates the session ID first, so the user ID is never associated with the old session. </p>
-</details>
+<p>After this exercise, please click the Reset DNS and restart the browser to ensure all cached host records (DNS pin) is gone.</p>
 </li>
 </ol>
 <hr />
-<h2 id="part-2-breaking-sessions">Part 2: Breaking Sessions</h2>
-<h3 id="no-hints_1">No Hints</h3>
-<p>Go to <a href="http://lab-3.2.sans.labs/session/login.php">http://lab-3.2.sans.labs/session/login.php</a>. Log in using the username "sec522" and the password "training". Try to switch to a different user's account after logging in.</p>
-<h3 id="step-by-step_1">Step by Step</h3>
+<h2 id="part-2-javascript-based-rebinding-with-xmlhttprequest">Part 2: JavaScript based Rebinding with XMLHTTPRequest</h2>
+<p>Similar to the DNS rebinding with the browser, the JavaScript engine can also be fooled as well. Its DNS pinning mechanism is actually isolated from the browsers.</p>
 <ol>
 <li>
-<p>In Google Chrome, proceed to <strong><a href="http://lab-3.2.sans.labs/session/login.php">http://lab-3.2.sans.labs/session/login.php</a></strong> and log in using the username <strong>sec522</strong> and the password <strong>training</strong>.</p>
-<p><img alt="" class="zoom" src="media/img-1615442622-20210311.png" /></p>
-<p><strong>Account Balance Screen</strong></p>
+<p>Browse to <a href="http://lab-5.1-evil.sans.labs/eviljs.php">http://lab-5.1-evil.sans.labs/eviljs.php</a></p>
 </li>
 <li>
-<p>Press SHIFT-CTRL-I to open the developer tools.</p>
+<p>Similar to the previous exercise, we start off with the evil cat's page and Javascript immediately kick into action to change the DNS in the background. There is a long wait for the DNS pin to expire within the JavaScript engine. Review the change in the Javascript prompt and then click "OK".</p>
 </li>
 <li>
-<p>Select the "Application" tab and select <a href="http://lab-3.2.sans.labs">http://lab-3.2.sans.labs</a> under Cookies.</p>
+<p>The JavaScript automatically count down. In the background, every second there is a fetch request being sent to determine if the DNS pin has been lifted by the browser so the DNS would be re-queried and therefore change to the alternative host. </p>
 </li>
 <li>
-<p>Double-click on the cookie value (value is 1) and change it to 2 . Reload the page.</p>
-<p><img alt="" class="zoom" src="media/img-1615443698-20210311.png" /></p>
-<p><strong>Chrome Developer Tools Cookies</strong></p>
-<p>You will now see a different account. Experiment with different values and try to find the account with the most donations.</p>
-<details class="question"><summary>Which account has the most donations?</summary><p><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#116;&#100;&#101;&#101;&#114;&#110;&#101;&#115;&#115;&#49;&#56;&#64;&#119;&#111;&#114;&#100;&#112;&#114;&#101;&#115;&#115;&#46;&#99;&#111;&#109;">&#116;&#100;&#101;&#101;&#114;&#110;&#101;&#115;&#115;&#49;&#56;&#64;&#119;&#111;&#114;&#100;&#112;&#114;&#101;&#115;&#115;&#46;&#99;&#111;&#109;</a> of value 45 has the most donation at $997.74</p>
-</details>
+<p>After about 100 seconds, the Chrome browser will lift the DNS pin and the JavaScript detects this and send the attack to the alternative host.</p>
 </li>
 </ol>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
 <ul>
-<li>Session are usually handled by your development framework but there are certain aspects of the session that need to be carefully managed by developers as illustrated in this exercise</li>
+<li>DNS rebinding allows attacker to "confused" the browser into loading content from a different origin than what's specified by the host name and domain name. </li>
 </ul>
 <hr />
+<h2 id="explore-further">Explore Further</h2>
+<ul>
+<li>What would happen if the target site has TLS enabled?</li>
+</ul>
                 
               
               
@@ -991,7 +955,7 @@ fetch('https://lab-3.2.sans.labs:80');
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../3.1/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../4.4/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1000,19 +964,19 @@ fetch('https://lab-3.2.sans.labs:80');
               <span class="md-footer__direction">
                 Previous
               </span>
-              3.1: Authentication
+              4.4: Content Security Policy
             </div>
           </div>
         </a>
       
       
-        <a href="../3.3/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../5.2/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              3.3: OAuth and Access Control
+              5.2: Clickjacking
             </div>
           </div>
           <div class="md-footer__button md-icon">
