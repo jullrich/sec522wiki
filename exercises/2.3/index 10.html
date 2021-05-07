@@ -1,0 +1,1163 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="shortcut icon" href="../../media/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.3">
+    
+    
+      
+        <title>2.3: Cross-Site Scripting - SEC522 Workbook</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1655a90d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.7fa14f5b.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#ff6e42">
+        
+      
+    
+    
+    
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../styles/jquery.fancybox.min.css">
+    
+      <link rel="stylesheet" href="../../styles/custom.css">
+    
+      <link rel="stylesheet" href="../../styles/pdf.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="deep-orange" data-md-color-accent="blue">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cross-site-scripting" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="SEC522 Workbook" class="md-header__button md-logo" aria-label="SEC522 Workbook">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SEC522 Workbook
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2.3: Cross-Site Scripting
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="md-header__options">
+      
+    </div>
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SEC522 Workbook" class="md-nav__button md-logo" aria-label="SEC522 Workbook">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    SEC522 Workbook
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      <label class="md-nav__link" for="__nav_1">
+        Introduction
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Introduction" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Introduction
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Welcome!
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/troubleshooting/" class="md-nav__link">
+        Troubleshooting
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_3" type="checkbox" id="__nav_1_3" >
+      
+      <label class="md-nav__link" for="__nav_1_3">
+        Course
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Course" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_3">
+          <span class="md-nav__icon md-icon"></span>
+          Course
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/preparation/" class="md-nav__link">
+        Preparation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/references/" class="md-nav__link">
+        References
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/appendix/" class="md-nav__link">
+        Appendix
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4" type="checkbox" id="__nav_1_4" >
+      
+      <label class="md-nav__link" for="__nav_1_4">
+        Errata & Patches
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Errata & Patches" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_4">
+          <span class="md-nav__icon md-icon"></span>
+          Errata & Patches
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../errata/F01_01/" class="md-nav__link">
+        F01_01
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Day 1
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Day 1" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Day 1
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.1/" class="md-nav__link">
+        1.1: HTTP Basics
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.2/" class="md-nav__link">
+        1.2: Inspecting HTTP/2 Traffic
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.3/" class="md-nav__link">
+        1.3: Isolation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.4/" class="md-nav__link">
+        1.4: SSRF and Credential Stealing
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      <label class="md-nav__link" for="__nav_3">
+        Day 2
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Day 2" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Day 2
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.1/" class="md-nav__link">
+        2.1: SQL Injection
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.2/" class="md-nav__link">
+        2.2: Guestbook CSRF
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          2.3: Cross-Site Scripting
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        2.3: Cross-Site Scripting
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-guestbook-xss-with-csrf" class="md-nav__link">
+    Part 1: Guestbook XSS with CSRF
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 1: Guestbook XSS with CSRF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-hints" class="md-nav__link">
+    No Hints
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step" class="md-nav__link">
+    Step by Step
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-dom-based-xss-in-juice-shop" class="md-nav__link">
+    Part 2: DOM-Based XSS in Juice Shop
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explore-further" class="md-nav__link">
+    Explore Further
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.4/" class="md-nav__link">
+        2.4: Unicode and File Upload
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Day 3
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Day 3" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Day 3
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.1/" class="md-nav__link">
+        3.1: Authentication
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.2/" class="md-nav__link">
+        3.2: Session Fixation and Session Breaking
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.3/" class="md-nav__link">
+        3.3: OAuth and Access Control
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.4/" class="md-nav__link">
+        3.4: Inspecting SSL Traffic
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        Day 4
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Day 4" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Day 4
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.1/" class="md-nav__link">
+        4.1: WSDL Enumeration and Parameter Tampering
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.2/" class="md-nav__link">
+        4.2: XMLHttpRequest
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.3/" class="md-nav__link">
+        4.3: Javascript Security Testing
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.4/" class="md-nav__link">
+        4.4: Content Security Policy
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        Day 5
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Day 5" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Day 5
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.1/" class="md-nav__link">
+        5.1: DNS Rebinding
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.2/" class="md-nav__link">
+        5.2: Clickjacking
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.3/" class="md-nav__link">
+        5.3: HTML5
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.4/" class="md-nav__link">
+        5.4: Sub Resource Integrity
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.5/" class="md-nav__link">
+        5.5: Logging and Incident Response
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      <label class="md-nav__link" for="__nav_7">
+        SANS AppSec
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="SANS AppSec" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          SANS AppSec
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://software-security.sans.org" class="md-nav__link">
+        Website
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <style>
+@page { @top-center {
+    content: 'SANS SEC522 Workbook';
+}}
+@page :left { @bottom-left {
+  content: '2.3-' counter(page);
+}}
+@page :right { @bottom-right {
+  content: '2.3-' counter(page);
+}}
+</style>
+
+<h1 id="cross-site-scripting">Cross-Site Scripting</h1>
+<hr />
+<h4 id="objectives">Objectives</h4>
+<div class="codehilite"><pre><span></span><code>Estimated Time: 10 minutes
+</code></pre></div>
+
+<h5 id="part-1">Part 1:</h5>
+<blockquote>
+<p>You will learn how to identify XSS and how important it is to check all input fields for XSS. We will also learn how XSS can be abused against a guestbook web application and how XSS may result in CSRF.</p>
+</blockquote>
+<h5 id="part-2">Part 2:</h5>
+<blockquote>
+<p>Uses "Juice Shop", a pre-built web application with known vulnerabilities. Juice Shop is a modern Node.js based application. The search feature is vulnerable to a DOM-based XSS attack.</p>
+</blockquote>
+<h4 id="requirements">Requirements</h4>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Lab VM</li>
+</ul>
+<h2 id="part-1-guestbook-xss-with-csrf">Part 1: Guestbook XSS with CSRF</h2>
+<h3 id="no-hints">No Hints</h3>
+<p>Also, for the guestbook at <a href="http://lab-2.3.sans.labs/login.php">http://lab-2.3.sans.labs/login.php</a>, we experimented with this guestbook before. This time find the XSS vulnerability and exploit it to automatically approve posts that an administrator views. (Logins available - sec522/training and admin/admin)</p>
+<h3 id="step-by-step">Step by Step</h3>
+<p>For this part, we will revisit the guestbook system. The administrator of the site noticed the CSRF attack and decided to manually approve every single guestbook entry.</p>
+<ol>
+<li>
+<p>Using Chrome, browse to <strong><a href="http://lab-2.3.sans.labs/login.php">http://lab-2.3.sans.labs/login.php</a></strong>. </p>
+</li>
+<li>
+<p>Log in to the guestbook by using <strong>"sec522"</strong> and <strong>"training"</strong> as username and password.</p>
+<ol>
+<li>
+<p>Attempt to input two guest entries into the guestbook. The new guestbook requires the administrator to approve the entries before they are posted on the page.</p>
+</li>
+<li>
+<p>Log out of the guestbook by clicking on the <strong>"Logout"</strong> link.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Log in with username <strong>"admin"</strong> and password <strong>"admin"</strong>. This allows you to log in as an administrator.</p>
+<p>Administrative functions are now available. This includes the ability to delete comments and to approve messages.</p>
+<ol>
+<li>
+<p>There should be two comments awaiting approval. Please click delete on one of the comments. That comment should then be deleted.</p>
+</li>
+<li>
+<p>There should be one comment left; click the <strong>"Approve All Posts"</strong> button to approve the comment to be displayed to the public.</p>
+</li>
+<li>
+<p>Click <strong>"Logout"</strong>.</p>
+</li>
+</ol>
+</li>
+</ol>
+<p>The CSRF attack is obviously no longer possible, as it would likely not get past the administrator, who will review the comments before allowing the public to see them.</p>
+<p><br></p>
+<p>Now that we understand how this guestbook system works, let's explore if it is vulnerable to attacks.</p>
+<ol>
+<li>
+<p>Log in to the guestbook by using <strong>"sec522"</strong> and <strong>"training"</strong> as username and password.</p>
+<ol>
+<li>
+<p>Attempt to add one new comment. Put anything as name, email, and URL. For comments, enter the following string:</p>
+<div class="highlight"><pre><span></span><code>XSS<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;xss&#39;</span><span class="p">);&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</code></pre></div>
+</li>
+<li>
+<p>Press the <strong>"Add"</strong> button.</p>
+<p>A pop-up box should appear with <strong>"xss"</strong> in it. The input from the user became part of the page; the script input becomes rendered in the browser as script. This is a classic case of stored XSS vulnerability.</p>
+</li>
+<li>
+<p><em>(Optional)</em> Feel free to view the source of the page to look for the XSS alert box and see why it became part of the scripting content in the page.</p>
+</li>
+<li>
+<p>Delete the XSS comment in the <strong>"waiting for approval"</strong> section, as this can be annoying since the pop-up box shows up in every page load. Click the <strong>"Delete Message"</strong> link in the XSS comment.</p>
+</li>
+<li>
+<p>Log out of the guestbook by clicking on the <strong>"Logout"</strong> link.</p>
+</li>
+</ol>
+<p>We have now proved the comment field to be vulnerable to XSS attack. Let's see how we can leverage this vulnerability.</p>
+<p>We know there is an XSS vulnerability in the comment field. Anyone looking at that comment will have their browser hijacked to run scripts. Hence, these browsers can be controlled. That is very useful: what if we can control the administrator's browser so that the comments could automatically be approved as soon as an administrator looks at them? Let's try this concept.</p>
+</li>
+<li>
+<p>Log in to the guestbook by using <strong>"sec522"</strong> and <strong>"training"</strong> as username and password.</p>
+<ol>
+<li>
+<p>Attempt to add one new comment. Put anything as name, email, and URL. For comments, put the following string:</p>
+<div class="highlight"><pre><span></span><code>You will approve this<span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;guestbook.php?f=approve&quot;</span><span class="p">&gt;</span>.
+</code></pre></div>
+<p><strong>f=approve</strong> is to trigger the <strong>"Approve all Posts"</strong> button we saw in the admin function.</p>
+</li>
+<li>
+<p>Click on <strong>"Add"</strong>.</p>
+<p>No action is triggered at this point. The CSRF string is waiting on the server to be retrieved by the administrator (as the admin logs in); the delivery mechanism from the attacker (sec522) to the administrator is XSS.</p>
+</li>
+<li>
+<p>Log out of the guestbook by clicking on the <strong>"Logout"</strong> link.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Log in with <strong>admin / admin</strong> as the credential. This allows you to log in as an administrator.</p>
+<p>We see that the comment is waiting for approval. It even contains a broken image icon in the comment.</p>
+<ol>
+<li>Without doing any delete or approval, click <strong>"Logout"</strong>. At this point, the administrator already unwillingly clicked on the <strong>Approve All Posts</strong> link to approve the comment. The browser did the approval on behalf of the administrator; the instruction came from the user's comment.</li>
+</ol>
+</li>
+<li>
+<p>Log in to the guestbook by using <strong>"sec522"</strong> and <strong>"training"</strong> as username and password.</p>
+<p>The comment is already shown on the screen. The administrator never intentionally approved the comments. XSS and CSRF approved the comment.</p>
+</li>
+</ol>
+<p><br></p>
+<div class="admonition info">
+<p class="admonition-title">Let's go over the whole attack scenario one more time. There are a couple of vulnerabilities at play in this exercise.</p>
+</div>
+<p>User sec522 logs in to post a comment on the guest book. With the text of the comment, the user sec522 also puts in an extra &lt;IMG&gt; tag, which links to the approval function and looks like an image that the browser should automatically load. Once this comment has been submitted, sec522 simply sits and waits till the administrator logs in.</p>
+<p>The administrator logs in and, upon logging in, the comments for approval automatically show up on the screen. The &lt;IMG&gt; tag appears to be an image to the administrator's browser, the &lt; and the &gt; tell the browser that these are HTML codes, and the browser happily obeys these instructions. The browser visits the link in the &lt;IMG&gt;, which leads to approving all of the comments.</p>
+<p>Then when sec522 user logs in again, the comment that sec522 user posted originally is showing up as approved.</p>
+<p>To demonstrate a fix for the XSS vulnerability, we have prepared a \"fixed\" version of the guestbook: "guestbook-xss.php". This file is essentially the same as the guestbook.php we have seen, except the XSS in the comment field is fixed.</p>
+<p>The htmlentities function in PHP is to used to encode characters such as &lt; &gt;, /, &amp;, \', or \" to HTML entities. For example, "\&lt; becomes "&lt;" and "\&gt;" becomes "&gt;" . When "\&lt; gets sent to the browser, the browser will interpret it as HTML. But when "&lt;" gets sent to the browser, the browser will display the "\&lt; symbol.</p>
+<p>One line of example code is below:</p>
+<div class="highlight"><pre><span></span><code><span class="x">print htmlentities($r[3]);</span>
+</code></pre></div>
+<p>Before $r[3] is displayed on-screen, it is encoded.</p>
+<p>Feel free to explore the fixed code at <strong><a href="http://lab-2.3.sans.labs/guestbook-xss.phps">http://lab-2.3.sans.labs/guestbook-xss.phps</a></strong> (line 117).</p>
+<ol>
+<li>
+<p>Browse to <a href="http://lab-2.3.sans.labs/guestbook-xss.php">http://lab-2.3.sans.labs/guestbook-xss.php</a>.</p>
+</li>
+<li>
+<p>Look at the comments and explore why there is no longer a broken image sign but the entire XSS and CSRF string are simply displayed on the screen. Viewing the source of this page gives insight as to why this is no longer treated as an &lt;IMG&gt; tag but simply text on-screen.</p>
+</li>
+</ol>
+<hr />
+<h2 id="part-2-dom-based-xss-in-juice-shop">Part 2: DOM-Based XSS in Juice Shop</h2>
+<ol>
+<li>
+<p>Juice Shop is implemented in Docker. To start it, type at the command line.</p>
+<div class="highlight"><pre><span></span><code>juiceshop start
+</code></pre></div>
+</li>
+<li>
+<p>Open the browser and visit <a href="http://juiceshop:3000">http://juiceshop:3000</a>. Juice Shop can take a bit of time to load.</p>
+</li>
+<li>
+<p>Explore the search field and attempt to identify the cross-site scripting vulnerability. Try test strings like:</p>
+<div class="highlight"><pre><span></span><code>ABC<span class="err">&lt;</span>&gt; &quot; &#39;
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;text&#39;</span><span class="p">)&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>What works or doesn't work?</p>
+</li>
+<li>
+<p>Try this exploit:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;javascript:alert(&#39;test&#39;)&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+</code></pre></div>
+</li>
+<li>
+<p>Open the Chrome debugger. (Click on the three vertical dots in the top right. Then select "Developer Tools" from "More tools".)</p>
+</li>
+<li>
+<p>Select the "Network" tab. </p>
+<details class="question"><summary>Do you see any requests when you submit the search? Why not?</summary><p>The exploit in Step 4 works. This is DOM-based XSS that does not require data to be transferred to the server (Step 6: you will not see a network connection).</p>
+</details>
+</li>
+</ol>
+<hr />
+<h2 id="conclusion">Conclusion</h2>
+<hr />
+<h2 id="explore-further">Explore Further</h2>
+<ul>
+<li></li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../2.2/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              2.2: Guestbook CSRF
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../2.4/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              2.4: Unicode and File Upload
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2020 Jason Lam & Dr. Johannes Ullrich
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://gitlab.com/sansappsec" target="_blank" rel="noopener" title="gitlab.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.94 13.11l-1.05-3.22c0-.03-.01-.06-.02-.09l-2.11-6.48a.859.859 0 0 0-.8-.57c-.36 0-.68.25-.79.58l-2 6.17H8.84L6.83 3.33a.851.851 0 0 0-.79-.58c-.37 0-.69.25-.8.58L3.13 9.82v.01l-1.07 3.28c-.16.5.01 1.04.44 1.34l9.22 6.71c.17.12.39.12.56-.01l9.22-6.7c.43-.3.6-.84.44-1.34M8.15 10.45l2.57 7.91-6.17-7.91m8.73 7.92l2.47-7.59.1-.33h3.61l-5.59 7.16m4.1-13.67l1.81 5.56h-3.62m-1.3.95l-1.79 5.51L12 19.24l-2.86-8.79M6.03 3.94L7.84 9.5H4.23m-1.18 4.19c-.09-.07-.13-.19-.09-.29l.79-2.43 5.82 7.45m11.38-4.73l-6.51 4.73.02-.03 5.79-7.42.79 2.43c.04.1 0 .22-.09.29"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/SANSDevSecOps" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["toc.integrate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.fb4a9340.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.ca5457b8.min.js"></script>
+      
+        <script src="../../scripts/jquery-3.4.1.min.js"></script>
+      
+        <script src="../../scripts/jquery.fancybox.min.js"></script>
+      
+        <script src="../../scripts/custom.js"></script>
+      
+    
+  </body>
+</html>
