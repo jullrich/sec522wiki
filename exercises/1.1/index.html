@@ -276,8 +276,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../errata/G01_03/" title="G01_03" class="md-nav__link">
-      G01_03
+    <a href="../../errata/G02_01/" title="G02_01" class="md-nav__link">
+      G02_01
     </a>
   </li>
 
@@ -387,8 +387,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#part-0-introduction-to-burp-if-you-are-not-already-familiar-with-burp" class="md-nav__link">
-    Part 0: Introduction to Burp (If You Are Not Already Familiar with Burp)
+  <a href="#part-0-introduction-to-burp" class="md-nav__link">
+    Part 0: Introduction to Burp
   </a>
   
     <nav class="md-nav">
@@ -693,8 +693,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../4.2/index.md" title="4.2: XMLHttpRequest" class="md-nav__link">
-      4.2: XMLHttpRequest
+    <a href="../4.2/index.md" title="4.2: Cross Origin Requests" class="md-nav__link">
+      4.2: Cross Origin Requests
     </a>
   </li>
 
@@ -717,8 +717,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../4.4/index.md" title="4.4: Content Security Policy" class="md-nav__link">
-      4.4: Content Security Policy
+    <a href="../4.4/index.md" title="4.4: Clickjacking" class="md-nav__link">
+      4.4: Clickjacking
     </a>
   </li>
 
@@ -765,8 +765,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../5.2/" title="5.2: Clickjacking" class="md-nav__link">
-      5.2: Clickjacking
+    <a href="../5.2/" title="5.2: GraphQL" class="md-nav__link">
+      5.2: GraphQL
     </a>
   </li>
 
@@ -777,8 +777,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../5.3/index.md" title="5.3: HTML5" class="md-nav__link">
-      5.3: HTML5
+    <a href="../5.3/index.md" title="5.3: Microservices" class="md-nav__link">
+      5.3: Microservices
     </a>
   </li>
 
@@ -789,20 +789,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../5.4/" title="5.4: Sub Resource Integrity" class="md-nav__link">
-      5.4: Sub Resource Integrity
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../5.5/" title="5.5: Logging and Incident Response" class="md-nav__link">
-      5.5: Logging and Incident Response
+    <a href="../5.4/" title="5.4: Sub Resource Integrity and Logging" class="md-nav__link">
+      5.4: Sub Resource Integrity and Logging
     </a>
   </li>
 
@@ -1006,8 +994,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#part-0-introduction-to-burp-if-you-are-not-already-familiar-with-burp" class="md-nav__link">
-    Part 0: Introduction to Burp (If You Are Not Already Familiar with Burp)
+  <a href="#part-0-introduction-to-burp" class="md-nav__link">
+    Part 0: Introduction to Burp
   </a>
   
     <nav class="md-nav">
@@ -1135,7 +1123,7 @@ fetch('https://lab-1.1.sans.labs:80');
 <li>[x] Lab VM</li>
 </ul>
 <hr />
-<h2 id="part-0-introduction-to-burp-if-you-are-not-already-familiar-with-burp">Part 0: Introduction to Burp <em>(If You Are Not Already Familiar with Burp)</em></h2>
+<h2 id="part-0-introduction-to-burp">Part 0: Introduction to Burp</h2>
 <h3 id="step-by-step">Step by Step</h3>
 <p>Burp Community Edition is a free interception proxy created by PortSwigger. It can be used to inspect and manipulate HTTP requests, as well as HTTP responses. Any requests being sent by the browser can be intercepted by Burp. You will be able to edit requests before they are passed to the server. The reverse is also true: Any response from the server can be edited before the browser receives it.</p>
 <p><img alt="" src="media/image1.png" />
@@ -1166,8 +1154,8 @@ fetch('https://lab-1.1.sans.labs:80');
 <p>The file is located in the "Documents" directory and then "Burp" directory. The prepared configuration file is "sec522burp.json". Select to open the file and then "Start Burp" (the orange button on the lower right hand corner)</p>
 <p><img alt="" class="zoom" src="media/img-1615089483-20210306.png" /></p>
 <p>Eventually, you will see the main Burp window.</p>
-<p><img alt="" class="zoom" src="media/img-1615005632-20210305.png" /></p>
-<p><strong>Main Burp Window</strong></p>
+<p><img alt="" class="zoom" src="media/img-1615005632-20210305.png" />
+<strong>Main Burp Window</strong></p>
 </li>
 <li>
 <p>For now, we want to disable interception via Burp. Instead, we would like to have Burp record requests and responses without holding them. Select the "Proxy" tab and make sure the "Intercept" button states "Intercept is off". Click the button to toggle it from "on" to "off".</p>
@@ -1199,24 +1187,12 @@ If you toggle the Proxy Switcher to route traffic to Burp and Burp is not runnin
 </li>
 <li>
 <p>If you pass these tests, switch back to Burp by clicking on the Burp icon <strong>in</strong> the "Favorites" list on the left (the bottom one). At this point, Burp is recording requests and responses, but not allowing you to alter them. You can inspect the requests and responses by selecting the "Target" tab.</p>
-<p><img alt="" class="zoom" src="media/img-1615097436-20210307.png" /></p>
-</li>
-<li>
-<p>Burp Target Tab</p>
+<p><img alt="" class="zoom" src="media/img-1615097436-20210307.png" />
+<strong>Burp Target Tab</strong></p>
 <p>Highlight the request for "/" (likely at the top).</p>
-<p>Use the information from the target tab to answer the following questions:</p>
-<details class="question"><summary>What method was used to request the page?</summary><p>GET</p>
-</details>
-<details class="question"><summary>What HTTP version did the browser use?</summary><p>1.1</p>
-</details>
-<details class="question"><summary>What browser (and version) was used?</summary><p>Chrome 89.0.4389.90</p>
-</details>
-<details class="question"><summary>What language does the browser prefer?</summary><p>en-US</p>
-</details>
-<details class="question"><summary>Which header is used specifically to tell the server that this browser prefers HTTPS? <br><em>(extra credit)</em></summary><p>Upgrade-Insecure-Requests: 1</p>
-</details>
 </li>
 </ol>
+<p>Use the information from the target tab to answer the first two challenges in NetWars. See under day 1, there are two 1.1 Part 0 challenges. Review the questions pertaining to this HTTP request that is highlighted.  For these challenges, there are hints available on NetWars at the cost of some points to help you if necessary. </p>
 <h2 id="part-1-manipulating-http-requests">Part 1: Manipulating HTTP Requests</h2>
 <h3 id="step-by-step_1">Step by Step</h3>
 <ol>
@@ -1290,8 +1266,7 @@ Referer: Some random nonsense
 </li>
 <li>
 <p>Once the response is returned, the page will display the Referer header as the web application received it. What do you see? The content of the first, second, or both headers?</p>
-<details class="question"><summary>Which data does the application receive for the 'Referer' header?</summary><p>Both, separated by a comma (,)</p>
-</details>
+<p>This information should help you solve the NetWars challenge for this section. If necessary, the NetWars interface can provide hints.</p>
 </li>
 </ol>
 <hr />
@@ -1315,14 +1290,11 @@ Referer: Some random nonsense
 </li>
 <li>
 <p>Click on "Certificate (invalid)". This will display the certificate information:</p>
-<p><img alt="" class="zoom" src="media/img-1615101671-20210307.png" /></p>
-<p><strong>Burp Certificate</strong></p>
-<details class="question"><summary>Who issued the certificate?</summary><p>PortSwigger CA</p>
-</details>
-<details class="question"><summary>Which hostname is covered by the certificate?</summary><p>lab-1.1.sans.labs</p>
-</details>
+<p><img alt="" class="zoom" src="media/img-1615101671-20210307.png" />
+<strong>Burp Certificate</strong></p>
 </li>
 </ol>
+<p>This information should help you solve the NetWars challenge for this section. If necessary, the NetWars interface can provide hints.</p>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
 <ul>
@@ -1357,7 +1329,7 @@ Referer: Some random nonsense
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../errata/G01_03/" title="G01_03" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../errata/G02_01/" title="G02_01" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1366,7 +1338,7 @@ Referer: Some random nonsense
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                G01_03
+                G02_01
               </span>
             </div>
           </a>

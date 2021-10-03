@@ -40,7 +40,7 @@
     
     
       
-        <title>5.4: Sub Resource Integrity - SEC522 Workbook</title>
+        <title>5.4: Sub Resource Integrity and Logging - SEC522 Workbook</title>
       
     
     
@@ -121,7 +121,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                5.4: Sub Resource Integrity
+                5.4: Sub Resource Integrity and Logging
               
             </span>
           
@@ -276,8 +276,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../errata/G01_03/" title="G01_03" class="md-nav__link">
-      G01_03
+    <a href="../../errata/G02_01/" title="G02_01" class="md-nav__link">
+      G02_01
     </a>
   </li>
 
@@ -545,8 +545,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../4.2/index.md" title="4.2: XMLHttpRequest" class="md-nav__link">
-      4.2: XMLHttpRequest
+    <a href="../4.2/index.md" title="4.2: Cross Origin Requests" class="md-nav__link">
+      4.2: Cross Origin Requests
     </a>
   </li>
 
@@ -569,8 +569,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../4.4/index.md" title="4.4: Content Security Policy" class="md-nav__link">
-      4.4: Content Security Policy
+    <a href="../4.4/index.md" title="4.4: Clickjacking" class="md-nav__link">
+      4.4: Clickjacking
     </a>
   </li>
 
@@ -619,8 +619,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../5.2/" title="5.2: Clickjacking" class="md-nav__link">
-      5.2: Clickjacking
+    <a href="../5.2/" title="5.2: GraphQL" class="md-nav__link">
+      5.2: GraphQL
     </a>
   </li>
 
@@ -631,8 +631,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../5.3/index.md" title="5.3: HTML5" class="md-nav__link">
-      5.3: HTML5
+    <a href="../5.3/index.md" title="5.3: Microservices" class="md-nav__link">
+      5.3: Microservices
     </a>
   </li>
 
@@ -652,11 +652,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        5.4: Sub Resource Integrity
+        5.4: Sub Resource Integrity and Logging
       </label>
     
-    <a href="./" title="5.4: Sub Resource Integrity" class="md-nav__link md-nav__link--active">
-      5.4: Sub Resource Integrity
+    <a href="./" title="5.4: Sub Resource Integrity and Logging" class="md-nav__link md-nav__link--active">
+      5.4: Sub Resource Integrity and Logging
     </a>
     
       
@@ -684,15 +684,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#no-hints" class="md-nav__link">
-    No Hints
+  <a href="#part-1-sub-resource-integrity" class="md-nav__link">
+    Part 1: Sub Resource Integrity
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step" class="md-nav__link">
+    Step by Step
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-by-step" class="md-nav__link">
-    Step by Step
+  <a href="#part-2-logs-review" class="md-nav__link">
+    Part 2: Logs review
   </a>
   
 </li>
@@ -712,18 +725,6 @@
   
 </nav>
     
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../5.5/" title="5.5: Logging and Incident Response" class="md-nav__link">
-      5.5: Logging and Incident Response
-    </a>
   </li>
 
         
@@ -899,15 +900,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#no-hints" class="md-nav__link">
-    No Hints
+  <a href="#part-1-sub-resource-integrity" class="md-nav__link">
+    Part 1: Sub Resource Integrity
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step" class="md-nav__link">
+    Step by Step
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-by-step" class="md-nav__link">
-    Step by Step
+  <a href="#part-2-logs-review" class="md-nav__link">
+    Part 2: Logs review
   </a>
   
 </li>
@@ -964,8 +978,8 @@ fetch('https://lab-5.4.sans.labs:80');
 <li>[x] Lab VM</li>
 </ul>
 <hr />
-<h3 id="no-hints">No Hints</h3>
-<p>Start the exercise at <a href="http://lab-5.4.sans.labs/donations.php">http://lab-5.4.sans.labs/donations.php</a> and follow the instructions provided.</p>
+<h2 id="part-1-sub-resource-integrity">Part 1: Sub Resource Integrity</h2>
+<p>Start the exercise at <a href="http://lab-5.4.sans.labs/donations.php">http://lab-5.4.sans.labs/donations.php</a>. The page was compromised. Figure out what happened, and fix it.</p>
 <h3 id="step-by-step">Step by Step</h3>
 <ol>
 <li>
@@ -975,21 +989,21 @@ fetch('https://lab-5.4.sans.labs:80');
 <p>Click on the link to donations.php - <a href="http://lab-5.4.sans.labs/donations.php">http://lab-5.4.sans.labs/donations.php</a>.</p>
 </li>
 <li>
-<p>Fill out the donation form and click “Submit.” You will see a “Thank you” page, and all looks good.</p>
+<p>Open the browsers debugger (CTRL-Shift-I) and open the Network tab.</p>
 </li>
 <li>
-<p>Click on the <a href="http://lab-5.4.sans.labs/donations.php">http://lab-5.4.sans.labs/donations.php</a> link again to restart the exercise.</p>
+<p>Fill some values into the form.</p>
 </li>
 <li>
-<p>Press Ctrl-Shift-I to open the Developers Tools.</p>
+<p>Watch what happens in the network tab. Use this to answer the first question in Netwars.</p>
 </li>
 <li>
-<p>Click on the “Sources” tab in the Developers Tools.</p>
+<p>Click on one of the requests in the network tab, and click on the "Initiator" tab.</p>
+<p><img alt="" class="zoom" src="media/exercise541.png" />
+<strong>Content of Network tab</strong></p>
 </li>
 <li>
-<p>Under the js folder, open the “donations.js” file and inspect the “accountid”. Note how the account ID has been altered to “evilcataccount” by an unknown attacker!</p>
-<p><img alt="" class="zoom" src="media/img-1615709782-20210314.png" />
-<strong>Content of donations.js</strong></p>
+<p>Click on the link in the "Initiator" tab to see the JavaScript function that was used to exfiltrate the data.</p>
 </li>
 <li>
 <p>Open a terminal and enter
@@ -998,33 +1012,26 @@ fetch('https://lab-5.4.sans.labs:80');
     to change to the directory with the respective files.</p>
 </li>
 <li>
-<p>Enter “ls” to obtain a directory listing. You will see a file called “dontations_for_stupid_dogs.js”.</p>
+<p>Enter “ls” to obtain a directory listing. You will see a file called “track.js” as well as "trackgood.js".</p>
 </li>
 <li>
-<p>Use the “diff” command to compare the dontations_for_stupid_dogs.js file to the donations.js file. The files are identical with the exception of the account ID.</p>
+<p>Use the “diff” command to compare the "track.js" file to the "trackgood.js" file. </p>
 <p>In a terminal, run </p>
 <p><div class="highlight"><pre><span></span><code>diff donations_for_stupid_dogs.js  donations.js
 </code></pre></div>
 to show the differences between two files.</p>
 </li>
 <li>
-<p>Calculate the hash of the “good” file:
-<div class="highlight"><pre><span></span><code>openssl dgst -sha384 -binary &lt; donations_for_stupid_dogs.js | openssl base64 -A
-</code></pre></div>
-You should get the following hash: wZGpBo0UBEBZ2r+uvUPUVH8gvHqHHPJr5Yt9aK+W5D9cSxNhgvF6lAHxsf0gAXbw</p>
+<p>Calculate the hash of the “good” file. This is the answer to the second question in netwars.</p>
 </li>
 <li>
-<p>Open <strong>/etc/docker/compose/5.4/web/html/donations.php</strong> in an editor (Visual Studio Code) and add the “integrity” attribute to the script tag for “donations.js” in line 17. (Solutions below) Save the file after you are done editing and keep the file open.</p>
+<p>Open <strong>/etc/docker/compose/5.4/web/html/donations.php</strong> in an editor (Visual Studio Code) and add the “integrity” attribute to the script tag for “track.js”. Save the file after you are done editing and keep the file open.</p>
 </li>
 <li>
 <p>Reload the donations page. You will now see an error on the console tab in the Developer Tools.</p>
-<div class="admonition information">
-<p class="admonition-title">Information</p>
-<p>We have generated a hash (signature) of the legitimate JavaScript but the file being referenced remotely is a file that has been altered by the unknown attacker. As the hashes are not matching, the browser is not going to execute the JavaScript. </p>
-</div>
 </li>
 <li>
-<p>Change line 17 of the donations.php to use “donations_for_stupid_dogs.js” instead of donations.php (keep the integirty parameter intact).</p>
+<p>Change "donations.php" to use “trackgood.js” instead of "track.js" (keep the integirty parameter intact).</p>
 </li>
 <li>
 <p>Reload the donations page. The script will now load as the signature matches.</p>
@@ -1032,10 +1039,114 @@ You should get the following hash: wZGpBo0UBEBZ2r+uvUPUVH8gvHqHHPJr5Yt9aK+W5D9cS
 </ol>
 <p>The “integrity” parameter will indicate to the browser that the file has changed. The browser is now able to block scripts if they changed.</p>
 <details class="solution"><summary>Solution</summary><p>Here is the JavaScript reference with integrity attributes embeded (line 17 of donations.php). 
-<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">&quot;/js/donations_for_stupid_dogs.js&quot;</span> <span class="nx">integrity</span><span class="o">=</span><span class="s2">&quot;sha384-wZGpBo0UBEBZ2r+uvUPUVH8gvHqHHPJr5Yt9aK+W5D9cSxNhgvF6lAHxsf0gAXbw&quot;</span><span class="o">&gt;&lt;</span><span class="err">/script&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">&quot;/js/track.js&quot;</span> <span class="nx">integrity</span><span class="o">=</span><span class="s2">&quot;sha384-[insert hash]&quot;</span><span class="o">&gt;&lt;</span><span class="err">/script&gt;</span>
 </code></pre></div></p>
 </details>
 <hr />
+<h2 id="part-2-logs-review">Part 2: Logs review</h2>
+<ol>
+<li>
+<p>Explore the attacked application to become familiar with it. Start by loading <a href="http://lab-5.5.sans.labs/citrusgw/index.php">http://lab-5.5.sans.labs/citrusgw/index.php</a> in Google Chrome</p>
+</li>
+<li>
+<p>Log in using the credentials "sec522" and "training".</p>
+</li>
+<li>
+<p>Enter a bookmark (any text will do).</p>
+</li>
+<li>
+<p>Click on the "Files" icon on your desktop (Favorite menu on the left).</p>
+</li>
+<li>
+<p>Open the "Documents" folder</p>
+</li>
+<li>
+<p>Open the "Logs" folder</p>
+</li>
+<li>
+<p>Double click on "attack.logs"</p>
+</li>
+</ol>
+<p>The logs use the following format (the last field is only present for the last few lines of the log):</p>
+<pre style="white-space: pre-wrap;">
+[hostname] [attacker IP] - - [data/time] "METHOD URL HTTP/1.1" [Status Code] [Response Size] "-" "[User-Agent]" "CGW-User Header"
+</pre>
+
+<p>As an example, this line:</p>
+<pre style="white-space: pre-wrap;">
+www.sec522.org:80 127.0.0.1 - - [26/Jan/2020:00:25:58 -0500] "POST /citrusgw/api/newbm.php HTTP/1.1" 200 207 "-" "l33t@tt@ck" "test"
+</pre>
+
+<p>Indicates:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hostname</td>
+<td>www.s<span>ec</span>522.org</td>
+</tr>
+<tr>
+<td>Client IP (ignore for this exercise)</td>
+<td>127.0.0.1</td>
+</tr>
+<tr>
+<td>Date/Time</td>
+<td>26/Jan/2020:00:25:58 -0500</td>
+</tr>
+<tr>
+<td>HTTP Method</td>
+<td>POST</td>
+</tr>
+<tr>
+<td>URL Requested</td>
+<td>/citrusgw/api/newbm.php</td>
+</tr>
+<tr>
+<td>Status Code</td>
+<td>200 (OK)</td>
+</tr>
+<tr>
+<td>Response Size</td>
+<td>207 Bytes</td>
+</tr>
+<tr>
+<td>User-Agent</td>
+<td>l33t\@tt\@ck</td>
+</tr>
+<tr>
+<td>CGW-User Header</td>
+<td>test</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>
+<p>The file starts out with one type of attack. The first approximately 100 lines that are all accessing "index.php".</p>
+<div class="admonition note">
+<p class="admonition-title">1. What type of attack do you think the attacker conducted?</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">2. Any indication if the attack succeeded?</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">3. Any simple signature you could use to block this attacker?</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">4. Any defensive technique you would recommend?</p>
+</div>
+</li>
+<li>
+<p>The second part of the exercise uses the log file you have already open, but the requests are now hitting newbm.php. Refer to the field list in the introduction above to identify which field changes for some of the requests.</p>
+</li>
+<li>
+<p>You may want to open /etc/docker/compose/5.5/web/html/citrusgw/api/newbm.php first in a text editor (Visual Studio Code) to understand a bit more what is happening.</p>
+</li>
+</ol>
 <h2 id="conclusion">Conclusion</h2>
 <ul>
 <li>Subresource integrity is useful for making sure that content being loaded from a remote location is of a specific version or that it hasn't been altered.</li>
@@ -1063,7 +1174,7 @@ You should get the following hash: wZGpBo0UBEBZ2r+uvUPUVH8gvHqHHPJr5Yt9aK+W5D9cS
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../5.2/" title="5.2: Clickjacking" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../5.2/" title="5.2: GraphQL" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1072,19 +1183,19 @@ You should get the following hash: wZGpBo0UBEBZ2r+uvUPUVH8gvHqHHPJr5Yt9aK+W5D9cS
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                5.2: Clickjacking
+                5.2: GraphQL
               </span>
             </div>
           </a>
         
         
-          <a href="../5.5/" title="5.5: Logging and Incident Response" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../troubleshooting/common/" title="Common Issues" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                5.5: Logging and Incident Response
+                Common Issues
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

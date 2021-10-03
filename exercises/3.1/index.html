@@ -276,8 +276,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../errata/G01_03/" title="G01_03" class="md-nav__link">
-      G01_03
+    <a href="../../errata/G02_01/" title="G02_01" class="md-nav__link">
+      G02_01
     </a>
   </li>
 
@@ -531,19 +531,12 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#part-0-optional-simple-user-agent-based-authentication" class="md-nav__link">
-    Part 0: (Optional) Simple User-Agent-Based Authentication
+  <a href="#part-0-simple-user-agent-based-authentication" class="md-nav__link">
+    Part 0:  Simple User-Agent-Based Authentication
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#no-hints" class="md-nav__link">
-    No Hints
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#step-by-step-instructions" class="md-nav__link">
@@ -580,7 +573,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#no-hints_1" class="md-nav__link">
+  <a href="#no-hints" class="md-nav__link">
     No Hints
   </a>
   
@@ -701,8 +694,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../4.2/index.md" title="4.2: XMLHttpRequest" class="md-nav__link">
-      4.2: XMLHttpRequest
+    <a href="../4.2/index.md" title="4.2: Cross Origin Requests" class="md-nav__link">
+      4.2: Cross Origin Requests
     </a>
   </li>
 
@@ -725,8 +718,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../4.4/index.md" title="4.4: Content Security Policy" class="md-nav__link">
-      4.4: Content Security Policy
+    <a href="../4.4/index.md" title="4.4: Clickjacking" class="md-nav__link">
+      4.4: Clickjacking
     </a>
   </li>
 
@@ -773,8 +766,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../5.2/" title="5.2: Clickjacking" class="md-nav__link">
-      5.2: Clickjacking
+    <a href="../5.2/" title="5.2: GraphQL" class="md-nav__link">
+      5.2: GraphQL
     </a>
   </li>
 
@@ -785,8 +778,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../5.3/index.md" title="5.3: HTML5" class="md-nav__link">
-      5.3: HTML5
+    <a href="../5.3/index.md" title="5.3: Microservices" class="md-nav__link">
+      5.3: Microservices
     </a>
   </li>
 
@@ -797,20 +790,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../5.4/" title="5.4: Sub Resource Integrity" class="md-nav__link">
-      5.4: Sub Resource Integrity
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../5.5/" title="5.5: Logging and Incident Response" class="md-nav__link">
-      5.5: Logging and Incident Response
+    <a href="../5.4/" title="5.4: Sub Resource Integrity and Logging" class="md-nav__link">
+      5.4: Sub Resource Integrity and Logging
     </a>
   </li>
 
@@ -1014,19 +995,12 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#part-0-optional-simple-user-agent-based-authentication" class="md-nav__link">
-    Part 0: (Optional) Simple User-Agent-Based Authentication
+  <a href="#part-0-simple-user-agent-based-authentication" class="md-nav__link">
+    Part 0:  Simple User-Agent-Based Authentication
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#no-hints" class="md-nav__link">
-    No Hints
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#step-by-step-instructions" class="md-nav__link">
@@ -1063,7 +1037,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#no-hints_1" class="md-nav__link">
+  <a href="#no-hints" class="md-nav__link">
     No Hints
   </a>
   
@@ -1147,8 +1121,7 @@
 <li>[x] Lab VM</li>
 </ul>
 <hr />
-<h2 id="part-0-optional-simple-user-agent-based-authentication">Part 0: <em>(Optional)</em> Simple User-Agent-Based Authentication</h2>
-<h3 id="no-hints">No Hints</h3>
+<h2 id="part-0-simple-user-agent-based-authentication">Part 0:  Simple User-Agent-Based Authentication</h2>
 <h3 id="step-by-step-instructions">Step-by-Step Instructions</h3>
 <ol>
 <li>
@@ -1170,6 +1143,7 @@
 <p>Click "Forward" in Burp. The modified request will now be sent, and Chrome should display the page with a thank you statement for using the SANS browser.</p>
 </li>
 </ol>
+<p>The response should provide the necessary information for you to solve the challenge in NetWars. As usual, hints is available via NetWars if necessary.</p>
 <hr />
 <h2 id="part-2-more-complex-but-still-weak-authentication">Part 2: More Complex, But Still Weak, Authentication</h2>
 <ol>
@@ -1199,7 +1173,7 @@
 <p>Click "Forward" for all the following requests. You will then see the protected page.</p>
 </li>
 </ol>
-<details class="question"><summary>What trick did the developer play to harden the page? Was it sufficient?</summary><p>The developer coded the authnetication such that when the "wrong" browser connect to the webpage, the application provides a cookie to the browser so that the application can reference the use of "wrong" browser in subsequent requests. </p>
+<details class="question"><summary>What trick did the developer play to harden the page? Was it sufficient?</summary><p>The developer coded the authentication such that when the "wrong" browser connect to the webpage, the application provides a cookie to the browser so that the application can reference the use of "wrong" browser in subsequent requests. </p>
 </details>
 <hr />
 <h2 id="part-3-brute-forcing">Part 3: Brute Forcing</h2>
@@ -1278,7 +1252,7 @@
 </ol>
 <hr />
 <h2 id="part-4-u2f-and-bypassing-2nd-factor">Part 4: U2F And Bypassing 2<sup>nd</sup> Factor</h2>
-<h3 id="no-hints_1">No Hints</h3>
+<h3 id="no-hints">No Hints</h3>
 <p>Start at <a href="https://lab-3.1.sans.labs/login.php">https://lab-3.1.sans.labs/login.php</a> . Click "Reset U2F Data". Next log in and follow the instructions to setup the token. Once you setup and verified that the token is working: Try to reach the "myaccount.php" without using the token (just use the username and password).</p>
 <h3 id="step-by-step">Step by Step</h3>
 <ol>

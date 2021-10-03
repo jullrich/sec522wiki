@@ -276,8 +276,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../errata/G01_03/" title="G01_03" class="md-nav__link">
-      G01_03
+    <a href="../../errata/G02_01/" title="G02_01" class="md-nav__link">
+      G02_01
     </a>
   </li>
 
@@ -707,8 +707,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../4.2/index.md" title="4.2: XMLHttpRequest" class="md-nav__link">
-      4.2: XMLHttpRequest
+    <a href="../4.2/index.md" title="4.2: Cross Origin Requests" class="md-nav__link">
+      4.2: Cross Origin Requests
     </a>
   </li>
 
@@ -731,8 +731,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../4.4/index.md" title="4.4: Content Security Policy" class="md-nav__link">
-      4.4: Content Security Policy
+    <a href="../4.4/index.md" title="4.4: Clickjacking" class="md-nav__link">
+      4.4: Clickjacking
     </a>
   </li>
 
@@ -779,8 +779,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../5.2/" title="5.2: Clickjacking" class="md-nav__link">
-      5.2: Clickjacking
+    <a href="../5.2/" title="5.2: GraphQL" class="md-nav__link">
+      5.2: GraphQL
     </a>
   </li>
 
@@ -791,8 +791,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../5.3/index.md" title="5.3: HTML5" class="md-nav__link">
-      5.3: HTML5
+    <a href="../5.3/index.md" title="5.3: Microservices" class="md-nav__link">
+      5.3: Microservices
     </a>
   </li>
 
@@ -803,20 +803,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../5.4/" title="5.4: Sub Resource Integrity" class="md-nav__link">
-      5.4: Sub Resource Integrity
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../5.5/" title="5.5: Logging and Incident Response" class="md-nav__link">
-      5.5: Logging and Incident Response
+    <a href="../5.4/" title="5.4: Sub Resource Integrity and Logging" class="md-nav__link">
+      5.4: Sub Resource Integrity and Logging
     </a>
   </li>
 
@@ -1181,18 +1169,11 @@ fetch('https://lab-1.2.sans.labs:80');
 <p><strong>Wireshark Details</strong></p>
 </li>
 <li>
-<p>Using Wireshark, answer these questions about the request:</p>
-<details class="question"><summary>Which user agent was used to collect the data?</summary><p>curl/7.58.0</p>
-</details>
-<details class="question"><summary>Which hostname did the client connect to?</summary><p><a href="http://www.sec522.org">www.sec522.org</a></p>
-</details>
+<p>Using Wireshark, review the traffic which will help with answering the first challenge of NetWars for this section. NetWars offers hints at a small cost of points if necessary. </p>
 </li>
 <li>
 <p>Now select packet #21 and again inspect the HTTP/2 part in more detail. This packet contains the response.</p>
-<details class="question"><summary>What status code did the server return?</summary><p>200</p>
-</details>
-<details class="question"><summary>Which server version did we use?</summary><p>Apache 2.4.29</p>
-</details>
+<p>The information in this packet will help you answer to the challenge in NetWars. </p>
 <div class="admonition tip">
 <p class="admonition-title">Feel free to inspect any additional items in this sample.</p>
 </div>
@@ -1209,9 +1190,7 @@ fetch('https://lab-1.2.sans.labs:80');
 </li>
 <li>
 <p>Use "curl" to send a PUT request to <a href="http://lab-1.2.sans.labs/authservice/index.php">http://lab-1.2.sans.labs/authservice/index.php</a></p>
-<div class="highlight"><pre><span></span><code>curl -iX PUT http://lab-1.2.sans.labs/authservice/index.php
-</code></pre></div>
-<p>The return will include an "Auth-Token" header:</p>
+<p>If done right, the return will include an "Auth-Token" header:</p>
 <div class="highlight"><pre><span></span><code>HTTP/1.1 200 OK
 Date: Thu, 11 Mar 2021 02:56:38 GMT
 Server: Apache/2.4.38 (Debian)
@@ -1252,20 +1231,16 @@ Content-Type: text/html; charset=UTF-8
 <p>You will see a number of errors due to missing or incomplete headers.</p>
 </li>
 <li>
-<p>Now add individual headers using the curl "-H" option. For example to add the User-Agent header use (the URL in the end is abbreviated. Use the same URL as in step 5).</p>
-<div class="highlight"><pre><span></span><code>curl -H <span class="s2">&quot;User-Agent: [some user agent]&quot;</span> http://www...
-</code></pre></div>
+<p>Now add individual headers (use a hint in Netwars or check the curl man page for details).</p>
 </li>
 <li>
 <p>Add more headers. Read the error messages for any missing headers, or values that you do not have right yet.</p>
 </li>
 <li>
 <p>As you add the "Accept:" header, the output may be compressed and you will get a warning indicating that the output is binary. Pipe the output to "zcat" if you see the warning. For example like in the abbreviated command below:</p>
-<div class="highlight"><pre><span></span><code>curl -H [... any headers... ] http://[url] | zcat
-</code></pre></div>
 </li>
 <li>
-<p>For a solution, see <a href="http://lab-1.2.sans.labs/spoofchallenge/solution.php">http://lab-1.2.sans.labs/spoofchallenge/solution.php</a></p>
+<p>The last netwars hint will be the solution.</p>
 </li>
 </ol>
 <hr />

@@ -40,7 +40,7 @@
     
     
       
-        <title>Preparation - SEC522 Workbook</title>
+        <title>G02_01 - SEC522 Workbook</title>
       
     
     
@@ -95,7 +95,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#preparing-the-virtual-machine" tabindex="0" class="md-skip">
+      <a href="#sec522-g01_03-errata-patches" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -121,7 +121,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Preparation
+                G02_01
               
             </span>
           
@@ -221,12 +221,10 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2" type="checkbox" id="nav-1-2" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2" type="checkbox" id="nav-1-2">
     
     <label class="md-nav__link" for="nav-1-2">
       Course
@@ -234,6 +232,44 @@
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
       <label class="md-nav__title" for="nav-1-2">
         Course
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/preparation/" title="Preparation" class="md-nav__link">
+      Preparation
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-3" type="checkbox" id="nav-1-3" checked>
+    
+    <label class="md-nav__link" for="nav-1-3">
+      Errata & Patches
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-1-3">
+        Errata & Patches
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -252,46 +288,10 @@
       
     
     
-    <a href="./" title="Preparation" class="md-nav__link md-nav__link--active">
-      Preparation
-    </a>
-    
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-3" type="checkbox" id="nav-1-3">
-    
-    <label class="md-nav__link" for="nav-1-3">
-      Errata & Patches
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-1-3">
-        Errata & Patches
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../errata/G02_01/" title="G02_01" class="md-nav__link">
+    <a href="./" title="G02_01" class="md-nav__link md-nav__link--active">
       G02_01
     </a>
+    
   </li>
 
         
@@ -825,55 +825,8 @@
               
                 
                 
-                <style>
-@page { @top-center {
-    content: 'SANS SEC522 Workbook';
-}}
-@page :left { @bottom-left {
-  content: 'Prep-' counter(page);
-}}
-@page :right { @bottom-right {
-  content: 'Prep-' counter(page);
-}}
-</style>
-
-<h1 id="preparing-the-virtual-machine">Preparing the Virtual Machine</h1>
-<p>The exercises for this course use a virtual machine. In order to install the virtual machine, you will need to copy the "<strong>SEC522VM</strong>" directory from your downloaded course media file (ISO file) to your system. This directory is large (about 20GB) and copying will take a while. Make sure you have enough free space on your hard disk. You will need about 40GB for this course to work well.</p>
-<p>It does not matter where you place this directory; however, we recommend placing it on the desktop to make it easy to find later.</p>
-<p>Your ISO image can be used to restore the virtual machine to a pristine state in case something goes wrong later. </p>
-<p>IMPORTANT: We avoid the use of what is commonly referred to as "Hacking Tools" or "Malware". However, some of the tools that we do use may not be allowed by your organization's policy. Please refer to your organization's policy before using these tools outside of class. During our testing, the virtual machine files did not trigger anti-malware software. However, this can change at any time due to ongoing signature updates. You may need to disable anti-malware to allow the virtual machine to function.</p>
-<p>No network connectivity is required for class. All exercises are self-contained within the virtual machine.</p>
-<ol>
-<li>
-<p>Copy the "<strong>SEC522VM"</strong> directory from the downloaded media file (ISO) to your Desktop.</p>
-</li>
-<li>
-<p>Inside the "<strong>SEC522VM</strong>" directory, double-click <strong>ClickHere.vmx</strong>. The virtual machine will start and automatically log you in. You may not see the .vmx extension if you configured Windows not to show extensions.</p>
-</li>
-<li>
-<p>Click "Power on this Virtual Machine".</p>
-<div class="admonition danger">
-<p class="admonition-title"><strong>! DO NOT APPLY ANY UPDATES !</strong></p>
-</div>
-</li>
-<li>
-<p>After starting the virtual machine, you will be logged in automatically. In case the screen saver locks the machine, or if you are prompted for a username and password, use:</p>
-<table>
-<thead>
-<tr>
-<th>Account</th>
-<th>Password</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>student</td>
-<td>StartTheLabs</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ol>
+                <h1 id="sec522-g01_03-errata-patches">SEC522 G01_03 Errata Patches</h1>
+<hr />
                 
                   
                 
@@ -895,7 +848,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../.." title="Welcome!" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../resources/preparation/" title="Preparation" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -904,19 +857,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Welcome!
+                Preparation
               </span>
             </div>
           </a>
         
         
-          <a href="../../errata/G02_01/" title="G02_01" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../exercises/1.1/" title="1.1: HTTP Basics" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                G02_01
+                1.1: HTTP Basics
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
