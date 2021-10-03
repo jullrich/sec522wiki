@@ -285,8 +285,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../errata/G01_01/" class="md-nav__link">
-        G01_01
+      <a href="../../errata/G01_02/" class="md-nav__link">
+        G01_02
       </a>
     </li>
   
@@ -893,6 +893,9 @@
   content: '1.2-' counter(page);
 }}
 </style>
+<script>
+fetch('https://lab-1.2.sans.labs:80');
+</script>
 
 <h1 id="inspecting-http2-traffic-and-crafting-requests">Inspecting HTTP/2 Traffic and Crafting Requests</h1>
 <hr />
@@ -919,7 +922,7 @@
 <hr />
 <h2 id="part-1-inspecting-http2-traffic">Part 1: Inspecting HTTP/2 Traffic</h2>
 <h3 id="no-hints">No Hints</h3>
-<p>You will be using Wireshark to inspect an HTTP/2 packet capture. The packet capture can be found in /home/sec522/Documents/pcaps/http2.pcap. Find out which headers you can identify in the HTTP/2 request and response.</p>
+<p>You will be using Wireshark to inspect an HTTP/2 packet capture. The packet capture can be found in /home/student/Documents/pcaps/http2.pcap. Find out which headers you can identify in the HTTP/2 request and response.</p>
 <h3 id="step-by-step">Step by Step</h3>
 <ol>
 <li>
@@ -928,7 +931,7 @@
 <p><strong>Wireshark icon</strong></p>
 </li>
 <li>
-<p>Open the packet capture using either Ctrl+O or "File" &gt; "Open" from the Wireshark menu. Navigate to /home/sec522/Documents/pcaps and open the file "http2.pcap" (you may find the file still listed as a "Recent" file, which may make things easier).</p>
+<p>Open the packet capture using either Ctrl+O or "File" &gt; "Open" from the Wireshark menu. Navigate to /home/student/Documents/pcaps and open the file "http2.pcap" (you may find the file still listed as a "Recent" file, which may make things easier).</p>
 </li>
 <li>
 <p>Select packet #15 and investigate the middle pane of Wireshark. Expand the "Hypertext Transfer Protocol 2" section by clicking on the triangles to the left until you see the headers:</p>
@@ -1087,7 +1090,7 @@ Content-Type: text/html; charset=UTF-8
       <div class="md-footer-copyright">
         
           <div class="md-footer-copyright__highlight">
-            Copyright &copy; 2020 Jason Lam & Dr. Johannes Ullrich
+            Copyright &copy; 2021 Jason Lam & Dr. Johannes Ullrich
           </div>
         
         Made with
