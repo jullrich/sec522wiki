@@ -1278,16 +1278,37 @@ fetch('https://lab-5.1.sans.labs:80');
 <hr />
 <h2 id="part-3_1">Part 3:</h2>
 <p>In this part, we will learn about the fixing of the deserialization vulnerability.</p>
+<ol>
+<li>In Burp, go to the Repeater tab where we already setup the template for sending the exploit payload over Cookie header to the server. Please change both the <strong>Host:</strong> header in the left pane and also the <strong>Target</strong> on the upper right hand corner. See below screen cap on where you need to change the values. For both, the host name that we are targeting is <strong>lab-5.1-fixedserial.sans.labs</strong> This is a fixed, no longer vulnerable version of the previous target. The code base is the same except the vulnerability has been fixed.</li>
+</ol>
+<p><img alt="" class="zoom" src="images/img-1633223794-20211002.png" /></p>
+<ol>
+<li>
+<p>Using the same attack payload as before (part 2, cookie). Please send the attack to this non-vulnerable version and see what happens. You should observe that the server respond with the following message.</p>
+<blockquote>
+<p>java.io.InvalidClassException: Unexpected serialized class ; java.util.HashSet</p>
+</blockquote>
+</li>
+<li>
+<p>It appears that this version of the application is blocking the request based on the class of objects that are being sent in the stream of data. We will inspect the source code of the application to answer the NetWars challenge. Please </p>
+</li>
+<li>
+<p>Open <strong>/etc/docker/compose/5.13/docker-java/FixedHTTPServer.java</strong> in an editor (Visual Studio Code) to review the code. The subject of the challenge pertains to this file. Please use the hints in NetWars as required.</p>
+</li>
+</ol>
+<hr />
 <p>Credit of the deserialization exercise -  J.Jogal (<a href="https://www.thedarksource.com/">https://www.thedarksource.com/</a>) and Karan Solanki (https:/<a href="http://www.themixstuff.com/">www.themixstuff.com/</a>). More information at <strong><a href="https://thedarksource.com/vulnerable-java-deserialization-lab-setup-for-practice-exploitation/">https://thedarksource.com/vulnerable-java-deserialization-lab-setup-for-practice-exploitation/</a></strong></p>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
 <ul>
 <li>DNS rebinding allows attacker to "confused" the browser into loading content from a different origin than what's specified by the host name and domain name. </li>
+<li>Deserialization can affect any types of input within the applications that takes in a serialized stream and attempting to deserialize the data without performing appropriate filtering or validation.</li>
+<li>Untrusted data being deserialized into Class of objects within the running application can be dangerous, potentially letting attack execute arbitary code in the environment.</li>
 </ul>
 <hr />
 <h2 id="explore-further">Explore Further</h2>
 <ul>
-<li>What would happen if the target site has TLS enabled?</li>
+<li>Deserialization vulnerability relies on untrusted data being deserialized by the application. Another dependency of the successful attack is the gadget chain, please explore the gadget involved in the attack(s) you have conducted.</li>
 </ul>
                 
                   
