@@ -545,7 +545,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../4.2/index.md" title="4.2: Cross Origin Requests" class="md-nav__link">
+    <a href="../4.2/" title="4.2: Cross Origin Requests" class="md-nav__link">
       4.2: Cross Origin Requests
     </a>
   </li>
@@ -569,7 +569,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../4.4/index.md" title="4.4: Clickjacking" class="md-nav__link">
+    <a href="../4.4/" title="4.4: Clickjacking" class="md-nav__link">
       4.4: Clickjacking
     </a>
   </li>
@@ -713,6 +713,13 @@
         <li class="md-nav__item">
   <a href="#conclusion" class="md-nav__link">
     Conclusion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explore-further" class="md-nav__link">
+    Explore Further
   </a>
   
 </li>
@@ -933,6 +940,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#explore-further" class="md-nav__link">
+    Explore Further
+  </a>
+  
+</li>
+      
       
       
       
@@ -964,15 +978,16 @@
 
 <script>
 fetch('https://lab-5.4.sans.labs:80');
+fetch('https://lab-5.41.sans.labs:80');
 </script>
 
 <h1 id="sub-resource-integrity">Sub Resource Integrity</h1>
 <hr />
 <h4 id="objectives">Objectives</h4>
-<div class="codehilite"><pre><span></span><code>Estimated Time: 6 minutes
+<div class="codehilite"><pre><span></span><code>Estimated Time: 15 minutes
 </code></pre></div>
 
-<p>Understand how sub resources integrity can help prevent some attacks that swap components hosted by third parties for malicious components.</p>
+<p>Understand how sub resources integrity can help prevent some attacks that swap components hosted by third parties for malicious components. For the second part, we use a standard web server logs of an incident to figure out what happened.</p>
 <h4 id="requirements">Requirements</h4>
 <ul>
 <li>[x] Lab VM</li>
@@ -1046,7 +1061,7 @@ to show the differences between two files.</p>
 <h2 id="part-2-logs-review">Part 2: Logs review</h2>
 <ol>
 <li>
-<p>Explore the attacked application to become familiar with it. Start by loading <a href="http://lab-5.5.sans.labs/citrusgw/index.php">http://lab-5.5.sans.labs/citrusgw/index.php</a> in Google Chrome</p>
+<p>Explore the attacked application to become familiar with it. Start by loading <a href="http://lab-5.4-logs.sans.labs/citrusgw/index.php">http://lab-5.4-logs.sans.labs/citrusgw/index.php</a> in Google Chrome</p>
 </li>
 <li>
 <p>Log in using the credentials "sec522" and "training".</p>
@@ -1144,7 +1159,7 @@ www.sec522.org:80 127.0.0.1 - - [26/Jan/2020:00:25:58 -0500] "POST /citrusgw/api
 <p>The second part of the exercise uses the log file you have already open, but the requests are now hitting newbm.php. Refer to the field list in the introduction above to identify which field changes for some of the requests.</p>
 </li>
 <li>
-<p>You may want to open /etc/docker/compose/5.5/web/html/citrusgw/api/newbm.php first in a text editor (Visual Studio Code) to understand a bit more what is happening.</p>
+<p>You may want to open /etc/docker/compose/5.41/web/html/citrusgw/api/newbm.php first in a text editor (Visual Studio Code) to understand a bit more what is happening.</p>
 </li>
 </ol>
 <h2 id="conclusion">Conclusion</h2>
@@ -1152,6 +1167,12 @@ www.sec522.org:80 127.0.0.1 - - [26/Jan/2020:00:25:58 -0500] "POST /citrusgw/api
 <li>Subresource integrity is useful for making sure that content being loaded from a remote location is of a specific version or that it hasn't been altered.</li>
 <li>When using Subresource integrity, the destination resource changes will cause the browser to stop loading the resource.</li>
 <li>Subresource integirty works for any &lt;link> and &lt;script> elements</li>
+<li>Log analysis can yield a lot of insights on the activities of the application. In incident response scenario, logs are often the main source of information to understand what had happened. </li>
+</ul>
+<hr />
+<h2 id="explore-further">Explore Further</h2>
+<ul>
+<li>How do you fix an application coding issue illustrated in the logging exercise (newbm.php)?</li>
 </ul>
                 
                   

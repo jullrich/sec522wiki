@@ -545,7 +545,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../4.2/index.md" title="4.2: Cross Origin Requests" class="md-nav__link">
+    <a href="../4.2/" title="4.2: Cross Origin Requests" class="md-nav__link">
       4.2: Cross Origin Requests
     </a>
   </li>
@@ -569,7 +569,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../4.4/index.md" title="4.4: Clickjacking" class="md-nav__link">
+    <a href="../4.4/" title="4.4: Clickjacking" class="md-nav__link">
       4.4: Clickjacking
     </a>
   </li>
@@ -675,19 +675,12 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#part-1-simple-dns-rebinding" class="md-nav__link">
-    Part 1: Simple DNS Rebinding
+  <a href="#part-1-dns-rebinding" class="md-nav__link">
+    Part 1: DNS Rebinding
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#no-hints" class="md-nav__link">
-    No Hints
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#step-by-step" class="md-nav__link">
@@ -698,13 +691,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#part-1-javascript-based-rebinding-with-xmlhttprequest" class="md-nav__link">
-    Part 1: JavaScript based Rebinding with XMLHTTPRequest
-  </a>
   
 </li>
       
@@ -982,19 +968,12 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#part-1-simple-dns-rebinding" class="md-nav__link">
-    Part 1: Simple DNS Rebinding
+  <a href="#part-1-dns-rebinding" class="md-nav__link">
+    Part 1: DNS Rebinding
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#no-hints" class="md-nav__link">
-    No Hints
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#step-by-step" class="md-nav__link">
@@ -1005,13 +984,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#part-1-javascript-based-rebinding-with-xmlhttprequest" class="md-nav__link">
-    Part 1: JavaScript based Rebinding with XMLHTTPRequest
-  </a>
   
 </li>
       
@@ -1103,43 +1075,10 @@ fetch('https://lab-5.13.sans.labs:80');
 <li>[x] Lab VM</li>
 </ul>
 <hr />
-<h2 id="part-1-simple-dns-rebinding">Part 1: Simple DNS Rebinding</h2>
-<h3 id="no-hints">No Hints</h3>
-<p>There are two parts to this exercise. In the first part, you will experiment with DNS rebinding without taking advantage of JavaScript. The second exercise explores the use of JavaScript and XMLHTTPRequest to profile the anti-DNS rebinding done by the browser. Start at <a href="http://lab-5.1-evil.sans.labs/evil.php">http://lab-5.1-evil.sans.labs/evil.php</a>.</p>
+<h2 id="part-1-dns-rebinding">Part 1: DNS Rebinding</h2>
+<p>In this exercise, we will experiment with DNS rebinding. The attacker prepared a website at <a href="http://lab-5.1-evil.sans.labs/eviljs.php">http://lab-5.1-evil.sans.labs/eviljs.php</a> . Once you visit the site, the DNS entry for lab-5.1-evil.sans.labs will change. The browser will still use the old IP address for a while, but the attacker is using JavaScript to figure out when to launch the attack.</p>
+<p>To answer the Netwars challenge for this question, you will need to alter the attack to send a request (using JavaScript) to "<a href="http://lab-5.1-evil.sans.lab/flag">http://lab-5.1-evil.sans.lab/flag</a>" AFTER DNS changes.</p>
 <h3 id="step-by-step">Step by Step</h3>
-<p>In this exercise, we will explore the possibilities of DNS rebinding (anti-DNS pinning) attacks firsthand. The attack demonstrated is dependent on the DNS record timing out within the browser, and then the attacker can rebind another host, making the victim\'s browser confused about the actual IP of the host it is trying to reach.</p>
-<ol>
-<li>
-<p>Using Chrome, browse to <strong><a href="http://lab-5.1.sans.labs/evil.php">http://lab-5.1.sans.labs/evil.php</a></strong>. This is the "Good Dog Pics" page. The host you are connecting to is <strong>lab-5.1.sans.labs</strong>. </p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The host name lab-5.1.sans.labs have dog picture. Watch how this fact is important later.</p>
-</div>
-</li>
-<li>
-<p>We are now going to the attacker's controled site. Using Chrome, browse to <strong><a href="http://lab-5.1-evil.sans.labs/evil.php">http://lab-5.1-evil.sans.labs/evil.php</a></strong>. The host name is similar to the one in previous step but this is a different site. The content are also different as well.</p>
-</li>
-<li>
-<p>Click on <strong>CLICK HERE TO SWITCH DNS</strong>. This will start the process of DNS rebinding. </p>
-</li>
-<li>
-<p>You will be presented with a Javascript prompt. This triggers a DNS changes on the server end as indicated by the content of the pop up box. The IP for the lab-5.1-evil.sans.labs was <strong>127.0.5.11</strong> and it is being changed to <strong>127.0.5.1</strong>. What that means is anyone asking for the IP of lab-5.1-evil.sans.labs will now be presented with 127.0.5.1. </p>
-<p><img alt="" class="zoom" src="media/img-1615693291-20210313.png" /></p>
-</li>
-<li>
-<p>After about 2 minutes, reload the page in the browser. Notice the URL? It is still <a href="http://lab-5.1-evil.sans.labs/evil.php">http://lab-5.1-evil.sans.labs/evil.php</a> but the content in the page are coming from the "Good Dog Pics" page which is at the IP address 127.0.5.1. </p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The exercise starts off with the browser visiting lab-5.1-evil.sans.labs (127.0.5.11). At this time, the browser has the IP of the host pinned. After around 120 seconds when the DNS TTL expires, we reloaded the page. This time, the sans.labs DNS replies that lab-5.1-evil.sans.labs is located at 127.0.5.1 (not the same as before). This IP happens to be the server for lab-5.1.sans.labs (the Dog page). The Same Origin Policy has been violated with the time out and second DNS query since your browser URL is pointing to one domain and the content is coming from another location.</p>
-</div>
-</li>
-<li>
-<p>After this exercise, please click the Reset DNS and restart the browser to ensure all cached host records (DNS pin) is gone.</p>
-</li>
-</ol>
-<hr />
-<h2 id="part-1-javascript-based-rebinding-with-xmlhttprequest">Part 1: JavaScript based Rebinding with XMLHTTPRequest</h2>
-<p>Similar to the DNS rebinding with the browser, the JavaScript engine can also be fooled as well. Its DNS pinning mechanism is actually isolated from the browsers.</p>
 <ol>
 <li>
 <p>Using Chrome, browse to <a href="http://lab-5.1-evil.sans.labs/eviljs.php">http://lab-5.1-evil.sans.labs/eviljs.php</a></p>
@@ -1152,6 +1091,9 @@ fetch('https://lab-5.13.sans.labs:80');
 </li>
 <li>
 <p>After about 100 seconds, the Chrome browser will lift the DNS pin and the JavaScript detects this and send the attack to the alternative host.</p>
+</li>
+<li>
+<p>Now find out where in eviljs.php to insert a request for "<a href="http://lab-5.1-evil.sans.lab/flag.php">http://lab-5.1-evil.sans.lab/flag.php</a>" (the file can be found at /etc/docker/compose/5.1/web/html/eviljs.php )</p>
 </li>
 </ol>
 <h2 id="part-2_1">Part 2:</h2>
@@ -1322,7 +1264,7 @@ fetch('https://lab-5.13.sans.labs:80');
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../4.3/" title="4.3: Front End Features and Content Security Policy" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../4.4/" title="4.4: Clickjacking" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1331,7 +1273,7 @@ fetch('https://lab-5.13.sans.labs:80');
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                4.3: Front End Features and Content Security Policy
+                4.4: Clickjacking
               </span>
             </div>
           </a>
