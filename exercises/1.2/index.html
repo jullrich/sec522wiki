@@ -777,7 +777,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../5.3/index.md" title="5.3: Microservices" class="md-nav__link">
+    <a href="../5.3/" title="5.3: Microservices" class="md-nav__link">
       5.3: Microservices
     </a>
   </li>
@@ -1125,6 +1125,7 @@ fetch('https://lab-1.2.sans.labs:80');
 <h2 id="part-1-inspecting-http2-traffic">Part 1: Inspecting HTTP/2 Traffic</h2>
 <p>You will be using Wireshark to inspect an HTTP/2 packet capture. The packet capture can be found in /home/student/Documents/pcaps/http2.pcap. Find out which headers you can identify in the HTTP/2 request and response.</p>
 <h3 id="step-by-step">Step by Step</h3>
+<p><strong>IMPORTANT: Make sure the proxy is no longer enabled.</strong></p>
 <ol>
 <li>
 <p>Open Wireshark by clicking on the blue "fin" on the left.</p>
@@ -1154,12 +1155,14 @@ fetch('https://lab-1.2.sans.labs:80');
 <h2 id="part-2-acquire-and-play-back-token">Part 2: Acquire and play back token</h2>
 <p>The CSRF/ proof service at <a href="http://lab-1.2.sans.labs/authservice/index.php">http://lab-1.2.sans.labs/authservice/index.php</a> gives you a special token </p>
 <h3 id="step-by-step_1">Step by Step</h3>
+<p><strong>IMPORTANT: Make sure the proxy is no longer enabled.</strong></p>
 <ol>
 <li>
 <p>Open a terminal (click the "Terminal" icon on the left)</p>
 </li>
 <li>
 <p>Use "curl" to send a PUT request to <a href="http://lab-1.2.sans.labs/authservice/index.php">http://lab-1.2.sans.labs/authservice/index.php</a></p>
+<p>(see network for details)</p>
 <p>If done right, the return will include an "Auth-Token" header:</p>
 <div class="highlight"><pre><span></span><code>HTTP/1.1 200 OK
 Date: Thu, 11 Mar 2021 02:56:38 GMT

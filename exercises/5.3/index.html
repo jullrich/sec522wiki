@@ -40,7 +40,7 @@
     
     
       
-        <title>SEC522 Workbook</title>
+        <title>5.3: Microservices - SEC522 Workbook</title>
       
     
     
@@ -95,7 +95,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#javascript-security-testing" tabindex="0" class="md-skip">
+      <a href="#api-gateways-and-json" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -121,7 +121,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Home
+                5.3: Microservices
               
             </span>
           
@@ -584,10 +584,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
     
     <label class="md-nav__link" for="nav-6">
       Day 5
@@ -627,11 +629,137 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../5.3/" title="5.3: Microservices" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        5.3: Microservices
+      </label>
+    
+    <a href="./" title="5.3: Microservices" class="md-nav__link md-nav__link--active">
       5.3: Microservices
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objectives" class="md-nav__link">
+    Objectives
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#part-1" class="md-nav__link">
+    Part 1:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-2" class="md-nav__link">
+    Part 2:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-architecture-and-jwt-token" class="md-nav__link">
+    Part 1: Architecture and JWT Token
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    Getting Started
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#no-hints" class="md-nav__link">
+    No Hints
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step" class="md-nav__link">
+    Step by Step
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-explore-the-jwt-roles" class="md-nav__link">
+    Part 2: Explore the JWT roles
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-hints_1" class="md-nav__link">
+    No Hints
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -819,6 +947,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#part-2" class="md-nav__link">
+    Part 2:
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -832,12 +967,26 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#part-1-accessing-arbitrary-shopping-carts" class="md-nav__link">
-    Part 1: Accessing Arbitrary Shopping Carts
+  <a href="#part-1-architecture-and-jwt-token" class="md-nav__link">
+    Part 1: Architecture and JWT Token
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    Getting Started
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#no-hints" class="md-nav__link">
+    No Hints
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#step-by-step" class="md-nav__link">
@@ -852,22 +1001,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#part-2-analyzing-minimized-javascript-advanced" class="md-nav__link">
-    Part 2: Analyzing Minimized JavaScript (Advanced)
+  <a href="#part-2-explore-the-jwt-roles" class="md-nav__link">
+    Part 2: Explore the JWT roles
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-hints_1" class="md-nav__link">
+    No Hints
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#conclusion" class="md-nav__link">
     Conclusion
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#explore-further" class="md-nav__link">
-    Explore Further
   </a>
   
 </li>
@@ -894,102 +1049,108 @@
     content: 'SANS SEC522 Workbook';
 }}
 @page :left { @bottom-left {
-  content: '4.3-' counter(page);
+  content: '5.3-' counter(page);
 }}
 @page :right { @bottom-right {
-  content: '4.3-' counter(page);
+  content: '5.3-' counter(page);
 }}
 </style>
 
-<h1 id="javascript-security-testing">JavaScript Security Testing</h1>
+<h1 id="api-gateways-and-json">API Gateways and JSON</h1>
 <hr />
 <h4 id="objectives">Objectives</h4>
-<div class="codehilite"><pre><span></span><code>Estimated Time: 15 minutes
+<div class="codehilite"><pre><span></span><code>Estimated Time: 20 minutes
 </code></pre></div>
 
 <h5 id="part-1">Part 1:</h5>
-<blockquote>
-<p>In this exercise, we will experiment with the built-in JavaScript debugger in Chrome and learn the basics of using this debugger for understanding the JavaScript running on a webpage.</p>
-</blockquote>
+<p>You will experiment with Kong, and API Gateway, and Keycloak, and identity management and access solution. The goal of part 1 is to understand the architecture and to decode the JWT used for authentication and access control.</p>
+<h5 id="part-2">Part 2:</h5>
+<p>The JWT does include additional entitlements. Part 2 will explore how an attacker could take advantage of that information.</p>
 <h4 id="requirements">Requirements</h4>
 <ul>
 <li>[x] Lab VM</li>
 </ul>
 <hr />
-<h2 id="part-1-accessing-arbitrary-shopping-carts">Part 1: Accessing Arbitrary Shopping Carts</h2>
-<h3 id="step-by-step">Step by Step</h3>
-<p>Chrome and many other browsers include capable JavaScript debuggers. They are commonly used by security professionals to understand the inner workings of a piece of JavaScript code.</p>
-<div class="admonition note">
-<p class="admonition-title">This exercise uses Juice Shop.</p>
-</div>
-<ol>
-<li>
-<p>Start Juice Shop. Open a terminal and type</p>
-<div class="highlight"><pre><span></span><code>juiceshop start
+<h2 id="part-1-architecture-and-jwt-token">Part 1: Architecture and JWT Token</h2>
+<h3 id="getting-started">Getting Started</h3>
+<p>This exercise requires a number of interconnected containers:
+1. Kong Database: A Postgres database used to store credentials
+2. Kong API Gateway: The Kong API Gateway.
+3. Konga: A web based admin interface for Kong
+4. Keycloak Database: A second Postgres database used to store Keycloak credentials
+5. Keycloak: Our identity management and access solution.
+6. PHP Website/API: A website and API that will use Keycloak/Kong</p>
+<p>To start these containers, run
+<div class="highlight"><pre><span></span><code>apigw start
 </code></pre></div>
-<p>You may see an error if Juice Shop is already running.</p>
-</li>
-<li>
-<p>Go to Juice Shop in Chrome by visiting the URL <a href="http://juiceshop:3000">http://juiceshop:3000</a>.</p>
-</li>
-<li>
-<p>Log in to Juice Shop using <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#101;&#99;&#53;&#50;&#50;&#64;&#115;&#101;&#99;&#53;&#50;&#50;&#46;&#111;&#114;&#103;">&#115;&#101;&#99;&#53;&#50;&#50;&#64;&#115;&#101;&#99;&#53;&#50;&#50;&#46;&#111;&#114;&#103;</a> and the password "training". Register a new account if the login fails (Juice Shop will reset its database whenever it is shut down).</p>
-</li>
-<li>
-<p>Press CTRL-SHIFT-I to open the debugger in Chrome.</p>
-</li>
-<li>
-<p>Select "Application" -&gt; "Session Storage" and review the session storage for "juiceshop".</p>
-</li>
-<li>
-<p>You will see a parameter called "bid". Change it to a different number (e.g., "3").</p>
-</li>
-<li>
-<p>Review the shopping cart in Juice Shop ("Your Basket") by clicking on the shopping cart at the top of the page. You will see someone else's items.</p>
-</li>
-</ol>
-<h2 id="part-2-analyzing-minimized-javascript-advanced">Part 2: Analyzing Minimized JavaScript <em>(Advanced)</em></h2>
+This script may take a few minutes to build and start.</p>
+<p>Once started, open the browser and open <strong><a href="https://apigw.sans.labs">https://apigw.sans.labs</a></strong> . Important: Use HTTPS. </p>
+<h3 id="no-hints">No Hints</h3>
+<p>Log in using the credentials student/training. Find the "Bearer" token used for authentication and decode it. See Netwars for the questions to answer</p>
+<h3 id="step-by-step">Step by Step</h3>
 <ol>
 <li>
-<p>In the Chrome Debugger, select "Sources" and open the "main-es2018.js" file.</p>
+<p>Browser to <strong><a href="https://apigw.sans.labs/">https://apigw.sans.labs/</a></strong> . Important: use HTTPS.  </p>
 </li>
 <li>
-<p>Click the "{}" at the lower left-hand corner of the source code window. This will make the minimized code more readable.</p>
-<p><img alt="" class="zoom" src="media/img-![](./media/image1.png).png" /></p>
-<p><strong>JavaScript Debugger "main-es2018.js"</strong></p>
+<p>Click on Login. This will lead you to the Keycloak login screen.</p>
 </li>
 <li>
-<p>Line 12206-12218 contains obfuscated JavaScript code meant to hide a particular endpoint. Copy the code (Select the code, then Ctrl-C), starting with function(), all the way to "toLowerCase()" in line 12218.</p>
-<p><img alt="" class="zoom" src="media/img-1615871276-20210316.png" /></p>
-<p><strong>Obfuscated JavaScript Code</strong></p>
+<p>Enter the username "student" and the password "training".</p>
 </li>
 <li>
-<p>Change to the <strong>Console</strong> tab (at the top). Type ""+ (empty quotes followed by "+") into the console and paste the code you copied right after the "+". Hit enter. You will see the deobfuscated result. (see answers at the end for the solution).</p>
-<p><img alt="" class="zoom" src="media/img-1615871434-20210316.png" /></p>
-<p><strong>Pasted Code in Console</strong></p>
-<details class="question"><summary>Solution</summary><p>The token is: "tokensale-ico-ea".</p>
-<p>The hidden URL includes a white paper for a "Juicecoin" ICO.</p>
-</details>
+<p>Enter a ticket number (e.g. 123) and click "Search" You will see a popup stating: "Ticket #123 We will get to it whenever we are done napping and grooming".</p>
 </li>
 <li>
-<p>Go to the hidden endpoint (<a href="http://juiceshop:3000/#/">http://juiceshop:3000/#/</a> [solution from step 4]).</p>
-<div class="admonition information">
-<p class="admonition-title">Information</p>
-<p>Despite the effort from the developer to obfuscate the "key" in the JavaScript code, the code is reversible with some level of coding skills. Lessons learned - do not hide keys in obfuscation.</p>
-</div>
+<p>Open the Browser's developer tools.</p>
+</li>
+<li>
+<p>Select the "Network" tab in the developer tools.</p>
+</li>
+<li>
+<p>Enter another ticket number and click search. You will see a similar popup.</p>
+</li>
+<li>
+<p>You will see 2 requests in the network tab. One is marked as "Preflight" in the Initiator column. Click it and inspect the request. You should see that the "Request Method" is "OPTIONS" and the browser is asking for permission to send a POST, GET or OPTIONS request while including authorization and content-type headers.</p>
+</li>
+<li>
+<p>Click on the 2<sup>nd</sup> request. The request includes an authorization header with "bearer" token. Click on the "view JWT" link below the search form to answer the Netwars question for this exercise.</p>
 </li>
 </ol>
+<h2 id="part-2-explore-the-jwt-roles">Part 2: Explore the JWT roles</h2>
+<h3 id="no-hints_1">No Hints</h3>
+<p>The API has a number of additional features that are not obvious when using the application. Try to figure what is available and how to use these features.</p>
+<ol>
+<li>
+<p>Use the applications "Search" feature to trigger another request to the API.</p>
+</li>
+<li>
+<p>Find the request in the browser's debugger "Network" tab. Make sure not to select the "Preflight" request.</p>
+</li>
+<li>
+<p>Right click on the request and select Copy-&gt;Copy as cURL</p>
+</li>
+</ol>
+<p><img alt="" class="zoom" src="media/53-Part2-Step3-copyascurl.png" /></p>
+<ol>
+<li>
+<p>Open an empty file in an editor of your choice and paste the curl command into the file.</p>
+</li>
+<li>
+<p>Remove the "--compressed" line from the curl command</p>
+</li>
+<li>
+<p>Remove everything after "api/" from the URL. The URL should just read: <strong><a href="https://apigw.sans.labs:8442/api/">https://apigw.sans.labs:8442/api/</a></strong></p>
+</li>
+<li>
+<p>Execute the curl command. If the script you created is called "curl.sh": run <code>source curl.sh</code></p>
+</li>
+</ol>
+<p>You will now see a list of operations available. You may execute these operations by adding the respective name of the operation to the URL. Use this to answer the question in Netwars.</p>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
-<ul>
-<li>JavaScript loaded in the browser can be reverse engineered by the user easily. A debugger comes with every browser and can be used to understand the flow of the JavaScript programs. </li>
-<li>Obfuscation using JavaScript does not safeguard the program code or the logic/data hidden by the script.</li>
-</ul>
+<p>There is more here then we explored. Experiment. Kong and Keycloak are solid solutions to help protect APIs. But they have to be configured correctly and we can't rely on obscurity (hidden features) to protect information. Each request needs to be authenticated, access controlled and validated.</p>
 <hr />
-<h2 id="explore-further">Explore Further</h2>
-<ul>
-<li>Explore other flaws within Juice Shop</li>
-</ul>
                 
                   
                 
@@ -1007,6 +1168,41 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../5.2/" title="5.2: GraphQL" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                5.2: GraphQL
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../5.4/" title="5.4: Sub Resource Integrity and Logging" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                5.4: Sub Resource Integrity and Logging
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
