@@ -1150,6 +1150,13 @@ This script may take a few minutes to build and start.</p>
 <p>The response shows us that this REST based API has multiple operations that can be invoked. The information returned by these operations is the subject of the NetWars challenge. You may execute these operations by adding the respective name of the operation to the URL.</p>
 </li>
 </ol>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>After this exercise, please run the following command to stop the numerous containers required for this exercise. 
+<div class="highlight"><pre><span></span><code>apigw stop
+</code></pre></div>
+This will help improve your experience (performance) in the next exercises.</p>
+</div>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
 <p>There is more here then we explored. Experiment. Kong and Keycloak are solid solutions to help protect APIs. But they have to be configured correctly and we can't rely on obscurity (hidden features) to protect information. Each request needs to be authenticated, access controlled and validated.</p>
