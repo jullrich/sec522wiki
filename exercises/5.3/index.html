@@ -1129,24 +1129,27 @@ This script may take a few minutes to build and start.</p>
 </li>
 <li>
 <p>Right click on the request and select Copy-&gt;Copy as cURL</p>
-</li>
-</ol>
 <p><img alt="" class="zoom" src="media/53-Part2-Step3-copyascurl.png" /></p>
-<ol>
-<li>
-<p>Open an empty file in an editor of your choice and paste the curl command into the file.</p>
 </li>
 <li>
-<p>Remove the "--compressed" line from the curl command</p>
+<p>From the application tab on the left hand side, launch the program <strong>Postman</strong> by clicking on the icon. <img alt="" class="zoom" src="images/img-1633568435-20211006.png" /></p>
 </li>
 <li>
-<p>Remove everything after "api/" from the URL. The URL should just read: <strong><a href="https://apigw.sans.labs:8442/api/">https://apigw.sans.labs:8442/api/</a></strong></p>
+<p>Once Postman is loaded, near the upper left hand corner, click on the <strong>Import</strong> button (it's next to the orange "New" button). </p>
 </li>
 <li>
-<p>Execute the curl command. If the script you created is called "curl.sh": run <code>source curl.sh</code></p>
+<p>In the popup, select <strong>Raw Text</strong> 
+   <img alt="" class="zoom" src="images/img-1633569159-20211006.png" /></p>
+</li>
+<li>
+<p>Paste the content in the input box below. Then click <strong>Continue</strong> at the bottom. In the next screen, click on the orange <strong>Import</strong> at the bottom right side of the window.</p>
+</li>
+<li>
+<p>The cURL command (HTTP Request with details) is imported into Postman. Postman is a very versatile HTTP request crafting tool. We will see what it can do for a situation like what we have on hand. Edit the URL on the request to <strong><a href="https://apigw.sans.labs:8442/api/">https://apigw.sans.labs:8442/api/</a></strong> then click <strong>Send</strong>.
+    <img alt="" class="zoom" src="images/img-1633569725-20211006.png" /></p>
+<p>The response shows us that this REST based API has multiple operations that can be invoked. The information returned by these operations is the subject of the NetWars challenge. You may execute these operations by adding the respective name of the operation to the URL.</p>
 </li>
 </ol>
-<p>You will now see a list of operations available. You may execute these operations by adding the respective name of the operation to the URL. Use this to answer the question in Netwars.</p>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
 <p>There is more here then we explored. Experiment. Kong and Keycloak are solid solutions to help protect APIs. But they have to be configured correctly and we can't rely on obscurity (hidden features) to protect information. Each request needs to be authenticated, access controlled and validated.</p>
