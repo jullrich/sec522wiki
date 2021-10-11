@@ -1140,7 +1140,7 @@ fetch('https://lab-5.13.sans.labs:80');
 <p>That request returns as a 200 code with a message in the HTTP body. "An error ocurred when decrypting the stream" This tells us that there is some kind of stream processing in place at the server. This maybe a deserializer that is processing the data in the request. This is the time to attack this component. We will need a gadget and a "command" to run to form an attack payload for this attack to work.</p>
 </li>
 <li>
-<p>For the purpose of this exercise, we will assume that the attacker wants to execute the command 'cat /etc/passwd' in the target machine. We will still need a gadget for this to work. From the HTTP response header, we know that the server environment is running Java. Let's pick up some Java gadget for this attack. The most popular attack module for Java deserialization gadget is Ysoserial (<a href="https://github.com/frohoff/ysoserial">https://github.com/frohoff/ysoserial</a>) which we have integrated into the virtual machine for you to use (in the /home/student directory).</p>
+<p>For the purpose of this exercise, we will assume that the attacker wants to execute the command 'touch /tmp/test' in the target machine. We will still need a gadget for this to work. From the HTTP response header, we know that the server environment is running Java. Let's pick up some Java gadget for this attack. The most popular attack module for Java deserialization gadget is Ysoserial (<a href="https://github.com/frohoff/ysoserial">https://github.com/frohoff/ysoserial</a>) which we have integrated into the virtual machine for you to use (in the /home/student directory).</p>
 </li>
 <li>
 <p>To run the ysoserial to acquire a usable payload, we will need to use it via the command line (Launch a terminal window to run it). The syntax looks like the following, </p>
@@ -1149,7 +1149,7 @@ fetch('https://lab-5.13.sans.labs:80');
 <blockquote>
 <p>java -jar ysoserial-master.jar <Payload type> <Command in quotes></p>
 </blockquote>
-<p>We know the command we want to run is 'cat /etc/passwd'. We still need payload type as argument. See below, for payload type reference</p>
+<p>We know the command we want to run is 'touch /tmp/test'. We still need payload type as argument. See below, for payload type reference</p>
 <div class="highlight"><pre><span></span><code>Usage: java -jar ysoserial.jar [payload] &#39;[command]&#39;
   Available payload types:
      Payload             Authors                     Dependencies
