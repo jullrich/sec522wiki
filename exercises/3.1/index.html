@@ -498,15 +498,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#part-1" class="md-nav__link">
-    Part 1:
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#part-2" class="md-nav__link">
-    Part 2:
+  <a href="#part-0-1-and-2" class="md-nav__link">
+    Part 0, 1, and 2:
   </a>
   
 </li>
@@ -551,22 +544,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#part-2-more-complex-but-still-weak-authentication" class="md-nav__link">
-    Part 2: More Complex, But Still Weak, Authentication
+  <a href="#part-1-more-complex-but-still-weak-authentication" class="md-nav__link">
+    Part 1: More Complex, But Still Weak, Authentication
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#part-3-brute-forcing" class="md-nav__link">
-    Part 3: Brute Forcing
+  <a href="#part-2-brute-forcing" class="md-nav__link">
+    Part 2: Brute Forcing
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#part-4-u2f-and-bypassing-2nd-factor" class="md-nav__link">
-    Part 4: U2F And Bypassing 2nd Factor
+  <a href="#part-3-u2f-and-bypassing-2nd-factor" class="md-nav__link">
+    Part 3: U2F And Bypassing 2nd Factor
   </a>
   
     <nav class="md-nav">
@@ -962,15 +955,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#part-1" class="md-nav__link">
-    Part 1:
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#part-2" class="md-nav__link">
-    Part 2:
+  <a href="#part-0-1-and-2" class="md-nav__link">
+    Part 0, 1, and 2:
   </a>
   
 </li>
@@ -1015,22 +1001,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#part-2-more-complex-but-still-weak-authentication" class="md-nav__link">
-    Part 2: More Complex, But Still Weak, Authentication
+  <a href="#part-1-more-complex-but-still-weak-authentication" class="md-nav__link">
+    Part 1: More Complex, But Still Weak, Authentication
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#part-3-brute-forcing" class="md-nav__link">
-    Part 3: Brute Forcing
+  <a href="#part-2-brute-forcing" class="md-nav__link">
+    Part 2: Brute Forcing
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#part-4-u2f-and-bypassing-2nd-factor" class="md-nav__link">
-    Part 4: U2F And Bypassing 2nd Factor
+  <a href="#part-3-u2f-and-bypassing-2nd-factor" class="md-nav__link">
+    Part 3: U2F And Bypassing 2nd Factor
   </a>
   
     <nav class="md-nav">
@@ -1092,13 +1078,9 @@
 <div class="codehilite"><pre><span></span><code>Estimated Time: 22 minutes
 </code></pre></div>
 
-<h5 id="part-1">Part 1:</h5>
+<h5 id="part-0-1-and-2">Part 0, 1, and 2:</h5>
 <blockquote>
-<p>In this exercise, we will experiment with different examples of weak authentication and demonstrate how to break them.</p>
-</blockquote>
-<h5 id="part-2">Part 2:</h5>
-<blockquote>
-<p>In this exercise, we will experiment with different examples of weak authentication and demonstrate how to break them.</p>
+<p>In these exercises, we will experiment with different examples of weak authentication and demonstrate how to break them.</p>
 </blockquote>
 <h5 id="part-3">Part 3:</h5>
 <blockquote>
@@ -1133,7 +1115,7 @@
 </ol>
 <p>The response should provide the necessary information for you to solve the challenge in NetWars. As usual, hints is available via NetWars if necessary.</p>
 <hr />
-<h2 id="part-2-more-complex-but-still-weak-authentication">Part 2: More Complex, But Still Weak, Authentication</h2>
+<h2 id="part-1-more-complex-but-still-weak-authentication">Part 1: More Complex, But Still Weak, Authentication</h2>
 <ol>
 <li>
 <p>Ensure that the Chrome is set to sending all browser traffic through Burp - the ProxySwitcher in Chrome should be "red" in color.</p>
@@ -1164,7 +1146,7 @@
 <details class="question"><summary>What trick did the developer play to harden the page? Was it sufficient?</summary><p>The developer coded the authentication such that when the "wrong" browser connect to the webpage, the application provides a cookie to the browser so that the application can reference the use of "wrong" browser in subsequent requests. </p>
 </details>
 <hr />
-<h2 id="part-3-brute-forcing">Part 3: Brute Forcing</h2>
+<h2 id="part-2-brute-forcing">Part 2: Brute Forcing</h2>
 <p>This is an additional challenge exercise on authentication building on the knowledge you acquired so far. This exercise is to simulate a registration system where there is personal information being stored.</p>
 <ol>
 <li>
@@ -1239,7 +1221,7 @@
 </li>
 </ol>
 <hr />
-<h2 id="part-4-u2f-and-bypassing-2nd-factor">Part 4: U2F And Bypassing 2<sup>nd</sup> Factor</h2>
+<h2 id="part-3-u2f-and-bypassing-2nd-factor">Part 3: U2F And Bypassing 2<sup>nd</sup> Factor</h2>
 <h3 id="no-hints">No Hints</h3>
 <p>Start at <a href="https://lab-3.1.sans.labs/login.php">https://lab-3.1.sans.labs/login.php</a> . Click "Reset U2F Data". Next log in and follow the instructions to setup the token. Once you setup and verified that the token is working: Try to reach the "myaccount.php" without using the token (just use the username and password).</p>
 <h3 id="step-by-step">Step by Step</h3>
