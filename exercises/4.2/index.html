@@ -986,10 +986,8 @@ fetch('http://lab-4.2.sans.labs:80');
 </li>
 <li>
 <p>Click on "donate.php" in the debugger. You will see the response from "donate.php". The response is a brief JSON formatted message like:</p>
-</li>
-</ol>
 <p><code>{donations: "110", status: "success"}</code></p>
-<ol>
+</li>
 <li>
 <p>Click on "Headers" in the debugger's "Network" tab. You will see the request and response headers. Notice how the Origin header of the request specifies "<a href="http://lab-4.2.sans.labs">http://lab-4.2.sans.labs</a>" as origin. The response contains no CORS related headers. In particular, the response does not contain a "Access-Control-Allow-Origin" header.</p>
 </li>
@@ -1004,24 +1002,21 @@ fetch('http://lab-4.2.sans.labs:80');
 </li>
 <li>
 <p>Edit the file "/etc/docker/compose/4.2/web/api/donate.php". At the top, you will find a number of commented out "header" lines. Remove the comment from the line:</p>
-</li>
-</ol>
 <p><code>header('Access-Control-Allow-Origin: *</code></p>
-<ol>
+</li>
 <li>
 <p>The request will still fail. Look at the "Console" tab in the browser's debugger for more details. You should see a message that the wildcard can not be used if the request includes credentials. We are logged in, and credentials are transmitted as a cookie.</p>
 </li>
 <li>
 <p>To fix this problem, we need a more specific origin. Open "/etc/docker/compose/4.2/web/api/donate.php" again. Undo your earlier change. Instead, lets set the origin to the origin reported by the browser. Comment out the "if" block with the exception of the line we exposed earlier:</p>
+<div class="highlight"><pre><span></span><code>if (array_key_exists(&#39;HTTP_ORIGIN&#39;, $_SERVER) ) {
+    $sOrigin = $_SERVER[&#39;HTTP_ORIGIN&#39;];
+    header(&#39;Access-Control-Allow-Origin: &#39;.$sOrigin);
+# header(&#39;Access-Control-Allow-Origin: *&#39;);
+    header(&#39;Access-Control-Allow-Credentials: true&#39;); 
+}
+</code></pre></div>
 </li>
-</ol>
-<p>`if (array_key_exists('HTTP_ORIGIN', $_SERVER) ) {
-     $sOrigin = $_SERVER['HTTP_ORIGIN'];
-     header('Access-Control-Allow-Origin: '.$sOrigin);
- # header('Access-Control-Allow-Origin: *');
-     header('Access-Control-Allow-Credentials: true'); 
- }</p>
-<ol>
 <li>
 <p>Try the donation again. It should work now. It may take a while to respond if it took you some time to make the edit as the docker container may need to restart.</p>
 </li>
