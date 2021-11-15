@@ -1022,11 +1022,9 @@ fetch('http://lab-4.2.sans.labs:80');
 </li>
 <li>
 <p>Try the donation again. It should work now. It may take a while to respond if it took you some time to make the edit as the docker container may need to restart.</p>
-</li>
-</ol>
 <details class="question"><summary>Why does it work now and not earlier?</summary><p>Access-Control-Allow-Credentials with Access-Control-Allow-Origin set to wildcard (*) will not work. A specific origin being set is allowed which is what the second edit of the file actually did. We are now specifying the exact origin to set as the Access-Control-Allow-Origin.</p>
 </details>
-<ol>
+</li>
 <li>
 <p>Click on the "Evil Cross Origin". It should display a simple page with no obvious donation dialog.</p>
 </li>
