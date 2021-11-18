@@ -1072,7 +1072,7 @@ fetch('https://lab-5.13.sans.labs:80');
 <p>Using Chrome, browse to <a href="http://lab-5.1-evil.sans.labs/eviljs.php">http://lab-5.1-evil.sans.labs/eviljs.php</a></p>
 </li>
 <li>
-<p>Similar to the previous exercise, we start off with the evil cat's page and Javascript immediately kick into action to change the DNS in the background. There is a long wait for the DNS pin to expire within the JavaScript engine. Review the change in the Javascript prompt and then click "OK".</p>
+<p>We start off with the evil cat's page and Javascript immediately kick into action to change the DNS in the background. There is a long wait for the DNS pin to expire within the JavaScript engine. Review the change in the Javascript prompt and then click "OK".</p>
 </li>
 <li>
 <p>The JavaScript automatically count down. In the background, every second there is a fetch request being sent to determine if the DNS pin has been lifted by the browser so the DNS would be re-queried and therefore change to the alternative host. </p>
@@ -1081,15 +1081,9 @@ fetch('https://lab-5.13.sans.labs:80');
 <p>After about 100 seconds, the Chrome browser will lift the DNS pin and the JavaScript detects this and send the attack to the alternative host.</p>
 </li>
 <li>
-<p>Now find out where in eviljs.php to insert a request for "<a href="http://lab-5.1-evil.sans.labs/flag.php">http://lab-5.1-evil.sans.labs/flag.php</a>" (the file can be found at /etc/docker/compose/5.1/web/html/eviljs.php )</p>
+<p>Now open <strong><a href="http://lab-5.1-evil.sans.labs/flag.php">http://lab-5.1-evil.sans.labs/flag.php</a></strong> in the browser to retrieve the flag for Netwars. The answer to the NetWars challenge should be a combination of English words (no spaces)</p>
 </li>
 </ol>
-<div class="admonition tip">
-<p class="admonition-title">Free hint</p>
-<ul>
-<li>The answer to the NetWars challenge should be a combination of English words (no spaces)</li>
-</ul>
-</div>
 <h2 id="part-2-deserialization">Part 2: Deserialization</h2>
 <ol>
 <li>
@@ -1219,6 +1213,10 @@ Available payload types:
 </li>
 <li>
 <p>Open <strong>/etc/docker/compose/5.13/docker-java/FixedHTTPServer.java</strong> in an editor (Visual Studio Code) to review the code. The subject of the challenge pertains to this file. Please use the hints in NetWars as required.</p>
+<div class="admonition information">
+<p class="admonition-title">Information</p>
+<p>For reference, the vulnerable version of the same application can be accessed at <strong>/etc/docker/compose/5.12/docker-java/VulnerableHTTPServer.java</strong></p>
+</div>
 </li>
 </ol>
 <hr />
