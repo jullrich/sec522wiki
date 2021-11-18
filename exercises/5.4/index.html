@@ -1034,7 +1034,7 @@ to show the differences between two files.</p>
 <p>Reload the donations page. You will now see an error on the console tab in the Developer Tools.</p>
 </li>
 <li>
-<p>Change "donations.php" to use “trackgood.js” instead of "track.js" (keep the integirty parameter intact).</p>
+<p>Change "donations.php" to use “trackgood.js” instead of "track.js" (keep the integrity parameter intact).</p>
 </li>
 <li>
 <p>Reload the donations page. The script will now load as the signature matches.</p>
@@ -1147,14 +1147,14 @@ www.sec522.org:80 127.0.0.1 - - [26/Jan/2020:00:25:58 -0500] "POST /citrusgw/api
 <p>The second part of the exercise uses the log file you have already open, but the requests are now hitting newbm.php. Refer to the field list in the introduction above to identify which field changes for some of the requests.</p>
 </li>
 <li>
-<p>You may want to open /etc/docker/compose/5.41/web/html/citrusgw/api/newbm.php first in a text editor (Visual Studio Code) to understand a bit more what is happening.</p>
+<p>You may want to open <strong>/etc/docker/compose/5.41/web/html/citrusgw/api/newbm.php</strong> first in a text editor (Visual Studio Code) to understand a bit more what is happening.</p>
 </li>
 </ol>
 <h2 id="conclusion">Conclusion</h2>
 <ul>
 <li>Subresource integrity is useful for making sure that content being loaded from a remote location is of a specific version or that it hasn't been altered.</li>
 <li>When using Subresource integrity, the destination resource changes will cause the browser to stop loading the resource.</li>
-<li>Subresource integirty works for any &lt;link> and &lt;script> elements</li>
+<li>Subresource integrity works for any &lt;link> and &lt;script> elements</li>
 <li>Log analysis can yield a lot of insights on the activities of the application. In incident response scenario, logs are often the main source of information to understand what had happened. </li>
 </ul>
 <hr />
