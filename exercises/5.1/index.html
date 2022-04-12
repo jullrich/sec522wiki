@@ -702,8 +702,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#part-3_1" class="md-nav__link">
-    Part 3:
+  <a href="#part-3-fixing-deserialization-vulnerability" class="md-nav__link">
+    Part 3: Fixing Deserialization vulnerability
   </a>
   
 </li>
@@ -995,8 +995,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#part-3_1" class="md-nav__link">
-    Part 3:
+  <a href="#part-3-fixing-deserialization-vulnerability" class="md-nav__link">
+    Part 3: Fixing Deserialization vulnerability
   </a>
   
 </li>
@@ -1197,11 +1197,12 @@ Available payload types:
 </li>
 </ol>
 <hr />
-<h2 id="part-3_1">Part 3:</h2>
+<h2 id="part-3-fixing-deserialization-vulnerability">Part 3: Fixing Deserialization vulnerability</h2>
 <p>In this part, we will learn about the fixing of the deserialization vulnerability.</p>
 <ol>
+<li>In Burp, go to the Repeater tab where we already setup the template for sending the exploit payload over Cookie header to the server. Please change both the <strong>Host:</strong> header in the left pane and also the <strong>Target</strong> on the upper right hand corner. See below screen cap on where you need to change the values. For both, the host name that we are targeting is <strong>lab-5.1-fixdeserial.sans.labs</strong> This is a fixed, no longer vulnerable version of the previous target. The code base is the same except the vulnerability has been fixed.</li>
 <li>
-<p>In Burp, go to the Repeater tab where we already setup the template for sending the exploit payload over Cookie header to the server. Please change both the <strong>Host:</strong> header in the left pane and also the <strong>Target</strong> on the upper right hand corner. See below screen cap on where you need to change the values. For both, the host name that we are targeting is <strong>lab-5.1-fixdserial.sans.labs</strong> This is a fixed, no longer vulnerable version of the previous target. The code base is the same except the vulnerability has been fixed.</p>
+<p>In Burp, go to the Repeater tab where we already setup the template for sending the exploit payload over Cookie header to the server. Please change both the <strong>Host:</strong> header in the left pane and also the <strong>Target</strong> on the upper right hand corner. See below screen cap on where you need to change the values. For both, the host name that we are targeting is <strong>lab-5.1-fixdeserial.sans.labs</strong> This is a fixed, no longer vulnerable version of the previous target. The code base is the same except the vulnerability has been fixed.</p>
 <p><img alt="" class="zoom" src="images/img-1633223794-20211002.png" /></p>
 </li>
 <li>

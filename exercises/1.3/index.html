@@ -1126,10 +1126,14 @@ fetch('https://lab-1.3.sans.labs:80');
 <ol>
 <li>
 <p>In Chrome, go to <a href="http://normalsecurity.sans.labs"><strong>http://normalsecurity.sans.labs</strong></a> and click on the two files "<strong>Credit Card Data (cc.html)"</strong> and <strong>"Source Code (trans.txt)"</strong>.</p>
-<details class="question"><summary>What do these two files show?</summary><p><strong>cc.html</strong> shows transaction data including credit card numbers.</p>
+<details class="question">
+<summary>What do these two files show?</summary>
+<p><strong>cc.html</strong> shows transaction data including credit card numbers.</p>
 <p><strong>trans.txt</strong> leaks source code.</p>
 </details>
-<details class="question"><summary>Why is it a problem that our application leaks data like this?</summary><p><strong>cc.html</strong> - leaking credit card data is, of course, a problem.</p>
+<details class="question">
+<summary>Why is it a problem that our application leaks data like this?</summary>
+<p><strong>cc.html</strong> - leaking credit card data is, of course, a problem.</p>
 <p><strong>trans.txt</strong> - an attacker could use this source code to find vulnerabilities.</p>
 </details>
 </li>

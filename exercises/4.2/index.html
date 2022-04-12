@@ -1004,7 +1004,9 @@ fetch('http://lab-4.2.sans.labs:80');
 <p>Edit the file "/etc/docker/compose/4.2/web/api/donate.php". At the top, you will find a number of commented out "header" lines. Remove the comment (delete the leading #) from the line :</p>
 <div class="highlight"><pre><span></span><code>header(&#39;Access-Control-Allow-Origin: *&#39;);
 </code></pre></div>
-<details class="information"><summary>Information</summary><p>With the uncommented line, an Access-Control-Allow-Origin header will be sent from the API host indicating willingness to accept request originating from any domains (the wildcard *).</p>
+<details class="information">
+<summary>Information</summary>
+<p>With the uncommented line, an Access-Control-Allow-Origin header will be sent from the API host indicating willingness to accept request originating from any domains (the wildcard *).</p>
 </details>
 </li>
 <li>
@@ -1022,7 +1024,9 @@ fetch('http://lab-4.2.sans.labs:80');
 </li>
 <li>
 <p>Try the donation again. It should work now. It may take a while to respond if it took you some time to make the edit as the docker container may need to restart.</p>
-<details class="question"><summary>Why does it work now and not earlier?</summary><p>Access-Control-Allow-Credentials with Access-Control-Allow-Origin set to wildcard (*) will not work. A specific origin being set is allowed which is what the second edit of the file actually did. We are now specifying the exact origin to set as the Access-Control-Allow-Origin.</p>
+<details class="question">
+<summary>Why does it work now and not earlier?</summary>
+<p>Access-Control-Allow-Credentials with Access-Control-Allow-Origin set to wildcard (*) will not work. A specific origin being set is allowed which is what the second edit of the file actually did. We are now specifying the exact origin to set as the Access-Control-Allow-Origin.</p>
 </details>
 </li>
 <li>

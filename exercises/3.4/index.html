@@ -1048,26 +1048,40 @@
 <p>The first three packets (Nos. 1--3) hold the TCP three-way handshake. They establish the TCP connection and do not indicate that we are going to use SSL.</p>
 <p>Packet 4, sent by the client (192.168.1.121) to the server (192.168.1.174), represents an "SSL Client Hello". With this packet, the client indicates that it would like to talk SSL to the server. It does provide some basic parameters that are used to negotiate the SSL connection.</p>
 <p>By inspecting the middle pane, try to identify the following parameters:</p>
-<details class="question"><summary>What SSL version is the client using?</summary><p>SSL 3.0</p>
+<details class="question">
+<summary>What SSL version is the client using?</summary>
+<p>SSL 3.0</p>
 </details>
-<details class="question"><summary>How many cipher suites does the client support?</summary><p>12 </p>
+<details class="question">
+<summary>How many cipher suites does the client support?</summary>
+<p>12 </p>
 </details>
 <p><img alt="" src="media/image3.png" /></p>
 <p><strong>Client Hello Details</strong></p>
 <p>In packet #5, the server acknowledges receipt of the client hello.</p>
 <p>Packet 6 contains the server's response, a "Server Hello". This packet also includes the server's certificate. Just as for packet 4, identify the following parameters:</p>
-<details class="question"><summary>Which SSL version is the server accepting?</summary><p>SSL 3.0</p>
+<details class="question">
+<summary>Which SSL version is the server accepting?</summary>
+<p>SSL 3.0</p>
 </details>
-<details class="question"><summary>Which cipher suite did the server select?</summary><p>TLS_RSA_WITH_RC4_128_MD5</p>
+<details class="question">
+<summary>Which cipher suite did the server select?</summary>
+<p>TLS_RSA_WITH_RC4_128_MD5</p>
 </details>
-<details class="question"><summary>Who issued the certificate?</summary><p>SANS CA</p>
+<details class="question">
+<summary>Who issued the certificate?</summary>
+<p>SANS CA</p>
 </details>
-<details class="question"><summary>What is the hostname (common name) of the server according to the certificate?</summary><p>sanshost</p>
+<details class="question">
+<summary>What is the hostname (common name) of the server according to the certificate?</summary>
+<p>sanshost</p>
 </details>
 <p><img alt="Server Hello Details" src="media/image4.png" /></p>
 <p><strong>Server Hello Details</strong></p>
 <p>Packet 12 is the first encrypted data packet. </p>
-<details class="question"><summary>How many bytes of encrypted data does it contain?</summary><p>434</p>
+<details class="question">
+<summary>How many bytes of encrypted data does it contain?</summary>
+<p>434</p>
 </details>
 <p><img alt="" src="media/image5.png" /></p>
 <p><strong>Encrypted Packets</strong></p>
@@ -1097,7 +1111,9 @@
 <p>Right-click on packet #12, then select "Follow -&gt; TLS Stream" to reconstruct the payload of the HTTP request and response.</p>
 </li>
 </ol>
-<details class="question"><summary>What is the content of the payload of the response?</summary><p>HTTP Request - The page has HTML content of a message "The Secret key is: Perfect 10"</p>
+<details class="question">
+<summary>What is the content of the payload of the response?</summary>
+<p>HTTP Request - The page has HTML content of a message "The Secret key is: Perfect 10"</p>
 </details>
 <p><img alt="" src="media/image9.png" /></p>
 <p><strong>Decrypted SSL Stream</strong></p>

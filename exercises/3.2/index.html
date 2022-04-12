@@ -1100,7 +1100,9 @@ fetch('https://lab-3.2.sans.labs:80');
 </li>
 <li>
 <p>With the login2.php, please repeat the same process from step 2 (see above) to step 6.</p>
-<details class="question"><summary>While the session ID is changed in Chrome in step 4, is attacker still able to access the logged in session in step 5?</summary><p>If the attacker does not get redirected to the login page, that means that attacker is still able to use the session even though the session ID looks different on Chrome.</p>
+<details class="question">
+<summary>While the session ID is changed in Chrome in step 4, is attacker still able to access the logged in session in step 5?</summary>
+<p>If the attacker does not get redirected to the login page, that means that attacker is still able to use the session even though the session ID looks different on Chrome.</p>
 </details>
 </li>
 <li>
@@ -1108,7 +1110,9 @@ fetch('https://lab-3.2.sans.labs:80');
 </li>
 <li>
 <p>With the login3.php, please repeat the same process from step 2 (see above) to step 6.</p>
-<details class="question"><summary>In step 5, is the attacker redirected to the login page?</summary><p>If the attacker is redirected to the login page, that means that the session ID presented by the attacker is not associated with any user. Essentially, session fixation did not work.</p>
+<details class="question">
+<summary>In step 5, is the attacker redirected to the login page?</summary>
+<p>If the attacker is redirected to the login page, that means that the session ID presented by the attacker is not associated with any user. Essentially, session fixation did not work.</p>
 </details>
 </li>
 <li>
@@ -1116,7 +1120,9 @@ fetch('https://lab-3.2.sans.labs:80');
 <p><a href="http://lab-3.2.sans.labs/login2.phps">http://lab-3.2.sans.labs/login2.phps</a>  <br>
 <a href="http://lab-3.2.sans.labs/login3.phps">http://lab-3.2.sans.labs/login3.phps</a></p>
 <p>Pay attention to line 23 to 25. There are subtle differences in the location of session_regenerate_id.  </p>
-<details class="question"><summary>What are the differences?</summary><p>"fix2" regenerates the session ID after the login was verified. "fix3" regenerates the session ID first, so the user ID is never associated with the old session. </p>
+<details class="question">
+<summary>What are the differences?</summary>
+<p>"fix2" regenerates the session ID after the login was verified. "fix3" regenerates the session ID first, so the user ID is never associated with the old session. </p>
 </details>
 </li>
 </ol>
@@ -1142,7 +1148,9 @@ fetch('https://lab-3.2.sans.labs:80');
 <p><img alt="" class="zoom" src="media/img-1615443698-20210311.png" /></p>
 <p><strong>Chrome Developer Tools Cookies</strong></p>
 <p>You will now see a different account. Experiment with different values and try to find the account with the most donations.</p>
-<details class="question"><summary>Which account has the most donations?</summary><p><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#116;&#100;&#101;&#101;&#114;&#110;&#101;&#115;&#115;&#49;&#56;&#64;&#119;&#111;&#114;&#100;&#112;&#114;&#101;&#115;&#115;&#46;&#99;&#111;&#109;">&#116;&#100;&#101;&#101;&#114;&#110;&#101;&#115;&#115;&#49;&#56;&#64;&#119;&#111;&#114;&#100;&#112;&#114;&#101;&#115;&#115;&#46;&#99;&#111;&#109;</a> of value 45 has the most donation at $997.74</p>
+<details class="question">
+<summary>Which account has the most donations?</summary>
+<p><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#116;&#100;&#101;&#101;&#114;&#110;&#101;&#115;&#115;&#49;&#56;&#64;&#119;&#111;&#114;&#100;&#112;&#114;&#101;&#115;&#115;&#46;&#99;&#111;&#109;">&#116;&#100;&#101;&#101;&#114;&#110;&#101;&#115;&#115;&#49;&#56;&#64;&#119;&#111;&#114;&#100;&#112;&#114;&#101;&#115;&#115;&#46;&#99;&#111;&#109;</a> of value 45 has the most donation at $997.74</p>
 </details>
 </li>
 </ol>

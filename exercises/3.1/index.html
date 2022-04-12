@@ -1143,7 +1143,9 @@
 <p>Click "Forward" for all the following requests. You will then see the protected page.</p>
 </li>
 </ol>
-<details class="question"><summary>What trick did the developer play to harden the page? Was it sufficient?</summary><p>The developer coded the authentication such that when the "wrong" browser connect to the webpage, the application provides a cookie to the browser so that the application can reference the use of "wrong" browser in subsequent requests. </p>
+<details class="question">
+<summary>What trick did the developer play to harden the page? Was it sufficient?</summary>
+<p>The developer coded the authentication such that when the "wrong" browser connect to the webpage, the application provides a cookie to the browser so that the application can reference the use of "wrong" browser in subsequent requests. </p>
 </details>
 <hr />
 <h2 id="part-2-brute-forcing">Part 2: Brute Forcing</h2>
@@ -1156,13 +1158,21 @@
 <p>Browse to <a href="http://lab-3.1.sans.labs/donations.php">http://lab-3.1.sans.labs/donations.php</a></p>
 <p>The page has a lookup system where the user can review their own respective donation information. The objective is to acquire as much information from this system as possible.</p>
 <p>Use the following hints to help you:</p>
-<details class="hint"><summary>Hint #1</summary><p>What's the likely user-agent for "DOGBrowser"? </p>
+<details class="hint">
+<summary>Hint #1</summary>
+<p>What's the likely user-agent for "DOGBrowser"? </p>
 </details>
-<details class="hint"><summary>Hint #1</summary><p>What's the purpose of the cookie "browser"? </p>
+<details class="hint">
+<summary>Hint #1</summary>
+<p>What's the purpose of the cookie "browser"? </p>
 </details>
-<details class="hint"><summary>Hint #2</summary><p>Can you brute force the donation number? Scripting may help.</p>
+<details class="hint">
+<summary>Hint #2</summary>
+<p>Can you brute force the donation number? Scripting may help.</p>
 </details>
-<details class="hint"><summary>Hint #3</summary><p>You can use the "Intruder" feature in Burp to assist with brute forcing the solution.</p>
+<details class="hint">
+<summary>Hint #3</summary>
+<p>You can use the "Intruder" feature in Burp to assist with brute forcing the solution.</p>
 </details>
 </li>
 <li>
@@ -1273,7 +1283,9 @@
 <li>
 <p>Open <a href="https://lab-3.1.sans.labs/myaccount.php">https://lab-3.1.sans.labs/myaccount.php</a> in Chrome. You will be able to access the page. You just accessed the "My Account" page without using the U2F token, bypassing the two-factor authentication requirement.</p>
 <p>The application logged you in after you entered the username and password. This often happens if the U2F authentication is added later. A better solution would not associate the users user id with the session until the U2F process is complete, or set a flag with the session that the U2F authentication has not yet completed.</p>
-<details class="bug"><summary>If all else fails</summary><p>This exercise required the use of a Linux U2F token software for authentication, this is used in lieu of a real Fido2 token (Fido2 is backward compatible with U2F). If resetting of the token software is need, please run the following command in the terminal window.</p>
+<details class="bug">
+<summary>If all else fails</summary>
+<p>This exercise required the use of a Linux U2F token software for authentication, this is used in lieu of a real Fido2 token (Fido2 is backward compatible with U2F). If resetting of the token software is need, please run the following command in the terminal window.</p>
 <div class="codehilite"><pre><span></span><code>systemctl --user restart softu2f
 </code></pre></div>
 

@@ -1096,7 +1096,9 @@ fetch('https://lab-4.32.sans.labs:80');
 <p>You will be able to review Local Storage and Session Storage. You will see the values you entered in the text area. For Session Storage, you will see different values in different tabs.</p>
 </li>
 </ol>
-<details class="tip"><summary>Answer</summary><p>Storage #1 is kept in LocalStorage. Storage #2 is kept in SessionStorage. As a result, Storage #1 is the same for both tabs, while Storage #2 is different.</p>
+<details class="tip">
+<summary>Answer</summary>
+<p>Storage #1 is kept in LocalStorage. Storage #2 is kept in SessionStorage. As a result, Storage #1 is the same for both tabs, while Storage #2 is different.</p>
 </details>
 <hr />
 <h2 id="part-2-cross-window-messaging">Part 2: Cross-Window Messaging</h2>
@@ -1137,7 +1139,9 @@ fetch('https://lab-4.32.sans.labs:80');
 <p>You can find the source code for the files in /etc/docker/compose/4.3/web/html/platform.html.</p>
 </li>
 </ol>
-<details class="tip"><summary>Answer</summary><p>platform.html never checks the origin of the message. This will allow any window to send messages if that window can obtain a handle to the "platform" IFrame. To</p>
+<details class="tip">
+<summary>Answer</summary>
+<p>platform.html never checks the origin of the message. This will allow any window to send messages if that window can obtain a handle to the "platform" IFrame. To</p>
 <p>check for the origin, you could add this code.</p>
 <div class="highlight"><pre><span></span><code><span class="x">If ( event.origin != &#39;http://lab-4.3.sans.labs&#39;) {</span>
 <span class="x">    return 0</span>
