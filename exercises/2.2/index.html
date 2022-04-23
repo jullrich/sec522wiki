@@ -95,7 +95,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#exercise-22-cross-site-request-forgery" tabindex="0" class="md-skip">
+      <a href="#guestbook-csrf" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -276,8 +276,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../errata/G02/" title="G02" class="md-nav__link">
-      G02
+    <a href="../../errata/H01_01/" title="H01_01" class="md-nav__link">
+      H01_01
     </a>
   </li>
 
@@ -950,10 +950,21 @@
               
                 
                 
-                <script>
+                <style>
+@page { @top-center {
+    content: 'SANS SEC522 Workbook';
+}}
+@page :left { @bottom-left {
+  content: '2.2-' counter(page);
+}}
+@page :right { @bottom-right {
+  content: '2.2-' counter(page);
+}}
+</style>
+<script>
 fetch('https://lab-2.2.sans.labs:80');
 </script>
-<h1 id="exercise-22-cross-site-request-forgery">Exercise 2.2 - Cross-Site Request Forgery</h1>
+<h1 id="guestbook-csrf">Guestbook CSRF</h1>
 <hr />
 <h4 id="objectives">Objectives</h4>
 <div class="codehilite"><pre><span></span><code>Estimated Time: 10 minutes

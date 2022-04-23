@@ -95,7 +95,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#exercise-53-api-gateways-and-json" tabindex="0" class="md-skip">
+      <a href="#api-gateways-and-json" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -276,8 +276,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../errata/G02/" title="G02" class="md-nav__link">
-      G02
+    <a href="../../errata/H01_01/" title="H01_01" class="md-nav__link">
+      H01_01
     </a>
   </li>
 
@@ -1044,7 +1044,19 @@
               
                 
                 
-                <h1 id="exercise-53-api-gateways-and-json">Exercise 5.3 - API Gateways and JSON</h1>
+                <style>
+@page { @top-center {
+    content: 'SANS SEC522 Workbook';
+}}
+@page :left { @bottom-left {
+  content: '5.3-' counter(page);
+}}
+@page :right { @bottom-right {
+  content: '5.3-' counter(page);
+}}
+</style>
+
+<h1 id="api-gateways-and-json">API Gateways and JSON</h1>
 <hr />
 <h4 id="objectives">Objectives</h4>
 <div class="codehilite"><pre><span></span><code>Estimated Time: 20 minutes
@@ -1133,8 +1145,8 @@ This script may take a few minutes to build and start.</p>
 <p>Paste the content in the input box below. Then click <strong>Continue</strong> at the bottom. In the next screen, click on the orange <strong>Import</strong> at the bottom right side of the window.</p>
 </li>
 <li>
-<p>The cURL command (HTTP Request with details) is imported into Postman. Postman is a very versatile HTTP request crafting tool. We will see what it can do for a situation like what we have on hand. Edit the URL on the request to <strong><a href="https://apigw.sans.labs:8442/api/">https://apigw.sans.labs:8442/api/</a></strong> then click <strong>Send</strong>. If Postman complains about TLS issue, select disabling of the SSL verification.</p>
-<p><img alt="" class="zoom" src="images/img-1633569725-20211006.png" /></p>
+<p>The cURL command (HTTP Request with details) is imported into Postman. Postman is a very versatile HTTP request crafting tool. We will see what it can do for a situation like what we have on hand. Edit the URL on the request to <strong><a href="https://apigw.sans.labs:8442/api/">https://apigw.sans.labs:8442/api/</a></strong> then click <strong>Send</strong>.
+    <img alt="" class="zoom" src="images/img-1633569725-20211006.png" /></p>
 <p>The response shows us that this REST based API has multiple operations that can be invoked. The information returned by these operations is the subject of the NetWars challenge. You may execute these operations by adding the respective name of the operation to the URL.</p>
 </li>
 </ol>

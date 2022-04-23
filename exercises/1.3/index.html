@@ -95,7 +95,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#exercise-13-isolation-exercise" tabindex="0" class="md-skip">
+      <a href="#service-isolation" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -276,8 +276,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../errata/G02/" title="G02" class="md-nav__link">
-      G02
+    <a href="../../errata/H01_01/" title="H01_01" class="md-nav__link">
+      H01_01
     </a>
   </li>
 
@@ -387,6 +387,13 @@
           <li class="md-nav__item">
   <a href="#part-2" class="md-nav__link">
     Part 2:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-3" class="md-nav__link">
+    Part 3:
   </a>
   
 </li>
@@ -947,6 +954,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#part-3" class="md-nav__link">
+    Part 3:
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1030,11 +1044,23 @@
               
                 
                 
-                <script>
+                <style>
+@page { @top-center {
+    content: 'SANS SEC522 Workbook';
+}}
+@page :left { @bottom-left {
+  content: '1.3-' counter(page);
+}}
+@page :right { @bottom-right {
+  content: '1.3-' counter(page);
+}}
+</style>
+
+<script>
 fetch('https://lab-1.3.sans.labs:80');
 </script>
 
-<h1 id="exercise-13-isolation-exercise">Exercise 1.3 - Isolation Exercise</h1>
+<h1 id="service-isolation">Service Isolation</h1>
 <hr />
 <h4 id="objectives">Objectives</h4>
 <div class="codehilite"><pre><span></span><code>Estimated Time: 15 minutes
@@ -1045,6 +1071,10 @@ fetch('https://lab-1.3.sans.labs:80');
 <p>In this exercise, you will learn about the importance of isolating services like FTP and HTTP. We will also experiment with web application firewalls to demonstrate how they can prevent sensitive data leakage.</p>
 </blockquote>
 <h5 id="part-2">Part 2:</h5>
+<blockquote>
+<p>Many organizations deploy web applications in docker containers. Docker containers are administered via an API. Exposing the API, or tools that use it, will expose your Docker containers to attack. In this exercise, we will experiment with a common Docker administration tool called "Portainer".</p>
+</blockquote>
+<h5 id="part-3">Part 3:</h5>
 <blockquote>
 <p>In this part of the exercise, you will experiment the Web application firewall (mod_security) and it's capability to detect data leak post-compromise and view the logs captured by the Web Application Firewall</p>
 </blockquote>

@@ -95,7 +95,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#exercise-54-sub-resource-integrity-log-review" tabindex="0" class="md-skip">
+      <a href="#sub-resource-integrity-log-review" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -276,8 +276,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../errata/G02/" title="G02" class="md-nav__link">
-      G02
+    <a href="../../errata/H01_01/" title="H01_01" class="md-nav__link">
+      H01_01
     </a>
   </li>
 
@@ -964,12 +964,24 @@
               
                 
                 
-                <script>
+                <style>
+@page { @top-center {
+    content: 'SANS SEC522 Workbook';
+}}
+@page :left { @bottom-left {
+  content: '5.4-' counter(page);
+}}
+@page :right { @bottom-right {
+  content: '5.4-' counter(page);
+}}
+</style>
+
+<script>
 fetch('https://lab-5.4.sans.labs:80');
 fetch('https://lab-5.41.sans.labs:80');
 </script>
 
-<h1 id="exercise-54-sub-resource-integrity-log-review">Exercise 5.4 - Sub Resource Integrity &amp; Log review</h1>
+<h1 id="sub-resource-integrity-log-review">Sub Resource Integrity &amp; Log Review</h1>
 <hr />
 <h4 id="objectives">Objectives</h4>
 <div class="codehilite"><pre><span></span><code>Estimated Time: 15 minutes
@@ -1034,7 +1046,7 @@ to show the differences between two files.</p>
 <p>Reload the donations page. You will now see an error on the console tab in the Developer Tools.</p>
 </li>
 <li>
-<p>Change "donations.php" to use “trackgood.js” instead of "track.js" (keep the integrity parameter intact).</p>
+<p>Change "donations.php" to use “trackgood.js” instead of "track.js" (keep the integirty parameter intact).</p>
 </li>
 <li>
 <p>Reload the donations page. The script will now load as the signature matches.</p>
@@ -1043,7 +1055,7 @@ to show the differences between two files.</p>
 <p>The “integrity” parameter will indicate to the browser that the file has changed. The browser is now able to block scripts if they changed.</p>
 <details class="solution">
 <summary>Solution</summary>
-<p>Here is the JavaScript reference with integrity attributes embeded (line 20 of donations.php). 
+<p>Here is the JavaScript reference with integrity attributes embeded (line 17 of donations.php). 
 <div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">&quot;/js/track.js&quot;</span> <span class="nx">integrity</span><span class="o">=</span><span class="s2">&quot;sha384-[insert hash]&quot;</span><span class="o">&gt;&lt;</span><span class="err">/script&gt;</span>
 </code></pre></div></p>
 </details>
@@ -1149,14 +1161,14 @@ www.sec522.org:80 127.0.0.1 - - [26/Jan/2020:00:25:58 -0500] "POST /citrusgw/api
 <p>The second part of the exercise uses the log file you have already open, but the requests are now hitting newbm.php. Refer to the field list in the introduction above to identify which field changes for some of the requests.</p>
 </li>
 <li>
-<p>You may want to open <strong>/etc/docker/compose/5.41/web/html/citrusgw/api/newbm.php</strong> first in a text editor (Visual Studio Code) to understand a bit more what is happening.</p>
+<p>You may want to open /etc/docker/compose/5.41/web/html/citrusgw/api/newbm.php first in a text editor (Visual Studio Code) to understand a bit more what is happening.</p>
 </li>
 </ol>
 <h2 id="conclusion">Conclusion</h2>
 <ul>
 <li>Subresource integrity is useful for making sure that content being loaded from a remote location is of a specific version or that it hasn't been altered.</li>
 <li>When using Subresource integrity, the destination resource changes will cause the browser to stop loading the resource.</li>
-<li>Subresource integrity works for any &lt;link> and &lt;script> elements</li>
+<li>Subresource integirty works for any &lt;link> and &lt;script> elements</li>
 <li>Log analysis can yield a lot of insights on the activities of the application. In incident response scenario, logs are often the main source of information to understand what had happened. </li>
 </ul>
 <hr />

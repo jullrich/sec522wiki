@@ -1,0 +1,64 @@
+@media print {
+  .labVideo {
+    display: none;
+  }
+}
+
+@media screen {
+  .labVideo {
+    display: true;
+  }
+}
+
+@page {
+  size: letter portrait;
+  margin: 1in;
+  counter-increment: page;
+  font-family: "Ubuntu";
+  white-space: pre;
+  color: black;
+  table, img, svg {
+    break-inside: avoid;
+  }
+}
+
+@page :left {
+   @top-center {
+       font-size: small;
+      content: '';       
+  }
+
+  @bottom-left {
+      font-size: small;
+      content: '' !important;            
+  }
+  @bottom-center {
+      font-size: small;
+      content: '';      
+  }
+
+  @bottom-right {
+      font-size: small;
+      content: '' !important;
+  }
+}
+
+@page :right {
+  @top-center {
+      font-size: small;
+      content: '';      
+  }
+
+  @bottom-left {
+      font-size: small;
+      content: '' !important;      
+  }
+  @bottom-center {
+      font-size: small;
+      content: '';      
+  }
+  @bottom-right {
+      font-size: small;
+      content: '' !important;
+  }
+}

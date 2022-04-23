@@ -95,7 +95,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#exercise-51-deserialization-and-dns-rebinding" tabindex="0" class="md-skip">
+      <a href="#deserialization-and-dns-rebinding" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -276,8 +276,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../errata/G02/" title="G02" class="md-nav__link">
-      G02
+    <a href="../../errata/H01_01/" title="H01_01" class="md-nav__link">
+      H01_01
     </a>
   </li>
 
@@ -695,15 +695,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#part-2-deserialization" class="md-nav__link">
-    Part 2: Deserialization
+  <a href="#part-2_1" class="md-nav__link">
+    Part 2:
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#part-3-fixing-deserialization-vulnerability" class="md-nav__link">
-    Part 3: Fixing Deserialization vulnerability
+  <a href="#part-3_1" class="md-nav__link">
+    Part 3:
   </a>
   
 </li>
@@ -988,15 +988,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#part-2-deserialization" class="md-nav__link">
-    Part 2: Deserialization
+  <a href="#part-2_1" class="md-nav__link">
+    Part 2:
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#part-3-fixing-deserialization-vulnerability" class="md-nav__link">
-    Part 3: Fixing Deserialization vulnerability
+  <a href="#part-3_1" class="md-nav__link">
+    Part 3:
   </a>
   
 </li>
@@ -1032,14 +1032,26 @@
               
                 
                 
-                <script>
+                <style>
+@page { @top-center {
+    content: 'SANS SEC522 Workbook';
+}}
+@page :left { @bottom-left {
+  content: '5.1-' counter(page);
+}}
+@page :right { @bottom-right {
+  content: '5.1-' counter(page);
+}}
+</style>
+
+<script>
 fetch('https://lab-5.1.sans.labs:80');
 fetch('https://lab-5.11.sans.labs:80');
-fetch('http://lab-5.1-deserial.sans.labs:80');
-fetch('http://lab-5.1-evil.sans.labs:80');
+fetch('https://lab-5.12.sans.labs:80');
+fetch('https://lab-5.13.sans.labs:80');
 </script>
 
-<h1 id="exercise-51-deserialization-and-dns-rebinding">Exercise 5.1 - Deserialization and DNS Rebinding</h1>
+<h1 id="deserialization-and-dns-rebinding">Deserialization and DNS Rebinding</h1>
 <hr />
 <h4 id="objectives">Objectives</h4>
 <p>Hands on practice for deserialization attack and defense and DNS rebinding issues.</p>
@@ -1065,14 +1077,14 @@ fetch('http://lab-5.1-evil.sans.labs:80');
 <hr />
 <h2 id="part-1-dns-rebinding">Part 1: DNS Rebinding</h2>
 <p>In this exercise, we will experiment with DNS rebinding. The attacker prepared a website at <a href="http://lab-5.1-evil.sans.labs/eviljs.php">http://lab-5.1-evil.sans.labs/eviljs.php</a> . Once you visit the site, the DNS entry for lab-5.1-evil.sans.labs will change. The browser will still use the old IP address for a while, but the attacker is using JavaScript to figure out when to launch the attack.</p>
-<p>To answer the Netwars challenge for this question, view "<a href="http://lab-5.1-evil.sans.lab/flag.php">http://lab-5.1-evil.sans.lab/flag.php</a>" in your browser AFTER DNS changes.</p>
+<p>To answer the Netwars challenge for this question, you will need to alter the attack to send a request (using JavaScript) to "<a href="http://lab-5.1-evil.sans.lab/flag.php">http://lab-5.1-evil.sans.lab/flag.php</a>" AFTER DNS changes.</p>
 <h3 id="step-by-step">Step by Step</h3>
 <ol>
 <li>
 <p>Using Chrome, browse to <a href="http://lab-5.1-evil.sans.labs/eviljs.php">http://lab-5.1-evil.sans.labs/eviljs.php</a></p>
 </li>
 <li>
-<p>We start off with the evil cat's page and Javascript immediately kick into action to change the DNS in the background. There is a long wait for the DNS pin to expire within the JavaScript engine. Review the change in the Javascript prompt and then click "OK".</p>
+<p>Similar to the previous exercise, we start off with the evil cat's page and Javascript immediately kick into action to change the DNS in the background. There is a long wait for the DNS pin to expire within the JavaScript engine. Review the change in the Javascript prompt and then click "OK".</p>
 </li>
 <li>
 <p>The JavaScript automatically count down. In the background, every second there is a fetch request being sent to determine if the DNS pin has been lifted by the browser so the DNS would be re-queried and therefore change to the alternative host. </p>
@@ -1081,14 +1093,17 @@ fetch('http://lab-5.1-evil.sans.labs:80');
 <p>After about 100 seconds, the Chrome browser will lift the DNS pin and the JavaScript detects this and send the attack to the alternative host.</p>
 </li>
 <li>
-<p>Now open <strong><a href="http://lab-5.1-evil.sans.labs/flag.php">http://lab-5.1-evil.sans.labs/flag.php</a></strong> in the browser to retrieve the flag for Netwars. The answer to the NetWars challenge should be a combination of English words (no spaces)</p>
+<p>Now find out where in eviljs.php to insert a request for "<a href="http://lab-5.1-evil.sans.labs/flag.php">http://lab-5.1-evil.sans.labs/flag.php</a>" (the file can be found at /etc/docker/compose/5.1/web/html/eviljs.php )</p>
 </li>
 </ol>
-<h2 id="part-2-deserialization">Part 2: Deserialization</h2>
+<div class="admonition tip">
+<p class="admonition-title">Free hint</p>
+<ul>
+<li>The answer to the NetWars challenge should be a combination of English words (no spaces)</li>
+</ul>
+</div>
+<h2 id="part-2_1">Part 2:</h2>
 <ol>
-<li>
-<p>In Chrome, get to the menu (upper right hand corner) and select <strong>More tools</strong>, then click on <strong>Clear browsing data</strong>. This will ensure we have a clean start.</p>
-</li>
 <li>
 <p>Using Chrome, browse to <strong><a href="http://lab-5.1-deserial.sans.labs/">http://lab-5.1-deserial.sans.labs/</a></strong> This site shows an animal shelter page.</p>
 </li>
@@ -1103,20 +1118,24 @@ fetch('http://lab-5.1-evil.sans.labs:80');
 </li>
 <li>
 <p>In Burp window, under <strong>Proxy</strong> tab, select the <strong>HTTP history</strong> which will show you the HTTP requests that were intercepted by Burp. We are specifically interested in the request to the <a href="http://lab-5.1-deserial.sans.labs/">http://lab-5.1-deserial.sans.labs/</a> page (via GET request). Please highlight (left click) on the entry for this page. Refer to the screenshot below</p>
-<p><img alt="" class="zoom" src="images/img-1633201302-20211002.png" /></p>
 </li>
+</ol>
+<p><img alt="" class="zoom" src="images/img-1633201302-20211002.png" /></p>
+<ol>
 <li>
 <p>Right click on the request from the above step. This will bring up a large drop down menu of which you can select the actions you want to take against this pre-captured request. In this case, we will select <strong>Send to Repeater</strong></p>
 </li>
 <li>
 <p>Select the <strong>Repeater</strong> tab. This will bring up the HTTP request that we selected earlier and ready for us to manipulate and re-send. Refer to screenshot below</p>
+</li>
+</ol>
 <p><img alt="" class="zoom" src="images/img-1633201583-20211002.png" /></p>
-</li>
-<li>
-<p>The left side of the pane is for editing and preparing the request for submission to the server. Our intent is to edit this request by adding a Cookie header and value. Copy the line below and paste to the header portion of the request to the server (header line order does not matter). Once you pasted the line into the header, click on <strong>Send</strong> (just above the request, in orange color)</p>
-<div class="highlight"><pre><span></span><code>Cookie: ASDFG
+<ol>
+<li>The left side of the pane is for editing and preparing the request for submission to the server. Our intent is to edit this request by adding a Cookie header and value. Copy the line below and paste to the header portion of the request to the server (header line order does not matter). Once you pasted the line into the header, click on <strong>Send</strong> (just above the request, in orange color)</li>
+</ol>
+<div class="highlight"><pre><span></span><code>    Cookie: ASDFG
 </code></pre></div>
-</li>
+<ol>
 <li>
 <p>That request returns as a 200 code with a message in the HTTP body. "An error ocurred when decrypting the stream" This tells us that there is some kind of stream processing in place at the server. This maybe a deserializer that is processing the data in the request. This is the time to attack this component. We will need a gadget and a "command" to run to form an attack payload for this attack to work.</p>
 </li>
@@ -1125,46 +1144,50 @@ fetch('http://lab-5.1-evil.sans.labs:80');
 </li>
 <li>
 <p>To run the ysoserial to acquire a usable payload, we will need to use it via the command line (Launch a terminal window to run it). The syntax looks like the following, </p>
-<p><code>&gt; java -jar ysoserial-master.jar &lt;Payload type&gt; &lt;Command in quotes&gt;</code></p>
+</li>
+</ol>
+<blockquote>
+<p>java -jar ysoserial-master.jar <Payload type> <Command in quotes></p>
+</blockquote>
 <p>We know the command we want to run is 'touch /tmp/test'. We still need payload type as argument. See below, for payload type reference</p>
 <div class="highlight"><pre><span></span><code>Usage: java -jar ysoserial.jar [payload] &#39;[command]&#39;
-Available payload types:
-    Payload             Authors                     Dependencies
-    -------             -------                     ------------
-    AspectJWeaver       @Jang                       aspectjweaver:1.9.2, commons-collections:3.2.2
-    BeanShell1          @pwntester, @cschneider4711 bsh:2.0b5
-    C3P0                @mbechler                   c3p0:0.9.5.2, mchange-commons-java:0.2.11
-    Click1              @artsploit                  click-nodeps:2.3.0, javax.servlet-api:3.1.0
-    Clojure             @JackOfMostTrades           clojure:1.8.0
-    CommonsBeanutils1   @frohoff                    commons-beanutils:1.9.2, commons-collections:3.1, commons-logging:1.2
-    CommonsCollections1 @frohoff                    commons-collections:3.1
-    CommonsCollections2 @frohoff                    commons-collections4:4.0
-    CommonsCollections3 @frohoff                    commons-collections:3.1
-    CommonsCollections4 @frohoff                    commons-collections4:4.0
-    CommonsCollections5 @matthias_kaiser, @jasinner commons-collections:3.1
-    CommonsCollections6 @matthias_kaiser            commons-collections:3.1
-    CommonsCollections7 @scristalli, @hanyrax, @EdoardoVignati commons-collections:3.1
-    FileUpload1         @mbechler                   commons-fileupload:1.3.1, commons-io:2.4
-    Groovy1             @frohoff                    groovy:2.3.9
-    Hibernate1          @mbechler
-    Hibernate2          @mbechler
-    JBossInterceptors1  @matthias_kaiser            javassist:3.12.1.GA, jboss-interceptor-core:2.0.0.Final, cdi-api:1.0-SP1, javax.interceptor-api:3.1, jboss-interceptor-spi:2.0.0.Final, slf4j-api:1.7.21
-    JRMPClient          @mbechler
-    JRMPListener        @mbechler
-    JSON1               @mbechler                   json-lib:jar:jdk15:2.4, spring-aop:4.1.4.RELEASE, aopalliance:1.0, commons-logging:1.2, commons-lang:2.6, ezmorph:1.0.6, commons-beanutils:1.9.2, spring-core:4.1.4.RELEASE, commons-collections:3.1
-    JavassistWeld1      @matthias_kaiser            javassist:3.12.1.GA, weld-core:1.1.33.Final, cdi-api:1.0-SP1, javax.interceptor-api:3.1, jboss-interceptor-spi:2.0.0.Final, slf4j-api:1.7.21
-    Jdk7u21             @frohoff
-    Jython1             @pwntester, @cschneider4711 jython-standalone:2.5.2
-    MozillaRhino1       @matthias_kaiser            js:1.7R2
-    MozillaRhino2       @_tint0                     js:1.7R2
-    Myfaces1            @mbechler
-    Myfaces2            @mbechler
-    ROME                @mbechler                   rome:1.0
-    Spring1             @frohoff                    spring-core:4.1.4.RELEASE, spring-beans:4.1.4.RELEASE
-    Spring2             @mbechler                   spring-core:4.1.4.RELEASE, spring-aop:4.1.4.RELEASE, aopalliance:1.0, commons-logging:1.2
-    URLDNS              @gebl
-    Vaadin1             @kai_ullrich                vaadin-server:7.7.14, vaadin-shared:7.7.14
-    Wicket1             @jacob-baines               wicket-util:6.23.0, slf4j-api:1.6.4
+  Available payload types:
+     Payload             Authors                     Dependencies
+     -------             -------                     ------------
+     AspectJWeaver       @Jang                       aspectjweaver:1.9.2, commons-collections:3.2.2
+     BeanShell1          @pwntester, @cschneider4711 bsh:2.0b5
+     C3P0                @mbechler                   c3p0:0.9.5.2, mchange-commons-java:0.2.11
+     Click1              @artsploit                  click-nodeps:2.3.0, javax.servlet-api:3.1.0
+     Clojure             @JackOfMostTrades           clojure:1.8.0
+     CommonsBeanutils1   @frohoff                    commons-beanutils:1.9.2, commons-collections:3.1, commons-logging:1.2
+     CommonsCollections1 @frohoff                    commons-collections:3.1
+     CommonsCollections2 @frohoff                    commons-collections4:4.0
+     CommonsCollections3 @frohoff                    commons-collections:3.1
+     CommonsCollections4 @frohoff                    commons-collections4:4.0
+     CommonsCollections5 @matthias_kaiser, @jasinner commons-collections:3.1
+     CommonsCollections6 @matthias_kaiser            commons-collections:3.1
+     CommonsCollections7 @scristalli, @hanyrax, @EdoardoVignati commons-collections:3.1
+     FileUpload1         @mbechler                   commons-fileupload:1.3.1, commons-io:2.4
+     Groovy1             @frohoff                    groovy:2.3.9
+     Hibernate1          @mbechler
+     Hibernate2          @mbechler
+     JBossInterceptors1  @matthias_kaiser            javassist:3.12.1.GA, jboss-interceptor-core:2.0.0.Final, cdi-api:1.0-SP1, javax.interceptor-api:3.1, jboss-interceptor-spi:2.0.0.Final, slf4j-api:1.7.21
+     JRMPClient          @mbechler
+     JRMPListener        @mbechler
+     JSON1               @mbechler                   json-lib:jar:jdk15:2.4, spring-aop:4.1.4.RELEASE, aopalliance:1.0, commons-logging:1.2, commons-lang:2.6, ezmorph:1.0.6, commons-beanutils:1.9.2, spring-core:4.1.4.RELEASE, commons-collections:3.1
+     JavassistWeld1      @matthias_kaiser            javassist:3.12.1.GA, weld-core:1.1.33.Final, cdi-api:1.0-SP1, javax.interceptor-api:3.1, jboss-interceptor-spi:2.0.0.Final, slf4j-api:1.7.21
+     Jdk7u21             @frohoff
+     Jython1             @pwntester, @cschneider4711 jython-standalone:2.5.2
+     MozillaRhino1       @matthias_kaiser            js:1.7R2
+     MozillaRhino2       @_tint0                     js:1.7R2
+     Myfaces1            @mbechler
+     Myfaces2            @mbechler
+     ROME                @mbechler                   rome:1.0
+     Spring1             @frohoff                    spring-core:4.1.4.RELEASE, spring-beans:4.1.4.RELEASE
+     Spring2             @mbechler                   spring-core:4.1.4.RELEASE, spring-aop:4.1.4.RELEASE, aopalliance:1.0, commons-logging:1.2
+     URLDNS              @gebl
+     Vaadin1             @kai_ullrich                vaadin-server:7.7.14, vaadin-shared:7.7.14
+     Wicket1             @jacob-baines               wicket-util:6.23.0, slf4j-api:1.6.4
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Free hint</p>
@@ -1188,36 +1211,28 @@ Available payload types:
 <li>Put a Cookie: <base64 encoded payload - this is going to be a long string...> into the Burp Repeater template we already setup earlier.</li>
 </ul>
 </div>
-</li>
-<li>
-<p>Determine the correct payload for attacking the deserialization vulnerability which is the subject of the NetWars challenges. Use hints to help you as necessary. Save this exploiting string for the next part of the exercise. </p>
-</li>
-<li>
-<p>We are finished with intercepting traffic. Ensure that the Chrome is no longer sending traffic through Burp - the ProxySwitcher in Chrome (upper right hand corner of browser window) should be "black" in color.</p>
-</li>
+<ol>
+<li>Determine the correct payload for attacking the deserialization vulnerability which is the subject of the NetWars challenges. Use hints to help you as necessary. Save this exploiting string for the next part of the exercise. </li>
 </ol>
 <hr />
-<h2 id="part-3-fixing-deserialization-vulnerability">Part 3: Fixing Deserialization vulnerability</h2>
+<h2 id="part-3_1">Part 3:</h2>
 <p>In this part, we will learn about the fixing of the deserialization vulnerability.</p>
 <ol>
-<li>In Burp, go to the Repeater tab where we already setup the template for sending the exploit payload over Cookie header to the server. Please change both the <strong>Host:</strong> header in the left pane and also the <strong>Target</strong> on the upper right hand corner. See below screen cap on where you need to change the values. For both, the host name that we are targeting is <strong>lab-5.1-fixdeserial.sans.labs</strong> This is a fixed, no longer vulnerable version of the previous target. The code base is the same except the vulnerability has been fixed.</li>
-<li>
-<p>In Burp, go to the Repeater tab where we already setup the template for sending the exploit payload over Cookie header to the server. Please change both the <strong>Host:</strong> header in the left pane and also the <strong>Target</strong> on the upper right hand corner. See below screen cap on where you need to change the values. For both, the host name that we are targeting is <strong>lab-5.1-fixdeserial.sans.labs</strong> This is a fixed, no longer vulnerable version of the previous target. The code base is the same except the vulnerability has been fixed.</p>
+<li>In Burp, go to the Repeater tab where we already setup the template for sending the exploit payload over Cookie header to the server. Please change both the <strong>Host:</strong> header in the left pane and also the <strong>Target</strong> on the upper right hand corner. See below screen cap on where you need to change the values. For both, the host name that we are targeting is <strong>lab-5.1-fixedserial.sans.labs</strong> This is a fixed, no longer vulnerable version of the previous target. The code base is the same except the vulnerability has been fixed.</li>
+</ol>
 <p><img alt="" class="zoom" src="images/img-1633223794-20211002.png" /></p>
-</li>
+<ol>
 <li>
 <p>Using the same attack payload as before (part 2, cookie). Please send the attack to this non-vulnerable version and see what happens. You should observe that the server respond with the following message.</p>
-<p><code>&gt; java.io.InvalidClassException: Unexpected serialized class ; java.util.HashSet</code></p>
+<blockquote>
+<p>java.io.InvalidClassException: Unexpected serialized class ; java.util.HashSet</p>
+</blockquote>
 </li>
 <li>
 <p>It appears that this version of the application is blocking the request based on the class of objects that are being sent in the stream of data. We will inspect the source code of the application to answer the NetWars challenge. Please </p>
 </li>
 <li>
 <p>Open <strong>/etc/docker/compose/5.13/docker-java/FixedHTTPServer.java</strong> in an editor (Visual Studio Code) to review the code. The subject of the challenge pertains to this file. Please use the hints in NetWars as required.</p>
-<div class="admonition information">
-<p class="admonition-title">Information</p>
-<p>For reference, the vulnerable version of the same application can be accessed at <strong>/etc/docker/compose/5.12/docker-java/VulnerableHTTPServer.java</strong></p>
-</div>
 </li>
 </ol>
 <hr />

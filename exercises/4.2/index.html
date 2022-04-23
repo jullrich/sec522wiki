@@ -95,7 +95,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#exercise-42-cross-origin-requests" tabindex="0" class="md-skip">
+      <a href="#cross-origin-requests" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -276,8 +276,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../errata/G02/" title="G02" class="md-nav__link">
-      G02
+    <a href="../../errata/H01_01/" title="H01_01" class="md-nav__link">
+      H01_01
     </a>
   </li>
 
@@ -950,14 +950,26 @@
               
                 
                 
-                <script>
+                <style>
+@page { @top-center {
+    content: 'SANS SEC522 Workbook';
+}}
+@page :left { @bottom-left {
+  content: '4.2-' counter(page);
+}}
+@page :right { @bottom-right {
+  content: '4.2-' counter(page);
+}}
+</style>
+
+<script>
 fetch('http://lab-4.2.sans.labs:80');
 </script>
 
-<h1 id="exercise-42-cross-origin-requests">Exercise 4.2 - Cross Origin Requests</h1>
+<h1 id="cross-origin-requests">Cross Origin Requests</h1>
 <hr />
 <h4 id="objectives">Objectives</h4>
-<p>Learn how browser's Cross-Origin-Request rules (CORS) restricts malicious cross origin requests and how vulnerable implementations may be attacked.</p>
+<p>Learn how the browser's Cross-Origin-Request rules (CORS) restrict malicious cross-origin requests and how vulnerable implementations may be attacked.</p>
 <div class="codehilite"><pre><span></span><code>Estimated Time 15 minutes
 </code></pre></div>
 
@@ -968,76 +980,74 @@ fetch('http://lab-4.2.sans.labs:80');
 <hr />
 <h2 id="same-origin-requests">Same Origin Requests</h2>
 <h3 id="no-hints">No Hints</h3>
-<p>Start at <a href="http://lab-4.2.sans.labs">http://lab-4.2.sans.labs</a>. You will see a login page. If not, click on "Logout &amp; Reset Database" in the upper right hand corner.</p>
-<p>First, experiment with the donation page at "Same Origin" (you will need to log in using the username student and the password training). Secondly, after you figured out how it works, see why the "Good Cross Origin" version is broken. Finally, after you fix the "Good Cross Origin", check that the "Evil Cross Origin" is still blocked.</p>
+<p>Start at <a href="http://lab-4.2.sans.labs">http://lab-4.2.sans.labs</a>. You will see a login page. If not, click on "Logout &amp; Reset Database" in the upper right-hand corner.</p>
+<p>First, experiment with the donation page at "Same Origin" (you will need to log in using the username student and the password training). Secondly, after you figured out how it works, see why the "Good Cross-Origin" version is broken. Finally, after you fix the "Good Cross-Origin", check that the "Evil Cross-Origin" is still blocked.</p>
 <h3 id="step-by-step">Step by Step</h3>
 <ol>
 <li>
 <p>Browse to <strong><a href="http://lab-4.2.sans.labs/login.php">http://lab-4.2.sans.labs/login.php</a></strong>.</p>
 </li>
 <li>
-<p>Log in using the username "student" and the password "training".</p>
+<p>Login using the username "student" and the password "training".</p>
 </li>
 <li>
-<p>Open the browser's debugger (SHIFT-CTRT-I) and open the "Network" tab if it isn't already open.</p>
+<p>Open the browser's debugger (SHIFT-CTRL-I) and open the "Network" tab if it isn't already open.</p>
 </li>
 <li>
 <p>Enter "10" in the "Amount" text box and click "Donate". You will see a popup dialog stating that you donated a total of $110. In the debugger, you will see that "donate.php" was requested.</p>
 </li>
 <li>
 <p>Click on "donate.php" in the debugger. You will see the response from "donate.php". The response is a brief JSON formatted message like:</p>
-<p><code>{donations: "110", status: "success"}</code></p>
+</li>
+</ol>
+<p><code>{donations: "110", status: "success"}
+   donations: "110"
+   status: "success"</code></p>
+<ol>
+<li>
+<p>Click on "Headers" in the debugger's "Network" tab. You will see the request and response headers. Notice how the Origin header of the request specifies "<a href="http://lab-4.2.sans.labs">http://lab-4.2.sans.labs</a>" as the origin. The response contains no CORS-related headers. In particular, the response does not contain an "Access-Control-Allow-Origin" header. You may have to scroll down to see all the headers.</p>
 </li>
 <li>
-<p>Click on "Headers" in the debugger's "Network" tab. You will see the request and response headers. Notice how the Origin header of the request specifies "<a href="http://lab-4.2.sans.labs">http://lab-4.2.sans.labs</a>" as origin. The response contains no CORS related headers. In particular, the response does not contain a "Access-Control-Allow-Origin" header.</p>
-</li>
-<li>
-<p>Click on the <strong>Good Cross Origin</strong> link at the top of the webpage. You will see a page that looks similar to the earlier page.</p>
+<p>Click on the "Good Cross-Origin" link at the top of the webpage. You will see a page that looks similar to the earlier page. </p>
 </li>
 <li>
 <p>Just like before, donate $10. You will not see a popup. At the bottom of the debugger's network tab, you will see a red request for "donate.php". Red indicates an error. The "Status" column indicates a "CORS error".</p>
 </li>
 <li>
-<p>Click on the last "donate.php" in the debugger's Network tab, and select "Headers" again. Note that the request visible in the "General" section now went to <strong>lab-4.2-api.sans.labs</strong>, not <strong>lab-4.2.sans.labs</strong>. We setup a distinct hostname for our API which is often done to better control API requests. But this request is now cross-origin.</p>
+<p>Click on the last "donate.php" in the debugger's Network tab, and select "Headers" again. Note that the request visible in the "General" section now went to "lab-4.2-api.sans.labs", not "lab-4.2.sans.labs". We set up a distinct hostname for our API which is often done to better control API requests. But this request is now cross-origin.</p>
 </li>
 <li>
-<p>Edit the file "/etc/docker/compose/4.2/web/api/donate.php". At the top, you will find a number of commented out "header" lines. Remove the comment (delete the leading #) from the line :</p>
-<div class="highlight"><pre><span></span><code>header(&#39;Access-Control-Allow-Origin: *&#39;);
-</code></pre></div>
-<details class="information">
-<summary>Information</summary>
-<p>With the uncommented line, an Access-Control-Allow-Origin header will be sent from the API host indicating willingness to accept request originating from any domains (the wildcard *).</p>
-</details>
+<p>Edit the file "/etc/docker/compose/4.2/web/api/donate.php". At the top, you will find a number of commented-out "header" lines. Remove the comment from the line:</p>
 </li>
+</ol>
+<p><code>header('Access-Control-Allow-Origin: *</code></p>
+<ol>
 <li>
 <p>The request will still fail. Look at the "Console" tab in the browser's debugger for more details. You should see a message that the wildcard can not be used if the request includes credentials. We are logged in, and credentials are transmitted as a cookie.</p>
 </li>
 <li>
-<p>To fix this problem, we need a more specific origin. Open "/etc/docker/compose/4.2/web/api/donate.php" again. Undo your earlier change. Instead, lets set the origin to the origin reported by the browser. Comment out the "if" block with the exception of the line we exposed earlier and comment out the wildcard host origin. After you edit, the block of code should look like the following,</p>
-<div class="highlight"><pre><span></span><code>if (array_key_exists(&#39;HTTP_ORIGIN&#39;, $_SERVER) ) {
-    $sOrigin = $_SERVER[&#39;HTTP_ORIGIN&#39;];
-    header(&#39;Access-Control-Allow-Origin: &#39;.$sOrigin);
-# header(&#39;Access-Control-Allow-Origin: *&#39;);
-    header(&#39;Access-Control-Allow-Credentials: true&#39;); 
-}
-</code></pre></div>
+<p>To fix this problem, we need a more specific origin. Open "/etc/docker/compose/4.2/web/api/donate.php" again. Undo your earlier change. Instead, let's set the origin to the origin reported by the browser. Comment out the "if" block with the exception of the line we exposed earlier:</p>
 </li>
+</ol>
+<p><code>if (array_key_exists('HTTP_ORIGIN', $_SERVER) ) {
+     $sOrigin = $_SERVER['HTTP_ORIGIN'];
+     header('Access-Control-Allow-Origin: '.$sOrigin);
+ # header('Access-Control-Allow-Origin: *');
+     header('Access-Control-Allow-Credentials: true'); 
+ }</code></p>
+<ol>
 <li>
 <p>Try the donation again. It should work now. It may take a while to respond if it took you some time to make the edit as the docker container may need to restart.</p>
-<details class="question">
-<summary>Why does it work now and not earlier?</summary>
-<p>Access-Control-Allow-Credentials with Access-Control-Allow-Origin set to wildcard (*) will not work. A specific origin being set is allowed which is what the second edit of the file actually did. We are now specifying the exact origin to set as the Access-Control-Allow-Origin.</p>
-</details>
 </li>
 <li>
-<p>Click on the "Evil Cross Origin". It should display a simple page with no obvious donation dialog.</p>
+<p>Click on the "Evil Cross-Origin". It should display a simple page with no obvious donation dialog.</p>
 </li>
 <li>
-<p>Go back to the last "Good Cross Origin" page and donate another $10. Note how the dialog now states that you donated over $1,000,000.</p>
+<p>Go back to the last "Good Cross-Origin" page and donate another $10. The text below the "Donate" form will indicate that you just donated $1,000,000! It will increment by $1,000,000 each time you visit the evil page.</p>
 </li>
-<li>Go back to the "Evil Cross Origin" page. Notice the "donate.php" request in the Network tab of the browser's debugger. If it is not visible: Reload the page.</li>
+<li>Go back to the "Evil Cross-Origin" page. Notice the "donate.php" request in the Network tab of the browser's debugger. If it is not visible: Reload the page.</li>
 <li>View the source of the page. You will see JavaScript sending the request donating an amount of $1,000,000.</li>
-<li>How are you going to fix this? Refer to the Netwars question for details.</li>
+<li>How are you going to fix this? Refer to the Netwars question for details. We fixed the "bug", and donations are accepted cross-origin. But we only want to accept requests from "good" origins.</li>
 </ol>
 <hr />
 <h2 id="conclusion">Conclusion</h2>

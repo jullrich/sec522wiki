@@ -95,7 +95,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#exercise-33-oauth-and-access-control" tabindex="0" class="md-skip">
+      <a href="#oauth-and-access-control" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -276,8 +276,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../errata/G02/" title="G02" class="md-nav__link">
-      G02
+    <a href="../../errata/H01_01/" title="H01_01" class="md-nav__link">
+      H01_01
     </a>
   </li>
 
@@ -1058,11 +1058,23 @@
               
                 
                 
-                <script>
+                <style>
+@page { @top-center {
+    content: 'SANS SEC522 Workbook';
+}}
+@page :left { @bottom-left {
+  content: '3.3-' counter(page);
+}}
+@page :right { @bottom-right {
+  content: '3.3-' counter(page);
+}}
+</style>
+
+<script>
 fetch('https://lab-3.3.sans.labs:80');
 </script>
 
-<h1 id="exercise-33-oauth-and-access-control">Exercise 3.3 - OAuth and Access Control</h1>
+<h1 id="oauth-and-access-control">OAuth and Access Control</h1>
 <hr />
 <h4 id="objectives">Objectives</h4>
 <p>Estimated Time: 15 minutes</p>
@@ -1097,7 +1109,7 @@ fetch('https://lab-3.3.sans.labs:80');
 <p>Click on an animal's image (for example, the first cat, "Cinnamon"). This will display a page with details about this particular animal.</p>
 </li>
 <li>
-<p>Below the image, you will see three icons. Click on one of the icons and it will change color from green to red (or red to green if it was red).</p>
+<p>Bellow the image, you will see three icons. Click on one of the icons and it will change color from green to red (or red to green if it was red).</p>
 <p><img alt="" src="media/image1.png" /></p>
 <p><strong>Image of Individual Animal with Icons Indicating Status</strong></p>
 </li>
