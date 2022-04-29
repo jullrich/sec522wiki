@@ -1,0 +1,1168 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="SANS SEC522 Electronic Workbook">
+      
+      
+      
+        <meta name="author" content="Jason Lam & Dr. Johannes Ullrich">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.3">
+    
+    
+      
+        <title>index LOCAL 1100 - SEC522 Workbook</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.adb8469c.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="">
+      
+    
+    
+      <script src="../../../assets/javascripts/modernizr.86422ebf.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CSource+Code+Pro&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Source Code Pro","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../../css/pdf.css">
+    
+      <link rel="stylesheet" href="../../../css/html.css">
+    
+      <link rel="stylesheet" href="../../../css/custom.css">
+    
+      <link rel="stylesheet" href="../../../css/jquery.fancybox.min.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="white" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#exercise-51-deserialization-and-dns-rebinding" tabindex="0" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../../.." title="SEC522 Workbook" aria-label="SEC522 Workbook" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon">home</i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              SEC522 Workbook
+            </span>
+            <span class="md-header-nav__topic">
+              
+                index LOCAL 1100
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../../.." title="SEC522 Workbook" class="md-nav__button md-logo">
+      
+        <i class="md-icon">home</i>
+      
+    </a>
+    SEC522 Workbook
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Introduction
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Introduction
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1">
+    
+    <label class="md-nav__link" for="nav-2-1">
+      Course
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-1">
+        Course
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../resources/preparation/" title="Preparation" class="md-nav__link">
+      Preparation
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
+    
+    <label class="md-nav__link" for="nav-2-2">
+      Errata & Patches
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        Errata & Patches
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../errata/G02/" title="G02" class="md-nav__link">
+      G02
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Day 1
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Day 1
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../1.1/" title="1.1: HTTP Basics" class="md-nav__link">
+      1.1: HTTP Basics
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../1.2/" title="1.2: Inspecting HTTP/2 Traffic" class="md-nav__link">
+      1.2: Inspecting HTTP/2 Traffic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../1.3/" title="1.3: Isolation" class="md-nav__link">
+      1.3: Isolation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../1.4/" title="1.4: SSRF and Credential Stealing" class="md-nav__link">
+      1.4: SSRF and Credential Stealing
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Day 2
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Day 2
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../2.1/" title="2.1: SQL Injection" class="md-nav__link">
+      2.1: SQL Injection
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../2.2/" title="2.2: Guestbook CSRF" class="md-nav__link">
+      2.2: Guestbook CSRF
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../2.3/" title="2.3: Cross-Site Scripting" class="md-nav__link">
+      2.3: Cross-Site Scripting
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../2.4/" title="2.4: Unicode and File Upload" class="md-nav__link">
+      2.4: Unicode and File Upload
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Day 3
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Day 3
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../3.1/" title="3.1: Authentication" class="md-nav__link">
+      3.1: Authentication
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../3.2/" title="3.2: Session Fixation and Session Breaking" class="md-nav__link">
+      3.2: Session Fixation and Session Breaking
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../3.3/" title="3.3: OAuth and Access Control" class="md-nav__link">
+      3.3: OAuth and Access Control
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../3.4/" title="3.4: Inspecting SSL Traffic" class="md-nav__link">
+      3.4: Inspecting SSL Traffic
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Day 4
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Day 4
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../4.1/" title="4.1: WSDL Enumeration and Parameter Tampering" class="md-nav__link">
+      4.1: WSDL Enumeration and Parameter Tampering
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../4.2/" title="4.2: Cross Origin Requests" class="md-nav__link">
+      4.2: Cross Origin Requests
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../4.3/" title="4.3: Front End Features and Content Security Policy" class="md-nav__link">
+      4.3: Front End Features and Content Security Policy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../4.4/" title="4.4: Clickjacking" class="md-nav__link">
+      4.4: Clickjacking
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Day 5
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Day 5
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../" title="5.1: Deserialization and DNS Rebinding" class="md-nav__link">
+      5.1: Deserialization and DNS Rebinding
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../5.2/" title="5.2: GraphQL" class="md-nav__link">
+      5.2: GraphQL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../5.3/" title="5.3: Microservices" class="md-nav__link">
+      5.3: Microservices
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../5.4/" title="5.4: Sub Resource Integrity and Logging" class="md-nav__link">
+      5.4: Sub Resource Integrity and Logging
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      SANS Cloud Security
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        SANS Cloud Security
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://www.sans.org/blog/sans-cloud-security-curriculum/" title="Website" class="md-nav__link">
+      Website
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      Troubleshooting
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        Troubleshooting
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../troubleshooting/common/" title="Common Issues" class="md-nav__link">
+      Common Issues
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../troubleshooting/credential-guard/" title="VMware Workstation/Credential Guard Incompatibility" class="md-nav__link">
+      VMware Workstation/Credential Guard Incompatibility
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../troubleshooting/hyper-v/" title="VMware Workstation/Hyper-V Incompatibility" class="md-nav__link">
+      VMware Workstation/Hyper-V Incompatibility
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../troubleshooting/bigsur-fusion/" title="VMware Fusion Issues with macOS 11 (Big Sur)" class="md-nav__link">
+      VMware Fusion Issues with macOS 11 (Big Sur)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../troubleshooting/intel-amd-bios-vtx/" title="Enabling Virtualization Technology Extensions (VTx) in Intel and AMD BIOS" class="md-nav__link">
+      Enabling Virtualization Technology Extensions (VTx) in Intel and AMD BIOS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../troubleshooting/smb-file-sharing/" title="Windows File Sharing Issues" class="md-nav__link">
+      Windows File Sharing Issues
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objectives" class="md-nav__link">
+    Objectives
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#part-1" class="md-nav__link">
+    Part 1:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-2" class="md-nav__link">
+    Part 2:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-3" class="md-nav__link">
+    Part 3:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-dns-rebinding" class="md-nav__link">
+    Part 1: DNS Rebinding
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step" class="md-nav__link">
+    Step by Step
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-deserialization" class="md-nav__link">
+    Part 2: Deserialization
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-fixing-deserialization-vulnerability" class="md-nav__link">
+    Part 3: Fixing Deserialization vulnerability
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explore-further" class="md-nav__link">
+    Explore Further
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <script>
+fetch('https://lab-5.1.sans.labs:80');
+fetch('https://lab-5.11.sans.labs:80');
+fetch('http://lab-5.1-deserial.sans.labs:80');
+fetch('http://lab-5.1-evil.sans.labs:80');
+</script>
+
+<h1 id="exercise-51-deserialization-and-dns-rebinding">Exercise 5.1 - Deserialization and DNS Rebinding</h1>
+<hr />
+<h4 id="objectives">Objectives</h4>
+<p>Hands on practice for deserialization attack and defense and DNS rebinding issues.</p>
+<div class="codehilite"><pre><span></span><code>Estimated Time: 15 minutes
+</code></pre></div>
+
+<h5 id="part-1">Part 1:</h5>
+<blockquote>
+<p>In this exercise, you will learn about DNS rebinding issue and will see for yourself a practical way that attacker can use Javascript to get around the anti-DNS rebinding mechanism of the browsers.</p>
+</blockquote>
+<h5 id="part-2">Part 2:</h5>
+<blockquote>
+<p>In this exercise, you will learn about the deserialization attacks mechanics. </p>
+</blockquote>
+<h5 id="part-3">Part 3:</h5>
+<blockquote>
+<p>In this exercise, you will learn about the mitigations of deserialization attacks.</p>
+</blockquote>
+<h4 id="requirements">Requirements</h4>
+<ul>
+<li>[x] Lab VM</li>
+</ul>
+<hr />
+<h2 id="part-1-dns-rebinding">Part 1: DNS Rebinding</h2>
+<p>In this exercise, we will experiment with DNS rebinding. The attacker prepared a website at <a href="http://lab-5.1-evil.sans.labs/eviljs.php">http://lab-5.1-evil.sans.labs/eviljs.php</a> . Once you visit the site, the DNS entry for lab-5.1-evil.sans.labs will change. The browser will still use the old IP address for a while, but the attacker is using JavaScript to figure out when to launch the attack.</p>
+<p>To answer the Netwars challenge for this question, view "<a href="http://lab-5.1-evil.sans.lab/flag.php">http://lab-5.1-evil.sans.lab/flag.php</a>" in your browser AFTER DNS changes.</p>
+<h3 id="step-by-step">Step by Step</h3>
+<ol>
+<li>
+<p>Using Chrome, browse to <a href="http://lab-5.1-evil.sans.labs/eviljs.php">http://lab-5.1-evil.sans.labs/eviljs.php</a></p>
+</li>
+<li>
+<p>We start off with the evil cat's page and Javascript immediately kick into action to change the DNS in the background. There is a long wait for the DNS pin to expire within the JavaScript engine. Review the change in the Javascript prompt and then click "OK".</p>
+</li>
+<li>
+<p>The JavaScript automatically count down. In the background, every second there is a fetch request being sent to determine if the DNS pin has been lifted by the browser so the DNS would be re-queried and therefore change to the alternative host. </p>
+</li>
+<li>
+<p>After about 100 seconds, the Chrome browser will lift the DNS pin and the JavaScript detects this and send the attack to the alternative host.</p>
+</li>
+<li>
+<p>Now open <strong><a href="http://lab-5.1-evil.sans.labs/flag.php">http://lab-5.1-evil.sans.labs/flag.php</a></strong> in the browser to retrieve the flag for Netwars. The answer to the NetWars challenge should be a combination of English words (no spaces)</p>
+</li>
+</ol>
+<h2 id="part-2-deserialization">Part 2: Deserialization</h2>
+<ol>
+<li>
+<p>In Chrome, get to the menu (upper right hand corner) and select <strong>More tools</strong>, then click on <strong>Clear browsing data</strong>. This will ensure we have a clean start.</p>
+</li>
+<li>
+<p>Using Chrome, browse to <strong><a href="http://lab-5.1-deserial.sans.labs/">http://lab-5.1-deserial.sans.labs/</a></strong> This site shows an animal shelter page.</p>
+</li>
+<li>
+<p>Ensure that the Chrome is set to sending all browser traffic through Burp - the ProxySwitcher in Chrome (upper right hand corner of browser window) should be "red" in color.</p>
+</li>
+<li>
+<p>In Chrome, refresh the page. You will not see any response as the request is intercepted by Burp.</p>
+</li>
+<li>
+<p>Switch over to Burp. Make sure you are look at <strong>Proxy</strong> tab and <strong>Intercept</strong> sub-tab. Allow all traffic to pass without modification. Keep clicking on "<strong>Forward</strong>" in Burp's Proxy Intercept. This allows Burp to cache the request for our manipulation. The browser should show the same page as earlier (Animal Shelter)</p>
+</li>
+<li>
+<p>In Burp window, under <strong>Proxy</strong> tab, select the <strong>HTTP history</strong> which will show you the HTTP requests that were intercepted by Burp. We are specifically interested in the request to the <a href="http://lab-5.1-deserial.sans.labs/">http://lab-5.1-deserial.sans.labs/</a> page (via GET request). Please highlight (left click) on the entry for this page. Refer to the screenshot below</p>
+<p><img alt="" class="zoom" src="../images/img-1633201302-20211002.png" /></p>
+</li>
+<li>
+<p>Right click on the request from the above step. This will bring up a large drop down menu of which you can select the actions you want to take against this pre-captured request. In this case, we will select <strong>Send to Repeater</strong></p>
+</li>
+<li>
+<p>Select the <strong>Repeater</strong> tab. This will bring up the HTTP request that we selected earlier and ready for us to manipulate and re-send. Refer to screenshot below</p>
+<p><img alt="" class="zoom" src="../images/img-1633201583-20211002.png" /></p>
+</li>
+<li>
+<p>The left side of the pane is for editing and preparing the request for submission to the server. Our intent is to edit this request by adding a Cookie header and value. Copy the line below and paste to the header portion of the request to the server (header line order does not matter). Once you pasted the line into the header, click on <strong>Send</strong> (just above the request, in orange color)</p>
+<div class="highlight"><pre><span></span><code>Cookie: ASDFG
+</code></pre></div>
+</li>
+<li>
+<p>That request returns as a 200 code with a message in the HTTP body. "An error ocurred when decrypting the stream" This tells us that there is some kind of stream processing in place at the server. This maybe a deserializer that is processing the data in the request. This is the time to attack this component. We will need a gadget and a "command" to run to form an attack payload for this attack to work.</p>
+</li>
+<li>
+<p>For the purpose of this exercise, we will assume that the attacker wants to execute the command 'touch /tmp/test' in the target machine. We will still need a gadget for this to work. From the HTTP response header, we know that the server environment is running Java. Let's pick up some Java gadget for this attack. The most popular attack module for Java deserialization gadget is Ysoserial (<a href="https://github.com/frohoff/ysoserial">https://github.com/frohoff/ysoserial</a>) which we have integrated into the virtual machine for you to use (in the /home/student directory).</p>
+</li>
+<li>
+<p>To run the ysoserial to acquire a usable payload, we will need to use it via the command line (Launch a terminal window to run it). The syntax looks like the following, </p>
+<p><code>&gt; java -jar ysoserial-master.jar &lt;Payload type&gt; &lt;Command in quotes&gt;</code></p>
+<p>We know the command we want to run is 'touch /tmp/test'. We still need payload type as argument. See below, for payload type reference</p>
+<div class="highlight"><pre><span></span><code>Usage: java -jar ysoserial.jar [payload] &#39;[command]&#39;
+Available payload types:
+    Payload             Authors                     Dependencies
+    -------             -------                     ------------
+    AspectJWeaver       @Jang                       aspectjweaver:1.9.2, commons-collections:3.2.2
+    BeanShell1          @pwntester, @cschneider4711 bsh:2.0b5
+    C3P0                @mbechler                   c3p0:0.9.5.2, mchange-commons-java:0.2.11
+    Click1              @artsploit                  click-nodeps:2.3.0, javax.servlet-api:3.1.0
+    Clojure             @JackOfMostTrades           clojure:1.8.0
+    CommonsBeanutils1   @frohoff                    commons-beanutils:1.9.2, commons-collections:3.1, commons-logging:1.2
+    CommonsCollections1 @frohoff                    commons-collections:3.1
+    CommonsCollections2 @frohoff                    commons-collections4:4.0
+    CommonsCollections3 @frohoff                    commons-collections:3.1
+    CommonsCollections4 @frohoff                    commons-collections4:4.0
+    CommonsCollections5 @matthias_kaiser, @jasinner commons-collections:3.1
+    CommonsCollections6 @matthias_kaiser            commons-collections:3.1
+    CommonsCollections7 @scristalli, @hanyrax, @EdoardoVignati commons-collections:3.1
+    FileUpload1         @mbechler                   commons-fileupload:1.3.1, commons-io:2.4
+    Groovy1             @frohoff                    groovy:2.3.9
+    Hibernate1          @mbechler
+    Hibernate2          @mbechler
+    JBossInterceptors1  @matthias_kaiser            javassist:3.12.1.GA, jboss-interceptor-core:2.0.0.Final, cdi-api:1.0-SP1, javax.interceptor-api:3.1, jboss-interceptor-spi:2.0.0.Final, slf4j-api:1.7.21
+    JRMPClient          @mbechler
+    JRMPListener        @mbechler
+    JSON1               @mbechler                   json-lib:jar:jdk15:2.4, spring-aop:4.1.4.RELEASE, aopalliance:1.0, commons-logging:1.2, commons-lang:2.6, ezmorph:1.0.6, commons-beanutils:1.9.2, spring-core:4.1.4.RELEASE, commons-collections:3.1
+    JavassistWeld1      @matthias_kaiser            javassist:3.12.1.GA, weld-core:1.1.33.Final, cdi-api:1.0-SP1, javax.interceptor-api:3.1, jboss-interceptor-spi:2.0.0.Final, slf4j-api:1.7.21
+    Jdk7u21             @frohoff
+    Jython1             @pwntester, @cschneider4711 jython-standalone:2.5.2
+    MozillaRhino1       @matthias_kaiser            js:1.7R2
+    MozillaRhino2       @_tint0                     js:1.7R2
+    Myfaces1            @mbechler
+    Myfaces2            @mbechler
+    ROME                @mbechler                   rome:1.0
+    Spring1             @frohoff                    spring-core:4.1.4.RELEASE, spring-beans:4.1.4.RELEASE
+    Spring2             @mbechler                   spring-core:4.1.4.RELEASE, spring-aop:4.1.4.RELEASE, aopalliance:1.0, commons-logging:1.2
+    URLDNS              @gebl
+    Vaadin1             @kai_ullrich                vaadin-server:7.7.14, vaadin-shared:7.7.14
+    Wicket1             @jacob-baines               wicket-util:6.23.0, slf4j-api:1.6.4
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Free hint</p>
+<ul>
+<li>Be aware that ysoserial-master.jar is in /home/student. </li>
+<li>Let's start with <strong>CommonsCollections</strong> family of payload type</li>
+</ul>
+</div>
+<p>In order to run the payload, you will also need to base64 encode the payload for Java to be able to exec it. The base64 shell command is for that purpose</p>
+<div class="admonition tip">
+<p class="admonition-title">Free hint</p>
+<ul>
+<li>base64 -w 0   will help encode the payload</li>
+<li>You will want to chain the two commands together via the Unix pipe (|). For example java -jar ...... | base64 -w 0</li>
+</ul>
+</div>
+<p>The payload should be in a Cookie: header as we determined in earlier step that the cookie content maybe serialized and therefore potentially vulnerable to attacks</p>
+<div class="admonition tip">
+<p class="admonition-title">Free hint</p>
+<ul>
+<li>Put a Cookie: <base64 encoded payload - this is going to be a long string...> into the Burp Repeater template we already setup earlier.</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Determine the correct payload for attacking the deserialization vulnerability which is the subject of the NetWars challenges. Use hints to help you as necessary. Save this exploiting string for the next part of the exercise. </p>
+</li>
+<li>
+<p>We are finished with intercepting traffic. Ensure that the Chrome is no longer sending traffic through Burp - the ProxySwitcher in Chrome (upper right hand corner of browser window) should be "black" in color.</p>
+</li>
+</ol>
+<hr />
+<h2 id="part-3-fixing-deserialization-vulnerability">Part 3: Fixing Deserialization vulnerability</h2>
+<p>In this part, we will learn about the fixing of the deserialization vulnerability.</p>
+<ol>
+<li>In Burp, go to the Repeater tab where we already setup the template for sending the exploit payload over Cookie header to the server. Please change both the <strong>Host:</strong> header in the left pane and also the <strong>Target</strong> on the upper right hand corner. See below screen cap on where you need to change the values. For both, the host name that we are targeting is <strong>lab-5.1-fixdeserial.sans.labs</strong> This is a fixed, no longer vulnerable version of the previous target. The code base is the same except the vulnerability has been fixed.</li>
+<li>
+<p>In Burp, go to the Repeater tab where we already setup the template for sending the exploit payload over Cookie header to the server. Please change both the <strong>Host:</strong> header in the left pane and also the <strong>Target</strong> on the upper right hand corner. See below screen cap on where you need to change the values. For both, the host name that we are targeting is <strong>lab-5.1-fixdeserial.sans.labs</strong> This is a fixed, no longer vulnerable version of the previous target. The code base is the same except the vulnerability has been fixed.</p>
+<p><img alt="" class="zoom" src="../images/img-1633223794-20211002.png" /></p>
+</li>
+<li>
+<p>Using the same attack payload as before (part 2, cookie). Please send the attack to this non-vulnerable version and see what happens. You should observe that the server respond with the following message.</p>
+<p><code>&gt; java.io.InvalidClassException: Unexpected serialized class ; java.util.HashSet</code></p>
+</li>
+<li>
+<p>It appears that this version of the application is blocking the request based on the class of objects that are being sent in the stream of data. We will inspect the source code of the application to answer the NetWars challenge. Please </p>
+</li>
+<li>
+<p>Open <strong>/etc/docker/compose/5.13/docker-java/FixedHTTPServer.java</strong> in an editor (Visual Studio Code) to review the code. The subject of the challenge pertains to this file. Please use the hints in NetWars as required.</p>
+<div class="admonition information">
+<p class="admonition-title">Information</p>
+<p>For reference, the vulnerable version of the same application can be accessed at <strong>/etc/docker/compose/5.12/docker-java/VulnerableHTTPServer.java</strong></p>
+</div>
+</li>
+</ol>
+<hr />
+<p>Credit of the deserialization exercise -  J.Jogal (<a href="https://www.thedarksource.com/">https://www.thedarksource.com/</a>) and Karan Solanki (https:/<a href="http://www.themixstuff.com/">www.themixstuff.com/</a>). More information at <strong><a href="https://thedarksource.com/vulnerable-java-deserialization-lab-setup-for-practice-exploitation/">https://thedarksource.com/vulnerable-java-deserialization-lab-setup-for-practice-exploitation/</a></strong></p>
+<hr />
+<h2 id="conclusion">Conclusion</h2>
+<ul>
+<li>DNS rebinding allows attacker to "confused" the browser into loading content from a different origin than what's specified by the host name and domain name. </li>
+<li>Deserialization can affect any types of input within the applications that takes in a serialized stream and attempting to deserialize the data without performing appropriate filtering or validation.</li>
+<li>Untrusted data being deserialized into Class of objects within the running application can be dangerous, potentially letting attack execute arbitary code in the environment.</li>
+</ul>
+<hr />
+<h2 id="explore-further">Explore Further</h2>
+<ul>
+<li>Deserialization vulnerability relies on untrusted data being deserialized by the application. Another dependency of the successful attack is the gadget chain, please explore the gadget involved in the attack(s) you have conducted.</li>
+</ul>
+                
+                  
+                
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            ©2021 Jason Lam & Dr. Johannes Ullrich
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/application.c33a9706.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
+      
+        <script src="../../../js/jquery-3.4.1.min.js"></script>
+      
+        <script src="../../../js/jquery.fancybox.min.js"></script>
+      
+        <script src="../../../js/workbook.js"></script>
+      
+        <script src="../../../js/custom.js"></script>
+      
+    
+  </body>
+</html>
