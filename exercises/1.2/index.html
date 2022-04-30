@@ -419,8 +419,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#part-2-acquire-and-play-back-token" class="md-nav__link">
-    Part 2: Acquire and play back token
+  <a href="#part-2-acquire-and-playback-token" class="md-nav__link">
+    Part 2: Acquire and playback token
   </a>
   
     <nav class="md-nav">
@@ -1014,8 +1014,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#part-2-acquire-and-play-back-token" class="md-nav__link">
-    Part 2: Acquire and play back token
+  <a href="#part-2-acquire-and-playback-token" class="md-nav__link">
+    Part 2: Acquire and playback token
   </a>
   
     <nav class="md-nav">
@@ -1096,15 +1096,15 @@ fetch('https://lab-1.2.sans.labs:80');
 
 <h5 id="part-1">Part 1:</h5>
 <blockquote>
-<p>In this exercise, you will inspect HTTP/2 traffic to better understand how it differs from HTTP/1.1</p>
+<p>In this exercise, you will inspect HTTP/2 traffic to understand better how it differs from HTTP/1.1</p>
 </blockquote>
 <h5 id="part-2">Part 2:</h5>
 <blockquote>
-<p>First, you will try to use an authentication token retrieved in one request to send a second request. The section half of this exercise will teach you how to impersonate a valid browser using simple tools like "curl". You will first collect a request from a regular browser to create a "fingerprint" of the browser. Next, you will use "curl" to create a request that matches the fingerprint.</p>
+<p>First, you will try to use an authentication token retrieved in one request to send a second request. The second half of this exercise will teach you how to impersonate a valid browser using simple tools like "curl". You will first collect a request from a regular browser to create the browser's "fingerprint". Next, you will use "curl" to generate a request that matches the fingerprint.</p>
 </blockquote>
 <h5 id="part-3">Part 3:</h5>
 <blockquote>
-<p>This exercise is an extension to the previous two exercises where the crafting of headers have to be exact. </p>
+<p>This exercise extends the previous two exercises where the crafting of headers has to be exact. </p>
 </blockquote>
 <h4 id="requirements">Requirements</h4>
 <ul>
@@ -1130,18 +1130,18 @@ fetch('https://lab-1.2.sans.labs:80');
 <p><strong>Wireshark Details</strong></p>
 </li>
 <li>
-<p>Using Wireshark, review the traffic which will help with answering the first challenge of NetWars for this section. NetWars offers hints at a small cost of points if necessary. </p>
+<p>Using Wireshark, review the traffic, which will help answer the first challenge of NetWars for this section. NetWars offers hints at a small cost of points if necessary. </p>
 </li>
 <li>
 <p>Now select packet #21 and again inspect the HTTP/2 part in more detail. This packet contains the response.</p>
-<p>The information in this packet will help you answer to the challenge in NetWars. </p>
+<p>The information in this packet will help you answer the challenge in NetWars. </p>
 <div class="admonition tip">
 <p class="admonition-title">Feel free to inspect any additional items in this sample.</p>
 </div>
 </li>
 </ol>
 <hr />
-<h2 id="part-2-acquire-and-play-back-token">Part 2: Acquire and play back token</h2>
+<h2 id="part-2-acquire-and-playback-token">Part 2: Acquire and playback token</h2>
 <p>The CSRF/ proof service at <a href="http://lab-1.2.sans.labs/authservice/index.php">http://lab-1.2.sans.labs/authservice/index.php</a> gives you a special token </p>
 <h3 id="step-by-step_1">Step by Step</h3>
 <p><strong>IMPORTANT: Make sure the proxy is no longer enabled.</strong></p>
@@ -1167,12 +1167,12 @@ Content-Type: text/html; charset=UTF-8
 <p>Now create a request to <a href="http://lab-1.2.sans.labs/authservice/test.php">http://lab-1.2.sans.labs/authservice/test.php</a> using this Auth-Token header (replace "TOKEN" with the value you received in step 2.</p>
 <div class="highlight"><pre><span></span><code>curl -i -H <span class="s1">&#39;Auth-Token: &lt;Token you got earlier&gt;&#39;</span> http://lab-1.2.sans.labs/authservice/test.php
 </code></pre></div>
-<p>The return will let you know if you got it right</p>
+<p>The return will let you know if you got it right.</p>
 </li>
 </ol>
 <h2 id="part-3-spoofing-an-http-request">Part 3: Spoofing an HTTP Request</h2>
 <h3 id="no-hints">No Hints</h3>
-<p>The exercise starts at <a href="http://lab-1.2.sans.labs/spoofchallenge/index.html">http://lab-1.2.sans.labs/spoofchallenge/index.html</a> . The page includes brief instructions showing you how to proceed.</p>
+<p>The exercise starts at <a href="http://lab-1.2.sans.labs/spoofchallenge/index.html">http://lab-1.2.sans.labs/spoofchallenge/index.html</a>. The page includes brief instructions showing you how to proceed.</p>
 <ol>
 <li>
 <p>Open <a href="http://lab-1.2.sans.labs/spoofchallenge/index.html">http://lab-1.2.sans.labs/spoofchallenge/index.html</a> in Chrome.</p>
@@ -1184,22 +1184,22 @@ Content-Type: text/html; charset=UTF-8
 <p>Click "Save Fingerprint". You will now see the saved fingerprint in the lower half of the page.</p>
 </li>
 <li>
-<p>Open a terminal window (for example by clicking on the "Terminal" icon on the left)</p>
+<p>Open a terminal window (for example, by clicking on the "Terminal" icon on the left)</p>
 </li>
 <li>
 <p>Enter:</p>
 <div class="highlight"><pre><span></span><code>curl http://lab-1.2.sans.labs/spoofchallenge/fingerprinttest.php
 </code></pre></div>
-<p>You will see a number of errors due to missing or incomplete headers.</p>
+<p>You will see several errors due to missing or incomplete headers.</p>
 </li>
 <li>
 <p>Now add individual headers (use a hint in Netwars or check the curl man page for details).</p>
 </li>
 <li>
-<p>Add more headers. Read the error messages for any missing headers, or values that you do not have right yet.</p>
+<p>Add more headers. Read the error messages for any missing headers or values that you do not have right yet.</p>
 </li>
 <li>
-<p>As you add the "Accept:" header, the output may be compressed and you will get a warning indicating that the output is binary. Pipe the output to "zcat" if you see the warning. For example like in the abbreviated command below:</p>
+<p>As you add the "Accept:" header, the output may be compressed, and you will get a warning indicating that the output is binary. If you see the warning, pipe the output to "zcat". For example like, in the abbreviated command below:</p>
 </li>
 <li>
 <p>The last netwars hint will be the solution.</p>
@@ -1208,8 +1208,8 @@ Content-Type: text/html; charset=UTF-8
 <hr />
 <h2 id="conclusion">Conclusion</h2>
 <ul>
-<li>HTTP 2 is the current version of HTTP standard which has the original protocol on much more optimized basis. </li>
-<li>HTTP Request headers manipulation is a big part of security defense and offense. HTTP headers in both request and response affects the functions of browser or server. In modern day applications, the headers are where authentication tokens and security decisions are transported.</li>
+<li>HTTP 2 is the current version of the HTTP standard. It optimizes HTTP requests and responses to improve performance. </li>
+<li>HTTP Request headers manipulation is a big part of security defense and offense. HTTP headers in both request and response affect the functions of the browser or server. The headers are where authentication tokens and security decisions are transported in modern-day applications.</li>
 </ul>
 <hr />
 <h2 id="explore-further">Explore Further</h2>

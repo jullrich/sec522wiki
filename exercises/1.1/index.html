@@ -1112,11 +1112,11 @@ fetch('https://lab-1.1.sans.labs:80');
 </blockquote>
 <h5 id="part-1">Part 1:</h5>
 <blockquote>
-<p>Learn how to manipulate requests and responses with Burp and how invalid requests and responses are affecting the browser and the server.</p>
+<p>Learn how to manipulate requests and responses with Burp and how invalid requests and responses affect the browser and the server.</p>
 </blockquote>
 <h5 id="part-2">Part 2:</h5>
 <blockquote>
-<p>Understand how HTTPS requests can be intercepted with Burp and what limitations may exist.</p>
+<p>Understand how HTTPS requests can be intercepted with Burp and what limitations exist.</p>
 </blockquote>
 <h4 id="requirements">Requirements</h4>
 <ul>
@@ -1125,7 +1125,7 @@ fetch('https://lab-1.1.sans.labs:80');
 <hr />
 <h2 id="part-0-introduction-to-burp">Part 0: Introduction to Burp</h2>
 <h3 id="step-by-step">Step by Step</h3>
-<p>Burp Community Edition is a free interception proxy created by PortSwigger. It can be used to inspect and manipulate HTTP requests, as well as HTTP responses. Any requests being sent by the browser can be intercepted by Burp. You will be able to edit requests before they are passed to the server. The reverse is also true: Any response from the server can be edited before the browser receives it.</p>
+<p>Burp Community Edition is a free interception proxy created by PortSwigger. It can be used to inspect and manipulate HTTP requests and HTTP responses. Burp can intercept any requests being sent by the browser. You will be able to edit requests before they are passed to the server. The reverse is also true: Any response from the server can be revised before the browser receives it.</p>
 <p><img alt="" src="media/image1.png" />
 <img alt="" src="media/image0.png" />
 <img alt="" src="media/image2.png" />
@@ -1149,9 +1149,9 @@ fetch('https://lab-1.1.sans.labs:80');
 <p><img alt="" src="media/image6.png" /></p>
 </li>
 <li>
-<p>Next, select "Load from configuration file" and then select "Choose File" on the right hand side. </p>
+<p>Next, select "Load from configuration file" and select "Choose File" on the right-hand side. </p>
 <p><img alt="" class="zoom" src="media/img-1615093867-20210307.png" /></p>
-<p>The file is located in the "Documents" directory and then "Burp" directory. The prepared configuration file is "sec522burp.json". Select to open the file and then "Start Burp" (the orange button on the lower right hand corner)</p>
+<p>The file is located in the "Documents/Burp" directory. The prepared configuration file is "sec522burp.json". Select to open the file and then "Start Burp" (the orange button on the lower right-hand corner)</p>
 <p><img alt="" class="zoom" src="media/img-1615089483-20210306.png" /></p>
 <p>Eventually, you will see the main Burp window.</p>
 <p><img alt="" class="zoom" src="media/img-1615005632-20210305.png" />
@@ -1166,38 +1166,38 @@ fetch('https://lab-1.1.sans.labs:80');
 <p><img alt="" src="media/image9.png" /></p>
 </li>
 <li>
-<p>After Chrome starts, use the Proxy Switcher plugin to select Burp as a proxy. The Proxy Switcher plugin can be found in the top right corner of Chrome. The icon is gray to indicate that no proxy is selected, and Chrome connects directly. Once you select a proxy, the icon will be red. Click on the icon to open the settings. Select "Manual Proxy" to activate the proxy. "Burp" should be the active selection in the "Profile" dropdown.</p>
+<p>After Chrome starts, use the Proxy Switcher plugin to select Burp as a proxy. The Proxy Switcher plugin can be found in the top right corner of Chrome. The icon is gray to indicate that no proxy is selected, and Chrome connects directly. Once you choose a proxy, the icon will be red. Click on the icon to open the settings. Select "Manual Proxy" to activate the proxy. "Burp" should be the active selection in the "Profile" dropdown.</p>
 <p><img alt="" class="zoom" src="media/img-1615006477-20210305.png" /></p>
 </li>
 <li>
 <p>Proxy Switcher Configuration</p>
-<p>If you wish to turn off interception later, just select "Direct" from the Proxy Switcher dialog.</p>
+<p>Select "Direct" from the Proxy Switcher dialog if you wish to turn off interception later.</p>
 <div class="admonition information">
 <p class="admonition-title">Proxy Switcher</p>
 <p>Proxy switcher gives you an easy means to toggle between traffic directly going from browser to website or routing through the Burp proxy. 
-When the Proxy Switcher icon is red, you know the traffic is going through the Burp proxy.
-If you toggle the Proxy Switcher to route traffic to Burp and Burp is not running, that could lead to the browser traffic to time out. </p>
+When the Proxy Switcher icon is red, you know the traffic goes through the Burp proxy.
+If you toggle the Proxy Switcher to route traffic to Burp and Burp is not running, the request will time out. </p>
 </div>
 </li>
 <li>
-<p>In Chrome, browse to <a href="http://lab-1.1.sans.labs/">http://lab-1.1.sans.labs/</a> (expect a small delay on this first page load)</p>
+<p>In Chrome, browse to <a href="http://lab-1.1.sans.labs/">http://lab-1.1.sans.labs/</a> (expect a slight delay on this first-page load)</p>
 </li>
 <li>
 <p>You are now presented with an Animal Shelter web application. </p>
 </li>
 <li>
-<p>If you pass these tests, switch back to Burp by clicking on the Burp icon <strong>in</strong> the "Favorites" list on the left (the bottom one). At this point, Burp is recording requests and responses, but not allowing you to alter them. You can inspect the requests and responses by selecting the "Target" tab.</p>
+<p>If you pass these tests, switch back to Burp by clicking on the Burp icon <strong>in</strong> the "Favorites" list on the left (the bottom one). At this point, Burp is recording requests and responses but not allowing you to alter them. You can inspect the requests and responses by selecting the "Target" tab.</p>
 <p><img alt="" class="zoom" src="media/img-1615097436-20210307.png" />
 <strong>Burp Target Tab</strong></p>
 <p>Highlight the request for "/" (likely at the top).</p>
 </li>
 </ol>
-<p>Use the information from the target tab to answer the first two challenges in NetWars. See under day 1, there are two 1.1 Part 0 challenges. Review the questions pertaining to this HTTP request that is highlighted.  For these challenges, there are hints available on NetWars at the cost of some points to help you if necessary. </p>
+<p>Use the information from the target tab to answer the first two challenges in NetWars. Day 1 contains two 1.1 Part 0 challenges. Review the questions about this HTTP request that is highlighted.  For these challenges, there are hints available on NetWars at the cost of some points to help you if necessary. </p>
 <h2 id="part-1-manipulating-http-requests">Part 1: Manipulating HTTP Requests</h2>
 <h3 id="step-by-step_1">Step by Step</h3>
 <ol>
 <li>
-<p>Load <a href="http://lab-1.1.sans.labs/inspect.php">http://lab-1.1.sans.labs/inspect.php</a> in Chrome. This page is also accessible by clicking on the link (Inspect Headers) at upper right hand corner of the Animal Shelter main page. </p>
+<p>Load <a href="http://lab-1.1.sans.labs/inspect.php">http://lab-1.1.sans.labs/inspect.php</a> in Chrome. This page is also accessible by clicking on the link (Inspect Headers) in the upper right-hand corner of the Animal Shelter main page. </p>
 </li>
 <li>
 <p>Make sure Burp is running</p>
@@ -1208,7 +1208,7 @@ If you toggle the Proxy Switcher to route traffic to Burp and Burp is not runnin
 <p><strong>Enabling Interception in Burp</strong></p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>After interception is enabled in Burp, and Burp is enabled as a proxy using Proxy Switcher in Chrome, all requests will be held by Burp. If you refresh your browser, the connection will appear to "hang" until you forward the request in Burp.</p>
+<p>After interception is enabled in Burp and Burp is enabled as a proxy using Proxy Switcher in Chrome, Burp will hold all requests. If you refresh your browser, the connection will appear to "hang" until you forward the request in Burp.</p>
 </div>
 </li>
 <li>
@@ -1224,7 +1224,7 @@ If you toggle the Proxy Switcher to route traffic to Burp and Burp is not runnin
 </li>
 <li>
 <p>Switch to Burp (click the Burp icon at the bottom of the left "Favorites" bar)</p>
-<p>You will now see the request held by Burp. For now, we just want to make sure everything is working right.</p>
+<p>You will now see the request held by Burp. For now, we want to make sure everything is working right.</p>
 </li>
 <li>
 <p>Click "Forward".</p>
@@ -1246,7 +1246,7 @@ If you toggle the Proxy Switcher to route traffic to Burp and Burp is not runnin
 </details>
 </li>
 <li>
-<p>In Burp, select the "HTTP history" from the "Proxy" tab and select the last line to answer the next few questions. The last line should represent the request you just edited. You will find the answers by selecting the "Response" tab in the middle of the Burp window.</p>
+<p>In Burp, select the "HTTP history" from the "Proxy" tab and select the last line to answer the following few questions. The last line should represent the request you just edited. You will find the answers by selecting the "Response" tab in the middle of the Burp window.</p>
 <details class="question">
 <summary>What status code did the server use to respond?</summary>
 <p>400</p>
@@ -1263,12 +1263,12 @@ If you toggle the Proxy Switcher to route traffic to Burp and Burp is not runnin
 <p>Switch back to the "Intercept" tab in Burp.</p>
 </li>
 <li>
-<p>In Burp, add a second "Referer" header with arbitrary content. (If there is no Referer header, then add two "Referer" headers to the request). For example:</p>
+<p>In Burp, add a second "Referer" header with arbitrary content. (If there is no Referer header, add two "Referer" headers to the request). For example:</p>
 <div class="highlight"><pre><span></span><code>Referer: http://www.test.com
 Referer: Some random nonsense
 </code></pre></div>
 <p><img alt="" class="zoom" src="media/img-1615101268-20210307.png" /></p>
-<p><strong><em>Request in Burp with two "Referer" headers prior to clicking "Forward".</em></strong></p>
+<p><strong><em>Request in Burp with two "Referer" headers before clicking "Forward".</em></strong></p>
 </li>
 <li>
 <p>Once the response is returned, the page will display the Referer header as the web application received it. What do you see? The content of the first, second, or both headers?</p>
@@ -1281,7 +1281,7 @@ Referer: Some random nonsense
 <p>Load an HTTPS page via Burp. Inspect the certificate and explain why a warning is displayed.</p>
 <ol>
 <li>
-<p>Keeping Burp enabled from the prior exercise, but disable "Interception" (in the "Proxy" menu check the "Intercept" tab and toggle the "Intercept on/off" button) and visit any HTTPS page. For example, <a href="https://lab-1.1.sans.labs/">https://lab-1.1.sans.labs/</a>.</p>
+<p>Keeping Burp enabled from the prior exercise, but disable "Interception" (in the "Proxy" menu, check the "Intercept" tab and toggle the "Intercept on/off" button) and visit any HTTPS page. For example, <a href="https://lab-1.1.sans.labs/">https://lab-1.1.sans.labs/</a>.</p>
 <div class="admonition question">
 <p class="admonition-title">You will receive a warning. Why?</p>
 </div>
@@ -1307,14 +1307,14 @@ Referer: Some random nonsense
 <hr />
 <h2 id="conclusion">Conclusion</h2>
 <ul>
-<li>Burp is a man-in-the middle proxy, allow you to intercept and manipulate requests prior to sending the request to server and before the response is received by the browser.</li>
-<li>Browser handles the request and response header, generally without the user being aware of their existance.</li>
-<li>The request headers have an impact on how the server process the request. The reponse headers also have an impact on the browser's behavior as well.</li>
+<li>Burp is a man-in-the-middle proxy that allows you to intercept and manipulate requests before sending the request to the server and before the response is received by the browser.</li>
+<li>Browser handles the request and response header, generally without the user knowing their existence.</li>
+<li>The request headers impact how the server process the request. The response headers also affect the browser's behavior as well.</li>
 </ul>
 <hr />
 <h2 id="explore-further">Explore Further</h2>
 <ul>
-<li>What is HTTP response code 418?</li>
+<li>What is the HTTP response code 418?</li>
 <li>With interception on, try the following links <a href="https://lab-1.1.sans.labs/images/">https://lab-1.1.sans.labs/images/</a> and <a href="https://lab-1.1.sans.labs/images">https://lab-1.1.sans.labs/images</a>. What are the differences?</li>
 </ul>
                 

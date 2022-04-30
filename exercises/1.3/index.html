@@ -1042,11 +1042,11 @@ fetch('https://lab-1.3.sans.labs:80');
 
 <h5 id="part-1">Part 1:</h5>
 <blockquote>
-<p>In this exercise, you will learn about the importance of isolating services like FTP and HTTP. We will also experiment with web application firewalls to demonstrate how they can prevent sensitive data leakage.</p>
+<p>In this exercise, you will learn about isolating services like FTP and HTTP. We will also experiment with web application firewalls to demonstrate how they can prevent sensitive data leakage.</p>
 </blockquote>
 <h5 id="part-2">Part 2:</h5>
 <blockquote>
-<p>In this part of the exercise, you will experiment the Web application firewall (mod_security) and it's capability to detect data leak post-compromise and view the logs captured by the Web Application Firewall</p>
+<p>In this part of the exercise, you will experiment with a Web application firewall (mod_security) and its ability to detect data leaks post-compromise. You will also view the logs captured by the Web Application Firewall</p>
 </blockquote>
 <h4 id="requirements">Requirements</h4>
 <ul>
@@ -1069,7 +1069,7 @@ fetch('https://lab-1.3.sans.labs:80');
 <p><img alt="" class="zoom" src="media/img-1615525893-20210312.png" /></p>
 </li>
 <li>
-<p>After FileZilla is connected, select the "uploads" directory in the lower right-hand pane and set the "Local Site" to "/home/student/Documents/FTPFiles/".</p>
+<p>After FileZilla is connected, select the "uploads" directory in the lower right-hand pane and set the "Local Site" to "/home/student/Documents/FTPFiles/."</p>
 <p><img alt="" class="zoom" src="media/img-1615526076-20210312.png" /></p>
 <p><strong>FileZilla Main Screen</strong></p>
 </li>
@@ -1089,34 +1089,34 @@ fetch('https://lab-1.3.sans.labs:80');
 <p><strong>FTP Directory in Chrome</strong></p>
 </li>
 <li>
-<p>Click on <strong>phpinfo.php</strong>. This will execute the phpinfo script we just uploaded. It uses the phpinfo() command to list various php configuration parameters.</p>
+<p>Click on <strong>phpinfo.php</strong>. This will execute the phpinfo script we just uploaded. It uses the phpinfo() command to list various PHP configuration parameters.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The files that we uploaded earlier contained code. These code are executed by the webserver. </p>
+<p>The files that we uploaded earlier contained code. The webserver executes the code. </p>
 </div>
 </li>
 <li>
 <p>The PHP configuration is displayed on-screen. Let's inspect what we uploaded via FTP earlier.</p>
 </li>
 <li>
-<p>Open "Files" in the upper left-hand corner of the screen (in the Favorites bar) and navigate to Documents-&gt;FTPFiles. Double-click on "phpinfo.php". This will open the file in a text editor.</p>
+<p>Open "Files" in the upper left-hand corner of the screen (in the Favorites bar) and navigate to Documents-&gt;FTPFiles. Double-click on "phpinfo.php." This will open the file in a text editor.</p>
 <p><img alt="" class="zoom" src="media/img-1615527606-20210312.png" /></p>
 <p><strong>File</strong></p>
 <p><img alt="" src="media/image5.png" /></p>
 <p><strong>phpinfo.php content</strong></p>
 </li>
 </ol>
-<p>The file contains a single PHP command, "phpinfo()". This command, if executed, creates the output we saw earlier. This proves that the server executed our code.</p>
+<p>The file contains a single PHP command, "phpinfo()." This command, if executed, creates the output we saw earlier. This proves that the server ran our code.</p>
 <ol>
 <li>
 <p>Go back to <a href="http://lab-1.3.sans.labs/ftp"><strong>http://lab-1.3.sans.labs/ftp</strong></a> in Chrome and click on <strong>"phpshell.php"</strong>.</p>
 </li>
 <li>
-<p>Log in with the username <strong>sec522</strong> and the password <strong>training</strong>.</p>
+<p>Login with the username <strong>sec522</strong> and the password <strong>training</strong>.</p>
 </li>
 <li>
-<p>Once logged in, users can run any shell command. The operating system in this instance is Unix. You can try normal Unix shell commands such as "ls" to show a listing of files or "uname -a" to show details about the operating system. Feel free to explore the interface and see what evil things can be done using this tool. You are essentially controlling the computer through this remote web shell interface and you are able to run any command the web server is permitted to run.</p>
-<p>The challenge in NetWars pertains to this web shell environment. If necessary, NetWars can offer hints at a cost of some points. </p>
+<p>Once logged in, users can run any shell command. The operating system in this instance is Unix. You can try standard Unix shell commands such as "ls" to show a listing of files or "uname -a" to show details about the operating system. Feel free to explore the interface and see what evil things can be done using this tool. You are essentially controlling the computer through this remote web shell interface, and you can run any command the webserver is permitted to run.</p>
+<p>The challenge in NetWars pertains to this web shell environment. If necessary, NetWars can offer hints at the cost of some points. </p>
 </li>
 </ol>
 <hr />
@@ -1128,7 +1128,7 @@ fetch('https://lab-1.3.sans.labs:80');
 <p>In Chrome, go to <a href="http://normalsecurity.sans.labs"><strong>http://normalsecurity.sans.labs</strong></a> and click on the two files "<strong>Credit Card Data (cc.html)"</strong> and <strong>"Source Code (trans.txt)"</strong>.</p>
 <details class="question">
 <summary>What do these two files show?</summary>
-<p><strong>cc.html</strong> shows transaction data including credit card numbers.</p>
+<p><strong>cc.html</strong> shows transaction data, including credit card numbers.</p>
 <p><strong>trans.txt</strong> leaks source code.</p>
 </details>
 <details class="question">
@@ -1138,17 +1138,17 @@ fetch('https://lab-1.3.sans.labs:80');
 </details>
 </li>
 <li>
-<p>Try <a href="http://normalsecurity.sans.labs/form.php">http://normalsecurity.sans.labs/form.php</a>. You will be able to submit the string "cats are evil" or other strings for that matter.</p>
+<p>Try <a href="http://normalsecurity.sans.labs/form.php">http://normalsecurity.sans.labs/form.php</a>. You will be able to submit the string "cats are evil" or other strings.</p>
 <div class="admonition switch">
 <p class="admonition-title">Switch</p>
-<p>We are now switching to the mod_security protected version of the same website</p>
+<p>We are now switching to the mod_security protected version of the same website.</p>
 </div>
 </li>
 <li>
 <p>Revisit the two URLs above (under <a href="http://modsecurity.sans.labs"><strong>http://modsecurity.sans.labs</strong></a>). What do you see now? (You may need to reload the page if you still see the original text.)</p>
 </li>
 <li>
-<p>Revisit <strong><a href="http://modsecurity.sans.labs/form.php">http://modsecurity.sans.labs/form.php</a></strong> and see if you can still enter "Cats are evil". Try "Cats are cute" instead.</p>
+<p>Revisit <strong><a href="http://modsecurity.sans.labs/form.php">http://modsecurity.sans.labs/form.php</a></strong> and see if you can still enter "Cats are evil." Try "Cats are cute" instead.</p>
 </li>
 <li>
 <p>Review the web application firewall's log file at <strong><a href="http://modsecurity.sans.labs/modsecurity.log">http://modsecurity.sans.labs/modsecurity.log</a></strong></p>
@@ -1157,20 +1157,20 @@ fetch('https://lab-1.3.sans.labs:80');
 </div>
 </li>
 <li>
-<p>Next, we are going to examine the ruleset to see what rules are triggered to block access to the file. Open the configuration file at <strong><a href="http://modsecurity.sans.labs/modsecurity.rules">http://modsecurity.sans.labs/modsecurity.rules</a>.</strong></p>
-<p>The log file and the rules should provide the necessary information for you to solve the challenge in NetWars. As usual, hints is available via NetWars if necessary. </p>
+<p>Next, we will examine the ruleset to see what rules are triggered to block access to the file. Open the configuration file at <strong><a href="http://modsecurity.sans.labs/modsecurity.rules">http://modsecurity.sans.labs/modsecurity.rules</a>.</strong></p>
+<p>The log file and the rules should provide the necessary information for you to solve the challenge in NetWars. As usual, hints are available via NetWars if necessary. </p>
 </li>
 </ol>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
 <ul>
-<li>Architecture supporting the application has a huge impact on the overall security. Isolation and segmentation are common approaches to secure the application.</li>
-<li>Web Application Firewall are versatile security tools to implement security at the HTTP level without a lot of programming or coding.</li>
+<li>Architecture supporting the application has a significant impact on the overall security. Isolation and segmentation are common approaches to secure the application.</li>
+<li>Web Application Firewalls are versatile security tools to implement security at the HTTP level without a lot of programming or coding.</li>
 </ul>
 <hr />
 <h2 id="explore-further">Explore Further</h2>
 <ul>
-<li>Think about how to implement Web Application Firewall to a production application.</li>
+<li>Think about how to implement a Web Application Firewall for a production application.</li>
 </ul>
                 
                   

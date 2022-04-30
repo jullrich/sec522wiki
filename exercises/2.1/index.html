@@ -1100,7 +1100,7 @@ fetch('https://lab-2.1.sans.labs:80');
 </blockquote>
 <h5 id="part-2">Part 2:</h5>
 <blockquote>
-<p>You will experiment with a less common SQL injection to learn how SQL injection may be exploited to do more than just retrieve data.</p>
+<p>You will experiment with a less common SQL injection to learn how SQL injection may be exploited to do more than retrieve data.</p>
 </blockquote>
 <h4 id="requirements">Requirements</h4>
 <ul>
@@ -1116,10 +1116,10 @@ fetch('https://lab-2.1.sans.labs:80');
 <p>Open <a href="http://lab-2.1.sans.labs/">http://lab-2.1.sans.labs/</a> in Google Chrome.</p>
 </li>
 <li>
-<p>Enter one of the animal names (for example, "Stash") in the search box and click "Submit". Only this animal should now be visible.</p>
+<p>Enter one of the animal names (for example, "Stash") in the search box and click "Submit." Only this animal should now be visible.</p>
 </li>
 <li>
-<p>Enter a single quote ( ' ) in the search box and click "Submit". This should trigger an SQL error. The SQL error message will include the query. Try to identify the vulnerability.</p>
+<p>Enter a single quote ( ' ) in the search box and click "Submit." This should trigger an SQL error. The SQL error message will include the query. Try to identify the vulnerability.</p>
 </li>
 </ol>
 <h4 id="digging-deeper">Digging Deeper</h4>
@@ -1133,24 +1133,24 @@ fetch('https://lab-2.1.sans.labs:80');
 </code></pre></div>
 </li>
 <li>
-<p>Enter the below string and click "Submit".</p>
+<p>Enter the below string and click "Submit."</p>
 <div class="highlight"><pre><span></span><code>&#39; UNION SELECT 1,2,3 -- 
 </code></pre></div>
-<p>The last step will again result in an error message. The error message will state that both SELECT statements in a UNION query need to return the same number of columns. Count the columns returned by the first statement and rewrite the second statement using the right number of columns.</p>
+<p>The last step will again result in an error message. The error message will state that both SELECT statements in a UNION query need to return the same number of columns. Count the columns returned by the first statement and rewrite the second statement using the correct number of columns.</p>
 </li>
 <li>
-<p>Enter the below string and hit submit. You will now get a broken image and the numbers 2 and 4 will be visible below the broken image.</p>
+<p>Enter the below string and hit submit. You will now get a broken image, and the numbers 2 and 4 will be visible below the broken image.</p>
 <div class="highlight"><pre><span></span><code>&#39; UNION SELECT 1,2,3,4,5,6,7 -- 
 </code></pre></div>
 <p><img alt="" class="zoom" src="media/image1.png" /></p>
 <p><strong>Result of Entering the Correct UNION Query</strong></p>
 </li>
 <li>
-<p>Replace the SELECT query with one selecting the username and password column from the animalshelter.users table</p>
+<p>Replace the SELECT query with one selecting the username and password column from the "animalshelter.users" table</p>
 <div class="highlight"><pre><span></span><code>&#39; UNION SELECT 1,username,3,password,5,6,7 FROM animalshelter.users -- 
 </code></pre></div>
 <div class="admonition tip">
-<p class="admonition-title">Do not forget the space after the -- in the end</p>
+<p class="admonition-title">Do not forget the space after the -- in the end.</p>
 </div>
 <p>You will now see two broken images (one for each user in the database). The usernames and passwords are displayed where you saw the numbers 2 and 4 in Step 6.</p>
 </li>
@@ -1163,25 +1163,25 @@ fetch('https://lab-2.1.sans.labs:80');
 <summary>Can you create a query without the '--' in the end?</summary>
 <p>Answer: <strong>' OR 1='1</strong></p>
 </details>
-<p>The challenge in NetWars pertains to this input form. If necessary, NetWars can offer hints at a cost of some points.</p>
+<p>The challenge in NetWars pertains to this input form. If necessary, NetWars can offer hints at the cost of some points.</p>
 <hr />
 <h2 id="part-2-advanced-sql-injection">Part 2: Advanced SQL Injection</h2>
 <h3 id="no-hints_1">No Hints</h3>
-<p>The login page at <strong><a href="http://lab-2.1.sans.labs/login.php">http://lab-2.1.sans.labs/login.php</a></strong> is vulnerable to SQL injection. Use the vulnerability to log in as administrator. </p>
+<p>The login page at <strong><a href="http://lab-2.1.sans.labs/login.php">http://lab-2.1.sans.labs/login.php</a></strong> is vulnerable to SQL injection. Use the vulnerability to log in as an administrator. </p>
 <h3 id="step-by-step_1">Step by Step</h3>
-<p>We have a URL at hand that we know is vulnerable to SQL injection. The first step to test for SQL injection is to insert a quote into each field.</p>
+<p>We have a URL at hand that we know is vulnerable to SQL injection. The first step when exploring SQL injection is to insert a quote into each field.</p>
 <ol>
 <li>
 <p>Use Chrome to visit <strong><a href="http://lab-2.1.sans.labs/login.php">http://lab-2.1.sans.labs/login.php</a></strong>.</p>
 </li>
 <li>
-<p>Log in using the username "sec522" and the password "training". (to assist in exploiting the SQL injection vulnerability, passwords are not masked on this page)</p>
+<p>Login using the username "sec522" and the password "training." (to assist in exploiting the SQL injection vulnerability, passwords are not masked on this page)</p>
 </li>
 <li>
 <p>You are now logged in. Click on the "Log Out" link to return to the login page.</p>
 </li>
 <li>
-<p>Enter a single quote as user name. You will get a SQL error message that displays the SQL query. You are able to inject SQL via the username.
+<p>Enter a single quote as the user name. You will get a SQL error message that displays the SQL query. You can inject SQL via the username.
    You may use a UNION query to trick this query into returning whatever password you entered, not the actual password for the user admin. Let's try this by connecting to the database directly.</p>
 </li>
 <li>
@@ -1190,7 +1190,7 @@ fetch('https://lab-2.1.sans.labs:80');
 <li>
 <p>Enter
    <code>mysql animalshelter</code>
-   to connect to the animalshelter database.</p>
+   to connect to the "animalshelter" database.</p>
 </li>
 <li>
 <p>Enter
@@ -1204,19 +1204,19 @@ fetch('https://lab-2.1.sans.labs:80');
 </code></pre></div>
 </li>
 <li>
-<p>We do not know the administrators password. We need to rewrite the query to return whatever password we entered. Use the tool at <strong><a href="http://lab-2.1.sans.labs/pwhash.php">http://lab-2.1.sans.labs/pwhash.php</a></strong> to calculate the password hash for the password of your choice (keep it simple).</p>
+<p>We do not know the administrator's password. We need to rewrite the query to return whatever password we entered. Use the tool at <strong><a href="http://lab-2.1.sans.labs/pwhash.php">http://lab-2.1.sans.labs/pwhash.php</a></strong> to calculate the password hash for the password of your choice (keep it simple).</p>
 </li>
 <li>
-<p>Now we have to create a UNION query to return the password hash we need. You may experiment with the mysql command line. For example, for the password <code>abc</code>, the query would look like:</p>
+<p>We have to create a UNION query to return the password hash we need. You may experiment with the MySQL command line. For example, for the password <code>abc</code>, the query would look like this:</p>
 </li>
 </ol>
 <p><div class="highlight"><pre><span></span><code>SELECT username, password FROM users WHERE username=&#39;&#39; UNION SELECT &#39;admin&#39;,&#39;$2y$10$G0aDOmI7vQsmfUw2[part removed]Wzy6S&#39;
 </code></pre></div>
-10. Now create the right username, to log in as <code>admin</code> with the password <code>abc</code> (or whatever password you selected). The flag for the scoreboard will be displayed once you are successful.</p>
+10. Now create the correct username to log in as <code>admin</code> with the password <code>abc</code> (or whatever password you selected). The flag for the scoreboard will be displayed once you are successful.</p>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
 <ul>
-<li>SQL injection can lead to more much severe impact than just the data within a single data. Password and personal information leakage are commonly the results of SQL injection but it also can extends to the compromise of an entire network as well.</li>
+<li>SQL injection may impact much more than just the data within a single request. Passwords and personal information leakage are commonly the results of SQL injection. But it may extend to the compromise of an entire network.</li>
 <li>SQL queries often govern business logic and access control. SQL injection can be used to bypass these rules.</li>
 </ul>
 <hr />

@@ -1042,18 +1042,18 @@ fetch('https://lab-2.3.sans.labs:80');
 </ul>
 <h2 id="part-1-guestbook-xss-with-csrf">Part 1: Guestbook XSS with CSRF</h2>
 <h3 id="no-hints">No Hints</h3>
-<p>Also, for the guestbook at <a href="http://lab-2.3.sans.labs/login.php">http://lab-2.3.sans.labs/login.php</a>, we experimented with this guestbook before. This time find the XSS vulnerability and exploit it to automatically approve posts that an administrator views. (Logins available - sec522/training and admin/admin)</p>
+<p>Also, for the guestbook at <a href="http://lab-2.3.sans.labs/login.php">http://lab-2.3.sans.labs/login.php</a>, we experimented with this guestbook before. This time find the XSS vulnerability and exploit it to approve posts that an administrator views automatically. (Logins available - sec522/training and admin/admin)</p>
 <h3 id="step-by-step">Step by Step</h3>
-<p>For this part, we will revisit the guestbook system. The administrator of the site noticed the CSRF attack and decided to manually approve every single guestbook entry.</p>
+<p>For this part, we will revisit the guestbook system. The site administrator noticed the CSRF attack and decided to approve every single guestbook entry manually.</p>
 <ol>
 <li>
 <p>Using Chrome, browse to <strong><a href="http://lab-2.3.sans.labs/login.php">http://lab-2.3.sans.labs/login.php</a></strong>. </p>
 </li>
 <li>
-<p>Log in to the guestbook by using <strong>"sec522"</strong> and <strong>"training"</strong> as username and password.</p>
+<p>Log in to the guestbook using <strong>"sec522"</strong> and <strong>"training"</strong> as username and password.</p>
 <ol>
 <li>
-<p>Attempt to input two guest entries into the guestbook. The new guestbook requires the administrator to approve the entries before they are posted on the page.</p>
+<p>Attempt to input two guest entries into the guestbook. The new guestbook requires the administrator to approve the entries before posting them on the page.</p>
 </li>
 <li>
 <p>Log out of the guestbook by clicking on the <strong>"Logout"</strong> link.</p>
@@ -1062,13 +1062,13 @@ fetch('https://lab-2.3.sans.labs:80');
 </li>
 <li>
 <p>Log in with username <strong>"admin"</strong> and password <strong>"admin"</strong>. This allows you to log in as an administrator.</p>
-<p>Administrative functions are now available. This includes the ability to delete comments and to approve messages.</p>
+<p>Administrative functions are now available. This includes the ability to delete comments and approve messages.</p>
 <ol>
 <li>
 <p>There should be two comments awaiting approval. Please click delete on one of the comments. That comment should then be deleted.</p>
 </li>
 <li>
-<p>There should be one comment left; click the <strong>"Approve All Posts"</strong> button to approve the comment to be displayed to the public.</p>
+<p>There should be one comment left; click the <strong>"Approve All Posts"</strong> button to approve the comment displayed to the public.</p>
 </li>
 </ol>
 </li>
@@ -1076,12 +1076,12 @@ fetch('https://lab-2.3.sans.labs:80');
 <p>Log out of the guestbook by clicking on the <strong>"Logout"</strong> link.</p>
 </li>
 </ol>
-<p>The CSRF attack towards other users is obviously no longer possible, as it would likely not get past the administrator, who will review the comments before allowing the public to see them.</p>
+<p>The CSRF attack on other users is no longer possible. It would likely not get past the administrator, who will review the comments before allowing the public to see them.</p>
 <p><br></p>
-<p>Now that we understand how this guestbook system works, let's explore if it is vulnerable to attacks.</p>
+<p>Now that we understand how this guestbook system works let's explore if it is vulnerable to attacks.</p>
 <ol>
 <li>
-<p>Log in to the guestbook by using <strong>"sec522"</strong> and <strong>"training"</strong> as username and password.</p>
+<p>Log in to the guestbook using <strong>"sec522"</strong> and <strong>"training"</strong> as username and password.</p>
 </li>
 <li>
 <p>Attempt to add one new comment. Put anything as name, email, and URL. For comments, enter the following string:</p>
@@ -1089,14 +1089,14 @@ fetch('https://lab-2.3.sans.labs:80');
 </code></pre></div>
 </li>
 <li>
-<p>Press the <strong>"Add"</strong> button. The message is awaiting for the administrator to approve as indicated by the message in the response page.</p>
+<p>Press the <strong>"Add"</strong> button. The message is awaiting administrator approval, as indicated by the message on the response page.</p>
 </li>
 <li>
 <p>Click <strong>"Logout"</strong> then log in with username <strong>"admin"</strong> and password <strong>"admin"</strong>.
-   A pop-up box should appear with <strong>"xss"</strong> in it. The input from the user became part of the page; the script input becomes rendered in the browser as script. This is a classic case of stored XSS vulnerability.</p>
+   A pop-up box should appear with <strong>"xss"</strong> in it. The input from the user becomes part of the page; the script input becomes rendered in the browser as a script. This is a classic case of stored XSS vulnerability.</p>
 </li>
 <li>
-<p><em>(Optional)</em> Feel free to view the source of the page to look for the XSS alert box and see why it became part of the scripting content in the page.</p>
+<p><em>(Optional)</em> Feel free to view the page's source to look for the XSS alert box and see why it became part of the scripting content on the page.</p>
 </li>
 <li>
 <p>Delete the XSS comment in the <strong>"waiting for approval"</strong> section, as this can be annoying since the pop-up box shows up in every page load. Click the <strong>"Delete Message"</strong> link in the XSS comment.</p>
@@ -1105,13 +1105,13 @@ fetch('https://lab-2.3.sans.labs:80');
 <p>Log out of the guestbook by clicking on the <strong>"Logout"</strong> link.</p>
 </li>
 </ol>
-<p>We have now proved the comment field to be vulnerable to XSS attack. Let's see how we can leverage this vulnerability.</p>
-<p>We know there is an XSS vulnerability in the comment field. Anyone looking at that comment will have their browser hijacked to run scripts. Hence, these browsers can be controlled. That is very useful: what if we can control the administrator's browser so that the comments could automatically be approved as soon as an administrator looks at them? This is exactly the subject of the NetWar challenge. Once you exploit the administrator, a flag will show up with the necessary answer. </p>
-<p>You will first login to the guestbook as sec522 user (<strong>"sec522"</strong> and <strong>"training"</strong> as username and password) then submit the crafted XSS+CSRF attack string as part of the submission to the application. Once you submit, you can log out then log back in as administrator (<strong>admin / admin</strong> as the credential) to determine if the attack has worked. There are hints in NetWars to help you craft the attack if necessary. </p>
+<p>We have now proved the comment field to be vulnerable to XSS attacks. Let's see how we can leverage this vulnerability.</p>
+<p>We know there is an XSS vulnerability in the comment field. Anyone looking at that comment will have their browser hijacked to run scripts. Hence, these browsers can be controlled. That is very useful: what if we can control the administrator's browser so that the comments could automatically be approved as soon as an administrator looks at them? This is precisely the subject of the NetWar challenge. Once you exploit the administrator, a flag will appear with the necessary answer. </p>
+<p>You will first login to the guestbook as the sec522 user (<strong>"sec522"</strong> and <strong>"training"</strong> as username and password), then submit the crafted XSS+CSRF attack string as part of the submission to the application. Once you submit, you can log out and log back in as administrator (<strong>admin/admin</strong> as the credential) to determine if the attack has worked. There are hints in NetWars to help you craft the attack if necessary. </p>
 <div class="admonition info">
 <p class="admonition-title">How do we remediate a vulnerability like this?</p>
 </div>
-<p>To demonstrate a fix for the XSS vulnerability, we have prepared a \"fixed\" version of the guestbook: "guestbook-xss.php". This file is essentially the same as the guestbook.php we have seen, except the XSS in the comment field is fixed.</p>
+<p>To demonstrate a fix for the XSS vulnerability, we have prepared a \"fixed\" version of the guestbook: "guestbook-xss.php." This file is essentially the same as the guestbook.php we have seen, except the XSS in the comment field is fixed.</p>
 <p>The htmlentities function in PHP is to used to encode characters such as &lt; &gt;, /, &amp;, \', or \" to HTML entities. For example, "\&lt; becomes "&lt;" and "\&gt;" becomes "&gt;" . When "\&lt; gets sent to the browser, the browser will interpret it as HTML. But when "&lt;" gets sent to the browser, the browser will display the "\&lt; symbol.</p>
 <p>One line of example code is below:</p>
 <div class="highlight"><pre><span></span><code><span class="x">print htmlentities($r[3]);</span>
@@ -1123,7 +1123,7 @@ fetch('https://lab-2.3.sans.labs:80');
 <p>Browse to <a href="http://lab-2.3.sans.labs/guestbook-xss.php">http://lab-2.3.sans.labs/guestbook-xss.php</a>.</p>
 </li>
 <li>
-<p>Look at the comments and explore why there is no longer a broken image sign but the entire XSS and CSRF string are simply displayed on the screen. Viewing the source of this page gives insight as to why this is no longer treated as an &lt;IMG&gt; tag but simply text on-screen.</p>
+<p>Look at the comments and explore why there is no longer a broken image sign, but the entire XSS and CSRF string are displayed. Viewing the source of this page gives insight as to why this is no longer treated as an &lt;IMG&gt; tag, but it is considered text on-screen.</p>
 </li>
 </ol>
 <hr />
@@ -1133,13 +1133,13 @@ fetch('https://lab-2.3.sans.labs:80');
 <p>Browse to <a href="http://lab-2.3.sans.labs/partners.php">http://lab-2.3.sans.labs/partners.php</a> or click the "Partners" link in the header.</p>
 </li>
 <li>
-<p>First try a "safe" local feed to become familiar with the feature. Enter</p>
+<p>First, try a "safe" local feed to become familiar with the feature. Enter</p>
 <p><div class="highlight"><pre><span></span><code>http://lab-2.3.sans.labs/json/good.json
 </code></pre></div>
-as a URL and click "Preview". </p>
+as a URL and click "Preview." </p>
 </li>
 <li>
-<p>Click on the "Click here to Hide or Show the Pet's Name" link to display the animal names, and click again to hide them. This link will display or hide the first column of the table.</p>
+<p>Click on the "Click here to Hide or Show the Pet's Name" link to make the animal names column visible, and click again to hide them. This link will display or hide the first column of the table.</p>
 </li>
 <li>
 <p>Load the "evil" feed from a third-party site. Enter</p>
@@ -1150,22 +1150,22 @@ as a URL and click "Preview". </p>
 <p>Initially, you will not see any problems (try the sort and filter functions). </p>
 <ol>
 <li>
-<p>Display the pet names again by clicking on "Click here to Hide or Show the Pet's Name". You should now see a popup: "XSS Exploit". Find the record that causes the problem. You may need to sort or search for "cat" to find it.</p>
+<p>Display the pet names again by clicking on "Click here to Hide or Show the Pet's Name." You should now see a popup: "XSS Exploit." Find the record that causes the problem. You may need to sort or search for "cat" to find it.</p>
 </li>
 <li>
-<p>The name of the "exploit pet" starts with <code>XYZ</code>. Right click over <code>XYZ</code>  and select <code>Inspect</code> to see the exploit. </p>
+<p>The name of the "exploit pet" starts with <code>XYZ</code>. Right-click over <code>XYZ</code>  and select <code>Inspect</code> to see the exploit. </p>
 </li>
 <li>
-<p>Open the JSON file by loading the URL in a new browser window. Identify the exploit line (note the "animal ID" this will be the answer for the netwars quiz).</p>
+<p>Open the JSON file by loading the URL in a new browser window. Identify the exploit line (note the "animal ID." This will be the answer for the netwars quiz).</p>
 </li>
 <li>
-<p>Open the JavaScript file that renders the table: <a href="http://lab-2.3.sans.labs/js/partner0.js">http://lab-2.3.sans.labs/js/partner0.js</a> . Become familiar with the code.</p>
+<p>Open the JavaScript file that renders the table: <a href="http://lab-2.3.sans.labs/js/partner0.js">http://lab-2.3.sans.labs/js/partner0.js</a>. Become familiar with the code.</p>
 </li>
 <li>
-<p>As a first fix, we will remove the word "script" from the data. Click on "Fix 1" to load the page implementing that fix.</p>
+<p>We will remove the word "script" from the data as a first fix. Click on "Fix 1" to load the page implementing that fix.</p>
 </li>
 <li>
-<p>Load the "evil" json feed again.</p>
+<p>Load the "evil" JSON feed again.</p>
 </li>
 <li>
 <p>Display the animal names and sort by animal names to see the exploit name at the top. The exploit no longer works.</p>
@@ -1187,10 +1187,10 @@ as a URL and click "Preview". </p>
 <li>
 <p>Try another "evil" feed:</p>
 <p><code>http://lab-2.3-evil.sans.labs/json/evil2.json</code></p>
-<p>This feed evades our simple mitigation. What HTML tag is used to trigger the JavaScript?</p>
+<p>This feed evades our simple mitigation. What is the HTML tag used to trigger the JavaScript?</p>
 </li>
 <li>
-<p>We got a better fix! Let's remove all &lt; and &gt; characters. Clock on <code>Fix 2</code> to try it out.</p>
+<p>We got a better fix! Let's remove all &lt; and &gt; characters. Click on <code>Fix 2</code> to try it out.</p>
 </li>
 <li>
 <p>Looking better? You may review the new JavaScript file here: <code>http://lab-2.3.sans.labs/js/partner2.js</code>. The new render function to go with it:</p>
@@ -1202,12 +1202,12 @@ as a URL and click "Preview". </p>
 </code></pre></div>
 </li>
 <li>
-<p>But notice how the <code>id</code> is used as an HTML attribute. The code is still exploitable. Try to load</p>
+<p>Notice how the <code>id</code> is used as an HTML attribute. The code is still exploitable. Try to load</p>
 <div class="highlight"><pre><span></span><code>http://lab-2.3-evil.sans.labs/json/evil2.json
 </code></pre></div>
 </li>
 <li>
-<p>The final fix you wonder? Click on <code>Fix 3</code>. You may want to inspect the corresponding JavaScript file:</p>
+<p>The final fix, you wonder? Click on <code>Fix 3</code>. You may want to inspect the corresponding JavaScript file:</p>
 <div class="highlight"><pre><span></span><code>http://lab-2.3.sans.labs/js/partner3.js
 </code></pre></div>
 </li>
@@ -1216,15 +1216,15 @@ as a URL and click "Preview". </p>
 <h2 id="conclusion">Conclusion</h2>
 <ul>
 <li>There are multiple variants of the XSS attacks. </li>
-<li>XSS is intended to confuse the browser into interrupting certain attacker-controlled Web content as instructions coming from the Web server. The end result isn't the "server" being hacked but some attacker-controlled content is executed by the browser.</li>
-<li>XSS has to be prevented by properly encoding output. Either as the page is rendered on the server or on the browser for DOM based attacks.</li>
+<li>XSS is intended to confuse the browser into interrupting certain attacker-controlled Web content as instructions from the Web server. The result isn't the "server" being hacked, but the browser executes some attacker-controlled content.</li>
+<li>XSS has to be prevented by properly encoding output. Either as the page is rendered on the server or the browser for DOM-based attacks.</li>
 </ul>
 <hr />
 <h2 id="explore-further">Explore Further</h2>
 <ul>
-<li>Experiment with partner.js. What if you do not display the name first, and turn it on later?</li>
+<li>Experiment with partner.js. What if you do not display the name first and turn it on later?</li>
 <li>Can you find other vulnerabilities in the "Partner" application (not just XSS)?</li>
-<li>edit the JSON file. What other tags work? iframe?</li>
+<li>edit the JSON file. What other tags work? Iframe?</li>
 </ul>
                 
                   

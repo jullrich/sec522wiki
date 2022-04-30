@@ -986,10 +986,10 @@ fetch('https://lab-2.2.sans.labs:80');
 </li>
 <li>
 <p>Switch back to the other browser window (loaded with the guestbook page) and refresh the page.</p>
-<p>On the guestbook page, there is an extra guestbook entry that was never entered. What is happening here?</p>
+<p>There is an extra guestbook entry on the guestbook page that was never entered. What is happening here?</p>
 </li>
 <li>
-<p>Change back to the window with the attack.php opened. Press Ctrl-U to view the source code of the page.</p>
+<p>Change back to the "attack.php" window and press Ctrl-U to view the page's source code.</p>
 </li>
 <li>
 <p>Read the page source carefully; pay close attention to the IFrame.</p>
@@ -1005,19 +1005,19 @@ fetch('https://lab-2.2.sans.labs:80');
 <p>Switch back to the attack window. Refresh the page on <strong><a href="http://lab-2.2.sans.labs/attack.php">http://lab-2.2.sans.labs/attack.php</a></strong>. This is to attempt the CSRF attack once more.</p>
 </li>
 <li>
-<p>Switch back once again to the other window with <strong><a href="http://lab-2.2.sans.labs/guestbook.php">http://lab-2.2.sans.labs/guestbook.php</a></strong> and log in with "sec522" and "training" as username/password.</p>
+<p>Switch back to the other window with <strong><a href="http://lab-2.2.sans.labs/guestbook.php">http://lab-2.2.sans.labs/guestbook.php</a></strong> and log in with "sec522" and "training" as username/password.</p>
 </li>
 </ol>
 <details class="question">
 <summary>How come no extra entry is added this time?</summary>
-<p>If the session is not active (the user logged out), the attack simply doesn't work.</p>
+<p>If the session is not active (the user logged out), the attack doesn't work.</p>
 </details>
 <p>Please review the challenge on NetWars related to this section. </p>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
 <ul>
-<li>CSRF only works while the user is logged into the application with active session.</li>
-<li>Attacker steer the browser to submit request on behalf of the user. The request has the credential of the user attached.  </li>
+<li>CSRF only works while the user is logged into the application with an active session.</li>
+<li>Attackers steer the browser to submit a request on behalf of the user. The request has the credential of the user attached.  </li>
 </ul>
 <hr />
                 
