@@ -1130,27 +1130,24 @@ fetch('https://lab-2.3.sans.labs:80');
 <h2 id="part-2-dom-based-xss-reading-json-feeds-with-datatables">Part 2: DOM-Based XSS reading JSON Feeds with DataTables</h2>
 <ol>
 <li>
-<p>Browse to <a href="http://lab-2.3.sans.labs/partners.php">http://lab-2.3.sans.labs/partners.php</a> or click the "Partners" link in the header.</p>
+<p>Browse to <a href="http://lab-2.3.sans.labs/partners.php">http://lab-2.3.sans.labs/partners.php</a> or click the <strong>Partners</strong> link in the header.</p>
 </li>
 <li>
-<p>First, try a "safe" local feed to become familiar with the feature. Enter</p>
-<p><div class="highlight"><pre><span></span><code>http://lab-2.3.sans.labs/json/good.json
+<p>First, try a "safe" local feed to become familiar with the feature. Enter the following as a URL and click "Preview."</p>
+<div class="highlight"><pre><span></span><code>http://lab-2.3.sans.labs/json/good.json
 </code></pre></div>
-as a URL and click "Preview." </p>
 </li>
 <li>
-<p>Click on the "Click here to Hide or Show the Pet's Name" link to make the animal names column visible, and click again to hide them. This link will display or hide the first column of the table.</p>
+<p>Click on the <strong>Click here to Hide or Show the Pet's Name</strong> link to make the animal names column visible, and click again to hide them. This link will display or hide the first column of the table.</p>
 </li>
 <li>
-<p>Load the "evil" feed from a third-party site. Enter</p>
-</li>
-</ol>
+<p>Load the "evil" feed from a third-party site. Enter the following as the URL and click <strong>Preview</strong>.</p>
 <div class="highlight"><pre><span></span><code>http://lab-2.3-evil.sans.labs/json/evil.json
 </code></pre></div>
 <p>Initially, you will not see any problems (try the sort and filter functions). </p>
-<ol>
+</li>
 <li>
-<p>Display the pet names again by clicking on "Click here to Hide or Show the Pet's Name." You should now see a popup: "XSS Exploit." Find the record that causes the problem. You may need to sort or search for "cat" to find it.</p>
+<p>Display the pet names again by clicking on <strong>Click here to Hide or Show the Pet's Name</strong>. You should now see a popup: "XSS Exploit". Find the record that causes the problem. You may need to sort or search for "cat" to find it.</p>
 </li>
 <li>
 <p>The name of the "exploit pet" starts with <code>XYZ</code>. Right-click over <code>XYZ</code>  and select <code>Inspect</code> to see the exploit. </p>
