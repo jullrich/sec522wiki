@@ -276,8 +276,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../errata/G02/" title="G02" class="md-nav__link">
-      G02
+    <a href="../../errata/H01_01/" title="H01_01" class="md-nav__link">
+      H01_01
     </a>
   </li>
 
@@ -958,17 +958,13 @@ fetch('http://lab-5.2.sans.labs:80');
    <img alt="" class="zoom" src="images/img-1633240461-20211003.png" /></p>
 </li>
 <li>
-<p>GraphQL queries are in JSON format and while lightwight, can be a bit difficult to "visualize" the formatting. Luckily Burp has an extension to help navigate around GraphQL. The extension is InQL and requires Jython to run. To get this setup, go to the <strong>Extender</strong> tab in Burp and select <strong>Options</strong> sub-tab. Under Python environment, change the location of the Jython standalone JAR file by clicking on the <strong>Select File</strong> button. The file is located at <strong>/home/student/jython-standalone.jar</strong>  See screenshot for reference</p>
-<p><img alt="" class="zoom" src="images/img-1633556082-20211006.png" /></p>
+<p>GraphQL queries are in JSON format and while lightwight, can be a bit difficult to "visualize" the formatting. Luckily Burp has an extension to help navigate around GraphQL. The extension is InQL and requires Jython to run. We have already pre-installed this extension for you.</p>
 </li>
 <li>
-<p>In the tab, select <strong>BApp Store</strong> to install the InQL extension. There is search box on the upper right hand to help you find the InQL extension in the list. Once you find the <strong>InQL - Introspection GraphQL Scanner</strong>, click on it and you will get the option to install it at the right side pane (scroll down on the page to see the Install button in orange). Install InQL by clicking on the <strong>Install</strong> button.</p>
+<p>To use InQL to help us evaluate GraphQL queries, go to the <strong>Proxy tab</strong> to select <strong>HTTP History</strong>, we are once again looking for the POST request to the /graphql (scroll down on the list). Once you find the request in the history, right click on it. In the context menu, select <strong>Copy URL</strong>. </p>
 </li>
 <li>
-<p>Once the installation if finished, there will be more tabs available (such as InQL Scanner). Go to the <strong>Proxy tab</strong> to select <strong>HTTP History</strong>, we are once again looking for the POST request to the /graphql (scroll down on the list). Once you find the request in the history, right click on it. In the context menu, select <strong>Copy URL</strong>. </p>
-</li>
-<li>
-<p>Change over to the <strong>InQL Scanner</strong> tab. Paste (Ctrl-V) the URL at the top of the window and then click on <strong>Load</strong> at the right hand side. A request is generated that you will need to click <strong>Forward</strong> under the <strong>Proxy -&gt; Intercept</strong> tab. Once done, flip back to <strong>InQL Scanner</strong>. Some data are appearing at the pane to the bottom. InQL is using introspection queries to determine all the queries supported at this GraphQL endpoint. This should help you answer the first challenge in NetWars. </p>
+<p>Change over to the <strong>InQL Scanner</strong> tab in Burp (from top menu of Burp). Paste the URL at the top of the window and then click on <strong>Load</strong> at the right hand side. A request is generated that you will need to click <strong>Forward</strong> under the <strong>Proxy -&gt; Intercept</strong> tab. Once done, flip back to <strong>InQL Scanner</strong>. Some data are appearing at the pane to the bottom. InQL is using introspection queries to determine all the queries supported at this GraphQL endpoint. This should help you answer the first challenge in NetWars. </p>
 </li>
 </ol>
 <hr />

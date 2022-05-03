@@ -276,8 +276,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../errata/G02/" title="G02" class="md-nav__link">
-      G02
+    <a href="../../errata/H01_01/" title="H01_01" class="md-nav__link">
+      H01_01
     </a>
   </li>
 
@@ -957,7 +957,7 @@ fetch('http://lab-4.2.sans.labs:80');
 <h1 id="exercise-42-cross-origin-requests">Exercise 4.2 - Cross Origin Requests</h1>
 <hr />
 <h4 id="objectives">Objectives</h4>
-<p>Learn how browser's Cross-Origin-Request rules (CORS) restricts malicious cross origin requests and how vulnerable implementations may be attacked.</p>
+<p>Learn how the browser's Cross-Origin-Request rules (CORS) restrict malicious cross-origin requests and how vulnerable implementations may be attacked.</p>
 <div class="codehilite"><pre><span></span><code>Estimated Time 15 minutes
 </code></pre></div>
 
@@ -968,18 +968,18 @@ fetch('http://lab-4.2.sans.labs:80');
 <hr />
 <h2 id="same-origin-requests">Same Origin Requests</h2>
 <h3 id="no-hints">No Hints</h3>
-<p>Start at <a href="http://lab-4.2.sans.labs">http://lab-4.2.sans.labs</a>. You will see a login page. If not, click on "Logout &amp; Reset Database" in the upper right hand corner.</p>
-<p>First, experiment with the donation page at "Same Origin" (you will need to log in using the username student and the password training). Secondly, after you figured out how it works, see why the "Good Cross Origin" version is broken. Finally, after you fix the "Good Cross Origin", check that the "Evil Cross Origin" is still blocked.</p>
+<p>Start at <a href="http://lab-4.2.sans.labs">http://lab-4.2.sans.labs</a>. You will see a login page. If not, click on "Logout &amp; Reset Database" in the upper right-hand corner.</p>
+<p>First, experiment with the donation page at "Same Origin" (you will need to log in using the username student and the password training). Secondly, after you figured out how it works, see why the "Good Cross-Origin" version is broken. Finally, after you fix the "Good Cross-Origin", check that the "Evil Cross-Origin" is still blocked.</p>
 <h3 id="step-by-step">Step by Step</h3>
 <ol>
 <li>
 <p>Browse to <strong><a href="http://lab-4.2.sans.labs/login.php">http://lab-4.2.sans.labs/login.php</a></strong>.</p>
 </li>
 <li>
-<p>Log in using the username "student" and the password "training".</p>
+<p>Login using the username "student" and the password "training".</p>
 </li>
 <li>
-<p>Open the browser's debugger (SHIFT-CTRT-I) and open the "Network" tab if it isn't already open.</p>
+<p>Open the browser's debugger (SHIFT-CTRL-I) and open the "Network" tab if it isn't already open.</p>
 </li>
 <li>
 <p>Enter "10" in the "Amount" text box and click "Donate". You will see a popup dialog stating that you donated a total of $110. In the debugger, you will see that "donate.php" was requested.</p>
@@ -989,7 +989,7 @@ fetch('http://lab-4.2.sans.labs:80');
 <p><code>{donations: "110", status: "success"}</code></p>
 </li>
 <li>
-<p>Click on "Headers" in the debugger's "Network" tab. You will see the request and response headers. Notice how the Origin header of the request specifies "<a href="http://lab-4.2.sans.labs">http://lab-4.2.sans.labs</a>" as origin. The response contains no CORS related headers. In particular, the response does not contain a "Access-Control-Allow-Origin" header.</p>
+<p>Click on "Headers" in the debugger's "Network" tab. You will see the request and response headers. Notice how the Origin header of the request specifies "<a href="http://lab-4.2.sans.labs">http://lab-4.2.sans.labs</a>" as the origin. The response contains no CORS-related headers. In particular, the response does not contain an "Access-Control-Allow-Origin" header. You may have to scroll down to see all the headers.</p>
 </li>
 <li>
 <p>Click on the <strong>Good Cross Origin</strong> link at the top of the webpage. You will see a page that looks similar to the earlier page.</p>
