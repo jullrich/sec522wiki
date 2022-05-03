@@ -1146,42 +1146,11 @@ fetch('https://lab-1.1.sans.labs:80');
 <p>Please do not install any updates if prompted.</p>
 </div>
 <p>The Burp Community Edition only allows for temporary projects. Click "Start Burp" on the Welcome screen.</p>
+<p><img alt="" class="zoom" src="images/img-1650853193-20220424.png" /></p>
+<p>Eventually, you will see the main Burp window.</p>
+<p><img alt="" class="zoom" src="images/img-1650853512-20220424.png" /></p>
+<p><strong>Main Burp Window</strong></p>
 </li>
-</ol>
-<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
-3.  Next, select "Load from configuration file" and select "Choose File" on the right-hand side. </p>
-<div class="codehilite"><pre><span></span><code>![](media/img-1615093867-20210307.png){: class=&quot;zoom&quot; }
-
-The file is located in the &quot;Documents/Burp&quot; directory. The prepared configuration file is &quot;sec522burp.json&quot;. Select to open the file and then &quot;Start Burp&quot; (the orange button on the lower right-hand corner)
-
-![](media/img-1615089483-20210306.png){: class=&quot;zoom&quot; }
-</code></pre></div>
-
-<p>=======
-    <img alt="" class="zoom" src="images/img-1650853193-20220424.png" /></p>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>G02-dev</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-<div class="codehilite"><pre><span></span><code>Eventually, you will see the main Burp window.
-
-![](images/img-1650853512-20220424.png){: class=&quot;zoom&quot; }
-
-**Main Burp Window**
-</code></pre></div>
-
-<ol>
 <li>
 <p>For now, we want to disable interception via Burp. Instead, we would like to have Burp record requests and responses without holding them. Select the "Proxy" tab (top menu) and make sure the "Intercept" button states "Intercept is off". Click the button to toggle it from "on" to "off".</p>
 <p><img alt="" class="zoom" src="images/img-1651021889-20220426.png" /></p>
@@ -1190,89 +1159,33 @@ The file is located in the &quot;Documents/Burp&quot; directory. The prepared co
 <p>Start the <strong>Chrome</strong> web browser by clicking the Chrome icon on the left.</p>
 <p><img alt="" src="media/image9.png" /></p>
 </li>
-</ol>
-<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
-6.  After Chrome starts, use the Proxy Switcher plugin to select Burp as a proxy. The Proxy Switcher plugin can be found in the top right corner of Chrome. The icon is gray to indicate that no proxy is selected, and Chrome connects directly. Once you choose a proxy, the icon will be red. Click on the icon to open the settings. Select "Manual Proxy" to activate the proxy. "Burp" should be the active selection in the "Profile" dropdown.
-=======
-5.  After Chrome starts, use the Proxy Switcher plugin to select Burp as a proxy. The Proxy Switcher plugin can be found in the top right corner of Chrome. See the screenshot below
+<li>
+<p>After Chrome starts, use the Proxy Switcher plugin to select Burp as a proxy. The Proxy Switcher plugin can be found in the top right corner of Chrome. See the screenshot below
     <img alt="" class="zoom" src="images/img-1651029505-20220426.png" /></p>
-<div class="codehilite"><pre><span></span><code> Click on the Proxy Switcher to open the settings. Select &quot;Manual Proxy&quot; to activate the proxy. &quot;SEC522&quot; should be the active selection in the &quot;Profile&quot; dropdown. Once you select a proxy, the icon will be Proxy Switcher icon is red indicating that all browser network traffic is passed to the proxy. When this icon is black, it indicates that no proxy is selected (Direct), and Chrome connects directly to the web server.
-</code></pre></div>
-
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>G02-dev</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-<div class="codehilite"><pre><span></span><code>![](images/img-1651029899-20220426.png){: class=&quot;zoom&quot; }
-
-**Proxy Switcher Configuration**
-
-Select &quot;Direct&quot; from the Proxy Switcher dialog if you wish to turn off interception later.
-
-!!! Information &quot;Proxy Switcher&quot;
-    Proxy switcher gives you an easy means to toggle between traffic directly going from browser to website or routing through the Burp proxy. 
-    When the Proxy Switcher icon is red, you know the traffic goes through the Burp proxy.
-    If you toggle the Proxy Switcher to route traffic to Burp and Burp is not running, the request will time out.
-</code></pre></div>
-
-<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
-8.  In Chrome, browse to <a href="http://lab-1.1.sans.labs/">http://lab-1.1.sans.labs/</a> (expect a slight delay on this first-page load)
-=======
-6.  In Chrome, browse to <a href="http://lab-1.1.sans.labs/">http://lab-1.1.sans.labs/</a> (expect a small delay on this first page load)</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>G02-dev</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-<ol>
-<li>You are now presented with an Animal Shelter web application. </li>
+<p>Click on the Proxy Switcher to open the settings. Select "Manual Proxy" to activate the proxy. "SEC522" should be the active selection in the "Profile" dropdown. Once you select a proxy, the icon will be Proxy Switcher icon is red indicating that all browser network traffic is passed to the proxy. When this icon is black, it indicates that no proxy is selected (Direct), and Chrome connects directly to the web server.</p>
+<p><img alt="" class="zoom" src="images/img-1651029899-20220426.png" /></p>
+<p><strong>Proxy Switcher Configuration</strong></p>
+<p>Select "Direct" from the Proxy Switcher dialog if you wish to turn off interception later.</p>
+<div class="admonition information">
+<p class="admonition-title">Proxy Switcher</p>
+<p>Proxy switcher gives you an easy means to toggle between traffic directly going from browser to website or routing through the Burp proxy. 
+When the Proxy Switcher icon is red, you know the traffic goes through the Burp proxy.
+If you toggle the Proxy Switcher to route traffic to Burp and Burp is not running, the request will time out. </p>
+</div>
+</li>
+<li>
+<p>In Chrome, browse to <a href="http://lab-1.1.sans.labs/">http://lab-1.1.sans.labs/</a> (expect a small delay on this first page load)</p>
+</li>
+<li>
+<p>You are now presented with an Animal Shelter web application. </p>
+</li>
+<li>
+<p>If you pass these tests, switch back to Burp by clicking on the Burp icon <strong>in</strong> the "Favorites" list on the left (the bottom one). At this point, Burp is recording requests and responses but not allowing you to alter them. You can inspect the requests and responses by selecting the "Target" tab.</p>
+<p><img alt="" class="zoom" src="images/img-1651030704-20220426.png" />
+<strong>Burp Target Tab</strong></p>
+<p>Highlight the request for "/" (likely at the top).</p>
+</li>
 </ol>
-<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
-10. If you pass these tests, switch back to Burp by clicking on the Burp icon <strong>in</strong> the "Favorites" list on the left (the bottom one). At this point, Burp is recording requests and responses but not allowing you to alter them. You can inspect the requests and responses by selecting the "Target" tab.
-=======
-8.  If you pass these tests, switch back to Burp by clicking on the Burp icon <strong>in</strong> the "Favorites" list on the left (the bottom one). At this point, Burp is recording requests and responses, but not allowing you to alter them. You can inspect the requests and responses by selecting the "Target" tab.</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>G02-dev</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-<div class="codehilite"><pre><span></span><code>![](images/img-1651030704-20220426.png){: class=&quot;zoom&quot; }
-**Burp Target Tab**
-
-Highlight the request for &quot;/&quot; (likely at the top).
-</code></pre></div>
-
 <p>Use the information from the target tab to answer the first two challenges in NetWars. Day 1 contains two 1.1 Part 0 challenges. Review the questions about this HTTP request that is highlighted.  For these challenges, there are hints available on NetWars at the cost of some points to help you if necessary. </p>
 <h2 id="part-1-manipulating-http-requests">Part 1: Manipulating HTTP Requests</h2>
 <h3 id="step-by-step_1">Step by Step</h3>
