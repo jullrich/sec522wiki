@@ -594,22 +594,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#part-1" class="md-nav__link">
-    Part 1:
+  <a href="#part-1-html5-web-storage-api" class="md-nav__link">
+    Part 1: HTML5 Web Storage API
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#part-2" class="md-nav__link">
-    Part 2:
+  <a href="#part-2-html5-cross-window-messaging" class="md-nav__link">
+    Part 2: HTML5 Cross Window Messaging
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#part-3" class="md-nav__link">
-    Part 3:
+  <a href="#part-3-content-security-policy" class="md-nav__link">
+    Part 3: Content Security Policy
   </a>
   
 </li>
@@ -661,8 +661,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#part-3_1" class="md-nav__link">
-    Part 3
+  <a href="#part-3-content-security-policy_1" class="md-nav__link">
+    Part 3: Content Security Policy
   </a>
   
 </li>
@@ -935,22 +935,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#part-1" class="md-nav__link">
-    Part 1:
+  <a href="#part-1-html5-web-storage-api" class="md-nav__link">
+    Part 1: HTML5 Web Storage API
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#part-2" class="md-nav__link">
-    Part 2:
+  <a href="#part-2-html5-cross-window-messaging" class="md-nav__link">
+    Part 2: HTML5 Cross Window Messaging
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#part-3" class="md-nav__link">
-    Part 3:
+  <a href="#part-3-content-security-policy" class="md-nav__link">
+    Part 3: Content Security Policy
   </a>
   
 </li>
@@ -1002,8 +1002,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#part-3_1" class="md-nav__link">
-    Part 3
+  <a href="#part-3-content-security-policy_1" class="md-nav__link">
+    Part 3: Content Security Policy
   </a>
   
 </li>
@@ -1040,19 +1040,19 @@ fetch('https://lab-4.32.sans.labs:80');
 <h1 id="exercise-43-front-end-features-and-content-security-policy">Exercise 4.3 - Front End Features and Content Security Policy</h1>
 <hr />
 <h4 id="objectives">Objectives</h4>
-<p>Learn about the security of various browser front end features such as local and session storage and Content Security Policy.</p>
+<p>Learn about the security of various browser front-end features such as local and session storage and Content Security Policy.</p>
 <div class="codehilite"><pre><span></span><code>Estimated Time 15 minutes
 </code></pre></div>
 
-<h5 id="part-1">Part 1:</h5>
+<h5 id="part-1-html5-web-storage-api">Part 1: HTML5 Web Storage API</h5>
 <blockquote>
-<p>In this exercise, you will become familiar with various HTML5 features and how they affect security. The first exercise will cover the difference of local and session storage.  </p>
+<p>In this exercise, you will become familiar with various HTML5 features and how they affect security. The first exercise will cover the difference between local and session storage.  </p>
 </blockquote>
-<h5 id="part-2">Part 2:</h5>
+<h5 id="part-2-html5-cross-window-messaging">Part 2: HTML5 Cross Window Messaging</h5>
 <blockquote>
 <p>The second exercise will showcase security issues in cross-window messaging.</p>
 </blockquote>
-<h5 id="part-3">Part 3:</h5>
+<h5 id="part-3-content-security-policy">Part 3: Content Security Policy</h5>
 <blockquote>
 <p>This exercise focuses on the Content Security Policy.</p>
 </blockquote>
@@ -1063,7 +1063,7 @@ fetch('https://lab-4.32.sans.labs:80');
 <hr />
 <h2 id="part-1-session-vs-local-storage">Part 1: Session vs. Local Storage</h2>
 <h3 id="no-hints">No Hints</h3>
-<p>Start at <a href="http://lab-4.3.sans.labs/html5.html">http://lab-4.3.sans.labs/html5.html</a>. You will find links to the three exercises and basic instruction about what to do. Attempt to fix the security issue for the stock trading application in #2.</p>
+<p>Start at <a href="http://lab-4.3.sans.labs/html5.html">http://lab-4.3.sans.labs/html5.html</a>. You will find links to the three exercises and basic instructions about what to do. Attempt to fix the security issue for the stock trading application in #2.</p>
 <h3 id="step-by-step">Step by Step</h3>
 <ol>
 <li>
@@ -1082,7 +1082,7 @@ fetch('https://lab-4.32.sans.labs:80');
 <p>Open the same page, <strong><a href="http://lab-4.3.sans.labs/storage.html">http://lab-4.3.sans.labs/storage.html</a></strong>, in a new tab (press CTRL+T, or use the "File" menu in the browser).</p>
 </li>
 <li>
-<p>In this new tab, to the right of the text areas, you will see "Saved Data". Only one of these fields is prefilled; the other field is empty. For one of the text areas, LocalStorage was used. For the other one, we used SessionStorage. Which one is which?</p>
+<p>In this new tab, you will see "Saved Data" to the right of the text areas. Only one of these fields is prefilled; the other field is empty. For one of the text areas, LocalStorage was used. For the other one, we used SessionStorage. Which one is which?</p>
 </li>
 <li>
 <p>With both tabs open, enter different values in Storage #1 and Storage #2. Refresh the other tab to confirm your assumption.</p>
@@ -1098,7 +1098,7 @@ fetch('https://lab-4.32.sans.labs:80');
 </ol>
 <details class="tip">
 <summary>Answer</summary>
-<p>Storage #1 is kept in LocalStorage. Storage #2 is kept in SessionStorage. As a result, Storage #1 is the same for both tabs, while Storage #2 is different.</p>
+<p>Storage #1 is kept in LocalStorage. Storage #2 is held in SessionStorage. As a result, Storage #1 is the same for both tabs, while Storage #2 is different.</p>
 </details>
 <hr />
 <h2 id="part-2-cross-window-messaging">Part 2: Cross-Window Messaging</h2>
@@ -1110,7 +1110,7 @@ fetch('https://lab-4.32.sans.labs:80');
 <p>You will see a simple "Stock Trading" application. Place a trade in the green "Trade" window by selecting a stock symbol and entering a quantity.</p>
 </li>
 <li>
-<p>After you click the "Execute" button, your trade will show up in the "Trade Status" frame. The stock trading application sends trades to the "Trade Status" frame, where they are then passed to the trading API.</p>
+<p>After you click the "Execute" button, your trade will appear in the "Trade Status" frame. The stock trading application sends trades to the "Trade Status" frame, where they are then passed to the trading API.</p>
 </li>
 <li>
 <p>Click on the ad on the left to enable ads.</p>
@@ -1122,14 +1122,14 @@ fetch('https://lab-4.32.sans.labs:80');
 <p>Open the Chrome developer tools (SHIFT-CTRL-I) and select the "Sources" tab.</p>
 </li>
 <li>
-<p>On the left, you will find "ad.html" after expanding "adframe (ad.html)" and "lab-4.3-evil.sans.labs". (If there are no content under ad.html, reload the web page) The "postMessage" function will be found on line 29.</p>
+<p>On the left, you will find "ad.html" after expanding "adframe (ad.html)" and "lab-4.3-evil.sans.labs". (If there is no content under ad.html, reload the web page) The "postMessage" function will be found in line 29.</p>
 <p><img alt="" class="zoom" src="media/img-1615706645-20210314.png" /></p>
 </li>
 <li>
 <p>Select "platform.html" on the left. This will bring up the trading platform's source code that receives the message.</p>
 </li>
 <li>
-<p>Does the function "receiveMessage" (starting on line 6) check for the origin of the message?</p>
+<p>Does the function "receiveMessage" (starting on line 6) check for the message's origin?</p>
 </li>
 <li>
 <p><strong>Extra Credit</strong> </p>
@@ -1142,15 +1142,14 @@ fetch('https://lab-4.32.sans.labs:80');
 <details class="tip">
 <summary>Answer</summary>
 <p>platform.html never checks the origin of the message. This will allow any window to send messages if that window can obtain a handle to the "platform" IFrame. To</p>
-<p>check for the origin, you could add this code.</p>
-<div class="highlight"><pre><span></span><code><span class="x">If ( event.origin != &#39;http://lab-4.3.sans.labs&#39;) {</span>
-<span class="x">    return 0</span>
-<span class="x">}</span>
+<p>Verify the origin. You could add this code.</p>
+<div class="highlight"><pre><span></span><code><span class="nx">If</span> <span class="p">(</span> <span class="nx">event</span><span class="p">.</span><span class="nx">origin</span> <span class="o">!=</span> <span class="s1">&#39;http://lab-4.3.sans.labs&#39;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="mf">0</span>
+<span class="p">}</span>
 </code></pre></div>
-<p>In this example, checking the origin is, however, insufficient, as the ad is served from the same origin as the rest of the page. The ad should be loaded from a different origin.</p>
 </details>
 <hr />
-<h2 id="part-3_1">Part 3</h2>
+<h2 id="part-3-content-security-policy_1">Part 3: Content Security Policy</h2>
 <ol>
 <li>
 <p>Open <strong><a href="http://lab-4.3-csp.sans.labs/">http://lab-4.3-csp.sans.labs/</a></strong> in your browser.</p>
@@ -1162,31 +1161,39 @@ fetch('https://lab-4.32.sans.labs:80');
 <p>Click on the "CSP Error 1" link.</p>
 </li>
 <li>
-<p>The page is missing an image. The "Last Error" section will show the last CSP error. You may have to reload the page if the section is empty. You can also refresh the error log page to get the latest errors, but that page may be difficult to read.</p>
+<p>The page is missing an image. The "Last Error" section will show the last CSP error. You may have to reload the page if the section is empty. You can also refresh the error log page to get the latest errors, but that page may be difficult to read.
+   <img alt="" class="zoom" src="media/image3.png" /></p>
 </li>
 <li>
-<p>Determine why the image is broken. The first hint in NetWars maybe helpful.  </p>
+<p>The relevant line of the error message is highlighted in the above image. It indicates that an image from <code>http://lab-4.3-csp.sans.labs</code> was blocked. We need to add this origin to our CSP or replace the existing origin.</p>
 </li>
 <li>
-<p>Edit the CSP to reflect the correct img-src.</p>
+<p>Update the CSP to <code>img-src lab-4.3-csp.sans.labs</code> and click "Update." The image will now appear. You will also see a link to the next part of the exercise.</p>
 </li>
 <li>
-<p>Click "Update".</p>
+<p>The next part of the exercise, <em><a href="http://lab-4.3-csp.sans.labs/csp2.php">http://lab-4.3-csp.sans.labs/csp2.php</a></em> presents a similar challenge. You will have to adjust the CSP again to allow the image to be displayed. Open the Google Chrome developer tools (CTRL-Shift-I) and select the "Console" tab if it is not already visible.</p>
 </li>
 <li>
-<p>If your CSP is correct, then the image of a cat will appear which will reveal the NetWars answer.</p>
+<p>You will see an error message like:
+   <code>Refused to execute inline script because it violates the following Content Security Policy directive: "script-src 'self'". Either the 'unsafe-inline' keyword, a hash ('sha256-2ECkgDMv8O7Bkxsx5575JtowBGEP7HsAKJSQODnQoZQ='), or a nonce ('nonce-...') is required to enable inline execution.</code></p>
 </li>
 <li>
-<p>For the next two NetWars challenges, follow the same procedures as you did between Step 4 and Step 8.</p>
+<p>The simplest solution is to add the "unsafe-inline" keyword to the CSP. The keyword has to be enclosed in single quotes. The complete CSP will be <code>script-src 'self' 'unsafe-inline'</code>. Enter it into the text area and click "Update".</p>
+</li>
+<li>
+<p>Just like before, the image will appear. You will also see a link to the third part of the exercise. Follow it to *<a href="http://lab-4.3-csp.sans.labs/csp3.php">http://lab-4.3-csp.sans.labs/csp3.php</a></p>
+</li>
+<li>
+<p>The answer to the third challenge will be your answer for Netwars. Follow the same general plan used for the last two challenges.</p>
 </li>
 </ol>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
 <ul>
 <li>Modern HTML interface has many different functions that can make the website more responsive. At the same time, some of the features also impact security. </li>
-<li>Local storage and other browser based storage need careful evaluation on privacy and security impact before use.</li>
-<li>CSP is effective at protecting the web page against multiple types of attacks.</li>
-<li>CSP Requires some careful configuration, otherwise, it can backfire and render portions of the site not working.</li>
+<li>You will need to carefully evaluate the privacy and security impact of local storage and other browser-based storage.</li>
+<li>CSP effectively protects the web page against multiple types of attacks.</li>
+<li>CSP Requires some careful configuration. Otherwise, it can backfire and render portions of the site not working.</li>
 <li>Using the CSP logging function (report-uri) is a must for troubleshooting</li>
 </ul>
 <hr />
