@@ -1054,11 +1054,11 @@ fetch('https://lab-3.2.sans.labs:80');
 <p>Estimated Time: 12 minutes</p>
 <h5 id="part-1">Part 1:</h5>
 <blockquote>
-<p>In the first part, you will learn how to identify and fix session fixation vulnerabilities.</p>
+<p>In the first part, you will learn to identify and fix session fixation vulnerabilities.</p>
 </blockquote>
 <h5 id="part-2">Part 2:</h5>
 <blockquote>
-<p>In second part, you will experience weak session IDs and learn how an attacker may exploit them.</p>
+<p>In the second part, you will experience weak session IDs and learn how an attacker may exploit them.</p>
 </blockquote>
 <h4 id="requirements">Requirements</h4>
 <ul>
@@ -1067,46 +1067,46 @@ fetch('https://lab-3.2.sans.labs:80');
 <hr />
 <h2 id="part-1-session-fixation">Part 1: Session Fixation</h2>
 <h3 id="no-hints">No Hints</h3>
-<p>Load <a href="http://lab-3.2.sans.labs/login1.php">http://lab-3.2.sans.labs/login1.php</a> in Chrome. There are also login2.php and login3.php . The username is sec522 and password is training. The first two forms are susceptible to session fixation. Why? (In particular, the second one is not that obvious.) The third form is not susceptible. Can you determine why?</p>
+<p>Load <a href="http://lab-3.2.sans.labs/login1.php">http://lab-3.2.sans.labs/login1.php</a> in Chrome. There are also login2.php and login3.php. The username is sec522, and the password is training. The first two forms are susceptible to session fixation. Why? (In particular, the second one is not that obvious.) The third form is not vulnerable. Can you determine why?</p>
 <h3 id="step-by-step">Step by Step</h3>
-<p>This exercise will ask you to run Firefox in addition to Chrome. To start Firefox when asked to, click on the Firefox icon at the left side of the screen. </p>
+<p>This exercise will ask you to run Firefox in addition to Chrome. To start Firefox, when asked to, click on the Firefox icon on the left side of the screen. </p>
 <p>IMPORTANT: Do not "Refresh Firefox" or update Firefox. Click "Cancel" if a dialog box appears offering to refresh Firefox.</p>
 <ol>
 <li>
 <p>Load <a href="http://lab-3.2.sans.labs/login1.php">http://lab-3.2.sans.labs/login1.php</a> in the browser. You will be redirected to a URL that includes a session ID as a get parameter. The session ID is random. It should look like: sec522=gn5blighc8a)o5ks45k3pu81l</p>
 </li>
 <li>
-<p>Copy the session ID and paste it into an empty file (you can use the Visual Studio Code on the left). We will call this session ID the "original session"</p>
+<p>Copy the session ID and paste it into an empty file (you can use the Visual Studio Code on the left). We will call this session ID the "original session."</p>
 </li>
 <li>
-<p>To simulate the attacker's view, open the Firefox browser by clicking on the Firefox icon on the left menu bar. Copy and paste the full URL from Chrome to Firefox. In the session fixation attack scenario, the attacker would set the session ID prior to the victim logging in. At this point, the attacker using Firefox and victim using Chrome both have the same session ID in the browser.  </p>
+<p>To simulate the attacker's view, open the Firefox browser by clicking on the Firefox icon on the left menu bar. Copy and paste the entire URL from Chrome to Firefox. In the session fixation attack scenario, the attacker would set the session ID before the victim logging in. The attacker using Firefox and the victim using Chrome both have the same session ID in the browser.  </p>
 </li>
 <li>
-<p>Go back to Chrome. Log in using the username "sec522" and the password "training". Did the session ID change from the "orginal session" you captured in step 2? The form is vulnerable to session fixation if it did not change.</p>
+<p>Go back to Chrome. Log in using the username "sec522" and the password "training." Did the session ID change from the "original session" you captured in step 2? The form is vulnerable to session fixation if it does not change.</p>
 </li>
 <li>
-<p>To see how the attacker can exploit this - go back to Firefox and change the URL, replace the URL's "login1.php" to "guestbook.php" and leaving all other portion of the URL intact. If attacker (Firefox) is logged in and not being redirected to the login page. The application is vulnerable to session fixation.</p>
+<p>To see how the attacker can exploit this - go back to Firefox and change the URL. Replace "login1.php" with "guestbook.php" and leave the rest of the URL alone. The application is vulnerable to session fixation if using this URL will allow the attacker (Firefox) to log in. You are not vulnerable if the attacker is redirected to the login page. The application is vulnerable to session fixation.</p>
 <p><img alt="" class="zoom" src="media/img-1619303254-20210424.png" /></p>
 <div class="admonition information">
 <p class="admonition-title">Information</p>
-<p>The implication of is step is for the attacker to test whether the user has logged in with the session. You will find that both attacker and victim are logged in using different browsers and both using the same logged in session.</p>
+<p>The implication of is step is for the attacker to test whether the user has logged in with the session. You will find that both attacker and victim are logged in using different browsers and using the same logged-in session.</p>
 </div>
 </li>
 <li>
 <p>Close Firefox and back in Chrome, click the "Logout" link in the Guestbook application.</p>
 </li>
 <li>
-<p>Click on "Login Again" which will bring you to the next login form - "login2.php". This is a slightly different version of the login form.</p>
+<p>Click on "Login Again" to bring you to the next login form - "login2.php". This is a slightly different version of the login form.</p>
 </li>
 <li>
 <p>With the login2.php, please repeat the same process from step 2 (see above) to step 6.</p>
 <details class="question">
-<summary>While the session ID is changed in Chrome in step 4, is attacker still able to access the logged in session in step 5?</summary>
-<p>If the attacker does not get redirected to the login page, that means that attacker is still able to use the session even though the session ID looks different on Chrome.</p>
+<summary>While the session ID is changed in Chrome in step 4, is the attacker still able to access the logged-in session in step 5?</summary>
+<p>If the attacker does not get redirected to the login page, that means that the attacker can still use the session even though the session ID looks different on Chrome.</p>
 </details>
 </li>
 <li>
-<p>Click on "Login Again" which will bring you to the next login form - "login3.php".</p>
+<p>Click on "Login Again" to reach the following login form - "login3.php".</p>
 </li>
 <li>
 <p>With the login3.php, please repeat the same process from step 2 (see above) to step 6.</p>
@@ -1116,10 +1116,10 @@ fetch('https://lab-3.2.sans.labs:80');
 </details>
 </li>
 <li>
-<p>Compare the two source code files below, it's best to open them in two browser tabs side by side so they can be compared.</p>
+<p>Compare the two source code files below. It's best to open them in two browser tabs side by side so they can be compared.</p>
 <p><a href="http://lab-3.2.sans.labs/login2.phps">http://lab-3.2.sans.labs/login2.phps</a>  <br>
 <a href="http://lab-3.2.sans.labs/login3.phps">http://lab-3.2.sans.labs/login3.phps</a></p>
-<p>Pay attention to line 23 to 25. There are subtle differences in the location of session_regenerate_id.  </p>
+<p>Pay attention to lines 23 to 25. There are subtle differences in the location of session_regenerate_id.  </p>
 <details class="question">
 <summary>What are the differences?</summary>
 <p>"fix2" regenerates the session ID after the login was verified. "fix3" regenerates the session ID first, so the user ID is never associated with the old session. </p>
@@ -1129,7 +1129,7 @@ fetch('https://lab-3.2.sans.labs:80');
 <hr />
 <h2 id="part-2-breaking-sessions">Part 2: Breaking Sessions</h2>
 <h3 id="no-hints_1">No Hints</h3>
-<p>Go to <a href="http://lab-3.2.sans.labs/session/login.php">http://lab-3.2.sans.labs/session/login.php</a>. Log in using the username "sec522" and the password "training". Try to switch to a different user's account after logging in.</p>
+<p>Go to <a href="http://lab-3.2.sans.labs/session/login.php">http://lab-3.2.sans.labs/session/login.php</a>. Log in using the username "sec522" and the password "training." Try to switch to a different user's account after logging in.</p>
 <h3 id="step-by-step_1">Step by Step</h3>
 <ol>
 <li>
@@ -1157,7 +1157,7 @@ fetch('https://lab-3.2.sans.labs:80');
 <hr />
 <h2 id="conclusion">Conclusion</h2>
 <ul>
-<li>Session are usually handled by your development framework but there are certain aspects of the session that need to be carefully managed by developers as illustrated in this exercise</li>
+<li>Your development framework usually handles sessions, but there are certain aspects of the session that need to be carefully managed by developers, as illustrated in this exercise</li>
 </ul>
 <hr />
                 

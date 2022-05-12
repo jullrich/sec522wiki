@@ -1045,7 +1045,7 @@ fetch('https://lab-4.4.sans.labs:80');
 <h3 id="no-hints">No Hints</h3>
 <p>The page <a href="http://lab-4.4.sans.labs/clickjack.php">http://lab-4.4.sans.labs/clickjack.php</a> implements a clickjacking exploit. Explore how it works. </p>
 <div class="admonition question">
-<p class="admonition-title">Which page is being 'clickjacked'?</p>
+<p class="admonition-title">Which page is being 'click jacked'?</p>
 </div>
 <h3 id="step-by-step">Step by Step</h3>
 <ol>
@@ -1053,13 +1053,13 @@ fetch('https://lab-4.4.sans.labs:80');
 <p>Browse to <strong><a href="http://lab-4.4.sans.labs/vote.php">http://lab-4.4.sans.labs/vote.php</a></strong>.</p>
 </li>
 <li>
-<p>This is a very simple page where user can click on either red or blue box for voting and the vote is tallied. </p>
+<p>This is a straightforward page where users can click on either a red or blue box for voting, and the vote is tallied. </p>
 </li>
 <li>
 <p>Click the <strong>"Dogs are the best!"</strong> and <strong>"Cats are the best!"</strong> button a few times each to observe how this works.</p>
 </li>
 <li>
-<p>Browse to <strong><a href="http://lab-4.4.sans.labs/clickjack.php">http://lab-4.4.sans.labs/clickjack.php</a></strong>. (Clickjacked vote on the upper right hand corner) This is an evil page that exploits clickjacking vulnerability.</p>
+<p>Browse to <strong><a href="http://lab-4.4.sans.labs/clickjack.php">http://lab-4.4.sans.labs/clickjack.php</a></strong>. (Clickjacked vote on the upper right-hand corner) This is an evil page that exploits clickjacking vulnerability.</p>
 </li>
 <li>
 <p>Try to click on the <strong>"Dogs are the best"</strong>. Although not much seems to be happening to the user, actions have already been taken in the background.</p>
@@ -1068,39 +1068,37 @@ fetch('https://lab-4.4.sans.labs:80');
 <p>Click on the <strong>"click here to reveal/hide iframe"</strong> link on the page.</p>
 </li>
 <li>
-<p>A translucent page is shown on the page, partially overlapping the existing web page. The translucent page contains content from <strong><a href="http://lab-4.4.sans.labs/vote.php">http://lab-4.4.sans.labs/vote.php</a></strong>. This is exactly how clickjacking happens. The translucent portion of the page was "on top" of the visible page; when the user clicks on the page, the mouse clicks are sent to the page on top. The user effectively clicks on something that he/she cannot see, and the mouse click is redirected to the other page.</p>
+<p>A translucent page is shown on the page, partially overlapping the existing web page. The translucent page contains content from <strong><a href="http://lab-4.4.sans.labs/vote.php">http://lab-4.4.sans.labs/vote.php</a></strong>. This is precisely how clickjacking happens. The translucent portion of the page was "on top" of the visible page; when the user clicks on the page, the mouse clicks are sent to the page on top. The user effectively clicks on something they cannot see, and the mouse click is redirected to the other page.</p>
 <p><br></p>
 <p>Let's inspect the effect of the clickjacking attack.</p>
 </li>
 <li>
-<p>Browse to <strong><a href="http://lab-4.4.sans.labs/vote.php">http://lab-4.4.sans.labs/vote.php</a></strong>. Check the counter. Why is the count higher than last time you loaded this page?</p>
+<p>Browse to <strong><a href="http://lab-4.4.sans.labs/vote.php">http://lab-4.4.sans.labs/vote.php</a></strong> and check the counter. Why is the count higher than the last time you loaded this page? You may have to reload the page if you do not see any change.</p>
 </li>
 </ol>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>In clickjacking, the attacker sets up pages that look harmless and entices the victim to click on some parts of the page. Hidden from the view of the victim, there is an invisible layer of another webpage which is receiving all the mouse clicks</p>
+<p>In clickjacking, the attacker sets up pages that look harmless and entices the victim to click on some parts of the page. Hidden from the victim's view, there is an invisible layer of another webpage that is receiving all the mouse clicks.</p>
 </div>
 <hr />
 <h2 id="part-2-defending-against-clickjacking-with-csp">Part 2: Defending Against ClickJacking with CSP</h2>
-<p>Clickjacking defense essentially relies on headers from Website to let the browser know whether the content can be inside an IFrame. Being loaded in IFrame essentially means that a malicious party can ClickJack the website.</p>
+<p>Clickjacking defense essentially relies on headers from the website to let the browser know whether the content can be inside an IFrame. Being loaded in IFrame essentially means that a malicious party can ClickJack the website.</p>
 <ol>
 <li>
-<p>Browse to <a href="http://lab-4.4.sans.labs/clickjackcsp.php">http://lab-4.4.sans.labs/clickjackcsp.php</a>. This page is very similar to the attack page earlier in that it loads a victim page so that mouse click from the user will land on the content inside the IFrame.</p>
+<p>Browse to <a href="http://lab-4.4.sans.labs/clickjackcsp.php">http://lab-4.4.sans.labs/clickjackcsp.php</a>. This page is very similar to the attack page earlier in that it loads a victim page so that a mouse click from the user will land on the content inside the IFrame.</p>
 </li>
 <li>
-<p>Click on the <strong>"click here to reveal/hide iframe"</strong> link on the page. You will notice that the victim's content are not loaded this time, instead a broken symbol is shown for the translucent content. See if you can determine what is causing this attack to fail? Once you figured it out, you can solve the challenge in NetWars. Hints are available in NetWars if necessary. </p>
+<p>Click on the <strong>"click here to reveal/hide iframe"</strong> link on the page. You will notice that the victim's content is not loaded this time. Instead, a broken symbol is shown for the translucent content. See if you can determine what is causing this attack to fail? Once you figure it out, you can solve the challenge in NetWars. Hints are available in NetWars if necessary. </p>
 </li>
 </ol>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
 <ul>
-<li>CSP with frame-ancestor is effective at preventing the clickjacking attack from happening. </li>
+<li>CSP with frame-ancestor restrictions effectively prevents the clickjacking attack from happening. </li>
 </ul>
 <hr />
 <h2 id="explore-further">Explore Further</h2>
-<ul>
-<li>If the Content Security Policy conflicts with X-Frame-Options header, what happens? Does the browser complain about it?</li>
-</ul>
+<p>What happens if the Content Security Policy conflicts with the X-Frame-Options header? Does the browser complain about it?</p>
                 
                   
                 

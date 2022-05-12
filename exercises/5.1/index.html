@@ -1042,13 +1042,13 @@ fetch('http://lab-5.1-evil.sans.labs:80');
 <h1 id="exercise-51-deserialization-and-dns-rebinding">Exercise 5.1 - Deserialization and DNS Rebinding</h1>
 <hr />
 <h4 id="objectives">Objectives</h4>
-<p>Hands on practice for deserialization attack and defense and DNS rebinding issues.</p>
+<p>Hands-on practice for deserialization attack and defense and DNS rebinding issues.</p>
 <div class="codehilite"><pre><span></span><code>Estimated Time: 15 minutes
 </code></pre></div>
 
 <h5 id="part-1">Part 1:</h5>
 <blockquote>
-<p>In this exercise, you will learn about DNS rebinding issue and will see for yourself a practical way that attacker can use Javascript to get around the anti-DNS rebinding mechanism of the browsers.</p>
+<p>In this exercise, you will learn about DNS rebinding. You will see for yourself a practical way that attackers can use Javascript to get around the anti-DNS rebinding mechanism of the browsers.</p>
 </blockquote>
 <h5 id="part-2">Part 2:</h5>
 <blockquote>
@@ -1064,7 +1064,7 @@ fetch('http://lab-5.1-evil.sans.labs:80');
 </ul>
 <hr />
 <h2 id="part-1-dns-rebinding">Part 1: DNS Rebinding</h2>
-<p>In this exercise, we will experiment with DNS rebinding. The attacker prepared a website at <a href="http://lab-5.1-evil.sans.labs/eviljs.php">http://lab-5.1-evil.sans.labs/eviljs.php</a> . Once you visit the site, the DNS entry for lab-5.1-evil.sans.labs will change. The browser will still use the old IP address for a while, but the attacker is using JavaScript to figure out when to launch the attack.</p>
+<p>In this exercise, we will experiment with DNS rebinding. The attacker prepared a website at <a href="http://lab-5.1-evil.sans.labs/eviljs.php">http://lab-5.1-evil.sans.labs/eviljs.php</a>. Once you visit the site, the DNS entry for lab-5.1-evil.sans.labs will change. The browser will still use the old IP address for a while, but the attacker uses JavaScript to figure out when to launch the attack.</p>
 <p>To answer the Netwars challenge for this question, you will need to alter the attack to send a request (using JavaScript) to "<a href="http://lab-5.1-evil.sans.lab/flag.php">http://lab-5.1-evil.sans.lab/flag.php</a>" AFTER DNS changes.</p>
 <p>=======</p>
 <h3 id="step-by-step">Step by Step</h3>
@@ -1073,13 +1073,13 @@ fetch('http://lab-5.1-evil.sans.labs:80');
 <p>Using Chrome, browse to <a href="http://lab-5.1-evil.sans.labs/eviljs.php">http://lab-5.1-evil.sans.labs/eviljs.php</a></p>
 </li>
 <li>
-<p>We start off with the evil cat's page and Javascript immediately kick into action to change the DNS in the background. There is a long wait for the DNS pin to expire within the JavaScript engine. Review the change in the Javascript prompt and then click "OK".</p>
+<p>We start with the evil cat's page, and Javascript immediately kicks into action to change the DNS in the background. There is a long wait for the DNS pin to expire within the JavaScript engine. Review the change in the Javascript prompt and then click "OK".</p>
 </li>
 <li>
-<p>The JavaScript automatically count down. In the background, every second there is a fetch request being sent to determine if the DNS pin has been lifted by the browser so the DNS would be re-queried and therefore change to the alternative host. </p>
+<p>The JavaScript will detect the change and display the time in seconds in the browser. Every second, a "fetch" request is triggered. It determines if the browser has lifted the DNS pin. After the DNS pin is lifted, the IP address will be re-queried and point the script to the alternative host. </p>
 </li>
 <li>
-<p>After about 100 seconds, the Chrome browser will lift the DNS pin and the JavaScript detects this and send the attack to the alternative host.</p>
+<p>After about 100 seconds, the Chrome browser will lift the DNS pin, and the JavaScript detects this and send the attack to the alternative host.</p>
 </li>
 <li>
 <p>Now open <strong><a href="http://lab-5.1-evil.sans.labs/flag.php">http://lab-5.1-evil.sans.labs/flag.php</a></strong> in the browser to retrieve the flag for Netwars. The answer to the NetWars challenge should be a combination of English words (no spaces)</p>
@@ -1088,46 +1088,46 @@ fetch('http://lab-5.1-evil.sans.labs:80');
 <h2 id="part-2-deserialization">Part 2: Deserialization</h2>
 <ol>
 <li>
-<p>In Chrome, get to the menu (upper right hand corner) and select <strong>More tools</strong>, then click on <strong>Clear browsing data</strong>. This will ensure we have a clean start.</p>
+<p>In Chrome, get to the menu (upper right-hand corner) and select <strong>More tools</strong>, then click on <strong>Clear browsing data</strong>. This will ensure we have a clean start.</p>
 </li>
 <li>
 <p>Using Chrome, browse to <strong><a href="http://lab-5.1-deserial.sans.labs/">http://lab-5.1-deserial.sans.labs/</a></strong> This site shows an animal shelter page.</p>
 </li>
 <li>
-<p>Ensure that the Chrome is set to sending all browser traffic through Burp - the ProxySwitcher in Chrome (upper right hand corner of browser window) should be "red" in color.</p>
+<p>Use the ProxySwitcher in Chrome to send all browser traffic through Burp. The ProxySwitcher icon in the upper right-hand corner of Chrome needs to be red.</p>
 </li>
 <li>
-<p>In Chrome, refresh the page. You will not see any response as the request is intercepted by Burp.</p>
+<p>In Chrome, refresh the page. You will not see any response as Burp intercepts the request.</p>
 </li>
 <li>
-<p>Switch over to Burp. Make sure you are look at <strong>Proxy</strong> tab and <strong>Intercept</strong> sub-tab. Allow all traffic to pass without modification. Keep clicking on "<strong>Forward</strong>" in Burp's Proxy Intercept. This allows Burp to cache the request for our manipulation. The browser should show the same page as earlier (Animal Shelter)</p>
+<p>Switch over to Burp. Look at the <strong>Proxy</strong> tab and <strong>Intercept</strong> sub-tab. Allow all traffic to pass without modification. Keep clicking on "<strong>Forward</strong>" in Burp's Proxy Intercept. This allows Burp to cache the request for our manipulation. The browser should show the same page as earlier (Animal Shelter)</p>
 </li>
 <li>
-<p>In Burp window, under <strong>Proxy</strong> tab, select the <strong>HTTP history</strong> which will show you the HTTP requests that were intercepted by Burp. We are specifically interested in the request to the <a href="http://lab-5.1-deserial.sans.labs/">http://lab-5.1-deserial.sans.labs/</a> page (via GET request). Please highlight (left click) on the entry for this page. Refer to the screenshot below</p>
+<p>In Burp, under the <strong>Proxy</strong> tab, select the <strong>HTTP history</strong>, which will show you the HTTP requests Burp intercepted. We are specifically interested in the request to the <a href="http://lab-5.1-deserial.sans.labs/">http://lab-5.1-deserial.sans.labs/</a> page (via "GET" request). Please highlight (left click) on the entry for this page. Refer to the screenshot below</p>
 <p><img alt="" class="zoom" src="images/img-1633201302-20211002.png" /></p>
 </li>
 <li>
-<p>Right click on the request from the above step. This will bring up a large drop down menu of which you can select the actions you want to take against this pre-captured request. In this case, we will select <strong>Send to Repeater</strong></p>
+<p>Right-click on the request from the above step. This will bring up a large drop-down menu from which you can select the actions you want to take against this pre-captured request. In this case, we will select <strong>Send to Repeater</strong></p>
 </li>
 <li>
-<p>Select the <strong>Repeater</strong> tab. This will bring up the HTTP request that we selected earlier and ready for us to manipulate and re-send. Refer to screenshot below</p>
+<p>Select the <strong>Repeater</strong> tab. This will bring up the HTTP request that we selected earlier. It will be ready for us to manipulate and re-send. Refer to the screenshot below</p>
 <p><img alt="" class="zoom" src="images/img-1633201583-20211002.png" /></p>
 </li>
 <li>
-<p>The left side of the pane is for editing and preparing the request for submission to the server. Our intent is to edit this request by adding a Cookie header and value. Copy the line below and paste to the header portion of the request to the server (header line order does not matter). Once you pasted the line into the header, click on <strong>Send</strong> (just above the request, in orange color)</p>
+<p>The left side of the pane is for editing and preparing the request for submission to the server. We intend to edit this request by adding a Cookie header and value. Copy the line below and paste it to the header portion of the request. The order of the lines in the header does not matter. Once you pasted the line into the header, click on <strong>Send</strong> (just above the request, in orange color)</p>
 <div class="highlight"><pre><span></span><code>Cookie: ASDFG
 </code></pre></div>
 </li>
 <li>
-<p>That request returns as a 200 code with a message in the HTTP body. "An error ocurred when decrypting the stream" This tells us that there is some kind of stream processing in place at the server. This maybe a deserializer that is processing the data in the request. This is the time to attack this component. We will need a gadget and a "command" to run to form an attack payload for this attack to work.</p>
+<p>That request returns as a 200 code with a message in the HTTP body. "An error occurred when decrypting the stream." This tells us that some kind of stream processing is in place at the server. This may be a deserializer that is processing the data in the request. This is the time to attack this component. We will need a gadget and a "command" to run to form an attack payload for this attack to work.</p>
 </li>
 <li>
-<p>For the purpose of this exercise, we will assume that the attacker wants to execute the command 'touch /tmp/test' in the target machine. We will still need a gadget for this to work. From the HTTP response header, we know that the server environment is running Java. Let's pick up some Java gadget for this attack. The most popular attack module for Java deserialization gadget is Ysoserial (<a href="https://github.com/frohoff/ysoserial">https://github.com/frohoff/ysoserial</a>) which we have integrated into the virtual machine for you to use (in the /home/student directory).</p>
+<p>For this exercise, we will assume that the attacker wants to execute the command 'touch /tmp/test' in the target machine. We will still need a gadget for this to work. From the HTTP response header, we know that the server environment is running Java. Let's pick up a Java gadget for this attack. The most popular attack module for Java deserialization gadgets is Ysoserial (<a href="https://github.com/frohoff/ysoserial">https://github.com/frohoff/ysoserial</a>) which we have integrated into the virtual machine (in the /home/student directory).</p>
 </li>
 <li>
-<p>To run the ysoserial to acquire a usable payload, we will need to use it via the command line (Launch a terminal window to run it). The syntax looks like the following, </p>
+<p>To run the ysoserial to acquire a usable payload, we need to use it via the command line (Launch a terminal window to run it). The syntax looks like the following, </p>
 <p><code>&gt; java -jar ysoserial-master.jar &lt;Payload type&gt; &lt;Command in quotes&gt;</code></p>
-<p>We know the command we want to run is 'touch /tmp/test'. We still need payload type as argument. See below, for payload type reference</p>
+<p>We know the command we want to run is 'touch /tmp/test'. We still need payload type as an argument. See below for payload type reference.</p>
 <div class="highlight"><pre><span></span><code>Usage: java -jar ysoserial.jar [payload] &#39;[command]&#39;
 Available payload types:
     Payload             Authors                     Dependencies
@@ -1174,44 +1174,43 @@ Available payload types:
 <li>Let's start with <strong>CommonsCollections</strong> family of payload type</li>
 </ul>
 </div>
-<p>In order to run the payload, you will also need to base64 encode the payload for Java to be able to exec it. The base64 shell command is for that purpose</p>
+<p>To run the payload, you will also need to base64 encode the payload for Java to be able to exec it. The base64 shell command is for that purpose.</p>
 <div class="admonition tip">
 <p class="admonition-title">Free hint</p>
 <ul>
 <li>base64 -w 0   will help encode the payload</li>
-<li>You will want to chain the two commands together via the Unix pipe (|). For example java -jar ...... | base64 -w 0</li>
+<li>You will want to chain the two commands together via the Unix pipe (|). For example, java -jar ...... | base64 -w 0</li>
 </ul>
 </div>
-<p>The payload should be in a Cookie: header as we determined in earlier step that the cookie content maybe serialized and therefore potentially vulnerable to attacks</p>
+<p>The payload should be in a Cookie: header as we determined in an earlier step that the cookie content may be serialized and, therefore, potentially vulnerable to attacks.</p>
 <div class="admonition tip">
 <p class="admonition-title">Free hint</p>
 <ul>
-<li>Put a Cookie: <base64 encoded payload - this is going to be a long string...> into the Burp Repeater template we already setup earlier.</li>
+<li>Put a Cookie: <base64 encoded payload - this will be a long string...> into the Burp Repeater template we set up earlier.</li>
 </ul>
 </div>
 </li>
 <li>
-<p>Determine the correct payload for attacking the deserialization vulnerability which is the subject of the NetWars challenges. Use hints to help you as necessary. Save this exploiting string for the next part of the exercise. </p>
+<p>To answer the NetWArs challenge, determine the correct payload for attacking the deserialization vulnerability. Use hints to help you as necessary. Save this exploiting string for the next part of the exercise. </p>
 </li>
 <li>
-<p>We are finished with intercepting traffic. Ensure that the Chrome is no longer sending traffic through Burp - the ProxySwitcher in Chrome (upper right hand corner of browser window) should be "black" in color.</p>
+<p>We are finished with intercepting traffic. Ensure that Chrome is no longer sending traffic through Burp - the ProxySwitcher in Chrome (upper right-hand corner of the browser window) should be "black" in color.</p>
 </li>
 </ol>
 <hr />
 <h2 id="part-3-fixing-deserialization-vulnerability">Part 3: Fixing Deserialization vulnerability</h2>
-<p>In this part, we will learn about the fixing of the deserialization vulnerability.</p>
+<p>In this part, we will learn how to fix the deserialization vulnerability.</p>
 <ol>
-<li>In Burp, go to the Repeater tab where we already setup the template for sending the exploit payload over Cookie header to the server. Please change both the <strong>Host:</strong> header in the left pane and also the <strong>Target</strong> on the upper right hand corner. See below screen cap on where you need to change the values. For both, the host name that we are targeting is <strong>lab-5.1-fixdeserial.sans.labs</strong> This is a fixed, no longer vulnerable version of the previous target. The code base is the same except the vulnerability has been fixed.</li>
 <li>
 <p>In Burp, go to the Repeater tab where we already setup the template for sending the exploit payload over Cookie header to the server. Please change both the <strong>Host:</strong> header in the left pane and also the <strong>Target</strong> on the upper right hand corner. See below screen cap on where you need to change the values. For both, the host name that we are targeting is <strong>lab-5.1-fixdeserial.sans.labs</strong> This is a fixed, no longer vulnerable version of the previous target. The code base is the same except the vulnerability has been fixed.</p>
 <p><img alt="" class="zoom" src="images/img-1633223794-20211002.png" /></p>
 </li>
 <li>
-<p>Using the same attack payload as before (part 2, cookie). Please send the attack to this non-vulnerable version and see what happens. You should observe that the server respond with the following message.</p>
+<p>Using the same attack payload as before (part 2, cookie). Please send the attack to this non-vulnerable version and see what happens. The server will respond with the following message.</p>
 <p><code>&gt; java.io.InvalidClassException: Unexpected serialized class ; java.util.HashSet</code></p>
 </li>
 <li>
-<p>It appears that this version of the application is blocking the request based on the class of objects that are being sent in the stream of data. We will inspect the source code of the application to answer the NetWars challenge. Please </p>
+<p>It appears that this version of the application is blocking the request based on the class of objects that are being sent in the stream of data. We will inspect the application's source code to answer the NetWars challenge. Please </p>
 </li>
 <li>
 <p>Open <strong>/etc/docker/compose/5.13/docker-java/FixedHTTPServer.java</strong> in an editor (Visual Studio Code) to review the code. The subject of the challenge pertains to this file. Please use the hints in NetWars as required.</p>
@@ -1226,14 +1225,14 @@ Available payload types:
 <hr />
 <h2 id="conclusion">Conclusion</h2>
 <ul>
-<li>DNS rebinding allows attacker to "confused" the browser into loading content from a different origin than what's specified by the host name and domain name. </li>
-<li>Deserialization can affect any types of input within the applications that takes in a serialized stream and attempting to deserialize the data without performing appropriate filtering or validation.</li>
-<li>Untrusted data being deserialized into Class of objects within the running application can be dangerous, potentially letting attack execute arbitary code in the environment.</li>
+<li>DNS rebinding allows attackers to "confuse" the browser into loading content from a different origin than what's specified by the hostname and domain name. </li>
+<li>Deserialization can affect any input within applications that take in a serialized stream and attempt to deserialize the data without performing appropriate filtering or validation.</li>
+<li>Untrusted data is deserialized into a Class of objects within the running application can be dangerous, potentially letting attackers execute arbitrary code in the environment.</li>
 </ul>
 <hr />
 <h2 id="explore-further">Explore Further</h2>
 <ul>
-<li>Deserialization vulnerability relies on untrusted data being deserialized by the application. Another dependency of the successful attack is the gadget chain, please explore the gadget involved in the attack(s) you have conducted.</li>
+<li>Deserialization vulnerability relies on untrusted data being deserialized by the application. Another dependency of the successful attack is the gadget chain; please explore the gadget involved in the attack(s) you have conducted.</li>
 </ul>
                 
                   
